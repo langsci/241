@@ -1,0 +1,419 @@
+\chapter{Avant-propos}
+
+\epigraph{DE LA SYNTAXE \textit{Ou la manière de joindre ensemble les parties d’oraison} [= les parties du discours ou catégories lexicales] \textit{selon leurs divers régimes.}
+
+Ces diverses parties font pour ainsi dire par rapport à une langue, ce que font les matériaux, par rapport à un édifice : quelque bien préparés qu’ils soient ils ne feront jamais un palais ou une maison, si on ne les place conformément aux règles de l’architecture. C’est donc la syntaxe qui donne la forme au langage, et c’est la partie la plus essentielle de la grammaire.}{\citealt[294]{Buffier1709}, nous modernisons l’orthographe}
+
+\section{De quoi parle ce livre ?}\label{sec:0.0.0}
+
+En commençant cet ouvrage, nous souhaitions écrire un ouvrage d’introduction à la \textstyleTermes{syntaxe de dépendance}. La plupart des ouvrages récents en syntaxe s’appuient sur l’\textstyleTermes{analyse en constituants} qui a dominé la seconde moitié du 20\textsuperscript{e} siècle. Et si les grammaires de dépendance ont connu un renouveau et un développement extraordinaire depuis le début du 21\textsuperscript{e} siècle, jusqu’à supplanter quasi totalement les grammaires de constituants dans le domaine du traitement automatique des langues (TAL), elles ne sont encore que sporadiquement enseignées à l’université et l’unique ouvrage de référence reste souvent l’ouvrage fondateur de Lucien Tesnière publié en \citeyear{Tesnière1959}. Les \textit{Éléments} \textit{de syntaxe structurale} de Tesnière sont un incontestable monument de la littérature scientifique en linguistique, dont on ne peut que recommander la lecture, mais cet ouvrage ne peut évidemment pas prendre en compte les développements important qu’a connu le domaine depuis 60 ou 80 ans. (Tesnière est mort en 1954, il a été très malade après la guerre et ses idées ont peu évolué depuis l’édition de son polycopié \textit{Esquisses de syntaxe structurale} distribué aux élèves de l’École normale d’institutrices de Montpellier en 1943, voire de son article de 1934 \textit{Comment construire une syntaxe}.)
+
+Au final, le livre que vous avez entre les mains n’est pas un manuel sur la syntaxe de dépendance, dans le sens où il \textbf{ne} souhaite \textbf{pas} livrer de recettes qui permettront au lecteur d’\textbf{apprendre} à associer un arbre de dépendance à n’importe quel énoncé et de discuter les différentes analyses possibles d’une construction donnée \textbf{dans un cadre préconçu}. L’objectif de ce livre est au contraire de \textbf{s’interroger} \textbf{sur le cadre lui-même}, de mettre en question la validité d’une approche de la syntaxe en termes de dépendance et au-delà de cela de \textbf{définir les principes} mêmes qui doivent présider à une construction théorique en syntaxe.
+
+Il en découle que cet ouvrage n’est pas vraiment un ouvrage d’introduction : même s’il tente d’élaborer son objet à partir de rien et qu’il est donc en théorie accessible sans pré-requis, cet ouvrage fait certainement appel à une \textbf{maîtrise du raisonnement scientifique} qui ne s’acquière qu’avec l’expérience. On pourra comparer, toutes choses égales par ailleurs, une tentative de ce genre à celle du groupe de mathématiciens français rassemblés sous le pseudonyme de Nicolas Bourbaki qui rédigea un ouvrage de construction des mathématiques à partir de rien (le premier tome démarre par la construction des entiers à partir du seul ensemble vide). L’ouvrage de Nicolas Bourbaki, s’il est élémentaire au sens premier du terme (comme le souligne son titre, \textit{Éléments} \textit{de mathématiques}), s’avère d’une lecture bien difficile pour des non-mathématiciens.
+
+Ce livre n’est pas non plus vraiment un ouvrage d’introduction à la syntaxe de dépendance, puisqu’une grande partie de l’ouvrage est consacrée à \textbf{définir l’objet} \textbf{même d’un} \textbf{ouvrage de syntaxe} et que la dépendance n’y est introduite qu’après une discussion détaillée sur les \textbf{unités de base de la syntaxe}. De plus, une large place est faite aux autres \textbf{représentations possibles de l’organisation} \textbf{syntaxique} et à la comparaison entre les différents modes de représentation. Nous pensons notamment que ceux qui travaillent en syntaxe de constituants en apprendront beaucoup sur les représentations qu’ils ont l’habitude d’utiliser et sur les \textbf{choix qui président à de telles représentations}.
+
+Nous allons préciser l’objectif de cet ouvrage. Avant cela, le lecteur qui n’est pas familier avec la notion d’arbre de dépendance pourra consulter l’encadré qui suit. Dans la suite de l’ouvrage nous mettrons souvent des portions de texte en exergue de cette façon.
+
+\newpage
+
+\loupe{Arbre de dépendance}{
+    Tout au long de cet ouvrage, nous proposerons de petits encadrés. Certains anticipent un peu sur la suite de l’ouvrage ; celui-ci permet à un lecteur totalement néophyte d’avoir une première idée de ce qu’est la \textstyleTermesapprof{syntaxe de dépendance}. De manière générale, les encadrés contiennent des informations complémentaires, généralement plus techniques ou à visée historique, qui ne sont pas essentielles à la compréhension du texte principal.
+
+    L’arbre de dépendance est une représentation de la structure syntaxique devenue traditionnelle après la publication en 1959 de l’ouvrage de Lucien Tesnière, \textit{Éléments} \textit{de syntaxe structurale}, et les différents travaux qui ont suivi, notamment ceux des pragois autour de Petr Sgall, ceux des Russes autour d’Igor Mel’čuk, ainsi que des travaux en Allemagne, en Angleterre ou aux. États-Unis (mais étonnamment aucun travail significatif en France jusqu’aux années 1990).
+
+    Dès le début de son ouvrage, Tesnière dit :
+
+    \begin{quote}
+    «~Tout mot qui fait partie d’une phrase cesse par lui-même d’être isolé comme dans le dictionnaire. Entre lui et ses voisins, l’esprit aperçoit des \textbf{connexions}, dont l’ensemble forme la charpente de la phrase.~»
+    \end{quote}
+
+
+
+    (Voir l’\encadref{fig:3.3.2} pour un \textit{Historique des notions de dépendance et de tête}, où l’on verra que cette idée est déjà dans un article de l’\textit{Encyclopédie} par Dumarsais en 1754 et que Tesnière a eu de nombreux prédécesseurs.) Tesnière ajoute ensuite que ces connexions sont orientées, liant un gouverneur à un dépendant, et forment ainsi une structure hiérarchique. C’est ce que Tesnière appelait un \textstyleTermesapprof{stemma} et qu’on appelle aujourd’hui un \textstyleTermesapprof{arbre de dépendance} (voir l’\encadref{fig:1.2.3} sur \textit{Graphe et arbre}). Ainsi l’arbre de dépendance généralement proposé pour une phrase comme :
+
+    \ea
+    {Beaucoup de gens aimeraient passer Noël} \textit{en Laponie}.
+    \z
+
+    est :
+    
+    \begin{forest} for tree={font=\itshape}
+    [aimeraient
+        [beaucoup,edge label={node[midway,left,font=\normalfont\scriptsize]{sujet}}
+          [de,edge label={node[midway,left,font=\normalfont\scriptsize]{complément}}
+            [gens,tier=word,edge label={node[midway,left,font=\normalfont\scriptsize]{complément}}]
+          ]
+        ]
+        [passer,edge label={node[midway,right,font=\normalfont\scriptsize]{objet}}
+          [Noël,edge label={node[midway,left,font=\normalfont\scriptsize]{objet}}] 
+          [en,edge label={node[midway,right,font=\normalfont\scriptsize]{locatif}}
+            [Laponie,tier=word,edge label={node[midway,right,font=\normalfont\scriptsize]{complément}}]
+          ]
+        ]
+    ]    
+    \end{forest}
+    
+    
+    Dans cette représentation, les mots dépendent les uns des autres. Le mot le plus important, le verbe principal, est \textit{aimeraient}, qui occupe la racine de l’arbre et est placé tout en haut (l’arbre «~pousse~» à l’envers). Les dépendances sont étiquetées par des relations syntaxiques. Ainsi l’arbre nous dit que le sujet de \textit{aimeraient} est le groupe \textit{beaucoup de gens} et que le mot le plus important de ce groupe est \textit{beaucoup}, qui se retrouve ainsi lié à \textit{aimeraient}.
+
+    Nous ne justifierons pas ici cette représentation, dont on peut d’ailleurs contester certains choix. Cela sera très largement discuté dans cet ouvrage et en particulier dans le \chapref{sec:3.3} sur \textit{Tête et dépendance}. Il s’agit juste de donner un premier exemple en vue de la discussion qui va suivre.
+}
+
+\section{Les questions qui nous préoccupent}\label{sec:0.0.2}
+
+En écrivant cet ouvrage, nous nous sommes posé un grand nombre de questions auxquelles il nous a semblé qu’il fallait répondre avant de pouvoir présenter de façon objective la syntaxe de dépendance.
+
+\begin{itemize}
+\item Est-il justifié de représenter la structure syntaxique par un arbre de dépendance ? Par une structure arborescente ? Par des dépendances ? Jusqu’à quel point une représentation basée sur la dépendance est-elle ou non équivalente à d’autres modes de représentation et notamment aux arbres de constituants ?
+\item Quel est le statut de la structure syntaxique ? Est-ce un objet de la langue ou bien un artefact de la modélisation des langues ? Quel rôle souhaite-t-on donner à de telles structures à l’intérieur du modèle d’une langue ?
+\item Les dépendances syntaxiques sont-elles entre les mots ? Quelles sont les unités minimales de la syntaxe ? Comment définir le mot et quel rôle joue-t-il dans la syntaxe s’il n’est pas l’unité minimale de la syntaxe ?
+\item Les dépendances syntaxiques s’arrêtent-elles à la frontière de la phrase ? La notion de phrase est-elle légitime ? Y a-t-il une unité maximale de la syntaxe ?
+\item De quelles propriétés des énoncés cherche-t-on à rendre compte par un arbre de dépendance ? De quelles propriétés ne rend-on pas compte ? Comment encoder les propriétés qui ne sont pas prise en compte par l’arbre de dépendance ? Quelles sont les autres structures que l’on peut associer à un énoncé ? Quels rapports y a-t-il entre les différentes représentations de la structure d’un énoncé ?
+\item Finalement, qu’appelle-t-on la syntaxe ? Et en quoi est-il possible ou non, nécessaire ou non, d’introduire une structure syntaxique pour rendre compte des propriétés syntaxiques d’un énoncé ? La modélisation du lien entre signifiant et signifié a-t-elle besoin d’une structure syntaxique intermédiaire ?
+\end{itemize}
+
+Toutes ces questions nous amèneront à commencer par rappeler les objectifs de notre discipline, la linguistique, et de sa sous-discipline, la syntaxe. Ces objectifs sont pour nous de \textbf{construire des modèles} des différentes langues du monde au sein d’un théorie de la langue. Notre première partie sera donc consacrée à définir les objectifs de la modélisation des langues et à montrer l’existence d’un ensemble de propriétés qui relèvent de ce que nous appelons la syntaxe.
+
+On définit traditionnellement la syntaxe comme «~ l’étude de l’organisation des mots dans la phrase~». Une telle définition est problématique, puisqu’elle suppose que l’on peut définir les notions de mot et de phrase avant de définir ce qu’est la syntaxe. Dans cet ouvrage, la notion de mot ne sera définie qu’au début de la quatrième partie et l’unité maximale de la syntaxe ne sera discutée que dans la sixième et dernière partie de l’ouvrage.
+
+Avant d’étudier l’organisation syntaxique, nous tenterons de \textbf{caractériser la syntaxe} et notamment les unités minimales de la syntaxe, que nous contrasterons avec les unités minimales de la morphologie et de la sémantique. Ce sera notre deuxième partie.
+
+La troisième partie montrera comment définir une structure qui rend compte des principales propriétés syntaxiques des énoncés. Différentes structures seront présentées et la représentation par un arbre de dépendance sera particulièrement discutée.
+
+Les trois parties suivantes s’apparentent davantage à un manuel traditionnel. Nous y présenterons différentes caractéristiques des langues et notamment du français et nous présenterons les structures qui en rendent le mieux compte. On notera néanmoins que les catégories syntaxiques et autres parties du discours, qui sont généralement introduites très tôt dans les ouvrages de syntaxe, ne seront réellement définies que dans les quatrièmes et cinquièmes parties, quand la question de l’organisation des unités aura été largement discutée.
+
+Nous précisons le plan de cet ouvrage dans la \sectref{sec:0.0.8}.
+
+\section{À qui s’adresse cet ouvrage ?}\label{sec:0.0.3}
+
+Cet ouvrage aborde la syntaxe comme une \textbf{composante d’un} \textbf{modèle linguistique}. L’idée même que la langue puisse être modélisée, comme peut l’être le mouvement des planètes ou le développement du fœtus, n’est pas nécessairement acceptée par tous ceux qui s’intéressent aux langues et prennent du plaisir à les apprendre ou les étudier. Cet ouvrage souhaite montrer qu’on peut dégager de manière méthodique les propriétés des langues, mettre de l’ordre dans la forêt vierge que constitue chaque langue et élaborer un objet théorique qui reproduise certaines propriétés d’un locuteur qui parle et que nous appelons un modèle d’une langue.
+
+Il existe en linguistique, comme ailleurs en sciences humaines, des courants théoriques variés, plus ou moins d’accord entre eux. Cet ouvrage ne se situe pas précisément dans un courant dominant en linguistique, mais il puise largement dans le courant structuraliste qui s’est développé depuis un siècle, des travaux pionniers de Ferdinand de Saussure aux travaux actuels en linguistique formelle, en passant par les travaux précurseurs d’Otto Jespersen, ceux des distributionnalistes américains, Leonard Bloomfield en tête, et ceux de Lucien Tesnière et d’Igor Mel’čuk en syntaxe de dépendance. Les auteurs de ce livre ont une formation initiale en mathématiques et ont travaillé dans le domaine du traitement automatique des langues, des grammaires formelles et de la modélisation mathématique des langues et ils enseignent la linguistique à tous les niveaux universitaires. Bien que cet ouvrage ne traite pas directement de formalisation mathématique et d’implémentation informatique, il se place dans le cadre d’une \textbf{approche déductive de la langue} dont l’objectif est de construire des modèles qui peuvent être formalisés et implémentés pour simuler un locuteur humain. Ce n’est néanmoins pas l’objectif de ce livre de présenter des modèles de la langue ; ce livre se contente d’introduire, de la façon la plus rigoureuse possible, les notions nécessaires à l’étude de la syntaxe, en se concentrant sur les structures syntaxiques et non sur les règles de la grammaire.
+
+Cet ouvrage a une visée à la fois \textbf{scientifique} et \textbf{pédagogique~}: il a été élaboré avec l’objectif de fournir une base pour l’enseignement de la syntaxe à l’université et de présenter des notions fondamentales pour l’étude des langues, aussi diverses soient-elles. Nous espérons qu’il montre qu’il est utile d’enseigner la syntaxe pour comprendre le fonctionnement des langues et mieux les enseigner et les apprendre. Cet ouvrage souhaite également montrer que la syntaxe est un domaine de recherche vivant et que de nombreuses questions restent ouvertes, même pour des langues très étudiées comme le français.
+
+Cet ouvrage écrit en français est évidemment destiné aux francophones et à ceux qui apprennent le français. Le français constituera donc la langue que nous étudierons par défaut. Bien que cet ouvrage ne soit pas une grammaire méthodique du français, il constitue une bonne introduction à la \textbf{syntaxe du français}. Mais il souhaite aussi fournir les outils nécessaires à l’étude d’autres langues, même très éloignées du français. À chaque fois que cela sera utile, nous montrerons le caractère exotique du français dans la \textbf{diversité des langues} et présenterons pour la notion étudiée un fonctionnement différent de celui du français dans une autre langue.
+
+
+
+\loupe{La syntaxe et les autres domaines de la linguistique}{
+    La syntaxe n’est qu’une partie d’un modèle linguistique, bien que dans beaucoup de théories linguistiques, elle occupe une place centrale ou même dominante par rapport aux autres domaines. Avant de préciser ce qu’est la syntaxe, nous allons situer celle-ci parmi les autres domaines de la linguistique. Nous allons le faire en répondant à différentes questions que l’on peut se poser concernant la langue.
+
+    Comment fonctionne l’esprit ? Comment fonctionne le raisonnement ? Comment les modéliser, les imiter ?
+
+    Ce genre de questions appartient à la \textbf{psychologie}, la \textbf{neurologie}, la \textbf{logique}, l’\textbf{intelligence artificielle}, mais on peut espérer que de nouvelles connaissances en linguistique éclaireront aussi ces sujets. En quelque sorte, la linguistique peut être considérée comme un sous-domaine de chacune des disciplines citées : elle couvre les questions liées à la langue qui se posent dans ces sciences. Parfois, on classe toute cette thématique sous le terme de \textbf{sciences cognitives}.
+
+    Que veut dire le dernier énoncé que j’ai entendu ? Comment ai-je pu en extraire le sens ? Comment combiner le sens des mots pour former le sens des énoncés ? Ou en quoi la phrase « Paul et Marie porte un chapeau » se distingue-t-elle de la phrase «~Paul et Marie porte une machine à laver » ?
+
+    Ces questions caractérisent la \textbf{sémantique}. Même si elles ne relèvent pas directement de la syntaxe, nous les aborderons à plusieurs reprises, pour mieux délimiter la syntaxe, mais aussi parce que la syntaxe s’articule directement avec la sémantique.
+
+    Pourquoi dit-on telle ou telle phrase dans un contexte particulier ? Quelle est la signification d’un énoncé dans un contexte ? Dans des termes plus techniques : quel est le but de l’acte de langage et comment est-il poursuivi ? Concrètement : pourquoi doit-on donner à la question « Vous avez l’heure ? ~» la réponse « Il est trois heures~» et pas la réponse «~Oui~» ?
+
+    Ces questions font partie de la \textbf{pragmatique} et se situent au-delà de la sémantique. Nous n’y toucherons pas.
+
+    Dans quel ordre doit-on placer les mots ? Quand doit-on utiliser un verbe ou un nom ? A-t-on le droit de coordonner des pronoms interrogatifs ? Quel type de structure forment les mots assemblés en une phrase ?
+
+    Celles-ci et beaucoup d’autres questions que nous étudions dans ce livre concernent la \textbf{syntaxe}.
+
+    Comment représenter et récupérer l’information sur le fonctionnement de chaque mot ? Pourquoi dit-on une peur bleue, mais vert de peur ?
+
+    Ces informations sont dans le lexique. La \textbf{lexicologie} est la science qui étudie le lexique. Nous aborderons ces questions dans la mesure où les particularités lexicales ont une influence sur la syntaxe et où la frontière entre les constructions syntaxiques et le lexique proprement dit est plus que mouvante. La question est discutée avec plus de détails dans la section suivante.
+
+    Comment sont formés les mots ? De quelles entités sont-ils formés ? Pourquoi peut-on dire désespéré et non désattendu ? Comment se forme la 2\textsuperscript{e} personne singulier du passé simple pour le verbe aimer ?
+
+    La \textbf{morphologie} tente de répondre à ces questions. Nous verrons qu’une partie de ces questions relèvent pour nous de la syntaxe (par exemple la conjugaison des verbes).
+
+    Quels sont les sons d’une langue ? Quelles sont les combinaisons possibles de ces sons ? Par exemple, pourquoi les Espagnols mettent-ils des e devant chaque mot dont l’équivalent français commence par sp comme especial ? Pourquoi les Français prononcent-ils ze au lieu de the quand ils parlent anglais ? Dans la phrase « Le fromage je n’aime vraiment pas », pourquoi la mélodie monte-t-elle sur le mot fromage ? Comment est représentée la prononciation d’un mot dans le cerveau ?
+
+    La \textbf{phonologie} s’interroge sur ces questions. Nous les aborderons dans la mesure où la structure phonologique des énoncés nous offre de nombreux indices sur la structure syntaxique des énoncés et où la langue parlée constitue, du notre point de vue, un bien meilleur sujet d’étude que la langue écrite.
+
+    Comment sont réellement formés les sons de la langue ? Comment se distingue un son d d’un son z ? Pourquoi y a-t-il une différence entre un son k prononcé devant i et un son k prononcé devant u ? Comment se distingue le son a de l’allemand du son a du français.
+
+    S’il s’agit de répondre à ces questions en termes de fonctionnement de la langue et de l’humain produisant les sons, on se trouve dans la \textbf{phonétique} (articulatoire), si c’est en termes purement techniques et physiques, c’est plutôt l’\textbf{acoustique} et le \textbf{traitement du signa}l, un domaine relevant de la physique, qui sont concernés.
+
+    Il existe d’autres domaines en linguistique, notamment tout ce qui concerne la langue dans ses variations dans le temps et dans l’espace : sociolinguistique, géolinguistique, dialectologie, diachronie, origine du langage, génétique des langues, grammaticalisation, créolisation, productivité lexicale, acquisition de la langue par l’enfant, apprentissage d’une langue seconde. Il existe aussi de nombreux domaines d’application : le traitement automatique des langues ou TAL (traduction automatique, recherche d’information sur le web ou dans des bases de données, aide aux handicapés, synthèse de la parole), l’enseignement de la langue (Français Langue Étrangère ou FLE pour les apprenants langue seconde, la didactique des langues pour les écoliers francophones), etc. Dans les champs interdisciplinaires, nous trouvons la psycholinguistique, la sociolinguistique, la neurolinguistique, la linguistique textuelle, la linguistique mathématique, etc.
+}
+
+\section{Grammaire et lexique}\label{sec:0.0.5}
+
+Lorsqu’un locuteur veut énoncer une idée dans sa langue, il doit trouver dans son \textstyleTermes{lexique} les unités lexicales qui correspondent le mieux aux entités dont il veut parler. Mais, pour former la phrase, le locuteur a besoin d’autres éléments linguistiques qui sont contraints de diverses façons par la langue. L’étude de ces éléments et des contraintes que la langue impose à un locuteur s’appelle la \textstyleTermes{grammaire} de cette langue.
+
+En fait, la frontière entre lexique et grammaire n’a rien d’évident. La description d’une langue est la description de chacune des unités de la langue et de la façon dont elles se combinent. Parmi ces unités, on trouve des unités lexicales prototypiques comme \textsc{cheval} ou \textsc{manger}, tandis que d’autres sont des unités grammaticales incontestables comme le temps imparfait (\textit{Le cheval mange}\textbf{\textit{ai}}\textit{t}) ou les différentes réalisations syntaxiques du pluriel (\textit{L}\textbf{\textit{es}} \textit{chev}\textbf{\textit{aux}} \textit{mangeai}\textbf{\textit{ent}}). Mais d’autres unités, tout en partageant des propriétés avec les unités lexicales prototypiques ont aussi un fonctionnement grammatical, comme \textsc{chose} ou \textsc{faire} (\textit{La} \textbf{\textit{chose}} \textit{que je préfère, c’est manger~}; \textit{Ce que je préfère} \textbf{\textit{faire}}, \textit{c’est manger}). Inversement, des unités qui ont un fonctionnement a priori grammatical, comme la préposition \textsc{à} dans \textit{Elle parle} \textbf{\textit{à}} \textit{Pierre}, auront un fonctionnement beaucoup plus lexical lorsqu’elles commutent avec d’autres unités : \textit{Elle est} \textbf{\textit{à}} \textit{la maison,} \textbf{\textit{dans}} \textit{la maison,} \textbf{\textit{devant}} \textit{la maison,} \textbf{\textit{derrière}} \textit{la maison}, etc.
+
+La distinction entre lexique est grammaire est orthogonale à la partition du modèle linguistique entre morphologie, syntaxe et sémantique. Toutes les unités, qu’elles soient lexicales ou grammaticales, possèdent une forme, un sens et une combinatoire qu’il faut décrire (voir la \sectref{sec:2.1.3} sur \textit{Signifié, signifiant, syntactique}). La \textstyleTermes{syntaxe} est l’étude de la \textbf{combinatoire des unités lexicales et grammaticales} et tout particulièrement des combinaisons libres obéissant à des règles générales. La syntaxe se trouve à mi-chemin de la \textstyleTermes{sémantique} qui s’intéresse au \textbf{sens} des unités lexicales et grammaticales et des énoncés qu’elles forment en se combinant et de la \textstyleTermes{morphologie} qui s’intéresse à la \textbf{forme} et la structure des unités que la syntaxe combine.
+
+\loupe{Notations}{
+    Nous notons nos \textit{exemples linguistiques} en italiques. Pour les \textsc{unités lexicales}, nous utilisons des petites capitales. Lorsqu’il s’agit d’unités lexicales multi-mots comme \textrm{\textsuperscript{⌜}}\textsc{pomme de terre}\textrm{\textsuperscript{⌝}}, nous utilisons des balises angulaires. Les unités grammaticales sont quant à elles généralement désignées par des termes métalinguistiques : présent, singulier, féminin, etc. Le sens d’une unité lexicale ou d’une portion de texte est indiqué en guillemets simples : ‘cheval’, ‘pomme de terre’, ‘le cheval mange’. La signification d’une unité grammaticale est également noté entre guillemets, mais en mettant le terme en petites capitales : ‘\textsc{singulier’}. On ne confondra pas le sens grammatical ‘\textsc{présent’} qui signifie ‘ayant lieu maintenant’ avec le sens lexical ‘présent’.
+}
+
+\eiffel{Le lexique : un cabinet de curiosités}{
+    Bien que la syntaxe et la grammaire soient au centre de cet ouvrage, on ne peut pas ne pas évoquer la complexité lexicale dans un tel ouvrage. Nous allons en donner trois exemples.
+
+    Chaque verbe impose à ses compléments une construction particulière : \textit{manger quelque chose, parler} \textbf{\textit{à}} \textit{quelqu’un} \textbf{\textit{de}} \textit{quelque chose, donner quelque chose} \textbf{\textit{à}} \textit{quelqu’un, compter} \textbf{\textit{sur}} \textit{quelqu’un, aller quelque part, poser quelque chose quelque part}, etc. Ces constructions se comptent en dizaines. Même lorsque ces constructions semblent similaires, comme \textit{parler à quelqu’un} et \textit{penser à quelqu’un}, elles peuvent différer par leur comportement : ainsi, \textit{à Marie, je lui parle, j’y pense} ou \textit{je pense à elle}, mais on ne pourra pas dire *\textit{je lui pense} ou~\textsuperscript{??}\textit{je parle à elle} (pour l’utilisation des symboles * et~\textsuperscript{??}, voir la \sectref{sec:1.1.11} sur l’\textit{Acceptabilité}). Dans certains cas, le verbe contraint tellement son complément que seules quelques formes sont acceptables. C’est le cas par exemple de la tournure verbale \textit{y comprendre quelque chose}, qui n’est possible qu’avec les compléments suivants : \textit{Je n’y comprends} \textbf{\textit{rien}}, \textit{Je n’y comprends pas} \textbf{\textit{grand-chose}}, \textbf{\textit{Que}} \textit{puis-je y comprendre} ?, \textit{Y comprends-tu} \textbf{\textit{quelque chose~}}? et \textit{J’y comprends} \textbf{\textit{que dalle}}. Il est impossible d’avoir un groupe nominal référentiel comme complément : *\textit{J’y comprends une chose intéressante}. La liste des compléments possibles de cette acception de \textsc{comprendre} constitue ainsi un véritable cabinet de curiosités avec un pronom interrogatif (\textsc{quoi} et sa forme atone \textit{que}), un pronom négatif (\textsc{rien}), deux pronoms indéfinis — \textrm{\textsuperscript{⌜}}\textsc{quelque chose}\textrm{\textsuperscript{⌝} }qui n’est possible ici qu’avec l’interrogation et \textsc{grand-chose}\textrm{ }qui est toujours accompagné de la négation — et enfin \textrm{\textsuperscript{⌜}}\textsc{que dalle}\textrm{\textsuperscript{⌝}}. Notons que d’autres tournures verbales possèdent quasiment la même complémentation : \textit{Ça ne rime à rien, Ça ne rime pas à grand-chose, À} \textit{quoi ça rime} ?, mais pas *\textit{Ça rime à une chose intéressante} ou *\textit{Ça rime à faire ça}.
+
+    Les exceptions lexicales sont encore plus nombreuses quand on se rapproche de la grammaire. Le français possède par exemple plusieurs éléments négatifs qui se construisent avec \textit{ne} : \textit{Je} \textbf{\textit{ne}} \textit{dors} \textbf{\textit{pas}}, \textit{Je} \textbf{\textit{ne}} \textit{dors} \textbf{\textit{plus}}, \textit{Je} \textbf{\textit{ne}} \textit{dors} \textbf{\textit{jamais}}, \textit{Je} \textbf{\textit{ne}} \textit{dors} \textbf{\textit{nulle part}}, \textit{Je} \textbf{\textit{ne}} \textit{mange} \textbf{\textit{rien}}, \textit{Je} \textbf{\textit{ne}} \textit{parle à} \textbf{\textit{personne}}, \textit{Je} \textbf{\textit{n’}}\textit{ai} \textbf{\textit{aucun}} \textit{problème, Je} \textbf{\textit{n’}}\textit{ai} \textbf{\textit{qu’}}\textit{une idée}. Chacun de ces éléments possède des propriétés syntaxiques différentes : par exemple \textsc{jamais} peut être déplacé, mais pas \textsc{pas} ou \textsc{plus~}: \textbf{\textit{Jamais}} \textit{je ne dors} vs *\textbf{\textit{Plus}} \textit{je ne dors}. \textsc{jamais} et \textsc{plus} peuvent être combinés, mais pas \textsc{jamais} et \textsc{pas~}: \textbf{\textit{Jamais plus}} \textit{je ne dormirai, Je ne dormirai} \textbf{\textit{plus jamais}} vs *\textit{Je ne dormirai} \textbf{\textit{pas jamais}}, \textit{*Je ne dormirai} \textbf{\textit{jamais pas}}. Notons encore que \textsc{rien} et \textsc{personne} se placent différemment par rapport au verbe : \textit{Je n’ai vu} \textbf{\textit{personne}}, \textit{Je n’ai} \textbf{\textit{rien}} \textit{vu}. Sans aller plus loin, on aura compris que chacun de ces éléments négatifs nécessitera une étude séparée simplement pour déterminer ses propriétés combinatoires, c’est-à-dire sa «~syntaxe~». Il en va de même de chacun des pronoms interrogatifs ou de chacun des pronoms relatifs et ainsi de la plupart des unités lexicales ayant un rôle grammatical.
+
+    Terminons par l’exemple des \textstyleTermes{constructions}, ainsi que l’on nomme les configurations qui possèdent un rôle grammatical. Il existe en français une construction très employée, le présentatif \textrm{\textsuperscript{⌜}}\textsc{il y a … qu-}\textrm{\textsuperscript{⌝}}, pratiquement obligatoire à l’oral lorsque le sujet est indéfini :
+
+    \ea
+    \textbf{{Il y a}} {quelqu’un} \textbf{{qui}} {nous regarde depuis la fenêtre.}
+    \z
+    \ea
+    \textbf{   {Il y a}} {des choses} \textbf{{que}} {j’ai} {achetées là-bas} {sur la table.}
+    \z
+
+    Le présentatif peut être combiné avec la restriction en \textrm{\textsuperscript{⌜}}\textsc{ne … que}\textrm{\textsuperscript{⌝}} :
+
+   \ea
+    {Il} \textbf{{n’}}{y a} \textbf{{que}} {des choses que j’ai} {achetées là-bas} {sur la table.}
+    \z
+
+   La combinaison du présentatif avec la restriction s’applique à des compléments indirects :
+
+   \ea
+    \textbf{{Il n’y} {a qu’}}{à un endroit} \textbf{{qu’}}{on les trouve.}
+    \z
+    \ea
+    \textbf{   {Il n’y} {a qu’}}{à elle} \textbf{{que}} {je pense.}
+    \z
+
+   alors que le présentatif seul ne le peut pas :
+
+   \ea
+    {*}\textbf{{Il y a}} {à un endroit} \textbf{{qu’}}{on les trouve.}
+    \z
+    \ea
+    {*}\textbf{{Il y a}} {à quelqu’un} \textbf{{que}} {je pense.}
+    \z
+
+   Lorsque le présentatif s’applique à un complément avec possessif, on peut exprimer cette possession dans la forme même du présentatif :
+
+   \ea
+    \textbf{{Il y a}} {mon frère} \textbf{{qui}} {doit venir.}
+    \z
+    \ea
+    \textbf{   {J’ai} }{mon frère} \textbf{{qui}} {doit venir.}
+    \z
+
+   Enfin, la même configuration peut être utilisée pour introduire un complément de temps avec le sens ‘depuis’ :
+
+   \ea
+    \textbf{{Il y a} }{une semaine} \textbf{{qu’}}{on ne s’est} {pas vu.}
+    \z
+
+   Dans ce cas, elle possède une variante, mais celle-ci n’est possible que pour les compléments de temps :
+
+   \ea
+    \textbf{{Ça} {fait}} {une semaine} \textbf{{qu’}}{on ne s’est} {pas vu.}
+    \z
+    \ea
+    {*}\textbf{{Ça} {fait}} {des choses} \textbf{{que}} {j’ai} {achetées là-bas.}
+    \z
+
+   Comme on le voit, on retrouve pour ces constructions de nombreuses \textbf{idiosyncrasies} qui justifient de leur donner une description détaillée, au même titre que les autres unités lexicales.
+    }
+\section{Le plan du livre}\label{sec:0.0.8}
+
+Ce livre est divisé en six parties que nous avons esquissées à la \sectref{sec:0.0.2} sur \textit{Les questions qui nous préoccupent}. Nous allons préciser le plan du livre.
+
+La première partie explique en quoi consiste une \textstyleTermes{langue} et la \textstyleTermes{modélisation} de cette langue (\chapref{sec:1.1}) et quelles sont les caractéristiques du modèle linguistique que nous construisons (\chapref{sec:1.3}). Cette première partie permet donc de comprendre quel est le cadre théorique de cet ouvrage et avec quel objectif nous souhaitons mener notre étude de la langue et de sa syntaxe. La modélisation est illustrée par l’exemple de la production d’un énoncé (\chapref{sec:1.2}).
+
+La deuxième partie pose la question des unités minimales de la langue (\chapref{sec:2.1}). Étudier la combinatoire des unités qui constituent les énoncés ne peut se faire qu’après avoir identifié les unités qui se combinent et notamment les unités minimales. Nous montrons qu’il est nécessaire de considérer trois types d’unités minimales : les \textstyleTermes{morphèmes} ou unités minimales de forme (\chapref{sec:2.2}), les \textstyleTermes{sémantèmes} ou unités minimales de sens (\chapref{sec:2.3}) et les \textstyleTermes{syntaxèmes} ou unités minimales de la syntaxe, c’est-à-dire de la combinatoire libre. La distinction de trois types d’unités résulte de la non-correspondance entre les unités de forme et de sens. Prenons un exemple :
+\ea
+    \textit{Les étudiants m’ont donné un coup de main.}
+\z
+Il y a dans cet énoncé plusieurs sémantèmes qui sont exprimés par une combinaison de morphèmes : \textit{coup de main} bien sûr, qui ne signifie pas ici un coup de la main, mais aussi \textit{étudiant}, qui combine le radical du verbe \textsc{étudier} avec le morphème -\textit{ant} ou encore le passé composé exprimé par le verbe \textsc{avoir} combiné avec le morphème de participe passé \textit{{}-é}.
+
+La troisième partie introduit les \textstyleTermes{unités syntaxiques} et la façon dont celles-ci se combinent pour former la \textstyleTermes{structure syntaxique}. On y définit la syntaxe comme l’étude des \textstyleTermes{combinaisons libres} d’unités et on caractérise plus précisément le syntaxème (\chapref{sec:3.1}). Nous montrons que les différentes fragmentations d’un énoncé en unités syntaxiques définissent un graphe que nous appelons la \textstyleTermes{structure de connexion} et qui décrit les combinaisons entre syntaxèmes (\chapref{sec:3.2}). On peut en plus hiérarchiser cette structure en considérant la notion de \textstyleTermes{tête} d’une unité syntaxique et obtenir ainsi une \textstyleTermes{structure de dépendance} (\chapref{sec:3.3}). On montre comment représenter cette structure de manière plus ou moins équivalente par un \textstyleTermes{arbre de constituants} (\chapref{sec:3.4}). On s’intéresse ensuite au lien d’une part entre la structure et le texte et d’autre part entre la structure syntaxique et le sens. Le premier cas concerne l’ «~ordre des mots~», c’est-à-dire à la façon dont les syntaxèmes s’ordonnent les uns par rapport aux autres et se regroupent pour former des \textstyleTermes{constituants topologiques} au sein de la \textstyleTermes{structure topologique} (\chapref{sec:3.5}). Le deuxième cas concerne l’\textstyleTermes{interface} \textstyleTermes{sémantique-syntaxe}, c’est-à-dire à la façon dont les sémantèmes se combinent, ce que décrit la \textstyleTermes{structure syntaxique profonde}, qui rend compte de la distinction entre \textstyleTermes{actant} et \textstyleTermes{modifieur} et des restructurations parfois complexes entre la représentation sémantique et la structure syntaxique (\chapref{sec:3.6}).
+
+Les trois parties suivantes présentent les trois grands domaines de la syntaxe, que nous appelons nanosyntaxe, microsyntaxe et macrosyntaxe, et les principales notions de la syntaxe seront présentées : le mot, les catégories flexionnelles, les catégories lexicales, les fonctions syntaxiques, la phrase. Les principales constructions seront également étudiées, et notamment les listes, l’extraction et l’organisation des énoncés autour d’un noyau.
+
+La quatrième partie de ce livre est donc consacrée à la \textstyleTermes{nanosyntaxe} ou \textstyleTermes{morphosyntaxe}. Elle présente les combinaisons de \textstyleTermes{syntaxèmes} possédant une très grande cohésion, dont les composantes sont indissociables et se situent à l’intérieur ou à la frontière des mots. Elle inclut la \textstyleTermes{syntaxe flexionnelle} et la syntaxe des \textstyleTermes{particules}, c’est-à-dire la syntaxe de tous les éléments qui sont des marqueurs grammaticaux et qui possèdent très peu d’indépendance syntaxique. Nous montrons en particulier que le \textstyleTermes{mot} n’est qu’un degré particulier dans l’échelle de cohésion des combinaisons de syntaxèmes en unités syntaxiques, même s’il constitue une unité naturelle et l’unité qui a été privilégiée pour la transcription écrite de nombreuses langues (\chapref{sec:4.1}). Nous terminons cette partie par une première classification des unités minimales de la syntaxe et introduirons les \textstyleTermes{catégories flexionnelles} (\chapref{sec:4.2}) et les \textstyleTermes{catégories nanosyntaxiques} de \textstyleTermes{lexèmes} (\chapref{sec:4.3}).
+
+La cinquième partie est consacrée à la \textstyleTermes{microsyntaxe}, c’est-à-dire la syntaxe de rection : la \textstyleTermes{rection} se caractérise par une relation hiérarchique avec des contraintes de réalisation imposées par un gouverneur à ses dépendants. Elle constitue la syntaxe \textit{par excellence.} Nous introduisons la \textstyleTermes{syntaxe de dépendance de surface} et la distinction entre les propriétés fonctionnelles et catégorielles des éléments d’un énoncé. Nous étendons le classement des syntaxèmes à l’ensemble des unités syntaxiques et étudions les \textstyleTermes{catégories microsyntaxiques} et le rôle de la \textstyleTermes{translation} (\chapref{sec:5.1}). Le classement des syntagmes nous amène à introduire la notion de \textstyleTermes{relation syntaxique}. Les différentes \textstyleTermes{fonctions syntaxiques} que peut remplir une unité sont caractérisées et notamment la fonction \textit{sujet}, qui pose problème, dès qu’on prend en compte les langues ergatives (\chapref{sec:5.2}). Une attention particulière est portée aux \textstyleTermes{listes} ou \textstyleTermes{entassements paradigmatiques} : nous regroupons sous ce terme différents phénomènes, allant de la coordination à la reformulation, où plusieurs éléments viennent occuper une même position régie (\chapref{sec:5.3}). L’étude détaillée de l’\textstyleTermes{extraction} et du rôle complexe joué par des éléments tels que les pronoms relatifs constitue le dernier chapitre de cette partie (\chapref{sec:5.4}).
+
+La sixième partie est consacrée à la \textstyleTermes{macrosyntaxe}, c’est-à-dire l’étude de tout ce qui se situe au-delà de la microsyntaxe, notamment les éléments associés au noyau central de l’énoncé sans pour autant être régis. Nous y définissons l’\textstyleTermes{unité illocutoire} qui constitue l’unité minimale du discours et étudions son organisation interne en \textstyleTermes{noyau} et \textstyleTermes{adnoyaux}. Nous montrons pourquoi la notion traditionnelle de \textstyleTermes{phrase} est problématique, notamment parce qu’il y a de la rection au-delà des limites de l’unité illocutoire et qu’à l’inverse des unités non régies peuvent venir s’insérer à l’intérieur d’une unité illocutoire (\chapref{sec:6.1}).
+
+\loupe{Les termes grammaire, syntaxe et topologie}{
+    Le terme grec \textit{grammatikē} \textit{technē} (γραμματικὴ τέχνη) désignait « \textbf{l’art} \textbf{des lettres} », \textit{lettre} dans le sens de «~l’écrit~» ; c’était donc l’étude de l’écrit (et l’étude de sa lecture). Elle s’est ensuite développée en science de l’interprétation des textes, ce que, aujourd’hui, on classe plutôt sous le terme de \textstyleTermesapprof{philologie} et que l’on distingue de la \textstyleTermesapprof{grammaire}. Il y a 3000 ans, bien avant les Grecs, il existait déjà des études grammaticales (au sens moderne du terme) de langues telles que le sanskrit ou le chinois et au 5\textsuperscript{e} siècle avant notre ère, le grand linguiste indien Pā\textrm{ṇ}ini a développé une analyse systématique de la nanosyntaxe du sanskrit. Les \textit{Institutiones grammaticae}, écrites au 6\textsuperscript{e} siècle par le grammairien latin Priscien, auront une influence déterminante sur le développement de la grammaire en Europe. Beaucoup de termes grammaticaux encore en utilisation aujourd’hui proviennent de l’étude du latin, \textit{lingua franca} jusqu’à la fin du moyen-âge.
+
+    Le terme \textit{syntaxis} est également grec : il est composé de \textit{syn} (συν) ‘ensemble’ \textit{et de táxis} (τάξις) ‘ordre, arrangement’. La \textstyleTermesapprof{syntaxe} a désigné l’étude de l’ordre des mots, puis plus largement l’étude de l’organisation des mots dans la phrase. Le terme allemand pour syntaxe est \textit{Satzlehre}, tout simplement la ‘science de la phrase’. Dans la conception traditionnelle, l’analyse syntaxique est limitée d’un côté par le mot, et de l’autre par la phrase : les structures en deçà du mot ne font pas partie de la syntaxe, elles appartiennent à la morphologie ; le \textbf{discours}, l’enchaînement de plusieurs phrases, n’est pas le sujet de la syntaxe, mais de la linguistique des textes ou \textstyleTermesapprof{analyse du discours}. Notre définition de la syntaxe ne présuppose ni la notion de mot, ni celle de phrase, et considère la \textstyleTermesapprof{morphologie} comme l’étude de la \textbf{combinaison des signifiants des signes} (voir la \sectref{sec:2.1.3} sur \textit{Signifié, signifiant, syntactique}).
+
+    Les termes \textit{microsyntaxe} et \textit{macrosyntaxe} ont été forgés en 1990 par les linguistes qui se sont intéressés aux productions orales spontanées (notamment à Aix-en-Provence autour de Claire Blanche-Benveniste et à Fribourg en Suisse autour d’Alain Berrendonner) et ont vu la difficulté que pouvait poser une segmentation en phrases comme à l’écrit. Sur le même modèle, nous proposons le terme \textit{nanosyntaxe}, à la place du terme \textit{morphosyntaxe}, pour compléter la partition de l’étude de la syntaxe. Nous introduisons le terme \textit{syntaxème} pour nommer les \textbf{unités minimales} de la syntaxe, sur le même modèle que les termes \textit{morphème} et \textit{sémantème}, désignant respectivement les unités minimales de forme et de sens.
+
+    Dans l’usage du terme \textit{syntaxe}, on est passé de l’étude de l’ordre des mots à, aujourd’hui, l’étude de la combinaison des syntaxèmes et aux structures hiérarchiques qui en résultent. Une des conséquences est qu’il fallait réintroduire un nouveau terme pour l’étude de l’\textbf{ordre des mots} et des syntaxèmes. Nous avons adopté le terme \textit{topologie}, également d’origine grecque : la \textstyleTermesapprof{topologie} est l’étude des \textit{topos} (τόπος), c’est-à-dire l’étude des lieux. Le terme a été introduit au 19\textsuperscript{e} siècle par les linguistes décrivant l’ordre des mots des langues germaniques à l’aide de gabarits de places : le \textbf{modèle topologique} de l’allemand décrit la façon dont la phrase allemande peut être décomposée en cinq \textbf{champs}, les deuxième et quatrième champs modélisant les positions réservées aux verbes (voir le \chapref{sec:3.5} sur \textit{La topologie}).
+}
+\section{Commentaires sur le plan}\label{sec:0.0.10}
+
+Le plan de cet ouvrage amène plusieurs commentaires et permet déjà de se faire une idée des principaux partis pris.
+
+On constatera tout d’abord que nous considérons trois structures «~syntaxiques~» — la structure topologique, la structure de dépendance de surface et la structure syntaxique profonde — là où la plupart des approches n’en considèrent qu’une : la structure syntagmatique ou analyse en constituants immédiats. Nous aurons plusieurs fois l’occasion de justifier le fait de séparer les informations qui peuvent l’être et donc de dissocier les différents modes d’organisation des différents types d’unités qui apparaissent dans un énoncé.
+
+Autre point : nous donnons une place importante aux interfaces, c’est-à-dire à la correspondance entre les différents niveaux de représentation de l’énoncé. Ceci est principalement dû à notre objectif de modélisation : nous ne souhaitons pas seulement montrer comment un énoncé est structuré, mais aussi comment un locuteur produit ces différentes structures et quels rôles elles jouent dans la production des énoncés. Modéliser la langue, c’est pour nous modéliser comment une personne parle, c’est-à-dire comment elle produit des énoncés dans sa langue en fonction du message qu’elle souhaite communiquer.
+
+La plupart des ouvrages de syntaxe et des cours de linguistique à l’université commencent par l’étude des catégories syntaxiques ou parties du discours, c’est-à-dire la caractérisation de ce qu’est un verbe, un nom, un adjectif, etc. Nous pensons pour notre part qu’une bonne définition des catégories syntaxiques ne peut se faire qu’après avoir dégagé la structure des énoncés et que la caractérisation des catégories repose sur l’analyse distributionnelle des unités syntaxiques à l’intérieur des combinaisons complexes dans lesquelles elles entrent. Autrement dit, on ne peut caractériser les catégories syntaxiques d’une langue par l’étude du simple enchaînement linéaire des unités dans la chaîne parlée : il faut prendre en compte les relations plus complexes qui lient les éléments d’un énoncé et dont l’ordre des mots en surface n’est qu’une projection. La description des liens syntaxiques est au cœur de la syntaxe de dépendance et elle occupe une place centrale dans ce livre. Les catégories syntaxiques seront définies en deux chapitres (4.3 et 5.1) distribués dans les parties consacrées à la nanosyntaxe et à la microsyntaxe.
+
+Cette présentation assez systématique des notions utiles à la syntaxe nous a obligé à définir de nouveaux concepts ou à revoir certains concepts traditionnels. Selon les cas, nous avons décidé d’utiliser un terme déjà usuel dans un sens un peu différent ou bien nous avons forgé un nouveau terme. Parmi les néologismes que contient cet ouvrage, on notera le terme \textit{syntaxème} utilisé pour nommer les unités minimales de la syntaxe (qui curieusement ne sont jamais nommées) et \textit{nanosyntaxe} pour désigner la syntaxe des éléments qui possèdent peu d’autonomie syntaxique. Par ailleurs, d’autres termes peu fréquents dans les manuels de syntaxe occupent ici une position plus centrale, comme \textit{sémantème}, \textit{topologie, macrosyntaxe} ou \textit{syntaxe profonde}.
+
+\loupe{Notions, termes, concepts et définitions}{
+    Nous allons illustrer la distinction entre notions, termes, concepts et définitions à partir d’un exemple. Considérons la \textstyleTermesapprof{définition} suivante :
+
+    \ea
+    Une \textit{phrase} est un segment de texte qui se trouve entre deux ponctuations majeures successives.
+    \z
+
+    Un \textstyleTermesapprof{terme} est introduit : \textit{phrase}. Ce terme est associé à un \textstyleTermesapprof{concept}. Le concept est un objet abstrait, conceptuel, qui n’est accessible qu’à travers la définition qui le caractérise, à savoir «~un segment de texte qui se trouve entre deux ponctuations majeures successives~». En associant ce terme et ce concept, nous construisons une notion. Une \textstyleTermesapprof{notion} est donc un concept nommé ou un terme défini et associé à un concept.
+
+    La distinction entre le terme et le concept qui lui correspond est essentielle, puisqu’un même terme peut être associé par différents auteurs à différents concepts. Évidemment, une fois que nous avons associé le terme \textit{phrase} à un concept, nous pouvons parler de «~la notion de phrase~», mais il faut être conscient qu’il s’agit d’un raccourci pour désigner «~la notion que nous avons nommée \textit{phrase} et qui ne doit pas être confondue avec une autre notion que d’autres ont pu également nommer \textit{phrase} et qui peut à l’inverse avoir été nommée autrement par d’autres~».
+
+    Il y a plusieurs raisons pour lesquelles, en linguistique, la terminologie n’est pas bien stabilisée et un même terme tend à désigner des concepts divers. Une première raison est que beaucoup de ces termes (\textit{mot, phrase, nom, adverbe, sujet,} etc.) s’appliquent à des notions qui sont enseignées dès l’école et reçoivent donc des définitions simplifiées et facilement accessibles, qui deviennent inopérante lorsqu’un véritable cadre théorique est développé. Une deuxième raison est qu’il n’est pas possible de définir proprement de telles notions sans se doter d’un appareil conceptuel complexe et qu’il n’y a pas aujourd’hui de théorie consensuelle sur la nature de la langue et sur les primitives conceptuelles, c’est-à-dire les notions de base à partir desquels des notions plus complexes pourront être définies.
+
+    Dans cet ouvrage, nous allons nous attacher à introduire un appareillage théorique rigoureux. Nous introduirons un grand nombre de concepts auxquelles nous associerons bien sûr des termes. Nous avons fait le choix d’utiliser autant que possible les termes courants en linguistique, même lorsque nous décidions de définir une notion un peu différente de la tradition. C’est par exemple le choix que nous avons fait pour le terme \textit{syntaxe}, auquel nous donnons une acception différente de la tradition. Lorsque nous avons introduit des concepts nouveaux, nous nous sommes permis d’utiliser un terme vacant s’il n’était pas trop éloigné : c’est ce que nous avons fait avec le terme \textit{substantif}, qui désignait avant ce qu’on appelle aujourd’hui \textit{nom} et que nous avons attribué à une notion du même ordre, mais différente de celle du nom (voir \chapref{sec:5.1} sur \textit{Les catégories microsyntaxiques}). Lorsqu’aucun terme ne se présentait, nous nous sommes résolus à forger un nouveau terme. Nous avons alors cherché à régulariser la terminologie. C’est ce qui nous a amené à introduire le terme \textit{syntaxème} à côté des termes \textit{morphème} et \textit{sémantème}, ou à introduire le terme \textit{nanosyntaxe} à côté des termes \textit{microsyntaxe} et \textit{macrosyntaxe}.
+
+    On peut être en désaccord avec la définition d’une notion. Il est important de voir que ce désaccord peut se situer à trois niveaux bien différents. Revenons sur la notion qui illustre cette section. On peut être en désaccord :
+
+    \begin{itemize}
+    \item  au \textbf{niveau proprement définitionnel~}: on peut considérer que notre définition n’en est pas vraiment une, car elle comprend des termes qui n’ont pas été eux-mêmes définis. Qu’appelle-t-on une ponctuation majeure ? Le point-virgule est-il une ponctuation majeure ? Qu’entend-on exactement par un segment de texte ? S’agit-il juste d’une chaîne de caractères ou bien la phrase est-elle un signe linguistique avec un sens associé au texte proprement dit ?
+    \item  au \textbf{niveau théorique ou conceptuel :} la notion définie est-elle intéressante d’un point de vue théorique ? Certainement pas si on n’élimine pas le cas des points qui suivent une abréviation, comme dans \textit{Georges W.} \textit{Bush}. Et au-delà, les unités définies par la ponctuation sont-elles bien des unités linguistiques pertinentes ?
+    \item  au \textbf{niveau purement terminologique~}: est-ce bien à ce concept que l’on veut associer le terme \textit{phrase} ? Ou inversement, est-ce bien par le terme \textit{phrase} que l’on veut désigner ce concept ?
+    \end{itemize}
+
+    Les problèmes terminologiques sont secondaires : un mauvais choix de terme ne remet pas en cause une théorie. Mais ils peuvent être catastrophiques du point de vue pédagogique et rendre incompréhensible une construction théorique valable par ailleurs. Lorsqu’on introduit un concept, on a principalement deux options terminologiques : utiliser un terme existant, avec le risque que d’autres auteurs l’utilisent avec une acception différente (c’est le cas avec le terme \textit{phrase}), ou bien forger un nouveau terme, avec le risque d’avoir des termes «~barbares~» et difficiles à mémoriser. On peut par exemple proposer d’appeler le concept défini plus haut \textit{phrase graphique}. C’est ce que nous ferons dans la suite de l’ouvrage.
+
+    Une \textit{phrase graphique} est une unité de l’écrit, un segment de texte qui se trouve entre deux ponctuations majeures successives. Les ponctuations majeures sont le point (à l’exception des points utilisés dans les abréviations), le point d’interrogation, le point d’exclamation et les trois petits points. Le point virgule segmente une phrase en sous-phrases.
+
+    Les questions théoriques et conceptuelles sont les plus importantes : il est bien sûr crucial d’introduire les bons concepts. C’est l’ensemble des concepts introduits qui définit le cadre théorique à partir duquel un modèle d’une langue particulière pourra être élaboré. La notion de phrase que nous avons introduite est-elle vraiment la plus intéressante du point de vue linguistique ? Nous verrons que non, ne serait-ce que parce que l’écrit est une transcription de la langue et qu’une notion de l’ordre de la phrase existe indépendamment de la possibilité d’écrire ou pas (voir la \sectref{sec:1.1.2} sur les \textit{Sons et textes}).
+
+    Les problèmes définitionnels sont immenses. En général, la définition d’une notion fait appel à d’autres notions. Il faut donc comprendre quels sont les concepts qui doivent être définis avant les autres. Dans notre exemple, nous avons défini la phrase à partir de la ponctuation. Mais comment un locuteur sait-il où mettre des ponctuations majeures quand il écrit ? Produit-on des unités de l’ordre de la phrase lorsqu’on parle ? Si oui, il existe une unité de l’ordre de la phrase plus fondamentale que celle que nous venons de définir et qui ne se définit pas en fonction de l’écrit et encore moins en fonction de la ponctuation. Si beaucoup d’ouvrages de linguistique commence par la définition de la phrase, nous considérons pour notre part qu’il s’agit d’une notion complexe qui ne peut être définie qu’après avoir introduit la notion de cohésion syntaxique. C’est la raison pour laquelle les notions proches de la phrase seront seulement discutées à la fin de cet ouvrage, dans la sixième et dernière partie. Nous verrons de ce point de vue que derrière la phrase graphique se cache en fait deux types d’unités différentes, ce qui explique qu’il y a différentes façons de ponctuer une même production linguistique.
+}
+\section{Présentation de l’ouvrage}\label{sec:0.0.12}
+
+Cet ouvrage est volontairement découpé en sections n’excédant généralement pas une page. Nous avons essayé de donner à chacune de ces sections autant d’autonomie que possible, de manière à rendre une lecture non linéaire de l’ouvrage aussi facile que possible. Il est néanmoins évident que ce livre a été organisé selon un ordre mûrement réfléchi et que de nombreuses sections ne peuvent être lues sans avoir lu avant les sections qui introduisent certaines notions préalables indispensables.
+
+Certaines sections sont encadrées et présentées dans un style particulier. Ces \textbf{encadrés} sont des prolongements du texte principal de différentes natures. Nous avons cinq principaux types d’encadrés :
+
+\includegraphics[height=5mm]{figures/gk-loupe.pdf}
+des encadrés d’\textbf{éclairage}, prolongeant des points abordés dans le texte principal ;
+
+\includegraphics[height=5mm]{figures/gk-chevalier.pdf}
+des encadrés \textbf{historiques}, sur l’origine de certains termes ou de certains concepts ;
+
+
+\includegraphics[height=5mm]{figures/gk-maths.pdf}
+des encadrés \textbf{techniques}, présentant une élaboration de certaines notions, notamment du côté de la modélisation mathématique ;
+
+\includegraphics[height=5mm]{figures/gk-globe.pdf}
+des encadrés de \textbf{typologie linguistique}, montrant diverses réalisations d’un phénomène ou d’une propriété au travers de la diversité des langues ;
+
+\includegraphics[height=5mm]{figures/gk-eiffel.pdf}
+des encadrés sur le \textbf{français}, qui reste la langue privilégiée pour illustrer notre propos.
+
+A ces encadrés qui figurent dans le corps du texte s’ajoutent encore quatre autres types d’encadrés placés en fin de chapitre :
+
+\includegraphics[height=5mm]{figures/gk-halteres.pdf}
+un encadré d’\textbf{exercices} ;
+
+\includegraphics[height=5mm]{figures/gk-hamac.pdf}
+un encadré contenant des \textbf{éléments de correction} de nos exercices ;
+
+\includegraphics[height=5mm]{figures/gk-livre.pdf}
+un encadré de \textbf{lectures additionnelles}, comprenant en particulier les références citées au cours du chapitre ;
+
+\includegraphics[height=5mm]{figures/gk-guillemets.pdf}
+un éventuel encadré de \textbf{citations originales}, lorsque nous avons cité des auteurs qui n’avaient pas écrit en français.
+
+\section{Remerciements}\label{sec:0.0.13}
+
+Nous remercions les collègues et doctorants qui ont lu des parties du manuscrit et nous ont fait des commentaires qui nous ont parfois amené à réécrire des parties importantes : Nicolas Mazziotta, Marie-Sophie Pausé, Paola Pietrandrea, Rafaël Poiret.
+
+Nous remercions nos étudiants de la licence de sciences du langage et du master TAL sur qui nous avons testé une grande partie du contenu de cet ouvrage et qui par leurs réactions parfois critiques nous ont permis d’améliorer grandement le texte et d’ajuster le plan de l’ouvrage.
+
+Le contenu de cet ouvrage a fait l’objet de plusieurs articles et communications dans des colloques internationaux, notamment aux conférences bi-annuelles MTT (Meaning-Text Theory), créée en 2003 par Sylvain Kahane et Alexis Nasr, puis Depling (Dependency Linguistics) créée en 2011 par Kim Gerdes, Eva Hajičová et Leo Wanner. Nous remercions les collègues qui nous ont permis de développer nos idées en relisant et critiquant nos articles lors des soumissions ou en nous posant des questions lors des présentations.
+
+Nous remercions également les auteurs qui nous ont précédé et dont la lecture nous a inspiré. Le travail scientifique est cumulatif et la part d’innovation est toujours plus faible qu’on ne le pense. Nous remercions en particulier Claire Blanche-Benveniste, José Deulofeu, Nicolas Mazziotta, Igor Mel’čuk et Alain Polguère avec qui nous avons eu la chance de collaborer et de discuter différents points qui sont développés dans l’ouvrage.
+
+
+\exercices{
+    \exercice{1} Quelles sont, à côté de la syntaxe, les autres composantes d’un modèle linguistique ?
+
+    \exercice{2} Les notions de \textit{syntaxe} et grammaire sont souvent confondues. Pouvez-vous donner un élément du modèle d’une langue qui relève de la grammaire mais pas de la syntaxe ? Et un élément qui relève de la syntaxe mais pas de la grammaire ?
+
+    \exercice{3} Qu’appelons-nous la topologie ? L’interface sémantique-syntaxe ? la nanosyntaxe ?
+
+    \exercice{4} Pourquoi pensons-nous qu’il est difficile de commencer un ouvrage de syntaxe en définissant les parties du discours ?
+
+    \exercice{5} De quel type est le premier encadré de cet avant-propos ? Que représente le symbole choisi ?
+
+    \exercice{6} Les mots \textit{syntaxe} et \textit{grammaire} ne sont pas seulement utilisés pour désigner les concepts considérés dans cet ouvrage.
+
+    \textbf{a)} Distinguer les emplois du mot \textit{grammaire} dans les phrases suivantes :
+
+    \begin{itemize}
+    \item  Il ne parle pas vraiment le swahili, parce qu’il ne connaît que quelques mots, et il ne connaît pas du tout la grammaire.
+    \item  Ça ne se dit pas comme ça, j’ai regardé dans une grammaire.
+    \item  Les grammaires de dépendance proposent un formalisme pour représenter les relations qu’entretiennent les mots entre eux.
+    \item  C’est incroyable comment un bébé apprend vite la grammaire.
+    \item  C’est parce que la grammaire est innée.
+    \item  La grammaire française ne permet l’inversion du sujet que dans des cas très restreints.
+    \item  On vous enseigne de ne plus faire de fautes de grammaire.
+    \item  Les composants fondamentaux des systèmes d’information géographique se conjuguent dans une sorte de grammaire des formes géographiques.
+    \item  Le cinéma n’est pas une langue dont il suffirait d’apprendre la grammaire et le vocabulaire.
+    \item  La seule grande grammaire italienne disponible en français, celle de Jacqueline Brunet, est à juste titre descriptive (et non normative).
+    \item  Après tout, la rigueur de la pensée, on l’apprend avec la grammaire, la philosophie …
+    \end{itemize}
+
+    \textbf{b)} Distinguer les emplois du mot \textit{syntaxe} dans les phrases suivantes :
+
+    \begin{itemize}
+    \item  Chaque moteur de recherche a sa propre syntaxe.
+    \item  Dans chacun des domaines de la linguistique (syntaxe, phonologie, morphologie et sémantique lexicale), nos connaissances ne sont ni apprises ni données.
+    \item  Françoise Morvan s’efforce d’inventer une syntaxe française avec parfois des tournures bretonnes.
+    \item  J’ai déjà eu l’occasion d’attirer l’attention sur la multiplicité des coquilles, fautes de syntaxe, fautes d’orthographe que l’on trouve dans ce journal.
+    \item  Les rédacteurs du Nouvelliste ne maîtrisent qu’approximativement le français, ils se perdent dans la logique de la syntaxe et se noient dans l’abus de vocabulaire.
+    \item  J’ai essayé de trouver la bonne syntaxe pour le film.
+    \item  Du point de vue de la syntaxe, certaines évolutions sont visibles et prévisibles. Ainsi, le remplacement de "nous" par "on" avec un pluriel. "Mon fils et moi, on est allés au cinéma".
+    \item  Envoyez un SMS selon la syntaxe suivante : le mot-clé ‘METEO’ ‘espace’ puis le numéro du département dont vous souhaitez connaître la météo.
+    \end{itemize}
+ }
+
+\lecturesadditionnelles{
+    Nous recommandons bien sûr la lecture de l’incontournable ouvrage de Lucien Tesnière, \textit{Éléments} \textit{de syntaxe structurale} et tout particulièrement la première partie. On pourra avant cette lecture lire l’introduction écrite par Sylvain Kahane et Timothy Suborne pour la traduction anglaise de 2015.
+
+    En plus de cet ouvrage et de nombreux articles de recherche, quelques livres existent sur la syntaxe de dépendance : Richard Hudson a publié son introduction à la \textit{Word Grammar} en 1984 et plus récemment, en 2006, \textit{Language Networks:} \textit{The New Word Grammar}. En 1986, est paru l’ouvrage \textit{The meaning of the sentence in its semantic and pragmatic aspects} de Petr Sgall, Eva Hajičová et Jarmila Panevová sur le modèle pragois, qui a conduit au développement de la première banque d’arbre en dépendance, le \textit{Prague Dependency Treebank}. Il a été suivi par \textit{Dependency syntax:} \textit{Theory and practice} d’Igor Mel’čuk, une œuvre fondatrice, mais qui est davantage dédiée à la présentation de la Théorie Sens-Texte, l’une des principales approches théoriques basées sur la syntaxe de dépendance, qu’à la définition de la dépendance. Le récent ouvrage d’\textit{Introduction à la linguistique} (2014) d’Igor Mel’čuk et Jasmina Milićević, et notamment le second tome consacré à la syntaxe, est à notre connaissance le premier manuel général de linguistique basé sur la dépendance et nous en recommandons la lecture. Notre ouvrage partage en grande partie le point de vue du livre de Mel’čuk et Milićević, bien qu’il ne souhaite pas se placer a priori dans un cadre théorique donné, mais le construire de manière raisonnée. En chinois, Haitao Liu a présenté les grammaires de dépendance en 2009 dans son livre intitulé comme le livre de \citet{Mel’čuk1988}, \textit{Théorie et pratique de la grammaire de dépendance}. Dans un cadre formel proche de la grammaire de dépendance, on trouve l’ouvrage de Joan Bresnan sur la \textit{Lexical Functional} Syntax publié en 2001. On peut encore citer, l’ouvrage de Denis Costaouec et Françoise Guérin de 2007, \textit{Syntaxe fonctionnelle :} \textit{Théorie et exercices}, basé sur les travaux d’André Martinet, qui sans se placer réellement dans le cadre de la syntaxe de dépendance, a une approche constructiviste qui se rapproche de la notre.
+
+    Joan \citet{Bresnan2001} \textit{Lexical Functional Syntax}, Blackwell, Oxford.
+
+    Denis Costaouec \& Françoise \citet{Guérin2007} \textit{Syntaxe fonctionnelle :} \textit{Théorie et exercices}, Presses Universitaires de Rennes.
+
+    Richard \citet{Hudson1984} \textit{Word Grammar}, Blackwell, Oxford.
+
+    Richard \citet{Hudson2006} \textit{Language Networks:} \textit{The New Word Grammar}, Oxford University Press.
+
+    Sylvain Kahane \& Timothy \citet{Osborne2015} Translators’ introduction, in Lucien Tesnière, \textit{Elements of structural syntax,} Benjamins, pages xxix–lxxiv (45 pages).
+
+    Haitao \citet{Liu2009} \textrm{依存语法的理论与实践 (}Théorie et pratique de la grammaire de dépendance).
+
+    Igor \citet{Mel’čuk1988} \textit{Dependency syntax:} \textit{Theory and} practice, SUNY.
+
+    Igor Mel’čuk \& Jasmina Milićević (\citeyear{Mel’čukMilićević2014} \textit{Introduction à la linguistique}, 3 volumes, Hermann, Paris.
+
+    Petr Sgall, Eva Hajičová \& Jarmila \citet{Panevová1986} \textit{The meaning of the sentence in its semantic and pragmatic aspects}. Springer Science \& Business Media.
+
+    Lucien \citet{Tesnière1959} \textit{Éléments} \textit{de syntaxe structurale}, Klincksieck, Paris.
+}
+
+\corrections{
+    \corrigé{1} Les principales composantes d’un modèle linguistique sont la sémantique, la syntaxe, la morphologie et la phonologie. On peut ajouter à cela la pragmatique pour l’étude des liens entre le sens linguistique et intentions du locuteur et la phonétique pour l’étude des liens entre les sons de la langue et le signal sonore.
+
+    \corrigé{2} La grammaire inclut toutes les composantes du modèle et donc aussi la sémantique et la morphologie. Chacune de ces composantes coupe à travers la grammaire et le lexique. Ce qui relève de la syntaxe sans être de la grammaire est l’étude de la combinatoire des unités lexicales ou de la structure syntaxique interne des locutions. Dans cet ouvrage, nous nous intéressons à la partie grammaticale de la syntaxe (ou, autrement dit, à la partie syntaxique de la grammaire).
+
+    \corrigé{3} Toutes ces notions seront étudiées en détail dans cet ouvrage. Mais il peut être bon de fixer les termes dès maintenant. La topologie est l’étude de l’interface entre syntaxe et ordre linéaire des mots. L’interface sémantique-syntaxe est, comme son nom l’indique l’étude de la correspondance entre sémantique et syntaxe. La nanosyntaxe est la partie de la syntaxe qui s’intéresse aux combinaisons d’unités linguistiques les plus cohésives, celles de l’ordre du mot. Voir les Sections 0.0.8-10.
+
+    \corrigé{4} Parce que la définition des parties du discours repose sur une définition préalable de la structure syntaxique (voir \sectref{sec:0.0.10}).
+
+    \corrigé{5} L’\encadref{fig:0.0.1} est un encadré d’éclairage. Le symbole utilisé est une loupe.
+
+    \corrigé{6} Comme tous les termes linguistiques, \textit{grammaire} et \textit{syntaxe} peuvent désigner un domaine de la linguistique (4, 5, 7, 11, 13, 15, 16, 18) ou la grammaire ou la syntaxe d’une langue en particulier (1, 6, 14). Par extension, on parle aussi de la grammaire ou syntaxe de systèmes sémiotiques autres que la langue (8,9,12,17,19). Dans \textit{grammaire de dépendance} (3), le terme désigne un modèle linguistique complet, plutôt que la seule grammaire. On utilise aussi le mot \textit{grammaire} pour désigner un livre de grammaire (2, 10).
+}

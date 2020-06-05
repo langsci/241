@@ -1,0 +1,70 @@
+\newcommand{\appref}[1]{Appendix \ref{#1}}
+\newcommand{\fnref}[1]{Footnote \ref{#1}}
+
+\setlength{\epigraphwidth}{.618\textwidth}% (Golden ratio)
+
+\newenvironment{langscibars}{\begin{axis}[ybar,xtick=data, xticklabels from table={\mydata}{pos},
+        width  = \textwidth,
+	height = .3\textheight,
+    	nodes near coords,
+	xtick=data,
+	x tick label style={},
+	ymin=0,
+        ]}{\end{axis}}
+
+\newcommand{\langscibar}[1]{\addplot+ table [x=i, y=#1] {\mydata};\addlegendentry{#1};}
+
+\newcommand{\langscidata}[1]{\pgfplotstableread{#1}\mydata;}
+
+
+\newcommand{\textstylePhono}[1]{#1}
+\newcommand{\textstylePhonoApprofondissement}[1]{#1}
+\newcommand{\textstylest}[1]{#1}
+\newcommand{\textstyleTermes}[1]{\textsc{#1}}
+\newcommand{\textstyleTermesapprof}[1]{\textsc{#1}}
+\newcommand{\textstyleTermesapprofondissement}[1]{\textsc{#1}}
+
+\newenvironment{styleExemplesuite}{}{}
+\newenvironment{styleillustrationAFaire}{\begin{exe}\ex}{\end{exe}} %this seems to be object language material, which should be set off from surrounding text
+
+\newenvironment{styleLivreImportant}{
+\begin{mdframed}[style=tblsfilledbox,frametitle={}]
+}{
+\end{mdframed}
+}
+
+\newenvironment{styleTitreChapitre}{}{}
+\newenvironment{styleTitrePartie}{}{}
+\newenvironment{styleTitreSection}{}{}
+\newenvironment{styleTitreSousSection}{}{}
+
+\newenvironment{styleaprofondissementInterTitre}{\color{red}}{}
+
+%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\gkchapter}[2]{#1: #2}
+\newcommand{\gkboxsection}[3]{\section{#2~\includegraphics[height=.75\baselineskip]{figures/gk-#1.pdf}}
+    \marginpar{\includegraphics[height=5mm]{figures/gk-#1.pdf}}#3
+    }
+\renewcommand{\gkboxsection}[3]{\section{#2}#3}
+% \newcommand{\tblsgk}[1]{{\color{blue} section starts here \includegraphics[height=5mm]{figures/#1}\par}}
+\newcommand{\encadref}[1]{encadré~\ref{#1}}
+
+\newcommand{\corrections}[1]{\tblssy{hamac}{Corrections des exercices}{#1}}
+% \newcommand{\loupe}[2]{\tblssy{loupe}{#1}{#2}}
+\newcommand{\loupe}[2]{\gkboxsection{loupe}{#1}{#2}}
+% \newcommand{\eiffel}[2]{\tblssy{eiffel}{#1}{#2}}
+\newcommand{\eiffel}[2]{\gkboxsection{eiffel3}{#1}{#2}}
+% \newcommand{\globe}[2]{\tblssy{globe}{#1}{#2}}
+\newcommand{\globe}[2]{\gkboxsection{globe}{#1}{#2}}
+% \newcommand{\chevalier}[2]{\tblssy{chevalier}{#1}{#2}}
+\newcommand{\chevalier}[2]{\gkboxsection{chevalier2}{#1}{#2}}
+% \newcommand{\maths}[2]{\tblssy{maths}{#1}{#2}}
+\newcommand{\maths}[2]{\gkboxsection{maths}{#1}{#2}}
+
+\newcommand{\exercices}[1]{\tblssy{halteres}{Exercices}{#1}}
+\newcommand{\exercice}[1]{\paragraph*{Exercice #1}}
+\newcommand{\corrigé}[1]{\paragraph*{Corrigé #1}}
+\newcommand{\citations}[1]{\tblssy{guillemets}{Citations originales}{#1}}
+\newcommand{\lecturesadditionnelles}[1]{\tblssy{livre}{Lectures additionnelles}{#1}}
+
+\renewcommand{\sectref}[1]{section~\ref{#1}}
