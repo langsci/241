@@ -2,6 +2,7 @@
 \newcommand{\fnref}[1]{Footnote \ref{#1}}
 
 \setlength{\epigraphwidth}{.618\textwidth}% (Golden ratio)
+\tikzset{reset shape/.style ={shape=rectangle,draw=none}}% exceptions for the every node/.style key
 
 \newenvironment{langscibars}{\begin{axis}[ybar,xtick=data, xticklabels from table={\mydata}{pos},
         width  = \textwidth,

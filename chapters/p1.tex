@@ -70,11 +70,11 @@ Pour Bloomfield, il y a \textstyleTermes{acte de langage} lorsque Jill a faim, q
 
 \begin{itemize}
 \item %%[Warning: Draw object ignored]
-la voie directe S~~~~~~~~~~~~~~~~~R, où Jill grimpe dans l’arbre,
+la voie directe S → R, où Jill grimpe dans l’arbre,
 \item %%[Warning: Draw object ignored]
 %%[Warning: Draw object ignored]
 %%[Warning: Draw object ignored]
-et la voie indirecte S~~~~~~~~~~~~~~~~~r~~~~~~~~~~~~~~~~~~s~~~~~~~~~~~~~~~~~~R, où une réaction linguistique r se substitue à la réaction mécanique de Jill et où le stimulus s qu’elle provoque donne la réaction R chez Jack.
+et la voie indirecte S → r \_\,\_\,\_ s → R, où une réaction linguistique r se substitue à la réaction mécanique de Jill et où le stimulus s qu’elle provoque donne la réaction R chez Jack.
 \end{itemize}
 
 Reprenons la citation de Bloomfield, donnée dans l’\encadref{fig:1.1.1} sur \textit{La langue comme correspondance sens-texte}, sous ce nouvel éclairage :
@@ -463,15 +463,12 @@ Pour comprendre le fonctionnement de la langue, il est donc nécessaire d’étu
 Considérons un locuteur du français qui veut exprimer un certain sens que nous allons essayer de décrire sans le verbaliser directement par une phrase. Ce sens concerne une personne \textit{x} appelée Ali et un événement \textit{e} concernant \textit{x}. Cet événement est une maladie et la durée de cette maladie est de deux semaines.  Nous pouvons représenter ce sens par la «~formule~» suivante :
 
 \begin{figure}
-
-\textit{x} : ‘Ali’
-
-\textit{e} : ‘malade’(\textit{x})
-
-‘durer’(\textit{e},‘2 semaines’)
-
+\begin{tabular}{@{}ll@{}}
+\textit{x} :& ‘Ali’\\
+\textit{e} :& ‘malade’(\textit{x})\\
+\multicolumn{2}{@{}l@{}}{‘durer’(\textit{e},‘2 semaines’)}\\
+\end{tabular}
 \caption{\label{fig:}Description formelle d’un sens}
-
 \end{figure}
 
 Dans cette représentation, il y a quatre éléments de sens considérés : ‘Ali’, ‘malade’, ‘durer’ et ‘2 semaines’. Ce dernier élément est en fait la combinaison de deux sens : l’unité de temps ‘semaine’ et le prédicat ‘deux’ qui la quantifie. Ces éléments de sens sont des sens de mots du français. Ils peuvent être exprimés de façons variées : par exemple, le sens ‘durer’ peut aussi bien être exprimé par le nom \textsc{durée} que le verbe \textsc{durer} ou encore la préposition \textsc{pendant} comme nous le verrons plus loin. Remarquons que nous distinguons les \textstyleTermes{unités lexicales}, notées en majuscule (\textsc{durée}), de leur sens, noté entre guillemets simples (‘durer’). Un sens exprimable par une unité lexicale est appelé un \textstyleTermes{sens lexical}. On utilise parfois le terme \textit{sémantème} pour désigner un sens lexical, mais nous réserverons ce terme pour des signes linguistiques élémentaires (voir chapitres 2.3 et 2.4).
@@ -487,10 +484,17 @@ Nous nous contenterons de cette définition sommaire de la structure prédicativ
 Nous avons présenté la structure prédicative par une \textstyleTermes{formule}, mais on peut aussi la représenter par un \textstyleTermes{graphe} (voir l’\encadref{fig:2.1.3} qui suit) que nous appelons le \textstyleTermes{graphe sémantique}. Les nœuds du graphe sémantique sont les sens lexicaux ‘Ali’, ‘malade’, ‘durer’, ‘semaine’ et ‘deux’ et les arêtes représentent les \textstyleTermes{relations prédicat-argument}. Les arêtes sont matérialisées par des flèches. Les arêtes sont étiquetées par des chiffres permettant de distinguer les différents arguments d’un prédicat : 1 pour le premier argument, 2 pour le deuxième, etc. L’ordre dans lequel les arguments sont numérotés est l’\textstyleTermes{ordre de saillance}, dont nous reparlerons au \chapref{sec:5.2} sur \textit{Les relations syntaxiques}.
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
-\caption{\label{fig:Graphe sémantique}}
-
+\begin{tikzpicture}
+\matrix (matrix) [matrix of nodes,row sep={1.5cm,between origins}] {
+    `Ali' & & `durer' & & `deux'\\
+    & `malade' & & `semaine'\\
+};
+\draw[-{Triangle[]}] (matrix-1-5) -- (matrix-2-4) node[font=\footnotesize,midway,left] {1};
+\draw[-{Triangle[]}] (matrix-1-3) -- (matrix-2-4) node[font=\footnotesize,midway,right] {2};
+\draw[-{Triangle[]}] (matrix-1-3) -- (matrix-2-2) node[font=\footnotesize,midway,left] {1};
+\draw[-{Triangle[]}] (matrix-2-2) -- (matrix-1-1) node[font=\footnotesize,midway,left] {1};
+\end{tikzpicture}
+\caption{\label{fig:Graphe sémantique}Graphe sémantique}
 \end{figure}
 
 \maths{Graphe et arbre}{%\label{sec:1.2.3}
@@ -498,49 +502,27 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
 
     Un \textstyleTermes{graphe} est une structure liant ensemble des éléments. Les éléments sont appelés les \textstyleTermes{nœuds} du graphe et les liens les \textstyleTermes{arêtes}. Un graphe est dit \textstyleTermes{connexe} lorsque pour chaque couple de nœuds du graphe, il existe un ensemble d’arêtes formant un chemin connectant un nœud à l’autre.
 
-    % \begin{figure}
-    %%[Warning: Draw object ignored]
-    \textbf{Graphe connexe}   \textbf{Graphe non connexe}
-    % \end{figure}
+    \begin{figure}
+    \tikz \graph [empty nodes, nodes={circle, draw}] { f -- a -- {b--d, c--e} };
+    \caption{Graphe connexe}  
+    \end{figure}
 
-
-
-
-
+    \begin{figure}
+    \caption{Graphe non connexe}
+    \tikz \graph [empty nodes, nodes={circle, draw}] { f -- a -- b--d, c--e };
+    \end{figure}
 
     Un graphe est dit \textstyleTermes{acyclique} s’il n’existe aucun chemin partant d’un nœud et revenant à ce nœud sans emprunter deux fois la même arête.
 
-    % \begin{figure}
-
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-
-    {\bfseries
-    Graphe acyclique   Graphe avec cycle
-    }
-    % \end{figure}
+    \begin{figure}
+    \tikz \graph [empty nodes, nodes={circle, draw}] { f -- a -- {b--d, c--e} };
+    \caption{Graphe acyclique}   
+    \end{figure}
+    
+    \begin{figure} 
+    \tikz \graph [empty nodes, nodes={circle, draw}] { f -- a -- {b--d, c--e}, e--d };
+    \caption{Graphe avec cycle}
+    \end{figure}
 
     Un \textstyleTermes{arbre} est un graphe connexe et acyclique dont un nœud, qu’on appelle la \textstyleTermes{racine}, est pointé. Cela revient à orienter les arêtes à partir de ce point. On peut donc aussi définir un graphe comme un cas particulier de graphe orienté.
 
@@ -548,23 +530,57 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
 
     Un \textstyleTermes{arbre} est donc aussi un graphe orienté connexe pour lequel chaque nœud est la cible d’une seule arête à l’exception d’un nœud, la racine de l’arbre. Tout nœud autre que la racine de l’arbre possède ainsi un \textstyleTermes{gouverneur} qui est l’unique nœud qui le prend pour cible. On représente traditionnellement les arbres «~à l’envers~» avec la racine en haut. Les nœuds qui ne sont le gouverneur d’aucun nœud, c’est-à-dire qui n’ont pas de \textstyleTermes{dépendants}, sont appelés les \textstyleTermes{feuilles} de l’arbre. Un chemin orienté allant de la racine ou d’un nœud intérieur à une feuille est appelé une \textstyleTermes{branche}. Du fait que, par convention, chaque arête est toujours orientée vers le bas (la cible est en dessous de la source), il n’est pas nécessaire d’utiliser une deuxième convention et d’indiquer l’orientation par une flèche.
 
-    % \begin{figure}
-
-    %%[Warning: Draw object ignored]
-
-    \textbf{Dépendance}  \textbf{Branche}
-    % \end{figure}
+    \begin{figure}
+    \begin{tikzpicture}
+      \node at (0,0) (nodeA) [circle,draw] {};
+      \node[below=2\baselineskip of nodeA] (nodeB) [circle,draw] {};
+      \node[right = 1cm of nodeA] (nodeADesc) {gouverneur};
+      \path let \p1 = ($ (nodeA) !.5! (nodeB) $), 
+                \p2 = (nodeADesc) 
+                in node at (\x2,\y1) (edgeDesc) {\strut dépendance};
+      \node[right = 1cm of nodeB] (nodeBDesc) {dépendant};
+      \draw (nodeA) -- (nodeB);
+      \draw[-{Triangle[]}] (nodeBDesc) -- (nodeB);
+      \draw[-{Triangle[]}] (nodeADesc) -- (nodeA);
+      \draw[-{Triangle[]}] (edgeDesc)  -- ($ (nodeA) !.5! (nodeB) $);
+    \end{tikzpicture}
+    \caption{Dépendance}  
+    \end{figure}
+    
+    \begin{figure}
+    \begin{tikzpicture}[decoration={brace,amplitude=12pt,aspect=0.65}]
+    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip]
+      \node (root) {}
+        child { node{} child { node{} } }
+        child { node (branchanchr) {} child { node {} } 
+                       child { node (child) {} } };
+    \end{scope}
+    \node[right=2cm of root] (racine) {racine};
+    \path let \p1=(racine), \p2=(child) in node at (\x1,\y2) (feuille) {feuille};
+    \path let \p1=(racine), \p2=(branchanchr) in node at (\x1,\y2) (branche) {branche};
+    \draw [decorate] (root.south east) -- (child.north west);
+    \draw[-{Triangle[]}] (racine) -- (root);
+    \draw[-{Triangle[]}] (feuille) -- (child);
+    \draw[-{Triangle[]}] (branche) -- ++(-1.5cm,0pt);
+    \end{tikzpicture}
+    \caption{Branche}
+    \end{figure}
 
     La structure syntaxique d’une phrase est généralement représentée par un arbre dont les nœuds sont les unités lexicales.
 
     Notons encore qu’il existe une notion d’acyclicité plus restrictive pour les graphes orientés : un graphe orienté est dit \textstyleTermes{acyclique} s’il n’existe aucun chemin orienté permettant de partir d’un nœud et de source en cible de revenir au même nœud.
 
-    % \begin{figure}
-
-    %%[Warning: Draw object ignored]
-
-    \textbf{Graphes avec cycle orienté}  \textbf{Graphe sans cycle orienté}
-    % \end{figure}
+    \begin{figure}
+    \tikz[>={Triangle[]}] \graph [empty nodes, nodes={circle,draw}, multi, grow down=1.5cm] {a ->[bend right] b, b ->[bend right] a};
+    \hspace{2cm}
+    \tikz[>={Triangle[]}] \graph [empty nodes, nodes={circle,draw}] { subgraph C_n [n=3, clockwise, ->]};
+    \caption{Graphes avec cycle orienté}  
+    \end{figure}
+    
+    \begin{figure}
+    \tikz[>={Triangle[]}] \graph [empty nodes, nodes={circle,draw}, clockwise, n=3] { [path, ->] a, b, c; a ->[bend right] c; a ->[bend left] c };
+    \caption{Graphe sans cycle orienté}
+    \end{figure}
 
     La \textbf{structure prédicative} d’un énoncé peut être formalisée par un \textbf{graphe orienté connexe et acyclique} (encore appelé \textstyleTermes{dag}, de l’anglais \textit{directed acyclic graph}) dont les nœuds sont les sens lexicaux et grammaticaux et les arêtes sont les dépendances sémantiques ou relations prédicat-argument entre ces sens.
 }
@@ -592,9 +608,7 @@ Comment peut-on exprimer le sens que nous avons considéré en français ? Nous 
     \label{ex:key:1}
 
           La maladie d’Ali a duré deux semaines.
-\z
-
-\ea%2
+\ex%2
     \label{ex:key:2}
 
            Ali a été malade pendant deux semaines.
@@ -629,10 +643,11 @@ Le cas de la phrase \REF{ex:key:2} (\textit{Ali a été malade pendant deux sema
 \loupe{Règles et exceptions}{%\label{sec:1.2.8}
 
     La plupart des règles ont des exceptions. C’est le cas de la règle qui veut que l’élément principal d’une phrase soit un verbe conjugué. Il existe en effet quelques éléments lexicaux particuliers qui ne sont pas des verbes mais ont la propriété de pouvoir être l’élément principal d’une phrase, comme l’adverbe \textsc{heureusement} ou le bizarre \textsc{bonjour~}:
-
-    \textit{Heureusement qu’il y en a} !
-
+    
+    \begin{quote}
+    \textit{Heureusement qu’il y en a} !\\
     \textit{Sinon, bonjour le chômage des linguistes.}
+    \end{quote}
 
     Par ailleurs, il existe des contextes où la règle ne s’applique pas, notamment en réponse à une question (\textit{Tu viens à la fac demain} ? \textit{Oui à 10h pour le cours de syntaxe}) ou encore pour les titres (\textit{Nouvel incident diplomatique entre la France et l’Allemagne}). Cela ne signifie pas que la règle est fausse, mais qu’il faut bien préciser quand elle s’applique. Quant aux exceptions, il faut les \textbf{lister} et inclure ces éléments dans une classe particulière d’élément que nous appelons les prédicatifs et les locutifs (voir le \chapref{sec:5.1} sur \textit{Les catégories microsyntaxiques}).
 }
@@ -641,19 +656,67 @@ Le cas de la phrase \REF{ex:key:2} (\textit{Ali a été malade pendant deux sema
 Lors du passage du sens au texte, tout se passe comme si on suspendait le graphe sémantique par l’un de ses nœuds dont on décide de faire le verbe principal de l’énoncé et qu’on parcourait le graphe à partir de ce nœud pour les autres lexicalisations. Nous pouvons illustrer cela par les schémas suivants : à gauche nous représentons le graphe sémantique suspendu par un de ses nœuds (visé ici par une grosse flèche blanche) et à droite nous avons la structure hiérarchique correspondante où les sens lexicaux ont été lexicalisés.
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
-%%[Warning: Draw object ignored]
-
+\begin{minipage}[c]{.5\textwidth}\centering%
+\begin{tikzpicture}[>={Triangle[]}]
+    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip]
+      \node (root) {}
+        child { node{} 
+            child { node{} edge from parent[->] node[left,reset shape] {1} } 
+            edge from parent[->] node[left,reset shape] {1} }
+        child { node{} 
+            child { node{} edge from parent[<-] node[right,reset shape] {1} } 
+            edge from parent[->] node[right,reset shape] {2} };
+    \end{scope}
+    \node [right=1ex of root] {`durer'};
+    \node [left=1ex of root-1] {`malade'};
+    \node [left=1ex of root-1-1] {`Ali'};
+    \node [right=1ex of root-2] {`semaine'};
+    \node [right=1ex of root-2-1] {`deux'};
+\end{tikzpicture}
+\end{minipage}\begin{minipage}[c]{.5\textwidth}\centering%
+\begin{forest}
+[DURER
+  [MALADIE\textsubscript{sg,déf},edge label={node[midway,above,font=\scriptsize]{1}}
+    [Adj\textsubscript{0}(ALI),edge label={node[midway,left,font=\scriptsize]{1}}]
+  ]
+  [SEMAINE\textsubscript{pl,indéf},edge label={node[midway,above,font=\scriptsize]{2}}
+    [DEUX,edge label={node[midway,right,font=\scriptsize\itshape]{MOD}}]
+  ]
+]
+\end{forest}\end{minipage}
 \caption{\label{fig:}Hiérarchisation à partir de ‘durer’}
-
 \end{figure}
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
-%%[Warning: Draw object ignored]
-
+\begin{minipage}[c]{.5\textwidth}\centering%
+\begin{tikzpicture}[>={Triangle[]}]
+    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip]
+      \node (root) {}
+        child { node{} edge from parent[->] node[left,reset shape] {1} }
+        child { node{} 
+            child { node{} 
+                    child { node{}
+                            edge from parent[<-] node[right,reset shape] {1} }
+                    edge from parent[->] node[right,reset shape] {2} } 
+            edge from parent[<-] node[right,reset shape] {1} };
+    \end{scope}
+    \node [left=1ex of root] {`malade'};
+    \node [left=1ex of root-1] {`Ali'};
+    \node [right=1ex of root-2] {`durer'};
+    \node [right=1ex of root-2-1] {`semaine'};
+    \node [right=1ex of root-2-1-1] {`deux'};
+\end{tikzpicture}
+\end{minipage}\begin{minipage}[c]{.5\textwidth}\centering
+\begin{forest}
+[V\textsubscript{0}(MALADE)\textsubscript{passé}
+  [ALI,edge label={node[midway,above,font=\scriptsize]{1}}]
+  [PENDANT,edge label={node[midway,above,font=\scriptsize\itshape]{MOD}}
+    [SEMAINE\textsubscript{pl,indéf},edge label={node[midway,right,font=\scriptsize]{2}}
+        [DEUX,edge label={node[midway,right,font=\scriptsize\itshape]{MOD}}]
+    ]
+  ]
+]
+\end{forest}\end{minipage}
 \caption{\label{fig:}Hiérarchisation à partir de ‘malade’}
 \end{figure}
 
@@ -662,11 +725,54 @@ La structure que nous obtenons s’appelle un \textstyleTermes{arbre de dépenda
 Chaque dépendance est étiquetée en fonction de son parcours : les relations sémantiques qui ont été parcourues dans le sens de la flèche (du prédicat vers l’argument) donne une \textstyleTermes{dépendance syntaxique actancielle} (que nous numérotons comme la dépendance sémantique correspondante), tandis que les relations sémantiques qui ont été parcourues à contre-courant donne une \textstyleTermes{dépendance syntaxique modificative} (étiquetée \textit{MOD}).
 
 \begin{figure}
-%%[Warning: Draw object ignored]
+\begin{minipage}[c]{.15\textwidth}\centering%
+\begin{tikzpicture}[>={Triangle[]}]
+    \begin{scope}[every node/.style={circle,draw},level distance=3\baselineskip]
+    \node (root) {}
+        child { node{} 
+                edge from parent[->] 
+                node [right,reset shape] {1} 
+                node [left, reset shape] {\Large ⇓}};
+    \end{scope}
+    \node[above=5pt of root]    {`durer'};
+    \node[below=5pt of root-1]  {`malade'};
+\end{tikzpicture}\end{minipage}
+\begin{minipage}[c]{.1\textwidth}\centering⇒\end{minipage}
+\begin{minipage}[c]{.15\textwidth}\centering%
+\begin{tikzpicture}
+\node (root) {DURER}
+        child { node{MALADIE} 
+                edge from parent
+                node [right,reset shape] {1} 
+                };
+\end{tikzpicture}\end{minipage}
+\caption{Dépendance actancielle} 
+\end{figure}
 
-   \textbf{Dépendance actancielle}  \textbf{Dépendance modificative}
-
-\caption{\label{fig:}}
+\begin{figure}
+\begin{minipage}[c]{.15\textwidth}\centering%
+\begin{tikzpicture}[>={Triangle[]}]
+    \begin{scope}[every node/.style={circle,draw},level distance=3\baselineskip]
+    \node (root) {}
+        child { node{} 
+                edge from parent[<-] 
+                node [right,reset shape] {1} 
+                node [left, reset shape] {\Large ⇓}};
+    \end{scope}
+    \node[above=5pt of root]    {`malade'};
+    \node[below=5pt of root-1]  {`durer'};
+\end{tikzpicture}\end{minipage}
+\begin{minipage}[c]{.1\textwidth}\centering⇒\end{minipage}
+\begin{minipage}[c]{.15\textwidth}\centering%
+\begin{tikzpicture}
+\node (root) {MALADE}
+        child { node{PENDANT} 
+                edge from parent
+                node [right,reset shape,font=\itshape] {MOD} 
+                };
+\end{tikzpicture}
+\end{minipage}
+\caption{Dépendance modificative}
 \end{figure}
 
 Comme nous l’avons expliqué dans la section précédente, chaque unité lexicale se voit imposer sa partie du discours par son gouverneur, la racine étant un verbe conjugué. Ainsi dans la phrase \REF{ex:key:1}, ALI, qui dépend du nom MALADIE, devrait être réalisé par un adjectif, ce que nous indiquons par la notation Adj\textsubscript{0}(ALI). C’est la préposition DE qui assurera cette \textstyleTermes{translation} (\textit{la maladie} \textbf{\textit{d}}\textit{’Ali}) et permettra à ALI d’être complément du nom (voir la section du \chapref{sec:5.1} sur \textit{La translation}). De la même façon, la notation V\textsubscript{0}(MALADE) indique que MALADE occupe une position où un verbe est attendu et c’est la copule ÊTRE qui assurera la translation d’adjectif en verbe.
@@ -682,29 +788,20 @@ Comme nous l’avons expliqué dans la section précédente, chaque unité lexic
 
     La phase de hiérarchisation s’accompagne d’une phase de «~lexicalisation~», c’est-à-dire de choix de signes linguistiques élémentaires, des unités lexicales et des unités grammaticales, qui se contraignent les unes les autres. La phase de linéarisation s’accompagne d’une «~morphologisation~» des signes, c’est-à-dire de combinaison des signifiants selon des règles morpho-phonologiques propres à chaque langue. Une telle architecture est à la base de la  Théorie Sens-Texte, que nous évoquerons dans l’\encadref{fig:1.3.9} éponyme.
 
-    % \begin{figure}
-    {\bfseries
-    %%[Warning: Draw object ignored]
-    sens
-    }
-
-    hiérarchisation
-
-    «~lexicalisation~»
-
-    {\bfseries
-    arbre syntaxique
-    }
-
-    linéarisation
-
-    «~morphologisation~»
-
-    {\bfseries
-    chaîne parlée
-    }
-    % \caption{\label{fig:}}
-    % \end{figure}
+    \begin{figure}
+    \begin{tikzpicture}[>={Triangle[]},level distance=4\baselineskip]
+    \node [font=\bfseries] (root) {sens}
+        child { node[font=\bfseries] {arbre syntaxique}
+                child { node[font=\bfseries] {chaîne parlée} 
+                        edge from parent [->] node[left,text width=4cm,align=center]
+                                         {linéarisation\\«~morphologisation~»}
+                       }
+                edge from parent [->] node[left,text width=4cm,align=center]
+                                         {hiérarchisation\\«~lexicalisation~»}
+            };
+    \end{tikzpicture}
+    \caption{\label{fig:}\color{red}Please provide a caption}
+    \end{figure}
 }
 \section{Ce que la langue nous force à dire}\label{sec:1.2.11}
 
@@ -733,10 +830,10 @@ En conclusion, il n’est pas possible en français de communiquer uniquement no
     Ces deux informations doivent obligatoirement figurer dans le choix lexical de l’adjectif et la conjugaison de la copule :
 
     \begin{enumerate}
-    \item  \textrm{ピエ}\texttt{ール\textbf{さん}}\texttt{は\textbf{御}}\texttt{病気}\textrm{\textbf{です}}\textrm{。}  Pieru-\textbf{san}{}-wa \textbf{go-}byoki \textbf{desu}.
-    \item  \texttt{ピエールは病気\textbf{です}}\texttt{。}    Pieru-wa byoki \textbf{desu}.
-    \item  \textrm{ピエ}\texttt{ール\textbf{さん}}\texttt{は\textbf{御}}\texttt{病気}\textrm{\textbf{だ}}\textrm{。} Pieru-\textbf{san}{}-wa \textbf{go-}byoki \textbf{da}.
-    \item  \texttt{ピエールは病気\textbf{だ}}\texttt{。}\textbf{    }Pieru-wa byoki \textbf{da}.
+    \item  {\cjkfont ピエール\textbf{さん}は\textbf{御}病気\textbf{です}。}  Pieru-\textbf{san}{}-wa \textbf{go-}byoki \textbf{desu}.
+    \item  {\cjkfont ピエールは病気\textbf{です}。}    Pieru-wa byoki \textbf{desu}.
+    \item  {\cjkfont ピエール\textbf{さん}は\textbf{御}病気\textbf{だ}。} Pieru-\textbf{san}{}-wa \textbf{go-}byoki \textbf{da}.
+    \item  {\cjkfont ピエールは病気\textbf{だ}。} Pieru-wa byoki \textbf{da}.
     \end{enumerate}
 
     La respectabilité envers Pierre est exprimée par le suffixe \textsc{san} et par le choix d’une forme polie \textsc{go-byoki} de l’adjectif ‘malade’. La respectabilité envers l’interlocuteur est exprimée par la forme polie de la copule, \textit{desu}, opposée à la forme neutre \textit{da}. Ces deux marques de respectabilité sont indépendantes, ce qui nous donne quatre formes possibles.
@@ -977,11 +1074,9 @@ Un modèle déclaratif est normalement un \textstyleTermes{modèle de la compét
     Ces trois types de procédure peuvent être utilisés pour présenter une même grammaire. Ce qui distingue ces trois procédures est le nombre de structures au départ : 0, 1 ou 2. Dans tous les cas, on a un couple de structures à l’arrivée. Dans la procédure générative, on part de rien et on génère simultanément les deux structures en correspondance. Dans les procédures transductives, on a une structure au départ et on produit l’autre. Dans la procédure équative, on a les deux structures dès le départ~ et on vérifie qu’elles se correspondent. Nous schématisons ci-dessous les trois procédures. Supposons qu’on veuille associer des graphes sémantiques, représentés par des \textrm{☆}, à des arbres syntaxiques, représentés par des \textrm{${\bigtriangleup}$}. Ce qui distingue les trois procédures, ce sont les structures données au départ : nous les schématisons en noir, tandis que les structures à construire par la procédure sont en blanc :
     \ea
         procédure générative :    \textrm{☆ ${\Leftrightarrow}$} \textrm{${\bigtriangleup}$}
-    \z
-    \ea
+    \ex
         procédures transductives :    \textrm{★} \textrm{${\Rightarrow}$} \textrm{${\bigtriangleup}$  ou ☆} \textrm{${\Leftarrow}$} \textrm{${\blacktriangle}$}
-    \z
-    \ea
+    \ex
         procédure équative :    \textrm{★} \textrm{${\Leftrightarrow}$} \textrm{${\blacktriangle}$}
     \z
     Pour des raisons historiques que nous venons de rappeler, la procédure générative est souvent privilégiée. La procédure équative est généralement la procédure la plus élégante pour présenter un modèle déclaratif et elle tend à se généraliser sous le nom de \textstyleTermes{grammaires de contraintes}. Mais des trois procédures, c’est la procédure transductive qui est descriptivement la plus pertinente, car c’est ce type de procédure que les locuteurs utilisent quand ils parlent : ils doivent à partir d’un sens lui faire correspondre un texte et, à l’inverse, quand ils écoutent quelqu’un qui parle, ils partent d’un texte et doivent lui donner un sens.
@@ -1065,26 +1160,16 @@ Dans la suite de cet ouvrage, nous montrerons qu’il existe plusieurs types d�
     La Théorie Sens-Texte est la théorie qui a le plus fortement inspiré les auteurs de cet ouvrage. Il s’agit d’un modèle développé autour d’Igor Mel’čuk à partir de 1965, d’abord en Union Soviétique, puis au Canada et en Europe. Ce modèle est fortement stratifié : il suppose l’existence de 5 niveaux de représentation intermédiaires entre le sens et le texte, soit 7 niveaux en tout. Le système est divisé en 6 modules permettant de passer d’un niveau à l’autre. Il s’agit d’une architecture linéaire que nous présentons ci-dessous :
 
     % \begin{figure}
-    \ea
-
-
-    %%[Warning: Draw object ignored]
-    \textbf{sens} = représentation sémantique
-
-    représentation syntaxique profonde
-
-    représentation syntaxique de surface
-
-    représentation morphologique profonde
-
-    représentation morphologique de surface
-
-    représentation phonologique profonde
-
-    \textbf{texte} = représentation phonologique de surface
-
-    %%[Warning: Draw object ignored]
-
+    \ea \begin{forest}for tree={edge={double,{Latex[open,length=5pt]}-{Latex[open,length=5pt]}}}
+    [\textbf{sens} = représentation sémantique
+        [représentation syntaxique profonde
+            [représentation syntaxique de surface
+                [représentation morphologique profonde
+                    [représentation morphologique de surface
+                        [représentation phonologique profonde
+                            [\textbf{texte} = représentation phonologique de surface]]]]]]]
+    \end{forest}
+    
     \z
     Chaque $\Leftrightarrow$         représente un module effectuant la correspondance entre deux niveaux de représentation adjacents. On trouvera une présentation et une justification de cette architecture dans le cours donné par Igor Mel’čuk en 1997 au collège de France, \textit{Vers une linguistique Sens-Texte}, disponible en ligne.
 
