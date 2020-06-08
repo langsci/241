@@ -352,8 +352,18 @@ la production française de lait
 Ces trois syntagmes expriment les mêmes sens avec les mêmes relations sémantiques : un prédicat binaire, ‘produire’, exprimable par le verbe \textsc{produire} ou le nom \textsc{production,} et deux éléments de sens, ‘la France’ et ‘lait’, qui remplissent les rôles d’agent (celui qui produit) et de patient (ce qui est produit) de ce prédicat, ce qu’on peut schématiser comme suit (voir le \chapref{sec:3.6} pour plus de détails) :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
+\begin{tikzpicture}[>={Triangle[]}]
+    \begin{scope}[every node/.style={circle,draw},level distance=3\baselineskip]
+      \node (root) {}
+        child { node{} 
+            edge from parent[->] node[left,reset shape] {agent} }
+        child { node{} 
+            edge from parent[->] node[right,reset shape] {patient} };
+    \end{scope}
+    \node [above=1pt of root] {`produire'};
+    \node [below=1pt of root-1] {`la France'};
+    \node [below=1pt of root-2] {`lait'};
+\end{tikzpicture}
 \caption{\label{fig:}Représentation sémantique}
 \end{figure}
 
@@ -575,13 +585,30 @@ Nous avons défini ce que nous entendions par unité syntaxique. Il y a connexio
 Supposons que A et B soient deux unités syntaxiques qui se combinent, comme par exemple, A = \textit{cet étudiant veut acheter} et B = \textit{un livre de syntaxe}. Nous notons \textbf{A ${\oplus}$ B} la \textbf{combinaison de A et B}. Nous proposons deux façons de représenter la connexion entre A et B :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-\caption{\label{fig:}Deux façons} \textbf{de représenter la combinaison A ${\oplus}$ B}
+\begin{tikzpicture}
+\node at (0,0) [AbsSet] (A) {A};
+\node at (2,0) [AbsSet] (B) {B};
+\node [draw, ellipse, inner sep=1pt, fit = (A) (B)] {};
+
+\node at (7,0) [AbsSet] (A2) {A};
+\node at (9,0) [AbsSet] (B2) {B};
+\path (A2) edge [bend left] (B2);
+\end{tikzpicture}
+\caption{\label{fig:}Deux façons de représenter la combinaison A $\oplus$ B}
 \end{figure}
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-\caption{\label{fig:}Deux représentations pour \textit{cet étudiant veut acheter}} \textbf{${\oplus}$} \textbf{\textit{un livre de syntaxe}}
+\begin{tikzpicture}[every node/.style={font={\itshape\strut},draw,ellipse,inner sep=5pt}]
+\node at (0,0) (A) {cet étudiant veut acheter};
+\node [right=1em of A] (B) {un livre de syntaxe};
+\draw (2.5,0) ellipse [y radius=1cm,x radius=6cm];
+\end{tikzpicture}\medskip\\
+\begin{tikzpicture}[every node/.style={font={\itshape\strut},draw,ellipse,inner sep=5pt}]
+\node at (0,0) (A) {cet étudiant veut acheter};
+\node [right=1em of A] (B) {un livre de syntaxe};
+\path (A) edge [bend left] (B);
+\end{tikzpicture}
+\caption{\label{fig:}Deux représentations pour \textit{cet étudiant veut acheter} $\oplus$ \textit{un livre de syntaxe}}
 \end{figure}
 
 À gauche, la combinaison est représentée par une \textbf{bulle} qui entoure les deux éléments qui se combinent. À droite, la combinaison est représentée par un \textbf{trait} qui lie les deux éléments qui se combinent. C’est équivalent, il s’agit juste de conventions de représentation différentes. Néanmoins, les deux conventions sont utilisés par des théories différentes et conduisent généralement à des analyses différentes, comme nous allons le voir.
@@ -595,7 +622,20 @@ Raisonner en termes de \textbf{composition}, c’est avoir une \textbf{approche 
 Raisonner en termes de composition n’est pas complètement équivalent à raisonner en termes de décomposition. En effet, dire que A et B se combinent, revient à postuler une connexion entre A et B, mais n’oblige pas vraiment à considérer le tout que forment A et B ensemble. La décomposition, elle, oblige par essence à considérer le tout, dont on part pour trouver les parties. La distinction apparaît plus clairement lorsqu’on considère trois éléments A, B et C, où B se combine à la fois avec A et C (comme dans \textit{Marie regarde Pierre} avec A = \textit{Marie}, B = \textit{regarde}, C = \textit{Pierre}). En termes de composition, on peut représenter la chose de l’une des deux façons suivantes :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
+\begin{tikzpicture}
+\node at (0,0) [AbsSet] (A) {A};
+\node at (2,0) [AbsSet] (B) {B};
+\node at (4,0) [AbsSet] (C) {C};
+\node [draw, ellipse, inner sep=0pt, fit = (A) (B)] {};
+\node [draw, ellipse, inner sep=0pt, fit = (B) (C)] {};
+\end{tikzpicture}\medskip\\
+\begin{tikzpicture}
+\node at (0,0) [AbsSet] (A2) {A};
+\node at (2,0) [AbsSet] (B2) {B};
+\node at (4,0) [AbsSet] (C2) {C};
+\path (A2) edge [bend left] (B2)
+      (B2) edge [bend left] (C2);
+\end{tikzpicture}
 
 \caption{\label{fig:}Deux façons de représenter le même ensemble de connexions}
 \end{figure}
@@ -605,10 +645,27 @@ La deuxième représentation, avec des bulles qui s’enchevêtrent, n’est pas
 Si l’on raisonne en termes de décomposition, on partira du tout U que forment A, B et C (U = ABC). On aura alors trois façons de décomposer U : 1) une décomposition ternaire U = A ${\oplus}$ B ${\oplus}$ C ; 2) une décomposition binaire U = A ${\oplus}$ BC ; et 3) une décomposition binaire U = AB ${\oplus}$ C.
 
 \begin{figure}
-
-%%[Warning: Draw object ignored]
-
-\caption{\label{fig:}Les trois seules façons} \textbf{de décomposer récursivement A ${\oplus}$ B ${\oplus}$ C}
+\begin{tikzpicture}
+\node at (0,0) [AbsSet] (A) {A};
+\node at (2,0) [AbsSet] (B) {B};
+\node at (4,0) [AbsSet] (C) {C};
+\node [draw, ellipse, inner sep=3pt, fit = (A) (B) (C)] {};
+\end{tikzpicture}\\\medskip
+\begin{tikzpicture}
+\node at (0,0) [AbsSet] (A) {A};
+\node at (2,0) [AbsSet] (B) {B};
+\node at (4,0) [AbsSet] (C) {C};
+\node [draw, ellipse, inner sep=3pt, fit = (A) (B) (C)] {};
+\node [draw, ellipse, inner sep=0pt, fit = (A) (B)] {};
+\end{tikzpicture}\\\medskip
+\begin{tikzpicture}
+\node at (0,0) [AbsSet] (A) {A};
+\node at (2,0) [AbsSet] (B) {B};
+\node at (4,0) [AbsSet] (C) {C};
+\node [draw, ellipse, inner sep=3pt, fit = (A) (B) (C)] {};
+\node [draw, ellipse, inner sep=0pt, fit = (B) (C)] {};
+\end{tikzpicture}
+\caption{\label{fig:}Les trois seules façons de décomposer récursivement A $\oplus$ B $\oplus$ C}
 \end{figure}
 
 Aucune des trois décompositions n’est équivalente à l’ensemble de connexions que nous voulons considérer. Décomposer en trois ne permet pas d’indiquer que c’est bien B qui se combine avec A et C, mais que A et C ne se combinent pas directement. Décomposer en deux, par exemple en A ${\oplus}$ BC,~ne permet pas d’indiquer que c’est avant tout B qui se combine avec A. Décomposer en deux suppose en fait d’ordonner les deux connexions, A ${\oplus}$ B~ et B ${\oplus}$ C : par exemple, on combine d’abord B avec C, puis le tout avec A. C’est ce qu’on appelle la \textstyleTermes{stratification} (nous y reviendrons dans la \sectref{sec:3.4.14} sur l’\textit{Arbre de constituants binaire}). Si la décomposition binaire a au moins l’avantage de montrer qu’il y a bien deux combinaisons binaires et pas une combinaison ternaire, elle ne permet pas de rendre compte que ces deux combinaisons sont indépendantes et qu’il n’y a pas emboîtement de l’une dans l’autre. Raisonner en termes de décomposition oblige à stratifier, c’est-à-dire à ordonner les connexions. C’est une information supplémentaire dont l’utilité est discutable. À l’inverse, on perd de l’information, puisque si on a toujours deux connexions, les combinaisons qui leur correspondent sont moins fines.
@@ -623,7 +680,25 @@ On peut décomposer notre phrase en \textit{cet étudiant veut acheter} ${\oplus
 
 \begin{figure}
 %%[Warning: Draw object ignored]
+\begin{tikzpicture}
+\matrix (matrix) [
+                   matrix of nodes,
+                   column sep=1em,
+                   nodes={
+                     font={\itshape\strut},
+                     inner sep=0pt
+                         }
+                  ] 
+  {
+     cet étudiant  & veut &  acheter   &   $\oplus$  & un livre &  de syntaxe\\
+  };
+\node [draw, circle, inner sep=0pt, fit=(matrix-1-3)] {};
+\node [draw, circle, inner sep=2pt, fit=(matrix-1-3) (matrix-1-2)] {};
+\node [draw, circle, inner sep=3pt, fit=(matrix-1-3) (matrix-1-2) (matrix-1-1)] {};
 
+\node [draw, circle, inner sep=0pt, fit=(matrix-1-5)] {};
+\node [draw, circle, inner sep=2pt, fit=(matrix-1-5) (matrix-1-6)] {};
+\end{tikzpicture}
 \caption{\label{fig:}Combinaisons équivalentes}
 \end{figure}
 
@@ -694,8 +769,20 @@ Dans les deux exemples, on a un groupe prépositionnel B introduit par \textit{�
 La permutation est possible dans le premier cas, donc \textit{à la boulangerie} ne dépend pas de \textit{une glace}. Par contre, elle est impossible dans le deuxième cas, ce qui indique que \textit{à la fraise} dépend bien de \textit{une glace}. (Nous utilisons ici une autre propriété, spécifique au français, qui est que l’ordre des compléments à droite du verbe est relativement libre. Le même test serait plus difficile à appliquer dans une langue comme l’anglais où l’objet ne peut pas être facilement séparé du verbe.)
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
+\begin{tikzpicture}
+\node at (0,0) [ConcSet] (A) {Pierre a acheté};
+\node [right=1em of A, ConcSet] (B) {une glace};
+\node [right=1em of B, ConcSet] (C) {à la boulangerie};
+\path (A.45) edge [bend left] (B)
+      (A.60) edge [bend left] (C);
+\end{tikzpicture}\medskip\\
+\begin{tikzpicture}
+\node at (0,0) [ConcSet] (A) {Pierre a acheté};
+\node [right=1em of A, ConcSet] (B) {une glace};
+\node [right=1em of B, ConcSet] (C) {à la fraise};
+\path (A) edge [bend left] (B)
+      (B) edge [bend left] (C);
+\end{tikzpicture}
 \caption{\label{fig:}Deux structures syntaxiques différentes}
 \end{figure}
 
@@ -714,8 +801,17 @@ On a ici trois segments prépositionnels, \textit{de la vallée}, \textit{de la 
 La non-déplaçabilité du segment \textit{de la Seine} indique qu’il est bien connecté au segment \textit{de la vallée}. À l’inverse la déplaçabilité de \textit{en Ile-de-France} indique qu’il n’en dépend pas. On a donc les connections suivantes :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
+\small\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[every node/.style={inner sep=2pt}]
+\node at (0,0) [ConcSet] (A) {la faible déclivité};                    
+\node [right=1em of A, ConcSet] (B) {de la vallée};
+\node [right=1em of B, ConcSet] (C) {de la Seine};
+\node [right=1em of C, ConcSet] (D) {en Ile-de-France};
 
+\path (A.45) edge [bend left] (B)
+      (B)    edge [bend left] (C)
+      (A.60) edge [bend left] (D);
+\end{tikzpicture}}
 \caption{\label{fig:}Rattachement des segments prépositionnels}
 \end{figure}
 
@@ -736,7 +832,15 @@ De même, dans notre deuxième exemple, on peut vérifier que \textit{en Ile-de-
 Le test d’insertion est un cas particulier de la propriété de projectivité que nous présentons dans la \sectref{sec:3.5.14} \textit{Projectivité et dépendance projective}. Cela revient à dire que certains liens de connexion ne peuvent pas se couper et que la configuration ci-dessous n’est pas possible.
 
 \begin{figure}
-%%[Warning: Draw object ignored]
+\begin{tikzpicture}
+\node at (0,0) [ConcSet] (A) {Pierre a acheté};
+\node [right=1em of A, ConcSet] (B) {une glace};
+\node [right=1em of B, ConcSet] (C) {l’autre jour};          
+\node [right=1em of C, ConcSet] (D) {à la fraise};
+
+\path (A) edge [bend left] (C)
+      (B) edge [bend left] (D);
+\end{tikzpicture}
 \caption{\label{fig:}Configuration rejetée par le test d’insertion}
 \end{figure}
 
@@ -751,10 +855,14 @@ Les deux tests que nous venons d’énoncer, le test de déplacement et le test 
 
     Du point de vue mathématique, les connexions ternaires ne posent pas de problème en soi, mais elles nécessitent d’introduire des structures légèrement différentes des arbres et graphes habituellement utilisés en modélisation des langues. (Un graphe, au sens usuel, ne contient que des connexions binaires.) Considérer que \textit{plein de gens} est une connexion ternaire revient à considérer que \textit{plein} et \textit{gens} se combinent directement et qu’ils ne peuvent se combiner qu’en présence du marqueur \textit{de}, ce qui est finalement assez facile à concevoir. On peut par exemple représenter cela par un lien entre \textit{plein} et \textit{gens} surmonté par \textit{de} :
 
-    % \begin{figure}
-    %%[Warning: Draw object ignored]
-    % \caption{\label{fig:}Connexion ternaire}
-    % \end{figure}
+    \begin{figure}
+    \begin{tikzpicture}
+      \node at (0,0) (A) [ConcSet] {plein};
+      \node [right=2em of A, ConcSet] (B) {gens};
+      \path (A) edge [bend left] node [above] {\textit{de}} (B);
+    \end{tikzpicture}
+    \caption{\label{fig:}Connexion ternaire}
+    \end{figure}
 
     Dans une telle représentation, le trait de connexion lie bien trois éléments et représente donc une connexion ternaire. Néanmoins, la position particulière donnée à \textit{de} revient à lui donner un statut particulier, qui peut être justifiée par le fait que \textit{de} ne peut pas entretenir d’autres liens et joue uniquement un rôle de marqueur dans la combinaison de deux lexèmes.
 
