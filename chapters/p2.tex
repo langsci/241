@@ -238,12 +238,33 @@ Le signe X \textstyleTermes{se décompose proprement} en A ${\boxplus}$ B si X =
 
 Ainsi le signe X = \textit{facilement} se décompose proprement en A ${\boxplus}$ B avec A = \textit{facile} et B = \textit{{}-ment}, puisqu’on peut faire commuter A avec A’ = \textit{utile} et que \textit{facilement} est à \textit{facile} ce que \textit{utilement} est à \textit{utile}.
 
+On peut représenter l’application du principe de commutation enrichi par un \textstyleTermes{rectangle analogique}. Les quatre combinaisons A + B, A + B’, A’ + B et A’ + B’ occupent les quatre coins du rectangle et les côtés opposés du rectangle indiquent des rapports de proportionnalité équivalents :
+
 \begin{figure}
 \caption{\label{fig:}}
-%%[Warning: Draw object ignored]
+\begin{tikzpicture}[baseline]
+  \matrix [matrix of nodes, row sep=1cm, column sep=1cm, nodes={font=\strut}] 
+    (matrix1) {
+    A + B  & A' + B\\
+    A + B' & A' + B'\\
+    };
+  \draw (matrix1-1-1) -- (matrix1-1-2)
+                      -- (matrix1-2-2)
+                      -- (matrix1-2-1)
+                      -- (matrix1-1-1);
+  \matrix [right=1cm of matrix1, matrix of nodes, row sep=1cm, column sep=1cm, 
+           nodes={font=\strut}] 
+    (matrix2) {
+    \textit{broy+eur} B  & \textit{compress+eur} B\\
+    \textit{broy+ons}    & \textit{compress+ons}\\
+    };
+  \draw (matrix2-1-1) -- (matrix2-1-2)
+                      -- (matrix2-2-2)
+                      -- (matrix2-2-1)
+                      -- (matrix2-1-1);
+\end{tikzpicture}
 \end{figure}
 
-On peut représenter l’application du principe de commutation enrichi par un \textstyleTermes{rectangle analogique}. Les quatre combinaisons A + B, A + B’, A’ + B et A’ + B’ occupent les quatre coins du rectangle et les côtés opposés du rectangle indiquent des rapports de proportionnalité équivalents :
 
 \begin{styleLivreImportant}
 Un signe linguistique qui se décompose proprement est dit \textstyleTermes{diagrammatique}.
@@ -409,13 +430,31 @@ Un \textbf{signe} qui \textbf{commute librement} avec son environnement est appe
 
     On définit une relation entre les ensembles appelée l’\textstyleTermesapprof{inclusion} et notée \textrm{${\subseteq}$}. L’ensemble A est dit \textbf{inclus} dans l’ensemble B (et on note A~\textrm{${\subseteq}$}~B) si tous les éléments de A sont dans B. On dit encore que A est un \textstyleTermesapprof{sous-ensemble} de B ou une \textstyleTermesapprof{partie} de B.
 
-    \ea
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-
-            A~\textrm{${\subseteq}$}~B           \textrm{${\complement}$}\textsubscript{A}B \\
-            \textbf{Inclusion}          \textbf{Complémentaire}
-    \z
+    \begin{figure}
+      \begin{tikzpicture}
+       \node at (0,0) [inner sep=1pt] (A) {A};
+       \node at (2,0) (B) {B};
+       \draw
+          (1,0) circle [draw,radius=48pt] 
+          (2,0) circle [draw,clip,radius=18pt];
+       \node at (1,-2) {A $\subseteq$ B};
+      \end{tikzpicture}
+      \caption{Inclusion}
+      \todo[inline]{Shouldn't it be B $\subseteq$ A here??}
+    \end{figure}
+    
+    \begin{figure}
+      \begin{tikzpicture}
+       \node at (2,0) (B) {B};
+       \filldraw [even odd rule, pattern=north east lines]
+          (1,0) circle [draw,radius=48pt] 
+          (2,0) circle [draw,clip,radius=18pt];
+       \node at (0,0) [inner sep=1pt,fill=white] (A) {A};
+       \node at (1,-2) {$\complement$\textsubscript{A}B}; 
+      \end{tikzpicture}  
+      \caption{Complémentaire}
+    \end{figure}
+                      
 
     L’inclusion est une \textstyleTermesapprof{relation d’ordre} (voir la \sectref{sec:3.3.30} \textit{Dépendance, dominance et transitivité} pour une définition formelle) sur les ensembles, similaire à la relation d’ordre ${\leq}$ sur les nombres (d’où la notation \textrm{${\subseteq}$}). Dire «~A \textrm{${\subseteq}$} B~» revient à dire que A est plus petit que B pour la relation d’inclusion. Néanmoins contrairement à la relation ${\leq}$, l’inclusion est un ordre \textstyleTermesapprof{partiel}, puisque deux ensembles peuvent ne pas être ordonnés l’un par rapport à l’autre, notamment lorsqu’ils sont disjoints (c’est-à-dire n’ont pas d’éléments en commun).
 
@@ -429,13 +468,35 @@ Un \textbf{signe} qui \textbf{commute librement} avec son environnement est appe
 
     On peut définir sur 2\textsuperscript{E} deux opérations binaires, l’union et l’intersection. L’\textstyleTermesapprof{union} de A et B, notée A~\textrm{${\cup}$}~B, est l’ensemble qui contient à la fois les éléments de A et ceux de B, tandis que l’\textstyleTermesapprof{intersection} de A et B, notée A~\textrm{${\cap}$}~B, est l’ensemble des éléments communs à A et B. On peut visualiser ces ensembles sur les schémas suivants :
 
-    \ea
-    %%[Warning: Draw object ignored]
-
-                                            A~\textrm{${\cup}$}~B                                                                         A~\textrm{${\cap}$}~B\\
-                                            \textbf{Union}                                                                   \textbf{Intersection}
-
-    \z
+    \begin{figure}
+      \begin{tikzpicture}
+       \node at (0,0) [inner sep=1pt] (A) {A};
+       \node at (1,0) (B) {B};
+       \draw
+          (0,0) circle [draw,radius=18pt] 
+          (1,0) circle [draw,radius=18pt];
+       \draw [thick]
+          (0.5,0) circle [draw,radius=36pt];
+       \node at (0.5,-1.5) {A $\cup$ B};
+      \end{tikzpicture}
+    \caption{Union}                                                                   
+    \end{figure}
+    
+    \begin{figure}
+      \begin{tikzpicture}
+       \node at (0,0) [inner sep=1pt] (A) {A};
+       \node at (1,0) (B) {B};
+     \begin{scope}
+        \clip (0,0) circle [draw,radius=18pt];
+        \fill[pattern=north east lines] (1,0) circle [draw,radius=18pt];
+      \end{scope}
+       \draw
+          (0,0) circle [draw,radius=18pt] 
+          (1,0) circle [draw,radius=18pt];
+       \node at (0.5,-1) {A $\cap$ B};
+      \end{tikzpicture}
+    \caption{Intersection}                                                                   
+    \end{figure}
 
     L’ensemble 2\textsuperscript{E} muni des opérations binaires \textrm{${\cap}$} et \textrm{${\cup}$} et de la relation d’ordre \textrm{${\subseteq}$} possède d’excellentes propriétés similaires à celles de l’ensemble des nombres naturels muni des opérations + et \textrm{${\times}$} et de la relation ${\leq}$. En un sens, ces opérations et relations «~structurent~» l’ensemble 2\textsuperscript{E} ; une telle structure est appelée une \textstyleTermesapprof{structure algébrique}.
     }
