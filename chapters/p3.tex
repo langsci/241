@@ -879,14 +879,32 @@ La \textbf{nature des critères} pris en compte amène également à considérer
 Nous donnons dans la figure suivante deux instanciations des trois connexions entre les quatre unités considérées (\textit{Marie, regard-, -ait} et \textit{Pierre}). Dans la structure de gauche, nous utilisons le seul critère d’autonomisabilité des unités pour déterminer les connexions. Dans la structure de droite, nous ajoutons le critère de distributionnalité. Les deux analyses ont la même granularité, mais ne reposent pas sur les mêmes critères. La structure de droite affine les connexions de la structure de gauche en proposant des instances plus fines des connexions (voir l’\encadref{fig:3.2.15} sur la \textit{Définition formelle de la connexion} pour la relation de finesse entre combinaisons).
 
 \begin{figure}
-\textit{Marie regardait Pierre}
+\begin{tikzpicture}
+  \matrix [matrix of nodes, nodes={ConcSet},row sep=1em,column sep=1em] (matrix)
+    {
+      Marie & & & Pierre \\
+       & regard- & -ait & \\     
+    };
+  \node [draw,ellipse,fit=(matrix-2-2) (matrix-2-3),inner sep=0pt] (row2) {};
+  \draw (matrix-2-2) -- (matrix-2-3);
+  \draw (matrix-1-1) -- (row2)
+                     -- (matrix-1-4);
+\end{tikzpicture}
+\caption{\label{fig:}\textit{Marie regardait Pierre} : Structure de connexion avec critère d’autonomisabilité}
+\end{figure}
 
-%%[Warning: Draw object ignored]
-%%[Warning: Draw object ignored]
-
-Structure de connexion         Structure de connexion
-           avec critère d’autonomisabilité         avec critère distributionnel
-\caption{\label{fig:}}
+\begin{figure}
+\begin{tikzpicture}
+  \matrix [matrix of nodes, nodes={ConcSet},row sep=1em,column sep=1em] (matrix)
+    {
+      & -ait & & Pierre\\
+      Marie & & regard- & \\
+    };
+  \draw (matrix-2-1) -- (matrix-1-2)
+                     -- (matrix-2-3)
+                     -- (matrix-1-4);
+\end{tikzpicture}
+\caption{\textit{Marie regardait Pierre} : Structure de connexion avec critère distributionnel}
 \end{figure}
 
 Dans la suite de ce chapitre, nous travaillerons avec les unités syntaxiques autonomisables et donc avec le grain des mots, qui sont les plus petites unités syntaxiques faiblement autonomisables (voir \chapref{sec:4.1}).
@@ -909,24 +927,55 @@ Il n’est pas nécessaire d’identifier toutes les unités syntaxiques pour ob
 
 Donnons des exemples de fragmentations de l’énoncé \textit{Cet étudiant veut acheter un livre de syntaxe}. Nous limitons nos fragmentations aux unités autonomisables.
 
-\begin{figure}
-   (( cet ${\oplus}$ étudiant) ${\oplus}$ (veut ${\oplus}$ acheter)) ${\oplus}$ ((un ${\oplus}$ livre) ${\oplus}$ (de ${\oplus}$ syntaxe))
-
-   (cet ${\oplus}$ étudiant) ${\oplus}$ (veut ${\oplus}$ (acheter ${\oplus}$ (un ${\oplus}$  (livre ${\oplus}$ (de ${\oplus}$ syntaxe)))))
-
-   ((cet ${\oplus}$ étudiant) ${\oplus}$  veut) ${\oplus}$ ((acheter ${\oplus}$ (un ${\oplus}$ livre)) ${\oplus}$ (de ${\oplus}$ syntaxe))
-
-   \caption{\label{fig:}Des exemples de fragmentation}
-\end{figure}
+\ea Des exemples de fragmentation\\
+\ea (( cet ${\oplus}$ étudiant) ${\oplus}$ (veut ${\oplus}$ acheter)) ${\oplus}$ ((un ${\oplus}$ livre) ${\oplus}$ (de ${\oplus}$ syntaxe))\label{ex:fragmentation:1}
+\ex (cet ${\oplus}$ étudiant) ${\oplus}$ (veut ${\oplus}$ (acheter ${\oplus}$ (un ${\oplus}$  (livre ${\oplus}$ (de ${\oplus}$ syntaxe)))))
+\ex ((cet ${\oplus}$ étudiant) ${\oplus}$  veut) ${\oplus}$ ((acheter ${\oplus}$ (un ${\oplus}$ livre)) ${\oplus}$ (de ${\oplus}$ syntaxe))
+\z
+\z
 
 On peut représenter une fragmentation par une structure arborescente, appelée un \textstyleTermes{arbre de fragmentation} : chaque nœud de l’arbre représente un fragment, les feuilles de l’arbre étant les fragments minimaux considérés (les mots dans notre exemple). Les branches de l’arbre représente la relation entre un fragment et un des deux sous-fragments obtenu lors de la décomposition. Nous donnons l’arbre de fragmentation de la première de nos trois fragmentations.
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
-\textbf{L’arbre} \textbf{pour la fragmentation\\
-}(( cet ${\oplus}$ étudiant) ${\oplus}$ (veut ${\oplus}$ acheter)) ${\oplus}$ ((un ${\oplus}$ livre) ${\oplus}$ (de ${\oplus}$ syntaxe))
-\caption{\label{fig:}}
+\begin{tikzpicture}[every node/.style={font=\strut}]
+\begin{scope}[
+              every node/.style={circle,draw},level distance=2\baselineskip,
+              level 1/.style={sibling distance=60mm},
+              level 2/.style={sibling distance=30mm},
+              level 3/.style={sibling distance=15mm}
+             ]
+      \node (root) {}
+        child { node{} 
+                child { node{} 
+                    child { node{} }
+                    child { node{} }
+                      }
+                child { node{} 
+                    child { node{} }
+                    child { node{} }
+                      } 
+               }
+        child { node{} 
+                child { node{} 
+                    child { node{} }
+                    child { node{} }
+                      }
+                child { node{} 
+                    child { node{} }
+                    child { node{} }
+                      } 
+               };
+    \end{scope}
+    \node[below=1pt of root-1-1-1] {cet};
+    \node[below=1pt of root-1-1-2] {étudiant};
+    \node[below=1pt of root-1-2-1] {veut};
+    \node[below=1pt of root-1-2-2] {acheter};
+    \node[below=1pt of root-2-1-1] {un};
+    \node[below=1pt of root-2-1-2] {livre};
+    \node[below=1pt of root-2-2-1] {de};
+    \node[below=1pt of root-2-2-2] {syntaxe};
+\end{tikzpicture}
+\caption{\label{fig:}L’arbre pour la fragmentation \REF{ex:fragmentation:1}}
 \end{figure}
 
 \section{De la fragmentation à la connexion}\label{sec:3.2.22}
@@ -936,9 +985,26 @@ On peut définir la structure de connexion d’un énoncé à partir de toutes l
 Prenons l’exemple de la section précédente et l’arbre de fragmentation que nous avons dessiné. On veut raffiner la combinaison A ${\oplus}$ B avec A = \textit{cet étudiant} et B = \textit{veut acheter}. A se décompose en X ${\oplus}$ Y avec X = \textit{cet} et Y = \textit{étudiant}. Aucune des deux combinaisons \textit{cet veut acheter} et \textit{étudiant veut acheter} ne forme une unité syntaxique et on ne peut donc raffiner ainsi. À l’inverse, B se décompose en \textit{veut} ${\oplus}$ \textit{acheter} et \textit{cet étudiant veut} est une unité syntaxique. On peut donc raffiner la combinaison A ${\oplus}$ B en A ${\oplus}$ \textit{veut}. En continuant ainsi, on obtient la structure de connexion suivante.
 
 \begin{figure}
-
-%%[Warning: Draw object ignored]
-
+\begin{tikzpicture}
+  \matrix [matrix of nodes, 
+           nodes={ConcSet,font=\footnotesize}, 
+           row sep=1em, 
+           column sep=.333em] (matrix)
+          {
+            cet & étudiant & & acheter & & & de & syntaxe\\
+                &          & veut & & un & livre & & \\ 
+          };
+  \node [draw,ellipse,inner sep=0pt,fit = (matrix-1-1) (matrix-1-2)] (row11) {};
+  \node [draw,ellipse,inner sep=0pt,fit = (matrix-2-5) (matrix-2-6)] (row21) {};
+  \node [draw,ellipse,inner sep=0pt,fit = (matrix-1-7) (matrix-1-8)] (row12) {};
+  \draw (matrix-1-1) -- (matrix-1-2)
+        (matrix-2-5) -- (matrix-2-6)
+        (matrix-1-7) -- (matrix-1-8);
+  \draw (row11) -- (matrix-2-3) 
+                -- (matrix-1-4)
+                -- (row21)
+                -- (row12);
+\end{tikzpicture}
 \caption{\label{fig:}Structure de connexion}
 \end{figure}
 
@@ -1001,11 +1067,9 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
     Il est généralement admis que les locuteurs traitent les énoncés de manière \textstyleTermesapprof{incrémentale}, c’est-à-dire au fur et à mesure qu’ils les perçoivent. Une expérience classique est celle des \textstyleTermesapprof{garden paths} (en anglais \textit{to lead somebody up the garden path} signifie ‘mener quelqu’un en bateau’). Lisez les deux phrases suivantes :
 
     \ea
-    {L’espion reconduit à la frontière un diplomate américain.}
-    \z
-\ea{
+    L’espion reconduit à la frontière un diplomate américain.
+    \ex
     L’espion reconduit à la frontière est un diplomate russe.
-    }
     \z
 
     Lorsqu’on suit le mouvement des yeux d’un lecteur (on appelle cette méthode l’\textit{eye-tracking}), on observe une saccade régressive sur la deuxième phrase, c’est-à-dire que lorsque le lecteur tombe sur la deuxième forme verbale, \textit{est}, il revient sur la première, \textit{reconduit}, puis revient sur \textit{est}. Ceci tend à prouver que l’analyse est globalement incrémentale, que les mots sont analysés et connectés au fur et à mesure de la lecture, mais que toute analyse qui est infirmée par la suite nécessite un \textstyleTermesapprof{retour en arrière} (angl. \textit{backtracking}) pour détricoter l’analyse en cours.
