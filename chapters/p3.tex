@@ -1015,14 +1015,36 @@ Les structures de connexion ne sont pas n’importe quel graphe à bulles. D’u
 
 Enfin, les structures de connexion ont généralement la propriété de binarité suivante : chaque bulle se décompose en deux bulles connectées entre elles. Il est alors possible d’utiliser un autre mode de représentation, où les bulles ne sont pas représentées : un lien dont le sommet est une bulle composée de deux sous-bulles connectées entre elles sera attribué au lien entre les deux sous-bulles. On obtient une nouvelle structure, que nous appelons un \textstyleTermesapprof{polygraphe}, où une arête peut avoir pour sommet un nœud ou une arête. Nous donnons ci-dessous une version polygraphique de la structure connexion de la section précédente.
 
-% \begin{figure}
-
-
-%%[Warning: Draw object ignored]
-
-% \caption{\label{fig:}Polygraphe représentant une structure de connexion}
-% \end{figure}
+\begin{figure}
+\begin{tikzpicture}
+  \matrix [matrix of nodes,
+           nodes={ConcSet,font=\footnotesize},
+           row sep=1em,
+           column sep=.333em,
+           ampersand replacement=\&] (matrix)
+    {
+      \& étudiant \& \& acheter \& \& livre \& \& syntaxe\\
+      cet \& \& veut \& \& un \& \& de \& \\
+    };
+    \coordinate (intersection1) at ($ (matrix-1-2) !.5! (matrix-2-1) $);
+    \coordinate (intersection2) at ($ (matrix-1-6) !.5! (matrix-2-5) $);
+    \coordinate (intersection3) at ($ (matrix-1-8) !.5! (matrix-2-7) $);
+    \draw (intersection1) -- (matrix-2-1);
+    \draw (intersection1) -- (matrix-1-2);
+    \draw (intersection1) -- (matrix-2-3);
+    \draw (matrix-2-3)    -- (matrix-1-4);
+    \draw (intersection2) -- (matrix-1-4);
+    \draw (intersection2) -- (matrix-2-5);
+    \draw (intersection2) -- (matrix-1-6);
+    \draw (intersection3) -- (matrix-1-6);
+    \draw (intersection3) -- (matrix-2-7);
+    \draw (intersection3) -- (matrix-1-8);
+\end{tikzpicture}         
+\caption{\label{fig:}Polygraphe représentant une structure de connexion}
+\end{figure}
 }
+
+
 \loupe{Cycle de connexions}{%\label{sec:3.2.24}
     Il peut arriver qu’une unité ABC possède comme sous-unités à la fois AB, BC et AC et que les trois combinaisons A \textrm{${\oplus}$} B, B \textrm{${\oplus}$} C et A \textrm{${\oplus}$} C soient possibles, ce qui donne un \textbf{cycle} (non orienté) de connexions. (On verra, lorsqu’on considérera la dépendance et que les connexions sont orientées, qu’il ne peut pas s’agir d’un cycle orienté ; voir la \sectref{sec:3.3.4} \textit{Structure de dépendance et arbre de dépendance}.) Cette situation se rencontre avec les exemples suivants.
 
@@ -1080,12 +1102,18 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
 
     Prenons un exemple : \textit{L’autre jour, j’ai rencontré quelqu’un que j’avais pas revu depuis l’école primaire}. Même si \textit{l’autre jour} est détaché et que le reste de l’énoncé forme une unité plus cohésive (un noyau, nous verrons), on n’attend pas d’avoir la totalité du noyau pour connecter \textit{l’autre jour} à la construction verbale. Le complément d’objet direct de \textsc{rencontrer} est un groupe substantival assez long : \textit{quelqu’un que j’avais pas revu depuis l’école primaire}. Même s’il faut avoir traité l’ensemble de ce groupe pour savoir ‘ce que j’ai rencontré’, on n’a pas besoin d’attendre d’avoir traité la relative pour connecter \textit{quelqu’un} à \textit{j’ai rencontré}. Il est d’ailleurs assez probable que l’énoncé soit segmenté prosodiquement de la façon suivante : \textit{l’autre jour {\textbar} j’ai rencontré quelqu’un {\textbar} que j’avais pas revu {\textbar} depuis l’école primaire}, puisque les groupes accentuels tendent à faire autour de 6 syllabes, et qu’il faut que, à chaque frontière de groupe accentuel (marquées ici par {\textbar} ), l’ensemble de ce qui précède reçoive une analyse syntaxique complète. Chacun des quatre groupes prosodiques peut recevoir une analyse complète indépendamment des autres groupes, puis être connecté aux autres, ce qui donne quelque chose comme ça :
 
-%     \begin{figure}
-
-
-    %%[Warning: Draw object ignored]
-%     \caption{\label{fig:}}
-%     \end{figure}
+    \begin{figure}
+    \begin{tikzpicture}
+    \node at (0,0)  [ConcSet,font=\small] (A) {l’autre jour};
+    \node at (3,-1) [ConcSet,font=\small] (B) {j’ai rencontré quelqu’un};
+    \node at (6,-2) [ConcSet,font=\small] (C) {que j’avais pas revu};
+    \node at (9,-3) [ConcSet,font=\small] (D) {depuis l’école primaire};
+    \path [draw] (A.north east) edge [out=45, in=80] (B)
+                 (B.north east) edge [out=45, in=80] (C)
+                 (C.north east) edge [out=45, in=80] (D);
+    \end{tikzpicture}
+    \caption{\label{fig:}}
+    \end{figure}
 
     Nous pouvons dire pour conclure que la représentation de l’organisation syntaxique d’un énoncé par une structure de connexions présente des avantages pour qui voudrait étudier plus avant le traitement cognitif de la parole et de la lecture, permettant de rendre compte d’une connexion à différents niveaux de granularité, d’attribuer des analyses à n’importe quelle portion d’un énoncé et de construire la structure d’un énoncé de manière incrémentale.
 }
@@ -1123,7 +1151,27 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
 
     \exercice{5} On propose la structure de connexion suivante pour \textit{Le chat dort sur le lit}.
 
-    %%[Warning: Draw object ignored]
+    \begin{center}
+    \begin{tikzpicture}
+      \matrix (matrix) [matrix of nodes,
+                        nodes={ConcSet},
+                        row sep=1em, 
+                        column sep=1em,
+                        ampersand replacement=\&]
+        {
+          \& chat \& \& sur \& \& lit\\
+          le \& \& dort \& \& le \& \\
+        };
+      \coordinate (intersection1) at ( $ (matrix-2-1) !.5! (matrix-1-2) $ );
+      \coordinate (intersection2) at ( $ (matrix-2-5) !.5! (matrix-1-6) $ );
+      \coordinate (intersection3) at ( $ (matrix-1-4) !.5! (intersection2) $ );
+      \draw (matrix-2-1)    -- (matrix-1-2);
+      \draw (intersection1) -- (matrix-2-3)
+                            -- (intersection3);
+      \draw (matrix-1-4)    -- (intersection2);
+      \draw (matrix-1-6)    -- (matrix-2-5);
+    \end{tikzpicture}
+    \end{center}
 
     Cette structure est donnée sous forme de polygraphe (voir \encadref{fig:3.2.23}).
 
@@ -1201,12 +1249,51 @@ b) Dans le premier cas, \textit{une épée} est le complément d’objet direct 
 
 \corrigé{4} a) \textit{bien des années plus tard} forme un syntagme, puisqu’il peut être la réponse à la question «~\textit{Ca a commencé quand} ?~». À la même question, on peut répondre \textit{des années plus tard}, \textit{bien plus tard} ou \textit{plus tard}, voire juste \textit{tard}, mais pas \textit{bien des années}, \textit{bien}, \textit{des années} ou \textit{plus}. On en déduit que \textit{bien} et \textit{des années} se combinent avec \textit{plus tard}. Il est plus difficile de déterminer si \textit{bien} et \textit{des années} se combinent avec \textit{plus} ou \textit{tard}, puisque ni \textit{des années plus}, ni \textit{des années tard} n’est acceptable. On peut néanmoins remarquer qu’on trouve un groupe substantival avec \textit{plus} dans d’autres contextes : \textit{Il habite un étage plus haut~}; \textit{Fais-le deux centimètres plus large}. Par contre, on ne peut jamais combiner un groupe substantival avec \textit{tard} sans la présence de \textit{plus}, ce qui nous permet de conclure que \textit{des années} se combine avec \textit{plus}. Si \textit{bien} peut se combiner aussi bien avec \textit{plus} que \textit{tard}, il semble, au vu du sens, que c’est avec \textit{plus} qu’il se combine ici.
 
-%%[Warning: Draw object ignored]
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\footnotesize,inner sep=3pt}]
+ \node at (0,0) (A) [ConcSet] {ça};
+ \node [right=1em of A] (B) [ConcSet] {a};
+ \node [right=1em of B] (C) [ConcSet] {commencé};
+ \node [right=1em of C] (D) [ConcSet] {tard};
+ \node [right=1em of D] (E) [ConcSet] {plus};
+ \node [above right=\baselineskip and 1em of E] (F) [ConcSet] {des};
+ \node [right=1em of F] (G) [ConcSet] {années};
+ \node [below right=\baselineskip and 1em of E] (H) [ConcSet] {bien};
+ 
+ \node [fit = (F) (G),draw,ellipse,inner sep=0pt] (FG) {};
+ \draw (A) -- (B) -- (C) -- (D) -- (E) -- (FG);
+ \draw (F) -- (G);
+ \draw (E) -- (H);
+\end{tikzpicture}
+\end{center}
 
 
 b) La fragmentation du syntagme \textit{le plus haut mur du monde} pose plusieurs problèmes. Nous avons déjà traité le cas des adjectifs épithètes et expliqué pourquoi \textit{le haut} n’est pas un fragment acceptable. Mais c’est plus compliqué avec \textit{le plus haut}, puisqu’on a \textit{le mur le plus haut}. On peut argumenter que \textit{le} dans \textit{le plus haut mur} est bien l’article, car il commute avec un possessif : \textit{son plus haut mur}, \textit{mon plus vieil ami}. Ce qui n’est pas le cas qu’en \textit{le plus haut} forme une unité syntaxique et un groupe adjectival postposé au nom : *\textit{le mur notre plus haut}. On aurait donc la structure de connexion suivante pour \textit{le plus haut mur} :
 
 Mais on peut aussi accepter que dans cette construction \textit{le} joue un double rôle : à la fois article défini (\textit{le mur}) et marqueur du superlatif (le plus), ce qui donne une structure cyclique.
+
+\hfill\begin{tikzpicture}
+\matrix (matrix) [matrix of nodes, 
+                  nodes = {ConcSet},
+                  ampersand replacement=\&,
+                  row sep=1em,
+                  column sep=.5em]
+  {plus \& haut \& \& mur\\
+        \& \& le \& \\  
+  };
+\draw (matrix-1-1) -- (matrix-1-2) -- (matrix-1-4) -- (matrix-2-3);
+\end{tikzpicture}\hfill\begin{tikzpicture}
+\matrix (matrix) [matrix of nodes, 
+                  nodes = {ConcSet},
+                  ampersand replacement=\&,
+                  row sep=1em,
+                  column sep=.5em] 
+  {
+    \& haut \& \& mur\\
+    plus \& \& le\\
+  };
+\draw (matrix-2-1) -- (matrix-1-2) -- (matrix-1-4) -- (matrix-2-3) -- (matrix-2-1);
+\end{tikzpicture}
 
 %%[Warning: Draw object ignored]
 %%[Warning: Draw object ignored]
