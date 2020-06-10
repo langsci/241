@@ -40,16 +40,16 @@ Nous allons préciser l’objectif de cet ouvrage. Avant cela, le lecteur qui n�
     est :
     
     \begin{forest} for tree={font=\itshape}
-    [aimeraient
-        [beaucoup,edge label={node[midway,left,font=\normalfont\scriptsize]{sujet}}
-          [de,edge label={node[midway,left,font=\normalfont\scriptsize]{complément}}
-            [gens,tier=word,edge label={node[midway,left,font=\normalfont\scriptsize]{complément}}]
+    [aimeraient,s sep=1.5cm
+        [beaucoup,edge label={node[near start,left=1.5em,font=\normalfont\footnotesize]{sujet}}
+          [de,edge label={node[midway,left,font=\normalfont\footnotesize]{complément}}
+            [gens,tier=word,edge label={node[midway,left,font=\normalfont\footnotesize]{complément}}]
           ]
         ]
-        [passer,edge label={node[midway,right,font=\normalfont\scriptsize]{objet}}
-          [Noël,edge label={node[midway,left,font=\normalfont\scriptsize]{objet}}] 
-          [en,edge label={node[midway,right,font=\normalfont\scriptsize]{locatif}}
-            [Laponie,tier=word,edge label={node[midway,right,font=\normalfont\scriptsize]{complément}}]
+        [passer,edge label={node[near start,right=1.5em,font=\normalfont\footnotesize]{objet}}
+          [Noël,edge label={node[near start,left=.5em,font=\normalfont\footnotesize]{objet}}] 
+          [en,edge label={node[near start,right=.5em,font=\normalfont\footnotesize]{locatif}}
+            [Laponie,tier=word,edge label={node[midway,right,font=\normalfont\footnotesize]{complément}}]
           ]
         ]
     ]    
