@@ -505,7 +505,30 @@ Un \textbf{signe} qui \textbf{commute librement} avec son environnement est appe
 
     Le schéma suivant illustre la dualité. La dualité lie des \textstyleTermesapprof{objets} à des \textstyleTermesapprof{propriétés~}: dans notre cas, les objets sont les signes et les propriétés les environnements (plus exactement la propriété est la compatibilité avec un environnement). Les propriétés définissent des classes d’objets, tandis que les objets définissent des familles de propriétés. Mais le procédé est totalement symétrique et on peut très bien considérer les propriétés comme nos objets et les objets comme leurs propriétés : dans ce cas, les «~propriétés~» d’une propriété donnée sont les objets compatibles avec elle.
 
-    %%[Warning: Draw object ignored]
+    \begin{figure}
+    \caption{\color{red}Please add a caption}
+    %% Kudos to Schrödinger's cat for showing the basic workings
+    %% of the 3d TikZ library in an unrelated Question at 
+    %% https://tex.stackexchange.com/a/548688
+    \begin{tikzpicture}[3d view={45}{45}]
+    \begin{scope}[canvas is xy plane at z=0,transform shape]
+        \draw (0,0) circle [radius=2cm] coordinate (circle1);
+        \node (classe) [draw,circle] at (-.5,0) {classe (A)};
+        \node (B) [draw,circle] at (1,0) {B};
+        \node[left=2cm of circle1] {objets};
+        \node[right=2cm of circle1] {signes};
+    \end{scope}
+    \begin{scope}[canvas is xy plane at z=-5.5,transform shape]
+        \draw (0,0) circle [radius=2cm] coordinate (circle2);
+        \node (A) [draw,circle] at (-1,0) {A};
+        \node (familie) [draw,circle] at (.5,0) {familie (B)};
+        \node[left=2cm of circle2] {propriétés};
+        \node[right=2cm of circle2] {environnements};
+    \end{scope}
+    \draw (A.north) -- (classe);
+    \draw (B) -- (familie.120);
+    \end{tikzpicture}
+    \end{figure}
 
     Si A est une classe distributionnelle ou une famille d’environnements, dual(dual(A)) = A. La fonction «~dual~» associe donc une classe à chaque famille, laquelle est elle-même associée à cette classe. On en déduit qu’il y a exactement autant de classes distributionnelles que de familles d’environnements.
 
