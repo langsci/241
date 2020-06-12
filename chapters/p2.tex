@@ -551,9 +551,28 @@ Considérons par exemple le segment /\textstylePhono{avãs-}/ de \textit{Le chat
 Considérons maintenant d’autres occurrences de /\textstylePhono{avãs-}/ dans d’autres environnements :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
 
-\caption{Découpage de /\textstylePhono{avãs-}/ selon les axes paradigmatique et syntagmatique}
+\begin{tikzpicture}
+   \matrix (avance) [matrix of nodes,
+                     column sep=0pt,
+                     every node/.style={inner sep=0pt,font=\strut},
+                     column 1/.style={anchor=base east},
+                     column 2/.style={nodes={fill=black!15}},
+                     column 3/.style={anchor=base west}]
+     {
+       Seb a eu de l’&avance&ment.\\
+       Bob a fait des~~&avance&s à Eve.\\
+       Zoé a reçu une~~&avance&~de 1000 euros.\\
+       Le chat~~&avance&~vers moi.\\
+       Les travaux n’&avance&nt pas très vite.\\
+       Ma montre~~&avance&.\\
+       L’&avance&ment des travaux est moins rapide que prévu.\\
+       Aya semble~~&avance&r grâce au vent\\
+     };
+   \draw [-{Triangle[]}] (avance.south west) -- (avance.south east) node [midway,below] {axe syntagmatique};
+   \draw [-{Triangle[]}] (avance.south west) -- (avance.north west) node [very near end,left=2ex,rotate=90] {axe paradigmatique};
+\end{tikzpicture}
+\caption{Découpage de /\textstylePhono{avãs-}/ selon les axes paradigmatique et syntagmatique\todo[inline]{Would you like to have vertical rules left and right of ``avance'' in every line?}}
 \end{figure}
 
 Dans les énoncés \textit{Ma montre} \textbf{\textit{avanc}}\textit{e} ou \textit{Les travaux n’}\textbf{\textit{avanc}}\textit{ent pas très vite}, nous n’avons plus affaire au même signe /\textstylePhono{avãs-}/, car le sens n’est plus ‘se déplacer vers l’avant’. On peut néanmoins considérer qu’il s’agit, d’un certain point de vue, du même segment, car même si le sens est différent, il reste lié au premier sens que nous avons considéré. Il s’agit d’acceptions métaphoriques : lorsque ma montre avance, c’est comme si l’aiguille avançait plus vite que le temps ; lorsque les travaux avancent, ils se rapprochent de leur achèvement. De plus, la forme du signe est exactement la même et sa combinatoire assez similaire : \textit{avanç-} se combine toujours avec -\textit{ait} (\textit{Ma montre} \textbf{\textit{avanç}}\textit{ait}), mais par contre elle n’accepte plus de complément locatif (\textit{L’âne} \textbf{\textit{avanç}}\textit{ait vers moi ; \textsuperscript{\#}}\textit{Ma montre avance vers moi}). Bien qu’il s’agisse de trois signes différents (puisque les signifiés sont différents), nous considérons pourtant qu’ils appartiennent à une même unité, qu’on nomme généralement le verbe \textsc{avancer}.
@@ -779,61 +798,37 @@ On notera pour conclure que nous n’avons pas encore parlé de la notion de \te
 
     \exercice{5} Soit le corpus de swahili suivant. Il s’agit de formes verbales qui forment à elles seules des phrases du swahili. En considérant que ces formes sont des combinaisons libres, déterminer les différent syntaxèmes qui les composent et en déduire un tableau de conjugaison du swahili. Pour extraire chacun des syntaxèmes, on commencera par repérer des paires minimales et les commutations associées.
 
-    1  \textit{atanipenda}  ‘il m’aimera’
-
-    2  \textit{atampenda}  ‘il l’aimera’
-
-    3  \textit{atawapenda}  ‘il les aimera’
-
-    4  \textit{nitampenda}  ‘je l’aimerai’
-
-    5  \textit{utanipenda}  ‘tu m’aimeras’
-
-    6  \textit{tutampenda}  ‘nous l’aimerons’
-
-    7  \textit{nitakupenda}  ‘je t’aimerai’
-
-    8  \textit{atanipiga}  ‘il me battra’
-
-    9  \textit{atampiga}  ‘il le battra’
-
-    10  \textit{nitawapenda}  ‘je les aimerai’
-
-    11  \textit{amenipiga}  ‘il m’a battu’
-
-    12  \textit{amempiga}  ‘il l’a battu’
-
-    13  \textit{alikupiga}  ‘il te battait’
-
-    14  \textit{amekupiga}  ‘il t’a battu’
-
-    15  \textit{atakupenda}  ‘il t’aimera’
-
-    16  \textit{atatupenda}  ‘il nous aimera’
-
-    17  \textit{alimpiga}    ‘il le battait’
-
-    18  \textit{utampenda}  ‘tu l’aimeras’
-
-    19  \textit{watampenda}  ‘ils l’aimeront’
-
-    20  \textit{atakupiga}  ‘il te battra’
-
-    21  \textit{ananipiga}  ‘il me bat’
-
-    22  \textit{anampiga}  ‘il le bat’
-
-    23  \textit{unamsumbua}  ‘tu l’ennuies’
-
-    24  \textit{atakusumbua}  ‘il t’ennuiera’
-
-    25  \textit{alinipiga}    ‘il me battait’
-
-    26  \textit{anakupiga}   ‘il te bat’
-
-    27  \textit{tunakulipa}   ‘nous te payons’
-
-    28  \textit{wametulipa}  ‘ils nous ont payés’
+    \begin{tabbing}
+    24\hspace{2\tabcolsep}\=\hspace{2\tabcolsep}\textit{atakusumbua}\hspace{2\tabcolsep}\=\hspace{2\tabcolsep}‘nous l’aimerons’\kill
+    1  \> \textit{atanipenda}   \> ‘il m’aimera’\\
+    2  \> \textit{atampenda}    \> ‘il l’aimera’\\
+    3  \> \textit{atawapenda}   \> ‘il les aimera’\\
+    4  \> \textit{nitampenda}   \> ‘je l’aimerai’\\
+    5  \> \textit{utanipenda}   \> ‘tu m’aimeras’\\
+    6  \> \textit{tutampenda}   \> ‘nous l’aimerons’\\
+    7  \> \textit{nitakupenda}  \> ‘je t’aimerai’\\
+    8  \> \textit{atanipiga}    \> ‘il me battra’\\
+    9  \> \textit{atampiga}     \> ‘il le battra’\\
+    10 \> \textit{nitawapenda}  \> ‘je les aimerai’\\
+    11 \> \textit{amenipiga}    \> ‘il m’a battu’\\
+    12 \> \textit{amempiga}     \> ‘il l’a battu’\\
+    13 \> \textit{alikupiga}    \> ‘il te battait’\\
+    14 \> \textit{amekupiga}    \> ‘il t’a battu’\\
+    15 \> \textit{atakupenda}   \> ‘il t’aimera’\\
+    16 \> \textit{atatupenda}   \> ‘il nous aimera’\\
+    17 \> \textit{alimpiga}     \> ‘il le battait’\\
+    18 \> \textit{utampenda}    \> ‘tu l’aimeras’\\
+    19 \> \textit{watampenda}   \> ‘ils l’aimeront’\\
+    20 \> \textit{atakupiga}    \> ‘il te battra’\\
+    21 \> \textit{ananipiga}    \> ‘il me bat’\\
+    22 \> \textit{anampiga}     \> ‘il le bat’\\
+    23 \> \textit{unamsumbua}   \> ‘tu l’ennuies’\\
+    24 \> \textit{atakusumbua}  \> ‘il t’ennuiera’\\
+    25 \> \textit{alinipiga}    \> ‘il me battait’\\
+    26 \> \textit{anakupiga}    \> ‘il te bat’\\
+    27 \> \textit{tunakulipa}   \> ‘nous te payons’\\
+    28 \> \textit{wametulipa}   \> ‘ils nous ont payés’\\
+    \end{tabbing}
 
     \exercice{6} Décomposer le plus long mot du français, \textit{anticonstitutionnellement}, en morphèmes. Indiquer par des parenthésages dans quel ordre ces morphèmes peuvent se combiner. Étudier la diagrammaticité des différentes combinaisons.
 
