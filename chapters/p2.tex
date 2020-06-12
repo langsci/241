@@ -510,23 +510,23 @@ Un \textbf{signe} qui \textbf{commute librement} avec son environnement est appe
     %% Kudos to Schrödinger's cat for showing the basic workings
     %% of the 3d TikZ library in an unrelated Question at 
     %% https://tex.stackexchange.com/a/548688
-    \begin{tikzpicture}[3d view={45}{45}]
-    \begin{scope}[canvas is xy plane at z=0,transform shape]
-        \draw (0,0) circle [radius=2cm] coordinate (circle1);
-        \node (classe) [draw,circle] at (-.5,0) {classe (A)};
-        \node (B) [draw,circle] at (1,0) {B};
-        \node[left=2cm of circle1] {objets};
-        \node[right=2cm of circle1] {signes};
-    \end{scope}
-    \begin{scope}[canvas is xy plane at z=-5.5,transform shape]
+    \begin{tikzpicture}[3d view={45}{45},every node/.style={font=\strut}]
+      \begin{scope}[canvas is xy plane at z=0,transform shape]
+        \draw (0,0) circle [radius=2.5cm] coordinate (circle1);
+        \node (classe) [draw,circle] at (-1,0) {classe(A)};
+        \node (B) [draw,circle] at (1.5,0) {B};
+        \node[left=2.5cm of circle1] {objets};
+        \node[right=2.5cm of circle1] {signes};
+      \end{scope}
+      \begin{scope}[canvas is xy plane at z=-5,transform shape]
         \draw (0,0) circle [radius=2cm] coordinate (circle2);
         \node (A) [draw,circle] at (-1,0) {A};
-        \node (familie) [draw,circle] at (.5,0) {familie (B)};
+        \node (familie) [draw,circle] at (.5,0) {familie(B)};
         \node[left=2cm of circle2] {propriétés};
         \node[right=2cm of circle2] {environnements};
-    \end{scope}
-    \draw (A.north) -- (classe);
-    \draw (B) -- (familie.120);
+      \end{scope}
+    \draw  (A.north) -- (classe.335);
+    \draw (B) -- (familie.north);
     \end{tikzpicture}
     \end{figure}
 
