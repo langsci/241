@@ -551,7 +551,6 @@ Considérons par exemple le segment /\textstylePhono{avãs-}/ de \textit{Le chat
 Considérons maintenant d’autres occurrences de /\textstylePhono{avãs-}/ dans d’autres environnements :
 
 \begin{figure}
-
 \begin{tikzpicture}
    \matrix (avance) [matrix of nodes,
                      column sep=0pt,
@@ -1258,7 +1257,43 @@ Prenons l’exemple du morphème \textit{vis-} dont les principales acceptions~s
 Il y a donc parmi les sept acceptions considérées du morphème \textit{vis-} deux quasi-signes et cinq signes dont deux sémantèmes (\textsc{vis,} \textsc{visser}), deux lexèmes désyntactisés (lorsqu’il est une composante des sémantèmes \textsc{dévisser1} et \textsc{vissage}) et un lexème désémantisé (lorsqu’il est une composante de \textsuperscript{⌈}\textsc{serrer} \textsc{la} \textsc{vis}\textsuperscript{⌉}). La figure suivante récapitule cela en montrant les différences entre morphème, syntaxème et sémantème. Chaque ligne correspond à un sémantème, l’acception de \textit{vis-} étant entourée d’une bulle. Les syntaxèmes sont indiqués par des rectangles pleins et le morphème \textit{vis-} par un rectangle en pointillé
 
 \begin{figure}
-%%[Warning: Draw object ignored]
+\begin{tikzpicture}
+   \matrix (vis)    [matrix of nodes,
+                     nodes in empty cells,
+                     column sep=5pt,
+                     row sep = 1ex,
+                     every node/.style={inner sep=0pt,font=\strut},
+                     column 1/.style={anchor=base east},
+                     column 2/.style={anchor=base west,nodes={draw,ellipse,inner sep=0pt}},
+                     row 6 column 2/.style={nodes={dashed}},
+                     row 7 column 2/.style={nodes={dashed}},
+                     column 3/.style={anchor=base west}]
+     {
+       serr(er) la~~& vis &      &     \\
+                    & vis &      &     \\
+                    & viss&      &  age\\
+                    & viss&(er)  &     \\
+                dé~~& viss&(er)1 &     \\
+                dé~~& viss&(er)2 &     \\
+                    & viss&      &  é  \\
+     };
+   \node [draw, dashed, fit = (vis-1-2) (vis-6-3) (vis-7-2), inner sep=3pt] {};
+   \node [draw, inner sep=1pt, fit = (vis-1-2) (vis-2-2)] {};
+   \node [draw, inner sep=1pt, fit = (vis-3-2) (vis-3-4)] {};
+   \node [draw, inner sep=1pt, fit = (vis-4-2) (vis-4-3)] {};
+   \node [draw, inner sep=1pt, fit = (vis-5-1) (vis-5-2) (vis-5-3)] {};
+   \node [draw, inner sep=1pt, fit = (vis-6-1) (vis-6-2) (vis-6-3)] {};
+   \node [draw, inner sep=1pt, fit = (vis-7-2) (vis-7-4)] {};
+   \draw [-{Triangle[]}] (vis.south west) -- (vis.south east) node [midway,below] {axe syntagmatique};
+   \draw [-{Triangle[]}] (vis.south west) -- (vis.north west) node [very near end,left=2ex,rotate=90] {axe paradigmatique};
+   \matrix [right=1cm of vis.east] (legend) 
+     {
+       \node [draw, ellipse,minimum width=1em] {}; & \node {signes};\\
+       \node [draw, dashed, ellipse,minimum width=1em] {}; & \node {quasi-signes};\\
+       \node [draw, minimum width=1em] {}; & \node {syntaxèmes};\\
+       \node [draw, dashed, minimum width=1em] {}; & \node {morphème};\\
+     };
+\end{tikzpicture}
 \caption{\label{fig:}Découpage paradigmatique du morphème \textit{vis-}}
 \end{figure}
 
