@@ -1306,9 +1306,9 @@ Il y a donc parmi les sept acceptions considérées du morphème \textit{vis-} d
 \z
     (Nous utilisons le signe d’inclusion \textrm{${\subseteq}$}, introduit dans l’\encadref{fig:2.2.7} sur la \textit{Théorie des ensembles}, car l’extension syntagmatique d’un signème est vue comme une partie du texte.) Par exemple :
 \ea
-        {\textbar}{\textbar}~\textit{vis-}~{\textbar}{\textbar} \textrm{${\subseteq}$} {\textbar}{\textbar}~\textsc{dévisser}~{\textbar}{\textbar} et {\textbar}{\textbar}~\textsc{vis} {\textbar}{\textbar} \textrm{${\subseteq}$} {\textbar}{\textbar}~\textrm{⌜}\textsc{serrer} \textsc{la} \textsc{vis}\textrm{⌝} {\textbar}{\textbar}
+        {\textbar}{\textbar}~\textit{vis-}~{\textbar}{\textbar} \textrm{${\subseteq}$} {\textbar}{\textbar}~\textsc{dévisser}~{\textbar}{\textbar} et {\textbar}{\textbar}~\textsc{vis} {\textbar}{\textbar} \textrm{${\subseteq}$} {\textbar}{\textbar}~\textrm{$⌜$}\textsc{serrer} \textsc{la} \textsc{vis}\textrm{$⌝$} {\textbar}{\textbar}
 \z
-    L’\textstyleTermesapprofondissement{extension paradigmatique} du signème est l’ensemble de ses occurrences possibles, c’est-à-dire l’ensemble des signes et quasi-signes qu’il contient. (Chaque signifié différent du signème donne un signe différent et chaque présence dans un sémantème différent donne un quasi-signe différent.) Nous notons [~<signème>~] l’extension paradigmatique d’un signème <signème>. Par exemple, [ \textit{vis-} ], l’extension paradigmatique du morphème \textit{vis-}, contient les signifiés ‘vis’, ‘visser1’, ‘visser2’, ‘\textrm{⌜}serrer la vis\textrm{⌝}’, etc. L’extension paradigmatique d’un sémantème est contenue dans celle d’une combinaison particulière de syntaxèmes, qui est elle-même contenue dans celle d’une combinaison particulière de morphèmes (à l’exception des cas, assez courants, d’allomorphie ; voir \sectref{sec:2.2.20}). Nous pouvons résumer cela par la formule suivante :
+    L’\textstyleTermesapprofondissement{extension paradigmatique} du signème est l’ensemble de ses occurrences possibles, c’est-à-dire l’ensemble des signes et quasi-signes qu’il contient. (Chaque signifié différent du signème donne un signe différent et chaque présence dans un sémantème différent donne un quasi-signe différent.) Nous notons [~<signème>~] l’extension paradigmatique d’un signème <signème>. Par exemple, [ \textit{vis-} ], l’extension paradigmatique du morphème \textit{vis-}, contient les signifiés ‘vis’, ‘visser1’, ‘visser2’, ‘$⌜$serrer la vis$⌝$’, etc. L’extension paradigmatique d’un sémantème est contenue dans celle d’une combinaison particulière de syntaxèmes, qui est elle-même contenue dans celle d’une combinaison particulière de morphèmes (à l’exception des cas, assez courants, d’allomorphie ; voir \sectref{sec:2.2.20}). Nous pouvons résumer cela par la formule suivante :
 \ea{}
         [~<sémantème>~] \textrm{${\subseteq}$} [~<syntaxème>~] \textrm{${\subseteq}$} [~<morphème>~]
 \z
@@ -1328,11 +1328,19 @@ Le syntaxème est ainsi un \textstyleTermes{faisceau de signes}, dont les deux f
 Prenons l’exemple du verbe \textsc{aller} qui est à la fois \textbf{polymorphique} (/\textstylePhono{v/}, /\textstylePhono{al/}, /\textstylePhono{i/}, /\textstylePhono{aj/}) et \textbf{polysémique} (‘se déplacer’ (\textit{il va quelque part}), ‘se sentir’ (\textit{comment allez-vous} ?), ‘\textsc{futur}’ (\textit{il va partir}), etc., acceptions auxquelles il faut encore ajouter toutes les participations à un phrasème, comme dans $⌜$\textsc{aller} \textsc{au} \textsc{charbon}$⌝$ ou $⌜$\textsc{aller} \textsc{se} \textsc{faire} \textsc{cuire} \textsc{un} \textsc{œuf}$⌝$). On peut représenter l’association libre entre les sens et les formes de \textsc{aller} sous la forme d’un faisceau au centre duquel nous plaçons le nom du syntaxème. Comme on le voit, un signe est l’association d’une des formes avec un des sens, tandis que le signème est la réunion de tous ces signes :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
+\begin{tikzpicture}
+ \graph [grow down, branch right sep=2cm] 
+   {
+     {‘se déplacer’, ‘se sentir’, ‘futur’  …} 
+     -- {ALLER [xshift=4cm]}
+     -- {al/\textit{/al/-}, v/\textit{/v/-}, i/\textit{/i/-}, aj/\textit{\strut/aj/-}}
+   };
+\end{tikzpicture}
+\caption{signe\label{fig:}}
+\end{figure}
 
-      \textbf{signe}               \textbf{signème}
-
-\caption{\label{fig:}}
+\begin{figure}
+\caption{signème}
 \end{figure}
 
 La symétrie entre sens et forme n’est pas complète. Le locuteur fait le choix d’un sens et ce choix peut se porter sur n’importe lequel des signifiés du syntaxème. Mais le «~choix~» du signifiant n’en est pas un : il est \textbf{totalement imposé par l’environnement}, c’est-à-dire par les choix adjacents du locuteur. Dans le cas de \textsc{aller}, le «~choix~» du signifiant est conditionné par la flexion et donc par le choix du temps et celui du sujet via l’accord.
