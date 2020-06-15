@@ -2208,8 +2208,6 @@ On peut encore appliquer le critère au cas des formes verbales comme \textit{ch
           \draw[-{Triangle[]}] (boire) -- (vin) node[EdgeLabel] {2};
           \draw[-{Triangle[]}] (un) -- (verre) node[EdgeLabel] {1};
     \end{tikzpicture}\end{minipage}
-
-    %%[Warning: Draw object ignored]
     \z
 
     Un autre cas de distorsion est illustré par l’exemple suivant :
@@ -2359,9 +2357,22 @@ Le déterminant et le nom forment avec leurs dépendants une unité que nous app
 La question de savoir qui du nom ou du déterminant est la tête est une question complexe qui a fait couler beaucoup d’encre. Il existe trois réponses possibles (et pas deux) : (A) le nom est la tête, (B) le déterminant est la tête, (C) les deux ont des propriétés de têtes et sont des co-têtes. Illustrons ces trois options sur un exemple simple, \textit{le petit chien dort~}:
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
-   \textbf{(A)} \textbf{Nom tête}  \textbf{(B)} \textbf{Déterminant tête}  \textbf{(C)} \textbf{Co-têtes}
+\begin{minipage}[t]{.3\linewidth}\centering
+(A) Nom tête\medskip\\
+\begin{forest} for tree={font=\itshape}
+[dort [chien [le] [petit]]]
+\end{forest}
+\end{minipage}\hfill\begin{minipage}[t]{.3\linewidth}\centering
+(B) Déterminant tête\medskip\\
+\begin{forest} for tree={font=\itshape}
+[dort [le [chien [petit]]]]
+\end{forest}
+\end{minipage}\hfill\begin{minipage}[t]{.3\linewidth}\centering
+(C) Co-têtes\medskip\\
+\begin{forest} for tree={font=\itshape}
+[dort [,nice empty nodes [le] [chien [petit]] ]]
+\end{forest}
+\end{minipage}
    \caption{\label{fig:}}
 \end{figure}
 
@@ -2589,18 +2600,49 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
     Nous avons discuté du nom ou du déterminant comme tête du groupe substantival. Mais il existe une autre solution encore. Nous avons vu que la flexion du verbe pouvait être considérée comme la tête de la proposition et prendre le sujet comme dépendant (voir la \sectref{sec:3.3.13} sur \textit{Le critère distributionnel sans effacement}). Une analyse similaire peut être proposée pour le nom. Les deux catégories flexionnelles du nom sont la définitude et le nombre (voir le \chapref{sec:4.2} sur les \textit{Catégories flexionnelles}). On peut alors proposer pour \textit{les deux amis} la structure suivante (dont les nœuds sont occupés par des syntaxèmes) :
 
     \ea
-    %%[Warning: Draw object ignored]
+    \begin{forest}
+    [défini
+      [LE] [pluriel
+        [DEUX] [AMI]
+      ]
+    ]
+    \end{forest}
     \z
 
     Si on ramène maintenant cette structure à une structure de dépendance entre mots, on a deux façons de la réduire :
+    \begin{itemize}
+    \item soit on amalgame les grammèmes avec le lexème qui les marque :
     \ea
-    %%[Warning: Draw object ignored]
-    {}- soit on amalgame les grammèmes avec le lexème qui les marque :
-
-    %%[Warning: Draw object ignored]
-    {}- soit on considère que ces grammèmes sont des flexions du nom et on les amalgame avec lui :
+    \begin{forest} for tree = {s sep=2cm, l=2cm}
+    [défini,name=defini
+      [LE,name=le] [pluriel,name=pluriel
+        [DEUX,name=deux] [AMI]
+      ]
+    ]
+    \draw ($ (defini) !0.5! (le) $) ellipse [x radius=2cm, y radius=1cm,rotate=45];
+    \draw ($ (pluriel) !0.5! (deux) $) ellipse [x radius=2cm, y radius=1cm,rotate=45];
+    \end{forest}\hspace{2cm}%
+    \begin{forest} for tree={font=\itshape, l=2cm}
+    [les [deux [amis]]]
+    \end{forest}
     \z
+    \item soit on considère que ces grammèmes sont des flexions du nom et on les amalgame avec lui :
     Comme on le voit, on retombe ainsi sur les deux arbres qu’on aurait obtenu en décidant soit que le déterminant est la tête, soit que le nom est la tête. Ceci est encore une façon de dire que le choix du nom ou du déterminant comme tête est finalement secondaire, puisqu’on peut voir ça comme deux réductions différentes d’une même analyse sous-jacente.
+    
+    \ea 
+    \begin{forest} for tree = {s sep=2cm, l=2cm}
+    [défini,name=defini
+      [LE] [pluriel
+        [DEUX] [AMI,name=ami]
+      ]
+    ]
+    \draw ($ (defini) !0.5! (ami) $) ellipse [x radius=3cm, y radius=1.5cm,rotate=-45];
+    \end{forest}\hspace{1cm}%
+    \begin{forest} for tree={font=\itshape, s sep=2cm, l=2cm}
+    [amis [les] [deux]]
+    \end{forest}
+    \z
+    \end{itemize}
 }
 \section{Dominance et projections maximales}\label{sec:3.3.30}
 
@@ -2621,8 +2663,12 @@ dont voici l’arbre de dépendance :
 
 \begin{figure}
 
-%%[Warning: Draw object ignored]
-
+\begin{forest} for tree = {edge = -{Triangle[]}, font=\itshape}
+[aimeraient
+  [beaucoup [de [gens]]]
+  [passer [Noël] [en [Laponie]]]
+]
+\end{forest}
 \caption{\label{fig:}Arbre de dépendance}
 
 \end{figure}
@@ -2630,9 +2676,10 @@ dont voici l’arbre de dépendance :
 Le sous-arbre de racine \textit{passer} est :
 
 \begin{figure}
-
-%%[Warning: Draw object ignored]
-\caption{\label{fig:}Sous-arbre} \textbf{de racine \textit{passer}}
+\begin{forest} for tree = {edge = -{Triangle[]}, font=\itshape}
+  [passer [Noël] [en [Laponie]]]
+\end{forest}
+\caption{\label{fig:}Sous-arbre de racine \textit{passer}}
 \end{figure}
 
 Les éléments dominés par le nœud \textit{passer} sont donc \textit{passer} lui-même, \textit{Noël, en} et \textit{Laponie}.
@@ -2663,7 +2710,16 @@ Si l’on adopte une représentation syntaxique très granulaire où les syntax�
     Si E est un ensemble, on note E~\textrm{${\times}$}~E l’ensemble des couples sur E. Par exemple, si E = \{ \textit{a,b} \}, alors E~\textrm{${\times}$}~E = \{ (\textit{a,a}), (\textit{a,b}), (\textit{b,a}), (\textit{b,b})~\}. On appelle \textstyleTermesapprof{relation binaire} sur E tout sous-ensemble de E~\textrm{${\times}$}~E. Si R est une relation binaire sur E, on privilégie la notation \textit{a} R \textit{b} pour dire que les éléments \textit{a} et \textit{b} de E sont en relation par R (plutôt que de dire que le couple (\textit{a,b}) est élément de R). Toute relation binaire peut être représentée par un graphe orienté dont les nœuds sont les éléments de E et une arête de \textit{a} vers \textit{b} représente la relation entre les nœuds \textit{a} et \textit{b} (\textit{a} R \textit{b}). La figure suivante représente le \textstyleTermesapprof{graphe de la relation} R = \{ (1,2), (2,1), (1,3), (3,3) \}.
 
     \ea
-    %%[Warning: Draw object ignored]
+    \begin{tikzpicture}
+    \node at (0,0) (A) [circle, draw, label=below:2] {};
+    \node at (2,0) (B) [circle, draw, label=below:1] {};
+    \node at (4,0) (C) [circle, draw, label=below:3] {};
+    
+    \path [-{Triangle[]}] (A) edge [bend left] (B);
+    \path [-{Triangle[]}] (B) edge [bend left] (A);
+    \path [-{Triangle[]}] (B) edge (C);
+    \path [-{Triangle[]}, overlay] (C) edge [loop above] ();    
+    \end{tikzpicture}
     \z
 
     L’arbre de dépendance est ainsi le \textbf{graphe de la relation de dépendance}. Dans l’exemple de la section précédente, R = \{ (\textit{gens,de}), (\textit{de,beaucoup}), (\textit{beaucoup,aimeraient}), (\textit{passer,aimeraient}), (\textit{Noël,passer}), (\textit{en, passer}), (\textit{Laponie,en}) \}.
@@ -2674,8 +2730,25 @@ Si l’on adopte une représentation syntaxique très granulaire où les syntax�
 
     \ea
     %%[Warning: Draw object ignored]
-
-    \textbf{Réflexivité}      \textbf{Symétrie}              \textbf{Transitivité}
+    \ea Réflexivité\\
+      \tikz \node [circle,draw] {} edge [loop above] ();
+    \ex Symétrie\\
+      \begin{tikzpicture}
+      \node at (0,0) (A) [circle, draw] {};
+      \node at (2,0) (B) [circle, draw] {};
+      \path [-{Triangle[]}] (A) edge [bend left] (B);
+      \path [-{Triangle[]}] (B) edge [bend left] (A);
+      \end{tikzpicture}
+    \ex Transitivité\\
+      \begin{tikzpicture}
+      \node at (0,0) (A) [circle, draw] {};
+      \node at (2,0) (B) [circle, draw] {};
+      \node at (4,0) (C) [circle, draw] {};
+      \path [-{Triangle[]}] (A) edge [bend left] (B)
+                                edge [bend left, out=60, in=120, looseness=.75] (C);
+      \path [-{Triangle[]}] (B) edge [bend left] (C);
+      \end{tikzpicture}
+    \z
     \z
 
     La relation de dépendance n’est ni réflexive, ni symétrique, ni transitive. Elle est même à l’opposé de ça, puisqu’on n’a jamais une configuration des types précédents dans un arbre de dépendance. Mais on peut construire à partir de la relation de dépendance une relation réflexive et transitive, et c’est justement la relation de dominance.
@@ -2703,10 +2776,14 @@ Une dernière façon de caractériser une tête repose sur l’organisation lin�
 \end{styleLivreImportant}
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
+      \begin{tikzpicture}
+      \node at (0,0) (B) [circle, draw, label=below:B] {};
+      \node at (2,0) (A) [circle, draw, label=below:A] {};
+      \node at (4,0) (C) [circle, draw, label=below:C] {};
+      \path  (B) edge [bend left, out=60, in=120, looseness=.75] (C);
+      \path [-{Triangle[]}] (A) edge [bend right] (B);
+      \end{tikzpicture}
 \caption{\label{fig:}Configuration rejetée par le critère de recouvrement}
-
 \end{figure}
 
 Illustrons cela avec la relation sujet-verbe et considérons les données suivantes :
@@ -3020,16 +3097,64 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
 \corrections{%\label{sec:3.3.37}
     \corrigé{1} Nous proposons de traduire l’analyse de Buffier par le diagramme suivant où les flèches représentent les relations du type «~est déterminé par~» ou est «~est particularisé par~». Notons que, à l’exception du cas de \textit{avec des discours}, les deux termes de la relations sont à chaque fois clairement donnés par Buffier. Nous représentons pour cette raison la relation entre \textit{avec des discours} et son gouverneur en pointillé.
 
-    \ea
-    %%[Warning: Draw object ignored]
-    Diagramme d’après \citet{Buffier1709}
+    \ea Diagramme d’après \citet{Buffier1709}\\
+    \begin{forest} for tree = {edge = -{Triangle[]}, calign=child, calign primary child=1}
+    [un homme [qui [étourdit
+        [les gens [qu’il rencontre]]
+        [avec    des discours, edge=dashed
+            [frivoles circumstances]
+        ]
+    ]]]    
+    \end{forest} 
+    
+    \begin{forest} for tree = {edge = -{Triangle[]}}
+     [a coutume 
+        [de causer
+            [beaucoup d’ennui, edge label={%
+                            node[near start,left=1em,font=\itshape]{régime absolu}}]    
+            [à tout le monde, edge label={%
+                            node[near start,right=1em,font=\itshape]{régime respectif}}]
+        ]
+     ]
+    \end{forest}
     \z
 
     \corrigé{2} Du Marsais propose une analyse hybride entre dépendance et constituance immédiate. Il semble hésiter entre les deux approches et utilise notamment le même terme \textit{sujet} pour désigner la relation entre le groupe sujet et le groupe verbal (\textit{Celui} est le sujet de \textit{ne marche point dans les ténèbres}) et pour désigner un constituant de la proposition (\textit{Qui me suit}, ces trois mots font une proposition incidente […] \textit{Qui} est le sujet de cette proposition incidente).
 
     \ea
-    %%[Warning: Draw object ignored]
-    Diagramme d’après \citet{Dumarsais1754}
+    Diagramme d’après \citet{Dumarsais1754}\\
+    \begin{tikzpicture}[>={Triangle[]}]
+    \matrix (matrix) 
+        [
+          ampersand replacement=\&, 
+          nodes={font=\strut},
+          row 1/.style={nodes={font=\itshape}},
+          row 3/.style={nodes={font=\itshape}},
+          column sep=1em,
+        ] 
+      {
+        \node (Matrix-1-1) {sujet}; \& \node (Matrix-1-2) {attribut}; \& \node (Matrix-1-3) {attribut}; \& \node (Matrix-1-4) {sujet};\\
+        \node (Matrix-2-1) [draw] {celui}; \& \node (Matrix-2-2) {marche}
+                            child { node (Matrix-2-2-1) { ne point } edge from parent[->] } 
+                            child { node {dans}
+                                    child { node (Matrix-2-2-2) { les ténèbres } 
+                                        edge from parent[->] node[right,font=\itshape\footnotesize] {complément} }
+                                    edge from parent[->] node[right,font=\itshape\footnotesize] {modification} }; 
+                      \& \node (Matrix-2-3) [draw] {dit}; \&  \node (Matrix-2-4) [draw] {Jésus-Christ}; \\[2cm]
+        \node (Matrix-3-1) {sujet}; \& \node (Matrix-3-2) {attribut}; \\
+        \node (Matrix-4-1) [draw] {qui};   \& \node (Matrix-4-2) {suit} child { node (Matrix-4-2-1) { me } edge from parent[->] };\\
+      };
+    \node [fit=(Matrix-3-1) (Matrix-3-2) (Matrix-4-2) (Matrix-4-2-1), draw,
+           label=above:{\itshape proposition incidente ≈ adjectif}] (Matrix-Lowergroup) {};
+    \node [fit=(Matrix-4-2) (Matrix-4-2-1), draw, inner sep=1pt] {};
+    \node [fit=(Matrix-2-2) (Matrix-2-2-1) (Matrix-2-2-2), draw, inner sep=1pt] (Matrix-Tree) {};
+    \node [fit=(Matrix-1-3) (Matrix-1-4) (Matrix-2-3) (Matrix-2-4), draw, 
+           label=above:{\itshape proposition en incise ou adjoint}] {};
+    \node [fit=(Matrix-1-1) (Matrix-Tree),draw,
+           label=60:{\itshape proposition principale}] {}; 
+    \draw[->] (Matrix-Tree.north west) to [bend right] (Matrix-2-1.north east);
+    \draw[->] (Matrix-2-1) to (Matrix-Lowergroup) node [midway,right=1pt] {\itshape déterminant};
+    \end{tikzpicture}
     \z
 
     \corrigé{3} Le fait que les infinitifs commutent avec des groupes substantifs est déjà souligné par Buffier : «~Ce que les Grammaires appellent communément des verbes, comme \textit{aimer, lire, dormir}, font de véritables noms substantifs ; bien qu’ils aient des propriétés particulières. Car enfin ils signifient un sujet dont on peut parler; ils sont souvent le \textit{nominatif} [=~\textit{sujet}] des verbes et même leur \textit{régime} [=~\textit{complément}]; ils sont par conséquent de vrais noms. En effet quand on dit, \textit{Avouer sa faute est la réparer~}; \textit{avouer} est ici le sujet dont on parle, et se trouve le nominatif du verbe \textit{est}. Et quand on dit \textit{je veux avouer ma faute~}: \textit{avouer} est le véritable régime du verbe \textit{je veux~}; comme \textit{ma faute} est le régime de \textit{avouer}.~» (\citealt{Buffier1709}, p. 59)
