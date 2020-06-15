@@ -491,9 +491,7 @@ Dans la délimitation des unités syntaxiques, il est essentiel de savoir détec
 \ea%1
     \label{ex:key:1}
           {Jean-Claude}  {déteste}  {le}  {coca}  {éventé.}
-\z
-
-\ea%2
+\ex%2
     \label{ex:key:2}
           {Jean-Claude}  {n’aime}  {pas}  {le}  {café.}
 \z
@@ -1340,7 +1338,22 @@ Une dépendance est représentée par une \textbf{flèche} qui va \textbf{du gou
 
 \begin{figure}
 %%[Warning: Draw object ignored]
-
+\begin{tikzpicture} [every node/.style={font=\strut}]
+  \matrix [row sep=1em, column sep=.75em] (matrix)
+    {
+      \node (parle) [ConcSet] {parle}; & \node {gouverneur};\\
+      \node (Marie) [ConcSet] {Marie}; & \node {dépendant};\\
+    };
+  \draw (parle) -- (Marie);
+\end{tikzpicture}\hspace{2cm}
+\begin{tikzpicture}[every node/.style={font=\strut}]
+  \matrix [row sep=.5em, column sep=1em] (matrix)
+    {
+      \node (Marie) [ConcSet] {Marie}; & \node (parle) [ConcSet] {parle};\\
+       \node {dépendant}; & \node {gouverneur};\\
+    };
+\draw[-{Triangle[]}] (parle) to [bend right] (Marie);
+\end{tikzpicture}
 \caption{\label{fig:}Deux représentations d’une dépendance}
 \end{figure}
 
@@ -1369,7 +1382,14 @@ Autrement dit, hiérarchiser une connexion revient donc à décider de quel côt
 
 On aura noté que pour une unité syntaxique U donnée, \textbf{la tête de U est un élément de U}, en quelque sorte l’élément le plus important de U du point de vue de la syntaxe, tandis que \textbf{le gouverneur de U est un élément extérieur à U}. (On peut se souvenir, pour ne pas confondre les deux termes, que la tête d’une personne fait toujours partie de cette personne.) Illustrons ces notions avec \textit{une très jolie valise} et U = \textit{très jolie}. La tête de U est \textit{jolie}, tandis que le gouverneur de U est \textit{valise}.
 
-\begin{figure}\bfseries
+\begin{figure}
+\begin{tikzpicture}
+\node at (0,0) [ConcSet,pin=west:{gouverneur de U}] (valise) {valise};
+\node at (0,-2) [ConcSet,pin=east:{tête de U}] (jolie) {jolie};
+\node at (0,-4) [ConcSet] (tres) {très};
+\draw (valise) -- (jolie) -- (tres);
+\node [fit=(tres) (jolie), draw, ellipse, inner sep=0pt,pin=west:U] {};
+\end{tikzpicture}
   \caption{\label{fig:}Gouverneur vs. tête}
 \end{figure}
 
@@ -1382,7 +1402,7 @@ Concluons cette section en soulignant une propriété fondamentale que nous expl
 \end{styleLivreImportant}
 
 \chevalier{Historique des notions de dépendance et de tête}{%\label{sec:3.3.2}
-    Le premier grammairien à utiliser le terme «~dépendance~» dans un sens grammatical est semble-t-il un grammairien arabe, \textbf{Ibn Mada}, qui vécut en Espagne (alors sous domination arabe) entre 1119 et 1195. Il est connu pour son livre, intitulé \textit{La réfutation des grammairiens}, dans lequel il s’attaque à des sujets qui sont toujours d’actualité. Il critique l’utilisation de formes invisibles sous-jacentes et notamment l’introduction d’un morphème zéro pour le nominatif. Il se prononce aussi en faveur d’une indépendance de la syntaxe et de la sémantique et contre une justification sémantique ou une interprétation cognitive des règles grammaticales : «~Et pourquoi l’agent est-il au nominatif ? La réponse correcte est […] que c’est ainsi que parlent les Arabes.~» Comme nous l’avons dit, il utilise le terme تعلق \textit{ta’alluq}, qui se traduit par \textit{être accroché à, dépendre de, être connecté à, joindre, attachement, amour du monde, dépendance, connexion, relation,} et même \textit{obsession.} Il préfère ce terme à عمل \textit{\textsuperscript{c}}\textit{amal} ‘opération, gouverner’, le terme utilisé communément à son époque en grammaire pour décrire des relations entre le gouverneur et le dépendant. Selon Ibn Mada, le gouverneur n’opère pas sur ses dépendants, il y a seulement une relation, une dépendance. Il va même jusqu’à appeler hérétique toute utilisation de \textit{\textsuperscript{c}}\textit{amal} car, selon lui, des mots ne peuvent agir sur d’autres mots et déclencher une flexion. Comme l’utilisation de \textit{ta’alluq} était essentiellement un changement terminologique pour une notion établie de longue date sous le terme de \textit{\textsuperscript{c}}\textit{amal}, le terme de \textit{dépendance} n’a pas vraiment pris avant le 20\textsuperscript{e} siècle et les travaux de Lucien Tesnière, qui lui donnaient une assise théorique forte (bien que Tesnière lui-même utilise le terme de connexion).
+    Le premier grammairien à utiliser le terme «~dépendance~» dans un sens grammatical est semble-t-il un grammairien arabe, \textbf{Ibn Mada}, qui vécut en Espagne (alors sous domination arabe) entre 1119 et 1195. Il est connu pour son livre, intitulé \textit{La réfutation des grammairiens}, dans lequel il s’attaque à des sujets qui sont toujours d’actualité. Il critique l’utilisation de formes invisibles sous-jacentes et notamment l’introduction d’un morphème zéro pour le nominatif. Il se prononce aussi en faveur d’une indépendance de la syntaxe et de la sémantique et contre une justification sémantique ou une interprétation cognitive des règles grammaticales : «~Et pourquoi l’agent est-il au nominatif ? La réponse correcte est […] que c’est ainsi que parlent les Arabes.~» Comme nous l’avons dit, il utilise le terme {\arfont تعلق} \textit{ta’alluq}, qui se traduit par \textit{être accroché à, dépendre de, être connecté à, joindre, attachement, amour du monde, dépendance, connexion, relation,} et même \textit{obsession.} Il préfère ce terme à {\arfont عمل} \textit{\textsuperscript{c}}\textit{amal} ‘opération, gouverner’, le terme utilisé communément à son époque en grammaire pour décrire des relations entre le gouverneur et le dépendant. Selon Ibn Mada, le gouverneur n’opère pas sur ses dépendants, il y a seulement une relation, une dépendance. Il va même jusqu’à appeler hérétique toute utilisation de \textit{\textsuperscript{c}}\textit{amal} car, selon lui, des mots ne peuvent agir sur d’autres mots et déclencher une flexion. Comme l’utilisation de \textit{ta’alluq} était essentiellement un changement terminologique pour une notion établie de longue date sous le terme de \textit{\textsuperscript{c}}\textit{amal}, le terme de \textit{dépendance} n’a pas vraiment pris avant le 20\textsuperscript{e} siècle et les travaux de Lucien Tesnière, qui lui donnaient une assise théorique forte (bien que Tesnière lui-même utilise le terme de connexion).
 
     L’importance d’une analyse de type dépendentiel pour la description de phénomènes grammaticaux, par contre, était établie bien avant Ibn Mada. On attribue généralement à \textbf{Sibawayh}, le grand grammairien perse travaillant sur l’arabe, la première modélisation grammaticale en termes de dépendances entre mots et notamment en ce qui concerne l’attribution des cas aux noms dépendant d’un verbe. Sibawayh a vécu de 760 à 796 et on raconte qu’il est mort, très jeune, de la fureur qui l’a saisi lors d’un débat sur la grammaire de l’arabe (premier accident de travail d’un linguiste~\textrm{[F04C?]}). Il est le fondateur d’une tradition grammaticale qui reste aujourd’hui vivace.
 
@@ -1432,13 +1452,39 @@ Concluons cette section en soulignant une propriété fondamentale que nous expl
     Nous nous intéressons dans ce chapitre à la syntaxe et lorsque nous parlons de dépendance, il s’agit évidemment de \textstyleTermesapprof{dépendance syntaxique}. Igor Mel’čuk a contrasté cette notion avec celles de dépendances morphologique et sémantique.
 
     Les \textstyleTermesapprof{dépendances sémantiques} sont les \textbf{relations prédicat-argument} qui existent entre les signifiés des sémantèmes (voir chapitres \ref{sec:1.2} et \ref{sec:2.4}). Par exemple, un verbe à l’infinitif n’a jamais de sujet, mais il possède toujours un argument sémantique qui peut être restitué par une paraphrase où le verbe est à une forme finie. Par exemple, si on compare \textit{Marie promet à Pierre de venir} et \textit{Marie permet à Pierre de venir}, dans le premier cas ‘Marie’ est l’argument de ‘venir’ (\textit{Marie promet qu’elle viendra}) et dans le deuxième cas ‘Pierre’ est l’argument de ‘venir’ (\textit{Marie permet que Pierre vienne}). Dans les deux cas, la dépendance sémantique ne correspond pas à une dépendance syntaxique, car ni \textit{Marie de venir,} ni \textit{à Pierre de venir} ne sont des unités syntaxiques. Les dépendances sémantiques seront à nouveau considérées dans le \chapref{sec:3.6} sur la \textit{Syntaxe profonde}, ainsi que dans le \chapref{sec:5.3} où nous étudierons les distorsions entre structures syntaxique et sémantique dans les phénomènes d’extraction.
-    \ea
-        {\itshape
-        %%[Warning: Draw object ignored]
-        Marie promet à Pierre de venir                                 Marie permet à Pierre de venir
-        }
-        {Représentations sémantiques}
-    \z
+    
+    \begin{figure}
+        \begin{minipage}{.5\textwidth}\centering
+        {\itshape Marie promet à Pierre de venir}\\
+        \begin{tikzpicture}[>={Triangle[]}]
+        \graph [empty nodes, nodes={circle, draw},clockwise,n=4] 
+          {
+            {[nodes={label=above:{‘promettre’}}] a},
+            {[nodes={label=right:{‘Pierre’}}] b},
+            {[nodes={label=below:{‘venir’}}] c},
+            {[nodes={label=left:{‘Marie’}}] d},
+            {[edge node={node[EdgeLabel] {1}}]a -> d, c->d},
+            {[edge node={node[EdgeLabel] {2}}]a->c},
+            {[edge node={node[EdgeLabel] {3}}]a->b}
+          };
+        \end{tikzpicture}\end{minipage}%
+        \begin{minipage}{.5\textwidth}\centering
+        {\itshape Marie permet à Pierre de venir}\\
+        \begin{tikzpicture}[>={Triangle[]}]
+        \graph [empty nodes, nodes={circle, draw},clockwise,n=4] 
+          {
+            {[nodes={label=above:{‘permettre’}}] a},
+            {[nodes={label=right:{‘Pierre’}}] b},
+            {[nodes={label=below:{‘venir’}}] c},
+            {[nodes={label=left:{‘Marie’}}] d},
+            {[edge node={node[EdgeLabel] {1}}]a -> d, c->b},
+            {[edge node={node[EdgeLabel] {2}}]a->c},
+            {[edge node={node[EdgeLabel] {3}}]a->b}
+          };
+        \end{tikzpicture}
+        \end{minipage}
+        \caption{Représentations sémantiques}
+    \end{figure}
 
     Les dépendances sémantiques doivent être distinguées des \textstyleTermesapprof{relations anaphoriques}, qui lient deux éléments, généralement un pronom avec son antécédent comme \textit{la théorie du liage} et \textit{elle} dans \textbf{\textit{La théorie du liage}} \textit{soulève autant de problèmes qu’}\textbf{\textit{elle}} \textit{n’en résout}.
 
@@ -1476,12 +1522,32 @@ Pour que la structure de dépendance représente une \textbf{hiérarchie}, il ne
 
 L’acyclicité n’exclut pas les cycles non orientés de connexions comme on l’a vu dans l’\encadref{fig:3.2.24} \textit{Cycle de connexions}.
 
-\begin{figure}\itshape
-Marie commet une faute envers Pierre    la montée du nationalisme en Catalogne
+\begin{figure}
+\begin{minipage}{.5\textwidth}\centering
+\textit{Marie commet une faute envers Pierre}\medskip\\
+\begin{tikzpicture}[every node/.style={font=\small\strut}]
+\node at (0,0) (A) [ConcSet] {Marie commet};
+\node at (2,2) (B) [ConcSet] {une faute};
+\node at (2,-2) (C) [ConcSet] {envers Pierre};
 
-%%[Warning: Draw object ignored]
-\caption{\label{fig:Cycles non orientés}}
+\draw[-{Triangle[]}] (A) -- (B);
+\draw[-{Triangle[]}] (A) -- (C);
+\draw[-{Triangle[]}] (B) -- (C);
+\end{tikzpicture}
+\end{minipage}%                         
+\begin{minipage}{.5\textwidth}\centering
+\textit{la montée du nationalisme en Catalogne}\medskip\\
+\begin{tikzpicture}[every node/.style={font=\small\strut}]
+\node at (0,0) (A) [ConcSet] {la montée};
+\node at (2,2) (B) [ConcSet] {du nationalisme};
+\node at (2,-2) (C) [ConcSet] {en Catalogne};
 
+\draw[-{Triangle[]}] (A) -- (B);
+\draw[-{Triangle[]}] (A) -- (C);
+\draw[-{Triangle[]}] (B) -- (C);
+\end{tikzpicture}
+\end{minipage}
+\caption{Cycles non orientés\label{fig:}}
 \end{figure}
 
 La présence de cycles non orientés dans une structure de dépendance entraîne que certains nœuds ont deux gouverneurs. (On parle alors de \textbf{dag}, \textit{directed acyclic graph}). Dans cet ouvrage, nous ne considérerons quasiment que des structures sans cycle et pour lesquelles \textbf{tout nœud} \textbf{possède au plus un gouverneur}. Plus précisément, lorsque tout nœud a exactement un gouverneur (à l’exception d’un nœud qu’on appelle la racine), la structure est un arbre : l’\textstyleTermes{arbre de dépendance}.
@@ -1491,13 +1557,17 @@ Notons pour conclure cette section que l’on utilise généralement une termino
 \chevalier{Historique des représentations syntaxiques  par des diagrammes en dépendance}{%\label{sec:3.3.5}
     La première représentation dépendentielle que nous connaissons est un diagramme, unique, proposé par le philosophe et grammairien allemand Johann Billroth dans sa grammaire du latin (\textit{Lateinische Syntax}) publiée en 1832, à seulement 24 ans (il décédera à 28 ans).
 
+    \begin{figure}
     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img012.png}
-    % \caption{\label{fig:}Diagramme de \citet{Billroth1832}}
+    \caption{\label{fig:}Diagramme de \citet{Billroth1832}}
+    \end{figure}
 
     Stephen W. Clark est le premier grammairien à réellement exploiter des diagrammes dépendentiels dans sa grammaire de l’anglais de 1847 intitulé \textit{The science of the English grammar: A practical grammar in which words, phrases, and sentences are classified to their offices, and their relation to each other, illustrated by a complete system of diagrams} ‘La science de la grammaire anglaise : une grammaire pratique dans laquelle les mots, les syntagmes et les phrases sont classées selon leurs fonctions et leurs relations les uns aux autres par un système complet de diagrammes’. Dans les représentations de Clark, les connexions ne sont pas représentées en tant que telles : un mot qui en «~qualifie~» un autre (pour reprendre les termes de Clark) est placé dans une bulle sous la bulle de son gouverneur. Les prépositions comme \textit{by} ‘par’ ou \textit{of} ‘de’ dans la figure ci-dessous reçoivent une forme particulière indiquant qu’elles servent à «~connecter~» deux mots. Le sujet, le verbe et l’objet direct sont placés au même niveau, comme ici \textit{ressources} and \textit{are developed}. Les groupes prépositionnels sont entourés par des bulles en pointillés.
 
-    % \caption{\label{fig:}Diagramme de \citet{Clark1847}}
+    \begin{figure}
+    \caption{\label{fig:}Diagramme de \citet{Clark1847}}
     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img013.png}
+    \end{figure}
 
     \textit{Our national resources are developed by an earnest culture of the arts of peace}\\
     ‘Nos ressources nationales sont développées grâce à une sérieuse culture des arts de la paix’
@@ -1506,21 +1576,20 @@ Notons pour conclure cette section que l’on utilise généralement une termino
 
     Ce ne sont pas les diagrammes de Clark qui sont passés à la postérité, mais ceux de ses suiveurs, \textbf{Alonzo Reed} and \textbf{Brainerd Kellogg}. Leurs diagrammes, proposés pour la première fois en 1877 et toujours utilisés aujourd’hui par certains enseignants d’anglais, sont équivalents à ceux de Clark, mais utilisent des conventions différentes : les mots ne sont plus placés dans des bulles, mais au-dessus de segments de traits. Les verbes et les noms reçoivent des segments horizontaux, comme \textit{pleased} ‘enchanté’ ou \textit{news} ‘nouvelles’ dans le diagramme qui suit, tandis que les autres mots, comme la préposition \textit{with} ‘avec’ ou l’adjectif ‘good’, reçoivent des segments en diagonal. Comme chez Clark, le sujet le verbe et l’objet sont au même niveau. Les connections apparaissent de manière plus explicite à la jointure de deux segments. La connexion entre le sujet et le verbe (\textit{girls – are pleased}) est symbolisée par un trait vertical et celle entre l’auxiliaire et le participe (\textit{are – pleased}) par un trait oblique.
 
-    \ea
+    \begin{figure}
     %%[Warning: Draw object ignored]
     {The girls are pleased with the good news}\\
-    ‘Les filles sont enchantées par la bonne nouvelle’
-
-    Diagramme de \citet{ReedKellogg1877}
-    \z
+    ‘Les filles sont enchantées par la bonne nouvelle’\\
+    \includegraphics[width=7cm]{figures/ReedKellog}
+    \caption{Diagramme de \citet{ReedKellogg1877}}
+    \end{figure}
 
     On peut traduire cette structure dans les conventions utilisées ici, en réifiant les connexions et en mettant en évidence le fait que certaines connexions ne sont pas hiérarchisées :
 
-    \ea
-    %%[Warning: Draw object ignored]
-
-    Interprétation du diagramme de Reed \& Kellogg
-    \z
+    \begin{figure}
+    \caption{Interprétation du diagramme de Reed \& Kellogg}
+    \includegraphics[width=7cm]{figures/ReedKellogTree}    
+    \end{figure}
 
     En 1883, dans un livre sur la grammaire allemande (\textit{Zur Methodik des deutschen Unterrichts} ‘Sur la méthodologie de l’enseignement de l’allemand’), \textbf{Franz Kern} propose de véritables arbres de dépendance. Voici ce qu’il écrit : «~Le mot déterminant dépend de celui qu’il détermine ou, en d’autres termes, est régi par lui. On désigne (graphiquement, par un schéma) la dépendance d’un mot d’un autre par un trait partant du mot régissant vers le bas et allant vers le mot régi~(ou dépendant) [figure de gauche] ou encore sans mot par de simples relations grammaticales [figure de droite].~» Ce texte est accompagné des deux figures suivantes pour la phrase \textit{Eine alte Kirche wurde ausgebessert} ‘Une vielle église a été réparée’. Dans la figure de gauche figurent les mots de la phrase, le complexe verbal n’étant pas décomposé. Dans la figure de droite, l’article (appelé \textit{Adj. (Zeiger)} ‘adjectif (pointeur)’) et l’adjectif qualificatif (\textit{Adjektiv}) dépendent du mot sujet (\textit{Subjektswort}) qui dépend du verbe fini (\textit{Finites Verbum}).
 
@@ -1553,13 +1622,16 @@ Notons pour conclure cette section que l’on utilise généralement une termino
 
     Si cette analyse contient déjà des symboles spéciaux (comme les flèches à double pointe \textrm{$\twoheadrightarrow $} pour les relatives), ce n’est que plus tard que Tesnière introduira les symboles en T pour la translation. Les structures de l’ouvrage de 1959 ne sont plus totalement hiérarchique comme le montre notre interprétation polygraphique ci-dessous de la représentation proposée par Tesnière pour \textit{Écrivez dans le livre de votre ami} !.
 
-    \ea
-
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-        Stemma de \citet{Tesnière1959}                 Interprétation polygraphique du stemma
-
-    \z
+    \begin{figure}
+    \begin{minipage}[t]{.4\textwidth}\centering
+    Stemma de \citet{Tesnière1959}\medskip\\
+    \includegraphics[width=4cm]{figures/StemmadeTesniere}
+    \end{minipage}%
+    \begin{minipage}[t]{.6\textwidth}\centering
+    Interprétation polygraphique du stemma\medskip\\
+    \includegraphics[width=4cm]{figures/Stemma}
+    \end{minipage}
+    \end{figure}
 }
 \section{Arbre et représentation planaire}\label{sec:3.3.6}
 
@@ -1583,10 +1655,30 @@ Pierre veut inviter Marie demain.
 Si l’on a la structure de connexion de cette phrase (voir \chapref{sec:3.2}) et qu’on peut établir que \textit{veut} est la tête (voir \sectref{sec:3.3.8} suivante), on obtient immédiatement une structure de dépendance par le procédé que nous venons de décrire. La flèche blanche indique le nœud par lequel on attrape la structure pour la hiérarchiser. Ce nœud va gouverner les nœuds auxquels il est connecté, lesquels vont gouverner à leur tour les nœuds auxquels ils sont connectés et ainsi de suite.
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
-         \textbf{Structure de connexion}         \textbf{Arbre de dépendance}
-\caption{\label{fig:}~}
+\begin{tabular}{@{}>{\centering}m{5cm} m{1em} >{\centering\arraybackslash}m{5cm} @{}}
+  \begin{tikzpicture}[every node/.style={ConcSet}]
+    \node at (0,0)   (Pierre) {Pierre};
+    \node at (1,-1.5)  (veut) {veut};
+    \node at (2,0)   (inviter) {inviter};
+    \node at (3,1.5)   (Marie) {Marie};
+    \node at (3,-1.5)  (demain) {demain};
+    \draw (Pierre) -- (veut) -- (inviter) -- (Marie);
+    \draw (inviter) -- (demain);
+  \end{tikzpicture} 
+  & ⇒ 
+  & \begin{tikzpicture}[every node/.style={ConcSet},
+                        edge from parent/.style={draw,-{Triangle[]}},
+                        sibling distance=2cm
+                        ]
+  \node (root) {veut}
+    child { node {Pierre} }
+    child { node {inviter} 
+            child { node {Marie} }
+            child { node {demain } }
+    };
+  \end{tikzpicture}\\
+  Structure de connexion & & Arbre de dépendance
+\end{tabular}
 \end{figure}
 
 Si la structure de connexion n’a que des connexions élémentaires (voir l’\encadref{fig:3.2.23} \textit{Graphe à bulles et polygraphe}) et pas de cycles, on obtient un arbre de dépendance, comme dans l’exemple précédent.
@@ -1604,8 +1696,23 @@ Dire que B peut être effacé et pas A lorsque AB est gouverné par X revient à
 Si on reprend notre exemple avec X = \textit{Pierre habite,} A = \textit{une maison} et B = \textit{écologique} et qu’on sait que X gouverne AB, alors on en déduit que B dépend de A, car B est effaçable (\textit{Pierre habite une maison}), mais pas A (*\textit{Pierre habite écologique}).
 
 \begin{figure}
-%%[Warning: Draw object ignored]
+\begin{tikzpicture}[baseline]
+\node at (0,0) (X) {X};
+\node at (1.5,0) (A) {A};
+\node at (2.5,0) (B) {BC};
 
+\node [draw,ellipse,inner sep=0pt,fit=(A) (B)] (AB) {};
+\draw (A) -- (B);
+\draw [-{Triangle[]}] (X) -- (AB);
+
+\node at (4,0) {⇒};
+\node at (5,0) (X) {X};
+\node at (6,0) (A) {A};
+\node at (7,0) (B) {BA};
+
+\draw [-{Triangle[]}] (X) -- (A);
+\draw [-{Triangle[]}] (A) -- (B);
+\end{tikzpicture}
 \caption{\label{fig:}Application du critère d’effacement simple}
 \end{figure}
 
@@ -1826,9 +1933,27 @@ Le même raisonnement est applicable à \textit{Marie dormait}. Ici encore, \tex
     La conjonction \textit{that} est bien effaçable, ce qui pourrait conduire à considérer que \textit{thinks} est directement connecté à \textit{slept}. Mais en même temps on ne peut pas considérer que \textit{that} dépend de \textit{slept} car \textit{that Peter slept} n’a pas la même valence supérieure que \textit{Peter slept} : si les deux peuvent dépendre de \textit{Mary thinks}, seul \textit{Peter slept} peut former un énoncé déclaratif ou bien se combiner avec une conjonction comme \textit{if} ‘sis’ ou \textit{whether} ‘si (oui ou non)’. Comme un dépendant ne peut modifier la valence supérieure de son gouverneur, il est donc clair que \textit{that} n’est pas un dépendant du verbe \textit{slept}. (Voir l’\encadref{fig:3.3.28} sur la \textit{Co-occupation} pour une autre analyse de \textit{that}.)
 
     \ea
-    %%[Warning: Draw object ignored]
-
-            \textbf{Structure de connexion}    \textbf{Arbre de dépendance}
+    \ea Structure de connexion\\
+            \begin{tikzpicture}[every node/.style={font=\itshape\strut,inner sep=1pt}]
+            \node at (0,0) (Marie) {Marie};
+            \node at (1,1) (thinks) {thinks};
+            \node at (2,-0.5) (Peter) {Peter};
+            \node at (3,0.5) (slept) {slept};
+            \node at (4,0) (that) {that};
+            \node (midpoint) at ($ (Peter) !0.5! (slept) $) [minimum width=5pt] {};
+            \draw (Marie) -- (thinks) -- (midpoint.west); 
+            \draw (midpoint.east)-- (that);
+            \draw (Peter) -- (slept);
+            \end{tikzpicture}
+    
+    \ex Arbre de dépendance\\
+            \begin{forest} for tree = {font=\itshape}
+            [thinks
+              [Mary]
+              [that [slept [Peter]]]
+            ]
+            \end{forest}
+    \z
     \z
     De tels cas sont rares et le critère d’effacement simple reste un critère simple généralement fiable.
 }
@@ -1843,10 +1968,32 @@ Le critère distributionnel avec effacement n’est applicable à une unité U =
 (Voir l’exercice 4, \sectref{sec:3.3.35}, et sa correction, \sectref{sec:3.3.37}, pour une autre formulation du critère due à Paul Garde, 1977 : 8.) Si l’on applique ce critère à une unité U = A ${\oplus}$ B dont on veut déterminer la tête, on considèrera le paradigme des éléments A’ qui commutent avec A et le paradigme des éléments B’ qui commute avec B et on comparera les valences supérieures de U~= A ${\oplus}$ B, U’ = A’ ${\oplus}$ B et U” = A ${\oplus}$ B’, c’est-à-dire le paradigme des unités X qui peuvent gouverner ces différentes unités.
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
 \caption{\label{fig:}Application du critère distributionnel sans effacement}
-
+\begin{minipage}{.3\textwidth}\centering
+  \begin{tikzpicture}[every node/.style={AbsSet},inner sep=1pt]
+    \node at (0,0) (X) {X};
+    \node at (-.75,-4) (A) {A'};
+    \node at (.75,-4) (B) {B};
+    \node [fit = (A) (B), inner sep=0pt,pin=south east:U'] (U) {};
+    \draw (X) -- (U) node[midway,right,reset shape] {?};
+  \end{tikzpicture}
+\end{minipage}\begin{minipage}{.3\textwidth}\centering
+  \begin{tikzpicture}[every node/.style={AbsSet}]
+    \node at (0,0) (X) {X};
+    \node at (-.75,-4) (A) {A};
+    \node at (.75,-4) (B) {B};
+    \node [fit = (A) (B), inner sep=0pt,pin=south east:U] (U) {};
+    \draw (X) -- (U);
+  \end{tikzpicture}
+\end{minipage}\begin{minipage}{.3\textwidth}\centering
+  \begin{tikzpicture}[every node/.style={AbsSet}]
+    \node at (0,0) (X) {X};
+    \node at (-.75,-4) (A) {A};
+    \node at (.75,-4) (B) {B'};
+    \node [fit = (A) (B), inner sep=0pt,pin=south east:{U{'}{'}}] (U) {};
+    \draw (X) -- (U) node[midway,right,reset shape] {?};
+  \end{tikzpicture}
+\end{minipage}
 \end{figure}
 
 On regardera ainsi laquelle des deux commutations, celle sur A ou celle sur B, a le plus d’impact sur la valence supérieure de U. Si les A ${\oplus}$ B’ ont la même valence supérieure que A ${\oplus}$ B, mais pas les A’ ${\oplus}$ B, on en déduira que A gouverne B, c’est-à-dire que A est la tête de la combinaison U = A ${\oplus}$ B.
