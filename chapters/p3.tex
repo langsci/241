@@ -2015,12 +2015,32 @@ Lorsqu’un deuxième élément contrôle également la distribution de l’unit
 Le groupe prépositionnel est donc une unité à tête faible. Ceci nous permet de postuler la structure de dépendance ci-dessous (figure de gauche). Mais on peut aussi vouloir privilégier le rôle de tête de la préposition et obtenir un arbre de dépendance (figure de droite).
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-%%[Warning: Draw object ignored]
+\caption{Structure de dépendance avec tête faible}
+  \begin{tikzpicture}[>={Triangle[]},every node/.style={font=\itshape}]
+    \node (A) at (0,0) {téléphone};
+    \node (B) at (-1,-1.5) {Pierre};
+    \node (C) at (.5,-1.5) {à};
+    \node (C2) at (2,-1.5) {Marie};
+    \node [fit = (C) (C2),inner sep=0pt] (CCC) {};
+    \draw[->] (C) -- (C2);
+    \draw[->] (A) -- (B);
+    \draw[->] (A) -- (CCC);
+  \end{tikzpicture}
+\end{figure}
 
-    \textbf{Structure de dépendance}      \textbf{Arbre de dépendance}
-        avec tête faible
-    \caption{\label{fig:}}
+\begin{figure}
+  \begin{tikzpicture}[
+        edge from parent/.style={draw,-{Triangle[]}},
+        every node/.style={font=\itshape}        
+        ]
+    \node (root) {téléphone}
+        { child { node {Pierre } } 
+          child { node {à} 
+            child { node {Marie} }
+          }
+        };    
+  \end{tikzpicture}
+\caption{Arbre de dépendance\label{fig:}}
 \end{figure}
 
 Notons qu’il existe une solution plus «~lexicale~» au fait que la préposition \textit{à} puisse avoir aussi bien un complément substantif (\textit{à Marie}) qu’infinitif (\textit{à arriver}). La solution consiste à considérer que la préposition \textit{à} a deux entrées lexicales différentes, l’une dont le complément est un substantif et l’autre un infinitif. Dans ce cas, on considère que les verbes \textsc{teléphoner} (\textit{téléphoner à Marie}) et \textsc{commencer} (\textit{commencer à arriver}) régissent des prépositions \textit{à} différentes et il n’est plus nécessaire de dire que le complément de la préposition contrôle la valence supérieure du groupe prépositionnel.
@@ -2159,7 +2179,35 @@ On peut encore appliquer le critère au cas des formes verbales comme \textit{ch
     On peut supposer que ces deux exemples ont la même structure syntaxique, que dans les deux cas \textit{un verre} est la tête syntaxique de l’objet de \textit{achète} et que \textit{vin} est complément de la préposition \textit{à} ou \textit{de} et dépend de \textit{un verre} par l’intermédiaire de cette préposition. Par contre, du point de vue sémantique, les situations sont très différentes : si ce que Félix casse est bien un verre, ce qu’il boit est du vin. Dans \textit{un verre de vin}, \textit{un verre} sert uniquement à mesurer la quantité de vin et pas à déterminer la catégorie ontologique de la chose désignée par le syntagme \textit{un verre de vin}. On en déduit donc que la tête sémantique de \textit{verre à vin} est \textit{verre}, tandis que la tête sémantique de \textit{verre de vin} est \textit{vin}. Il y a ainsi une distorsion sémantique-syntaxe dans la phrase \textit{Félix achète/boit un verre de vin}. Nous représentons ci-dessous son arbre de dépendance syntaxique et son graphe sémantique (pour ce dernier on consultera les chapitres \ref{sec:1.2}, \ref{sec:2.4} ou \ref{sec:3.6}) :
 
     \ea
-    %%[Warning: Draw object ignored]
+    \begin{minipage}[c]{.5\linewidth}
+    \begin{forest} for tree={font=\itshape}
+      [boit
+        [Félix]
+        [verre
+          [un]
+          [de
+            [vin]
+          ]
+        ]
+      ]
+    \end{forest}\end{minipage}\begin{minipage}[c]{.5\linewidth}
+    \begin{tikzpicture}[>={Triangle[]},label distance=-5pt]
+        \matrix (matrix) [nodes={circle, draw},
+                          ampersand replacement=\&,
+                          row sep=1cm,
+                          column sep=-10pt] 
+          {
+            \& \node [label=above:{‘boire’}, circle, draw] (boire) {}; 
+            \& \& \node [label=above:{‘verre’}, circle, draw] (verre) {};\\
+            \node [label=below:{\strut‘Félix’}, circle, draw] (Felix) {}; 
+            \& \& \node [label=below:{\strut‘vin’}, circle, draw] (vin) {}; 
+            \& \& \node [label=below:{\strut‘un’}, circle, draw] (un) {};\\
+          };
+          \draw[-{Triangle[]}] (boire) -- (Felix) node[EdgeLabel] {1};
+          \draw[-{Triangle[]}] (verre) -- (vin) node[EdgeLabel] {1};
+          \draw[-{Triangle[]}] (boire) -- (vin) node[EdgeLabel] {2};
+          \draw[-{Triangle[]}] (un) -- (verre) node[EdgeLabel] {1};
+    \end{tikzpicture}\end{minipage}
 
     %%[Warning: Draw object ignored]
     \z
@@ -2172,9 +2220,9 @@ On peut encore appliquer le critère au cas des formes verbales comme \textit{ch
     \ea
     {Le président était au courant, il paraît.}
     \z
-    On notera également que dans d’autres langues, notamment une langue agglutinante comme le japonais, un sens comme ‘il paraît’ est réalisé par un affixe verbal. Ainsi, le verbe \textrm{通じる} tsūjiru ‘comprendre’ est suivi d’une série d’affixes modaux terminant sur \textrm{そうだ} \textit{sōda} ‘il paraît’.
-    \ea
-    \textrm{議長は事情に通じていた}\textrm{\textbf{そうだ}}\textrm{。}\\
+    On notera également que dans d’autres langues, notamment une langue agglutinante comme le japonais, un sens comme ‘il paraît’ est réalisé par un affixe verbal. Ainsi, le verbe {\cjkfont 通じる} tsūjiru ‘comprendre’ est suivi d’une série d’affixes modaux terminant sur {\cjkfont そうだ} \textit{sōda} ‘il paraît’.
+    \ea\relax
+    {\cjkfont 議長は事情に通じていた\textbf{そうだ}。}\\
      {Gichō-wa}  {jijō-ni}  {tsūjite}  {ita} \textbf{{sōda}}.\\
     président-\textsc{topique} circonstances-\textsc{datif} saisir-en-train être.\textsc{passé} \textbf{paraît}.\\
     ‘Il \textbf{paraît} que président était au courant.’
@@ -2271,7 +2319,21 @@ Il existe néanmoins un certain nombre de cas problématiques qui sont au centre
     Ceci conduit donc à considérer l’adverbe comme la tête du syntagme.
 
     \ea
-    %%[Warning: Draw object ignored]
+    \begin{minipage}[t]{.5\linewidth}\centering
+    \begin{forest} for tree={font=\itshape}
+      [ai
+        [je]
+        [mangé [trop [de [chocolat]]]
+        ]
+      ]
+    \end{forest}\end{minipage}\begin{minipage}[t]{.5\linewidth}\centering
+    \begin{forest}
+      for tree={font=\itshape}
+      [ai 
+        [je] 
+        [mangé  [trop [en]]]
+      ]
+    \end{forest}\end{minipage}
     \z
 
     Mais il faut néanmoins noter que ce syntagme n’est pas toujours continu :

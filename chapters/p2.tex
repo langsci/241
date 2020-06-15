@@ -1329,17 +1329,28 @@ Prenons l’exemple du verbe \textsc{aller} qui est à la fois \textbf{polymorph
 
 \begin{figure}
 \begin{tikzpicture}
- \graph [grow down, branch right sep=2cm] 
+ \graph [grow down, branch right sep=2cm,edges=black!20,nodes=black!20] 
    {
-     {‘se déplacer’, ‘se sentir’, ‘futur’  …} 
-     -- {ALLER [xshift=4cm]}
-     -- {al/\textit{/al/-}, v/\textit{/v/-}, i/\textit{/i/-}, aj/\textit{\strut/aj/-}}
+     {‘se déplacer’ [black], ‘se sentir’, ‘futur’  …}
+     -- {ALLER [black,xshift=4cm]}
+     -- {al/\textit{/al/-}, v/\textit{/v/-}, i/\textit{/i/-} [black], aj/\textit{\strut/aj/-}
+     };
+     {[edges=black]‘se déplacer’ -- ALLER -- i};
    };
 \end{tikzpicture}
 \caption{signe\label{fig:}}
 \end{figure}
 
 \begin{figure}
+\begin{tikzpicture}
+ \graph [grow down, branch right sep=2cm] 
+   {
+     {‘se déplacer’, ‘se sentir’, ‘futur’  …}
+     -- {ALLER [black,xshift=4cm]}
+     -- {al/\textit{/al/-}, v/\textit{/v/-}, i/\textit{/i/-}, aj/\textit{\strut/aj/-}
+     }
+   };
+\end{tikzpicture}
 \caption{signème}
 \end{figure}
 
@@ -1348,21 +1359,54 @@ La symétrie entre sens et forme n’est pas complète. Le locuteur fait le choi
 Nous montrons pour finir le découpage du syntaxème selon la forme, qui nous donne les (allo)morphes, et le découpage selon le sens, qui nous donne les acceptions.
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
-           \textbf{(allo)morphe}             \textbf{acception}
-
-\caption{\label{fig:}}
+\begin{tikzpicture}
+ \graph [grow down, branch right sep=2cm,edges=black!20,nodes=black!20] 
+   {
+     {‘se déplacer’ [black], ‘se sentir’ [black], ‘futur’ … [black]}
+     -- {ALLER [black,xshift=4cm]}
+     -- {al/\textit{/al/-}, v/\textit{/v/-} [black], i/\textit{/i/-} , aj/\textit{\strut/aj/-}
+     };
+     {[edges=black] {‘se déplacer’, ‘se sentir’, ‘futur’ … } -- ALLER -- v};
+   };
+\end{tikzpicture}
+    \caption{(allo)morphe}             
+\end{figure}
+           
+\begin{figure}
+\begin{tikzpicture}
+ \graph [grow down, branch right sep=2cm,edges=black!20,nodes=black!20] 
+   {
+     {‘se déplacer’, ‘se sentir’ [black], ‘futur’ …}
+     -- {ALLER [black,xshift=4cm]}
+     -- {[nodes=black] al/\textit{/al/-}, v/\textit{/v/-}, i/\textit{/i/-} , aj/\textit{\strut/aj/-}
+     };
+     {[edges=black] {‘se sentir’} -- ALLER -- {al, v, i , aj}};
+   };
+\end{tikzpicture}
+    \caption{acception}
 \end{figure}
 
 Il devient alors possible de voir le syntaxème comme un niveau d’articulation entre sens et forme. On peut ainsi scinder la correspondance sens-forme en deux modules et voir les sémantèmes et les morphèmes comme les éléments respectifs de ces deux modules :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
+\begin{forest} calign=child, calign primary child=2, calign secondary child=4
+  [ALLER,s sep=2cm,name=ALLER
+    [\textit{/al/-},name=al] [\textit{/v/-},name=v]  [\textit{/i/-}] [\textit{\strut/aj/-},name=aj]
+  ]
+  \node [fit=(ALLER) (v), draw, inner sep=0pt] {};
+  \node [fit=(ALLER) (al) (aj), draw, inner sep=2pt] {};
+\end{forest}
+\caption{morphe et morphème\label{fig:}}
+\end{figure}
 
-    \textbf{morphe et morphème}         \textbf{sémantème}
-
-\caption{\label{fig:}}
+\begin{figure}
+\begin{forest} calign=child, calign primary child=2
+  [ALLER, grow=north, s sep=2cm,name=ALLER
+    [‘se déplacer’]  [‘se sentir’,name=sentir] [‘futur’  …]
+  ]
+\node [fit=(ALLER) (sentir), draw, inner sep=0pt] {};
+\end{forest}
+\caption{sémantème}    
 \end{figure}
 
 En d’autres termes, on peut voir les morphes et morphèmes comme des (ensembles de) \textstyleTermes{demi-signes de surface} dont le signifié est un élément abstrait (représenté par le nom de lexème \textsc{aller} dans nos figures), qui sert lui même de signifiant aux \textstyleTermes{demi-signes profonds} que sont les sémantèmes. Travailler avec des demi-signes est particulièrement intéressant quand on considère des locutions : on peut en effet considérer que le signifiant de sémantèmes complexes comme $⌜$\textsc{àvoir} \textsc{les} \textsc{pieds} \textsc{sur} \textsc{terre}$⌝$ ou comme le passé composé sont des configurations de syntaxèmes.
