@@ -470,14 +470,12 @@ Un \textbf{signe} qui \textbf{commute librement} avec son environnement est appe
 
     \begin{figure}
       \begin{tikzpicture}
-       \node at (0,0) [inner sep=1pt] (A) {A};
-       \node at (1,0) (B) {B};
-       \draw
+       \filldraw[pattern=north east lines]
           (0,0) circle [draw,radius=18pt] 
           (1,0) circle [draw,radius=18pt];
-       \draw [thick]
-          (0.5,0) circle [draw,radius=36pt];
-       \node at (0.5,-1.5) {A $\cup$ B};
+       \node at (0,0) [fill=white, circle, inner sep=0pt] (A) {A};
+       \node at (1,0) [fill=white, circle, inner sep=0pt] (B) {B};
+       \node at (0.5,-1) {A $\cup$ B};
       \end{tikzpicture}
     \caption{Union}                                                                   
     \end{figure}
