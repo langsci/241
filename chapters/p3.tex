@@ -3134,12 +3134,10 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
         ] 
       {
         \node (Matrix-1-1) {sujet}; \& \node (Matrix-1-2) {attribut}; \& \node (Matrix-1-3) {attribut}; \& \node (Matrix-1-4) {sujet};\\
-        \node (Matrix-2-1) [draw] {celui}; \& \node (Matrix-2-2) {marche}
-                            child { node (Matrix-2-2-1) { ne point } edge from parent[->] } 
-                            child { node {dans}
-                                    child { node (Matrix-2-2-2) { les ténèbres } 
-                                        edge from parent[->] node[right,font=\itshape\footnotesize] {complément} }
-                                    edge from parent[->] node[right,font=\itshape\footnotesize] {modification} }; 
+        \node (Matrix-2-1) [draw] {celui}; \& \node (marche) {marche}
+                            child { node  { ne point } edge from parent[->] } 
+                            child { node {dans} child { node { les ténèbres } edge from parent[->] node[right,font=\itshape\footnotesize] (complement) {complément} } edge from parent[->] node[right,font=\itshape\footnotesize] {modification} };%  
+%                                        %
                       \& \node (Matrix-2-3) [draw] {dit}; \&  \node (Matrix-2-4) [draw] {Jésus-Christ}; \\[2cm]
         \node (Matrix-3-1) {sujet}; \& \node (Matrix-3-2) {attribut}; \\
         \node (Matrix-4-1) [draw] {qui};   \& \node (Matrix-4-2) {suit} child { node (Matrix-4-2-1) { me } edge from parent[->] };\\
@@ -3147,13 +3145,13 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
     \node [fit=(Matrix-3-1) (Matrix-3-2) (Matrix-4-2) (Matrix-4-2-1), draw,
            label=above:{\itshape proposition incidente ≈ adjectif}] (Matrix-Lowergroup) {};
     \node [fit=(Matrix-4-2) (Matrix-4-2-1), draw, inner sep=1pt] {};
-    \node [fit=(Matrix-2-2) (Matrix-2-2-1) (Matrix-2-2-2), draw, inner sep=1pt] (Matrix-Tree) {};
+    \node [fit=(marche) (marche-1) (marche-2-1) (complement), draw, inner sep=1pt] (Matrix-Tree) {};
     \node [fit=(Matrix-1-3) (Matrix-1-4) (Matrix-2-3) (Matrix-2-4), draw, 
            label=above:{\itshape proposition en incise ou adjoint}] {};
     \node [fit=(Matrix-1-1) (Matrix-Tree),draw,
-           label=60:{\itshape proposition principale}] {}; 
+           label=above:{\itshape proposition principale}] {}; 
     \draw[->] (Matrix-Tree.north west) to [bend right] (Matrix-2-1.north east);
-    \draw[->] (Matrix-2-1) to (Matrix-Lowergroup) node [midway,right=1pt] {\itshape déterminant};
+    \draw[->,overlay] (Matrix-2-1) to [bend right] node [above,rotate=180,sloped,pos=0.55,font=\itshape] {déterminant} (Matrix-Lowergroup.west);
     \end{tikzpicture}
     \z
 
@@ -3241,15 +3239,20 @@ Notons encore que nous introduisons, dans ce chapitre, \textbf{deux types d’ar
 
 Reprenons l’exemple introduit à la \sectref{sec:3.3.30} \textit{Dominance et projections maximales} :
 
-\ea{
-Beaucoup de gens aimeraient passer Noël en Laponie.
-}
-\z
+\ea Beaucoup de gens aimeraient passer Noël en Laponie. \z
 
 Voici à nouveau son arbre de dépendance :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
+\begin{forest}for tree={font=\itshape,edge=-{Triangle[]}}
+[aimeraient
+  [beaucoup [de [gens]]]
+  [passer 
+    [Noël]
+    [en [Laponie]]
+  ]
+]
+\end{forest}
 
 \caption{\label{fig:}Arbre de dépendance}
 
@@ -3260,10 +3263,15 @@ Si, dans cet arbre de dépendance, les dépendants de la racine \textit{aimeraie
 Comme nous l’avons dit et répété dans le \chapref{sec:3.2} (voir notamment la \sectref{sec:3.2.14} \textit{La connexion et ses instances}), chaque connexion représente un \textbf{ensemble de combinaisons équivalentes}. Il en va de même pour les dépendances, qui sont des connexions hiérarchisées. Parmi toutes les combinaisons associées à une dépendance donnée, il y a bien sûr la combinaison entre le gouverneur et son dépendant. Mais il en est une autre particulièrement privilégiée par la hiérarchie : \textbf{la dépendance lie} d’abord et surtout \textbf{un gouverneur à la projection maximale de son dépendant} (voir la \sectref{sec:3.3.30} sur \textit{Dominance et projections maximales} pour la définition de la projection, ainsi que l’\encadref{fig:3.3.31}). Ainsi les deux dépendances qui partent de \textit{aimeraient} doivent-elles être vues avant tout comme des dépendances vers les groupes \textit{beaucoup de gens} et \textit{passer Noël en Laponie~}:
 
 \begin{figure}
-%%[Warning: Draw object ignored]
+\begin{tikzpicture}[>={Triangle[]}]
+\node at (0,0) [ConcSet,font=\small] (A) {beaucoup de gens};
+\node [ConcSet,right=.5cm of A,font=\small] (B) {aimeraient};
+\node [ConcSet,right=.5cm of B,font=\small] (C) {passer Noël en Laponie};          
 
+\path[->] (B) edge [bend right] (A)
+              edge [bend left] (C);
+\end{tikzpicture}
 \caption{\label{fig:}Lien entre un nœud et les projections de ses dépendants}
-
 \end{figure}
 
 Cette double interprétation du dépendant, comme mot et comme groupe, est déjà bien dégagée par Nicolas Beauzée dans l’article \textit{Régime} de l’Encyclopédie de 1765 (voir l’\encadref{fig:3.3.2} sur l’\textit{Historique des notions de dépendance et de tête}). Elle est aussi sous-jacente chez Lucien Tesnière, qui considère la dépendance comme une relation entre mots («~dans la phrase \textit{mon ami parle}, \textit{mon} dépend de \textit{ami}, qui dépend à son tour de \textit{parle}~» ; 1959 : chap. 2), instancie les nœuds par des mots dans ses stemmas, mais définit pourtant le nœud «~comme l’ensemble constitué par le régissant et par tous les subordonnés qui, à un degré quelconque directement ou indirectement, dépendent de lui et qu’il noue ainsi en quelque sorte en un seul faisceau~» \citep[chap.3]{Tesnières1959}.
@@ -3272,10 +3280,32 @@ Cette double interprétation du dépendant, comme mot et comme groupe, est déj�
 Cette ambivalence du dépendant trouve sa première interprétation graphique avec la représentation proposée par Aleksej Gladkij en 1968, où les projections sont explicites :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
+\begin{tikzpicture}[
+                     every node/.style={font=\itshape, inner sep=6pt}, 
+                     edge from parent/.style={draw,-{Triangle[]}},
+                     level 1/.style={sibling distance=30mm},
+                     level 2/.style={sibling distance=15mm},
+                     level 3/.style={sibling distance=7mm}
+                   ]
+  \node (root) {aimeraient}
+    child { node {beaucoup}
+            child { node {de} 
+                child { node [draw,rounded corners=2pt] {gens} } 
+                  }
+          }
+    child { node { passer }
+             child { node [draw,rounded corners=2pt] { Noël } }
+             child { node { en }
+                     child { node [draw,rounded corners=2pt] { Laponie } } }
+           };
+\begin{scope}[every node/.style={draw, inner sep=1pt, rounded corners=2pt}]
+\node [fit = (root-2-2) (root-2-2-1)] (enLaponie) {};
+\node [fit = (root-1-1) (root-1-1-1)] (degens) {};
+\node [fit = (root-1) (degens)] (beaucoupdegens) {};
+\node [fit = (root-2) (root-2-1) (enLaponie)] (passerNoelenLaponie) {};
+\end{scope}
+\end{tikzpicture}
 \caption{\label{fig:}Arbre de Beauzée-Gladkij}
-
 \end{figure}
 
 Cette représentation, que nous appellerons désormais un \textstyleTermes{arbre de Beauzée-Gladkij}, n’est pas un arbre au sens mathématique du terme, mais un arbre à bulles (voir l’\encadref{fig:3.2.23} \textit{Graphe à bulles et polygraphe}) : les dépendants ne sont plus des nœuds élémentaires, mais des ensembles de nœuds, représentés par des bulles. Si l’on compare l’arbre de Beauzée-Gladkij avec l’arbre de dépendance, on voit que chaque nœud a été remplacé par sa \textbf{projection maximale}. Laquelle projection est elle-même analysée, avec un nœud tête dont dépendent des projections, et ainsi de suite.
@@ -3291,7 +3321,23 @@ Lorsque les constituants correspondent aux \textbf{projections maximales} des t�
 \end{styleLivreImportant}
 
 \begin{figure}
-%%[Warning: Draw object ignored]
+\begin{tikzpicture}[every node/.style={font=\strut,inner sep=1pt}]
+ \matrix (matrix) [matrix of nodes,column sep=1em]
+    {beaucoup & de & gens & aimeraient & passer & Noël & en & Laponie\\};
+\begin{scope}[every node/.style={draw,rounded corners=2pt}]
+ \node [fit = (matrix-1-3), inner sep=2pt] (gens) {};
+ \node [fit = (matrix-1-6), inner sep=2pt] (Noel) {};
+ \node [fit = (matrix-1-8), inner sep=2pt] (Laponie) {};
+ 
+ \node [fit = (matrix-1-7) (Laponie), inner sep=3pt] (enLaponie) {};
+ \node [fit = (matrix-1-2) (gens), inner sep=3pt] (degens) {};
+ 
+ \node [fit = (matrix-1-1) (degens), inner sep=4pt] (beaucoupdegens) {};
+ \node [fit = (matrix-1-5) (enLaponie), inner sep=4pt] (passerenLaponie) {};
+ 
+ \node [fit = (beaucoupdegens) (passerenLaponie), inner sep=5pt] {};
+\end{scope}
+\end{tikzpicture}
 
 \caption{\label{fig:}Emboîtement (de constituants majeurs)}
 
@@ -3312,14 +3358,27 @@ Notons néanmoins que le parenthésage ne peut être défini que sur une suite o
 Notre structure de constituants peut encore être représentée d’une autre façon : sous la forme d’un \textbf{arbre} (voir la \sectref{sec:1.2.3} \textit{Graphe et arbre}), que nous appellerons l’\textstyleTermes{arbre de constituants plat}, car il ne contient que les constituants majeurs et il est donc le plus plat des arbres de constituants que l’on peut considérer. Nous les représentons selon l’usage avec les mots dans l’ordre linéaire, mais \textbf{nous ne nous intéressons} pour l’instant \textbf{qu’à} \textbf{la structure d’arbre}, c’est-à-dire la structure hiérarchique définie par l’arbre (l’ordre sera considéré au chapitre suivant, voir notamment l’\encadref{fig:3.5.28} sur \textit{Arbre de constituants ordonné}).
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
+\begin{forest} for tree={font=\itshape,fit=band}
+ [\Boite, calign=child, calign primary child=2
+    [\Boite
+        [beaucoup] [\Boite
+            [de] [\Boite
+                [gens]
+            ]
+        ]
+    ]
+    [ aimeraient ]
+    [ \Boite, calign=child, calign primary child=2 
+        [passer] [\Boite [Noël]] [\Boite
+            [en] [\Boite [Laponie]]
+        ]
+    ]
+ ]
+\end{forest}
 \caption{\label{fig:}Arbre de constituants plat}
-
-%%[Warning: Draw object ignored]
 \end{figure}
 
-C’est le mathématicien Yves Lecerf, qui a le premier construit un tel arbre, immédiatement après la publication de l’ouvrage de Tesnière en 1959, et qui a établi l’équivalence entre les arbres de dépendance et cette sous-famille d’arbres de constituants. Il est facile de voir que l’arbre de constituants plats est équivalent à l’arbre de Beauzée-Gladkij : chaque nœud étiqueté d’un      représente une boîte, dont les constituants sont les fils dans l’arbre. Les branches de cet arbre sont donc à lire comme des \textstyleTermes{relations partie-tout} et non plus comme des relations de dépendance.
+C’est le mathématicien Yves Lecerf, qui a le premier construit un tel arbre, immédiatement après la publication de l’ouvrage de Tesnière en 1959, et qui a établi l’équivalence entre les arbres de dépendance et cette sous-famille d’arbres de constituants. Il est facile de voir que l’arbre de constituants plats est équivalent à l’arbre de Beauzée-Gladkij : chaque nœud étiqueté d’un {\Boite} représente une boîte, dont les constituants sont les fils dans l’arbre. Les branches de cet arbre sont donc à lire comme des \textstyleTermes{relations partie-tout} et non plus comme des relations de dépendance.
 
 \chevalier{Le terme \textit{constituant}}{%\label{sec:3.4.3}
     Le terme \textit{constituant} a été introduit par Leonard Bloomfield en 1933 dans son ouvrage \textit{Language}. Bloomfield s’intéresse à la décomposition des unités et il utilise le terme pour désigner les constituants immédiats d’une unité (voir la \sectref{sec:3.2.25} \textit{Analyse en constituants immédiats}). Au départ, le terme est donc prédicatif : un constituant est toujours \textbf{le constituant immédiat d’une} \textbf{autre unité}. Ensuite, le terme a été utilisé pour désigner l’ensemble des unités obtenues par l’analyse en constituants immédiats (voir la \sectref{sec:3.2.25} éponyme). Le terme n’est plus prédicatif : \textbf{un constituant est devenu un type d’unité}. C’est dans ce dernier emploi que nous utilisons le terme constituant. Nous considérons plusieurs types de constituants : les constituants majeurs, qui sont les projections maximales (voir \sectref{sec:3.4.2}), auxquels s’ajoutent des constituants intermédiaires obtenus par l’analyse en constituants immédiats (voir \sectref{sec:3.4.14} \textit{Arbre de constituants binaire}).
