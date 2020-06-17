@@ -3391,11 +3391,45 @@ Un arbre de constituants majeurs possède une propriété particulière : chaque
 
 Il est d’usage dans les arbres de constituants avec têtes (plats ou pas) d’expliciter laquelle des relations partie-tout entre ce constituant et ses sous-constituants est la relation avec la tête. Cela est indiqué par un T dans la structure suivante. Un arbre de constituant avec têtes est dit \textstyleTermes{plat} lorsque la tête de chaque constituant est un nœud terminal. Nous contrasterons ce type d’arbre avec les arbres X-barre et les arbres de l’analyse en constituants immédiats, qui peuvent être enrichis de têtes, mais sont binaires et non pas plats (voir la \sectref{sec:3.4.14} sur l’\textit{Arbre de constituants binaire}). Nous présentons à cette occasion une autre convention pour l’encodage de la tête dans l’\encadref{fig:3.4.19} sur la \textit{Syntaxe X-barre}.
 
-\begin{figure}
-%%[Warning: Draw object ignored]
+\begin{figure} 
+\begin{tikzpicture}[every node/.style={font=\strut}]
+\begin{scope}[
+    every node/.style={circle,fill=black},
+    level 1/.style={sibling distance=30mm},
+    level 2/.style={sibling distance=15mm},
+    level 3/.style={sibling distance=15mm}
+    ]
+\node (root) {}
+    child { node { } 
+        child { node { } edge from parent node [reset shape, midway,left] {T} }
+        child { node { } 
+            child { node { } edge from parent node [reset shape, midway,left] {T} }
+            child { node { } }
+        }
+    }
+    child { node { } edge from parent node [reset shape, midway,left] {T}  }
+    child { node { }
+        child { node { } edge from parent node [reset shape, midway,left] {T} }
+        child { node { } }
+        child { node { } 
+            child { node { } edge from parent node [reset shape, midway,left] {T} }
+            child { node { } }
+        }
+    };
+\end{scope}
+\node[below=1pt of root-1-1] {beaucoup};
+\node[below=1pt of root-1-2-1] {de};
+\node[below=1pt of root-1-2-2] {gens};
+
+\node[below=1pt of root-2] {aimeraient};
+
+\node[below=1pt of root-3-1] {passer};
+\node[below=1pt of root-3-2] {Noël};
+\node[below=1pt of root-3-3-1] {en};
+\node[below=1pt of root-3-3-2] {Laponie};
+\end{tikzpicture}
 
 \caption{\label{fig:}Arbre de constituants plat avec explicitation des têtes}
-
 \end{figure}
 
 \section{Equivalence par la méthode de Lecerf}\label{sec:3.4.5}

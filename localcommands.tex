@@ -1,14 +1,15 @@
 \newcommand{\appref}[1]{Appendix \ref{#1}}
 \newcommand{\fnref}[1]{Footnote \ref{#1}}
 
-\newcommand*{\Boite}{\normalfont\ttfamily ▢}
+\newcommand*{\Boite}{\bgroup\normalfont\ttfamily ▢\egroup}
 
 \setlength{\epigraphwidth}{.618\textwidth}% (Golden ratio)
 \tikzset
   {
     reset shape/.style = {
       shape=rectangle,
-      draw=none
+      draw=none,
+      fill=none
     },
     AbsSet/.style = {
       draw,
