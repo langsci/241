@@ -4206,28 +4206,88 @@ Nous avons vu deux usages possibles de la représentation de la structure syntax
 Nous avons vu que l’arbre de constituants plat pouvait être déduit trivialement (c’est-à-dire par un procédé de conversion automatique pure, sans ajout d’aucune information) d’un arbre de dépendance, ce qui n’est pas le cas de l’arbre de constituants binaire, qui nécessite d’ajouter un ordre de saillance sur les dépendances. Cela pourrait laisser penser que l’arbre de constituants plat est plus proche de l’arbre de dépendance : c’est vrai si on se place du point de vue formel, mais ça ne l’est pas si on se place du point de vue théorique. Comme on l’a vu dans les encadrés 3.4.15-16, il y a derrière l’\textbf{exigence de binarité}, le souci de dégager les différentes constructions syntaxiques, de les isoler les unes des autres. Et ce souci est commun avec les grammaires de dépendances. Nous allons montrer cela maintenant en repartant de notre exemple et de son arbre binaire le plus standard :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
-\caption{\label{fig:}Arbre de constituants binaire (avec têtes)}
-
+\caption{\label{fig:}Arbre de constituants binaire (avec têtes)\todo[inline]{Is this the same figure as above? If yes, maybe print only once?}}
+\begin{tikzpicture}
+\begin{scope}[
+        every node/.style={circle,fill=black},
+        level distance=2\baselineskip,
+        level 1/.style={sibling distance=60mm},
+        level 2/.style={sibling distance=35mm},
+        level 3/.style={sibling distance=25mm},
+        level 4/.style={sibling distance=15mm}
+        ]
+  \node (root) {}
+    child { node {} 
+            child { node {} edge from parent node [reset shape, midway,above] {T} }
+            child { node {} 
+                child { node {} edge from parent node [reset shape, midway,above] {T} }
+                child { node {} }
+            }
+          }
+    child { node {} 
+            child { node {} edge from parent node [reset shape, midway, above] {T} }
+            child { node {} 
+                child { node {} 
+                    child { node {} edge from parent node [reset shape, near start,left] {T} }
+                    child { node {} }
+                 edge from parent node [reset shape, near start,left] {T} }
+                child { node {} 
+                    child { node {} edge from parent node [reset shape, near start,left] {T} }
+                    child { node {} }
+                }
+            } edge from parent node [reset shape, midway,above] {T}
+          };
+\end{scope}
+\foreach \pos/\text in {1-1/beaucoup, 1-2-1/de, 1-2-2/gens, 2-1/aimeraient, 2-2-1-1/passer, 2-2-1-2/Noël, 2-2-2-1/en, 2-2-2-2/Laponie}
+  {\node[below=1pt of root-\pos,font=\strut\itshape] {\text};}
+\end{tikzpicture}
 \end{figure}
 
 On peut interpréter chaque branchement binaire comme une connexion entre deux unités. Comme nous l’avons vu à la \sectref{sec:3.2.12} \textit{Représenter les combinaisons}, on peut représenter la combinaison A ${\oplus}$ B aussi bien par un lien entre A et B que par une bulle entourant A et B. Passer à un branchement binaire revient à \textbf{réifier} les relations partie-tout entre A et B et l’unité qu’ils forment ensemble (voir l’\encadref{fig:3.4.22} qui suit pour des compléments sur la notion de réification). Ici nous proposons de faire l’inverse, c’est-à-dire de \textbf{déréifier} les relations partie-tout qui constituent les branches d’un arbre de constituants. Comme en plus, chaque branchement binaire indique une tête (la branche T) et donne une connexion orientée, c’est-à-dire une dépendance :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
+
+\begin{tikzpicture}
+  \node at (0,0) (A)  [circle,fill=black,label=below:A] {};
+  \node at (2,0) (B)  [circle,fill=black,label=below:B] {};
+  \node at (1,1) (U) [circle,fill=black,label=above:U] {};
+  
+  \draw (A) -- node [midway,above] {T} (U)
+            -- (B);
+
+ \node at (3,0.5) {⇔}; 
+ \node at (4,0) (A2)  [circle,fill=black,label=below:A] {};
+ \node at (6,0) (B2)  [circle,fill=black,label=below:B] {};
+ \draw[-{Triangle[]}] (A2) to [bend left] node [above,midway] {U} (B2);
+\end{tikzpicture}
 
 \caption{\label{fig:}Passage d’un branchement binaire à une dépendance par déréification d’un nœud non terminal}
-
 \end{figure}
 
 Si l’on applique la déréfication à tous les nœuds intérieurs de l’arbre de constituants binaire, on obtient la structure suivante :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
 \caption{\label{fig:}Polygraphe orienté et ordonné}
-
+\begin{forest} for tree = {edge={draw=none},font=\itshape, fit=band}
+[
+ [ [beaucoup] [ [de] [gens] ] ]
+ [ [aimeraient]
+        [ 
+          [ [passer] [Noël] ] 
+          [ [en] [Laponie] ] 
+        ] 
+  ]
+]
+\begin{scope}[>={Triangle[]},overlay]
+\draw[->] (!2.north) +(0,.25) to [bend right,in=270,out=270] (!1.north) to (!1.south);
+\draw[->] (!11.north)   to [bend left,out=90,in=90]   (!12.north) to (!12.south);
+\draw[->] (!121.north)  to [bend left,out=90,in=90]                  (!122.north);
+\draw[->] (!21.north)   to [bend left,out=90,in=90]                  (!22.north) to (!22.south);
+\draw[->] (!221.south)  to [bend left,out=90,in=90]                  (!222.south);
+\draw[->] (!2211.north) to [bend left,out=90,in=90]                  (!2212.north);
+\draw[->] (!2221.north) to [bend left,out=90,in=90]                  (!2222.north);
+\end{scope}
+\end{forest}
 \end{figure}
 
 Cette structure est un \textstyleTermes{polygraphe} (voir définition formelle dans l’\encadref{fig:3.2.23} sur \textit{Graphe à bulles et polygraphe}) : ce n’est pas exactement un graphe, puisqu’un arc ne lie pas forcément deux nœuds (les nœuds sont les mots), mais il peut lier d’autres arcs entre eux ou un arc et un nœud. De plus, ce polygraphe est \textstyleTermes{orienté}, puisque chaque arc du graphe lie un gouverneur à un dépendant. Enfin ce polygraphe est implicitement \textstyleTermes{ordonné}, dans le sens où les nœuds du polygraphe sont disposés selon un ordre linéaire (celui des mots dans la phrase). De telles structures ont été proposées par le linguiste américain Eugene Nida dans sa thèse soutenue en 1943 (voir l’\encadref{fig:3.4.17} sur l’\textit{Historique des représentations syntaxiques par des diagrammes en constituants}.)
@@ -4242,7 +4302,29 @@ Cette structure est un \textstyleTermes{polygraphe} (voir définition formelle d
     Il y a là ce qu’on appelle un verbe transitif, \textit{frappe}, qui exprime une action d’un élément (\textit{Marie}) sur un autre (\textit{Pierre}). On dira encore que \textit{Marie} est l’\textbf{agent} de l’action et \textit{Pierre} le \textbf{patient}. Il y a alors plusieurs façons de représenter graphiquement le «~sens~» de cette phrase :
 
     \ea
-    %%[Warning: Draw object ignored]
+      \begin{tikzpicture}
+        \node at (0,0) [ConcSet] (Marie) {Marie};
+        \node at (4,0) [ConcSet] (Pierre) {Pierre};
+        \path[-{Triangle[]}] (Marie) edge node[midway,above] {\itshape frappe} (Pierre);
+      \end{tikzpicture}\medskip\\
+      \begin{tikzpicture}
+        \node at (0,0) [ConcSet] (frappe) {frappe};
+        \node at (-2,-2) [ConcSet] (Marie) {Marie};
+        \node at (2,-2) [ConcSet] (Pierre) {Pierre};
+        \draw[-{Triangle[]}] (frappe) -- (Marie)  node [midway,left] {agent};
+        \draw[-{Triangle[]}] (frappe) -- (Pierre) node [midway,right] {patient};
+      \end{tikzpicture}\medskip\\
+      \begin{tikzpicture}
+        \node at (0,0) [ConcSet] (frappe) {frappe};
+        \node at (-2,-4) [ConcSet] (Marie) {Marie};
+        \node at (2,-4) [ConcSet] (Pierre) {Pierre};
+        \node at (-2,-2) [draw,rectangle] (agent) {agent};
+        \node at (2,-2) [draw,rectangle] (patient) {patient};
+        \draw[-{Triangle[]}] (agent) edge node[midway,left] {2} (frappe)
+                                     edge node[midway,left] {1} (Marie);
+        \draw[-{Triangle[]}] (patient) edge node[midway,right] {2} (frappe)
+                                     edge node[midway,right] {1} (Pierre);
+      \end{tikzpicture}
     \z
 
     Dans la représentation de gauche, \textit{frappe} est directement modélisé comme une action de Marie sur Pierre : \textit{frappe~}(\textit{Marie}, \textit{Pierre}). Dans celle du milieu, les relations qui lient \textit{frappe} à \textit{Marie} et \textit{Pierre} sont explicitées et nommées \textit{agent} et \textit{patient}. Dans celles de droite, les relations agent et patient sont vues comme des objets à part entière reliant les mots de la phrase : agent~(\textit{Marie}, \textit{frappe}) + patient~(\textit{Pierre}, \textit{frappe}). On l’aura deviné, les trois représentations sont des réifications successives des relations d’une même structure.
@@ -4256,28 +4338,62 @@ Cette structure est un \textstyleTermes{polygraphe} (voir définition formelle d
 Si l’on s’abstrait complètement de l’ordre linéaire et que l’on garde uniquement le polygraphe orienté, on peut adopter la représentation suivante, où chaque arc est représenté par une ligne droite avec le gouverneur au-dessus de son dépendant :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
 \caption{\label{fig:}Polygraphe orienté (non ordonné)}
-
+\begin{forest} nice empty nodes, for tree={font=\itshape}
+[aimeraient
+    [ 
+        [ [beaucoup] [ [gens] [de] ] ] 
+        [ [ [passer] [Noël] ] [ [en] [Laponie] ] ]
+    ]
+]
+\end{forest}
 \end{figure}
 
 Bien que cela n’apparaisse pas au premier coup d’œil, la structure ci-dessus est un extrait de la structure précédente : c’est le même \textbf{polygraphe orienté} que précédemment, mais sans l’ordre des mots et avec une autre convention de représentation : au lieu d’indiquer la tête de la connexion par une flèche, celle-ci est placée au-dessus de son dépendant. Or ce polygraphe orienté, qui a donc été extrait automatiquement de l’arbre de constituants binaires en mettant en évidence les connexions, est très proche d’un arbre de dépendance. Pour obtenir l’arbre de dépendance, il suffit de \textbf{faire glisser chaque dépendance} le long des dépendances sur lesquelles elle s’appuie:
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
+\begin{minipage}{.45\textwidth}\centering
+\begin{forest}
+nice empty nodes,for tree={font=\itshape}
+[aimeraient
+  [
+    [ [en] [Laponie] ]
+    [ [passer] [Noël] ]
+  ]
+]
+\draw[-{Triangle[]}] (!111.south) -- (!112.south);
+\draw[-{Triangle[]}] (!121.south) -- (!122.south);
+\draw[-{Triangle[]}] (!12.west) +(-.5,0) -- ($(!11.east) +(.5,0)$);
+\end{forest}
+\end{minipage}\hfill%
+\begin{minipage}{.05\textwidth}\centering
+$\Rightarrow$
+\end{minipage}\hfill%
+\begin{minipage}{.45\textwidth}\centering
+\begin{forest}
+nice empty nodes,for tree={font=\itshape}
+[aimeraient
+  [passer
+    [Noël]
+    [en [Laponie] ]
+  ]
+]
+\end{forest}
+\end{minipage}
 \caption{\label{fig:}«~Glissade~»}
-
 \end{figure}
 
 Nous retombons finalement sur notre arbre de dépendance :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
+\begin{forest}
+for tree={font=\itshape}
+[aimeraient
+  [beaucoup [de [gens] ] ]
+  [passer [Noël] [en [Laponie] ] ]
+]
+\end{forest}
 \caption{\label{fig:}Retour à l’arbre de dépendance (bis)}
-
 \end{figure}
 
 Nous appellerons \textstyleTermes{méthode par déréification }la méthode que nous venons de présenter, qui permet de passer d’un arbre de constituants binaire avec têtes à un arbre de dépendance.
@@ -4287,11 +4403,45 @@ La méthode par déréification peut s’appliquer à des arbres de constituants
 Dans l’exemple suivant (déjà étudié dans la \sectref{sec:3.3.23} \textit{Nom ou déterminant comme tête} ?), \textit{le petit chien dort}, si on ne décide pas qui de l’article \textit{le} ou du nom \textit{chien} est la tête du groupe substantival, on obtient par déréification une connexion non orientée, qu’on ne peut pas faire «~glisser~» comme on l’a fait précédemment pour les connexions orientées.
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
-  Arbre de constituants                Structure de dépendance
-
-               \textbf{avec marquage partiel des têtes}               \textbf{associée}
+\begin{minipage}[t]{.45\textwidth}\centering
+Arbre de constituants avec marquage partiel des têtes\medskip\\
+\begin{tikzpicture}[every node/.style={font=\strut}]
+    \begin{scope}[
+    every node/.style={circle,fill=black},
+    sibling distance=15mm,
+    level distance=2\baselineskip
+    ]
+        \node (root) {}
+            child { node { } 
+                    child { node { } }
+                    child { node { } 
+                        child { node { } }
+                        child { node { } edge from parent node [reset shape, near start,right] {T} }
+                    }
+                   }
+            child { node { } edge from parent node [reset shape, near start,right] {T} };
+    \end{scope}
+    \begin{scope}[every node/.style={font=\strut\itshape}]
+    \foreach \pos/\text in {1-1/le, 1-2-1/petit, 1-2-2/chien, 2/dort} 
+      {\node [below=1pt of root-\pos] {\text};}
+    \end{scope}
+    \end{tikzpicture}
+    \end{minipage}
+    \hfill%
+      \begin{minipage}{.05\textwidth}\centering
+        $\Rightarrow$
+      \end{minipage}
+    \hfill%
+    \begin{minipage}[t]{.33\textwidth}\centering
+    Structure de dépendance associée\medskip\\
+    \begin{forest} for tree={font=\itshape}
+    [dort
+      [,nice empty nodes
+        [le] [chien [petit]]
+      ]
+    ]
+    \end{forest}
+    \end{minipage}\hfill
 \caption{\label{fig:}}
 \end{figure}
 
