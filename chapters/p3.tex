@@ -4473,11 +4473,38 @@ Chaque flèche entre deux structures symbolise une opération élémentaire perm
 
     Dans un arbre plat, les branchements ternaires sont courants. Ils apparaissent dès qu’un mot a deux dépendants. Reprenons l’exemple de \textit{passer Noël en Laponie}, qui se décompose en trois morceaux, une tête (\textit{passer}) et ses deux dépendants (\textit{Noël} et \textit{en Laponie}) (voir la section sur les \textit{Arbres de constituants avec têtes plats}).
 
-    \ea
-    %%[Warning: Draw object ignored]
+    \ea Branchement ternaire et correspondance par la méthode de Lecerf\\
+    \begin{minipage}[c]{.5\linewidth}
+    \begin{tikzpicture}[every node/.style={font=\strut}]
+    \begin{scope}[
+    every node/.style={circle,fill=black},
+    sibling distance=15mm,
+    level distance=2\baselineskip
+    ]
+        \node (root) {}
+            child { node { } edge from parent node [reset shape, above, left] {T} } 
+            child { node { } }
+            child { node { } 
+                child { node { } edge from parent node [reset shape, near start, left] {T} }
+                child { node { } }
+                };
+    \end{scope}
+    \begin{scope}[every node/.style={font=\strut\itshape}]
+    \foreach \pos/\text in {1/passer, 2/Noël, 3-1/en, 3-2/Laponie} 
+      {\node [below=1pt of root-\pos] {\text};}
+    \end{scope}
+    \end{tikzpicture}
+    \end{minipage}%
+    \begin{minipage}[c]{.5\textwidth}\centering
+    \begin{forest} for tree={font=\itshape}
+    [passer
+      [Noël]
+      [en [Laponie]]
+    ]
+    \end{forest}
+    \end{minipage}
     \z
 
-    Branchement ternaire et correspondance par la méthode de Lecerf
 
     En appliquant la méthode de Lecerf à l’arbre plat de gauche, on obtient l’arbre de dépendance à droite. Comme on le voit, le branchement ternaire est interprété comme deux connexions binaires, la connexion entre \textit{passer} et \textit{Noël} et la connexion entre \textit{passer} et \textit{en Laponie}.
 
@@ -4485,7 +4512,7 @@ Chaque flèche entre deux structures symbolise une opération élémentaire perm
 
     \ea
     %%[Warning: Draw object ignored]
-
+    \todo[inline]{Structure of this graph could not be obtained from original submission file}
     Branchement ternaire dans une boîte de Hockett
     \z
 
@@ -4493,8 +4520,39 @@ Chaque flèche entre deux structures symbolise une opération élémentaire perm
 
     \ea
     %%[Warning: Draw object ignored]
-
-    Branchement ternaire et correspondance par la méthode de déréification
+    Branchement ternaire et correspondance par la méthode de déréification\\
+    \begin{minipage}[c]{.5\linewidth}
+    \begin{tikzpicture}[every node/.style={font=\strut}]
+    \begin{scope}[
+    every node/.style={circle,fill=black},
+    level 1/.style={sibling distance=30mm},
+    level 2/.style={sibling distance=15mm},
+    level distance=2\baselineskip
+    ]
+        \node (root) {}
+            child { node { } 
+                child { node { } edge from parent node [reset shape, midway, above] {T} }
+                child { node { } }
+                child { node { } edge from parent node [reset shape, midway, above] {T} }
+                  }
+            child { node { } edge from parent node [reset shape, midway, above] {T} }; 
+    \end{scope}
+    \begin{scope}[every node/.style={font=\strut\itshape}]
+    \foreach \pos/\text in {1-1/Marie, 1-2/et, 1-3/Pierre, 2/dorment} 
+      {\node [below=1pt of root-\pos] {\text};}
+    \end{scope}
+    \end{tikzpicture}
+    \end{minipage}%
+    \begin{minipage}[c]{.5\textwidth}\centering
+    \begin{forest} for tree={font=\itshape}
+    [dorment
+      [,nice empty nodes
+        [Marie] [Pierre]
+      ] 
+    ]
+    \node at (.25,-1) {\itshape et};
+    \end{forest}
+    \end{minipage}
     \z
 
     La structure de dépendance de droite peut être obtenue en appliquant la méthode de conversion par déréification à l’arbre de constituant à gauche. Le branchement ternaire donne une connexion ternaire, où \textit{Marie} et \textit{Pierre} occupent des positions symétriques (puisqu’ils sont co-têtes), tandis que la conjonction \textit{et} occupe une troisième position, comme «~dépendant~» des co-têtes. La convention de Tesnière rend bien compte de cela.
@@ -4715,15 +4773,40 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     \z
     on voit que l’interprétation est différente selon que \textit{coréennes} est dans la portée de \textit{chères} ou l’inverse (les voitures coréennes chères ne sont pas nécessairement des voitures chères). Ces phénomènes de portée peuvent tout de même être encodés dans un arbre de dépendance, à condition d’ajouter un ordre de combinaison avec la tête, ou par un polygraphe, en indiquant que le second adjectif se combine avec le résultat de la combinaison du premier adjectif avec le nom :
 
-    \ea
-    %%[Warning: Draw object ignored]
-
-    %%[Warning: Draw object ignored]
-    {\itshape
-    les voitures coréennes chères              les voitures chères coréennes
-    }
-
-    Arbres de dépendance avec portée
+    \ea Arbres de dépendance avec portée\\
+    \ea \textit{les voitures coréennes chères}\\
+    \begin{forest} for tree = {font=\itshape}
+      [voitures
+        [coréennes,edge label={node [near end,above] {1}}] 
+        [chères,edge label={node [near end,above] {2}}]
+      ]
+    \end{forest} 
+    \hspace{1cm}
+    \begin{forest} for tree = {font=\itshape}
+        [voitures
+            [,nice empty nodes
+              [coréennes,before typesetting nodes={yshift=\baselineskip}]
+              [chères]
+            ]
+        ]
+    \end{forest}
+    \ex \textit{les voitures chères coréennes}\\
+    \begin{forest} for tree = {font=\itshape}
+      [voitures
+        [coréennes,edge label={node [near end,above] {2}}] 
+        [chères,edge label={node [near end,above] {1}}]
+      ]
+    \end{forest} 
+    \hspace{1cm}
+    \begin{forest} for tree = {font=\itshape}
+        [voitures
+            [,nice empty nodes
+              [coréennes]
+              [chères,before typesetting nodes={yshift=\baselineskip}]
+            ]
+        ]
+    \end{forest}
+    \z
     \z
 
     Les structures de constituants, qui encodent la portée de manière plus simple, semblent avoir un avantage. Reste à savoir si les phénomènes de portée relèvent de la syntaxe et doivent être encodés dans la structure syntaxique ou bien s’il s’agit uniquement de phénomènes sémantiques indépendants de la structure syntaxique. Par exemple, dans une phrase telle que \textit{Un numéro est attribué à chaque participant}, le sujet est dans la portée de l’objet, ce qui va contre l’analyse en constituants usuelle.
@@ -4832,8 +4915,59 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     \todo[inline]{number of braces does not match}
 
     Nous proposons finalement la structure de dépendance suivante. Nous laissons sous-spécifié la tête de la relation déterminant-nom, ainsi que la relation entre le pronom relatif et verbe principale de la proposition relative.
+    
     \ea
-    %%[Warning: Draw object ignored]
+    \begin{forest} for tree = { }
+    [tressaillis,calign=child,calign primary child=2
+        [à
+          [,nice empty nodes
+            [l']
+            [instant
+              [même]
+              [,nice empty nodes
+                [où]
+                [toucha
+                  [,nice empty nodes
+                    [la] 
+                    [gorgée
+                        [mêlée
+                          [de
+                            [,nice empty nodes
+                              [les]
+                              [miettes
+                                [de
+                                  [,nice empty nodes
+                                    [le] [gâteau]
+                                  ]
+                                ]
+                              ]
+                            ]
+                          ]
+                        ]
+                    ]
+                  ]
+                  [,nice empty nodes
+                    [mon]
+                    [palais]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ] 
+        [je,fit=band]
+        [attentif
+          [à [ce
+            [,nice empty nodes
+              [qui]
+              [passait,calign=child,calign primary child=2
+                [se] [d' [extraordinaire]] [en [moi]]
+              ]
+            ]
+          ]]
+        ]        
+    ]
+    \end{forest}
     \z
     Pour construire un arbre de constituants binaire, il faut décider dans quel ordre combiner chaque mot avec ses dépendants. Notons que lorsqu’une connexion n’est pas hiérarchisée, cette combinaison a lieu après les autres. Par exemple, si nous prenons la portion \textit{à l’instant même où la gorgée mêlée des miettes du gâteau toucha mon palais}, on obtient~la structure suivante, où le déterminant est le dernier élément à se combiner avec le nom :
     \ea{}
