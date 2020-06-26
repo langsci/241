@@ -5187,10 +5187,41 @@ La grammaire qui assure la correspondance entre la structure syntaxique et la st
 Nous avons vu au \chapref{sec:3.3} comment représenter la structure syntaxique à l’aide d’un arbre de dépendance. Nous envisageons la linéarisation comme la correspondance entre un arbre de dépendance (non ordonné) et un ordre linéaire. Si nous reprenons l’exemple des chapitres précédents (\textit{Beaucoup de gens aimeraient passer Noël en Laponie}), nous devons mettre en correspondance les deux structures suivantes :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
+\begin{tikzpicture}
+    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip,
+                  level 1/.style={sibling distance=30mm},
+                  level 2/.style={sibling distance=15mm},
+                  level 3/.style={sibling distance=10mm}
+                  ]
+      \node (root) {}
+        child { node{} child { node{} child { node{} } } }
+        child { node{} child { node{} } 
+                       child { node{} 
+                            child { node{} }
+                       }
+              };
+    \end{scope}
+    \begin{scope}[every node/.style={font=\itshape\strut}]
+    \node [above=1pt of root] {aimeraient};
+    \node [left=1pt of root-1] {beaucoup};
+    \node [left=1pt of root-1-1] {de};
+    \node [left=1pt of root-1-1-1] {gens};
+    \node [right=1pt of root-2] {passer};
+    \node [left=1pt of root-2-1] {Noël};
+    \node [right=1pt of root-2-2] {en};
+    \node [right=1pt of root-2-2-1] {Laponie};
+    \end{scope}
+\end{tikzpicture}\bigskip\\
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,draw},grow=right]
+\node (root) {} child { node {} child { node{} child { node{} child { node{}  
+                    child { node{} child { node{} child { node{} } } } } } } }; 
+\end{scope}
+\foreach \pos/\text in {/beaucoup, -1/de, -1-1/gens, -1-1-1/aimeraient, -1-1-1-1/passer,
+                        -1-1-1-1-1/Noël, -1-1-1-1-1-1/en, -1-1-1-1-1-1-1/Laponie} 
+      {\node [font={\itshape\strut}, below=1pt of root\pos] {\text};}
+\end{tikzpicture}
 \caption{\label{fig:}Arbre de dépendance et ordre linéaire}
-
 \end{figure}
 
 Dans la figure précédente, l’ordre linéaire est représentée par la relation de précédence qui unit les nœuds successifs (sur le lien entre la relation d’ordre et la relation de précédence, on pourra consulter l’\encadref{fig:3.3.30} sur \textit{Dépendance, dominance et transitivité}).
@@ -5198,19 +5229,65 @@ Dans la figure précédente, l’ordre linéaire est représentée par la relati
 On peut représenter la correspondance entre les deux structures, l’arbre de dépendance et l’ordre linéaire, en alignant les nœuds qui se correspondent deux à deux :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
-\caption{\label{fig:Correspondance entre arbre de dépendance et ordre linéaire}}
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,draw},grow=right]
+\node (root) {} child { node {} child { node{} child { node{} child { node{}  
+                    child { node{} child { node{} child { node{} } } } } } } }; 
+\end{scope}
+\foreach \pos/\text/\distance/\place in 
+            {
+             /beaucoup/6/above, 
+             -1/de/4/above, 
+             -1-1/gens/2/above, 
+             -1-1-1/aimeraient/8/above, 
+             -1-1-1-1/passer/6/above,
+             -1-1-1-1-1/Noël/4/below left, 
+             -1-1-1-1-1-1/en/4/above, 
+             -1-1-1-1-1-1-1/Laponie/2/above
+            } 
+      {
+        \node [ font={\itshape\strut}, below=1pt of root\pos ] {\text};
+        \node [
+                above=\distance\baselineskip of root\pos,
+                label=\place:{\itshape\strut\text},
+                circle,
+                draw
+              ] (\text) {};
+        \draw [ dashed ] (\text) -- (root\pos);
+      }
+      \begin{scope}[on background layer]
+        \draw (aimeraient) -- (beaucoup) -- (de) -- (gens);
+        \draw (aimeraient) -- (passer) -- (Noël); 
+        \draw (passer) -- (en) -- (Laponie);
+      \end{scope}
+\end{tikzpicture}
+\caption{Correspondance entre arbre de dépendance et ordre linéaire\label{fig:}}
 
 \end{figure}
 
 L’ordre linéaire et l’arbre de dépendance sont en fait deux structures sur \textbf{un même ensemble} d’éléments. On peut donc représenter ces deux structures ensemble sur un unique ensemble de nœuds :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,draw},grow=right]
+\node (root) {} child { node {} child { node{} child { node{} child { node{}  
+                    child { node{} child { node{} child { node{} } } } } } } }; 
+\end{scope}
+\foreach \pos/\text in {/beaucoup, -1/de, -1-1/gens, -1-1-1/aimeraient, -1-1-1-1/passer,
+                        -1-1-1-1-1/Noël, -1-1-1-1-1-1/en, -1-1-1-1-1-1-1/Laponie} 
+      {\node [font={\itshape\strut}, below=1pt of root\pos] {\text};}
+      
+\path (root) edge[bend left,-{Triangle[]}] (root-1)
+      (root-1) edge[bend left,-{Triangle[]}] (root-1-1)
+      (root-1-1-1) edge[bend right,-{Triangle[]},out=315,in=225] (root)
+                   edge[bend left,-{Triangle[]}] (root-1-1-1-1)
+      (root-1-1-1-1) edge[bend left,-{Triangle[]}] (root-1-1-1-1-1)
+                     edge[bend left,-{Triangle[]},out=60,in=120] (root-1-1-1-1-1-1)
+      (root-1-1-1-1-1-1) edge[bend left,-{Triangle[]}] (root-1-1-1-1-1-1-1);
 
-\caption{\label{fig:Arbre de dépendance ordonné}}
-
+\draw[{Triangle[]}-] (root-1-1-1) -- ++(0,1cm);
+\end{tikzpicture}
+\caption{Arbre de dépendance ordonné\label{fig:}}
 \end{figure}
 
 Une structure combinant ainsi deux structures est appelée une \textstyleTermes{structure produit} en mathématiques. La structure obtenue par le produit d’un arbre de dépendance et d’un ordre linéaire est appelée un \textstyleTermes{arbre de dépendance ordonné}.
@@ -5219,8 +5296,10 @@ On notera que nous avons ajouté une dépendance verticale (sans gouverneur) mar
 
 \loupe{Format tabulaire}{%\label{sec:3.5.10}
     Un arbre de dépendance ordonné peut être encodé dans un tableau comme le suivant :
-
-    \begin{tabularx}{\textwidth}{XXXXX}
+    
+    \begin{table}[H]
+    \caption{{\color{red}Please provide a caption}\label{tab:}}
+    \begin{tabular}{cllcl}
     \lsptoprule
     Identifiant & Mot & Catégorie & Gouverneur & Fonction\\
     \midrule
@@ -5233,7 +5312,8 @@ On notera que nous avons ajouté une dépendance verticale (sans gouverneur) mar
     7 & en & Préposition & 5 & complément\\
     8 & Laponie & Nom & 7 & complément\\
     \lspbottomrule
-    \end{tabularx}
+    \end{tabular}
+    \end{table}
 
     Ce tableau a 5 colonnes. La deuxième contient les mots de la phrase dans l’ordre. Pour chacun de ces mots, on peut donner autant d’informations qu’on veut : ici on donne leur catégorie syntaxique dans la troisième colonne. La première colonne attribue un identifiant à chaque mot. Grace à cet identifiant, on peut faire référence à n’importe quel mot de la même phrase. Ainsi dans la quatrième colonne, on indique pour chaque mot quel est son gouverneur. On peut ensuite ajouter des informations sur cette relation : la dernière colonne indique la fonction syntaxique que remplit chaque mot par rapport à son gouverneur.
 
@@ -5241,9 +5321,38 @@ On notera que nous avons ajouté une dépendance verticale (sans gouverneur) mar
 
     On peut représenter l’information contenue dans le tableau par une structure étiquetée :
 
-    \ea
-    %%[Warning: Draw object ignored]
-    \z
+    \begin{figure}[H]
+    \caption{{\color{red}Please provide a caption}\label{fig:}}
+    \begin{tikzpicture}
+        \begin{scope}[every node/.style={circle,draw},grow=right]
+        \node (root) {} child { node {} child { node{} child { node{} child { node{}  
+                            child { node{} child { node{} child { node{} } } } } } } }; 
+        \end{scope}
+        \foreach \pos/\text/\i/\type in {
+                    /beaucoup/1/Adverbe,
+                    -1/de/2/Prép,
+                    -1-1/gens/3/Nom,
+                    -1-1-1/aimeraient/4/Verbe,
+                    -1-1-1-1/passer/5/Verbe,
+                    -1-1-1-1-1/Noël/6/Nom, 
+                    -1-1-1-1-1-1/en/7/Prép, 
+                    -1-1-1-1-1-1-1/Laponie/8/Nom
+                } 
+            {\node [font={\strut}, align=center, below=1pt of root\pos] (\text) {\i\\\itshape\text\\\type};}
+        
+        \begin{scope}[>={Triangle[]},every node/.style={above,midway,font=\small}]
+        \path (root) edge[bend left,->] node  {comp} (root-1)
+            (root-1) edge[bend left,->] node  {comp} (root-1-1)
+            (root-1-1-1) edge[bend right,->,out=285,in=255] node  {sujet} (root)
+                        edge[bend left,->] node  {objet} (root-1-1-1-1)
+            (root-1-1-1-1) edge[bend left,->] node  {objet} (root-1-1-1-1-1)
+                            edge[bend left,->,out=75,in=105] node  {comp} (root-1-1-1-1-1-1)
+            (root-1-1-1-1-1-1) edge[bend left,->] node  {comp} (root-1-1-1-1-1-1-1);
+        \end{scope}
+
+        \draw[{Triangle[]}-] (root-1-1-1) -- ++(0,1cm) node [at end,above] {racine};
+    \end{tikzpicture} 
+    \end{figure}
 
     Ce \textstyleTermesapprof{format tabulaire}, également appelé \textstyleTermesapprof{format CoNLL} d’après la conférence éponyme en apprentissage automatique (\textit{Conférence in Natural Language Learning}), est extrêmement économique et sert en traitement automatique des langues à encoder des corpus de textes analysés syntaxiquement. Les présupposés théoriques se reflètent dans l’économie du format : on ne peut encoder qu’un seul gouverneur par mot (la structure doit être un arbre) et les liens sont restreints aux mots de la même phrase. Il existe différentes extensions de ce format permettant d’encoder des graphes et mêmes des graphes à bulles.
 
@@ -5254,11 +5363,7 @@ On notera que nous avons ajouté une dépendance verticale (sans gouverneur) mar
 
     Considérons la formule algébrique (7 \textrm{${\times}$} 19) + (5 \textrm{${\times}$} 31). Pour effectuer ce calcul, il faut nécessairement effectuer les deux multiplications avant de les sommer, ce que l’on peut représenter par le diagramme suivant, où le résultat de chaque calcul intermédiaire est donné sous une barre horizontale :
 
-    \ea
-    %%[Warning: Draw object ignored]
-
-    %%[Warning: Draw object ignored]
-    \z
+    \ea \attop {$ \cfrac{ \cfrac{7\times 19}{133} + \cfrac{5\times 31}{155} }{288}$} \z
 
     On peut alors donner une représentation arborescente de la structure de ce calcul. Les signes + et \textrm{${\times}$} représentent des opérateurs binaires qui combinent deux nombres pour en fournir un troisième. Ces opérateurs ont donc deux arguments à l’image d’un verbe transitif et une représentation similaire, par un arbre de dépendance, peut être adoptée :
 
@@ -5269,7 +5374,16 @@ On notera que nous avons ajouté une dépendance verticale (sans gouverneur) mar
     La \textstyleTermesapprof{lecture}\textstyleTermes{} \textstyleTermesapprof{postfixée} ou \textstyleTermesapprof{polonaise inverse}, où le gouverneur est ramassé après ses dépendants, est particulièrement appropriée au calcul et utilisée par les calculateurs automatiques, y compris certaines machines à calculer d’usage courant : en effet, pour effectuer le calcul 7 19 \textrm{${\times}$} 5 31 + \textrm{${\times}$}, il suffit d’empiler les nombres au fur et à mesure de la lecture et à la lecture de chaque opérateur binaire d’effectuer l’opération sur les nombres des deux lignes qui précèdent en les supprimant :
 
     \ea
-    %%[Warning: Draw object ignored]
+    \begin{forest}
+    [$+$
+      [$\times$
+        [7] [19]
+      ]
+      [$\times$
+        [5] [31]
+      ]
+    ]
+    \end{forest}
     \z
 
     Ces différentes stratégies pour passer d’une structure hiérarchique à un ordre linéaire se retrouvent dans les langues naturelles (voir l’\encadref{fig:3.5.12} qui suit). Ceci montre la nécessité de distinguer, pour les calculs comme pour les énoncés linguistiques, la structure et son encodage linéaire. Notre calcul, encodé par la formule (7 \textrm{${\times}$} 19) + (5 \textrm{${\times}$} 31), aussi bien que par les formules + \textrm{${\times}$} 7 19 \textrm{${\times}$} 5 31 ou 7 19 \textrm{${\times}$} 5 31 + \textrm{${\times}$}, est totalement indépendant de la convention qui sert à l’encoder linéairement. Autrement dit la structure du calcul n’est pas ordonnée : seule la structure hiérarchique encodée par l’arbre de dépendance est pertinente. (Avec des opérateurs non commutatifs, comme la soustraction ou la division, l’ordre sur les fils d’un opérateur peut également être pertinent.) L’ordre linéaire résulte uniquement d’une convention d’encodage. Ceci est en grande partie vrai des langues naturelles : l’ordre linéaire des syntaxèmes imposé par la grammaire de la langue est une convention pour encoder la structure syntaxique de l’énoncé. Autrement dit, la structure syntaxique d’un énoncé, qui indique comment les éléments de cet énoncé se combinent les uns aux autres, est une structure qui est fondamentalement indépendante de l’ordre conventionnellement utilisé pour l’encoder linéairement.
@@ -5352,10 +5466,26 @@ Le terme \textit{projectivité}, forgé par le mathématicien Yves Lecerf en 196
 L’arbre de dépendance ordonné présenté tout à l’heure est projectif :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,draw},grow=right]
+\node (root) {} child { node {} child { node{} child { node{} child { node{}  
+                    child { node{} child { node{} child { node{} } } } } } } }; 
+\end{scope}
+\foreach \pos/\text in {/beaucoup, -1/de, -1-1/gens, -1-1-1/aimeraient, -1-1-1-1/passer,
+                        -1-1-1-1-1/Noël, -1-1-1-1-1-1/en, -1-1-1-1-1-1-1/Laponie} 
+      {\node [font={\itshape\strut}, below=1pt of root\pos] {\text};}
+      
+\path (root) edge[bend left,-{Triangle[]}] (root-1)
+      (root-1) edge[bend left,-{Triangle[]}] (root-1-1)
+      (root-1-1-1) edge[bend right,-{Triangle[]},out=315,in=225] (root)
+                   edge[bend left,-{Triangle[]}] (root-1-1-1-1)
+      (root-1-1-1-1) edge[bend left,-{Triangle[]}] (root-1-1-1-1-1)
+                     edge[bend left,-{Triangle[]},out=60,in=120] (root-1-1-1-1-1-1)
+      (root-1-1-1-1-1-1) edge[bend left,-{Triangle[]}] (root-1-1-1-1-1-1-1);
 
-\caption{\label{fig:}Arbre de dépendance projectif}
-
+\draw[{Triangle[]}-] (root-1-1-1) -- ++(0,1cm);
+\end{tikzpicture}
+\caption{\label{fig:}Arbre de dépendance projectif\todo[inline]{Is this the same figure as before? If yes, print only once?}}
 \end{figure}
 
 En effet, chaque projection est continue. Par exemple, la projection de \textit{passer}, qui est l’ensemble formé par les mots \textit{passer, Noël, en} et \textit{Laponie}, forme le segment \textit{passer Noël en Laponie}, qui est une portion linéairement continue.
@@ -5363,10 +5493,30 @@ En effet, chaque projection est continue. Par exemple, la projection de \textit{
 La projectivité entraîne une certaine asymétrie des dépendances. En effet, si A gouverne B, alors la projection de B sera entièrement d’un des deux côtés de A, tandis que la projection de A pourra très bien avoir des parties à gauche et à droite de B.
 
 \begin{figure}
-%%[Warning: Draw object ignored]
+\begin{tikzpicture}[>={Triangle[]},decoration={brace,mirror}]
+  \matrix (matrix) [
+                     matrix of nodes,
+                     nodes in empty cells,
+                     nodes = {text width=.75ex},
+                     row 1/.style = {nodes={circle,draw}},
+                     column sep = 2em
+                    ]
+      { & &   & & &   & & & \\
+        & & A & & & B & & & \\};
 
+\path (matrix-1-3) edge [bend right=45,->] (matrix-1-1)
+                   edge [bend right,->] (matrix-1-2)
+                   edge [bend left,->] (matrix-1-4)
+                   edge [bend left=45,->] (matrix-1-6)
+                   edge [bend left=60,->] (matrix-1-9)
+      (matrix-1-6) edge [bend right,->] (matrix-1-5)
+                   edge [bend left,->] (matrix-1-7)
+                   edge [bend left=45,->] (matrix-1-8);
+\draw[decorate,decoration={raise=.25\baselineskip}] (matrix-2-5.west) -- (matrix-2-8.east);
+\draw[decorate,decoration={raise=.5\baselineskip}] (matrix-2-1.west) -- (matrix-2-9.east);
+
+\end{tikzpicture}
 \caption{\label{fig:}Projections maximales continues}
-
 \end{figure}
 
 C’est sur cette asymétrie qu’est basé le test de recouvrement (\sectref{sec:3.3.32} éponyme).
@@ -5380,10 +5530,16 @@ Un arbre de dépendance ordonné est \textstyleTermes{projectif} si et seulement
 Cela concerne également la dépendance verticale qui marque la racine et qui doit être vue comme une dépendance infinie empêchant tout autre dépendance de passée au-dessus de la racine. Autrement dit, les deux configurations suivantes sont exclues d’un arbre de dépendance projectif :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
+\begin{tikzpicture}[every node/.style={circle,draw},grow=right]
+  \node at (0,0) (root) {} child { node {} child { node{} child { node{} } } };
+  \path (root)   edge [bend left=45] (root-1-1)
+        (root-1) edge [bend left=45] (root-1-1-1);
+        
+  \node at (6,0) (root2) {} child { node {} child { node{} } };
+  \path (root2)   edge [bend left=45] (root2-1-1);
+  \draw [{Triangle[]}-] (root2-1) -- ++(0,1cm);
+\end{tikzpicture}
 \caption{\label{fig:}Configurations non projectives}
-
 \end{figure}
 
 Donnons un exemple de structure non projective :
@@ -5401,10 +5557,18 @@ Mais il vous faudra danser avec moi.~»\\
 Le troisième vers de cette chanson a une structure non projective :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
+\begin{tikzpicture}[>={Triangle[]}]
+  \begin{scope}[every node/.style={circle,draw},grow=right,level distance=2cm]
+  \node at (0,0) (root) {} child { node {} child { node{} } };
+  \path (root) edge [bend left=45,->] (root-1-1)
+        (root-1) edge [bend right,->] (root);
+  \end{scope}
+  \draw [<-] (root-1) -- ++(0,1.5cm);
+  \node [below=1pt of root, font=\itshape\strut] {une belle};
+  \node [below=1pt of root-1, font=\itshape\strut] {est entrée};
+  \node [below=1pt of root-1-1, font=\itshape,align=center] {\strut qui voulait\\les acheter};
+\end{tikzpicture}
 \caption{\label{fig:}Arbre de dépendance non projectif}
-
 \end{figure}
 
 Nous avons fait ici une analyse très peu granulaire. Toute analyse plus fine, au niveau du mot par exemple, conservera ces trois dépendances et donc la configuration non projective. (Faire une analyse moins granulaire revient à réduire le graphe. Voir la définition de la réduction dans l’encadré qui suit.)
@@ -5420,9 +5584,40 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
     \z
     Dans le cas de la projectivité d’un arbre ordonné, on s’intéresse à une propriété qui concerne la relation entre la structure d’arbre et l’ordre linéaire sur les nœuds de l’arbre. Le graphe qui nous intéresse doit donc contenir ces deux structures. Au graphe que forme l’arbre, nous allons ajouter l’ordre linéaire sous la forme d’arêtes entre deux nœuds successifs, ce qui revient à placer les nœuds du graphe sur une ligne dans l’ordre linéaire. Pour prendre totalement en compte la structure hiérarchique de l’arbre, il faut encoder le fait que l’arbre possède un nœud, la racine, qui domine tous les autres. Pour cela, on attache l’arbre par sa racine à un nœud spécial qu’on appelle le nœud à l’infini (noté \textrm{${\infty}$}). Cela revient à placer les nœuds de l’arbre sur un cercle dans l’ordre linéaire avec le nœud à l’infini entre le premier et le dernier nœud. Nous appellerons ce graphe le \textstyleTermesapprof{graphe circulaire} associé à un arbre linéairement ordonné.
 
-    \ea
-    %%[Warning: Draw object ignored]
-    Graphe circulaire
+    \ea Graphe circulaire\\
+    \begin{tikzpicture}[label distance=2pt,>={Triangle[]}] % Following an idea by Jerome Tremblay
+    \def \radius {2cm}
+    \def \margin {5}
+    \foreach \s in {1,...,9}
+       {
+         \node[draw, circle] at ({360/9 * (\s - 1) + 90}:\radius) (\s) {};
+         \draw ({360/9 * (\s - 1) + 90 + \margin}:\radius) 
+               arc ({360/9 * (\s - 1) + 90 +\margin}:{360/9 * (\s) + 90 -\margin}:\radius);
+       }
+    \foreach \i/\text/\anchor in 
+       {
+         1/$\infty$/north,
+         2/beaucoup/north west,
+         3/de/west,
+         4/gens/south west,
+         5/aimeraient/south west,
+         6/passer/south east,
+         7/Noël/south east,
+         8/en/east,
+         9/Laponie/north east
+       } 
+       {
+         \node at (\i) [label=\anchor:{\strut\text}] {};
+       }
+    \path (1) edge[->] (5)
+          (2) edge[->,bend left] (3)
+          (3) edge[->,bend left] (4)
+          (5) edge[->] (2)
+              edge[->, bend left] (6)
+          (6) edge[->, bend left] (7)
+              edge[->, bend left=45] (8)
+          (8) edge[->, bend left] (9);
+    \end{tikzpicture}
     \z
 
     Le graphe circulaire d’un arbre projectif a une propriété un peu plus forte que la planarité : il est planaire extérieur.
@@ -5433,7 +5628,43 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
 
     \ea
     %%[Warning: Draw object ignored]
-    Equivalence entre K\textsubscript{4} et les configurations non projectives
+    Equivalence entre K\textsubscript{4} et les configurations non projectives\\
+    \begin{tikzpicture} 
+    \begin{scope}[local bounding box=graph]
+      \graph [nodes={circle,draw},empty nodes,clockwise=4] { subgraph K_n [n=4] };
+    \end{scope}
+    \node[overlay,below=1ex of graph] {K\textsubscript{4}};
+    \end{tikzpicture}
+    \hfill
+    \begin{tikzpicture} 
+        \foreach \s in {1,...,5}
+       {
+         \node at ({360/5 * (\s - 1) + 90}:1cm) (\s) {};
+         \draw ({360/5 * (\s - 1) + 90}:1cm) 
+               arc ({360/5 * (\s - 1) + 90}:{360/5 * (\s) + 90}:1cm);
+       }
+       \path (2) edge [bend left=45] (4);
+       \path (3) edge [bend left=45] (5);
+       \node at (2) [fill=white,circle,draw] {};
+       \node at (3) [fill=white,circle,draw] {};
+       \node at (4) [fill=white,circle,draw] {};
+       \node at (5) [fill=white,circle,draw] {};
+    \end{tikzpicture} 
+    \hfill
+    \begin{tikzpicture} 
+        \foreach \s in {1,...,6}
+       {
+         \node at ({360/6 * (\s - 1) + 90}:1cm) (\s) {};
+         \draw ({360/6 * (\s - 1) + 90}:1cm) 
+               arc ({360/6 * (\s - 1) + 90}:{360/6 * (\s) + 90}:1cm);
+       } 
+       \draw (1) -- (4);
+       \path (3) edge [bend left=45] (5);
+       \node at (1) [fill=white,circle,draw,label=above:$\infty$] {};
+       \node at (3) [fill=white,circle,draw] {};
+       \node at (4) [fill=white,circle,draw] {};
+       \node at (5) [fill=white,circle,draw] {};
+    \end{tikzpicture}
     \z
 }
 
@@ -5458,20 +5689,37 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
 \loupe{Flux de dépendances}{%\label{sec:3.5.17}
     Le \textstyleTermesapprof{flux de dépendances} en un point de l’ordre linéaire est l’\textbf{ensemble des dépendances} qui \textbf{relient} un \textbf{nœud} \textbf{à gauche} à un \textbf{nœud} \textbf{à droite} de ce point. Le flux de dépendance est défini pour un arbre linéairement ordonné. Ce qu’on appelle un point de l’ordre linéaire est une position sur la ligne que forment les mots lorsqu’on les aligne de gauche à droite dans l’ordre linéaire. On s’intéresse généralement au flux entre deux mots successifs, c’est-à-dire au \textbf{flux inter-mot}, mais on peut aussi regarder le flux au-dessus d’un syntaxème donné.
 
-    \ea
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
+    \begin{figure}[H]
+    \begin{tikzpicture}
+        \begin{scope}[every node/.style={circle,draw},grow=right,local bounding box=graph]
+            \node (root) {} child { node {} child { node{} child { node{} child { node{}  
+                    child { node{} child { node{} child { node{} } } } } } } }; 
+        \end{scope}
+        \foreach \pos/\text in {/beaucoup, -1/de, -1-1/gens, -1-1-1/aimeraient, -1-1-1-1/passer,
+                                -1-1-1-1-1/Noël, -1-1-1-1-1-1/en, -1-1-1-1-1-1-1/Laponie} 
+            {\node [font={\itshape\strut}, below=1pt of root\pos] {\text};}
+      
+        \path (root) edge[bend left,-{Triangle[]}] (root-1)
+            (root-1) edge[bend left,-{Triangle[]}] (root-1-1)
+            (root-1-1-1) edge[bend right,-{Triangle[]},out=315,in=225] (root)
+                        edge[bend left,-{Triangle[]}] (root-1-1-1-1)
+            (root-1-1-1-1) edge[bend left,-{Triangle[]}] (root-1-1-1-1-1)
+                            edge[bend left,-{Triangle[]},out=60,in=120] (root-1-1-1-1-1-1)
+            (root-1-1-1-1-1-1) edge[bend left,-{Triangle[]}] (root-1-1-1-1-1-1-1);
 
-    %%[Warning: Draw object ignored]
-    Flux inter-mot
-    \z
+        \draw[{Triangle[]}-] (root-1-1-1) -- ++(0,1cm);
+        
+        \foreach \x [remember=\x as \lastx (initially root)]
+                    in {root-1, root-1-1, root-1-1-1, root-1-1-1-1, 
+                        root-1-1-1-1-1, root-1-1-1-1-1-1, root-1-1-1-1-1-1-1}
+                    { \draw [thick] ( $ (\lastx) !.5! (\x) $ ) -- ++ (0,2cm)
+                                    -- ++ (0,-3cm) ; }
+         \draw [thick] (root.west) -- ++ (0,2cm) -- ++ (0,-3cm);
+         \draw [thick] (root-1-1-1-1-1-1-1.east) -- ++ (0,2cm) -- ++ (0,-3cm);
+                  
+    \end{tikzpicture}
+    \caption{Flux inter-mot\label{fig:}}
+    \end{figure}
 
     Dans notre figure, le flux en un point de la phrase est l’ensemble des dépendances qui coupent le trait vertical en ce point. Le flux entre deux phrases est vide (à moins que l’on considère aussi des dépendances entre phrases). En toute position inter-mot de la phrase, le flux contient au moins une dépendance. Le flux entre \textit{de} et \textit{gens} ou entre \textit{passer} et \textit{Noël} contient deux dépendances.
 
@@ -5480,8 +5728,21 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
 
     \ea
     %%[Warning: Draw object ignored]
-
-        \textbf{Dépendances en bouquet}     \textbf{Dépendances disjointes}
+    \ea Dépendances en bouquet\\
+    \begin{tikzpicture}[>={Triangle[]},every node/.style={circle,draw},grow=right]
+        \node at (0,0) (root) {} child { node {} child { node{} } };
+        \path (root)   edge [bend left=45,->] (root-1)
+              (root)   edge [bend left=60,->] (root-1-1);
+        \draw [thick ]($ (root) !.5! (root-1) $) -- ++ (0,1.5cm) -- ++ (0,-2cm);
+    \end{tikzpicture}
+    \ex Dépendances disjointes\\
+    \begin{tikzpicture}[>={Triangle[]},every node/.style={circle,draw},grow=right]
+        \node at (0,0) (root) {} child { node {} child { node{} child { node{} } } };
+        \path (root)   edge [bend left=60,->] (root-1-1-1)
+              (root-1) edge [bend left=45,->] (root-1-1);
+        \draw [thick]($ (root-1) !.5! (root-1-1) $) -- ++ (0,1.5cm) -- ++ (0,-2cm);
+    \end{tikzpicture}
+    \z
     \z
 
     Les études faites sur des corpus annotés dans plus de 70 langues montrent que le flux n’a jamais plus de 6 dépendances disjointes et que ce nombre n’est quasiment jamais atteint. Plusieurs expériences en psychologie ont montré que le nombre de paramètres que l’on peut conserver simultanément dans sa \textbf{mémoire immédiate} dépasse rarement 7 (voir le fameux article du psychologue George Miller de 1956 intitulé \textit{The magical number seven, plus or minus two: Some limits on our capacity for processing information}). Par exemple, si vous montrez pendant une fraction de seconde à une personne un écran noir avec 5 ou 6 points blancs disposés aléatoirement, elle devrait être capable de vous dire précisément le nombre de points qui sont apparus à l’écran. Mais si vous faites la même expérience avec 8 ou 9 points, cela devient beaucoup plus difficile. On peut penser que la même contrainte agit sur le flux de dépendances et rend compte du fait que nous ne sommes pas capable de traiter simultanément plus de 6 dépendances disjointes lorsque nous écoutons une phrase et l’analysons au fur et à mesure de son écoute. La même contrainte agit lorsque nous produisons un énoncé et que nous devons gérer le flux de dépendances pour assurer la cohésion de notre propos.
@@ -5518,10 +5779,34 @@ De telles règles sont appelées des \textstyleTermes{règles de précédence li
 En projetant ces règles sur l’arbre de dépendance de la phrase, on obtient la structure suivante où est indiqué, pour chaque dépendance, si le dépendant se place avant (<) ou après (>) le gouverneur :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
-\caption{\label{fig:Arbre de dépendance avec spécifications d’ordre}}
-
+\begin{tikzpicture}
+    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip,
+                  level 1/.style={sibling distance=30mm},
+                  level 2/.style={sibling distance=15mm},
+                  level 3/.style={sibling distance=10mm}
+                  ]
+      \node (root) {}
+        child { node{} child { 
+                        node{}  child { node{}  edge from parent node [reset shape, midway,right] {>} } edge from parent node [reset shape, midway,right] {>}  } edge from parent node [reset shape, midway,above] {<} }
+        child { node{} 
+                       child { node{} edge from parent node [reset shape, midway,left] {>} } 
+                       child { node{}
+                            child { node{} edge from parent node [reset shape, midway,right] {>} }
+                            edge from parent node [reset shape, midway, right] {>}
+                       } edge from parent node [reset shape, midway,above] {>} };
+    \end{scope}
+    \begin{scope}[every node/.style={font=\itshape\strut}]
+    \node [above=1pt of root] {aimeraient};
+    \node [left=1pt of root-1] {beaucoup};
+    \node [left=1pt of root-1-1] {de};
+    \node [left=1pt of root-1-1-1] {gens};
+    \node [right=1pt of root-2] {passer};
+    \node [left=1pt of root-2-1] {Noël};
+    \node [right=1pt of root-2-2] {en};
+    \node [right=1pt of root-2-2-1] {Laponie};
+    \end{scope}
+\end{tikzpicture}
+\caption{Arbre de dépendance avec spécifications d’ordre\label{fig:}}
 \end{figure}
 
 Pour ordonner linéairement les nœuds de l’arbre, on peut par exemple parcourir l’arbre à partir de sa racine en plaçant les nœuds au fur et à mesure. On place donc d’abord le verbe \textit{aimeraient}, puis ses deux dépendants, l’un à gauche (\textit{beaucoup}) et l’autre à droite (\textit{passer}) :
@@ -5545,8 +5830,32 @@ Dès qu’un nœud a plus de deux dépendants, l’un des dépendants ne pourra 
 Voici son arbre de dépendance (où nous indiquons les seules fonctions pertinentes pour la suite de discussion, à savoir \textit{sujet} et \textit{objet}) :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
+\begin{tikzpicture}
+    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip,
+                  level 1/.style={sibling distance=20mm},
+                  level 2/.style={sibling distance=15mm},
+                  level 3/.style={sibling distance=10mm}
+                  ]
+      \node (root) {} child { node{} child { node{} } child { node{} } edge from parent node [reset shape,midway,above] {sujet} }
+                      child { node{} }
+                      child { node{} }
+                      child { node{} }
+                      child { node{} child { node{} } child { node{} } child { node{} } edge from parent node [reset shape,midway,above] {objet} };
+    \end{scope}
+    \begin{scope}[every node/.style={font=\itshape\strut}]
+    \node [above=1pt of root] {prêtera};
+    \node [left=1pt of root-1] {garçon};
+    \node [below=1pt of root-1-1] {le};
+    \node [below=1pt of root-1-2] {petit};
+    \node [below=1pt of root-2] {lui};
+    \node [below=1pt of root-3] {ne};
+    \node [below=1pt of root-4] {pas};
+    \node [right=1pt of root-5] {ballon};
+    \node [below=1pt of root-5-1] {son};
+    \node [below=1pt of root-5-2] {gros};
+    \node [below=1pt of root-5-3] {autre};
+    \end{scope}
+\end{tikzpicture}
 \caption{\label{fig:}Arbre de dépendance}
 
 \end{figure}
