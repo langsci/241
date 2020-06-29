@@ -5872,16 +5872,14 @@ La deuxième méthode pour ordonner les co-dépendants consiste donc à donner d
 
 Voici le gabarit qu’ouvre un verbe à l’indicatif en français :
 
-\begin{table}
-\caption{\label{tab:}}
-\begin{tabularx}{\textwidth}{XXXXXXXXXXXXXX}
-\lsptoprule
-\multicolumn{14}{c}{{\bfseries Domaine verbal}}\\
-\midrule
-\multicolumn{1}{c}{ch-pré-noyau} & \multicolumn{1}{c}{ch-initial} & \multicolumn{1}{c}{ch-cl-sujet} & \multicolumn{1}{c}{ch-cl-ne} & \multicolumn{1}{c}{ch-cl-se} & \multicolumn{1}{c}{ch-cl-le} & \multicolumn{1}{c}{ch-cl-lui} & \multicolumn{1}{c}{ch-cl-y} & \multicolumn{1}{c}{ch-cl-en} & \multicolumn{1}{c}{ch-verbe} & \multicolumn{1}{c}{ch-adv} & \multicolumn{1}{c}{ch-vb-sub} & \multicolumn{1}{c}{ch-final} & ch-post-noyau\\
-\lspbottomrule
-\end{tabularx}
-\end{table}
+\begin{figure}\small
+\caption{Domaine verbal\label{tab:}}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\rotatebox{90}{ch-pré-noyau} &  \rotatebox{90}{ch-initial} &  \rotatebox{90}{ch-cl-sujet} &  \rotatebox{90}{ch-cl-ne} &  \rotatebox{90}{ch-cl-se} &  \rotatebox{90}{ch-cl-le} &  \rotatebox{90}{ch-cl-lui} &  \rotatebox{90}{ch-cl-y} &  \rotatebox{90}{ch-cl-en} & \cellcolor{lsDOIGray} \rotatebox{90}{ch-verbe} &  \rotatebox{90}{ch-adv} &  \rotatebox{90}{ch-vb-sub} &  \rotatebox{90}{ch-final} &  \rotatebox{90}{ch-post-noyau}\\
+\hline
+\end{tabular}
+\end{figure}
 
 Ce gabarit contient 7 champs préverbaux pour des clitiques (les champs ch-cl-X), un champ initial dont nous avons parlé au début de ce chapitre et qui accueille en général le sujet, un champ final qui accueille les compléments du verbe, un champ pour un verbe subordonné (notamment pour le participe des formes verbales complexes comme \textit{a dormi}) précédé d’un champ adverbial (pour la négation \textit{pas} entre autres) et des champs pré-noyau et post-noyau qui accueillent les éléments détachés à gauche et à droite (voir partie 6 sur la macrosyntaxe). Les éléments qui viennent se placer dans le gabarit ouvert par le verbe vont former avec lui un constituant, dit \textstyleTermes{constituant topologique}, que nous appelons le \textstyleTermes{domaine verbal}.
 
@@ -5923,14 +5921,16 @@ Et ainsi de suite.
     L’inacceptabilité des deux derniers exemples ne vient pas d’une exclusion syntaxique, puisque \textit{te} et \textit{me}/\textit{lui} n’occupe pas la même position syntaxique (l’un est objet direct et l’autre objet indirect). Or il ne semble pas s’agir non plus d’une exclusion topologique, puisque \textit{me} objet indirect et \textit{lui} occupent des positions topologiques différentes (l’un se place avant \textit{la} et l’autre après).
 
     Tout se passe comme si \textit{te} ou \textit{me} (en tant qu’objet direct) bloquait les trois positions topologiques à la fois (celles de \textit{te/me} objet indirect, \textit{le} et \textit{lui}).
-
-    \begin{tabularx}{\textwidth}{XXXXXXXX}
-    \lsptoprule
-    \multicolumn{1}{c}{{\sffamily\itshape il}} & {\sffamily\itshape ne} & \multicolumn{1}{c}{{\sffamily \textit{me} (indirect)}} & \multicolumn{1}{c}{{\sffamily\itshape le}} & {\sffamily\itshape lui} & \multicolumn{1}{c}{{\sffamily\itshape y}} & \multicolumn{1}{c}{{\sffamily\itshape en}} & \multicolumn{1}{c}{{\sffamily verbe}}\\
-    \multicolumn{2}{c}{} & \multicolumn{3}{c}{{\sffamily \textit{me} (direct)}} & \multicolumn{3}{c}{}\\
+    
+    \begin{center}
+    \begin{tabular}{|l|l|l|l|l|l|l|l|}
+    \hhline{--------}
+     il &  ne &  \textit{me} (indirect) &  le &  lui &  y &  en &  verbe\\
+    \hhline{--------}
+    \multicolumn{2}{c}{} & \multicolumn{3}{|c|}{\textit{me} (direct)} & \multicolumn{3}{c}{} \\
     \hhline{~~---~~~}
-    \lspbottomrule
-    \end{tabularx}
+    \end{tabular}
+    \end{center}
 
     Le fait que cette exclusion ne puisse être clairement imputée ni à des règles syntaxiques, ni à des règles topologiques est un des arguments avancés pour considérer que la grammaire des clitiques préverbaux du français relèvent aujourd’hui de la conjugaison du verbe, laquelle, on le sait, est beaucoup plus irrégulière que la microsyntaxe. Nous considérons pour notre part qu’il s’agit effectivement de nanosyntaxe, sans considérer pour autant qu’il s’agit de flexion (voir \chapref{sec:4.2}).
 }
@@ -5982,8 +5982,24 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
     \z
     Voici comment s’étirent, en fonction de leur poids, les différentes dépendance entre le verbe \textit{propose} et ses compléments :
 
-    \ea
-    %%[Warning: Draw object ignored]
+    \ea\attop{%
+    \begin{tikzpicture}
+    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip,
+                  level 1/.style={sibling distance=20mm},
+                  level 2/.style={sibling distance=15mm},
+                  level 3/.style={sibling distance=10mm}
+                  ]
+    \node (root) {} child {node {}} 
+                    child {node[yshift=-4\baselineskip] {}} 
+                    child {node {}};
+    \end{scope}
+    \begin{scope}[every node/.style={align=center,font=\strut\itshape}]
+    \node [above=1pt of root] {propose};
+    \node [below=1pt of root-1] {aujourd’hui};
+    \node [below=1pt of root-2] {un exercice\\sur l’ordre\\des mots};
+    \node [below=1pt of root-3] {à ses élèves};
+    \end{scope}
+    \end{tikzpicture}}
     \z
 
     La position finale d’un dépendant se trouve alors déterminée par la «~longueur~» initiale de la dépendance (déterminée par la fonction et la nature du dépendant comme dans le modèle avec gabarit), l’élasticité de cette dépendance et différents paramètres comme le poids ou la saillance.
@@ -6070,12 +6086,13 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
 
     On peut postuler qu’en russe, l’ordre linéaire de la phrase obéit au gabarit suivant :
 
-
-    \begin{tabularx}{\textwidth}{XXX}
-    \lsptoprule
-    {\sffamily thème-foc} & {\sffamily rhème} & {\sffamily thème}\\
-    \lspbottomrule
-    \end{tabularx}
+    \begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hhline{---}
+    thème-foc & rhème & thème\\
+    \hhline{---}
+    \end{tabular}
+    \end{center}
 
 
     Le verbe en fonction de sa valeur communicative va venir dans un des trois champs. Les dépendants qui on la même valeur communicative que lui se placeront dans le même champ, tandis que ceux qui ont d’autres valeurs iront dans d’autres champs. La prosodie viendra souligner cette répartition avec une intonation montante sur le thème focalisé, descendante sur le rhème et généralement plate sur le thème.
@@ -6098,73 +6115,129 @@ Nous allons voir de manière un peu plus précise comment fonctionne le modèle 
 
 Nous avons donné le gabarit topologique du verbe à l’indicatif en français à la \sectref{sec:3.5.19} sur la \textit{Linéarisation des co-dépendants}. Rappelons-le :
 
-\begin{table}
-\caption{\label{tab:}}
-\begin{tabularx}{\textwidth}{XXXXXXXXXXXXXX}
-\lsptoprule
-\multicolumn{14}{c}{{\bfseries Domaine verbal}}\\
-\multicolumn{1}{c}{ch-pré-noyau} & \multicolumn{1}{c}{ch-initial} & \multicolumn{1}{c}{ch-cl-sujet} & \multicolumn{1}{c}{ch-cl-ne} & \multicolumn{1}{c}{ch-cl-se} & \multicolumn{1}{c}{ch-cl-le} & \multicolumn{1}{c}{ch-cl-lui} & \multicolumn{1}{c}{ch-cl-y} & \multicolumn{1}{c}{ch-cl-en} & \multicolumn{1}{c}{ch{}-verbe} & \multicolumn{1}{c}{ch-adv} & \multicolumn{1}{c}{ch-vb-sub} & \multicolumn{1}{c}{ch-final} & ch-post-noyau\\
-\lspbottomrule
-\end{tabularx}
-\end{table}
+\begin{figure}\small
+\caption{Domaine verbal\label{tab:}}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\rotatebox{90}{ch-pré-noyau} &  \rotatebox{90}{ch-initial} &  \rotatebox{90}{ch-cl-sujet} &  \rotatebox{90}{ch-cl-ne} &  \rotatebox{90}{ch-cl-se} &  \rotatebox{90}{ch-cl-le} &  \rotatebox{90}{ch-cl-lui} &  \rotatebox{90}{ch-cl-y} &  \rotatebox{90}{ch-cl-en} & \cellcolor{lsDOIGray} \rotatebox{90}{ch-verbe} &  \rotatebox{90}{ch-adv} &  \rotatebox{90}{ch-vb-sub} &  \rotatebox{90}{ch-final} &  \rotatebox{90}{ch-post-noyau}\\
+\hline
+\end{tabular}
+\end{figure}
 
 Le gabarit topologique du nom en français est quant à lui :
 
-\begin{table}
-\caption{\label{tab:}}
-\begin{tabularx}{\textwidth}{XXXXXXXXX}
-\lsptoprule
-\multicolumn{9}{c}{{\bfseries Domaine nominal}}\\
-\multicolumn{1}{c}{ch-tout} & \multicolumn{1}{c}{ch-article} & \multicolumn{1}{c}{ch-num} & \multicolumn{1}{c}{ch-seul} & \multicolumn{1}{c}{ch-autre} & \multicolumn{1}{c}{ch-adj} & \multicolumn{1}{c}{ch-nom} & \multicolumn{1}{c}{ch-deN} & ch-final\\
-\lspbottomrule
-\end{tabularx}
-\end{table}
+\begin{figure}\small
+\caption{Domaine nominal{tab:}}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+\rotatebox{90}{ch-tout} &  \rotatebox{90}{ch-article} &  \rotatebox{90}{ch-num} &  \rotatebox{90}{ch-seul} &  \rotatebox{90}{ch-autre} &  \rotatebox{90}{ch-adj} &  \cellcolor{lsDOIGray}\rotatebox{90}{ch-nom} &  \rotatebox{90}{ch-deN} &  \rotatebox{90}{ch-final}\\
+\hline
+\end{tabular}
+\end{figure}
 
 Autrement dit, le nom possède un champ final à sa droite où les compléments peuvent se placer assez librement (avec des préférences en fonction de leur poids et de leur saillance), tandis que l’ordre à gauche du nom est assez rigide : ainsi, un syntagme comme \textit{les deux seules autres petites tables} n’accepte pas d’autre ordre que celui qu’il a. Voir l’\encadref{fig:3.5.27} sur la \textit{Topologie du groupe substantival en français}.
 
 Voyons maintenant comment linéariser un arbre de dépendance. Reprenons l’exemple de la \sectref{sec:3.5.19} sur \textit{La linéarisation des codépendants} :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
-\caption{\label{fig:Arbre de dépendance}}
-
+\begin{tikzpicture}
+    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip,
+                  level 1/.style={sibling distance=20mm},
+                  level 2/.style={sibling distance=15mm},
+                  level 3/.style={sibling distance=10mm}
+                  ]
+      \node (root) {} child { node{} child { node{} } child { node{} } edge from parent node [reset shape,midway,above] {sujet} }
+                      child { node{} }
+                      child { node{} }
+                      child { node{} }
+                      child { node{} child { node{} } child { node{} } child { node{} } edge from parent node [reset shape,midway,above] {objet} };
+    \end{scope}
+    \begin{scope}[every node/.style={font=\itshape\strut}]
+    \node [above=1pt of root] {prêtera};
+    \node [left=1pt of root-1] {garçon};
+    \node [below=1pt of root-1-1] {le};
+    \node [below=1pt of root-1-2] {petit};
+    \node [below=1pt of root-2] {lui};
+    \node [below=1pt of root-3] {ne};
+    \node [below=1pt of root-4] {pas};
+    \node [right=1pt of root-5] {ballon};
+    \node [below=1pt of root-5-1] {son};
+    \node [below=1pt of root-5-2] {gros};
+    \node [below=1pt of root-5-3] {autre};
+    \end{scope}
+\end{tikzpicture}
+\caption{Arbre de dépendance\label{fig:}}
 \end{figure}
 
 Nous procédons en parcourant l’arbre de dépendance à partir de la racine. On commence donc par considérer le verbe \textit{prêtera} qui va ouvrir un domaine verbal. Les règles d’ordre indiquent pour chaque dépendant dans quel champ il peut aller en fonction de sa nature et de sa fonction : un sujet peut aller dans le champ ch-initial, un clitique dans un champ ch-cl-X, etc. On obtient au final la configuration suivante (où les champs non remplis ne sont pas représentés) :
 
-\begin{table}
-\caption{\label{tab:}}
-\begin{tabularx}{\textwidth}{XXXXXX}
-\lsptoprule
-garçon & ne & lui & prêtera & pas & ballon\\
-\lspbottomrule
-\end{tabularx}
-\end{table}
+\begin{center}
+\def\arraystretch{1.5}
+\setlength{\tabcolsep}{4ex}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+garçon & ne & lui & \cellcolor{lsDOIGray}prêtera & pas & ballon\\
+\hline
+\end{tabular}
+\end{center}
 
 Chaque mot va ensuite ouvrir dans la position qu’il occupe un constituant topologique qui accueillera ses dépendants. Le gabarit du constituant dépendra de la nature de l’élément qui l’ouvre et du champ qu’il occupe (voir, pour le rôle joué par le champ, le cas des adjectifs du français dans l’\encadref{fig:3.5.27}, et celui des verbes en allemand dans l’\encadref{fig:3.5.36} sur \textit{La structure topologique de l’allemand}). Ainsi les noms \textit{garçon} et \textit{ballon} vont-ils ouvrir des domaines nominaux, pour accueillir leurs dépendants, et donner l’ordre final suivant :
 
-\begin{table}
-\caption{\label{tab:}}
-\begin{tabularx}{\textwidth}{XXXXXX}
-\begin{tabular}{ccc}
-le & petit & garçon
-\end{tabular}       & ne & lui & prêtera & pas &
-                                                \begin{tabular}{cccc}
-                                                son & autre & gros & ballon\\
-                                                \end{tabular}
-\end{tabularx}
-\end{table}
+\begin{center}
+% \def\arraystretch{1.5}
+% \setlength{\tabcolsep}{4ex}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+  \begin{tabular}{@{}|l|l|l|@{}}
+  \hline
+    \rotatebox{90}{le} & \rotatebox{90}{petit} & \cellcolor{lsDOIGray} \rotatebox{90}{garçon}\\
+  \hline
+  \end{tabular}
+  & \rotatebox{90}{ne} & \rotatebox{90}{lui} & \cellcolor{lsDOIGray} \rotatebox{90}{prêtera} & \rotatebox{90}{pas} &
+  \begin{tabular}{@{}|l|l|l|l|@{}}
+    \hline
+    \rotatebox{90}{son} & \rotatebox{90}{autre} & \rotatebox{90}{gros} & \cellcolor{lsDOIGray} \rotatebox{90}{ballon}\\
+    \hline
+  \end{tabular}\\
+\hline
+\end{tabular}
+\end{center}
 
 On notera qu’en plus de l’ordre linéaire, nous avons obtenu une structure avec des constituants emboîtés, que nous appelons la \textstyleTermes{structure topologique} de la phrase.
 
 La structure topologique est un \textstyleTermes{arbre de constituants ordonné}, c’est-à-dire un arbre de constituants (voir la \sectref{sec:3.4.2} sur \textit{Arbre de constituants majeurs}) avec en plus un ordre linéaire sur les fils de chaque nœud (voir l’\encadref{fig:3.5.28} sur \textit{Arbre de constituants ordonné}). Dans le cas de la structure topologique, l’ordre linéaire sur les fils d’un nœud est donné par le gabarit du constituant, qui est une liste linéairement ordonnée de champs.
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
+\begin{tikzpicture}
+    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip,
+                  level 1/.style={sibling distance=15mm},
+                  level 2/.style={sibling distance=10mm},
+                  ]
+      \node (root) {} child { node{} child { node{} } child { node{} } child { node{} } } 
+                      child { node{} }
+                      child { node{} }
+                      child { node{} }
+                      child { node{} }
+                      child { node{} child { node{} } child { node{} } child { node{} } child { node{} } }; 
+    \end{scope}
+    \node [above=1pt of root] {domaine verbal};
+    \node [above left=1pt of root-1,align=center] {\strut domaine\\nominal};
+    \node [above right=1pt of root-6,align=center] {\strut domaine\\nominal};
+    \begin{scope}[every node/.style={font=\itshape\strut}]
+    \node [below=1pt of root-1-1] {le};
+    \node [below=1pt of root-1-2] {petit};
+    \node [below=1pt of root-1-3] {garçon};
+    \node [below=1pt of root-2] {ne};
+    \node [below=1pt of root-3] {lui};
+    \node [below=1pt of root-4] {prêtera};
+    \node [below=1pt of root-5] {pas};
+    \node [below=1pt of root-6-1] {son};
+    \node [below=1pt of root-6-2] {autre};
+    \node [below=1pt of root-6-3] {gros};
+    \node [below=1pt of root-6-4] {ballon};
+    \end{scope}
+\end{tikzpicture}
 \caption{\label{fig:}Arbre topologique}
-
 \end{figure}
 
 Notons pour conclure que le modèle topologique n’utilise que des \textstyleTermes{règles locales}, c’est-à-dire des règles qui ne prennent en compte que des portions bien délimitées des structures mises en correspondance. En effet, les règles d’ordre ne concernent qu’un gouverneur et ses dépendants.
@@ -6176,25 +6249,31 @@ Notons pour conclure que le modèle topologique n’utilise que des \textstyleTe
 
     L’ordre des éléments antéposés au nom est lui très contraint. De plus, seul des groupes adjectivaux léger peuvent être antéposés : \textit{un} \textbf{\textit{haut}} \textit{mur}, \textit{un} \textbf{\textit{très haut}} \textit{mur}, mais *\textit{un} \textbf{\textit{haut de trois mètres}} \textit{mur} (voir l’\encadref{fig:3.5.22} sur les \textit{Contraintes de poids}). Du point de vue du modèle topologique, cela signifie que l’adjectif \textit{haut} n’ouvre pas un domaine adjectival complet lorsqu’il est antéposé, mais un domaine réduit où ne figure pas le champ final qui accueille normalement les compléments de l’adjectif :
 
-
-    \begin{tabularx}{\textwidth}{XXX}
-    \lsptoprule
-    \multicolumn{3}{c}{{\bfseries Domaine adjectival}}\\
-    \multicolumn{1}{c}{ch-adv} & \multicolumn{1}{c}{ch-adjectif} & ch-final\\
-    \lspbottomrule
-    \end{tabularx}
-
-    \begin{tabularx}{\textwidth}{XX}
-    \lsptoprule
-    \multicolumn{2}{c}{{\bfseries Domaine adj. réduit}}\\
-    \multicolumn{1}{c}{ch-adv} & ch-adjectif\\
-    \lspbottomrule
-    \end{tabularx}
-
-    \ea
-    {
-    un mur haut de trois mètres                       un très haut mur
-    }
+    \ea 
+    \ea un mur haut de trois mètres\\
+    \begin{center}
+    \def\arraystretch{1.5}
+    \setlength{\tabcolsep}{4ex}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \multicolumn{3}{|c|}{Domaine adjectival}\\\hline
+    ch-adv & \cellcolor{lsDOIGray} ch-adjectif & ch-final\\
+    \hline
+    \end{tabular}
+    \end{center}
+    
+    \ex un très haut mur\\
+    \begin{center}
+    \def\arraystretch{1.5}
+    \setlength{\tabcolsep}{4ex}
+    \begin{tabular}{|c|c|}
+    \hline
+    \multicolumn{2}{|c|}{Domaine adj. réduit}\\\hline
+    ch-adv & \cellcolor{lsDOIGray}ch-adjectif\\
+    \hline
+    \end{tabular}
+    \end{center}
+    \z
     \z
 
     Quant à l’ordre relatif des adjectifs antéposés, évoqué à la \sectref{sec:3.5.26}, il semble aller des éléments à valeur référentielle (l’article qui indique si le référent est connu ou pas, le numéral qui donne le nombre de référents, \textit{seul} et \textit{autre} qui permettent de positionner ce référent dans l’ensemble des référents potentiels) à des adjectifs qualificatifs, qui précise la nature du référent.
@@ -6210,16 +6289,44 @@ Notons pour conclure que le modèle topologique n’utilise que des \textstyleTe
 
     Deuxièmement, on peut voir les «~nœuds~» de l’arbre de constituants ordonné non pas comme de simples nœuds, mais comme des segments ayant un début et une fin. N’oublions pas que les nœuds d’un arbre de constituants sont des constituants d’un énoncé et que les constituants d’un énoncé sont des segments continus de cet énoncé. On peut alors représenter les constituants comme des arcs allant d’un nœud début à un nœud fin. Lesquels nœuds correspondent en fait aux positions linéaires inter-mots (si les constituants minimaux sont les mots). Voici pour la phrase \textit{Un chat poursuit le chien} son arbre de constituant X-barre usuel, dans la représentation traditionnelle où \textbf{l’ordre} \textbf{est implicite}, c’est-à-dire qu’il est représenté par la position relative des nœuds sur l’axe horizontal, mais n’est pas explicitement encodé par des relations de précédence entre nœuds :
 
-    \ea
-    %%[Warning: Draw object ignored]
-    Arbre de constituants ordonné (hiérarchie explicite, ordre implicite)
+    \ea Arbre de constituants ordonné (hiérarchie explicite, ordre implicite)\\
+    \begin{forest}
+    [P
+      [GN [D [\textit{un}]] [N [\textit{chat}]] ]
+      [GV [V [\textit{poursuit}]] [GN [D [\textit{le}] ] [N [\textit{chien}] ] ] ]
+    ]
+    \end{forest}
     \z
 
     Voici la représentation la plus simple où l’ordre est explicite. Ici chaque constituant est représenté par un arc qui relie son début à sa fin. Les nœuds représentent alors des positions sur l’axe temporel. La hiérarchie n’est plus représentée de manière explicite, mais peut se déduire de la position relative des arcs sur l’axe vertical. Il est possible de combiner les deux représentations.
 
     \ea
     %%[Warning: Draw object ignored]
-    Arbre de constituants ordonné (hiérarchie implicite, ordre explicite)
+    Arbre de constituants ordonné (hiérarchie implicite, ordre explicite)\\
+    \begin{tikzpicture}
+    \begin{scope}[every node/.style={circle,draw},grow=right]
+    \node (root) {} child { node {} child { node{} child { node{} child { node{}  
+                    child { node{} } } } } }; 
+    \end{scope}      
+     \path (root)         edge[bend left] node[midway, above] {D} (root-1)
+           (root-1)       edge[bend left] node[midway, above] {N} (root-1-1)
+           (root-1-1)     edge[bend left] node[midway, above] {V} (root-1-1-1)
+           (root-1-1-1)   edge[bend left] node[midway, above] {D} (root-1-1-1-1)
+           (root-1-1-1-1) edge[bend left] node[midway, above] {N} (root-1-1-1-1-1)
+           (root)         edge[bend left=66] node[midway, above] {GN} (root-1-1)
+           (root-1-1-1)   edge[bend left=66] node[midway, above] {GN} (root-1-1-1-1-1)
+           (root-1-1)   edge[bend left=90] node[midway, above] {GV} (root-1-1-1-1-1)
+           (root)         edge[bend left=90] node[midway, above] {P} (root-1-1-1-1-1);
+           
+     \coordinate (1) at ($ (root) !.5! (root-1) $);
+     \coordinate (2) at ($ (root-1) !.5! (root-1-1) $);
+     \coordinate (3) at ($ (root-1-1) !.5! (root-1-1-1) $);
+     \coordinate (4) at ($ (root-1-1-1) !.5! (root-1-1-1-1) $);
+     \coordinate (5) at ($ (root-1-1-1-1) !.5! (root-1-1-1-1-1) $);
+     
+    \foreach \pos/\text in {1/un,2/chat,3/poursuit,4/le,5/chien} 
+      {\node [font={\itshape\strut}, below=1pt of \pos] {\text};}
+\end{tikzpicture}
     \z
 
 }
