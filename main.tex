@@ -1,9 +1,12 @@
-\documentclass[output=book,booklanguage=french, multiauthors,
-  colorlinks,citecolor=brown,
-  %  draft,draftmode,
+\documentclass
+  [output=book,
+   booklanguage=french, 
+   multiauthors,
+   colorlinks,
+   citecolor=brown,
+   drafmode,
 %  showindex,
-%  nobabel,
-		  ]{langscibook}
+  ]{langscibook}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%          additional packages                 %%%
@@ -12,33 +15,46 @@
 \input{localmetadata.tex}
 \input{localpackages.tex}
 \input{localhyphenation.tex}
+\input{localcommands.tex}
 \addbibresource{localbibliography.bib}
 
-\WarningsOff[microtype]
-\WarningFilter{microtype}{Unknown slot}
-\WarningFilter{scrbook}{package incompatibility detected}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%             Frontmatter                      %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-\input{localcommands.tex}
+% % \listoftodos
 
 \maketitle
 \frontmatter
-
 % \currentpdfbookmark{Contents}{name} % adds a PDF bookmark
 {\sloppy\tableofcontents}
- \include{chapters/avantpropos}
+\include{chapters/avantpropos}
 \mainmatter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%             Chapters                         %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\listoftodos
-\include{chapters/p1}
-\include{chapters/p2}
-\include{chapters/p3}
+\part{Modéliser la langue}
+\include{chapters/ch1-0}
+\include{chapters/ch1-1}
+\include{chapters/ch1-2}
+\include{chapters/ch1-3}
+
+\part{\gkchapter{Les unités de la langue}{Les trois composantes du signe linguistique}}\label{sec:2}
+\include{chapters/ch2-0}
+\include{chapters/ch2-1}
+\include{chapters/ch2-2}
+\include{chapters/ch2-3}
+
+\part{\gkchapter{Structures syntaxiques et topologique}{Comment les unités se combinent}}\label{sec:3}
+\include{chapters/ch3-0}
+\include{chapters/ch3-1}
+\include{chapters/ch3-2}
+\include{chapters/ch3-3}
+\include{chapters/ch3-4}
+\include{chapters/ch3-5}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%             Backmatter                       %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

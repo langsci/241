@@ -1,0 +1,531 @@
+\chapter{\gkchapter{Produire un énoncé}{La syntaxe mise en évidence par un exemple}}\label{sec:1.2}
+
+\section{Analyse et synthèse}\label{sec:1.2.0}
+
+Ce chapitre est entièrement consacré à l’étude de la production d’un énoncé ou plus exactement à la production d’une famille d’énoncés concurrents exprimant plus ou moins le même sens. Il est habituel de commencer l’étude d’une langue en analysant les textes (éventuellement oraux) produits dans cette langue. L’étude procède alors dans le sens de l’\textstyleTermes{analyse}, c’est-à-dire du texte vers le sens. Nous pensons, à la suite de Lucien Tesnière et d’Igor Mel’čuk, qu’il est préférable d’étudier la langue dans le sens de la \textstyleTermes{synthèse}, c’est-à-dire du sens vers le texte.
+
+Pour comprendre le fonctionnement de la langue, il est donc nécessaire d’étudier la façon dont un énoncé est produit par un locuteur et les opérations qui conduisent à la production de cet énoncé. Nous mettrons en évidence un ensemble de contraintes auxquelles doit obéir le locuteur lors de l’énonciation et qui constitue la grammaire de la langue. Parmi ces contraintes, nous verrons que la langue nous impose une structuration hiérarchique qui constitue le cœur de la syntaxe.
+
+\loupe{Les observables : textes et sens}{%\label{sec:1.2.1}
+    Un modèle se construit à partir d’\textstyleTermes{observables}, puisqu’il modélise le fonctionnement de quelque chose de réel, que l’on peut observer. Néanmoins, un modèle est amené à faire des hypothèses sur la façon dont ces observables sont produits et à construire ainsi un certain nombre d’objets qui ne sont pas observables.
+
+    Pour ce qui est de la langue, deux choses sont réellement observables : les textes et les sens. Pour les textes, c’est assez évident, même si la question de savoir quelle est la représentation d’un texte dans notre cerveau reste un problème. Pour les sens, c’est plus complexe : on ne peut pas observer le sens en tant que tel, mais on peut s’assurer qu’un texte est compréhensible et qu’il est compris. L’un des outils d’observation est la paraphrase : on peut demander à un locuteur de reformuler un texte ou lui demander si deux textes ont le même sens. On peut ainsi considérer, à la suite d’Igor Mel’čuk, que «~avoir le même sens~» est un observable et \textbf{définir le sens} comme un invariant de paraphrases, c’est-à-dire comme ce qui est commun à tous les textes qui ont le même sens.
+
+    Nous faisons l’hypothèse qu’il y a entre le sens et le texte un niveau d’organisation syntaxique. Cette organisation n’est pas directement observable. Dans la suite, nous serons amenés à construire un grand nombre d’objets linguistiques et notamment des représentations syntaxiques. Il s’agit de \textbf{constructions théoriques} et de rien d’autre. On ne prouve leur «~existence~» qu’à l’intérieur d’une théorie. Elles existent dans le modèle, mais cela ne prouve pas qu’elles existent dans l’objet réel que nous modélisons. On ne peut pas réfuter directement leur existence. On ne peut que réfuter l’adéquation du modèle avec l’objet modélisé. Néanmoins, si le modèle est adéquat et suffisamment économique, alors les objets construits par le modèle acquièrent une part de réalité, deviennent plus tangibles.
+}
+\section{Partir d’un sens}\label{sec:1.2.2}
+
+Considérons un locuteur du français qui veut exprimer un certain sens que nous allons essayer de décrire sans le verbaliser directement par une phrase. Ce sens concerne une personne \textit{x} appelée Ali et un événement \textit{e} concernant \textit{x}. Cet événement est une maladie et la durée de cette maladie est de deux semaines.  Nous pouvons représenter ce sens par la «~formule~» suivante :
+
+\begin{figure}
+\begin{tabular}{@{}ll@{}}
+\textit{x} :& ‘Ali’\\
+\textit{e} :& ‘malade’(\textit{x})\\
+\multicolumn{2}{@{}l@{}}{‘durer’(\textit{e},‘2 semaines’)}\\
+\end{tabular}
+\caption{\label{fig:}Description formelle d’un sens}
+\end{figure}
+
+Dans cette représentation, il y a quatre éléments de sens considérés : ‘Ali’, ‘malade’, ‘durer’ et ‘2 semaines’. Ce dernier élément est en fait la combinaison de deux sens : l’unité de temps ‘semaine’ et le prédicat ‘deux’ qui la quantifie. Ces éléments de sens sont des sens de mots du français. Ils peuvent être exprimés de façons variées : par exemple, le sens ‘durer’ peut aussi bien être exprimé par le nom \textsc{durée} que le verbe \textsc{durer} ou encore la préposition \textsc{pendant} comme nous le verrons plus loin. Remarquons que nous distinguons les \textstyleTermes{unités lexicales}, notées en majuscule (\textsc{durée}), de leur sens, noté entre guillemets simples (‘durer’). Un sens exprimable par une unité lexicale est appelé un \textstyleTermes{sens lexical}. On utilise parfois le terme \textit{sémantème} pour désigner un sens lexical, mais nous réserverons ce terme pour des signes linguistiques élémentaires (voir chapitres 2.3 et 2.4).
+
+Certains sens lexicaux fonctionnent comme des \textstyleTermes{prédicats} et possèdent des \textstyleTermes{arguments} : le sens ‘malade’ possède toujours un argument~(\textbf{\textit{quelqu’un} est malade}), le sens ‘durer’ possède deux arguments (\textbf{\textit{quelque chose}} \textit{dure} \textbf{\textit{quelque temps}}). Le sens ‘Ali’, quant à lui, renvoie à une entité du monde (ou plus exactement à la représentation mentale qu’en a le locuteur) et n’a pas d’argument. Dans la formule ci-dessus, les variables \textit{x} et \textit{e} nous ont servi à indiquer que certains sens étaient arguments d’autres : \textit{x} désigne le sens ‘Ali’ et ‘malade’(\textit{x}) signifie que l’élément désigné par \textit{x} est l’argument de ‘malade’.
+
+\begin{styleLivreImportant}
+Les \textstyleTermes{relations prédicat-argument} entre les sens lexicaux constituent la \textstyleTermes{structure prédicative}. La structure prédicative exprime le \textstyleTermes{contenu informationnel}.
+\end{styleLivreImportant}
+
+Nous nous contenterons de cette définition sommaire de la structure prédicative (voir compléments dans l’\encadref{fig:1.2.4} sur \textit{Les composantes du sens}). Une définition plus précise sera donnée au \chapref{sec:3.6} sur \textit{La structure syntaxique profonde}.
+
+Nous avons présenté la structure prédicative par une \textstyleTermes{formule}, mais on peut aussi la représenter par un \textstyleTermes{graphe} (voir l’\encadref{fig:2.1.3} qui suit) que nous appelons le \textstyleTermes{graphe sémantique}. Les nœuds du graphe sémantique sont les sens lexicaux ‘Ali’, ‘malade’, ‘durer’, ‘semaine’ et ‘deux’ et les arêtes représentent les \textstyleTermes{relations prédicat-argument}. Les arêtes sont matérialisées par des flèches. Les arêtes sont étiquetées par des chiffres permettant de distinguer les différents arguments d’un prédicat : 1 pour le premier argument, 2 pour le deuxième, etc. L’ordre dans lequel les arguments sont numérotés est l’\textstyleTermes{ordre de saillance}, dont nous reparlerons au \chapref{sec:5.2} sur \textit{Les relations syntaxiques}.
+
+\begin{figure}
+\begin{tikzpicture}
+\matrix (matrix) [matrix of nodes,row sep={1.5cm,between origins}] {
+    `Ali' & & `durer' & & `deux'\\
+    & `malade' & & `semaine'\\
+};
+\draw[-{Triangle[]}] (matrix-1-5) -- (matrix-2-4) node[font=\footnotesize,midway,left] {1};
+\draw[-{Triangle[]}] (matrix-1-3) -- (matrix-2-4) node[font=\footnotesize,midway,right] {2};
+\draw[-{Triangle[]}] (matrix-1-3) -- (matrix-2-2) node[font=\footnotesize,midway,left] {1};
+\draw[-{Triangle[]}] (matrix-2-2) -- (matrix-1-1) node[font=\footnotesize,midway,left] {1};
+\end{tikzpicture}
+\caption{\label{fig:Graphe sémantique}Graphe sémantique}
+\end{figure}
+
+\maths{Graphe et arbre}{%\label{sec:1.2.3}
+    Graphe et arbre sont des structures mathématiques très utilisées en sciences. Elles sont utilisées en linguistique pour la représentation du sens et de la structure syntaxique.
+
+    Un \textstyleTermes{graphe} est une structure liant ensemble des éléments. Les éléments sont appelés les \textstyleTermes{nœuds} du graphe et les liens les \textstyleTermes{arêtes}. Un graphe est dit \textstyleTermes{connexe} lorsque pour chaque couple de nœuds du graphe, il existe un ensemble d’arêtes formant un chemin connectant un nœud à l’autre.
+
+    \begin{figure}
+    \tikz \graph [empty nodes, nodes={circle, draw}] { f -- a -- {b--d, c--e} };
+    \caption{Graphe connexe}  
+    \end{figure}
+
+    \begin{figure}
+    \caption{Graphe non connexe}
+    \tikz \graph [empty nodes, nodes={circle, draw}] { f -- a -- b--d, c--e };
+    \end{figure}
+
+    Un graphe est dit \textstyleTermes{acyclique} s’il n’existe aucun chemin partant d’un nœud et revenant à ce nœud sans emprunter deux fois la même arête.
+
+    \begin{figure}
+    \tikz \graph [empty nodes, nodes={circle, draw}] { f -- a -- {b--d, c--e} };
+    \caption{Graphe acyclique}   
+    \end{figure}
+    
+    \begin{figure} 
+    \tikz \graph [empty nodes, nodes={circle, draw}] { f -- a -- {b--d, c--e}, e--d };
+    \caption{Graphe avec cycle}
+    \end{figure}
+
+    Un \textstyleTermes{arbre} est un graphe connexe et acyclique dont un nœud, qu’on appelle la \textstyleTermes{racine}, est pointé. Cela revient à orienter les arêtes à partir de ce point. On peut donc aussi définir un graphe comme un cas particulier de graphe orienté.
+
+    Un \textstyleTermes{graphe orienté} est un graphe dont les arêtes sont orientée, c’est-à-dire distinguent un nœud \textstyleTermes{source} et un nœud \textstyleTermes{cible} de l’arête. On représente généralement l’orientation par une flèche allant de la source à la cible.
+
+    Un \textstyleTermes{arbre} est donc aussi un graphe orienté connexe pour lequel chaque nœud est la cible d’une seule arête à l’exception d’un nœud, la racine de l’arbre. Tout nœud autre que la racine de l’arbre possède ainsi un \textstyleTermes{gouverneur} qui est l’unique nœud qui le prend pour cible. On représente traditionnellement les arbres «~à l’envers~» avec la racine en haut. Les nœuds qui ne sont le gouverneur d’aucun nœud, c’est-à-dire qui n’ont pas de \textstyleTermes{dépendants}, sont appelés les \textstyleTermes{feuilles} de l’arbre. Un chemin orienté allant de la racine ou d’un nœud intérieur à une feuille est appelé une \textstyleTermes{branche}. Du fait que, par convention, chaque arête est toujours orientée vers le bas (la cible est en dessous de la source), il n’est pas nécessaire d’utiliser une deuxième convention et d’indiquer l’orientation par une flèche.
+
+    \begin{figure}
+    \begin{tikzpicture}
+      \node at (0,0) (nodeA) [circle,draw] {};
+      \node[below=2\baselineskip of nodeA] (nodeB) [circle,draw] {};
+      \node[right = 1cm of nodeA] (nodeADesc) {gouverneur};
+      \path let \p1 = ($ (nodeA) !.5! (nodeB) $), 
+                \p2 = (nodeADesc) 
+                in node at (\x2,\y1) (edgeDesc) {\strut dépendance};
+      \node[right = 1cm of nodeB] (nodeBDesc) {dépendant};
+      \draw (nodeA) -- (nodeB);
+      \draw[-{Triangle[]}] (nodeBDesc) -- (nodeB);
+      \draw[-{Triangle[]}] (nodeADesc) -- (nodeA);
+      \draw[-{Triangle[]}] (edgeDesc)  -- ($ (nodeA) !.5! (nodeB) $);
+    \end{tikzpicture}
+    \caption{Dépendance}  
+    \end{figure}
+    
+    \begin{figure}
+    \begin{tikzpicture}[decoration={brace,amplitude=12pt,aspect=0.65}]
+    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip]
+      \node (root) {}
+        child { node{} child { node{} } }
+        child { node (branchanchr) {} child { node {} } 
+                       child { node (child) {} } };
+    \end{scope}
+    \node[right=2cm of root] (racine) {racine};
+    \path let \p1=(racine), \p2=(child) in node at (\x1,\y2) (feuille) {feuille};
+    \path let \p1=(racine), \p2=(branchanchr) in node at (\x1,\y2) (branche) {branche};
+    \draw [decorate] (root.south east) -- (child.north west);
+    \draw[-{Triangle[]}] (racine) -- (root);
+    \draw[-{Triangle[]}] (feuille) -- (child);
+    \draw[-{Triangle[]}] (branche) -- ++(-1.5cm,0pt);
+    \end{tikzpicture}
+    \caption{Branche}
+    \end{figure}
+
+    La structure syntaxique d’une phrase est généralement représentée par un arbre dont les nœuds sont les unités lexicales.
+
+    Notons encore qu’il existe une notion d’acyclicité plus restrictive pour les graphes orientés : un graphe orienté est dit \textstyleTermes{acyclique} s’il n’existe aucun chemin orienté permettant de partir d’un nœud et de source en cible de revenir au même nœud.
+
+    \begin{figure}
+    \tikz[>={Triangle[]}] \graph [empty nodes, nodes={circle,draw}, multi, grow down=1.5cm] {a ->[bend right] b, b ->[bend right] a};
+    \hspace{2cm}
+    \tikz[>={Triangle[]}] \graph [empty nodes, nodes={circle,draw}] { subgraph C_n [n=3, clockwise, ->]};
+    \caption{Graphes avec cycle orienté}  
+    \end{figure}
+    
+    \begin{figure}
+    \tikz[>={Triangle[]}] \graph [empty nodes, nodes={circle,draw}, clockwise, n=3] { [path, ->] a, b, c; a ->[bend right] c; a ->[bend left] c };
+    \caption{Graphe sans cycle orienté}
+    \end{figure}
+
+    La \textbf{structure prédicative} d’un énoncé peut être formalisée par un \textbf{graphe orienté connexe et acyclique} (encore appelé \textstyleTermes{dag}, de l’anglais \textit{directed acyclic graph}) dont les nœuds sont les sens lexicaux et grammaticaux et les arêtes sont les dépendances sémantiques ou relations prédicat-argument entre ces sens.
+}
+\loupe{Les composantes du sens}{%\label{sec:1.2.4}
+    Nous avons déjà expliqué dans le chapitre précédent la distinction que nous faisons entre le \textstyleTermes{sens linguistique} et les \textstyleTermes{intentions communicatives} du locuteur. Reste à savoir, bien que cette question dépasse le cadre de cet ouvrage consacré à la syntaxe, comment modéliser le sens linguistique. Nous pensons que la structure prédicative (voir la \sectref{sec:1.2.2} \textit{Partir d’un sens}) exprime une partie et une partie seulement du sens linguistique : il s’agit de l’\textbf{information pure} contenue dans le message — quels sont les \textbf{sens de base} que nous souhaitons utiliser et comment ils se \textbf{combinent}.
+
+    Au contenu informationnel s’ajoute au moins quatre autres types de contenus :
+
+    \begin{itemize}
+    \item  La \textstyleTermes{structure communicative}, dont nous discuterons plus loin dans ce chapitre, indique ce qui est réellement informatif pour le destinataire, c’est-à-dire ce qu’on suppose qu’il sait déjà, ce qu’on souhaite souligner ou au contraire mettre en arrière-plan, etc. On appelle aussi cette structure l’\textstyleTermes{emballage de l’information}, de l’anglais \textit{information packaging}. Le terme le plus employé actuellement est \textit{structure informationnelle}, de l’anglais \textit{information structure}, mais nous éviterons absolument ce terme qui est une source de confusion évidente avec le \textit{contenu informationnel}.
+    \item  La \textstyleTermes{structure rhétorique} indique le style (familier, poétique, humoristique, etc.) avec laquelle l’information sera communiquée (voir section suivante).
+    \item  La \textstyleTermes{structure émotionnelle} indique quelles sont les émotions liées à cette information. Elle a surtout un impact sur la prosodie, mais peut influencer certains choix lexicaux (des termes injurieux par exemple).
+    \item  Par ailleurs, le contenu informationnel ne nous informe que si nous pouvons l’ancrer dans la réalité (ou plus exactement la représentation du monde que les interlocuteurs construisent dans leur cerveau à partir de la réalité), c’est-à-dire si on peut décider, par exemple, si ‘Ali’ renvoie à un objet du monde que nous connaissons déjà ou pas et si oui lequel. Les liens entre le contenu informationnel et le monde (ou plus précisément le \textstyleTermes{contexte d’énonciation}, c’est-à-dire la partie du monde concernée par l’énonciation) constitue la \textstyleTermes{structure référentielle}, La référence joue surtout un rôle dans la planification et le choix de l’information permettant de s’assurer que l’interlocuteur identifiera le bon référent, mais une fois le message élaboré, la structure référentielle a peu d’incidence sur la réalisation du message. Ce qui compte surtout, c’est si le locuteur présente l’information comme nouvelle ou non et ceci appartient à la structure communicative.
+    \end{itemize}
+
+    Ce découpage du sens (à l’exception de la structure émotionnelle) et la représentation du contenu informationnel par un graphe sémantique ont été proposés par Žolkovskij et Mel’čuk en 1965 dans leur introduction à la Théorie Sens-Texte.
+
+    Notons encore qu’il existe des relations d’équivalence entre les structures prédicatives : une configuration de sens lexicaux peut être remplacée par un seul sens ou une autre configuration sans modifier le sens global. Un sens lexical peut être ainsi décomposé à la manière de ce que l’on fait quand on donne une définition d’un des sens d’un mot dans un dictionnaire. On peut considérer, à la suite d’Anna Wierzbicka (\textit{Lingua Mentalis}, Academic Press, 1980), qu’il existe un ensemble d’unités minimales de sens à partir desquelles peuvent être définis tous les autres sens lexicaux. (De tels ensembles contenant une cinquantaine de sens minimaux ont été proposés.) Un contenu informationnel correspond ainsi à un ensemble de structures prédicatives équivalentes, dont les sens lexicaux sont plus ou moins décomposées.
+}
+\section{Choisir des unités lexicales}\label{sec:1.2.5}
+
+Comment peut-on exprimer le sens que nous avons considéré en français ? Nous allons nous intéresser à deux formulations possibles de ce sens, suffisamment différentes pour illustrer notre propos.
+
+\ea%1
+    \label{ex:key:1}
+
+          La maladie d’Ali a duré deux semaines.
+\ex%2
+    \label{ex:key:2}
+
+           Ali a été malade pendant deux semaines.
+\z
+
+L’analyse de la production de ces deux énoncés va nous permettre de mettre en évidence de nombreuses règles de grammaire, appartenant à la langue en général ou spécifiques au français.
+
+La première chose qui va déterminer la nature du texte que nous produisons est la façon dont nous réalisons chacun des éléments de sens du message que nous souhaitons communiquer. Pour simplifier, nous considérons que chaque sens va être réalisé par une unité lexicale : par exemple, ‘malade’ peut être réalisé par l’adjectif \textsc{malade} ou le nom \textsc{maladie}; ‘durer’ peut être réalisé par le nom \textsc{durée}, le verbe \textsc{durer} ou les prépositions \textsc{durant} ou \textsc{pendant}.
+
+Comment se font les \textstyleTermes{choix lexicaux~}? Les choix lexicaux dépendent bien sûr du sens que l’on veut exprimer : par exemple, pour parler de l’ingestion d’un aliment, on devra choisir entre \textsc{boire} et \textsc{manger} selon la nature de cet aliment, mais aussi entre \textsc{manger}, \textsc{déguster} ou \textsc{dévorer} selon la façon dont on l’a ingéré ou encore entre \textsc{manger} et \textsc{bouffer} selon la familiarité avec laquelle nous avons l’habitude de nous adresser à notre interlocuteur. Cependant, la subtilité du sens que nous voulons exprimer n’est pas le seul facteur qui contraint les choix lexicaux. Ils existent d’autres contraintes qui relèvent de la grammaire et dont nous allons parler maintenant.
+
+\loupe{Les quatre moyens d’expression du langage}{%\label{sec:1.2.6}
+    Lorsque nous parlons, nous avons quatre moyens à notre disposition pour exprimer du sens.
+
+    \begin{itemize}
+    \item Le premier moyen, ce sont les \textbf{mots} ou plus exactement les \textbf{unités lexicales et grammaticales} (voir la partie 2 consacrée aux \textit{Unités de la langue}).
+    \item Le deuxième moyen, c’est la façon de combiner les mots et en particulier l’\textbf{ordre} dans lequel nous les mettons : «~\textit{Ali regarde Zoé}» ne veut pas dire la même chose que «~\textit{Zoé regarde Ali}~». Plus subtilement, «~\textit{À Paris, Ali travaille le lundi~}» n’est pas exactement synonyme de «~\textit{Le lundi, Ali travaille à Paris}~» (le premier énoncé n’implique pas qu’Ali travaille tous les lundis et qu’il est à Paris tous les lundis où il travaille).
+    \item Le troisième moyen d’expression du langage est la \textbf{prosodie}. La séquence \textit{tu viens} peut être prononcée de bien des façons et avoir autant de sens différents. Prononcée avec une voix forte et autoritaire et un accent montant sur la première syllabe, ce sera un ordre : «~\textit{TU VIENS} !~». Prononcée d’une voix suave avec une courbe mélodique montante, ce sera une question ou une invitation : «~\textit{Tu viens} ?~». Prononcée d’une voix neutre avec une courbe mélodique descendante ce sera une simple constatation : «~\textit{Tu viens.}~».
+    \item Le quatrième moyen à notre disposition dépasse le simple usage de la voix. Une énonciation en face à face s’accompagne toujours de \textbf{mimiques faciales} et de \textbf{gestes} divers. Ceux-ci sont beaucoup plus codifiés et beaucoup plus riches qu’on ne le pense généralement. Ils vont accompagner la parole et parfois se combiner avec elle. Ainsi «~\textit{Ton pull}~» suivi d’un geste avec le pouce levé est un énoncé équivalent à «~\textit{Ton pull est vraiment super}~». Et une moue désapprobatrice en prononçant «~\textit{Jean} ?~» en dira beaucoup plus qu’un long discours sur la confiance qu’on met en Jean.
+    \end{itemize}
+}
+\section{Contraintes syntaxiques sur les choix lexicaux}\label{sec:1.2.7}
+
+À peu près n’importe quel énoncé en français possède un verbe principal et ce verbe est conjugué. Cela signifie que l’un des sens de notre message devra être lexicalisé par un verbe, par exemple ‘durer’ par \textsc{durer}. L’autre possibilité est de lexicaliser ‘malade’ par un verbe, mais comme il n’existe pas de verbe *\textsc{malader} en français, nous lexicalisons ‘malade’ par un adjectif et nous en faisons une tournure verbale \textsc{être} \textsc{malade} grâce au verbe \textsc{être}. Le verbe \textsc{être} n’a donc aucune contribution sémantique ici ; il a juste un rôle grammatical, qui est d’assurer que l’élément principal de la phrase est bien un verbe et donc de faire d’un adjectif l’équivalent d’un verbe. Ce rôle très particulier du verbe \textsc{être} lui vaut le nom de \textstyleTermes{copule}.
+
+Une fois choisi l’élément principal de la phrase, les éléments lexicaux choisis ensuite se voient imposer un certain nombre de choses, à commencer par leur \textstyleTermes{partie du discours} (les principales parties du discours du français sont nom, verbe, adjectif et adverbe). L’élément principal de la phrase est un verbe conjugué comme on vient de le dire (ceci sera justifié dans le chapitre consacré à la tête dans la Partie 3). Les éléments qui vont dépendre de ce verbe devront ensuite être soit des noms, soit des adverbes selon la relation qu’ils entretiennent avec ce verbe.
+
+Commençons par le cas de la phrase \REF{ex:key:1} (\textit{La maladie d’Ali a duré deux semaines}) dont le verbe principal est \textsc{durer} \textsc{:} le sens ‘malade’, qui est le premier argument du sens ‘durer’ devra être réalisé comme le sujet de \textsc{durer} et devra être un nom. La lexicalisation de ‘malade’ par un nom donne ainsi \textsc{maladie}. Le sens ‘semaine’ sera également réalisé par un nom, qui sera un complément direct du verbe. Nous discuterons dans le chapitre sur les fonctions syntaxiques de la Partie 6 de ces compléments de mesure qui ressemblent à des compléments d’objet directs mais n’en possède pas toutes les bonnes propriétés.
+
+Le cas de la phrase \REF{ex:key:2} (\textit{Ali a été malade pendant deux semaines}) est plus complexe. Son élément principal est la tournure verbale \textsc{être} \textsc{malade}. L’unique argument de ‘malade’ est ‘Ali’, qui sera donc réalisé comme sujet de la tournure verbale et sera un nom, \textsc{Ali} en l’occurrence. Le sens ‘durer’ est lui aussi directement lié à ‘malade’ et devra donc être réalisé comme un dépendant direct de la tournure verbale. Mais contrairement aux cas précédents, ‘durer’ n’est pas un argument de l’élément principal : c’est même l’inverse, c’est lui qui prend l’élément principal comme argument sémantique. Dans un tel cas, l’élément de sens doit être réalisé par un groupe adverbial. C’est ainsi que le sens ‘durer’ peut être réalisé par la préposition \textsc{pendant}. Le deuxième argument de ‘durer’ est réalisé par un nom, qui est le complément de la préposition. La préposition et son complément, \textit{pendant deux semaines}, forme un groupe de distribution équivalente à un adverbe (comme \textit{longtemps} par exemple).
+
+\loupe{Règles et exceptions}{%\label{sec:1.2.8}
+
+    La plupart des règles ont des exceptions. C’est le cas de la règle qui veut que l’élément principal d’une phrase soit un verbe conjugué. Il existe en effet quelques éléments lexicaux particuliers qui ne sont pas des verbes mais ont la propriété de pouvoir être l’élément principal d’une phrase, comme l’adverbe \textsc{heureusement} ou le bizarre \textsc{bonjour~}:
+    
+    \begin{quote}
+    \textit{Heureusement qu’il y en a} !\\
+    \textit{Sinon, bonjour le chômage des linguistes.}
+    \end{quote}
+
+    Par ailleurs, il existe des contextes où la règle ne s’applique pas, notamment en réponse à une question (\textit{Tu viens à la fac demain} ? \textit{Oui à 10h pour le cours de syntaxe}) ou encore pour les titres (\textit{Nouvel incident diplomatique entre la France et l’Allemagne}). Cela ne signifie pas que la règle est fausse, mais qu’il faut bien préciser quand elle s’applique. Quant aux exceptions, il faut les \textbf{lister} et inclure ces éléments dans une classe particulière d’élément que nous appelons les prédicatifs et les locutifs (voir le \chapref{sec:5.1} sur \textit{Les catégories microsyntaxiques}).
+}
+\section{Structure hiérarchique}\label{sec:1.2.9}
+
+Lors du passage du sens au texte, tout se passe comme si on suspendait le graphe sémantique par l’un de ses nœuds dont on décide de faire le verbe principal de l’énoncé et qu’on parcourait le graphe à partir de ce nœud pour les autres lexicalisations. Nous pouvons illustrer cela par les schémas suivants : à gauche nous représentons le graphe sémantique suspendu par un de ses nœuds (visé ici par une grosse flèche blanche) et à droite nous avons la structure hiérarchique correspondante où les sens lexicaux ont été lexicalisés.
+
+\begin{figure}
+\begin{minipage}[c]{.5\textwidth}\centering%
+\begin{tikzpicture}[>={Triangle[]}]
+    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip]
+      \node (root) {}
+        child { node{} 
+            child { node{} edge from parent[->] node[left,reset shape] {1} } 
+            edge from parent[->] node[left,reset shape] {1} }
+        child { node{} 
+            child { node{} edge from parent[<-] node[right,reset shape] {1} } 
+            edge from parent[->] node[right,reset shape] {2} };
+    \end{scope}
+    \node [right=1ex of root] {`durer'};
+    \node [left=1ex of root-1] {`malade'};
+    \node [left=1ex of root-1-1] {`Ali'};
+    \node [right=1ex of root-2] {`semaine'};
+    \node [right=1ex of root-2-1] {`deux'};
+\end{tikzpicture}
+\end{minipage}\begin{minipage}[c]{.5\textwidth}\centering%
+\begin{forest}
+[DURER
+  [MALADIE\textsubscript{sg,déf},edge label={node[midway,above,font=\scriptsize]{1}}
+    [Adj\textsubscript{0}(ALI),edge label={node[midway,left,font=\scriptsize]{1}}]
+  ]
+  [SEMAINE\textsubscript{pl,indéf},edge label={node[midway,above,font=\scriptsize]{2}}
+    [DEUX,edge label={node[midway,right,font=\scriptsize\itshape]{MOD}}]
+  ]
+]
+\end{forest}\end{minipage}
+\caption{\label{fig:}Hiérarchisation à partir de ‘durer’}
+\end{figure}
+
+\begin{figure}
+\begin{minipage}[c]{.5\textwidth}\centering%
+\begin{tikzpicture}[>={Triangle[]}]
+    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip]
+      \node (root) {}
+        child { node{} edge from parent[->] node[left,reset shape] {1} }
+        child { node{} 
+            child { node{} 
+                    child { node{}
+                            edge from parent[<-] node[right,reset shape] {1} }
+                    edge from parent[->] node[right,reset shape] {2} } 
+            edge from parent[<-] node[right,reset shape] {1} };
+    \end{scope}
+    \node [left=1ex of root] {`malade'};
+    \node [left=1ex of root-1] {`Ali'};
+    \node [right=1ex of root-2] {`durer'};
+    \node [right=1ex of root-2-1] {`semaine'};
+    \node [right=1ex of root-2-1-1] {`deux'};
+\end{tikzpicture}
+\end{minipage}\begin{minipage}[c]{.5\textwidth}\centering
+\begin{forest}
+[V\textsubscript{0}(MALADE)\textsubscript{passé}
+  [ALI,edge label={node[midway,above,font=\scriptsize]{1}}]
+  [PENDANT,edge label={node[midway,above,font=\scriptsize\itshape]{MOD}}
+    [SEMAINE\textsubscript{pl,indéf},edge label={node[midway,right,font=\scriptsize]{2}}
+        [DEUX,edge label={node[midway,right,font=\scriptsize\itshape]{MOD}}]
+    ]
+  ]
+]
+\end{forest}\end{minipage}
+\caption{\label{fig:}Hiérarchisation à partir de ‘malade’}
+\end{figure}
+
+La structure que nous obtenons s’appelle un \textstyleTermes{arbre de dépendance syntaxique profond} (voir le \chapref{sec:3.6} entièrement consacré à \textit{La syntaxe profonde}). Chaque nœud de l’arbre est occupé par une unité lexicale correspondant à un sens. D’autres sens (non considéré ici) donne des éléments grammaticaux qui vont se combiner aux unités lexicales : temps pour les verbes (présent, passé, etc.), nombre (singulier, pluriel) et définitude (défini, indéfini) pour les noms. Le nœud au sommet est appelé la \textstyleTermes{racine} de l’arbre (voir l’\encadref{fig:1.2.3} sur \textit{Graphe et arbre}). Tous les nœuds à l’exception de la racine dépendent d’un autre nœud appelé leur \textstyleTermes{gouverneur} (syntaxique profond). À l’inverse, les nœuds qui dépendent d’un autre nœud en sont appelés les \textstyleTermes{dépendants} (syntaxiques profonds). Le lien entre deux nœuds est appelé une \textstyleTermes{dépendance} (syntaxique profonde).
+
+Chaque dépendance est étiquetée en fonction de son parcours : les relations sémantiques qui ont été parcourues dans le sens de la flèche (du prédicat vers l’argument) donne une \textstyleTermes{dépendance syntaxique actancielle} (que nous numérotons comme la dépendance sémantique correspondante), tandis que les relations sémantiques qui ont été parcourues à contre-courant donne une \textstyleTermes{dépendance syntaxique modificative} (étiquetée \textit{MOD}).
+
+\begin{figure}
+\begin{minipage}[c]{.15\textwidth}\centering%
+\begin{tikzpicture}[>={Triangle[]}]
+    \begin{scope}[every node/.style={circle,draw},level distance=3\baselineskip]
+    \node (root) {}
+        child { node{} 
+                edge from parent[->] 
+                node [right,reset shape] {1} 
+                node [left, reset shape] {\Large ⇓}};
+    \end{scope}
+    \node[above=5pt of root]    {`durer'};
+    \node[below=5pt of root-1]  {`malade'};
+\end{tikzpicture}\end{minipage}
+\begin{minipage}[c]{.1\textwidth}\centering⇒\end{minipage}
+\begin{minipage}[c]{.15\textwidth}\centering%
+\begin{tikzpicture}
+\node (root) {DURER}
+        child { node{MALADIE} 
+                edge from parent
+                node [right,reset shape] {1} 
+                };
+\end{tikzpicture}\end{minipage}
+\caption{Dépendance actancielle} 
+\end{figure}
+
+\begin{figure}
+\begin{minipage}[c]{.15\textwidth}\centering%
+\begin{tikzpicture}[>={Triangle[]}]
+    \begin{scope}[every node/.style={circle,draw},level distance=3\baselineskip]
+    \node (root) {}
+        child { node{} 
+                edge from parent[<-] 
+                node [right,reset shape] {1} 
+                node [left, reset shape] {\Large ⇓}};
+    \end{scope}
+    \node[above=5pt of root]    {`malade'};
+    \node[below=5pt of root-1]  {`durer'};
+\end{tikzpicture}\end{minipage}
+\begin{minipage}[c]{.1\textwidth}\centering⇒\end{minipage}
+\begin{minipage}[c]{.15\textwidth}\centering%
+\begin{tikzpicture}
+\node (root) {MALADE}
+        child { node{PENDANT} 
+                edge from parent
+                node [right,reset shape,font=\itshape] {MOD} 
+                };
+\end{tikzpicture}
+\end{minipage}
+\caption{Dépendance modificative}
+\end{figure}
+
+Comme nous l’avons expliqué dans la section précédente, chaque unité lexicale se voit imposer sa partie du discours par son gouverneur, la racine étant un verbe conjugué. Ainsi dans la phrase \REF{ex:key:1}, ALI, qui dépend du nom MALADIE, devrait être réalisé par un adjectif, ce que nous indiquons par la notation Adj\textsubscript{0}(ALI). C’est la préposition DE qui assurera cette \textstyleTermes{translation} (\textit{la maladie} \textbf{\textit{d}}\textit{’Ali}) et permettra à ALI d’être complément du nom (voir la section du \chapref{sec:5.1} sur \textit{La translation}). De la même façon, la notation V\textsubscript{0}(MALADE) indique que MALADE occupe une position où un verbe est attendu et c’est la copule ÊTRE qui assurera la translation d’adjectif en verbe.
+
+\loupe{Du sens au texte : de 3D à 1D}{%\label{sec:1.2.10}
+
+    Nous avons mentionné dans la \sectref{sec:1.1.2} \textit{Sons et textes} le caractère unidimensionnel de la chaîne parlée. Le sens lui est localisé dans notre cerveau : un certain nombre de zones de notre cerveau s’activent simultanément (ou les unes après les autres) et se mettent en réseau : le sens est donc fondamentalement un objet au moins tridimensionnel (quadridimensionnel si l’on prend en compte la dimension temporelle et le caractère dynamique de la construction du sens). Le passage du sens au texte s’accompagne donc d’une réduction de dimensionnalité, un passage de la dimension 3 à la dimension 1, une suite ordonnée d’unités élémentaires. Il semble que la langue effectue ce changement de dimension en deux étapes :
+
+    \begin{itemize}
+    \item le passage de la dimension 3 à la dimension 2 est une hiérarchisation du sens, le passage d’un graphe à un arbre ;
+    \item le passage de la dimension 2 à la dimension 1 est la linéarisation de ce graphe.
+    \end{itemize}
+
+    La phase de hiérarchisation s’accompagne d’une phase de «~lexicalisation~», c’est-à-dire de choix de signes linguistiques élémentaires, des unités lexicales et des unités grammaticales, qui se contraignent les unes les autres. La phase de linéarisation s’accompagne d’une «~morphologisation~» des signes, c’est-à-dire de combinaison des signifiants selon des règles morpho-phonologiques propres à chaque langue. Une telle architecture est à la base de la  Théorie Sens-Texte, que nous évoquerons dans l’\encadref{fig:1.3.9} éponyme.
+
+    \begin{figure}
+    \begin{tikzpicture}[>={Triangle[]},level distance=4\baselineskip]
+    \node [font=\bfseries] (root) {sens}
+        child { node[font=\bfseries] {arbre syntaxique}
+                child { node[font=\bfseries] {chaîne parlée} 
+                        edge from parent [->] node[left,text width=4cm,align=center]
+                                         {linéarisation\\«~morphologisation~»}
+                       }
+                edge from parent [->] node[left,text width=4cm,align=center]
+                                         {hiérarchisation\\«~lexicalisation~»}
+            };
+    \end{tikzpicture}
+    \caption{\label{fig:}\color{red}Please provide a caption}
+    \end{figure}
+}
+\section{Ce que la langue nous force à dire}\label{sec:1.2.11}
+
+En produisant les phrases \REF{ex:key:1} et \REF{ex:key:2} (\sectref{sec:1.2.5}), nous avons exprimé plus que le sens de départ. Celui-ci ne contenait pas d’information temporelle sur le moment de la maladie d’Ali, mais nous avions besoin d’une telle information pour conjuguer le verbe principal. C’est la \textbf{grammaire} du français qui nous \textbf{contraint}, en nous obligeant à ajouter une flexion au verbe principal de la phrase, à situer l’événement dont nous voulons parler par rapport au moment où nous parlons. Nous devons décider si la maladie a eu lieu avant maintenant (\textit{Ali a été malade pendant deux semaines}) ou si l’événement aura lieu après maintenant (\textit{Ali sera malade pendant deux semaines}) ou encore s’il est en cours (\textit{Ali est malade depuis deux semaines}).
+
+De même, en français, on ne peut pas lexicaliser un sens par un nom sans préciser le nombre \textit{(Ali a mangé} \textbf{\textit{une}} \textit{pomme} vs \textit{Ali a mangé} \textbf{\textit{des}} \textit{pommes}) et sans préciser si la chose est déjà connue ou non (\textit{Ali a mangé} \textbf{\textit{la}} \textit{pomme} vs \textit{Ali a mangé} \textbf{\textit{une}} \textit{pomme}) (voir \chapref{sec:4.2}). C’est l’une des raisons pour lesquelles nos deux phrases de départ \REF{ex:key:1} et \REF{ex:key:2} ne sont pas parfaitement synonymes, puisque, dans \REF{ex:key:1}, ‘malade’ est lexicalisé par un nom et est donc accompagné d’un article défini, lequel présuppose que la maladie d’Ali est connue des interlocuteurs au moment où la phrase est prononcée, ce qui n’est pas le cas en \REF{ex:key:2}.
+
+En conclusion, il n’est pas possible en français de communiquer uniquement notre sens de départ ! Nous devons y ajouter des informations et en particulier situer le fait dont nous parlons (la maladie d’Ali) dans le temps.
+
+\globe{Les sens grammaticaux}{%\label{sec:1.2.12}
+    Dans un article de 1959 sur la traduction, le grand linguiste d’origine russe Roman Jakobson remarque que «~Les langues diffèrent essentiellement par ce qu’elles \textit{doivent} communiquer et pas par ce qu’elles \textit{peuvent} communiquer.~» Il explique par exemple que la traduction de la phrase anglaise \textit{I hired a worker} en russe nécessiterait deux informations supplémentaires : le verbe en russe devra indiquer si l’embauche a été complétée ou pas, tandis que le nom en russe devra indiquer le genre et donc s’il s’agit d’un travailleur ou d’une travailleuse. À l’inverse, la phrase russe n’aura pas à choisir entre article défini ou indéfini (\textit{une} ou \textit{la travailleuse}), ni entre les temps verbaux \textit{hired} vs. \textit{have hired}. Sur cette nécessité de faire des choix dès qu’il s’agit de catégories grammaticales obligatoires, Jakobson renvoie à Franz \citet[132]{Boas1938} : «~Nous devons choisir parmi ces aspects, et l’un ou l’autre doit être choisi.~»
+
+    Il existe quantités de sens plus ou moins curieux qui sont ainsi imposés par la grammaire d’une langue. Par exemple, il existe une langue amérindienne, le nootka, parlée sur l’île de Vancouver au Canada, où le verbe s’«~accorde~» avec son sujet en fonction de particularités physiques du référent sujet ; on doit nécessairement choisir entre l’une des sept possibilités suivantes : normal, trop gros, trop petit, borgne, bossu, boiteux, gaucher (\citealt{Sapir1915,Mel’čuk1993}). On ne peut donc pas dire ce que fait une personne donnée sans dire si cette personne est normale ou si elle est affublée d’une des six particularités physiques retenues par la grammaire de cette langue.
+
+    Si la nature des sens qui sont grammaticalement exprimés au travers des langues du monde est assez vaste, elle est quand même assez homogène. D’une part, il s’agit généralement de sens abstraits ayant une \textbf{importance cognitive fondamentale} et qui ont de surcroît une importance culturelle énorme, puisqu’ils apparaissent dans pratiquement chaque phrase et donc modèlent la pensée des locuteurs à chaque instant. D’autre part, ces sens s’associent naturellement à certaines parties du discours : les langues ont ainsi généralement une classe d’éléments lexicaux qui varient en temps et/ou aspect et désignent des procès (et correspondent grosso modo à nos verbes) et une classe d’éléments lexicaux qui varient en nombre et désignent des entités (et correspondent à nos noms).
+
+    On trouvera dans le volume 2 du \textit{Cours de morphologie générale} d’Igor Mel’čuk publié en 1993 une typologie de tous les sens qui doivent être exprimés obligatoirement dans une langue au moins. Nous donnons ici l’exemple du \textbf{respect} en japonais.
+
+    Un Japonais ne peut pas dire «~\textit{Pierre est malade~}» sans préciser deux choses qui, au premier abord, peuvent sembler étonnantes à un locuteur du français :
+
+    \begin{itemize}
+    \item  est-ce que Pierre est quelqu’un de respectable ou non ?
+    \item  est-ce que la personne à qui je parle est quelqu’un de respectable ou non ?
+    \end{itemize}
+
+    Ces deux informations doivent obligatoirement figurer dans le choix lexical de l’adjectif et la conjugaison de la copule :
+
+    \begin{enumerate}
+    \item  {\cjkfont ピエール\textbf{さん}は\textbf{御}病気\textbf{です}。}  Pieru-\textbf{san}{}-wa \textbf{go-}byoki \textbf{desu}.
+    \item  {\cjkfont ピエールは病気\textbf{です}。}    Pieru-wa byoki \textbf{desu}.
+    \item  {\cjkfont ピエール\textbf{さん}は\textbf{御}病気\textbf{だ}。} Pieru-\textbf{san}{}-wa \textbf{go-}byoki \textbf{da}.
+    \item  {\cjkfont ピエールは病気\textbf{だ}。} Pieru-wa byoki \textbf{da}.
+    \end{enumerate}
+
+    La respectabilité envers Pierre est exprimée par le suffixe \textsc{san} et par le choix d’une forme polie \textsc{go-byoki} de l’adjectif ‘malade’. La respectabilité envers l’interlocuteur est exprimée par la forme polie de la copule, \textit{desu}, opposée à la forme neutre \textit{da}. Ces deux marques de respectabilité sont indépendantes, ce qui nous donne quatre formes possibles.
+
+    La respectabilité envers l’interlocuteur peut être comparée au \textbf{vouvoiement} en français. Mais alors que le choix entre \textit{tu} et \textit{vous} se limite au cas, évitable, où l’on interpelle directement son interlocuteur, le choix entre la forme verbale respectueuse et la forme familière se pose pour chaque phrase en japonais.
+}
+\section{Choisir le verbe principal}\label{sec:1.2.13}
+
+Nous savons que la structure syntaxique est une structure hiérarchique et que la construction de cette structure commence par le choix d’un élément sémantique pour être la racine de l’arbre syntaxique et donc le verbe principal de l’énoncé produit. Le choix de l’élément principal de la phrase peut être guidé par les choix lexicaux (quel sens lexical peut donner un verbe) ou grammaticaux (sur quel sens lexical veut-on ou peut-on ajouter tel ou tel sens grammatical). Mais ce choix est avant tout guidé par ce dont on est en train de parler et ce qu’on veut dire. Ainsi le même message, selon que nous sommes en train de parler d’Ali ou de sa maladie sera exprimé différemment : si l’on est en train de parler d’Ali et que l’information nouvelle que l’on veut communiquer est sa maladie, on choisira plutôt \REF{ex:key:2} (\textit{Ali a été malade pendant deux semaines}), alors que si l’on est en train de parler de sa maladie et que l’information nouvelle que l’on veut communiquer est seulement sa durée, on peut préférer \REF{ex:key:1} (\textit{La maladie d’Ali a duré deux semaines}). Le verbe principal de la phrase est ainsi généralement l’élément central du \textstyleTermes{rhème}, c’est-à-dire l’élément de sens que l’on souhaite prioritairement communiquer, tandis que le sujet du verbe principal est généralement le \textstyleTermes{thème}, c’est-à-dire ce dont on parle, ce sur quoi porte le rhème. L’indication des rhème et thème ne fait pas partie du contenu informationnel, représenté par la structure prédicative, mais dépend de la façon dont on communique le contenu informationnel, ce que nous avons appelé la \textbf{structure communicative} (voir l’\encadref{fig:1.2.4} sur \textit{Les composantes du sens}). Formellement, la délimitation des thème et rhème se surajoute à la structure prédicative en indiquant quelle zone constitue le rhème et quelle autre le thème.
+
+\section{Les contraintes de la grammaire}\label{sec:1.2.14}
+
+Reprenons rapidement la liste des contraintes qui nous ont été imposées lors de la production de nos deux phrases. La principale contrainte est la structure hiérarchique de l’énoncé. De cette contrainte majeure découlent des contraintes sur les parties du discours des unités lexicales choisies : la racine de l’arbre syntaxique devra être un verbe, les actants d’un verbe des noms, les modifieurs d’un verbe des adverbes et les dépendants d’un nom des adjectifs (pour les notions d’actant et de modifieur, voir le \chapref{sec:3.6} sur la \textit{Syntaxe profonde}). Ainsi les sens ‘malade’ et ‘durer’ peuvent recevoir différente lexicalisations (\textsc{malade} vs \textsc{maladie}, \textsc{durer} vs \textsc{pendant}), mais ces différents choix ne sont pas totalement indépendants : il serait par exemple difficile de faire une phrase naturelle avec les unités lexicales malade et durer exprimant notre sens de départ. (On peut en faisant deux phrases : «~\textit{Pierre a été malade. Ça a duré deux semaines.}~».)
+
+Quand les unités lexicales n’appartiennent pas à la partie du discours attendues, d’autres unités lexicales sont introduites, comme la copule \textsc{être} ou la préposition \textsc{de}, pour «~masquer~» le mauvais choix catégoriel. En fonction de leur partie du discours, les unités lexicales se voient assignées des unités grammaticales, telles que le temps pour les verbes et le nombre et la définitude pour les noms. Il existe encore d’autres contraintes. Par exemple, en français, un verbe conjugué, à l’exception de l’impératif, doit toujours avoir un sujet et ce sujet devra se placer devant lui (il existe quelques cas où le sujet peut être «~inversé~» mais pas ici). Enfin, le verbe devra s’accorder avec son sujet. De même, le nom devra avoir un déterminant (article ou autre) exprimant la définitude, accordé en nombre avec le nom placé avant lui. Ces différentes contraintes~– la nature de l’élément principal d’une phrase, la partie du discours des dépendants, les unités grammaticales obligatoires comme la conjugaison pour les verbes ou l’article pour les noms, l’accord, le placement des mots les uns par rapport aux autres~–, sont des \textstyleTermes{règles grammaticales} du français. La \textstyleTermes{grammaire} d’une langue, ce sont toutes les contraintes que nous impose cette langue quand nous parlons.
+
+L’expression même des contraintes grammaticales repose sur les «~connexions~» entre différentes parties de l’énoncé. Ces connexions constituent, comme nous le verrons, le squelette des \textstyleTermes{relations syntaxiques} entre les mots, les groupes de mots, mais aussi des unités plus petites que les mots. En mettant en évidence les contraintes que ces unités, que nous appellerons les \textstyleTermes{unités syntaxiques}, s’imposent les unes aux autres, nous avons mis en évidence l’existence d’une \textstyleTermes{structure syntaxique}. L’étude de cette structure, qui modélise la façon dont les signes linguistiques se combinent les uns avec les autres, constitue l’objet central de la \textstyleTermes{syntaxe} et donc de cet ouvrage.
+
+\chevalier{D’où viennent les règles de la grammaire ?}{%\label{sec:1.2.15}
+
+    D’où viennent ces règles ? Ces règles n’ont pas été inventées par des grammairiens ; elles existent depuis beaucoup plus longtemps que les grammairiens et elles sont pour la plupart indépendantes d’eux. Aussi le terme «~régularité » correspondrait-il peut-être mieux que « règle » au caractère « naturel » de ces contraintes imposées par la grammaire de la langue. Le linguiste cherche juste à décrire la grammaire qu’utilisent naturellement les locuteurs natifs d’une langue.
+
+    Il nous faut quand même dire quelques mots de la \textstyleTermes{grammaire normative}, élaborée par les «~grammairiens~» et dont l’objectif est de prescrire le « bon » usage du français. L’institutionnalisation de la normativité n’est pas universelle, mais plutôt une particularité française. Dans des traditions différentes, en Allemagne ou aux États-Unis par exemple, on considère davantage qu’en France qu’un locuteur natif sait parler sa langue : on n’enseigne que très peu de grammaire à l’école et il n’y a pas d’Académie nationale chargée de protéger la langue.
+
+    {\bfseries
+    Quel est le bon français ?
+    }
+
+    La distinction entre grammaire descriptive et grammaire normative est importante quand on tente de répondre à la question suivante : la phrase suivante est-elle grammaticale ?
+
+    \ea
+    Après qu’il se soit assis, elle s’est mise à parler.
+    \z
+
+    La réponse est non selon les grammaires normatives qui estiment que \textsc{après} \textsc{que} doit être suivi de l’indicatif, et oui, si on se base sur une grammaire descriptive, étant donné qu’il s’agit d’un énoncé contenant des structures attestées régulièrement. Une grammaire descriptive nous informera qu’en français contemporain, la conjonction \textsc{après} \textsc{que} est suivie soit de l’indicatif, soit du subjonctif. La description tentera peut-être d’expliquer quand on utilise l’un ou l’autre. De plus, elle notera probablement que l’utilisation de l’indicatif a un caractère plus écrit à cause de la prescription de la grammaire normative.
+
+    Pour la grammaire normative seule l’utilisation de l’indicatif est correcte. Pour ce jugement, les grammaires normatives se basent sur :
+
+    \begin{itemize}
+    \item un certain conservatisme : « ce qui est vieux est meilleur » ;
+    \item et sur un certain élitisme : « la langue des riches, puissants et instruits est meilleure ».
+    \end{itemize}
+
+    La linguistique ne s’intéresse pas à ces jugements esthétiques. Les règles linguistiques sont toujours descriptives et jamais prescriptives.
+
+    {\bfseries
+    Quand les grammairiens ont gagné
+    }
+
+    La grammaire normative peut avoir une influence sur le comportement linguistique des locuteurs d’une langue. En effet, une prescription peut être acceptée par la langue et donc entrer dans les régularités de la langue. Dans ce cas-là, la linguistique s’intéresse bien entendu à cette régularité.
+
+    Un exemple de ce phénomène concerne l’accord au masculin. Aujourd’hui, les francophones accordent naturellement au masculin des éléments coordonnés composés de noms de genre différents. On dit donc :
+    \ea
+         {Arrivèrent alors un homme et cinquante femmes très} \textbf{{élégants}}.
+    \z
+    et non :
+    \ea
+        *{Arrivèrent alors un homme et cinquante femmes très} \textbf{{élégantes}}.
+    \z
+    si on veut qualifier les 51 personnes d’élégantes. Mais cette règle est une invention machiste en correspondance avec la pensée de l’époque où la règle a été prescrite : «~[La hiérarchie entre le masculin et le féminin] remonte au XVIIe siècle lorsqu’en 1647 le célèbre grammairien Vaugelas déclare que « \textit{la forme masculine a prépondérance sur le féminin, parce que plus noble} ». Dorénavant, il faudra écrire : « \textit{Les légumes et les fleurs sont frais} » et faire en sorte que l’adjectif s’accorde au masculin, contrairement à l’usage de l’époque qui l’aurait accordé au féminin. En effet, au Moyen Âge, on pouvait écrire correctement, comme Racine au XVIIe siècle : « \textit{Ces trois jours et ces trois nuits entières} » - l’adjectif « \textit{entières} » renvoyant alors à « \textit{nuits} » autant qu’à « \textit{jours} ».~» (Agnès Callamard, «~Droits de l’homme~» ou «~droits humains~» ?, Le sexisme à fleur de mots, Le monde diplomatique, mars 1998, page 28)
+}
+\exercices{%\label{sec:1.2.16}
+    \exercice{1} Chercher des couples de paraphrases dont les verbes principaux correspondent à des sens différents (comme dans l’exemple de la \sectref{sec:1.2.5} où les verbes principaux de notre couple de paraphrase correspondent au sens ‘durer’ vs. ‘malade’). On pourra ensuite proposer la structure prédicative commune à ce couple de paraphrase, puis les structures syntaxiques profondes des deux phrases proposées.
+
+    \exercice{2} Quels sont les quatre moyens d’expression du langage ? (Le premier étant les mots.)
+
+    \exercice{3} Expliquez en quoi la phrase «~Excellent, ce café !~» dévie des règles générales du français et proposez une description.
+
+    \exercice{4} Quel problème pose la traduction de \textit{son sac} en anglais ? Qu’est-ce que cela illustre comme différence grammaticale entre les deux langues ?
+
+    \exercice{5} Pour vous rendre compte de la complexité du choix entre l’article défini et l’article indéfini, essayez d’expliquer (de manière claire et compréhensible pour un apprenant du français, japonais par exemple) quand il faut dire « \textit{Où puis-je trouver les toilettes} ? » et quand faut-il choisir l’article indéfini \textit{« Où puis-je trouver des toilettes} ? ».
+
+    \exercice{6} Il ne faut pas croire que le système de politesse du français est beaucoup plus simple que celui du japonais. Essayez d’expliquer (de manière claire et compréhensible pour un apprenant du français par exemple)
+
+    \begin{itemize}
+    \item quand et avec qui on peut utiliser les verbes \textit{bouffer}, \textit{manger} ou \textit{dîner} pour parler d’une personne en train de prendre son repas du soir ?
+    \item quelles sont les règles (tutoiement, utilisation du nom/prénom) dans la situation suivante : un professeur tutoie normalement sa collègue, Mme Marie Dupont. Maintenant, il la présente et s’adresse à elle devant un groupe d’étudiants.
+    \end{itemize}
+}
+\lecturesadditionnelles{%\label{sec:1.2.17}
+    Si l’on est intéressé par l’inventaire des significations morphologiques que les langues nous obligent à communiquer, on pourra consulter le deuxième volume du monumental cours de morphologie d’Igor Mel’čuk. La citation de Jakobson de la \sectref{sec:1.2.12} est extraite d’un article très lisible. On peut aussi lire le très bon article publié dans le New York Times Magazine par Guy Deutscher. L’article d’Edward Sapir sur le nootka se trouve dans sa sélection d’écrits. Les autres sujets abordés dans ce chapitre seront largement développés dans la suite de l’ouvrage.
+
+    Franz \citet{Boas1938} Language, \textit{General Anthropology}, Boston.
+
+    Roman \citet{Jakobson1959} On linguistic aspects of translation, \textit{On translation}, \textit{3}, 30-39.
+
+    Guy Deutscher, Does your language shape how you think ?, article du \textit{New York Times Magazine} du 26 aout 2010. (\url{http://www.nytimes.com/2010/08/29/magazine/29language-t.html})
+
+    Igor Mel’čuk \REF{ex:key:1993} \textit{Cours de morphologie générale}, 5 volumes, Presses de l’Université de Montréal/CNRS.
+
+    Edward \citet{Sapir1973} \textit{Selected Writings of Edward Sapir}, édites par D. Mandelbaum, University of California Press, Berkeley.
+}
+\citations{%\label{sec:1.2.18}
+    {\bfseries
+    Citations de la \sectref{sec:1.2.12}.
+    }
+
+    \textbf{Jakobson} (1959)~\textbf{:}
+
+    \begin{quote}
+    \textit{Languages} differ essentially in \textit{what} they must convey and not in \textit{what} they may convey.
+    \end{quote}
+
+    \textbf{Boas} (1938:132) :
+
+    \begin{quote}
+
+    We have to choose between these aspects, and one or the other must be chosen.
+    \end{quote}
+}
+\corrections{%\label{sec:1.2.19}
+     \corrigé{1} Il existe de nombreux exemples. Nous en proposons deux :
+    \ea
+    {Ali pleure parce que Zoé est partie.}
+    \z
+    \ea{
+    Le départ de Zoé a fait pleurer Ali.
+    }
+    \z
+    \ea{
+    Les Chinois consomment de plus en plus de viande.
+    }
+    \z
+    \ea{
+    La consommation de viande des Chinois a augmenté.
+    }
+    \z
+
+    Pour la représentation sémantique et les représentations syntaxiques profondes, voir le \chapref{sec:3.6}. Vous pouvez néanmoins vous essayer dès maintenant à proposer des représentations pour les exemples ci-dessus.
+
+    \corrigé{2} Voir la \sectref{sec:1.2.6}.
+
+    \corrigé{3} Nous avons dit que le français demandait que la racine de l’arbre soit un verbe, mais il est également possible que ce soit un adjectif. Dans ce cas, l’argument de l’adjectif ne peut pas être réalisé comme sujet : pour qu’il le soit, il faut ajouter la copule (\textit{ce café} \textbf{\textit{est}} \textit{excellent}), qui devient la tête syntaxique. Il est néanmoins possible d’ajouter l’argument de l’adjectif comme un élément détaché (voir la partie 6 sur la macrosyntaxe).
+
+    \corrigé{4} Le français \textit{son sac} peut être traduit en anglais par \textit{his bag} ou \textit{her bag} selon que le propriétaire est un homme ou une femme. Cela illustre le fait que le nom en français a la catégorie du genre et que le déterminant possessif doit s’accorder en genre avec le nom qu’il détermine (\textit{son sac} vs. \textit{sa valise}), alors que l’anglais qui n’a pas de genre nominal, distingue pour les référents d’un pronom possessif s’il s’agit d’un non humain (\textit{its}), d’un humain féminin (\textit{her}) ou d’un humain masculin (\textit{his}). Le français n’exprime pas cette information. Une langue peut exprimer les deux informations en même temps, comme l’allemand (\textit{sein Koffer, ihr Koffer, seine Tasche}, \textit{ihre Tasche}, où \textit{Koffer} est un nom masculin qui signifie ‘valise’, \textit{Tasche} un nom féminin qui signifie ‘sac’, \textit{sein} signifie ‘his’ et \textit{ihr} signifie ‘her’).
+
+    \corrigé{5} L’article défini présuppose qu’il existe des toilettes: on l’emploie quand on sait qu’on est dans un endroit où il y a des toilettes. Au contraire, on préfère utiliser l’indéfini quand on n’est pas sûr qu’il y ait des toilettes à proximité ou qu’on pense qu’il peut y en avoir plusieurs.
+
+    \corrigé{6} Cette situation est complexe puisqu’on s’adresse simultanément à Marie Dupont et aux étudiants, ce qui peut nous amener à vouvoyer Marie Dupont, alors qu’on la tutoie dans d’autres conditions.
+}
