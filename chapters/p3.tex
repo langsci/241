@@ -6349,9 +6349,27 @@ Notons pour conclure que le modèle topologique n’utilise que des \textstyleTe
 
     On peut réinterpréter les règles syntagmatiques comme des \textstyleTermesapprof{structures élémentaires}, c’est-à-dire des portions de la structure finale, un arbre de constituants ordonné dans notre cas, qui, assemblées, permettent de reconstituer la structure finale. (Nous utilisons les deux modes de représentation d’un arbre de constituants ordonné présentés dans l’encadré précédent).
 
-    \ea
-    %%[Warning: Draw object ignored]
-    La règle de réécriture P → GN GV vue comme une structure élémentaire
+    \ea La règle de réécriture P → GN GV vue comme une structure élémentaire\medskip\\
+    \begin{minipage}[c]{.5\linewidth}\centering
+        \begin{forest} 
+        [P [GN] [GV]]
+        \end{forest}
+        \end{minipage}\begin{minipage}[c]{.5\linewidth}\centering
+        \begin{tikzpicture} 
+        \foreach \s in {1,...,6}
+       {
+         \node at ({360/6 * (\s - 1) + 90}:1cm) (\s) {};
+         \draw ({360/6 * (\s - 1) + 90}:1cm) 
+               arc ({360/6 * (\s - 1) + 90}:{360/6 * (\s) + 90}:1cm);
+       } 
+       \node at (3) [fill=white,circle,draw] {};
+       \node at (4) [fill=white,circle,draw] {};
+       \node at (5) [fill=white,circle,draw] {};
+       \node [below=1pt of 1] {P};
+       \node [below=5pt of 3] {GN};
+       \node [below=5pt of 5] {GV};
+       \end{tikzpicture}
+    \end{minipage}
     \z
 
     Avec les règles proposées ici, on peut générer l’arbre de constituants de la phrase \textit{Un chat poursuit le chien} donné dans l’encadré qui précède. Chaque portion élémentaire de l’arbre, composée d’un nœud et de ses fils, correspond exactement à une règle de réécriture. Ainsi le sommet de l’arbre avec le nœud P et ses deux fils GN et GV est validé par la règle P \textrm{→} GN GV.
@@ -6385,15 +6403,71 @@ La projection topologique de \textit{une belle} est \textit{une belle}, alors qu
 Les projections topologiques associées à un arbre de dépendance ordonné donné forment un arbre de constituants ordonné. Nous appelons cet arbre l’\textstyleTermes{arbre de constituants topologiques} ou plus simplement l’\textstyleTermes{arbre topologique} induit par l’arbre de dépendance ordonné.
 
 \begin{figure}
-%%[Warning: Draw object ignored]
-
-\caption{\label{fig:}}Arbre de dépendance et arbre de constituants syntaxiques induit
-
+\begin{minipage}[c]{.45\linewidth}\centering
+\begin{tikzpicture}[every node/.style={font=\strut\itshape}]
+\begin{scope}[
+    every node/.style={circle,draw}
+    ]
+\node (root) {}
+    child { node { } 
+          child { node { } }
+           };
+\end{scope}
+\node[left=1pt of root] {est entrée};
+\node[left=1pt of root-1] {une belle};
+\node[left=1pt of root-1-1] {qui voulait les acheter};
+\end{tikzpicture}\end{minipage}\begin{minipage}[c]{.1\linewidth} \centering $\Rightarrow$ \end{minipage}%
+\begin{minipage}[c]{.45\linewidth}\centering
+\begin{tikzpicture}[every node/.style={font=\strut}]
+    \begin{scope}[
+    every node/.style={circle,draw},
+    sibling distance=20mm,
+    level distance=3\baselineskip
+    ]
+        \node (root) {}
+            child { node { } child { node { } edge from parent node [reset shape, near end, above] {T} } 
+                            child { node { } } 
+                edge from parent node [reset shape, near end, above] {T} }
+            child { node { } };
+    \end{scope}
+    \begin{scope}[every node/.style={font=\strut\itshape}]
+    \foreach \pos/\text in {1-1/une belle, 1-2/\strut qui voulait\\les acheter, 2/est entrée} 
+      {\node [below=1pt of root-\pos,align=center] {\text};}
+    \end{scope}
+    \end{tikzpicture}
+\end{minipage}
+\caption{\label{fig:}Arbre de dépendance et arbre de constituants syntaxiques induit}
 \end{figure}
 
-\begin{figure}\bfseries
-%%[Warning: Draw object ignored]
-
+\begin{figure}
+\begin{minipage}[c]{.45\linewidth}\centering
+\begin{tikzpicture}[>={Triangle[]}]
+  \begin{scope}[every node/.style={circle,draw},grow=right,level distance=2cm]
+  \node at (0,0) (root) {} child { node {} child { node{} } };
+  \path (root) edge [bend left=45,->] (root-1-1)
+        (root-1) edge [bend right,->] (root);
+  \end{scope}
+  \draw [<-] (root-1) -- ++(0,1.5cm);
+  \node [below=1pt of root, font=\itshape\strut] {une belle};
+  \node [below=1pt of root-1, font=\itshape\strut] {est entrée};
+  \node [below=1pt of root-1-1, font=\itshape,align=center] {\strut qui voulait\\les acheter};
+\end{tikzpicture}
+\end{minipage}\begin{minipage}[c]{.1\linewidth}\centering
+$\Rightarrow$
+\end{minipage}\begin{minipage}[c]{.45\linewidth}\centering
+\begin{tikzpicture}
+  \begin{scope}[every node/.style={circle,draw},sibling distance=20mm]
+  \node (root) {} 
+    child { node{} } 
+    child { node{} edge from parent node [reset shape, midway, right] {T} } 
+    child { node{} };
+  \draw (root-1) -- (root-2) -- (root-3);
+  \end{scope}
+  \node [below=1pt of root-1, font=\itshape\strut] {une belle};
+  \node [below=1pt of root-2, font=\itshape\strut] {est entrée};
+  \node [below=1pt of root-3, font=\itshape,align=center] {\strut qui voulait\\les acheter};
+\end{tikzpicture}
+\end{minipage}
 \caption{\label{fig:}Arbre de dépendance ordonné et arbre de constituants topologiques induit}
 
 \end{figure}
@@ -6406,11 +6480,40 @@ Une étude plus fine de la topologie d’une langue peut amener à considérer u
 
 La comparaison entre l’arbre topologique induit et l’arbre de constituants syntaxiques induit nous amène à introduire de nouveaux concepts. Redonnons les deux arbres pour notre exemple :
 
-\begin{figure}\bfseries
-%%[Warning: Draw object ignored]
-
-\caption{\label{fig:Arbres de constituants syntaxiques et topologiques}}
-
+\begin{figure}
+\begin{minipage}[c]{.5\linewidth}\centering
+\begin{tikzpicture}[every node/.style={font=\strut}]
+    \begin{scope}[
+    every node/.style={circle,draw},
+    sibling distance=20mm,
+    level distance=3\baselineskip
+    ]
+        \node (root) {}
+            child { node { } child { node { } edge from parent node [reset shape, near end, above] {T} } 
+                            child { node { } } 
+                edge from parent node [reset shape, near end, above] {T} }
+            child { node { } };
+    \end{scope}
+    \begin{scope}[every node/.style={font=\strut\itshape}]
+    \foreach \pos/\text in {1-1/une belle, 1-2/\strut qui voulait\\les acheter, 2/est entrée} 
+      {\node [below=1pt of root-\pos,align=center] {\text};}
+    \end{scope}
+    \end{tikzpicture}
+\end{minipage}\begin{minipage}[c]{.5\linewidth}\centering
+\begin{tikzpicture}
+  \begin{scope}[every node/.style={circle,draw},sibling distance=20mm]
+  \node (root) {} 
+    child { node{} } 
+    child { node{} edge from parent node [reset shape, midway, right] {T} } 
+    child { node{} };
+  \draw (root-1) -- (root-2) -- (root-3);
+  \end{scope}
+  \node [below=1pt of root-1, font=\itshape\strut] {une belle};
+  \node [below=1pt of root-2, font=\itshape\strut] {est entrée};
+  \node [below=1pt of root-3, font=\itshape,align=center] {\strut qui voulait\\les acheter};
+\end{tikzpicture}
+\end{minipage}
+\caption{\label{fig:}Arbres de constituants syntaxiques et topologiques}
 \end{figure}
 
 Comme on le voit, la relative \textit{qui voulait les acheter} n’est pas à la même position dans les deux arbres : dans l’arbre syntaxique, la relative est un nœud fils du groupe substantival dont \textit{la belle} est la tête, alors que dans l’arbre topologique, elle est un nœud fils de la phrase entière dont \textit{est entrée} est la tête. Autrement dit, la relative ne s’est pas positionnée par rapport à son gouverneur syntaxique \textit{la belle}, mais par rapport au gouverneur de celui-ci, \textit{est entrée}.
@@ -6445,13 +6548,14 @@ Dans tous ces exemples, le clitique se place sur le verbe fini, alors qu’il es
 Autrement dit, le gouverneur syntaxique du clitique n’offre pas de place au clitique, forçant son émancipation. Un participe passé, par exemple, ne peut jamais accueillir des clitiques, qu’il dépende d’un verbe, comme précédemment, ou qu’il dépende d’un nom (\textit{le livre donné à Zoé} vs \textit{*le livre lui donné}). Il va donc ouvrir un constituant avec un gabarit différent de celui d’un verbe fini :
 
 \begin{table}
-\caption{\label{tab:}}
-\begin{tabularx}{\textwidth}{XXXXX}
-\lsptoprule
-\multicolumn{5}{c}{{\bfseries Domaine verbal réduit}}\\
-\multicolumn{1}{c}{ch-adv} & \multicolumn{1}{c}{ch-verbe} & \multicolumn{1}{c}{ch-adv} & \multicolumn{1}{c}{ch-vb-sub} & ch-final\\
-\lspbottomrule
-\end{tabularx}
+\caption{\label{tab:}Domaine verbal réduit}
+\def\arraystretch{1.5}
+\setlength{\tabcolsep}{4ex}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ch-adv & \cellcolor{lsDOIGray} ch-verbe & ch-adv & ch-vb-sub & ch-final\\
+\hline
+\end{tabular}
 \end{table}
 
 Un infinitif peut normalement accueillir des clitiques (\textit{Zoé veut} \textbf{\textit{l’}}\textit{appeler}), mais pas quand il est dans la construction causative. Il ouvrira dans ce cas un constituant réduit comme celui d’un participe passé.
@@ -6469,7 +6573,24 @@ Un infinitif peut normalement accueillir des clitiques (\textit{Zoé veut} \text
 Dans ces constructions, le complément à droite du nom dépend de \textit{plus} comme le montre le changement complet de sens lorsque celui-ci est supprimé (\textsuperscript{\#}\textit{un beau livre que le mien} ; \textsuperscript{\#}\textit{le beau livre du monde}), ainsi que la possibilité de le séparer du nom (\textit{ce livre est plus beau que le mien~}; \textit{le livre le plus beau du monde}).
 
 \begin{figure}
-%%[Warning: Draw object ignored]
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,draw},grow=right]
+\node (root) {} child { node {} child { node{} child { node{} child { node{}  
+                    child { node{} child { node{} } } } } } }; 
+\end{scope}
+\foreach \pos/\text in {/un, -1/plus, -1-1/beau, -1-1-1/livre, -1-1-1-1/que,
+                        -1-1-1-1-1/le, -1-1-1-1-1-1/mien,} 
+      {\node [font={\itshape\strut}, below=1pt of root\pos] {\text};}
+      
+\path (root-1-1)   edge[bend right,-{Triangle[]}] (root-1)
+      (root-1-1-1) edge[bend right,-{Triangle[]}] (root-1-1)
+      (root-1-1-1-1-1-1) edge[bend right,-{Triangle[]}] (root-1-1-1-1-1)
+      (root-1) edge[bend left,-{Triangle[]},out=60,in=120] (root-1-1-1-1)
+      (root-1-1-1-1) edge[bend left,-{Triangle[]},out=60,in=120] (root-1-1-1-1-1-1)
+      (root-1-1-1) edge [bend right,-{Triangle[]},out=315,in=225] (root);
+
+\draw[{Triangle[]}-] (root-1-1-1) -- ++(0,2cm);
+\end{tikzpicture}
 \caption{\label{fig:}}
 \end{figure}
 
@@ -6504,13 +6625,15 @@ On note que le champ pré-noyau peut accueillir plusieurs éléments (ici le com
     \begin{enumerate}
     \item \textbf{Description des constituants (topologiques).} Un constituant est un gabarit de places linéaires, c’est-à-dire une liste de champs. Les règles de ce type indiquent donc pour chaque constituant quelle est la liste des champs qui le compose. Ces règles se rapprochent des règles de réécriture d’une PSG (voir l’\encadref{fig:3.5.29} \textit{Grammaire de réécriture}) et l’on peut utiliser un notation similaire : D \textrm{→} f\textsubscript{1} f\textsubscript{2} … f{\textsubscript{n}}, où D est un type de constituant (D comme domaine) et les f{\textsubscript{i}} des noms de champs. Nous utilisons la lettre f pour les noms de champs (de l’angl. \textit{field}, all. \textit{Feld}).
 
-
-    \begin{tabularx}{\textwidth}{XXXX}
-    \lsptoprule
-    \multicolumn{4}{c}{{\sffamily D}}\\
-    \multicolumn{1}{c}{{\sffamily f\textsubscript{1}}} & \multicolumn{1}{c}{{\sffamily f\textsubscript{2}}} & \multicolumn{1}{c}{{\sffamily    …} } & {\sffamily f{\textsubscript{n}}}\\
-    \lspbottomrule
-    \end{tabularx}
+    \begin{center}
+      \begin{tabular}{|c|c|c|c|}
+      \hline
+      \multicolumn{4}{|c|}{\cellcolor{lsDOIGray}D}\\
+      \hline
+      $f_1$ & $f_2$ & ... & $f_n$\\
+      \hline
+      \end{tabular}
+    \end{center}
 
 
     La principale différence avec les règles de réécriture est qu’un constituant n’est pas réécrit en une liste de constituants, mais en une liste de champs, auxquels sont assignés des constituants par d’autres règles.
@@ -6519,18 +6642,17 @@ On note que le champ pré-noyau peut accueillir plusieurs éléments (ici le com
 
     \item \textbf{Règle de correspondance.} Ce sont les règles qui assurent réellement la linéarisation, en indiquant, pour une dépendance donnée \textit{x} \textrm{→} \textit{y}, dans quel champ f peut aller le dépendant \textit{y}. La règle dépend des catégories C\textsubscript{1} et C\textsubscript{2} de x et y et de la relation syntaxique \textit{r} entre \textit{x} et \textit{y} (c’est-à-dire l’étiquette de la dépendance \textit{x} \textrm{→} \textit{y}). Par défaut, le nœud y se place par rapport à son gouverneur \textit{x} et le champ f est donc l’un des champs du constituant ouvert par \textit{x}.
 
-    \ea
-    %%[Warning: Draw object ignored]
-
-    %%[Warning: Draw object ignored]
+    \ea \todo[inline]{Format of figure in original submission unclear, please submit again}
     \z
 
     Une telle règle peut aussi indiquer la possibilité pour \textit{y} de s’émanciper. On peut contrôler l’émancipation de différentes façons : celle que nous retenons est d’indiquer quelles frontières de constituants peut «~traverser~» \textit{y} pour se placer dans un champ d’un constituant ouvert par un ancêtre de \textit{x.}
+    
+    \ea \todo[inline]{Format of figure in original submission unclear, please submit again} \z
 
     \item \textbf{Création de constituant.} À chaque fois qu’un nœud \textit{x} de l’arbre de dépendance est placé dans un champ (par une des règles précédentes), \textit{x} ouvre à son tour un constituant pour placer ses dépendants. Une règle de ce type indique donc le type de constituant D créé en fonction de la catégorie C de \textit{x} et du champ f dans lequel \textit{x} est placé.
 
     \ea
-    %%[Warning: Draw object ignored]
+    \todo[inline]{Format of figure in original submission unclear, please submit again}
     \z
     \end{enumerate}
     Signalons le cas particulier de la \textbf{règle d’initialisation} qui indique le type de constituant D créé en fonction de la catégorie C de la racine de l’arbre de dépendance lorsque celle-ci est placée dans le champ initial \textit{i}.
@@ -6574,7 +6696,7 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     En prenant en compte ces différentes contraintes, on peut faire d’assez bonnes prédictions sur les prosodies possibles. Cela dit, les locuteurs prennent pas mal de liberté et applique souvent un principe de complémentarité et de compensation qui veut que la prosodie tendra à compenser une absence de marquage syntaxique (notamment lorsque la structure est syntaxiquement ambiguë), mais pourra être plus relâchée quand la structure syntaxique est claire.
 }
 \globe{La structure topologique de l’allemand}{%\label{sec:3.5.36}
-    Nous avons déjà esquissé le modèle topologique de l’allemand dans la \sectref{sec:3.5.5} \textit{Le cas des langues V2}. La plupart des règles de l’ordre des mots en allemand se comprennent facilement en considérant qu’une phrase déclarative est constituée de 5 champs consécutifs qui forment le domaine principal.
+    Nous avons déjà esquissé le modèle topologique de l’allemand dans la \sectref{sec:3.5.5} \textit{Le cas des langues V2}. La plupart des règles de l’ordre des mots en allemand se comprennent facilement en considérant qu’une phrase déclarative est constituée de 5 champs consécutifs qui forment le domaine principal.\smallskip\\    
     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img032.png}
 
     Le verbe principal, c’est-à-dire le verbe qui porte le mode indicatif, comme l’auxiliaire \textit{hat} ‘a’ dans notre exemple, se place en 2\textsuperscript{e} position, appelée \textbf{parenthèse gauche}, après l’unique constituant occupant le \textbf{champ initial} ou \textbf{Vorfeld} ‘pré-champ’. La parenthèse gauche entoure, avec la \textbf{parenthèse droite}, le \textbf{champ du milieu} ou \textbf{Mittelfeld}. Un \textbf{champ final} ou \textbf{Nachfeld} suit la parenthèse droite. Les \textbf{champs} dits \textbf{majeurs} \-– Vorfeld, Mittelfeld et Nachfeld – accueillent les syntagmes nominaux ou adverbiaux. Les dépendants verbaux vont généralement dans la parenthèse droite. Si une phrase n’utilise que le domaine principal pour placer les mots, on parle d’une \textit{structure plate}, par exemple :
@@ -6594,13 +6716,16 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     \z
     Le placement des verbes dans la parenthèse droite peut aussi être décrit par une structure topologique : l’amas verbal. Il est composé de trois champs : le \textbf{champ supérieur} ou \textbf{Oberfeld}, le champ tête et le \textbf{champ inférieur} ou \textbf{Unterfeld}.
 
-
-    \ea
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-    Oberfeld          champ tête            Unterfeld
-    \z
+    \begin{center}
+    \def\arraystretch{1.5}
+    \setlength{\tabcolsep}{4ex}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    Oberfeld & champ tête & Unterfeld\\
+    \hline
+    \end{tabular}
+    \end{center}
+    
     Sans rentrer dans tous les détails de l’amas verbal, remarquons que pour les dépendants de certains verbes, en particulier les modaux, l’Unterfeld est préférable à l’Oberfeld :
 
     \ea\label{ex:popel}
@@ -6811,17 +6936,31 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
 
     c) Certaines langues ont un ordre dominant, comme l’ordre SVO en français. Néanmoins considérer un ordre de base revient à considérer que tous les autres ordres sont obtenus par des transformations de l’ordre base. Cela revient à dire que lorsque le sujet est après le verbe en français, celui-ci a été inversé. Même s’il peut nous arriver de conserver la terminologie et de parler de «~sujet inversé~», nous ne considérons pas qu’il y a eu une inversion. Nous considérons que le sujet a été placé directement dans cette position.
 
-    \corrigé{2} 1) Le premier symbole, ×, est la racine de l’arbre. Son premier dépendant est 3. Le symbole suivant, +, est la racine du deuxième dépendant, et ainsi de suite. La formule est donc 3 × ((12×5) + 7) sous forme infixée et 3 12 5 × 7 + × sous forme postfixée.
+    \corrigé{2} 1) Le premier symbole, $\times$, est la racine de l’arbre. Son premier dépendant est 3. Le symbole suivant, +, est la racine du deuxième dépendant, et ainsi de suite. La formule est donc $3 \times \left((12\times5) + 7\right)$ sous forme infixée et 3 12 5 × 7 + × sous forme postfixée.
 
-    2) La formule est (1 + ${\surd}$5) / 2 sous forme infixée et / + 1 ${\surd}$ 5 2 sous forme préfixée.
+    2) La formule est (1 + $\sqrt{5}$) / 2 sous forme infixée et / + 1 $\sqrt{5}$ 2 sous forme préfixée.
 
     \corrigé{3} Le syntagme \textit{à cette heure-là} dépend de \textit{parti} et couvre donc la racine de l’arbre \textit{pense}.
 
     \corrigé{4} Le graphe K\textsubscript{4} est planaire : il suffit de prendre une des diagonales et de la faire passer par l’extérieur du carré. C’est le plus complexe des graphes à 4 nœuds et donc tous les graphes à 4 nœuds ou moins sont planaires. Le plus petit graphe non planaire à 5 nœuds est K\textsubscript{5}, le graphe complet à 5 nœuds. Le plus petit graphe non planaire à 6 nœuds est K\textsubscript{3,3}, le graphe où 3 nœuds sont liés aux 3 autres. On vérifiera que, si on retire un seul de leurs liens, ces graphes deviennent planaires.
 
-    \ea
-    %%[Warning: Draw object ignored]
-    \z
+    \begin{center}
+    \begin{minipage}[c]{.5\linewidth}\centering
+      \begin{tikzpicture}
+      \begin{scope}[local bounding box=graph,every node/.style={circle,draw}]
+        \graph [clockwise, empty nodes] { subgraph K_n [n=5] };
+      \end{scope}
+        \node[below=1pt of graph] {K\textsubscript{5}};
+      \end{tikzpicture}
+    \end{minipage}\begin{minipage}[c]{.5\linewidth}\centering
+      \begin{tikzpicture}
+      \begin{scope}[local bounding box=graph,every node/.style={circle,draw}]
+        \graph [empty nodes, branch right, grow down] { subgraph K_nm [n=3, m=3] };
+      \end{scope}
+        \node[below=1pt of graph] {K\textsubscript{3, 3}};
+      \end{tikzpicture}
+    \end{minipage}
+    \end{center}
 
     Le mathématicien polonais Kazimierz Kuratowski a établi en 1930 la caractérisation suivante des graphes planaires : Un graphe est planaire si et seulement s’il ne peut être réduit ni à K\textsubscript{5}, ni à K\textsubscript{3,3}.
 
