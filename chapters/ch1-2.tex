@@ -39,15 +39,23 @@ Nous nous contenterons de cette définition sommaire de la structure prédicativ
 Nous avons présenté la structure prédicative par une \textstyleTermes{formule}, mais on peut aussi la représenter par un \textstyleTermes{graphe} (voir l’\encadref{fig:2.1.3} qui suit) que nous appelons le \textstyleTermes{graphe sémantique}. Les nœuds du graphe sémantique sont les sens lexicaux ‘Ali’, ‘malade’, ‘durer’, ‘semaine’ et ‘deux’ et les arêtes représentent les \textstyleTermes{relations prédicat-argument}. Les arêtes sont matérialisées par des flèches. Les arêtes sont étiquetées par des chiffres permettant de distinguer les différents arguments d’un prédicat : 1 pour le premier argument, 2 pour le deuxième, etc. L’ordre dans lequel les arguments sont numérotés est l’\textstyleTermes{ordre de saillance}, dont nous reparlerons au \chapref{sec:5.2} sur \textit{Les relations syntaxiques}.
 
 \begin{figure}
-\begin{tikzpicture}
-\matrix (matrix) [matrix of nodes,row sep={1.5cm,between origins}] {
-    `Ali' & & `durer' & & `deux'\\
-    & `malade' & & `semaine'\\
-};
-\draw[-{Triangle[]}] (matrix-1-5) -- (matrix-2-4) node[font=\footnotesize,midway,left] {1};
-\draw[-{Triangle[]}] (matrix-1-3) -- (matrix-2-4) node[font=\footnotesize,midway,right] {2};
-\draw[-{Triangle[]}] (matrix-1-3) -- (matrix-2-2) node[font=\footnotesize,midway,left] {1};
-\draw[-{Triangle[]}] (matrix-2-2) -- (matrix-1-1) node[font=\footnotesize,midway,left] {1};
+\begin{tikzpicture}[>={Triangle[]},label distance=0pt]
+        \matrix (matrix) [nodes={circle, draw},
+                          ampersand replacement=\&,
+                          row sep=1cm,
+                          column sep=-5pt,
+                          every label/.style={reset shape}] 
+          {
+            \node [label=above:{‘Ali’}] (Ali) {}; 
+            \& \& \node [label=above:{‘durer’}] (durer) {}; \& \& 
+            \node [label=above:{‘deux’}] (deux) {};\\
+            \& \node [label=below:{‘malade’}] (malade) {}; 
+            \& \& \node [label=below:{‘semaine’}] (semaine) {};\\
+          };
+\draw[-{Triangle[]}] (deux) -- (semaine) node[font=\footnotesize,midway,left] {1};
+\draw[-{Triangle[]}] (durer) -- (semaine) node[font=\footnotesize,midway,right] {2};
+\draw[-{Triangle[]}] (durer) -- (malade) node[font=\footnotesize,midway,left] {1};
+\draw[-{Triangle[]}] (malade) -- (Ali) node[font=\footnotesize,midway,left] {1};
 \end{tikzpicture}
 \caption{\label{fig:Graphe sémantique}Graphe sémantique}
 \end{figure}
@@ -216,11 +224,11 @@ Lors du passage du sens au texte, tout se passe comme si on suspendait le graphe
     \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip]
       \node (root) {}
         child { node{} 
-            child { node{} edge from parent[->] node[left,reset shape] {1} } 
-            edge from parent[->] node[left,reset shape] {1} }
+            child { node{} edge from parent[->] node[left,reset shape,font=\footnotesize] {1} } 
+            edge from parent[->] node[left,reset shape,font=\footnotesize] {1} }
         child { node{} 
-            child { node{} edge from parent[<-] node[right,reset shape] {1} } 
-            edge from parent[->] node[right,reset shape] {2} };
+            child { node{} edge from parent[<-] node[right,reset shape,font=\footnotesize] {1} } 
+            edge from parent[->] node[right,reset shape,font=\footnotesize] {2} };
     \end{scope}
     \node [right=1ex of root] {`durer'};
     \node [left=1ex of root-1] {`malade'};
@@ -355,7 +363,7 @@ Comme nous l’avons expliqué dans la section précédente, chaque unité lexic
                                          {hiérarchisation\\«~lexicalisation~»}
             };
     \end{tikzpicture}
-    \caption{\label{fig:}\color{red}Please provide a caption}
+    \caption{\label{fig:}Les deux étapes du passage du sens au texte}
     \end{figure}
 }
 \section{Ce que la langue nous force à dire}\label{sec:1.2.11}
@@ -384,12 +392,12 @@ En conclusion, il n’est pas possible en français de communiquer uniquement no
 
     Ces deux informations doivent obligatoirement figurer dans le choix lexical de l’adjectif et la conjugaison de la copule :
 
-    \begin{enumerate}
-    \item  {\cjkfont ピエール\textbf{さん}は\textbf{御}病気\textbf{です}。}  Pieru-\textbf{san}{}-wa \textbf{go-}byoki \textbf{desu}.
-    \item  {\cjkfont ピエールは病気\textbf{です}。}    Pieru-wa byoki \textbf{desu}.
-    \item  {\cjkfont ピエール\textbf{さん}は\textbf{御}病気\textbf{だ}。} Pieru-\textbf{san}{}-wa \textbf{go-}byoki \textbf{da}.
-    \item  {\cjkfont ピエールは病気\textbf{だ}。} Pieru-wa byoki \textbf{da}.
-    \end{enumerate}
+    \ea
+    \ea  {\cjkfont ピエール\textbf{さん}は\textbf{御}病気\textbf{です}。}  Pieru-\textbf{san}{}-wa \textbf{go-}byoki \textbf{desu}.
+    \ex  {\cjkfont ピエールは病気\textbf{です}。}    Pieru-wa byoki \textbf{desu}.
+    \ex  {\cjkfont ピエール\textbf{さん}は\textbf{御}病気\textbf{だ}。} Pieru-\textbf{san}{}-wa \textbf{go-}byoki \textbf{da}.
+    \ex  {\cjkfont ピエールは病気\textbf{だ}。} Pieru-wa byoki \textbf{da}.
+    \z
 
     La respectabilité envers Pierre est exprimée par le suffixe \textsc{san} et par le choix d’une forme polie \textsc{go-byoki} de l’adjectif ‘malade’. La respectabilité envers l’interlocuteur est exprimée par la forme polie de la copule, \textit{desu}, opposée à la forme neutre \textit{da}. Ces deux marques de respectabilité sont indépendantes, ce qui nous donne quatre formes possibles.
 

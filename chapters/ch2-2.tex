@@ -87,7 +87,7 @@ On peut représenter l’application du principe de commutation enrichi par un \
   \matrix [right=1cm of matrix1, matrix of nodes, row sep=1cm, column sep=1cm, 
            nodes={font=\strut}] 
     (matrix2) {
-    \textit{broy+eur} B  & \textit{compress+eur} B\\
+    \textit{broy+eur}    & \textit{compress+eur}\\
     \textit{broy+ons}    & \textit{compress+ons}\\
     };
   \draw (matrix2-1-1) -- (matrix2-1-2)
@@ -269,10 +269,9 @@ Un \textbf{signe} qui \textbf{commute librement} avec son environnement est appe
        \draw
           (1,0) circle [draw,radius=48pt] 
           (2,0) circle [draw,clip,radius=18pt];
-       \node at (1,-2) {A $\subseteq$ B};
+       \node at (1,-2) {B $\subseteq$ A};
       \end{tikzpicture}
       \caption{Inclusion}
-      \todo[inline]{Shouldn't it be B $\subseteq$ A here??}
     \end{figure}
     
     \begin{figure}
@@ -292,7 +291,7 @@ Un \textbf{signe} qui \textbf{commute librement} avec son environnement est appe
 
     À tout ensemble B inclus dans A, on peut associer le \textstyleTermesapprof{complémentaire} \textrm{${\complement}$}\textsubscript{A}B de B dans A.
 
-    À tout ensemble E, on peut associer l’\textstyleTermesapprof{ensemble des parties} de E, noté 2\textsuperscript{E} ou \textrm{PPPFIXME}(E), avec un \textrm{PPPFIXME} comme \textit{partie}. La notation 2\textsuperscript{E} repose sur le fait que si E a \textit{n} éléments, alors 2\textsuperscript{E} a 2\textit{\textsuperscript{n}} éléments.
+    À tout ensemble E, on peut associer l’\textstyleTermesapprof{ensemble des parties} de E, noté 2\textsuperscript{E} ou $\mathcal{P}(\text{E})$, avec un $\mathcal{P}$ comme \textit{partie}. La notation 2\textsuperscript{E} repose sur le fait que si E a \textit{n} éléments, alors 2\textsuperscript{E} a 2\textit{\textsuperscript{n}} éléments.
 
     Les ensembles \textrm{${\varnothing}$} et E sont respectivement le \textstyleTermesapprof{plus petit} et le \textstyleTermesapprof{plus grand élément} de 2\textsuperscript{E} pour l’inclusion.
 
@@ -336,7 +335,7 @@ Un \textbf{signe} qui \textbf{commute librement} avec son environnement est appe
     Le schéma suivant illustre la dualité. La dualité lie des \textstyleTermesapprof{objets} à des \textstyleTermesapprof{propriétés~}: dans notre cas, les objets sont les signes et les propriétés les environnements (plus exactement la propriété est la compatibilité avec un environnement). Les propriétés définissent des classes d’objets, tandis que les objets définissent des familles de propriétés. Mais le procédé est totalement symétrique et on peut très bien considérer les propriétés comme nos objets et les objets comme leurs propriétés : dans ce cas, les «~propriétés~» d’une propriété donnée sont les objets compatibles avec elle.
 
     \begin{figure}
-    \caption{\color{red}Please add a caption}
+    \caption{Dualité entre objets\slash signes et propriétés\slash environnements}
     %% Kudos to Schrödinger's cat for showing the basic workings
     %% of the 3d TikZ library in an unrelated Question at 
     %% https://tex.stackexchange.com/a/548688
@@ -351,12 +350,12 @@ Un \textbf{signe} qui \textbf{commute librement} avec son environnement est appe
       \begin{scope}[canvas is xy plane at z=-5,transform shape]
         \draw (0,0) circle [radius=2cm] coordinate (circle2);
         \node (A) [draw,circle] at (-1,0) {A};
-        \node (familie) [draw,circle] at (.5,0) {familie(B)};
+        \node (famille) [draw,circle] at (.5,0) {famille(B)};
         \node[left=2cm of circle2] {propriétés};
         \node[right=2cm of circle2] {environnements};
       \end{scope}
     \draw  (A.north) -- (classe.335);
-    \draw (B) -- (familie.north);
+    \draw (B) -- (famille.north);
     \end{tikzpicture}
     \end{figure}
 
@@ -401,7 +400,7 @@ Considérons maintenant d’autres occurrences de /\textstylePhono{avãs-}/ dans
    \draw [-{Triangle[]}] (avance.south west) -- (avance.south east) node [midway,below] {axe syntagmatique};
    \draw [-{Triangle[]}] (avance.south west) -- (avance.north west) node [very near end,left=2ex,rotate=90] {axe paradigmatique};
 \end{tikzpicture}
-\caption{Découpage de /\textstylePhono{avãs-}/ selon les axes paradigmatique et syntagmatique\todo[inline]{Would you like to have vertical rules left and right of ``avance'' in every line?}}
+\caption{Découpage de /\textstylePhono{avãs-}/ selon les axes paradigmatique et syntagmatique}
 \end{figure}
 
 Dans les énoncés \textit{Ma montre} \textbf{\textit{avanc}}\textit{e} ou \textit{Les travaux n’}\textbf{\textit{avanc}}\textit{ent pas très vite}, nous n’avons plus affaire au même signe /\textstylePhono{avãs-}/, car le sens n’est plus ‘se déplacer vers l’avant’. On peut néanmoins considérer qu’il s’agit, d’un certain point de vue, du même segment, car même si le sens est différent, il reste lié au premier sens que nous avons considéré. Il s’agit d’acceptions métaphoriques : lorsque ma montre avance, c’est comme si l’aiguille avançait plus vite que le temps ; lorsque les travaux avancent, ils se rapprochent de leur achèvement. De plus, la forme du signe est exactement la même et sa combinatoire assez similaire : \textit{avanç-} se combine toujours avec -\textit{ait} (\textit{Ma montre} \textbf{\textit{avanç}}\textit{ait}), mais par contre elle n’accepte plus de complément locatif (\textit{L’âne} \textbf{\textit{avanç}}\textit{ait vers moi ; \textsuperscript{\#}}\textit{Ma montre avance vers moi}). Bien qu’il s’agisse de trois signes différents (puisque les signifiés sont différents), nous considérons pourtant qu’ils appartiennent à une même unité, qu’on nomme généralement le verbe \textsc{avancer}.
@@ -510,7 +509,7 @@ L’étude des \textstyleTermes{morphèmes sous-lexicaux}, c’est-à-dire des o
 \eiffel{À la limite entre morphème sous-lexical et syntaxème flexionnel}{%\label{sec:2.2.19}
     La notion de commutation libre est \textstyleTermesapprofondissement{graduelle} et il est parfois difficile pour certains morphèmes de les situer entre morphème sous-lexical et syntaxème (flexionnel). Le cas du morphème -\textit{ment} qui transforme un adjectif en adverbe est un cas intéressant de morphème qui ne commute pas librement, mais s’en approche néanmoins. Dans de nombreux cas, le changement de partie du discours opéré par \textit{{}-ment} ne s’accompagne d’aucun changement de sens, ce qui signifie que la commutation est propre : cf. le passage de \textit{un départ rapide} à \textit{partir rapidement} ou de \textit{une réflexion intense} à \textit{réfléchir intensément}. Mais la dérivation en -\textit{ment} n’est pas systématiquement possible : cf. \textit{une réflexion poussée}/\textit{élaborée} vs *\textit{réfléchir poussément}/\textit{élaborément}, \textit{un départ inattendu} vs *\textit{partir inattendument}. Même des adjectifs très courant comme \textsc{gros} n’ont pas d’adverbe correspondant : \textit{faire une grosse erreur} vs *\textit{se tromper grossement}. Certains adverbes en -\textit{ment} sont fort peu diagrammatiques et ne peuvent pas être décomposés proprement, comme \textit{vraiment}, \textit{carrément} ou \textit{vertement}. En conséquence, la classe des éléments qui se combine avec \textit{{}-ment} comporte pas mal d’irrégularités et est par exemple différente de la classe des adjectifs qui se combinent avec \textit{de façon}, puisqu’on a \textit{de façon poussée, élaborée} ou \textit{inattendue} et pas \textit{de façon verte}. On peut également noter quelques irrégularités morphologiques (voir la \sectref{sec:2.2.20} sur l’\textit{Allomorphie}) dans la combinaison de \textit{{}-ment} et d’un adjectif, toutefois la combinaison libre des verbes avec leur flexion comprend davantage encore d’idiosyncrasies, donc les arguments purement morphologiques ne permettent pas de décider s’il s’agit de combinaison libre ou non.
 
-    Un autre cas discutable est le «~genre~» des noms. Le genre des noms ne doit pas être confondu avec le genre des adjectifs. Le genre des adjectifs est un syntaxème flexionnel qui se combine librement avec l’adjectif. Il n’a aucune contribution sémantique et sert seulement à mieux marquer la dépendance entre le nom et l’adjectif qui le qualifie (ce rôle syntaxique constitue la signification du syntaxème flexionnel). Certains noms varient apparemment en genre comme \textit{lion} vs \textit{lionne}, \textit{acteur} vs \textit{actrice} ou \textit{prince} vs \textit{princesse}. Mais dans ce cas, l’opposition est sémantique et marque une opposition de sexe : la lionne est la femelle du lion. Elle peut s’accompagner d’une variation de sens plus importante, puisque par exemple un prince est toujours le fils d’un roi, tandis qu’une princesse peut être la fille d’un roi ou la femme d’un prince. De même, un lion et une lionne possèdent des différences morphologiques suffisamment importantes, comme la crinière, pour qu’il soit bizarre de dire qu’une lionne est un lion femelle. De plus, cette alternance de genre est assez capricieuse avec de nombreux noms dons le genre est fixe (\textit{grenouille, girafe, chacal, moustique,} etc.), même si l’alternance de sexe reste signifiante et plusieurs cas où deux formes sans liens morphologiques existent (\textit{poule} et \textit{coq} ou \textit{jument} et \textit{étalon}). Citons encore les nombreux trous que des néologismes comme \textit{auteure} ou \textit{professeure} peinent encore à combler. Il y a donc toutes les raisons de considérer le /\textstylePhonoApprofondissement{ɛs}/ de /\textstylePhonoApprofondissement{prɛsɛs}/ \textit{princesse} comme un morphème sous-lexical plutôt qu’un syntaxème flexionnel.
+    Un autre cas discutable est le «~genre~» des noms. Le genre des noms ne doit pas être confondu avec le genre des adjectifs. Le genre des adjectifs est un syntaxème flexionnel qui se combine librement avec l’adjectif. Il n’a aucune contribution sémantique et sert seulement à mieux marquer la dépendance entre le nom et l’adjectif qui le qualifie (ce rôle syntaxique constitue la signification du syntaxème flexionnel). Certains noms varient apparemment en genre comme \textit{lion} vs \textit{lionne}, \textit{acteur} vs \textit{actrice} ou \textit{prince} vs \textit{princesse}. Mais dans ce cas, l’opposition est sémantique et marque une opposition de sexe : la lionne est la femelle du lion. Elle peut s’accompagner d’une variation de sens plus importante, puisque par exemple un prince est toujours le fils d’un roi, tandis qu’une princesse peut être la fille d’un roi ou la femme d’un prince. De même, un lion et une lionne possèdent des différences morphologiques suffisamment importantes, comme la crinière, pour qu’il soit bizarre de dire qu’une lionne est un lion femelle. De plus, cette alternance de genre est assez capricieuse avec de nombreux noms dons le genre est fixe (\textit{grenouille, girafe, chacal, moustique,} etc.), même si l’alternance de sexe reste signifiante et plusieurs cas où deux formes sans liens morphologiques existent (\textit{poule} et \textit{coq} ou \textit{jument} et \textit{étalon}). Citons encore les nombreux trous que des néologismes comme \textit{auteure} ou \textit{professeure} peinent encore à combler. Il y a donc toutes les raisons de considérer le /\textstylePhonoApprofondissement{ɛs}/ de /\textstylePhonoApprofondissement{pr\~{ɛ}sɛs}/ \textit{princesse} comme un morphème sous-lexical plutôt qu’un syntaxème flexionnel.
 }
 \section{Allomorphie}\label{sec:2.2.20}
 
@@ -585,8 +584,8 @@ Lorsque l’\textbf{absence} d’un syntaxème est \textbf{signifiante}, on peut
 Les syntaxèmes zéros sont des objets abstraits introduits par les linguistes pour modéliser le caractère obligatoire d’un autre syntaxème. C’est parce que le pluriel doit obligatoirement être marqué sur les noms en anglais, la plupart du temps par \textit{{}-s}, et que donc le singulier est marqué par l’absence de ce morphème, que l’on peut dire que le singulier des noms en anglais est marqué par un syntaxème zéro. Dans l’exemple suivant, la première ligne donne le mot anglais décomposé au niveau morphologique et la deuxième ligne sa \textstyleTermes{glose}, indiquant les syntaxèmes en jeu :
 
 \ea
-{cat}{}-${\varnothing}$      \textit{cat-s}\\
-chat-SG    chat-PL
+\gll \textit{cat-∅}  \hspace{1em}  \textit{cat-s}\\
+      chat-SG  {}  chat-PL\\
 \z
 
 Les syntaxèmes zéros appartiennent toujours à un \textbf{paradigme fermé}, condition sine qua non pour que \textbf{l’absence} \textbf{soit signifiante}. Ce sont donc nécessairement des \textbf{syntaxèmes flexionnels}.
