@@ -3,12 +3,13 @@
 \usepackage[framemethod=tikz]{mdframed}
 \mdfsetup
   {
-    skipabove=2\baselineskip,
-    skipbelow=2\baselineskip,
-    frametitlefont=\sffamily\bfseries\Large, 
+    skipabove=1\baselineskip,
+    skipbelow=0\baselineskip,
+    frametitlefont=\sffamily\bfseries, 
+    frametitlealignment = \raggedright,
     needspace=4\baselineskip, 
-    splittopskip=\baselineskip,
-    apptotikzsetting={ \tikzset{mdfbackground/.append style={draw=none}} }
+%     splittopskip=\baselineskip,
+    apptotikzsetting={\tikzset{mdfbackground/.append style={draw=none}}}
   }
 
 \AtEndPreamble{% Check if the external library from tikz has been loaded in the preamble. If so, skip externalising for all mdframed boxes.
@@ -103,7 +104,7 @@
 	innerleftmargin=5mm, 
 	innerrightmargin=5mm, 
 	innerbottommargin=5mm, 
-	innertopmargin=5mm
+	innertopmargin=5mm,
 }
 
 \mdfdefinestyle{tblsfilledcolumnbox}{% % Copy of tblsfilledbox with multicols
