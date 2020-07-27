@@ -41,7 +41,7 @@ Certaines caractéristiques essentielles des langues sont dues au fait que ce so
 
 Les langues des signes n’ont pas de contraintes de linéarité, puisque les gestes peuvent se développer dans toutes les dimensions de l’espace et différentes parties du corps être utilisées simultanément (mains, position de la tête, regard, orientation du buste, etc.). Il y a néanmoins une contrainte temporelle dans la communication qui veut qu’il y ait une certaine séquentialité des signes.
 
-Le caractère linéaire de la chaîne parlée est lui-même en partie contourné par l’utilisation de la \textstyleTermes{prosodie~}: les locuteurs ajoutent à la suite des sons distinctifs élémentaires qu’ils produisent — les \textstyleTermes{phonèmes} — de l’information en modulant leur mélodie et en jouant sur l’intensité du signal et la durée des phonèmes. Ceci permet non seulement de communiquer certaines émotions, mais aussi de structurer la chaîne parlée en faisant apparaître des regroupements ou des changements de plan. On retrouve à l’écrit une transcription de la prosodie par la \textstyleTermes{ponctuation} (point, virgule, :, ?, !).  On peut imaginer qu’un langage purement écrit aurait développé un tout autre système et on voit que la ponctuation n’est rien d’autre qu’un marquage partiel et imparfait de la prosodie. On notera que, avec le récent développement du dialogue par écrit, le système de ponctuation s’est enrichi des smileys, émojis et autres émoticônes (🙂, 🙁 et plein d’autres).
+Le caractère linéaire de la chaîne parlée est lui-même en partie contourné par l’utilisation de la \textstyleTermes{prosodie~}: les locuteurs ajoutent à la suite des sons distinctifs élémentaires qu’ils produisent — les \textstyleTermes{phonèmes} — de l’information en modulant leur mélodie et en jouant sur l’intensité du signal et la durée des phonèmes. Ceci permet non seulement de communiquer certaines émotions, mais aussi de structurer la chaîne parlée en faisant apparaître des regroupements ou des changements de plan. On retrouve à l’écrit une transcription de la prosodie par la \textstyleTermes{ponctuation} (point, virgule, :, ?, !).  On peut imaginer qu’un langage purement écrit aurait développé un tout autre système et on voit que la ponctuation n’est rien d’autre qu’un marquage partiel et imparfait de la prosodie. On notera que, avec le récent développement du dialogue par écrit, le système de ponctuation s’est enrichi des smileys, émojis et autres émoticônes (\HappySmiley{}, \SadSmiley{}, et plein d’autres).
 
 Nous aurons plusieurs fois l’occasion dans cet ouvrage de montrer que les faits de langue se comprennent bien mieux lorsqu’on se place du côté de l’oral et que notre objet d’étude est d’abord la langue parlée, même si, par commodité, dans un ouvrage écrit, il est souvent plus facile de donner des exemples écrits.
 
@@ -57,12 +57,10 @@ Notre définition de la langue n’est compréhensible que si on s’entend quel
 Pour Bloomfield, il y a \textstyleTermes{acte de langage} lorsque Jill a faim, qu’elle voit une pomme dans un arbre et qu’au lieu de grimper dans l’arbre la cueillir, elle produit un son avec son larynx, sa langue et ses lèvres et que c’est Jack qui cueille la pomme et la lui apporte. Autrement dit, face à un stimulus S (Jill a faim et voit une pomme), il y a deux voies pour arriver à la réaction R :
 
 \begin{itemize}
-\item %%[Warning: Draw object ignored]
+\item 
 la voie directe S → R, où Jill grimpe dans l’arbre,
-\item %%[Warning: Draw object ignored]
-%%[Warning: Draw object ignored]
-%%[Warning: Draw object ignored]
-et la voie indirecte S → r \_\,\_\,\_ s → R, où une réaction linguistique r se substitue à la réaction mécanique de Jill et où le stimulus s qu’elle provoque donne la réaction R chez Jack.
+\item 
+et la voie indirecte S → \begin{tikzpicture}[baseline=(r.base)] \node at (0,0) (r) {r}; \node[right=1em of r] (s) {s}; \draw[dashed,thick] (r) -- (s);\end{tikzpicture} → R, où une réaction linguistique r se substitue à la réaction mécanique de Jill et où le stimulus s qu’elle provoque donne la réaction R chez Jack.
 \end{itemize}
 
 Reprenons la citation de Bloomfield, donnée dans l’\encadref{fig:1.1.1} sur \textit{La langue comme correspondance sens-texte}, sous ce nouvel éclairage :
@@ -151,26 +149,20 @@ Nous allons montrer trois phénomènes qui illustrent l’influence de la planif
 
 Les premiers indices de la planification en cours sont les nombreuses amorces que le locuteur fait et auxquelles il renonce momentanément ou définitivement. Dans l’exemple suivant, la locutrice semble ne pas trouver tout de suite la bonne formulation ; elle hésite et répété \textit{les} pour se donner du temps, amorce la production de \textit{les capitales}, mais s’y prend quand même à deux fois pour finalement proposer une reformulation par \textit{les grandes villes} :
 
-\begin{figure}
+\ea
 et je voulais pas aller à Addis Abeba puisque \textbf{les les les les c-} \textbf{les capitales les grandes villes} ne me disaient rien du tout
-\end{figure}
+\z
 
 À chaque fois, on obtient une \textstyleTermes{bribe}, c’est-à-dire un segment inachevé qui est ensuite corrigé par le locuteur. La disposition suivante du texte, dite \textstyleTermes{analyse en grille}, permet de mettre en évidence l’\textstyleTermes{entassement} (voir le \chapref{sec:5.5}) dans la même position syntaxique de la bribe et du segment qui vient la remplacer :
 
-\ea
-%%[Warning: Draw object ignored]
-et je voulais pas aller à AA puisque   \textbf{les}
-
-  les
-
-  les
-
-  les c-
-
-  les capitales
-
-  \textbf{les grandes villes} ne me disaient rien du tout
-
+\ea \begin{tabularx}{\linewidth}[t]{@{}l|>{\hangindent=1em}Q@{}}
+et je voulais pas aller à AA puisque  & \textbf{les}\\
+                                      & les\\
+                                      & les\\
+                                      & les c-\\
+                                      & les capitales\\
+                                      & \textbf{les grandes villes} ne me disaient rien du tout
+    \end{tabularx}
 \z
 
 Plus étonnant est le phénomène de la \textstyleTermes{greffe} bien étudié par José Deulofeu (voir la partie 6). L’exemple suivant en fourni deux :
@@ -183,57 +175,33 @@ on avait critiqué le le journal de je crois que c’était le Provençal on l�
 
 À deux reprises, ici, le locuteur ne trouve pas le nom qu’il cherche et il vient greffer un énoncé qui pourrait fonctionner comme un énoncé autonome et qui est ici inséré dans l’énoncé principal dont il assure la complétion. Nous reprenons le texte précédent en le disposant selon les principes de l’analyse en grille et en indiquant les greffes en gras.
 
-\ea
-on avait critiqué  le
-
-    le journal de
-
-%%[Warning: Draw object ignored]
-   je crois que c’était    le Provençal
-
-%%[Warning: Draw object ignored]
-on l’avait critiqué   par rapport à
-
-  ou le Méridional
-
-%%[Warning: Draw object ignored]
-   par rapport à la mort de    \textbf{comment il s’appelle}
-
-  pas Coluche
-
-  l’autre
-
+\ea \begin{tabular}[t]{@{}l|l|l@{}}
+on avait critiqué & \multicolumn{2}{l}{le}\\
+                  & \multicolumn{2}{l}{le journal de}\\
+                  & je crois que c’était  &  le Provençal\\
+on l’avait critiqué &  par rapport à & \\
+                    &                & ou le Méridional\\
+                    & par rapport à la mort de  &  \textbf{comment il s’appelle}\\
+\multicolumn{2}{c|}{} & pas Coluche\\
+\multicolumn{2}{c|}{} & l’autre             
+\end{tabular}\todo[inline]{please check \& confirm}
 \z
 
 On notera que la première greffe s’entrelace avec l’énoncé principal, ce qui semble montrer que le locuteur poursuit en parallèle la planification de son énoncé principal et de la greffe. On voit à nouveau ici un fonctionnement par entassement de segments similaires ou identiques (\textit{on avait critiqué le journal - on l’avait critiqué, par rapport à - par rapport à}).
 
 Un dernier phénomène illustre bien le fait que la planification a lieu en même temps que l’énonciation : les parenthèses. On appelle \textstyleTermes{parenthèse} tout énoncé qui vient s’insérer dans l’énoncé principal et qui est marqué par un changement de registre (une modification de l’intonation) qui le détache nettement de l’énoncé principal. Dans le texte suivant, nous avons indiqué les parenthèses entre parenthèses et nous avons directement disposé le texte en grille :
 
-\ea
-donc pour essayer un petit peu de sortir cette personne de la misère
-
-  (car c’est vraiment un petit peu semblable aux Misérables de Victor-Hugo)
-
-%%[Warning: Draw object ignored]
-   nous essayons tant bien que mal de lui faire comprendre que \textbf{sa cabane}
-
-%%[Warning: Draw object ignored]
-  dans quelques années (entre parenthèses, elle a 79 ans)
-
-%%[Warning: Draw object ignored]
-  quand elle aura     des difficultés (ce qu’on espère pas)
-
-    des difficultés à se déplacer ou à évoluer (c’est-à-dire qu’il y a
-
-   énormément d’escaliers à monter pour arriver à sa cabane)
-
-%%[Warning: Draw object ignored]
-  donc le jour    où elle ne pourra plus se déplacer \\
-               ou qu’elle sera malade un petit peu plus sévèrement,
-
-   on essaye de lui faire comprendre qu’elle ne pourra plus vivre dans cette cabane
-
-%%[Warning: Draw object ignored]
+\ea \begin{tabular}[t]{@{}|p{1cm}ll@{}}
+    \multicolumn{3}{l}{donc pour essayer un petit peu de sortir cette personne de la misère}\\
+    \multicolumn{1}{c}{}& \multicolumn{2}{>{\hangindent=1em}p{.75\textwidth}}{(car c’est vraiment un petit peu semblable aux Misérables de Victor-Hugo)}\\
+    \multicolumn{3}{|l}{nous essayons tant bien que mal de lui faire comprendre que \textbf{sa cabane}}\\
+    & \multicolumn{2}{|l}{dans quelques années (entre parenthèses, elle a 79 ans)}\\
+    & \multicolumn{1}{|l}{quand elle aura} & \multicolumn{1}{|l}{des difficultés (ce qu’on espère pas)}\\
+    & \multicolumn{1}{|l}{} & \multicolumn{1}{|>{\hangindent=1em}p{.55\textwidth}}{des difficultés à se déplacer ou à évoluer (c’est-à-dire qu’il y a énormément d’escaliers à monter pour arriver à sa cabane)}\\
+    & \multicolumn{1}{|l}{donc le jour} & \multicolumn{1}{|l}{où elle ne pourra plus se déplacer}\\
+    & \multicolumn{1}{|l}{} & \multicolumn{1}{|>{\hangindent=1em}p{.55\textwidth}}{ou qu’elle sera malade un petit peu plus sévèrement,}\\
+    \multicolumn{3}{|>{\hangindent=1em}p{.85\textwidth}}{on essaye de lui faire comprendre qu’elle ne pourra plus vivre dans cette cabane}
+\end{tabular}\todo[inline]{Kindly review \& comment}
 \z
 
 On peut résumer le contenu de ce texte ainsi : comme cette personne a 79 ans et qu’il y a énormément d’escaliers pour arriver à sa misérable cabane, il faut lui faire comprendre qu’elle ne pourra plus y vivre dans quelques années. On voit que deux informations essentielles (‘elle a 79 ans’ et ‘il y a énormément d’escaliers’) ont été ajoutées à la volée, ce qui a finalement obligé le locuteur à abandonner sa première proposition (\textbf{\textit{sa cabane}}, en gras dans le texte, est le sujet d’un verbe originalement planifié qui ne vient jamais) et à reprendre par une proposition équivalente (\textit{nous essayons tant bien que mal de lui faire comprendre que sa cabane} → \textit{on essaye de lui faire comprendre qu’elle ne pourra plus vivre dans cette cabane}). Il est probable qu’à la première lecture (qui aurait normalement dû être une écoute) de ce texte, vous ne vous êtes pas rendu compte que la première proposition avait été laissée inachevée : ceci montre le caractère très naturel de telles constructions et le fait que le destinataire est habitué à «~corriger~» les «~erreurs~» dues à la planification.
