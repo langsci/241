@@ -1,7 +1,16 @@
 \newcommand{\appref}[1]{Appendix \ref{#1}}
 \newcommand{\fnref}[1]{Footnote \ref{#1}}
+\renewcommand{\sectref}[1]{section~\ref{#1}}
 
 \newcommand*{\Boite}{\bgroup\normalfont\ttfamily ▢\egroup}
+
+\mdfsetup{frametitlefont=\sffamily\bfseries}
+\newcounter{ghdefinition}
+\newcommand{\Definition}[2]{%
+  \refstepcounter{ghdefinition}%
+  \tblsfd{\lsSeriesColor}{.8}{\hspace*{-\parindent}#1\hfill Définition~\thechapter.\arabic{ghdefinition}}
+  {#2}
+}
 
 \newfontfamily\xitsfont
 	  [
@@ -105,7 +114,6 @@
 \newcommand{\citations}[1]{\tblssy{guillemets}{Citations originales}{#1}}
 \newcommand{\lecturesadditionnelles}[1]{\tblssy{book}{Lectures additionnelles}{#1}}
 
-\renewcommand{\sectref}[1]{section~\ref{#1}}
 
 \newcommand{\HappySmiley}{\bgroup\fontspec[Scale=MatchUppercase]{DejaVuSansMono.ttf}☺\egroup}
 \newcommand{\SadSmiley}{\bgroup\fontspec[Scale=MatchUppercase]{DejaVuSansMono.ttf}☹\egroup}
