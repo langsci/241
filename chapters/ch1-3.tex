@@ -95,12 +95,12 @@ Un modèle déclaratif est normalement un \textstyleTermes{modèle de la compét
 
     Une \textstyleTermes{grammaire de correspondance} est une grammaire définissant la \textbf{correspondance entre deux ensembles de structures}, par exemple des représentations sémantiques et des textes (voir l’\encadref{fig:1.3.9} sur \textit{La Théorie Sens-Texte}). On peut utiliser trois types de procédures pour définir une correspondance avec une grammaire de correspondance : procédure générative, équative ou transductive. Une \textstyleTermes{procédure générative} est une procédure qui va générer la correspondance, c’est-à-dire l’ensemble des couples en correspondance ; au lieu de générer uniquement un texte, la grammaire génère simultanément le texte et son sens. Une \textstyleTermes{procédure équative} est une procédure qui va vérifier pour chaque couple de structures qu’on lui proposera si ces structures se correspondent ; cela suppose qu’on fournisse un texte et un sens et la procédure permettra de vérifier que ce texte et ce sens peuvent être associés par la grammaire. Une \textstyleTermes{procédure transductive} est une procédure qui à chaque fois qu’on lui propose une structure est capable de construire toutes les structures qui lui correspondent ; dans ce cas, on fournit soit un texte, soit un sens et la procédure construit les sens correspondant au texte ou les textes correspondant au sens. Dans le \chapref{sec:1.2}, nous avons adopté une procédure transductive pour associer un graphe sémantique à des arbres syntaxiques.
 
-    Ces trois types de procédure peuvent être utilisés pour présenter une même grammaire. Ce qui distingue ces trois procédures est le nombre de structures au départ : 0, 1 ou 2. Dans tous les cas, on a un couple de structures à l’arrivée. Dans la procédure générative, on part de rien et on génère simultanément les deux structures en correspondance. Dans les procédures transductives, on a une structure au départ et on produit l’autre. Dans la procédure équative, on a les deux structures dès le départ~ et on vérifie qu’elles se correspondent. Nous schématisons ci-dessous les trois procédures. Supposons qu’on veuille associer des graphes sémantiques, représentés par des {\xitsfont ☆}, à des arbres syntaxiques, représentés par des {\xitsfont △}. Ce qui distingue les trois procédures, ce sont les structures données au départ : nous les schématisons en noir, tandis que les structures à construire par la procédure sont en blanc :
+    Ces trois types de procédure peuvent être utilisés pour présenter une même grammaire. Ce qui distingue ces trois procédures est le nombre de structures au départ : 0, 1 ou 2. Dans tous les cas, on a un couple de structures à l’arrivée. Dans la procédure générative, on part de rien et on génère simultanément les deux structures en correspondance. Dans les procédures transductives, on a une structure au départ et on produit l’autre. Dans la procédure équative, on a les deux structures dès le départ~ et on vérifie qu’elles se correspondent. Nous schématisons ci-dessous les trois procédures. Supposons qu’on veuille associer des graphes sémantiques, représentés par des {\xitsfont ☆}, à des arbres syntaxiques, représentés par des {\xitsfont\scriptsize △}. Ce qui distingue les trois procédures, ce sont les structures données au départ : nous les schématisons en noir, tandis que les structures à construire par la procédure sont en blanc :
     
-    \ea procédure générative :        {\xitsfont ☆} ${\Leftrightarrow}$ {\xitsfont △}
-    \ex procédures transductives :    {\xitsfont ★} ${\Rightarrow}$ {\xitsfont △}
-                                       ou {\xitsfont ☆} ${\Leftarrow}$ {\xitsfont ▲}
-    \ex procédure équative :          {\xitsfont ★} ${\Leftrightarrow}$ {\xitsfont ▲}
+    \ea procédure générative :        {\xitsfont ☆} ${\Leftrightarrow}$ {\xitsfont\scriptsize △}
+    \ex procédures transductives :    {\xitsfont ★} ${\Rightarrow}$ {\xitsfont\scriptsize △}
+                                       ou {\xitsfont ☆} ${\Leftarrow}$ {\xitsfont\scriptsize ▲}
+    \ex procédure équative :          {\xitsfont ★} ${\Leftrightarrow}$ {\xitsfont\scriptsize ▲}
     \z
     
     Pour des raisons historiques que nous venons de rappeler, la procédure générative est souvent privilégiée. La procédure équative est généralement la procédure la plus élégante pour présenter un modèle déclaratif et elle tend à se généraliser sous le nom de \textstyleTermes{grammaires de contraintes}. Mais des trois procédures, c’est la procédure transductive qui est descriptivement la plus pertinente, car c’est ce type de procédure que les locuteurs utilisent quand ils parlent : ils doivent à partir d’un sens lui faire correspondre un texte et, à l’inverse, quand ils écoutent quelqu’un qui parle, ils partent d’un texte et doivent lui donner un sens.
@@ -131,14 +131,13 @@ Nous montrerons dans cet ouvrage les différents problèmes que pose l’identif
 
     \begin{itemize}
     \item \textit{Pierre} forme à lui seul un groupe nominal, nous lui associons la valeur GN ;
-    \item \textit{dort} peut former une phrase P à condition qu’on le combine avec un GN : nous lui associons la valeur.
+    \item \textit{dort} peut former une phrase P à condition qu’on le combine avec un GN : nous lui associons la valeur $\frac{\text{P}}{\text{GN}}$.
     \end{itemize}
 
     Nous pouvons maintenant calculer la valeur associée à \textit{Pierre dort~}:
     \ea
-    {Pierre}  \textit{dort}
-
-    GN \textrm{·}    =    P
+    \gll {Pierre}  {\hspace{1em}} {dort}\\
+         GN   ·   $\frac{\text{P}}{\text{GN}}$  =    P\\
     \z
     Cette valeur est calculée en combinant les catégories associées à chaque mot et en simplifiant comme on le fait avec des fractions ordinaires. L’analyse d’une phrase devient un \textstyleTermes{calcul algébrique} similaire au calcul numérique (\textit{a.}  $\frac b a$\textit{=b}).
 
@@ -146,25 +145,15 @@ Nous montrerons dans cet ouvrage les différents problèmes que pose l’identif
 
     Ce calcul a été ensuite repris par Yehoshua Bar-Hillel en 1953, qui a montré que si l’on veut modéliser les contraintes d’ordre, il fallait distinguer ce qu’on combine à droite de ce qu’on combine à gauche. On va donc associer à \textit{dort} la catégorie GN{\textbackslash}P (qui se lit «~GN sous P~») indiquant que le GN avec lequel le verbe doit se combiner pour former une P doit se trouver à gauche. Analysons \textit{Pierre mange une banane} avec cette grammaire. Les mots de cette phrase ont les catégories~\textit{Pierre} := GN, \textit{banane} := D{\textbackslash}GN, \textit{un~}:= D et \textit{mange~}:= (GN{\textbackslash}P)/GN. Le calcul est le suivant :
 
-\ea{
-    Pierre    mange      une   banane
-    }
-    \z
-
-
- \ea
-
-
-    %%[Warning: Draw object ignored]
-    GN  \textrm{·} (GN{\textbackslash}P)/GN \textrm{·}  D   \textrm{·} D{\textbackslash}GN
-
-    %%[Warning: Draw object ignored]
-    GN  \textrm{·} (GN{\textbackslash}P)/GN  \textrm{·}     GN
-
-    %%[Warning: Draw object ignored]
-    GN \textrm{·}           GN{\textbackslash}P
-
-                        P
+\ea
+   \settowidth{\tabcolsep}{~}
+   \begin{tabular}[t]{@{}c c c c c c c@{}}
+    {Pierre} &   &  {mange} & &    {une} & &  {banane}\\
+    GN       & · & (GN{\textbackslash}P)/GN & · & D & · & D{\textbackslash}GN\\\cmidrule{5-7}
+    GN       & · & (GN{\textbackslash}P)/GN & · & \multicolumn{3}{c}{GN}\\\cmidrule{3-7}
+    GN       & · & \multicolumn{5}{c}{GN{\textbackslash}P}\\\midrule
+    \multicolumn{7}{c}{P}
+   \end{tabular}
 \z
 
 
@@ -183,18 +172,19 @@ Dans la suite de cet ouvrage, nous montrerons qu’il existe plusieurs types d�
 \loupe{La Théorie Sens-Texte}{%\label{sec:1.3.9}
     La Théorie Sens-Texte est la théorie qui a le plus fortement inspiré les auteurs de cet ouvrage. Il s’agit d’un modèle développé autour d’Igor Mel’čuk à partir de 1965, d’abord en Union Soviétique, puis au Canada et en Europe. Ce modèle est fortement stratifié : il suppose l’existence de 5 niveaux de représentation intermédiaires entre le sens et le texte, soit 7 niveaux en tout. Le système est divisé en 6 modules permettant de passer d’un niveau à l’autre. Il s’agit d’une architecture linéaire que nous présentons ci-dessous :
 
-    % \begin{figure}
-    \ea \begin{forest}for tree={edge={double,{Latex[open,length=5pt]}-{Latex[open,length=5pt]}}}
-    [\textbf{sens} = représentation sémantique
+    \begin{figure}
+    \caption{Architecture stratifiée d'un modèle Ssns-Texte}
+    \begin{forest}for tree={l=3\baselineskip,edge={double,{Triangle[open]}-{Triangle[open]}}}
+    [\textbf{sens} {=} représentation sémantique
         [représentation syntaxique profonde
             [représentation syntaxique de surface
                 [représentation morphologique profonde
                     [représentation morphologique de surface
                         [représentation phonologique profonde
-                            [\textbf{texte} = représentation phonologique de surface]]]]]]]
+                            [\textbf{texte} {=} représentation phonologique de surface]]]]]]]
     \end{forest}
+    \end{figure}
     
-    \z
     Chaque $\Leftrightarrow$         représente un module effectuant la correspondance entre deux niveaux de représentation adjacents. On trouvera une présentation et une justification de cette architecture dans le cours donné par Igor Mel’čuk en 1997 au collège de France, \textit{Vers une linguistique Sens-Texte}, disponible en ligne.
 
     Dans cet ouvrage, nous présentons les quatre niveaux supérieurs de représentation. Notre présentation peut être assez différente de celles que l’on trouve dans les travaux d’Igor Mel’čuk. Notre objectif est de justifier toutes les structures que nous introduirons, quitte parfois à remettre en question le statut ou la nature des représentations utilisées en Théorie Sens-Texte ou dans d’autres théories comparables, notamment la \textit{Lexical Functional Grammar} (\textit{LFG}) de Joan Bresnan et Ronald Kaplan, qui possède également une architecture stratificationnelle.
