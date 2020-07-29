@@ -4,7 +4,7 @@
 
 \newcommand*{\Boite}{\bgroup\normalfont\ttfamily ▢\egroup}
 
-\newcounter{ghdefinition}
+\newcounter{ghdefinition}[chapter]
 \newcommand{\Definition}[2]{%
   \refstepcounter{ghdefinition}%
   \tblsfd{\lsSeriesColor}{.8}{\hspace*{-\parindent}\normalsize #1\hfill Définition~\thechapter.\arabic{ghdefinition}}
