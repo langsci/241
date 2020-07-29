@@ -4,11 +4,10 @@
 
 \newcommand*{\Boite}{\bgroup\normalfont\ttfamily ▢\egroup}
 
-\mdfsetup{frametitlefont=\sffamily\bfseries}
 \newcounter{ghdefinition}
 \newcommand{\Definition}[2]{%
   \refstepcounter{ghdefinition}%
-  \tblsfd{\lsSeriesColor}{.8}{\hspace*{-\parindent}#1\hfill Définition~\thechapter.\arabic{ghdefinition}}
+  \tblsfd{\lsSeriesColor}{.8}{\hspace*{-\parindent}\normalsize #1\hfill Définition~\thechapter.\arabic{ghdefinition}}
   {#2}
 }
 
@@ -47,6 +46,19 @@
         -{Triangle[]},
         out=120,
         in=60
+    },
+    FnEdgeLabel/.style={
+      reset shape,
+      font=\footnotesize
+    },
+    CircleNode/.style={
+      circle, 
+      draw,
+      inner sep=2.5pt,
+    },
+    ConversionArrow/.style={
+      double, 
+      -{Triangle[open]}
     }
   }% exceptions for the every node/.style key
 

@@ -17,22 +17,18 @@ Pour comprendre le fonctionnement de la langue, il est donc nécessaire d’étu
 
 Considérons un locuteur du français qui veut exprimer un certain sens que nous allons essayer de décrire sans le verbaliser directement par une phrase. Ce sens concerne une personne \textit{x} appelée Ali et un événement \textit{e} concernant \textit{x}. Cet événement est une maladie et la durée de cette maladie est de deux semaines.  Nous pouvons représenter ce sens par la «~formule~» suivante :
 
-\begin{figure}
-\begin{tabular}{@{}ll@{}}
-\textit{x} :& ‘Ali’\\
-\textit{e} :& ‘malade’(\textit{x})\\
-\multicolumn{2}{@{}l@{}}{‘durer’(\textit{e},‘2 semaines’)}\\
-\end{tabular}
-\caption{\label{fig:}Description formelle d’un sens}
-\end{figure}
+\ea Description formelle d’un sens\\
+\textit{x} : ‘Ali’\\
+\textit{e} : ‘malade’(\textit{x})\\
+‘durer’(\textit{e},‘2 semaines’)
+\z
 
 Dans cette représentation, il y a quatre éléments de sens considérés : ‘Ali’, ‘malade’, ‘durer’ et ‘2 semaines’. Ce dernier élément est en fait la combinaison de deux sens : l’unité de temps ‘semaine’ et le prédicat ‘deux’ qui la quantifie. Ces éléments de sens sont des sens de mots du français. Ils peuvent être exprimés de façons variées : par exemple, le sens ‘durer’ peut aussi bien être exprimé par le nom \textsc{durée} que le verbe \textsc{durer} ou encore la préposition \textsc{pendant} comme nous le verrons plus loin. Remarquons que nous distinguons les \textstyleTermes{unités lexicales}, notées en majuscule (\textsc{durée}), de leur sens, noté entre guillemets simples (‘durer’). Un sens exprimable par une unité lexicale est appelé un \textstyleTermes{sens lexical}. On utilise parfois le terme \textit{sémantème} pour désigner un sens lexical, mais nous réserverons ce terme pour des signes linguistiques élémentaires (voir chapitres 2.3 et 2.4).
 
 Certains sens lexicaux fonctionnent comme des \textstyleTermes{prédicats} et possèdent des \textstyleTermes{arguments} : le sens ‘malade’ possède toujours un argument~(\textbf{\textit{quelqu’un} est malade}), le sens ‘durer’ possède deux arguments (\textbf{\textit{quelque chose}} \textit{dure} \textbf{\textit{quelque temps}}). Le sens ‘Ali’, quant à lui, renvoie à une entité du monde (ou plus exactement à la représentation mentale qu’en a le locuteur) et n’a pas d’argument. Dans la formule ci-dessus, les variables \textit{x} et \textit{e} nous ont servi à indiquer que certains sens étaient arguments d’autres : \textit{x} désigne le sens ‘Ali’ et ‘malade’(\textit{x}) signifie que l’élément désigné par \textit{x} est l’argument de ‘malade’.
 
-\begin{styleLivreImportant}
-Les \textstyleTermes{relations prédicat-argument} entre les sens lexicaux constituent la \textstyleTermes{structure prédicative}. La structure prédicative exprime le \textstyleTermes{contenu informationnel}.
-\end{styleLivreImportant}
+\Definition{\textstyleTermes{relations prédicat-argument}, \textstyleTermes{structure prédicative}, \textstyleTermes{contenu informationnel}}
+{Les \textstyleTermes{relations prédicat-argument} entre les sens lexicaux constituent la \textstyleTermes{structure prédicative}. La structure prédicative exprime le \textstyleTermes{contenu informationnel}.}
 
 Nous nous contenterons de cette définition sommaire de la structure prédicative (voir compléments dans l’\encadref{fig:1.2.4} sur \textit{Les composantes du sens}). Une définition plus précise sera donnée au \chapref{sec:3.6} sur \textit{La structure syntaxique profonde}.
 
@@ -40,7 +36,7 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
 
 \begin{figure}
 \begin{tikzpicture}[>={Triangle[]},label distance=0pt]
-        \matrix (matrix) [nodes={circle, draw},
+        \matrix (matrix) [nodes={CircleNode},
                           ampersand replacement=\&,
                           row sep=1cm,
                           column sep=-5pt,
@@ -66,24 +62,24 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
     Un \textstyleTermes{graphe} est une structure liant ensemble des éléments. Les éléments sont appelés les \textstyleTermes{nœuds} du graphe et les liens les \textstyleTermes{arêtes}. Un graphe est dit \textstyleTermes{connexe} lorsque pour chaque couple de nœuds du graphe, il existe un ensemble d’arêtes formant un chemin connectant un nœud à l’autre.
 
     \begin{figure}
-    \tikz \graph [empty nodes, nodes={circle, draw}] { f -- a -- {b--d, c--e} };
+    \tikz \graph [empty nodes, nodes={CircleNode}] { f -- a -- {b--d, c--e} };
     \caption{Graphe connexe}  
     \end{figure}
 
     \begin{figure}
     \caption{Graphe non connexe}
-    \tikz \graph [empty nodes, nodes={circle, draw}] { f -- a -- b--d, c--e };
+    \tikz \graph [empty nodes, nodes={CircleNode}] { f -- a -- b--d, c--e };
     \end{figure}
 
     Un graphe est dit \textstyleTermes{acyclique} s’il n’existe aucun chemin partant d’un nœud et revenant à ce nœud sans emprunter deux fois la même arête.
 
     \begin{figure}
-    \tikz \graph [empty nodes, nodes={circle, draw}] { f -- a -- {b--d, c--e} };
+    \tikz \graph [empty nodes, nodes={CircleNode}] { f -- a -- {b--d, c--e} };
     \caption{Graphe acyclique}   
     \end{figure}
     
     \begin{figure} 
-    \tikz \graph [empty nodes, nodes={circle, draw}] { f -- a -- {b--d, c--e}, e--d };
+    \tikz \graph [empty nodes, nodes={CircleNode}] { f -- a -- {b--d, c--e}, e--d };
     \caption{Graphe avec cycle}
     \end{figure}
 
@@ -95,24 +91,24 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
 
     \begin{figure}
     \begin{tikzpicture}
-      \node at (0,0) (nodeA) [circle,draw] {};
-      \node[below=2\baselineskip of nodeA] (nodeB) [circle,draw] {};
+      \node at (0,0) (nodeA) [CircleNode] {};
+      \node[below=2\baselineskip of nodeA] (nodeB) [CircleNode] {};
       \node[right = 1cm of nodeA] (nodeADesc) {gouverneur};
       \path let \p1 = ($ (nodeA) !.5! (nodeB) $), 
                 \p2 = (nodeADesc) 
                 in node at (\x2,\y1) (edgeDesc) {\strut dépendance};
       \node[right = 1cm of nodeB] (nodeBDesc) {dépendant};
       \draw (nodeA) -- (nodeB);
-      \draw[-{Triangle[]}] (nodeBDesc) -- (nodeB);
-      \draw[-{Triangle[]}] (nodeADesc) -- (nodeA);
-      \draw[-{Triangle[]}] (edgeDesc)  -- ($ (nodeA) !.5! (nodeB) $);
+      \draw[-{Latex[round,open]},gray] (nodeBDesc) -- ($ (nodeB) + (2mm,0mm) $);
+      \draw[-{Latex[round,open]},gray] (nodeADesc) -- ($ (nodeA) + (2mm,0mm) $);
+      \draw[-{Latex[round,open]},gray] (edgeDesc)  -- ($ (nodeA) !.5! (nodeB) + (2mm,0mm) $);
     \end{tikzpicture}
     \caption{Dépendance}  
     \end{figure}
     
     \begin{figure}
-    \begin{tikzpicture}[decoration={brace,amplitude=12pt,aspect=0.65}]
-    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip]
+    \begin{tikzpicture}[decoration={brace,amplitude=5pt,aspect=0.6,raise=3pt}]
+    \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip]
       \node (root) {}
         child { node{} child { node{} } }
         child { node (branchanchr) {} child { node {} } 
@@ -121,10 +117,10 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
     \node[right=2cm of root] (racine) {racine};
     \path let \p1=(racine), \p2=(child) in node at (\x1,\y2) (feuille) {feuille};
     \path let \p1=(racine), \p2=(branchanchr) in node at (\x1,\y2) (branche) {branche};
-    \draw [decorate] (root.south east) -- (child.north west);
-    \draw[-{Triangle[]}] (racine) -- (root);
-    \draw[-{Triangle[]}] (feuille) -- (child);
-    \draw[-{Triangle[]}] (branche) -- ++(-1.5cm,0pt);
+    \draw [decorate,gray] (root.south east) -- (child.north west);
+    \draw[-{Latex[round,open]},gray] (racine) -- ($ (root) + (3mm,0mm) $);
+    \draw[-{Latex[round,open]},gray] (feuille) -- ($ (child) + (2mm,0mm) $);
+    \draw[-{Latex[round,open]},gray] (branche) -- ++(-1.6cm,0pt);
     \end{tikzpicture}
     \caption{Branche}
     \end{figure}
@@ -134,14 +130,14 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
     Notons encore qu’il existe une notion d’acyclicité plus restrictive pour les graphes orientés : un graphe orienté est dit \textstyleTermes{acyclique} s’il n’existe aucun chemin orienté permettant de partir d’un nœud et de source en cible de revenir au même nœud.
 
     \begin{figure}
-    \tikz[>={Triangle[]}] \graph [empty nodes, nodes={circle,draw}, multi, grow down=1.5cm] {a ->[bend right] b, b ->[bend right] a};
+    \tikz[>={Triangle[]}] \graph [empty nodes, nodes={CircleNode}, multi, grow down=1.5cm] {a ->[bend right] b, b ->[bend right] a};
     \hspace{2cm}
-    \tikz[>={Triangle[]}] \graph [empty nodes, nodes={circle,draw}] { subgraph C_n [n=3, clockwise, ->]};
+    \tikz[>={Triangle[]}] \graph [empty nodes, nodes={CircleNode}] { subgraph C_n [n=3, clockwise, ->]};
     \caption{Graphes avec cycle orienté}  
     \end{figure}
     
     \begin{figure}
-    \tikz[>={Triangle[]}] \graph [empty nodes, nodes={circle,draw}, clockwise, n=3] { [path, ->] a, b, c; a ->[bend right] c; a ->[bend left] c };
+    \tikz[>={Triangle[]}] \graph [empty nodes, nodes={CircleNode}, clockwise, n=3] { [path, ->] a, b, c; a ->[bend right] c; a ->[bend left] c };
     \caption{Graphe sans cycle orienté}
     \end{figure}
 
@@ -221,29 +217,29 @@ Lors du passage du sens au texte, tout se passe comme si on suspendait le graphe
 \begin{figure}
 \begin{minipage}[c]{.5\textwidth}\centering%
 \begin{tikzpicture}[>={Triangle[]}]
-    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip]
+    \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip]
       \node (root) {}
         child { node{} 
-            child { node{} edge from parent[->] node[left,reset shape,font=\footnotesize] {1} } 
-            edge from parent[->] node[left,reset shape,font=\footnotesize] {1} }
+            child { node{} edge from parent[->] node[left,FnEdgeLabel] {\itshape 1} } 
+            edge from parent[->] node[left,FnEdgeLabel] {1} }
         child { node{} 
-            child { node{} edge from parent[<-] node[right,reset shape,font=\footnotesize] {1} } 
-            edge from parent[->] node[right,reset shape,font=\footnotesize] {2} };
+            child { node{} edge from parent[<-] node[right,FnEdgeLabel] {1} } 
+            edge from parent[->] node[right,FnEdgeLabel] {2} };
     \end{scope}
-    \node [right=1ex of root] {`durer'};
-    \node [left=1ex of root-1] {`malade'};
-    \node [left=1ex of root-1-1] {`Ali'};
-    \node [right=1ex of root-2] {`semaine'};
-    \node [right=1ex of root-2-1] {`deux'};
+    \node [right=.25ex of root] {`durer'};
+    \node [left=.25ex of root-1] {`malade'};
+    \node [left=.25ex of root-1-1] {`Ali'};
+    \node [right=.25ex of root-2] {`semaine'};
+    \node [right=.25ex of root-2-1] {`deux'};
 \end{tikzpicture}
 \end{minipage}\begin{minipage}[c]{.5\textwidth}\centering%
 \begin{forest}
 [DURER
-  [MALADIE\textsubscript{sg,déf},edge label={node[midway,above,font=\scriptsize]{1}}
-    [Adj\textsubscript{0}(ALI),edge label={node[midway,left,font=\scriptsize]{1}}]
+  [MALADIE\textsubscript{sg,déf},edge label={node[midway,above,font=\footnotesize]{1}}
+    [Adj\textsubscript{0}(ALI),edge label={node[midway,left,font=\footnotesize]{1}}]
   ]
-  [SEMAINE\textsubscript{pl,indéf},edge label={node[midway,above,font=\scriptsize]{2}}
-    [DEUX,edge label={node[midway,right,font=\scriptsize\itshape]{MOD}}]
+  [SEMAINE\textsubscript{pl,indéf},edge label={node[midway,above,font=\footnotesize]{2}}
+    [DEUX,edge label={node[midway,right,font=\footnotesize\itshape]{MOD}}]
   ]
 ]
 \end{forest}\end{minipage}
@@ -253,29 +249,29 @@ Lors du passage du sens au texte, tout se passe comme si on suspendait le graphe
 \begin{figure}
 \begin{minipage}[c]{.5\textwidth}\centering%
 \begin{tikzpicture}[>={Triangle[]}]
-    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip]
+    \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip]
       \node (root) {}
-        child { node{} edge from parent[->] node[left,reset shape] {1} }
+        child { node{} edge from parent[->] node[midway,left,FnEdgeLabel] {1} }
         child { node{} 
             child { node{} 
                     child { node{}
-                            edge from parent[<-] node[right,reset shape] {1} }
-                    edge from parent[->] node[right,reset shape] {2} } 
-            edge from parent[<-] node[right,reset shape] {1} };
+                            edge from parent[<-] node[right,FnEdgeLabel] {1} }
+                    edge from parent[->] node[right,FnEdgeLabel] {2} } 
+            edge from parent[<-] node[right,FnEdgeLabel] {1} };
     \end{scope}
-    \node [left=1ex of root] {`malade'};
-    \node [left=1ex of root-1] {`Ali'};
-    \node [right=1ex of root-2] {`durer'};
-    \node [right=1ex of root-2-1] {`semaine'};
-    \node [right=1ex of root-2-1-1] {`deux'};
+    \node [left=.25ex of root] {`malade'};
+    \node [left=.25ex of root-1] {`Ali'};
+    \node [right=.25ex of root-2] {`durer'};
+    \node [right=.25ex of root-2-1] {`semaine'};
+    \node [right=.25ex of root-2-1-1] {`deux'};
 \end{tikzpicture}
 \end{minipage}\begin{minipage}[c]{.5\textwidth}\centering
 \begin{forest}
 [V\textsubscript{0}(MALADE)\textsubscript{passé}
-  [ALI,edge label={node[midway,above,font=\scriptsize]{1}}]
-  [PENDANT,edge label={node[midway,above,font=\scriptsize\itshape]{MOD}}
-    [SEMAINE\textsubscript{pl,indéf},edge label={node[midway,right,font=\scriptsize]{2}}
-        [DEUX,edge label={node[midway,right,font=\scriptsize\itshape]{MOD}}]
+  [ALI,edge label={node[near start,left,xshift=-5pt,font=\footnotesize]{1}}]
+  [PENDANT,edge label={node[near start,right,xshift=5pt,font=\footnotesize\itshape]{MOD}}
+    [SEMAINE\textsubscript{pl,indéf},edge label={node[midway,right,font=\footnotesize]{2}}
+        [DEUX,edge label={node[midway,right,font=\footnotesize\itshape]{MOD}}]
     ]
   ]
 ]
@@ -290,15 +286,16 @@ Chaque dépendance est étiquetée en fonction de son parcours : les relations s
 \begin{figure}
 \begin{minipage}[c]{.15\textwidth}\centering%
 \begin{tikzpicture}[>={Triangle[]}]
-    \begin{scope}[every node/.style={circle,draw},level distance=3\baselineskip]
+    \begin{scope}[every node/.style={CircleNode},level distance=3\baselineskip]
     \node (root) {}
         child { node{} 
                 edge from parent[->] 
-                node [right,reset shape] {1} 
-                node [left, reset shape] {\Large ⇓}};
+                node [right,FnEdgeLabel] {1}
+               };
     \end{scope}
-    \node[above=5pt of root]    {`durer'};
-    \node[below=5pt of root-1]  {`malade'};
+    \draw[ConversionArrow] ($(root.south west) + (-1ex,-1.5ex)$) -- ($(root-1.north west) + (-1ex,1.5ex)$);
+    \node[above=.25ex of root]    {`durer'};
+    \node[below=.25ex of root-1]  {`malade'};
 \end{tikzpicture}\end{minipage}
 \begin{minipage}[c]{.1\textwidth}\centering⇒\end{minipage}
 \begin{minipage}[c]{.15\textwidth}\centering%
@@ -306,7 +303,7 @@ Chaque dépendance est étiquetée en fonction de son parcours : les relations s
 \node (root) {DURER}
         child { node{MALADIE} 
                 edge from parent
-                node [right,reset shape] {1} 
+                node [right,FnEdgeLabel] {1} 
                 };
 \end{tikzpicture}\end{minipage}
 \caption{Dépendance actancielle} 
@@ -315,15 +312,16 @@ Chaque dépendance est étiquetée en fonction de son parcours : les relations s
 \begin{figure}
 \begin{minipage}[c]{.15\textwidth}\centering%
 \begin{tikzpicture}[>={Triangle[]}]
-    \begin{scope}[every node/.style={circle,draw},level distance=3\baselineskip]
+    \begin{scope}[every node/.style={CircleNode},level distance=3\baselineskip]
     \node (root) {}
         child { node{} 
                 edge from parent[<-] 
-                node [right,reset shape] {1} 
-                node [left, reset shape] {\Large ⇓}};
+                node [right,FnEdgeLabel] {1}
+               };
     \end{scope}
-    \node[above=5pt of root]    {`malade'};
-    \node[below=5pt of root-1]  {`durer'};
+    \draw[ConversionArrow] ($(root.south west) + (-1ex,-1.5ex)$) -- ($(root-1.north west) + (-1ex,1.5ex)$);
+    \node[above=.25ex of root]    {`malade'};
+    \node[below=.25ex of root-1]  {`durer'};
 \end{tikzpicture}\end{minipage}
 \begin{minipage}[c]{.1\textwidth}\centering⇒\end{minipage}
 \begin{minipage}[c]{.15\textwidth}\centering%
@@ -331,7 +329,7 @@ Chaque dépendance est étiquetée en fonction de son parcours : les relations s
 \node (root) {MALADE}
         child { node{PENDANT} 
                 edge from parent
-                node [right,reset shape,font=\itshape] {MOD} 
+                node [right,FnEdgeLabel] {\itshape MOD} 
                 };
 \end{tikzpicture}
 \end{minipage}
@@ -352,14 +350,14 @@ Comme nous l’avons expliqué dans la section précédente, chaque unité lexic
     La phase de hiérarchisation s’accompagne d’une phase de «~lexicalisation~», c’est-à-dire de choix de signes linguistiques élémentaires, des unités lexicales et des unités grammaticales, qui se contraignent les unes les autres. La phase de linéarisation s’accompagne d’une «~morphologisation~» des signes, c’est-à-dire de combinaison des signifiants selon des règles morpho-phonologiques propres à chaque langue. Une telle architecture est à la base de la  Théorie Sens-Texte, que nous évoquerons dans l’\encadref{fig:1.3.9} éponyme.
 
     \begin{figure}
-    \begin{tikzpicture}[>={Triangle[]},level distance=4\baselineskip]
+    \begin{tikzpicture}[level distance=4\baselineskip]
     \node [font=\bfseries] (root) {sens}
         child { node[font=\bfseries] {arbre syntaxique}
                 child { node[font=\bfseries] {chaîne parlée} 
-                        edge from parent [->] node[left,text width=4cm,align=center]
+                        edge from parent [ConversionArrow] node[left,text width=4cm,align=center]
                                          {linéarisation\\«~morphologisation~»}
                        }
-                edge from parent [->] node[left,text width=4cm,align=center]
+                edge from parent [ConversionArrow] node[left,text width=4cm,align=center]
                                          {hiérarchisation\\«~lexicalisation~»}
             };
     \end{tikzpicture}
@@ -393,10 +391,10 @@ En conclusion, il n’est pas possible en français de communiquer uniquement no
     Ces deux informations doivent obligatoirement figurer dans le choix lexical de l’adjectif et la conjugaison de la copule :
 
     \ea
-    \ea  {\cjkfont ピエール\textbf{さん}は\textbf{御}病気\textbf{です}。}  Pieru-\textbf{san}{}-wa \textbf{go-}byoki \textbf{desu}.
-    \ex  {\cjkfont ピエールは病気\textbf{です}。}    Pieru-wa byoki \textbf{desu}.
-    \ex  {\cjkfont ピエール\textbf{さん}は\textbf{御}病気\textbf{だ}。} Pieru-\textbf{san}{}-wa \textbf{go-}byoki \textbf{da}.
-    \ex  {\cjkfont ピエールは病気\textbf{だ}。} Pieru-wa byoki \textbf{da}.
+    \ea  {\cjkfont ピエール\textbf{さん}は\textbf{御}病気\textbf{です}。}\\Pieru-\textbf{san}{}-wa \textbf{go-}byoki \textbf{desu}.
+    \ex  {\cjkfont ピエールは病気\textbf{です}。}\\Pieru-wa byoki \textbf{desu}.
+    \ex  {\cjkfont ピエール\textbf{さん}は\textbf{御}病気\textbf{だ}。}\\Pieru-\textbf{san}{}-wa \textbf{go-}byoki \textbf{da}.
+    \ex  {\cjkfont ピエールは病気\textbf{だ}。}\\Pieru-wa byoki \textbf{da}.
     \z
     \z
 
@@ -510,20 +508,15 @@ L’expression même des contraintes grammaticales repose sur les «~connexions~
 }
 \corrections{%\label{sec:1.2.19}
      \corrigé{1} Il existe de nombreux exemples. Nous en proposons deux :
+     
     \ea
-    {Ali pleure parce que Zoé est partie.}
+     \ea Ali pleure parce que Zoé est partie.
+     \ex Le départ de Zoé a fait pleurer Ali.
     \z
-    \ea{
-    Le départ de Zoé a fait pleurer Ali.
-    }
+    \ex
+      \ea Les Chinois consomment de plus en plus de viande.
+      \ex La consommation de viande des Chinois a augmenté.
     \z
-    \ea{
-    Les Chinois consomment de plus en plus de viande.
-    }
-    \z
-    \ea{
-    La consommation de viande des Chinois a augmenté.
-    }
     \z
 
     Pour la représentation sémantique et les représentations syntaxiques profondes, voir le \chapref{sec:3.6}. Vous pouvez néanmoins vous essayer dès maintenant à proposer des représentations pour les exemples ci-dessus.
