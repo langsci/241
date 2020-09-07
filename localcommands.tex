@@ -1,14 +1,36 @@
+\let\hspaceThis\hphantom
+
 \newcommand{\appref}[1]{Appendix \ref{#1}}
 \newcommand{\fnref}[1]{Footnote \ref{#1}}
 \renewcommand{\sectref}[1]{section~\ref{#1}}
 
 \newcommand*{\Boite}{\bgroup\normalfont\ttfamily ▢\egroup}
 
-\newcounter{ghdefinition}[chapter]
+\tcbuselibrary{theorems}
+
+\newtcbtheorem[number within=chapter]
+  {definition}
+  {Définition}
+  { 
+    graphical environment = tikzpicture,
+    boxsep = 0pt,
+    fonttitle = \normalsize\sffamily\bfseries,
+    toptitle = 5mm,
+    top = 5mm,
+    bottom = 5mm,
+    left = 5mm,
+    right = 5mm,
+    frame engine = path,
+    frame style = {fill=black!12},
+    sharp corners = all,
+    before upper = {\hspace*{-\parindent}}
+  }
+  {def}
+
 \newcommand{\Definition}[2]{%
-  \refstepcounter{ghdefinition}%
-  \tblsfd{\lsSeriesColor}{.8}{\hspace*{-\parindent}\normalsize #1\hfill Définition~\thechapter.\arabic{ghdefinition}}
-  {#2}
+  \begin{definition}{#1}{}
+  #2
+  \end{definition}%
 }
 
 \newfontfamily\xitsfont
@@ -86,10 +108,10 @@
 \newenvironment{styleExemplesuite}{}{}
 \newenvironment{styleillustrationAFaire}{\begin{exe}\ex}{\end{exe}} %this seems to be object language material, which should be set off from surrounding text
 
-\newenvironment{styleLivreImportant}{
-\begin{mdframed}[style=tblsfilledbox,frametitle={}]
+\newenvironment{styleLivreImportant}{%
+\begin{tblsfilled}{}
 }{
-\end{mdframed}
+\end{tblsfilled}%
 }
 
 \newenvironment{styleTitreChapitre}{}{}
@@ -108,7 +130,7 @@
 % \newcommand{\tblsgk}[1]{{\color{blue} section starts here \includegraphics[height=5mm]{figures/#1}\par}}
 \newcommand{\encadref}[1]{encadré~\ref{#1}}
 
-\newcommand{\corrections}[1]{\tblssy{hamac}{Corrections des exercices}{#1}}
+\newcommand{\corrections}[1]{\begin{tblsfilledsymbol}{Corrections des exercices}{hamac}#1\end{tblsfilledsymbol}}
 % \newcommand{\loupe}[2]{\tblssy{loupe}{#1}{#2}}
 \newcommand{\loupe}[2]{\gkboxsection{loupe}{#1}{#2}}
 % \newcommand{\eiffel}[2]{\tblssy{eiffel}{#1}{#2}}
@@ -120,11 +142,11 @@
 % \newcommand{\maths}[2]{\tblssy{maths}{#1}{#2}}
 \newcommand{\maths}[2]{\gkboxsection{maths}{#1}{#2}}
 
-\newcommand{\exercices}[1]{\tblssy{halteres}{Exercices}{#1}}
+\newcommand{\exercices}[1]{\begin{tblsfilledsymbol}{Exercices}{halteres}#1\end{tblsfilledsymbol}}
 \newcommand{\exercice}[1]{\paragraph*{Exercice #1}}
 \newcommand{\corrigé}[1]{\paragraph*{Corrigé #1}}
-\newcommand{\citations}[1]{\tblssy{guillemets}{Citations originales}{#1}}
-\newcommand{\lecturesadditionnelles}[1]{\tblssy{book}{Lectures additionnelles}{#1}}
+\newcommand{\citations}[1]{\begin{tblsfilledsymbol}{Citations originales}{guillemets}#1\end{tblsfilledsymbol}}
+\newcommand{\lecturesadditionnelles}[1]{\begin{tblsfilledsymbol}{Lectures additionnelles}{book}#1\end{tblsfilledsymbol}}
 
 
 \newcommand{\HappySmiley}{\bgroup\fontspec[Scale=MatchUppercase]{DejaVuSansMono.ttf}☺\egroup}
