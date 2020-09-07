@@ -8,6 +8,15 @@
 
 \tcbuselibrary{theorems}
 
+\newcommand*{\PrintRecommendations}[1]
+  {%
+    \vskip\baselineskip
+    \begin{refsection}
+    \nocite{*}
+    \printbibliography[heading=none,keyword={Ch-#1}]
+    \end{refsection}
+  }
+
 \newtcbtheorem[number within=chapter]
   {definition}
   {Définition}
@@ -130,7 +139,7 @@
 % \newcommand{\tblsgk}[1]{{\color{blue} section starts here \includegraphics[height=5mm]{figures/#1}\par}}
 \newcommand{\encadref}[1]{encadré~\ref{#1}}
 
-\newcommand{\corrections}[1]{\begin{tblsfilledsymbol}{Corrections des exercices}{hamac}#1\end{tblsfilledsymbol}}
+\newcommand{\corrections}[1]{\begin{tblsfilledsymbol}{Corrections des exercices}{checkmark}#1\end{tblsfilledsymbol}}
 % \newcommand{\loupe}[2]{\tblssy{loupe}{#1}{#2}}
 \newcommand{\loupe}[2]{\gkboxsection{loupe}{#1}{#2}}
 % \newcommand{\eiffel}[2]{\tblssy{eiffel}{#1}{#2}}
@@ -142,7 +151,7 @@
 % \newcommand{\maths}[2]{\tblssy{maths}{#1}{#2}}
 \newcommand{\maths}[2]{\gkboxsection{maths}{#1}{#2}}
 
-\newcommand{\exercices}[1]{\begin{tblsfilledsymbol}{Exercices}{halteres}#1\end{tblsfilledsymbol}}
+\newcommand{\exercices}[1]{\begin{tblsfilledsymbol}{Exercices}{pencil}#1\end{tblsfilledsymbol}}
 \newcommand{\exercice}[1]{\paragraph*{Exercice #1}}
 \newcommand{\corrigé}[1]{\paragraph*{Corrigé #1}}
 \newcommand{\citations}[1]{\begin{tblsfilledsymbol}{Citations originales}{guillemets}#1\end{tblsfilledsymbol}}
