@@ -1,5 +1,7 @@
 \let\hspaceThis\hphantom
 
+
+
 \newcommand{\appref}[1]{Appendix \ref{#1}}
 \newcommand{\fnref}[1]{Footnote \ref{#1}}
 \renewcommand{\sectref}[1]{section~\ref{#1}}
@@ -35,6 +37,7 @@
     before upper = {\hspace*{-\parindent}}
   }
   {def}
+
 
 \newcommand{\Definition}[2]{%
   \begin{definition}{#1}{}
@@ -131,30 +134,25 @@
 \newenvironment{styleaprofondissementInterTitre}{\color{red}}{}
 
 %%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\marginparwidth}{24pt}
+\KOMAoptions{headings=optiontotocandhead}
 \newcommand{\gkchapter}[2]{#1: #2}
-\newcommand{\gkboxsection}[3]{\section{#2~\includegraphics[height=.75\baselineskip]{figures/gk-#1.pdf}}
-    \marginpar{\includegraphics[height=5mm]{figures/gk-#1.pdf}}#3
-    }
-\renewcommand{\gkboxsection}[3]{\section{#2}#3}
-% \newcommand{\tblsgk}[1]{{\color{blue} section starts here \includegraphics[height=5mm]{figures/#1}\par}}
+\newcommand{\gkboxsection}[3]{\section[#2]{#2\protect\marginpar{\protect\adjustbox{valign=c}{\includegraphics[width=24pt]{figures/#1.pdf}}}}#3}
+% \renewcommand{\gkboxsection}[3]{\section{#2}#3}
 \newcommand{\encadref}[1]{encadré~\ref{#1}}
 
-\newcommand{\corrections}[1]{\begin{tblsfilledsymbol}{Corrections des exercices}{checkmark}#1\end{tblsfilledsymbol}}
-% \newcommand{\loupe}[2]{\tblssy{loupe}{#1}{#2}}
-\newcommand{\loupe}[2]{\gkboxsection{loupe}{#1}{#2}}
-% \newcommand{\eiffel}[2]{\tblssy{eiffel}{#1}{#2}}
-\newcommand{\eiffel}[2]{\gkboxsection{eiffel3}{#1}{#2}}
-% \newcommand{\globe}[2]{\tblssy{globe}{#1}{#2}}
-\newcommand{\globe}[2]{\gkboxsection{globe}{#1}{#2}}
-% \newcommand{\chevalier}[2]{\tblssy{chevalier}{#1}{#2}}
-\newcommand{\chevalier}[2]{\gkboxsection{chevalier2}{#1}{#2}}
-% \newcommand{\maths}[2]{\tblssy{maths}{#1}{#2}}
-\newcommand{\maths}[2]{\gkboxsection{maths}{#1}{#2}}
+\newcommand{\loupe}[2]{\gkboxsection{tbls-loupe}{#1}{#2}}
+\newcommand{\eiffel}[2]{\gkboxsection{tbls-eiffel}{#1}{#2}}
+\newcommand{\globe}[2]{\gkboxsection{tbls-world}{#1}{#2}}
+\newcommand{\chevalier}[2]{\gkboxsection{tbls-history}{#1}{#2}}
+\newcommand{\maths}[2]{\gkboxsection{tbls-math}{#1}{#2}}
 
+\newcommand{\corrections}[1]{\begin{tblsfilledsymbol}{Corrections des exercices}{checkmark}#1\end{tblsfilledsymbol}}
 \newcommand{\exercices}[1]{\begin{tblsfilledsymbol}{Exercices}{pencil}#1\end{tblsfilledsymbol}}
 \newcommand{\exercice}[1]{\paragraph*{Exercice #1}}
 \newcommand{\corrigé}[1]{\paragraph*{Corrigé #1}}
-\newcommand{\citations}[1]{\begin{tblsfilledsymbol}{Citations originales}{guillemets}#1\end{tblsfilledsymbol}}
+\newcommand{\citations}[1]{\begin{tblsfilledsymbol}{Citations originales}{quote}#1\end{tblsfilledsymbol}}
 \newcommand{\lecturesadditionnelles}[1]{\begin{tblsfilledsymbol}{Lectures additionnelles}{book}#1\end{tblsfilledsymbol}}
 
 
