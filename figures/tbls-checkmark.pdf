@@ -1,0 +1,91 @@
+%PDF-1.4
+%�쏢
+%%Invocation: path/gs -P- -dSAFER -dCompatibilityLevel=1.4 -dDEVICEWIDTHPOINTS=14 -dDEVICEHEIGHTPOINTS=14 -dFIXEDMEDIA -dCompressPages=false -q -P- -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sstdout=? -sOutputFile=? -P- -dSAFER -dCompatibilityLevel=1.4
+%%+ -dDEVICEWIDTHPOINTS=14 -dDEVICEHEIGHTPOINTS=14 -dFIXEDMEDIA -dCompressPages=false ?
+5 0 obj
+<</Length 6 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+q
+0 20 140 100 re W n
+% g
+45.9414 40.9414 m
+19.9609 66.9883 l
+17.0313 69.8789 12.2695 69.8789 9.37891 66.9883 c
+6.44922 64.0586 6.44922 59.3398 9.37891 56.4102 c
+40.6992 25.0391 l
+43.5898 22.1094 48.3203 22.1094 51.25 25.0391 c
+130.621 104.41 l
+133.551 107.34 133.551 112.07 130.621 114.961 c
+127.699 117.891 122.969 117.891 120.039 114.961 c
+h
+45.9414 40.9414 m
+f
+Q
+Q
+endstream
+endobj
+6 0 obj
+390
+endobj
+4 0 obj
+<</Type/Page/MediaBox [0 0 14 14]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF]
+>>
+/Contents 5 0 R
+>>
+endobj
+3 0 obj
+<< /Type /Pages /Kids [
+4 0 R
+] /Count 1
+>>
+endobj
+1 0 obj
+<</Type /Catalog /Pages 3 0 R
+/Metadata 7 0 R
+>>
+endobj
+7 0 obj
+<</Type/Metadata
+/Subtype/XML/Length 1202>>stream
+<?xpacket begin='﻿' id='W5M0MpCehiHzreSzNTczkc9d'?>
+<?adobe-xap-filters esc="CRLF"?>
+<x:xmpmeta xmlns:x='adobe:ns:meta/' x:xmptk='XMP toolkit 2.9.1-13, framework 1.6'>
+<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:iX='http://ns.adobe.com/iX/1.0/'>
+<rdf:Description rdf:about="" xmlns:pdf='http://ns.adobe.com/pdf/1.3/' pdf:Producer='GPL Ghostscript 9.52'/>
+<rdf:Description rdf:about="" xmlns:xmp='http://ns.adobe.com/xap/1.0/'><xmp:ModifyDate>2020-09-09T14:53:24+02:00</xmp:ModifyDate>
+<xmp:CreateDate>2020-09-09T14:53:24+02:00</xmp:CreateDate>
+<xmp:CreatorTool>cairo 1.16.0 (https://cairographics.org)</xmp:CreatorTool></rdf:Description>
+<rdf:Description rdf:about="" xmlns:xapMM='http://ns.adobe.com/xap/1.0/mm/' xapMM:DocumentID='uuid:ff199090-2ab7-11f6-0000-22abd20cde1e'/>
+<rdf:Description rdf:about="" xmlns:dc='http://purl.org/dc/elements/1.1/' dc:format='application/pdf'><dc:title><rdf:Alt><rdf:li xml:lang='x-default'>Untitled</rdf:li></rdf:Alt></dc:title></rdf:Description>
+</rdf:RDF>
+</x:xmpmeta>
+                                                                        
+                                                                        
+<?xpacket end='w'?>
+endstream
+endobj
+2 0 obj
+<</Producer(GPL Ghostscript 9.52)
+/CreationDate(D:20200909145324+02'00')
+/ModDate(D:20200909145324+02'00')
+/Creator(cairo 1.16.0 \(https://cairographics.org\))>>endobj
+xref
+0 8
+0000000000 65535 f 
+0000000980 00000 n 
+0000002322 00000 n 
+0000000921 00000 n 
+0000000809 00000 n 
+0000000350 00000 n 
+0000000790 00000 n 
+0000001044 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R /Info 2 0 R
+/ID [<8C2FE7594F7AD515CBFB1C4E722CDADD><8C2FE7594F7AD515CBFB1C4E722CDADD>]
+>>
+startxref
+2498
+%%EOF
