@@ -402,19 +402,16 @@ Les énoncés des tests que nous avons donnés sont très généraux. Ils vont t
 En français, l’usage le plus courant du test de déplacement concerne les dépendants du nom, qui, à l’exception de certains adjectifs, se placent tous à droite du nom dont ils dépendent. Nous allons donner deux illustrations. La première concerne les propositions :
 
 \ea
-    {Pierre a acheté une glace à la boulangerie.}
-\z
-\ea{
-    Pierre a acheté une glace à la fraise.
-}
+  \ea Pierre a acheté une glace à la boulangerie.
+  \ex Pierre a acheté une glace à la fraise.
+  \z
 \z
 
 Dans les deux exemples, on a un groupe prépositionnel B introduit par \textit{à} dont on cherche à savoir s’il est connecté à A = \textit{une glace}. La permutation de A et B offre immédiatement une réponse :
 \ea
-    {Pierre a acheté} \textbf{{à la boulangerie}}  {une glace.}
-\z
-\ea
-    *{Pierre a acheté} \textbf{{à la fraise}}  {une glace.}
+    \ea[]{Pierre a acheté \textbf{à la boulangerie}  une glace.}
+    \ex[*]{Pierre a acheté \textbf{à la fraise}  une glace.}
+    \z
 \z
 
 La permutation est possible dans le premier cas, donc \textit{à la boulangerie} ne dépend pas de \textit{une glace}. Par contre, elle est impossible dans le deuxième cas, ce qui indique que \textit{à la fraise} dépend bien de \textit{une glace}. (Nous utilisons ici une autre propriété, spécifique au français, qui est que l’ordre des compléments à droite du verbe est relativement libre. Le même test serait plus difficile à appliquer dans une langue comme l’anglais où l’objet ne peut pas être facilement séparé du verbe.)
@@ -438,16 +435,14 @@ La permutation est possible dans le premier cas, donc \textit{à la boulangerie}
 \end{figure}
 
 Le test de déplacement est particulièrement utile pour déterminer les dépendances au sein du groupe substantival (où les tests de pronominalisation ou de clivage ne peuvent pas être utilisés ; voir \chapref{sec:3.4} pour la présentation de ces tests). Considérons l’exemple suivant (extrait de l’article \textit{Seine} de la wikipédia) :
-\ea{
-La faible déclivité de la vallée de la Seine en Ile-de-France a causé la formation de multiples et profonds méandres.
-}
-\z
+
+\ea La faible déclivité de la vallée de la Seine en Ile-de-France a causé la formation de multiples et profonds méandres. \z
 On a ici trois segments prépositionnels, \textit{de la vallée}, \textit{de la Seine} et \textit{en Ile-de-France}, dont on doit déterminer le gouverneur. Le test de déplacement donne :
+
 \ea
-    *{la faible déclivité} \textbf{{de la Seine}}  {de la vallée en Ile-de-France}
-\z
-\ea
-    {la faible déclivité} \textbf{{en Ile-de-France}}  {de la vallée de la Seine}
+  \ea[*]{la faible déclivité \textbf{de la Seine}  de la vallée en Ile-de-France}
+  \ex[]{la faible déclivité \textbf{en Ile-de-France}  de la vallée de la Seine}
+  \z
 \z
 La non-déplaçabilité du segment \textit{de la Seine} indique qu’il est bien connecté au segment \textit{de la vallée}. À l’inverse la déplaçabilité de \textit{en Ile-de-France} indique qu’il n’en dépend pas. On a donc les connections suivantes :
 
@@ -469,17 +464,15 @@ La non-déplaçabilité du segment \textit{de la Seine} indique qu’il est bien
 Le test d’insertion peut être appliqué à notre premier exemple. Prenons un circonstanciel comme \textit{l’autre jour}, qui dépend du verbe, mais ne se connecte pas avec les unités A et B que nous considérons. On a :
 
 \ea
- {Pierre a acheté une glace} \textbf{{l’autre jour}}  {à la boulangerie.}
- \z
-\ea
-    \textsuperscript{?}{*Pierre a acheté une glace} \textbf{{l’autre jour}}  {à la fraise.}
+  \ea[]{Pierre a acheté une glace \textbf{l’autre jour}  à la boulangerie.}
+  \ex[\textsuperscript{?}*]{Pierre a acheté une glace \textbf{l’autre jour} à la fraise.}
+  \z
 \z
 (Des énoncés tels que le deuxième sont tout à fait possibles avec une prosodie appropriée, où le segment \textit{à la fraise} est détaché. Mais ils ne pourraient être produits à l’écrit sans une ponctuation marquant le détachement.) Le fait que \textit{l’autre jour} peut être inséré entre A et B dans le premier cas et pas dans le deuxième indique que A et B sont connectés dans le premier cas et pas dans le deuxième.
 
 De même, dans notre deuxième exemple, on peut vérifier que \textit{en Ile-de-France} ne peut pas être déplacé entre A = \textit{de la vallée} et B = \textit{de la Seine}, et donc que A et B son connectés :
-\ea
-    *{la faible déclivité de la vallée} \textbf{{en Ile-de-France}}  {de la Seine}
-\z
+
+\ea[*]{la faible déclivité de la vallée \textbf{en Ile-de-France} de la Seine}\z
 Le test d’insertion est un cas particulier de la propriété de projectivité que nous présentons dans la \sectref{sec:3.5.14} \textit{Projectivité et dépendance projective}. Cela revient à dire que certains liens de connexion ne peuvent pas se couper et que la configuration ci-dessous n’est pas possible.
 
 \begin{figure}
@@ -504,7 +497,7 @@ Les deux tests que nous venons d’énoncer, le test de déplacement et le test 
 
     La syntaxe de dépendance repose traditionnellement sur le présupposé que toutes les combinaisons sont binaires. Cette hypothèse mérite d’être discutée. On peut évidemment toujours réduire (artificiellement) une connexion ternaire à deux connexions binaires. Par exemple dans notre exemple, considérer que \textit{de} et \textit{gens} se combinent ensemble avant de se combiner avec \textit{plein} ou au contraire considérer que \textit{plein} et \textit{de} se combinent ensemble avant de se combiner avec \textit{gens}. Les deux analyses ont été proposées ; la première revient à faire de \textit{de gens} un groupe prépositionnel (et se justifie par la pronominalisation en \textit{en} (\textit{il} \textbf{\textit{en}} \textit{a invité plein}) et par des coordinations comme \textit{plein} \textbf{\textit{de chats}} \textit{et} \textbf{\textit{de chiens}}), tandis que la deuxième fait de \textit{plein de} un déterminant complexe (et se justifie par la commutation de \textit{plein de} avec des déterminants simples comme \textit{des} ou \textit{plusieurs}) (voir l’\encadref{fig:3.3.22} sur les \textit{«~Déterminants complexes~»}).
 
-    Du point de vue mathématique, les connexions ternaires ne posent pas de problème en soi, mais elles nécessitent d’introduire des structures légèrement différentes des arbres et graphes habituellement utilisés en modélisation des langues. (Un graphe, au sens usuel, ne contient que des connexions binaires.) Considérer que \textit{plein de gens} est une connexion ternaire revient à considérer que \textit{plein} et \textit{gens} se combinent directement et qu’ils ne peuvent se combiner qu’en présence du marqueur \textit{de}, ce qui est finalement assez facile à concevoir. On peut par exemple représenter cela par un lien entre \textit{plein} et \textit{gens} surmonté par \textit{de} :
+    Du point de vue mathématique, les connexions ternaires ne posent pas de problème en soi, mais elles nécessitent d’introduire des structures légèrement différentes des arbres et es habituellement utilisés en modélisation des langues. (Un graphe, au sens usuel, ne contient que des connexions binaires.) Considérer que \textit{plein de gens} est une connexion ternaire revient à considérer que \textit{plein} et \textit{gens} se combinent directement et qu’ils ne peuvent se combiner qu’en présence du marqueur \textit{de}, ce qui est finalement assez facile à concevoir. On peut par exemple représenter cela par un lien entre \textit{plein} et \textit{gens} surmonté par \textit{de} :
 
     \begin{figure}
     \begin{tikzpicture}
@@ -579,16 +572,16 @@ Il n’est pas nécessaire d’identifier toutes les unités syntaxiques pour ob
 Donnons des exemples de fragmentations de l’énoncé \textit{Cet étudiant veut acheter un livre de syntaxe}. Nous limitons nos fragmentations aux unités autonomisables.
 
 \ea Des exemples de fragmentation\\
-\ea (( cet ${\oplus}$ étudiant) ${\oplus}$ (veut ${\oplus}$ acheter)) ${\oplus}$ ((un ${\oplus}$ livre) ${\oplus}$ (de ${\oplus}$ syntaxe))\label{ex:fragmentation:1}
-\ex (cet ${\oplus}$ étudiant) ${\oplus}$ (veut ${\oplus}$ (acheter ${\oplus}$ (un ${\oplus}$  (livre ${\oplus}$ (de ${\oplus}$ syntaxe)))))
-\ex ((cet ${\oplus}$ étudiant) ${\oplus}$  veut) ${\oplus}$ ((acheter ${\oplus}$ (un ${\oplus}$ livre)) ${\oplus}$ (de ${\oplus}$ syntaxe))
+\ea ((\textit{cet} ${\oplus}$ \textit{étudiant}) ${\oplus}$ (\textit{veut} ${\oplus}$ \textit{acheter})) ${\oplus}$ ((\textit{un} ${\oplus}$ \textit{livre}) ${\oplus}$ (\textit{de} ${\oplus}$ \textit{syntaxe}))\label{ex:fragmentation:1}
+\ex (\textit{cet} ${\oplus}$ \textit{étudiant}) ${\oplus}$ (\textit{veut} ${\oplus}$ (\textit{acheter} ${\oplus}$ (\textit{un} ${\oplus}$  (\textit{livre} ${\oplus}$ (\textit{de} ${\oplus}$ \textit{syntaxe})))))
+\ex ((\textit{cet} ${\oplus}$ \textit{étudiant}) ${\oplus}$  \textit{veut}) ${\oplus}$ ((\textit{acheter} ${\oplus}$ (\textit{un} ${\oplus}$ \textit{livre})) ${\oplus}$ (\textit{de} ${\oplus}$ \textit{syntaxe}))
 \z
 \z
 
 On peut représenter une fragmentation par une structure arborescente, appelée un \textstyleTermes{arbre de fragmentation} : chaque nœud de l’arbre représente un fragment, les feuilles de l’arbre étant les fragments minimaux considérés (les mots dans notre exemple). Les branches de l’arbre représente la relation entre un fragment et un des deux sous-fragments obtenu lors de la décomposition. Nous donnons l’arbre de fragmentation de la première de nos trois fragmentations.
 
 \begin{figure}
-\begin{tikzpicture}[every node/.style={font=\strut}]
+\begin{tikzpicture}[every node/.style={font=\strut\itshape}]
 \begin{scope}[
               every node/.style={circle,draw},level distance=2\baselineskip,
               level 1/.style={sibling distance=60mm},
@@ -699,17 +692,36 @@ Enfin, les structures de connexion ont généralement la propriété de binarit�
 \loupe{Cycle de connexions}{%\label{sec:3.2.24}
     Il peut arriver qu’une unité ABC possède comme sous-unités à la fois AB, BC et AC et que les trois combinaisons A \textrm{${\oplus}$} B, B \textrm{${\oplus}$} C et A \textrm{${\oplus}$} C soient possibles, ce qui donne un \textbf{cycle} (non orienté) de connexions. (On verra, lorsqu’on considérera la dépendance et que les connexions sont orientées, qu’il ne peut pas s’agir d’un cycle orienté ; voir la \sectref{sec:3.3.4} \textit{Structure de dépendance et arbre de dépendance}.) Cette situation se rencontre avec les exemples suivants.
 
-% \begin{figure}
-  \textit{Marie commet une faute envers Pierre.}       \textit{la montée du nationalisme en Catalogne}
-
-{\itshape
-%%[Warning: Draw object ignored]
-%%[Warning: Draw object ignored]
-%%[Warning: Draw object ignored]
-Je l’ai vu hier à l’école.
-}
-% \caption{\label{fig:}Structures de connexion avec cycle}
-% \end{figure}
+\begin{figure}
+\caption{\label{fig:}Structures de connexion avec cycle}
+\begin{subfigure}[c]{.5\linewidth}
+\centering
+\caption{\textit{Marie commet une faute envers Pierre.}}
+\begin{tikzpicture}
+  \graph [clockwise=3,radius=3em, phase=180, nodes={draw,ellipse,inner sep=1pt,font=\footnotesize\itshape\strut}] {
+     {[cycle] {Marie commet}, {une faute}, {envers Pierre}  }
+  };
+\end{tikzpicture}
+\end{subfigure}%
+\begin{subfigure}[c]{.5\linewidth}
+\centering
+\caption{\textit{la montée du nationalisme en Catalogne}}
+\begin{tikzpicture}
+  \graph [clockwise=3,radius=3em, phase=180, clockwise=3,nodes={draw,ellipse,inner sep=1pt,font=\footnotesize\itshape\strut}] {
+     {[cycle] {je l’ai vu}, {hier}, {à l’école} }
+  };
+\end{tikzpicture}
+\end{subfigure}\medskip\\
+\begin{subfigure}[c]{.5\linewidth}
+\centering
+\caption{\textit{Je l’ai vu hier à l’école.}}
+\begin{tikzpicture}
+  \graph [clockwise=3,radius=3em, phase=180, clockwise=3,nodes={draw,ellipse,inner sep=1pt,font=\footnotesize\itshape\strut}] {
+     {[cycle] {la montée}, {du nationalisme}, {en Catalogne} }
+  };
+\end{tikzpicture}
+\end{subfigure}%
+\end{figure}
 
 
 Dans la première phrase, on peut à la fois considérer comme acceptables les unités syntaxiques \textit{commet une faute, commet envers Pierre} et \textit{une faute envers Pierre}. Il s’ensuit que le rattachement du complément \textit{envers Pierre} à \textit{une faute} plutôt qu’à \textit{commet} est incertain, que l’un ou l’autre ne change pas le sens.
@@ -740,9 +752,9 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
     Il est généralement admis que les locuteurs traitent les énoncés de manière \textstyleTermesapprof{incrémentale}, c’est-à-dire au fur et à mesure qu’ils les perçoivent. Une expérience classique est celle des \textstyleTermesapprof{garden paths} (en anglais \textit{to lead somebody up the garden path} signifie ‘mener quelqu’un en bateau’). Lisez les deux phrases suivantes :
 
     \ea
-    L’espion reconduit à la frontière un diplomate américain.
-    \ex
-    L’espion reconduit à la frontière est un diplomate russe.
+      \ea L’espion reconduit à la frontière un diplomate américain.
+      \ex L’espion reconduit à la frontière est un diplomate russe.
+      \z
     \z
 
     Lorsqu’on suit le mouvement des yeux d’un lecteur (on appelle cette méthode l’\textit{eye-tracking}), on observe une saccade régressive sur la deuxième phrase, c’est-à-dire que lorsque le lecteur tombe sur la deuxième forme verbale, \textit{est}, il revient sur la première, \textit{reconduit}, puis revient sur \textit{est}. Ceci tend à prouver que l’analyse est globalement incrémentale, que les mots sont analysés et connectés au fur et à mesure de la lecture, mais que toute analyse qui est infirmée par la suite nécessite un \textstyleTermesapprof{retour en arrière} (angl. \textit{backtracking}) pour détricoter l’analyse en cours.
