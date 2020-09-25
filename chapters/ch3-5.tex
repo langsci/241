@@ -899,8 +899,10 @@ La deuxième méthode pour ordonner les co-dépendants consiste donc à donner d
 Voici le gabarit qu’ouvre un verbe à l’indicatif en français :
 
 \begin{figure}\small
-\caption{Domaine verbal\label{tab:}}
+\caption{{\color{red}Please provide a caption}\label{tab:}}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{14}{|c|}{\cellcolor{lsDOIGray}Domaine verbal}\\
 \hline
 \rotatebox{90}{ch-pré-noyau} &  \rotatebox{90}{ch-initial} &  \rotatebox{90}{ch-cl-sujet} &  \rotatebox{90}{ch-cl-ne} &  \rotatebox{90}{ch-cl-se} &  \rotatebox{90}{ch-cl-le} &  \rotatebox{90}{ch-cl-lui} &  \rotatebox{90}{ch-cl-y} &  \rotatebox{90}{ch-cl-en} & \cellcolor{lsDOIGray} \rotatebox{90}{ch-verbe} &  \rotatebox{90}{ch-adv} &  \rotatebox{90}{ch-vb-sub} &  \rotatebox{90}{ch-final} &  \rotatebox{90}{ch-post-noyau}\\
 \hline
@@ -924,24 +926,15 @@ Et ainsi de suite.
 \loupe{Un cas d’exclusion étrange}{%\label{sec:3.5.20}
 
     Nous avons, dans le début de ce chapitre, considéré que l’exclusion mutuelle pouvait découler soit de l’occupation d’une même position syntaxique (*\textbf{\textit{Qui}} \textit{Pierre} \textbf{\textit{la}} \textit{regarde-t-il} ?), soit d’une même position topologique (*\textit{Leider Peter popelt schon wieder in seiner Nase}, voir l’\encadref{fig:3.5.5} sur \textit{Le cas des langues V2}). Il existe néanmoins des cas d’exclusion qui ne relèvent ni d’une situation, ni de l’autre. Tel est le cas des clitiques \textit{te} et \textit{lui} (et des clitiques qui appartiennent aux mêmes paradigmes). Voici les données :
+    
     \ea
-    {Il te/la vendra au roi.}  [ici \textit{te} ou \textit{la} sont objets direct]
+      \ea[]{Il te/la vendra au roi.  [ici \textit{te} ou \textit{la} sont objets direct]}
+      \ex[]{Il me/lui vendra sa fille.  [ici \textit{me} ou \textit{lui} sont objet indirect]}
+      \ex[]{Il me la vendra.}
+      \ex[]{Il la lui vendra.}
+      \ex[*]{Il me te vendra    (vs. \textit{Il te vendra à moi}.)}
+      \ex[*]{Il te lui vendra.  (vs. \textit{Il te vendra à lui}.)}
     \z
-    \ea
-    {Il me/lui vendra sa fille.}  [ici \textit{me} ou \textit{lui} sont objet indirect]
-    \z
-    \ea
-    {Il me la vendra.}
-    \z
-\ea{
-    Il la lui vendra.
-    }
-    \z
-    \ea
-    {*Il me te vendra}    (vs. \textit{Il te vendra à moi}.)
-    \z
-    \ea
-    {*Il te lui vendra.}    (vs. \textit{Il te vendra à lui}.)
     \z
 
     L’inacceptabilité des deux derniers exemples ne vient pas d’une exclusion syntaxique, puisque \textit{te} et \textit{me}/\textit{lui} n’occupe pas la même position syntaxique (l’un est objet direct et l’autre objet indirect). Or il ne semble pas s’agir non plus d’une exclusion topologique, puisque \textit{me} objet indirect et \textit{lui} occupent des positions topologiques différentes (l’un se place avant \textit{la} et l’autre après).
@@ -951,7 +944,7 @@ Et ainsi de suite.
     \begin{center}
     \begin{tabular}{|l|l|l|l|l|l|l|l|}
     \hhline{--------}
-     il &  ne &  \textit{me} (indirect) &  le &  lui &  y &  en &  verbe\\
+     \textit{il} & \textit{ne} &  \textit{me} (indirect) &  \textit{le} &  \textit{lui} & \textit{y} & \textit{en} &  verbe\\
     \hhline{--------}
     \multicolumn{2}{c}{} & \multicolumn{3}{|c|}{\textit{me} (direct)} & \multicolumn{3}{c}{} \\
     \hhline{~~---~~~}
@@ -963,11 +956,10 @@ Et ainsi de suite.
 \section{Préférences dans l’ordre}\label{sec:3.5.21}
 
 La méthode des gabarits permet de rendre compte des contraintes d’ordre rigides, comme celles des clitiques préverbaux : ici chaque élément occupe une position précise et toute variation est agrammaticale. Mais il arrive plus couramment que l’ordre entre deux co-dépendants soit libre. Tel est le cas des compléments du verbe en français. Comme le montre les exemples suivants, l’objet direct et l’objet indirect peuvent se placer assez librement l’un par rapport à l’autre :
-\ea
-    {Félix a prêté} un livre \textbf{{à sa sœur.}}
-\z
-\ea
-    {Félix a prêté} \textbf{{à sa sœur}} un livre qu’il aime bien.
+
+\ea \ea {Félix a prêté} un livre \textbf{{à sa sœur.}}
+    \ex {Félix a prêté} \textbf{{à sa sœur}} un livre qu’il aime bien.
+    \z
 \z
 Nous modélisons cela en indiquant que les deux compléments vont dans le même champ (que nous avons appelé le champ final). Il y a néanmoins des préférences entre les deux ordres dont la méthode des gabarits ne rend pas compte. Ces préférences dépendent de différents paramètres, les deux principaux étant le poids et la saillance communicative.
 
@@ -990,14 +982,17 @@ Ce phénomène de \textstyleTermes{rejet des constituants lourds} (appelé par l
     «~Les régimes [= compléments] doivent être le plus près qu’il se peut du mot régissant ; ce qui feroit pas si l’on mettoit d’abord le plus long qui éloigneroit trop le plus court.~»
 \end{quote}
 Nicolas Beauzée développait cette remarque dans l’entrée «~Régime~» de l’\textit{Encyclopédie} en 1765 (celle-là même où il définit le complément) :
+
 \begin{quote}
     «~De plusieurs \textit{compléments} qui tombent sur le même mot, il faut mettre le plus court le premier après le mot \textit{complété ;} ensuite le plus court de ceux qui restent, et ainsi de suite jusqu’au plus long de tous qui doit être le dernier. […] il importe à la netteté de l’expression, \textit{\textit{cujus summa laus perspicuitas}}, de n’éloigner d’un mot, que le moins qu’il est possible, ce qui lui sert de \textit{complément}. Cependant quand plusieurs \textit{compléments} concourent à la détermination d’un même terme, ils ne peuvent pas tous le suivre immédiatement ; et il ne reste plus qu’à en rapprocher le plus qu’il est possible celui qu’on est forcé d’en tenir éloigné : c’est ce que l’on fait en mettant d’abord le premier celui qui a le plus de brièveté, et réservant pour la fin celui qui a le plus d’étendue.~»
 \end{quote}
 Mais c’est à Henri Weil (\citeyear[97--102]{weil1844de}), critiquant Beauzée (critique qui s’appliquerait à bien des analyses depuis) qu’on doit, à notre avis, l’analyse la plus pertinente :
+
 \begin{quote}
     «~De plusieurs compléments qui tombent sur le même mot, donnez la forme la plus concise à celui qui suit immédiatement le mot complété et, à mesure que vous avancez, donnez aux compléments une expression plus développée et plus étendue.~»
 \end{quote}
 En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il doit être placé loin de son gouverneur, mais c’est parce qu’il est loin de son gouverneur qu’il doit être lourd. Weil conclut par ces mots :
+
 \begin{quote}
     «~La parole est au service de la pensée, et non pas la pensée au service de la parole.~»
 \end{quote}
@@ -1008,7 +1003,7 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
     \z
     Voici comment s’étirent, en fonction de leur poids, les différentes dépendance entre le verbe \textit{propose} et ses compléments :
 
-    \ea\attop{%
+    \ea\attop{\vskip-\baselineskip
     \begin{tikzpicture}
     \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip,
                   level 1/.style={sibling distance=20mm},
@@ -1016,14 +1011,15 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
                   level 3/.style={sibling distance=10mm}
                   ]
     \node (root) {} child {node {}} 
+                    child [missing]
                     child {node[yshift=-4\baselineskip] {}} 
                     child {node {}};
     \end{scope}
     \begin{scope}[every node/.style={align=center,font=\strut\itshape}]
     \node [above=1pt of root] {propose};
     \node [below=1pt of root-1] {aujourd’hui};
-    \node [below=1pt of root-2] {un exercice\\sur l’ordre\\des mots};
-    \node [below=1pt of root-3] {à ses élèves};
+    \node [below=1pt of root-3] {un exercice\\sur l’ordre\\des mots};
+    \node [below=1pt of root-4] {à ses élèves};
     \end{scope}
     \end{tikzpicture}}
     \z
@@ -1033,28 +1029,27 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
 \globe{Les langues dites à ordre libre}{%\label{sec:3.5.23}
     Une langue est dite \textstyleTermesapprof{à ordre libre} quand une tête et ses dépendants (et notamment le verbe, son sujet et son objet) peuvent être dans n’importe quel ordre. Lorsque, au contraire, un seul ordre est possible, on dit que la langue est \textstyleTermesapprof{à ordre rigide}. Il existe entre les deux toute une gamme de langues à ordre plus ou moins libre ou plus ou moins rigide.
 
-    L’ordre des mots en français est particulièrement rigide, même s’il l’est un peu moins qu’en anglais. L’allemand a un ordre plus libre que le français. Par exemple, on peut traduire \textit{Marie poursuit Pierre} par \textit{die Marie verfolgt den Pierre} ou bien par \textit{den Pierre verfolgt die Marie.} Les deux phrases ont le même \textbf{contenu informationnel} (voir chapitres\todo[inline]{sg?} \ref{sec:1.2}), c’est-à-dire qu’elles décrivent le même état du monde : chaque fois c’est Marie qui poursuit Pierre et pas l’inverse. Le repérage des dépendants du verbe est effectué en allemand grâce à un \textstyleTermesapprof{système casuel}, c’est-à-dire des marques sur certains mots du syntagme substantival qui n’ont pas d’autre rôle que justement d’indiquer la relation qu’entretient le syntagme avec le verbe. (Voir la notion de \textit{cas} au \chapref{sec:4.2}.) Ce sont avant tout les déterminants qui portent l’information casuelle en allemand. Dans notre exemple, le fait que \textit{den Pierre} soit l’objet est marqué par le cas accusatif du déterminant masculin singulier \textit{den} (qui s’oppose au déterminant au nominatif \textit{der}).
+    L’ordre des mots en français est particulièrement rigide, même s’il l’est un peu moins qu’en anglais. L’allemand a un ordre plus libre que le français. Par exemple, on peut traduire \textit{Marie poursuit Pierre} par \textit{die Marie verfolgt den Pierre} ou bien par \textit{den Pierre verfolgt die Marie.} Les deux phrases ont le même \textbf{contenu informationnel} (voir chapitre \ref{sec:1.2}), c’est-à-dire qu’elles décrivent le même état du monde : chaque fois c’est Marie qui poursuit Pierre et pas l’inverse. Le repérage des dépendants du verbe est effectué en allemand grâce à un \textstyleTermesapprof{système casuel}, c’est-à-dire des marques sur certains mots du syntagme substantival qui n’ont pas d’autre rôle que justement d’indiquer la relation qu’entretient le syntagme avec le verbe. (Voir la notion de \textit{cas} au \chapref{sec:4.2}.) Ce sont avant tout les déterminants qui portent l’information casuelle en allemand. Dans notre exemple, le fait que \textit{den Pierre} soit l’objet est marqué par le cas accusatif du déterminant masculin singulier \textit{den} (qui s’oppose au déterminant au nominatif \textit{der}).
 
     L’ordre des mots en allemand n’est cependant pas libre au sens où seuls deux des six ordres possibles entre les trois mots correspondant à \textit{Marie}, \textit{Pierre} et \textit{poursuit} sont possibles pour une phrase déclarative. Il existe d’autres langues, comme les langues slaves ou le grec moderne, où les six ordres des trois mots sont acceptables et désignent le même état du monde. Voici un exemple du russe :
 \ea
-    \ea
-    Vanya prigotovil malinu\\
+    \ea\itshape    Vanya prigotovil malinu\\
     \glt  ‘Vanya a préparé les framboises’ \\
     \glt  ‘Ce que Vanya a préparé, c’est les framboises’
 
-    \ex Prigotovil Vanya malinu
+    \ex\itshape Prigotovil Vanya malinu
     \glt ‘Ce qu’a préparé Vanya, c’est les framboises’
 
-    \ex Malinu prigotovil Vanya
+    \ex\itshape Malinu prigotovil Vanya
     \glt  ‘C’est les framboises qu’a préparé Vanya’
 
-    \ex Malinu Vanya prigotovil
+    \ex\itshape Malinu Vanya prigotovil
     \glt   ‘C’est les framboises que Vanya a préparé’
 
-    \ex Prigotovil malinu Vanya
+    \ex\itshape Prigotovil malinu Vanya
     \glt ‘Ce qu’il a préparé, c’est les framboises, Vanya’
 
-    \ex Vanya malinu prigotovil
+    \ex\itshape Vanya malinu prigotovil
     \glt  ‘Vanya, c’est les framboises qu’il a préparé’
 \z
 \z
@@ -1092,14 +1087,15 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
 
     On peut comparer cette situation avec celle que propose le français à l’oral, où, avec les dislocations gauches et droites, les six ordres sont possibles sans qu’il n’y ait aucune marque casuelle :
 
-    \begin{enumerate}
-    \item {Ali, ce livre, il le lit.}
-    \item {Ali, il le lit, ce livre.}
-    \item {Il le lit, Ali, ce livre.}
-    \item {Ce livre, Ali, il le lit.}
-    \item {Ce livre, il le lit, Ali.}
-    \item {Il le lit, ce livre, Ali.}
-    \end{enumerate}
+    \ea
+    \ea\itshape {Ali, ce livre, il le lit.}
+    \ex\itshape {Ali, il le lit, ce livre.}
+    \ex\itshape {Il le lit, Ali, ce livre.}
+    \ex\itshape {Ce livre, Ali, il le lit.}
+    \ex\itshape {Ce livre, il le lit, Ali.}
+    \ex\itshape {Il le lit, ce livre, Ali.}
+    \z
+    \z
 }
 \globe{Ordre communicativement dirigé}{%\label{sec:3.5.24}
     Les \textbf{langues à ordre rigide} (voir l’encadré qui précède) sont généralement des langues où la position topologique est fortement déterminée par la fonction syntaxique et la catégorie syntaxique. Ainsi, en français, un objet direct doit nécessairement être après le verbe, à moins que ce soit un clitique, un pronom relatif ou un pronom interrogatif. Autrement dit, en français, l’ordre linéaire est utilisé pour marqué la fonction syntaxique et permettre le repérage de l’objet par rapport au sujet. Nous dirons que de telles langues ont un \textstyleTermesapprof{ordre syntaxiquement dirigé}.
@@ -1112,13 +1108,14 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
 
     On peut postuler qu’en russe, l’ordre linéaire de la phrase obéit au gabarit suivant :
 
-    \begin{center}
+    \ea%
+    \hfill
     \begin{tabular}{|c|c|c|}
     \hhline{---}
     thème-foc & rhème & thème\\
     \hhline{---}
     \end{tabular}
-    \end{center}
+    \hfill\hbox{}\z
 
 
     Le verbe en fonction de sa valeur communicative va venir dans un des trois champs. Les dépendants qui on la même valeur communicative que lui se placeront dans le même champ, tandis que ceux qui ont d’autres valeurs iront dans d’autres champs. La prosodie viendra souligner cette répartition avec une intonation montante sur le thème focalisé, descendante sur le rhème et généralement plate sur le thème.
@@ -1142,8 +1139,10 @@ Nous allons voir de manière un peu plus précise comment fonctionne le modèle 
 Nous avons donné le gabarit topologique du verbe à l’indicatif en français à la \sectref{sec:3.5.19} sur la \textit{Linéarisation des co-dépendants}. Rappelons-le :
 
 \begin{figure}\small
-\caption{Domaine verbal\label{tab:}}
+\caption{{\color{red}Caption to be repeated from orig fig}\label{tab:}}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{14}{|c|}{\cellcolor{lsDOIGray}Domaine verbal}\\
 \hline
 \rotatebox{90}{ch-pré-noyau} &  \rotatebox{90}{ch-initial} &  \rotatebox{90}{ch-cl-sujet} &  \rotatebox{90}{ch-cl-ne} &  \rotatebox{90}{ch-cl-se} &  \rotatebox{90}{ch-cl-le} &  \rotatebox{90}{ch-cl-lui} &  \rotatebox{90}{ch-cl-y} &  \rotatebox{90}{ch-cl-en} & \cellcolor{lsDOIGray} \rotatebox{90}{ch-verbe} &  \rotatebox{90}{ch-adv} &  \rotatebox{90}{ch-vb-sub} &  \rotatebox{90}{ch-final} &  \rotatebox{90}{ch-post-noyau}\\
 \hline
@@ -1153,8 +1152,10 @@ Nous avons donné le gabarit topologique du verbe à l’indicatif en français 
 Le gabarit topologique du nom en français est quant à lui :
 
 \begin{figure}\small
-\caption{Domaine nominal{tab:}}
+\caption{{\color{red}Please provide a caption}\label{tab:}}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{9}{|c|}{\cellcolor{lsDOIGray}Domaine nominal}\\
 \hline
 \rotatebox{90}{ch-tout} &  \rotatebox{90}{ch-article} &  \rotatebox{90}{ch-num} &  \rotatebox{90}{ch-seul} &  \rotatebox{90}{ch-autre} &  \rotatebox{90}{ch-adj} &  \cellcolor{lsDOIGray}\rotatebox{90}{ch-nom} &  \rotatebox{90}{ch-deN} &  \rotatebox{90}{ch-final}\\
 \hline
@@ -1197,37 +1198,33 @@ Voyons maintenant comment linéariser un arbre de dépendance. Reprenons l’exe
 
 Nous procédons en parcourant l’arbre de dépendance à partir de la racine. On commence donc par considérer le verbe \textit{prêtera} qui va ouvrir un domaine verbal. Les règles d’ordre indiquent pour chaque dépendant dans quel champ il peut aller en fonction de sa nature et de sa fonction : un sujet peut aller dans le champ ch-initial, un clitique dans un champ ch-cl-X, etc. On obtient au final la configuration suivante (où les champs non remplis ne sont pas représentés) :
 
-\begin{center}
-\def\arraystretch{1.5}
-\setlength{\tabcolsep}{4ex}
-\begin{tabular}{|c|c|c|c|c|c|}
+\ea\hfill \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 garçon & ne & lui & \cellcolor{lsDOIGray}prêtera & pas & ballon\\
 \hline
 \end{tabular}
-\end{center}
+\hfill\hbox{}\z
 
 Chaque mot va ensuite ouvrir dans la position qu’il occupe un constituant topologique qui accueillera ses dépendants. Le gabarit du constituant dépendra de la nature de l’élément qui l’ouvre et du champ qu’il occupe (voir, pour le rôle joué par le champ, le cas des adjectifs du français dans l’\encadref{fig:3.5.27}, et celui des verbes en allemand dans l’\encadref{fig:3.5.36} sur \textit{La structure topologique de l’allemand}). Ainsi les noms \textit{garçon} et \textit{ballon} vont-ils ouvrir des domaines nominaux, pour accueillir leurs dépendants, et donner l’ordre final suivant :
 
-\begin{center}
-% \def\arraystretch{1.5}
-% \setlength{\tabcolsep}{4ex}
-\begin{tabular}{|l|l|l|l|l|l|}
+\ea\resizebox{\linewidth}{!}{\def\arraystretch{1.5}\begin{tabular}{|l|l|l|l|l|l|}
 \hline
+  {\def\arraystretch{1}
   \begin{tabular}{@{}|l|l|l|@{}}
   \hline
-    \rotatebox{90}{le} & \rotatebox{90}{petit} & \cellcolor{lsDOIGray} \rotatebox{90}{garçon}\\
+    \rotatebox{0}{le} & \rotatebox{0}{petit} & \cellcolor{lsDOIGray} \rotatebox{0}{garçon}\\
   \hline
-  \end{tabular}
-  & \rotatebox{90}{ne} & \rotatebox{90}{lui} & \cellcolor{lsDOIGray} \rotatebox{90}{prêtera} & \rotatebox{90}{pas} &
+  \end{tabular}}
+  & \rotatebox{0}{ne} & \rotatebox{0}{lui} & \cellcolor{lsDOIGray} \rotatebox{0}{prêtera} & \rotatebox{0}{pas} &
+  {\def\arraystretch{1}
   \begin{tabular}{@{}|l|l|l|l|@{}}
     \hline
-    \rotatebox{90}{son} & \rotatebox{90}{autre} & \rotatebox{90}{gros} & \cellcolor{lsDOIGray} \rotatebox{90}{ballon}\\
+    \rotatebox{0}{son} & \rotatebox{0}{autre} & \rotatebox{0}{gros} & \cellcolor{lsDOIGray} \rotatebox{0}{ballon}\\
     \hline
-  \end{tabular}\\
+  \end{tabular}}\\
 \hline
-\end{tabular}
-\end{center}
+\end{tabular}}
+\z
 
 On notera qu’en plus de l’ordre linéaire, nous avons obtenu une structure avec des constituants emboîtés, que nous appelons la \textstyleTermes{structure topologique} de la phrase.
 
@@ -1236,8 +1233,8 @@ La structure topologique est un \textstyleTermes{arbre de constituants ordonné}
 \begin{figure}
 \begin{tikzpicture}
     \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip,
-                  level 1/.style={sibling distance=15mm},
-                  level 2/.style={sibling distance=10mm},
+                  level 1/.style={sibling distance=18mm},
+                  level 2/.style={sibling distance=9mm},
                   ]
       \node (root) {} child { node{} child { node{} } child { node{} } child { node{} } } 
                       child { node{} }
@@ -1276,25 +1273,25 @@ Notons pour conclure que le modèle topologique n’utilise que des \textstyleTe
     L’ordre des éléments antéposés au nom est lui très contraint. De plus, seul des groupes adjectivaux léger peuvent être antéposés : \textit{un} \textbf{\textit{haut}} \textit{mur}, \textit{un} \textbf{\textit{très haut}} \textit{mur}, mais *\textit{un} \textbf{\textit{haut de trois mètres}} \textit{mur} (voir l’\encadref{fig:3.5.22} sur les \textit{Contraintes de poids}). Du point de vue du modèle topologique, cela signifie que l’adjectif \textit{haut} n’ouvre pas un domaine adjectival complet lorsqu’il est antéposé, mais un domaine réduit où ne figure pas le champ final qui accueille normalement les compléments de l’adjectif :
 
     \ea 
-    \ea un mur haut de trois mètres\\
+    \ea un mur \textit{haut de trois mètres}\\
     \begin{center}
     \def\arraystretch{1.5}
     \setlength{\tabcolsep}{4ex}
     \begin{tabular}{|c|c|c|}
     \hline
-    \multicolumn{3}{|c|}{Domaine adjectival}\\\hline
+    \multicolumn{3}{|c|}{\cellcolor{lsDOIGray}Domaine adjectival}\\\hline
     ch-adv & \cellcolor{lsDOIGray} ch-adjectif & ch-final\\
     \hline
     \end{tabular}
     \end{center}
     
-    \ex un très haut mur\\
+    \ex un \textit{très haut} mur\\
     \begin{center}
     \def\arraystretch{1.5}
     \setlength{\tabcolsep}{4ex}
     \begin{tabular}{|c|c|}
     \hline
-    \multicolumn{2}{|c|}{Domaine adj. réduit}\\\hline
+    \multicolumn{2}{|c|}{\cellcolor{lsDOIGray}Domaine adj. réduit}\\\hline
     ch-adv & \cellcolor{lsDOIGray}ch-adjectif\\
     \hline
     \end{tabular}
@@ -1359,16 +1356,15 @@ Notons pour conclure que le modèle topologique n’utilise que des \textstyleTe
 \maths{Grammaire de réécriture}{%\label{sec:3.5.29}
     L’une des premières modélisations mathématiques de la grammaire est la \textstyleTermesapprof{grammaire de réécriture} proposée par Noam Chomsky dans \textit{Structures syntaxiques} en 1957 (voir l’\encadref{fig:1.3.7} sur \textit{Calcul symbolique et grammaires catégorielles} pour les premières grammaires formelles). Notre modèle topologique, au travers de ses gabarits, prolonge ce formalisme.
 
-    \section*{Exemple}
+    \subsection{Exemple}
 
     Bien qu’on puisse utiliser les grammaires de réécriture pour définir des grammaires de dépendances, il s’agit au départ d’un formalisme introduit pour écrire des grammaires de constituants. Voici un exemple pour ceux qui ne connaissent pas encore ce formalisme. Les \textstyleTermesapprof{règles} (dites \textstyleTermesapprof{de réécriture}) sont de la forme :
 
-    \ea
-    P \textrm{→} GN GV    V \textrm{→} \textit{attrape} {\textbar} \textit{poursuit}
-
-    GV \textrm{→} V GN    N \textrm{→} \textit{chat} {\textbar} \textit{chien}
-
-    GN \textrm{→} D N    D \textrm{→} \textit{le} {\textbar} \textit{un}
+    \ea \begin{tabular}[t]{@{}l@{\hspace{4\tabcolsep}}l@{}}
+    P → GN GV  &  V → \textit{attrape} {\textbar} \textit{poursuit}\\
+    GV → V GN  &  N → \textit{chat} {\textbar} \textit{chien}\\
+    GN → D N   & D → \textit{le} {\textbar} \textit{un}\\
+    \end{tabular}
     \z
 
     Avec de telles règles, on peut produire des phrases telles que \textit{un chat poursuit le chien} ou \textit{le chien attrape le chat}. Les règles de droite sont des \textstyleTermesapprof{règles lexicales} (par exemple \textit{attrape} ou \textit{poursuit} sont des constituants de type V). Les règles de gauche sont des \textstyleTermesapprof{règles syntagmatiques} qui disent comment un constituant se décompose. Par exemple, la règle P \textrm{→} GN GV dit qu’une phrase P peut se décomposer en un groupe nominal GN suivi d’un groupe verbal GV. Lue autrement, elle dit comment les constituants se combinent : la combinaison d’un GN suivi d’un GV donne un P. La règle P \textrm{→} GN GV ne dit pas seulement que P se décompose en GN et GV, mais aussi que GN précède GV et que l’extension de P est égale à la somme des extensions de GN et GV.
@@ -1400,7 +1396,7 @@ Notons pour conclure que le modèle topologique n’utilise que des \textstyleTe
 
     Avec les règles proposées ici, on peut générer l’arbre de constituants de la phrase \textit{Un chat poursuit le chien} donné dans l’encadré qui précède. Chaque portion élémentaire de l’arbre, composée d’un nœud et de ses fils, correspond exactement à une règle de réécriture. Ainsi le sommet de l’arbre avec le nœud P et ses deux fils GN et GV est validé par la règle P \textrm{→} GN GV.
 
-    \section*{Critiques}
+    \subsection{Critiques}
 
     Nous souhaitons faire trois critiques concernant une grammaire de constituants comme celle qui précède (qui sert toujours de base à de nombreux modèles linguistiques).
 
@@ -1416,11 +1412,11 @@ Comme nous venons de le voir, le modèle topologique, en plus d’assurer la lin
 
 Nous allons maintenant nous intéresser à la linéarisation non projective. Dans ce cas, certaines projections maximales ne sont pas continues. Nous allons voir comment associer un arbre de constituants ordonné avec des constituants continus à un arbre de dépendance, qu’il soit projectif ou non.
 
-\begin{styleLivreImportant}
-Pour chaque nœud \textit{x} d’un arbre de dépendance ordonné, nous définissons la \textstyleTermes{projection topologique} de \textit{x} comme le plus grand \textbf{segment continu} contenant \textit{x} qui corresponde à une portion connexe de l’arbre de dépendance ayant \textit{x} pour racine.
-\end{styleLivreImportant}
+\Definition{\textstyleTermes{projection topologique}}
+{Pour chaque nœud \textit{x} d’un arbre de dépendance ordonné, nous définissons la \textstyleTermes{projection topologique} de \textit{x} comme le plus grand \textbf{segment continu} contenant \textit{x} qui corresponde à une portion connexe de l’arbre de dépendance ayant \textit{x} pour racine.}
 
 Lorsque l’arbre de dépendance est projectif, la projection maximale de chaque nœud est continu et donc la projection topologique d’un nœud est sa projection maximale. Mais, dès qu’un arbre de dépendance est non projectif, la projection topologique de certains nœuds n’est plus leur projection maximale. Reprenons l’exemple de la \sectref{sec:3.5.13} :
+
 \ea
     {Une belle est entrée qui voulait les acheter}.
 \z
@@ -1544,9 +1540,8 @@ La comparaison entre l’arbre topologique induit et l’arbre de constituants s
 
 Comme on le voit, la relative \textit{qui voulait les acheter} n’est pas à la même position dans les deux arbres : dans l’arbre syntaxique, la relative est un nœud fils du groupe substantival dont \textit{la belle} est la tête, alors que dans l’arbre topologique, elle est un nœud fils de la phrase entière dont \textit{est entrée} est la tête. Autrement dit, la relative ne s’est pas positionnée par rapport à son gouverneur syntaxique \textit{la belle}, mais par rapport au gouverneur de celui-ci, \textit{est entrée}.
 
-\begin{styleLivreImportant}
-Un élément qui ne se place pas par rapport à son gouverneur, mais par rapport à un ancêtre plus éloigné est dit \textstyleTermes{émancipé}. L’ancêtre par rapport auquel se place un élément donné est appelé son \textstyleTermes{hôte topologique}.
-\end{styleLivreImportant}
+\Definition{\textstyleTermes{émancipé}, \textstyleTermes{hôte topologique}}
+{Un élément qui ne se place pas par rapport à son gouverneur, mais par rapport à un ancêtre plus éloigné est dit \textstyleTermes{émancipé}. L’ancêtre par rapport auquel se place un élément donné est appelé son \textstyleTermes{hôte topologique}.}
 
 Si l’on prend maintenant le point de vue de l’hôte topologique, nous dirons qu’un élément qui vient se placer par rapport à lui sans être un dépendant syntaxique est un \textstyleTermes{visiteur topologique}.
 
@@ -1554,7 +1549,7 @@ Si l’on prend maintenant le point de vue de l’hôte topologique, nous dirons
 
 Nous allons présenter les principaux cas de non-projectivité en français et voir comment les modéliser.
 
-1) \textbf{Montée des clitiques.}
+\subsection{Montée des clitiques}
 \ea
 \ea
 {Zoé} \textbf{{lui}}  {a parlé.}
@@ -1574,19 +1569,21 @@ Dans tous ces exemples, le clitique se place sur le verbe fini, alors qu’il es
 Autrement dit, le gouverneur syntaxique du clitique n’offre pas de place au clitique, forçant son émancipation. Un participe passé, par exemple, ne peut jamais accueillir des clitiques, qu’il dépende d’un verbe, comme précédemment, ou qu’il dépende d’un nom (\textit{le livre donné à Zoé} vs \textit{*le livre lui donné}). Il va donc ouvrir un constituant avec un gabarit différent de celui d’un verbe fini :
 
 \begin{table}
-\caption{\label{tab:}Domaine verbal réduit}
+\caption{\label{tab:}{\color{red}Please provide a caption}}
 \def\arraystretch{1.5}
-\setlength{\tabcolsep}{4ex}
+\setlength{\tabcolsep}{3ex}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-ch-adv & \cellcolor{lsDOIGray} ch-verbe & ch-adv & ch-vb-sub & ch-final\\
+\multicolumn{5}{|c|}{\cellcolor{lsDOIGray}Domaine verbal réduit}\\
+\hline
+ch-adv & \cellcolor{lsDOIGray}ch-verbe & ch-adv & ch-vb-sub & ch-final\\
 \hline
 \end{tabular}
 \end{table}
 
 Un infinitif peut normalement accueillir des clitiques (\textit{Zoé veut} \textbf{\textit{l’}}\textit{appeler}), mais pas quand il est dans la construction causative. Il ouvrira dans ce cas un constituant réduit comme celui d’un participe passé.
 
-2) \textbf{Comparatif et superlatif.}
+\subsection{Comparatif et superlatif}
 
 \ea
 \ea
@@ -1622,23 +1619,19 @@ Dans ces constructions, le complément à droite du nom dépend de \textit{plus}
 
 Le complément du superlatif va donc s’émanciper, non seulement du constituant ouvert par son gouverneur \textit{plus}, mais aussi du constituant ouvert par le gouverneur de celui-ci, \textit{beau,} (c’est-à-dire d’un domaine adjectival réduit, voir l’\encadref{fig:3.5.28} sur la \textit{Topologie du groupe substantival en français}) et venir ainsi se placer dans le champ final du domaine nominal. Ceci est à contraster avec les compléments de l’adjectif, qui ne peuvent s’émanciper de la même façon (\textit{un livre beau à pleurer} vs. *\textit{un beau livre à pleurer}).
 
-3) \textbf{Extraction.}
+\subsection{Extraction}
 \ea
-\textbf{{L’année}  {prochaine}},  {je pense que Zoé habitera ailleurs.}
+\ea \textbf{{L’année}  {prochaine}},  {je pense que Zoé habitera ailleurs.}
+\ex \textbf{{A quel endroit}}  {Zoé a-t-elle envie d’habiter} ?
+\ex {l’endroit} \textbf{{où}}  {il est probable que Zoé habitera.}
 \z
-\ea
-\textbf{{A quel endroit}}  {Zoé a-t-elle envie d’habiter} ?
-\z
-\ea
- {l’endroit} \textbf{{où}}  {il est probable que Zoé habitera.}
 \z
 Dans ces exemples, un complément d’un verbe subordonné, ici \textit{habiter/habitera}, est placé en tête de la proposition principale : un tel complément est dit extrait. Nous consacrerons l’entièreté du \chapref{sec:5.4} à l’étude de ce phénomène, notamment lorsqu’il met en jeu des pronoms interrogatifs ou relatifs. Le premier exemple, qui illustre la \textstyleTermes{topicalisation} d’un complément circonstanciel, peut déjà être modélisé avec les outils introduits dans ce chapitre : il s’agit d’une émancipation du complément qui vient se placer dans le champ pré-noyau ouvert par un verbe à l’indicatif. Ce champ peut également accueillir des \textstyleTermes{compléments} dits \textstyleTermes{disloqués} (car ils sont repris par un pronom) comme \textit{Zoé} dans l’exemple suivant :
 
 \ea
-    \textbf{{Zoé}},  {l’année}  {prochaine,}  {je pense qu’}\textbf{{elle}}  {habitera ailleurs.}
+\ea \textbf{{Zoé}},  {l’année}  {prochaine,}  {je pense qu’}\textbf{{elle}}  {habitera ailleurs.}
+\ex {L’année}  {prochaine,} \textbf{{Zoé}},  {je pense qu’}\textbf{{elle}}  {habitera ailleurs.}
 \z
-\ea
-    {L’année}  {prochaine,} \textbf{{Zoé}},  {je pense qu’}\textbf{{elle}}  {habitera ailleurs.}
 \z
 
 On note que le champ pré-noyau peut accueillir plusieurs éléments (ici le complément disloqué \textit{Zoé} et le complément topicalisé \textit{l’année} \textit{prochaine}) et que l’ordre entre eux est libre.
@@ -1729,7 +1722,7 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     \ea
     \gll Leider hat Peter mal wieder in seiner Nase zu popeln gewagt   vor der ganzen Familie.\\
     Hélas   a   Peter   à nouveau   dans son nez   de creuser osé   devant toute la famille\\
-    ‘Peter a malheureusement à nouveau osé se crotter le nez devant toute la famille.’
+    \glt ‘Peter a malheureusement à nouveau osé se crotter le nez devant toute la famille.’
     \z
     Les parenthèses sont grisées ici. Le constituant \textit{vor der ganzen Familie} ‘devant toute la famille’ peut aller dans le Nachfeld car il est assez lourd (et un placement dans le Mittelfeld séparerait trop les deux parenthèses). Des constituants légers comme \textit{leider} ou \textit{Peter} préfèrent rester dans le Vorfeld ou le Mittelfeld.
 
@@ -1760,8 +1753,8 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
         Je crois  [ que   Peter à nouveau dans son nez   creuser  pu           a   ]\\}
     \ex[]{
     \gll Ich glaube,  [ dass Peter mal wieder in seiner Nase hat\textsubscript{1} popeln\textsubscript{3} können\textsubscript{2}   ].\\
-    Je crois   [ que   Peter à nouveau dans son nez  a     creuser  pu   ]\\}
-    \glt  ‘Je crois que Peter a pu se crotter le nez à nouveau.’
+    Je crois   [ que   Peter à nouveau dans son nez  a     creuser  pu   ]\\
+    \glt  ‘Je crois que Peter a pu se crotter le nez à nouveau.’}
     \z
     \z
 
@@ -1770,8 +1763,8 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     \begin{exe}
     \exr{ex:popel}
     \begin{xlist}
-    \exi[c.] \textit{Ich glaube,}  [ \textit{dass Peter mal wieder in seiner Nase}  \textit{popeln\textsubscript{3}} \textit{hat\textsubscript{1} }\textit{können\textsubscript{2}}   ].\textit{\\
-    }  Je crois   [ que   Peter à nouveau dans son nez  creuser  a     pu   ]\\
+    \exi{c.} \textit{Ich glaube,}  [\,\textit{dass Peter mal wieder in seiner Nase}  \textit{popeln\textsubscript{3}} \textit{hat\textsubscript{1} }\textit{können\textsubscript{2}}\,].\\
+    Je crois   [ que   Peter à nouveau dans son nez  creuser  a     pu   ]\\
     ‘Je crois que Peter a pu se crotter le nez à nouveau.’
     \end{xlist}
     \end{exe}
@@ -1799,113 +1792,95 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     Dans le cadre des grammaires de dépendance, \citet{melcuk1987surface} proposent une liste très complète des constructions de l’anglais et des règles de précédence linéaire qui vont avec. Le modèle topologique sera formalisé en grammaire de dépendance simultanément par \citet{duchier2001topological} et \citet{gerdes2001word} (voir la formalisation proposée dans l’\encadref{fig:3.5.33} \textit{Grammaire topologique formelle}).
 }
 \exercices{%\label{sec:3.5.39}
-    \exercice{1} a) Qu’est-ce que la topologie ?
+    \exercice{1} 
+    \begin{enumerate}[label=\alph*.]
+    \item Qu’est-ce que la topologie ?
+    \item À quel endroit du modèle linguistique le modèle topologique intervient-il dans un modèle stratificationnel comme la théorie Sens-Texte (voir \sectref{sec:1.3.8} \textit{Modularité et stratification} et \encadref{fig:1.3.9} \textit{La Théorie Sens-Texte}) ?
+    \item Pourquoi rejetons-nous la notion d’ordre de base ?
+    \end{enumerate}
 
-    b) À quel endroit du modèle linguistique le modèle topologique intervient-il dans un modèle stratificationnel comme la théorie Sens-Texte (voir \sectref{sec:1.3.8} \textit{Modularité et stratification} et \encadref{fig:1.3.9} \textit{La Théorie Sens-Texte}) ?
+    \exercice{2} Ordre préfixé et postfixé. 
+    \begin{enumerate}[label=\alph*.]
+    \item On considère l’expression préfixée × 3 + × 12 5 7. Donner l’arbre de dépendance correspondant et en déduire une expression infixée et postfixée.
 
-    c) Pourquoi rejetons-nous la notion d’ordre de base ?
-
-    \exercice{2} Ordre préfixé et postfixé. a) On considère l’expression préfixée × 3 + × 12 5 7. Donner l’arbre de dépendance correspondant et en déduire une expression infixée et postfixée.
-
-    b) On considère l’expression postfixée 1 5 ${\surd}$ + 2 /. Sachant que ${\surd}$ (racine carrée) est un opérateur unaire (c’est-à-dire d’arité 1), donner l’arbre de dépendance correspondant à cette expression. En déduire l’écriture traditionnelle de ce nombre (qui n’est autre que le nombre d’or).
-
+    \item On considère l’expression postfixée 1 5 ${\surd}$ + 2 /. Sachant que ${\surd}$ (racine carrée) est un opérateur unaire (c’est-à-dire d’arité 1), donner l’arbre de dépendance correspondant à cette expression. En déduire l’écriture traditionnelle de ce nombre (qui n’est autre que le nombre d’or).
+    \end{enumerate}
     \exercice{3} Projectivité. Construire la structure de dépendance de la phrase suivante et vérifier qu’elle est non projective :
 
-    À \textit{cette heure-là, je pense qu’il est déjà parti.}
+    \ea À \textit{cette heure-là, je pense qu’il est déjà parti.} \z
 
     \exercice{4} Théorie des graphes. Le graphe K\textsubscript{4} n’est pas planaire extérieur (voir \encadref{fig:3.5.15} \textit{Projectivité et planarité}). Montrer qu’il est néanmoins planaire et que donc tous les graphes de 4 nœuds ou moins sont planaires. Chercher les graphes non-planaires les plus simples à 5 et à 6 nœuds.
 
     \exercice{5} Topologie du groupe substantival en français. On s’intéresse plus particulièrement au placement des déterminants et des numéraux en français. Comment rendre compte des données suivantes dans un modèle topologique ?
 
     \ea
-    {les/mes/ces/deux/quelques/des/plusieurs amis sont venus}
+    \ea[]{les/mes/ces/deux/quelques/des/plusieurs amis sont venus}
+    \ex[]{les/mes/ces deux/quelques amis sont venus}
+    \ex[*]{les mes/ces/des/plusieurs amis sont venus}
+    \ex[*]{amis sont venus}
     \z
-    \ea
-    {les/mes/ces deux/quelques amis sont venus}
-    \z
-    \ea
-    {*les mes/ces/des/plusieurs amis sont venus}
-    \z
-\ea{
-    *amis sont venus
-    }
     \z
 
     \exercice{6} Interrogation en français. On observe un contraste entre le fonctionnement des interrogatifs \textit{à qui} et \textit{que~}:
+    
     \ea
-    {À qui parle-t-elle} ?
+    \ea[]{À qui parle-t-elle ?}
+    \ex[]{À qui Marie parle-t-elle ?}
+    \ex[]{Que dit-elle ?}
+    \ex[*]{Que Marie dit-elle ?}
     \z
-\ea{
-    À qui Marie parle-t-elle ?
-    }
-    \z
-\ea{
-    Que dit-elle ?
-    }
-    \z
-\ea{
-    *Que Marie dit-elle ?
-    }
     \z
     Comment expliquer cette différence de comportement dans le cadre d’un modèle topologique ?
 
     \exercice{7} Topologie de l’anglais. L’anglais possède une classe de verbes que l’on appelle les modaux qui comprend les auxiliaires \textsc{be} ‘être’ et \textsc{have} ‘avoir’ et quelques verbes à valeur modale comme \textsc{can} ‘pouvoir, \textsc{must} ‘devoir, \textsc{will} (auxiliaire du futur) ou \textsc{would} (auxiliaire du conditionnel) qui ont la particularité d’être invariables, ainsi que \textsc{do} ‘faire’. Ces verbes ont également des propriétés distributionnelles qui les distinguent des autres verbes. Premièrement, les adverbes se placent de préférence après les modaux et avant les verbes ordinaires :
+    
     \ea
-    {Mary often calls Peter}     ‘Marie appelle souvent Pierre’
+    \ea[]{Mary often calls Peter     ‘Marie appelle souvent Pierre’}
+    \ex[\textsuperscript{??}]{\textit{Mary calls often Peter}}
+    \ex[]{Mary would often call Peter   ‘Marie appellerait souvent Pierre’}
+    \ex[\textsuperscript{??}]{\textit{Mary often would call Peter}}
     \z
-    \ea
-    {\textsuperscript{??}}\textit{Mary calls often Peter}
-    \z
-    \ea
-    {Mary would often call Peter}   ‘Marie appellerait souvent Pierre’
-    \z
-    \ea
-    {\textsuperscript{??}}\textit{Mary often would call Peter}
     \z
 
     Deuxièmement, dans les interrogatives, le sujet se place entre le modal et le verbe, et en cas d’absence de modal, \textsc{do} est introduit :
+    
     \ea
-    {Would Mary call Peter?}     ‘Marie appellerait-elle Pierre ?’
+    \ea[]{Would Mary call Peter?     ‘Marie appellerait-elle Pierre ?’}
+    \ex[*]{Calls Mary Peter?}
+    \ex[]{Does Mary call Peter?     ‘Marie appelle-t-elle Pierre ?’}
     \z
-    \ea
-    {*Calls Mary Peter?}
-    \z
-    \ea
-    {Does Mary call Peter?}     ‘Marie appelle-t-elle Pierre ?’
     \z
     La position initiale peut aussi être occupée par un pronom interrogatif :
+    
     \ea
-    {Why would Mary call Peter?}   ‘Pourquoi Marie appellerait-elle Pierre ?’
+    \ea[]{Why would Mary call Peter?   ‘Pourquoi Marie appellerait-elle Pierre ?’}
+    \ex[]{Who does Mary call?     ‘Qui Marie appelle-t-elle ?’}
     \z
-    \ea
-    {Who does Mary call?}     ‘Qui Marie appelle-t-elle ?’
     \z
+    
     Troisièmement, la négation se place obligatoirement sur un modal et donc comme dans le cas de l’interrogation, \textsc{do} doit être introduit en l’absence d’un autre modal :
+    
     \ea
-    {Mary would not call Peter}     ‘Marie n’appellerait pas Pierre’
+    \ea[]{Mary would not call Peter     ‘Marie n’appellerait pas Pierre’}
+    \ex[*]{Mary calls not Peter}
+    \ex[]{Mary does not call Peter    ‘Marie n’appelle pas Pierre’}
     \z
-\ea{
-    *Mary calls not Peter
-    }
-    \z
-    \ea
-    {Mary does not call Peter}    ‘Marie n’appelle pas Pierre’
     \z
 
     Quatrièmement, le sujet peut être inversé dans certains cas :
+    
     \ea
-    {Never would Mary call Peter}   ‘Jamais Marie n’appellerait Pierre’
+    \ea  {Never would Mary call Peter}   ‘Jamais Marie n’appellerait Pierre’
+    \ex  {Here are two nice people}     ‘Ici sont deux chouettes personnes’
     \z
-    \ea
-    {Here are two nice people}     ‘Ici sont deux chouettes personnes’
     \z
     Rappelons également que, en anglais, l’objet direct doit précéder tous les autres compléments. De quelle façon un modèle topologique de l’anglais peut-il rendre compte de ces propriétés ?
 
     \exercice{8} Topologie de l’allemand. Les exemples que nous avons présentés dans l’\encadref{fig:3.5.36} acceptent encore d’autres ordres, comme, par exemple :
 
     \ea
-    \gll In seiner Nase zu popelnhatPetermal wieder gewagt.\\
-    dans son nez  de creuser  a   Peter   à nouveau   osé\\
+    \gll In seiner Nase zu popeln hat Peter mal wieder gewagt.\\
+         dans son nez  de creuser  a   Peter   à nouveau   osé\\
     \glt   ‘Peter a à nouveau osé se crotter le nez.’
     \z
 
@@ -1924,15 +1899,19 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
 }
 \corrections{%\label{sec:3.5.41}
     \corrigé{1}
-    a) La topologie est l’étude du placement des unités syntaxiques, c’est-à-dire l’étude de l’ordre des mots, mais aussi des syntaxèmes à l’intérieur des mots.
+    \begin{enumerate}[label=\alph*.]
+    \item La topologie est l’étude du placement des unités syntaxiques, c’est-à-dire l’étude de l’ordre des mots, mais aussi des syntaxèmes à l’intérieur des mots.
 
-    b) Le modèle linguistique décrit la correspondance entre le sens et le texte. Le modèle topologique décrit la linéarisation, c’est-à-dire la correspondance entre la structure syntaxique (non ordonnée) et la chaîne linéaire. Ou dans sa version plus élaborée entre une structure de dépendance syntaxique et un arbre de constituants topologiques.
+    \item Le modèle linguistique décrit la correspondance entre le sens et le texte. Le modèle topologique décrit la linéarisation, c’est-à-dire la correspondance entre la structure syntaxique (non ordonnée) et la chaîne linéaire. Ou dans sa version plus élaborée entre une structure de dépendance syntaxique et un arbre de constituants topologiques.
 
-    c) Certaines langues ont un ordre dominant, comme l’ordre SVO en français. Néanmoins considérer un ordre de base revient à considérer que tous les autres ordres sont obtenus par des transformations de l’ordre base. Cela revient à dire que lorsque le sujet est après le verbe en français, celui-ci a été inversé. Même s’il peut nous arriver de conserver la terminologie et de parler de «~sujet inversé~», nous ne considérons pas qu’il y a eu une inversion. Nous considérons que le sujet a été placé directement dans cette position.
+    \item Certaines langues ont un ordre dominant, comme l’ordre SVO en français. Néanmoins considérer un ordre de base revient à considérer que tous les autres ordres sont obtenus par des transformations de l’ordre base. Cela revient à dire que lorsque le sujet est après le verbe en français, celui-ci a été inversé. Même s’il peut nous arriver de conserver la terminologie et de parler de «~sujet inversé~», nous ne considérons pas qu’il y a eu une inversion. Nous considérons que le sujet a été placé directement dans cette position.
+    \end{enumerate}
+    \corrigé{2} 
+    \begin{enumerate}[label=\alph*.]
+    \item Le premier symbole, $\times$, est la racine de l’arbre. Son premier dépendant est 3. Le symbole suivant, +, est la racine du deuxième dépendant, et ainsi de suite. La formule est donc $3 \times \left((12\times5) + 7\right)$ sous forme infixée et 3 12 5 × 7 + × sous forme postfixée.
 
-    \corrigé{2} 1) Le premier symbole, $\times$, est la racine de l’arbre. Son premier dépendant est 3. Le symbole suivant, +, est la racine du deuxième dépendant, et ainsi de suite. La formule est donc $3 \times \left((12\times5) + 7\right)$ sous forme infixée et 3 12 5 × 7 + × sous forme postfixée.
-
-    2) La formule est (1 + $\sqrt{5}$) / 2 sous forme infixée et / + 1 $\sqrt{5}$ 2 sous forme préfixée.
+    \item La formule est (1 + $\sqrt{5}$) / 2 sous forme infixée et / + 1 $\sqrt{5}$ 2 sous forme préfixée.
+    \end{enumerate}
 
     \corrigé{3} Le syntagme \textit{à cette heure-là} dépend de \textit{parti} et couvre donc la racine de l’arbre \textit{pense}.
 
