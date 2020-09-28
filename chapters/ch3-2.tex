@@ -240,12 +240,12 @@ Supposons que A et B soient deux unités syntaxiques qui se combinent, comme par
 
 \begin{figure}
 \begin{tikzpicture}
-\node at (0,0) [AbsSet] (A) {A};
-\node at (2,0) [AbsSet] (B) {B};
+\node at (0,0) [AbsEllipse] (A) {A};
+\node at (2,0) [AbsEllipse] (B) {B};
 \node [draw, ellipse, inner sep=1pt, fit = (A) (B)] {};
 
-\node at (7,0) [AbsSet] (A2) {A};
-\node at (9,0) [AbsSet] (B2) {B};
+\node at (7,0) [AbsEllipse] (A2) {A};
+\node at (9,0) [AbsEllipse] (B2) {B};
 \path (A2) edge [bend left] (B2);
 \end{tikzpicture}
 \caption{\label{fig:}Deux façons de représenter la combinaison A $\oplus$ B}
@@ -260,7 +260,7 @@ Supposons que A et B soient deux unités syntaxiques qui se combinent, comme par
 \begin{tikzpicture}[every node/.style={font={\itshape\strut},draw,ellipse,inner sep=5pt}]
 \node at (0,0) (A) {cet étudiant veut acheter};
 \node [right=1em of A] (B) {un livre de syntaxe};
-\path (A) edge [bend left] (B);
+\path (A.north east) edge [bend left] (B.north west);
 \end{tikzpicture}
 \caption{\label{fig:}Deux représentations pour \textit{cet étudiant veut acheter} $\oplus$ \textit{un livre de syntaxe}}
 \end{figure}
@@ -277,16 +277,16 @@ Raisonner en termes de composition n’est pas complètement équivalent à rais
 
 \begin{figure}
 \begin{tikzpicture}
-\node at (0,0) [AbsSet] (A) {A};
-\node at (2,0) [AbsSet] (B) {B};
-\node at (4,0) [AbsSet] (C) {C};
+\node at (0,0) [AbsEllipse] (A) {A};
+\node at (2,0) [AbsEllipse] (B) {B};
+\node at (4,0) [AbsEllipse] (C) {C};
 \node [draw, ellipse, inner sep=0pt, fit = (A) (B)] {};
 \node [draw, ellipse, inner sep=0pt, fit = (B) (C)] {};
 \end{tikzpicture}\medskip\\
 \begin{tikzpicture}
-\node at (0,0) [AbsSet] (A2) {A};
-\node at (2,0) [AbsSet] (B2) {B};
-\node at (4,0) [AbsSet] (C2) {C};
+\node at (0,0) [AbsEllipse] (A2) {A};
+\node at (2,0) [AbsEllipse] (B2) {B};
+\node at (4,0) [AbsEllipse] (C2) {C};
 \path (A2) edge [bend left] (B2)
       (B2) edge [bend left] (C2);
 \end{tikzpicture}
@@ -300,22 +300,22 @@ Si l’on raisonne en termes de décomposition, on partira du tout U que forment
 
 \begin{figure}
 \begin{tikzpicture}
-\node at (0,0) [AbsSet] (A) {A};
-\node at (2,0) [AbsSet] (B) {B};
-\node at (4,0) [AbsSet] (C) {C};
+\node at (0,0) [AbsEllipse] (A) {A};
+\node at (2,0) [AbsEllipse] (B) {B};
+\node at (4,0) [AbsEllipse] (C) {C};
 \node [draw, ellipse, inner sep=3pt, fit = (A) (B) (C)] {};
 \end{tikzpicture}\\\medskip
 \begin{tikzpicture}
-\node at (0,0) [AbsSet] (A) {A};
-\node at (2,0) [AbsSet] (B) {B};
-\node at (4,0) [AbsSet] (C) {C};
+\node at (0,0) [AbsEllipse] (A) {A};
+\node at (2,0) [AbsEllipse] (B) {B};
+\node at (4,0) [AbsEllipse] (C) {C};
 \node [draw, ellipse, inner sep=3pt, fit = (A) (B) (C)] {};
 \node [draw, ellipse, inner sep=0pt, fit = (A) (B)] {};
 \end{tikzpicture}\\\medskip
 \begin{tikzpicture}
-\node at (0,0) [AbsSet] (A) {A};
-\node at (2,0) [AbsSet] (B) {B};
-\node at (4,0) [AbsSet] (C) {C};
+\node at (0,0) [AbsEllipse] (A) {A};
+\node at (2,0) [AbsEllipse] (B) {B};
+\node at (4,0) [AbsEllipse] (C) {C};
 \node [draw, ellipse, inner sep=3pt, fit = (A) (B) (C)] {};
 \node [draw, ellipse, inner sep=0pt, fit = (B) (C)] {};
 \end{tikzpicture}
@@ -781,37 +781,34 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
     Nous pouvons dire pour conclure que la représentation de l’organisation syntaxique d’un énoncé par une structure de connexions présente des avantages pour qui voudrait étudier plus avant le traitement cognitif de la parole et de la lecture, permettant de rendre compte d’une connexion à différents niveaux de granularité, d’attribuer des analyses à n’importe quelle portion d’un énoncé et de construire la structure d’un énoncé de manière incrémentale.
 }
 \exercices{%\label{sec:3.2.27}
-    \exercice{1} a) Expliquez quelles contraintes agissent sur la réalisation du sens ‘rapide’ dans les deux phrases suivantes :
-    \ea
-        {Zoé a jeté un coup d’œil} \textbf{{rapide}}  {dans la pièce.}
-    \z
-    \ea
-        {Zoé a regardé} \textbf{{rapidement}}  {dans la pièce}.
-    \z
-    b) Quelles contraintes agissent sur la réalisation de ‘épée’ dans les deux phrases suivantes ?
-    \ea
-        {Manier une} \textbf{{épée}}  {peut être dangereux.}
-    \z
-    \ea
-        {Le maniement d’une} \textbf{{épée}}  {peut être dangereux}.
-    \z
+    \exercice{1} 
+    \begin{enumerate}[label=\alph*.]
+    \item Expliquez quelles contraintes agissent sur la réalisation du sens ‘rapide’ dans les deux phrases suivantes :
+      \begin{enumerate}[label=(\arabic*)]
+      \item   {Zoé a jeté un coup d’œil} \textbf{{rapide}}  {dans la pièce.}
+      \item   {Zoé a regardé} \textbf{{rapidement}}  {dans la pièce}.
+      \end{enumerate}
+    \item Quelles contraintes agissent sur la réalisation de ‘épée’ dans les deux phrases suivantes ?
+      \begin{enumerate}[label=(\arabic*)]
+      \item {Manier une} \textbf{{épée}}  {peut être dangereux.}
+      \item {Le maniement d’une} \textbf{{épée}}  {peut être dangereux}.
+      \end{enumerate}
+    \end{enumerate}
     \exercice{2} Comparer les paradigmes de commutation de la position sujet du verbe \textsc{plaire} et de la position objet du verbe \textsc{aimer}. Quelles sont les différences ?
-    \ea
-        \textbf{{Le chocolat}}  {plaît à Jean.}
-    \z
-    \ea
-        {Jean aime} \textbf{{le chocolat}}.
-    \z
+    \begin{enumerate}[label=(\arabic*)]
+       \item \textbf{{Le chocolat}}  {plaît à Jean.}
+       \item {Jean aime} \textbf{{le chocolat}}.
+    \end{enumerate}
     \exercice{3} Donner la liste des unités syntaxiques autonomisables (c’est-à-dire plus grandes ou égales à un mot) de l’énoncé :
-    \ea
-        {Cet étudiant veut acheter un livre de syntaxe}
-    \z
+    \begin{enumerate}[label=(\arabic*)]
+        \item {Cet étudiant veut acheter un livre de syntaxe}
+    \end{enumerate}
     \exercice{4} En utilisant le test d’autonomisabilité illocutoire, déterminer les unités syntaxiques autonomisables des énoncés suivants et en déduire la structure de connexion correspondante.
-
-    a) \textit{Ça a commencé bien des années plus tard}.
-
-    b) \textit{le plus haut mur du monde}.
-
+    
+    \begin{enumerate}[label=\alph*.]
+    \item \textit{Ça a commencé bien des années plus tard}.
+    \item \textit{le plus haut mur du monde}.
+    \end{enumerate}
     \exercice{5} On propose la structure de connexion suivante pour \textit{Le chat dort sur le lit}.
 
     \begin{center}
@@ -837,12 +834,12 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
     \end{center}
 
     Cette structure est donnée sous forme de polygraphe (voir \encadref{fig:3.2.23}).
-
-    a) Quelles sont les unités qu’on peut déduire de cette structure ?
-
-    b) À quels critères répond cette structure de connexion ?
-
-    c) Peut-on raffiner les connexions de cette structure ? En utilisant quels critères ?
+    
+    \begin{enumerate}[label=\alph*.]
+    \item Quelles sont les unités qu’on peut déduire de cette structure ?
+    \item À quels critères répond cette structure de connexion ?
+    \item Peut-on raffiner les connexions de cette structure ? En utilisant quels critères ?
+    \end{enumerate}
 }
 \lecturesadditionnelles{%\label{sec:3.2.28}
     L’organisation de nos chapitres doit beaucoup aux travaux d’Igor Mel’čuk. Celui-ci considère 3 types de critères pour définir la structure syntaxique : les critères A décident si deux mots se combinent entre eux, les critères B lequel des deux mots est la tête du syntagme qu’ils forment, les critères C quelle est la relation qui les unit. Le présent chapitre est ainsi consacré aux combinaisons et donc aux critères A. Nous avons étendu l’analyse de Mel’čuk en ne limitant pas la connexion aux combinaisons de mots. Les critères B seront étudiés au \chapref{sec:3.3} sur \textit{Tête et dépendance}. Les critères C seront abordés plus tard, dans le \chapref{sec:5.2} sur \textit{Les relations syntaxiques.}
@@ -856,21 +853,21 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
     \FurtherReading{3-2}
 }
 \citations{%\label{sec:3.2.29}
-    {\bfseries
-    Citations de la \sectref{sec:3.2.25}.
-    }
+    {\bfseries Citations de la \sectref{sec:3.2.25}.}
 
     \citet[129--130]{gleason1955introduction} :
 
     \begin{quote}
-
     We may, as a first hypothesis, consider that each of [the words of the considered utterance] has some statable relationships to each other word. If we can describe these interrelationships completely, we will have described the syntax of the utterance in its entirety. […] We might start by marking those pairs of words which are felt to have the closest relationship.~[…]~We will also lay down the rule that each word can be marked as a member of only one such pair.~
     \end{quote}
 }
 \corrections{%\label{sec:3.2.30}
-\corrigé{1} a) Dans le premier cas, \textit{rapide} se combine avec la locution nominale \textit{coup d’œil}, ce qui explique la réalisation comme adjectif. Dans le deuxième cas, la combinaison a lieu avec le verbe \textsc{regarder}, ce qui entraine la réalisation par l’adverbe \textit{rapidement}.
+\corrigé{1} 
+\begin{enumerate}[label=\alph*.]
+\item Dans le premier cas, \textit{rapide} se combine avec la locution nominale \textit{coup d’œil}, ce qui explique la réalisation comme adjectif. Dans le deuxième cas, la combinaison a lieu avec le verbe \textsc{regarder}, ce qui entraine la réalisation par l’adverbe \textit{rapidement}.
 
-b) Dans le premier cas, \textit{une épée} est le complément d’objet direct de la forme infinitive du verbe \textsc{manier}. Dans le deuxième cas, \textit{une épée} est le complément du nom \textit{maniement~}; dans ce cas, \textit{une épée} doit d’abord se combiner avec la préposition \textsc{de} avant de se combiner avec \textit{maniement}.
+\item Dans le premier cas, \textit{une épée} est le complément d’objet direct de la forme infinitive du verbe \textsc{manier}. Dans le deuxième cas, \textit{une épée} est le complément du nom \textit{maniement~}; dans ce cas, \textit{une épée} doit d’abord se combiner avec la préposition \textsc{de} avant de se combiner avec \textit{maniement}.
+\end{enumerate}
 
 \corrigé{2} Les deux positions acceptent des groupes substantivaux, des infinitives (\textit{lire le soir}) et des propositions complétive (\textit{qu’il pleuve le matin}). On observe deux différences dans les paradigmes. D’une part, les pronoms sujets et objets sont différents : \textbf{\textit{il} plaît à Marie} vs \textit{Marie} \textbf{\textit{l’}}\textit{aime}. D’autre part, la position sujet accepte des infinitives en \textit{de~}: \textbf{\textit{De lire le soir} plaît à Marie} vs *\textit{Marie aime de lire le soir}.
 
@@ -886,7 +883,10 @@ b) Dans le premier cas, \textit{une épée} est le complément d’objet direct 
 \item l’énoncé complet : \textit{cet étudiant veut acheter un livre de syntaxe}.
 \end{itemize}
 
-\corrigé{4} a) \textit{bien des années plus tard} forme un syntagme, puisqu’il peut être la réponse à la question «~\textit{Ca a commencé quand} ?~». À la même question, on peut répondre \textit{des années plus tard}, \textit{bien plus tard} ou \textit{plus tard}, voire juste \textit{tard}, mais pas \textit{bien des années}, \textit{bien}, \textit{des années} ou \textit{plus}. On en déduit que \textit{bien} et \textit{des années} se combinent avec \textit{plus tard}. Il est plus difficile de déterminer si \textit{bien} et \textit{des années} se combinent avec \textit{plus} ou \textit{tard}, puisque ni \textit{des années plus}, ni \textit{des années tard} n’est acceptable. On peut néanmoins remarquer qu’on trouve un groupe substantival avec \textit{plus} dans d’autres contextes : \textit{Il habite un étage plus haut~}; \textit{Fais-le deux centimètres plus large}. Par contre, on ne peut jamais combiner un groupe substantival avec \textit{tard} sans la présence de \textit{plus}, ce qui nous permet de conclure que \textit{des années} se combine avec \textit{plus}. Si \textit{bien} peut se combiner aussi bien avec \textit{plus} que \textit{tard}, il semble, au vu du sens, que c’est avec \textit{plus} qu’il se combine ici.
+\corrigé{4} 
+\begin{enumerate}[label=\alph*.]
+\item \textit{bien des années plus tard} forme un syntagme, puisqu’il peut être la réponse à la question «~\textit{Ca a commencé quand} ?~». À la même question, on peut répondre \textit{des années plus tard}, \textit{bien plus tard} ou \textit{plus tard}, voire juste \textit{tard}, mais pas \textit{bien des années}, \textit{bien}, \textit{des années} ou \textit{plus}. On en déduit que \textit{bien} et \textit{des années} se combinent avec \textit{plus tard}. Il est plus difficile de déterminer si \textit{bien} et \textit{des années} se combinent avec \textit{plus} ou \textit{tard}, puisque ni \textit{des années plus}, ni \textit{des années tard} n’est acceptable. On peut néanmoins remarquer qu’on trouve un groupe substantival avec \textit{plus} dans d’autres contextes : \textit{Il habite un étage plus haut~}; \textit{Fais-le deux centimètres plus large}. Par contre, on ne peut jamais combiner un groupe substantival avec \textit{tard} sans la présence de \textit{plus}, ce qui nous permet de conclure que \textit{des années} se combine avec \textit{plus}. Si \textit{bien} peut se combiner aussi bien avec \textit{plus} que \textit{tard}, il semble, au vu du sens, que c’est avec \textit{plus} qu’il se combine ici.
+   
 
 \begin{center}
 \begin{tikzpicture}[every node/.style={font=\footnotesize,inner sep=3pt}]
@@ -907,7 +907,7 @@ b) Dans le premier cas, \textit{une épée} est le complément d’objet direct 
 \end{center}
 
 
-b) La fragmentation du syntagme \textit{le plus haut mur du monde} pose plusieurs problèmes. Nous avons déjà traité le cas des adjectifs épithètes et expliqué pourquoi \textit{le haut} n’est pas un fragment acceptable. Mais c’est plus compliqué avec \textit{le plus haut}, puisqu’on a \textit{le mur le plus haut}. On peut argumenter que \textit{le} dans \textit{le plus haut mur} est bien l’article, car il commute avec un possessif : \textit{son plus haut mur}, \textit{mon plus vieil ami}. Ce qui n’est pas le cas qu’en \textit{le plus haut} forme une unité syntaxique et un groupe adjectival postposé au nom : *\textit{le mur notre plus haut}. On aurait donc la structure de connexion suivante pour \textit{le plus haut mur} :
+\item La fragmentation du syntagme \textit{le plus haut mur du monde} pose plusieurs problèmes. Nous avons déjà traité le cas des adjectifs épithètes et expliqué pourquoi \textit{le haut} n’est pas un fragment acceptable. Mais c’est plus compliqué avec \textit{le plus haut}, puisqu’on a \textit{le mur le plus haut}. On peut argumenter que \textit{le} dans \textit{le plus haut mur} est bien l’article, car il commute avec un possessif : \textit{son plus haut mur}, \textit{mon plus vieil ami}. Ce qui n’est pas le cas qu’en \textit{le plus haut} forme une unité syntaxique et un groupe adjectival postposé au nom : *\textit{le mur notre plus haut}. On aurait donc la structure de connexion suivante pour \textit{le plus haut mur} :
 
 Mais on peut aussi accepter que dans cette construction \textit{le} joue un double rôle : à la fois article défini (\textit{le mur}) et marqueur du superlatif (le plus), ce qui donne une structure cyclique.
 
@@ -939,10 +939,11 @@ Mais on peut aussi accepter que dans cette construction \textit{le} joue un doub
 
 
 Un autre problème d’analyse vient du modifieur \textit{du monde}. Il ne s’agit pas d’un complément du nom \textit{mur}, puisque \#\textit{mur du monde}, s’il est acceptable, n’a pas le sens requis et surtout on a \textit{le mur le plus haut du monde}. De même, \textit{du monde} n’est pas un modifieur de l’adjectif, car l’absence du superlatif donne un sens inapproprié : \#\textit{le haut mur du monde}. Donc, bien que le fragment \textit{le plus du monde} soit inacceptable, nous pouvons considérer que la présence du modifieur du monde est validé par la présence du superlatif et que les deux sont donc connectés.
+\end{enumerate}
 
-\corrigé{5} a) Les unités induites sont les mots, ainsi que \textit{le lit, sur le lit, le chat, le chat dort, dort sur le lit} et la phrase entière.
-
-b) Ces unités obéissent aux critères d’autonomisabilité. En particulier, \textit{sur} ne peut apparaître sans son complément \textit{le lit}.
-
-c) On peut raffiner la structure en utilisant le critère distributionnel. Nous verrons au chapitre suivant qu’il y a de bonnes raisons de considérer la combinaison \textit{dort} \textrm{${\oplus}$} \textit{sur}. Il est moins facile de raffiner les connexions mettant en jeu une unité déterminant-nom comme \textit{le chat} ou \textit{le lit}.
-}
+\corrigé{5} 
+\begin{enumerate}[label=\alph*.]
+\item Les unités induites sont les mots, ainsi que \textit{le lit, sur le lit, le chat, le chat dort, dort sur le lit} et la phrase entière.
+\item Ces unités obéissent aux critères d’autonomisabilité. En particulier, \textit{sur} ne peut apparaître sans son complément \textit{le lit}.
+\item On peut raffiner la structure en utilisant le critère distributionnel. Nous verrons au chapitre suivant qu’il y a de bonnes raisons de considérer la combinaison \textit{dort} \textrm{${\oplus}$} \textit{sur}. Il est moins facile de raffiner les connexions mettant en jeu une unité déterminant-nom comme \textit{le chat} ou \textit{le lit}.
+\end{enumerate}}
