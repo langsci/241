@@ -229,11 +229,11 @@ Considérons les énoncés construits suivants :
 On ressent facilement que la phrase (A) est meilleure que la phrase (B), qui elle-même est meilleure que (C). On constate que la phrase (E) est clairement inacceptable, tandis qu’on peut se demander si (D) l’est ou pas. Il est d’usage de noter l’\textstyleTermes{acceptabilité} des énoncés par des symboles allant de l’absence de symbole signifiant l’acceptabilité au symbole~* signifiant l’inacceptabilité, en passant par les symboles ? (léger doute), ?? (doute sérieux) et ?* (inacceptabilité probable). Pour nos exemples, nous aurions donc :
 
 \ea
-\ea  C’est un film que je sais que tu n’hésiteras pas une seconde à regarder.
-\ex \textsuperscript{?}C’est un film que je me demande quand tu regarderas.
-\ex \textsuperscript{??}C’est un film que je ne sais pas si tu accepteras que je regarde.
-\ex \textsuperscript{?}*C’est un film que je me demande jusqu’où tu es prêt à regarder.
-\ex *C’est un film que je dormais quand tu regardais.
+\ea[]{C’est un film que je sais que tu n’hésiteras pas une seconde à regarder.}
+\ex[\textsuperscript{?}]{C’est un film que je me demande quand tu regarderas.}
+\ex[\textsuperscript{??}]{C’est un film que je ne sais pas si tu accepteras que je regarde.}
+\ex[\textsuperscript{?}*]{C’est un film que je me demande jusqu’où tu es prêt à regarder.}
+\ex[*]{C’est un film que je dormais quand tu regardais.}
 \z
 \z
 
@@ -293,16 +293,18 @@ La plupart des études partent des textes et donc modélisent la langue dans le 
     \exercice{3} Nous avons terminé l’\encadref{fig:1.1.8} en nous demandant si le fait que la phrase \textit{La personne que le chien auquel le garçon qui habite au coin de la rue a donné un os a mordu est à l’hôpital} était incompréhensible mettait en évidence un problème de compétence ou de performance. Quel élément de réponse peut-on apporter ?
 
     \exercice{4} Quel phénomène intéressant observe-t-on dans les énoncés suivants du point de vue de la planification ?
+    
+    \begin{enumerate}[label=(\arabic*)]
+    \item mais voilà ça c’est une sorte de mélange très très très étrange et qui moi me je sais pas pourquoi me renverse littéralement
 
-    mais voilà ça c’est une sorte de mélange très très très étrange et qui moi me je sais pas pourquoi me renverse littéralement
-
-    vous allez passer devant la poste qui sera à votre droite et un peu plus loin euh je sais pas à quel niveau c’est exactement Habitat et euh la Chambre de de Commerce à votre gauche
+    \item vous allez passer devant la poste qui sera à votre droite et un peu plus loin euh je sais pas à quel niveau c’est exactement Habitat et euh la Chambre de de Commerce à votre gauche
+    \end{enumerate}
 
     \exercice{5} La société humaine repose sur la croyance. Cette idée est très bien développée dans \textit{Sapiens - Une brève histoire de l’humanité} de Yuval Noah Harari. La question dépasse très largement la croyance religieuse. Notre société fonctionne car nous, humains, croyons en un même système de lois, nous croyons dans les valeurs de notre société, comme l’éducation ou la solidarité, nous croyons en la valeur de l’argent, alors même qu’il peut s’agir d’un simple bout de papier imprimé ou d’un nombre dans la mémoire d’un ordinateur de notre banque. En quoi la notion de croyance (ainsi définie) concerne la linguistique et la langue ?
 }
 \lecturesadditionnelles{%\label{sec:1.1.14}
 
-    Les ouvrages de Ferdinand de \citet{saussure1916cours} et de Leonard \citet{bloomfield1933language} sont des monuments de la linguistique, dont la lecture reste toujours incontournable. Le livre de Wilhelm von Humboldt de 1836 est un ouvrage précurseur, mais difficile à lire aujourd’hui. La lecture des ouvrages de Claire Blanche-Benveniste est une excellente plongée dans les données véritablement attestées et ce qu’elles révèlent sur la syntaxe du français parlé et la langue en général. Le livre de Henry A. \citet{gleason1955introduction} est une introduction très pédagogique aux bases de la linguistique et de la syntaxe, qui a étonnamment peu vieillie. Le cours donné par Igor Mel’čuk au collège de France complétera les ouvrages de ce linguiste déjà mentionné dans l’\textit{Avant Propos}. Les lecteurs intéressés par l’histoire des sciences pourront consulter les premiers travaux sur la Théorie Sens-Texte de Žolkovskij et Mel’čuk (\citeyear{zolkovski1967semanticeskom}), traduits en français en 1970. Les bases de la génération automatique de textes sont développées dans l’ouvrage fondateur de Laurence \citet{danlos1987generation}. Nous avons également mentionné les ouvrages de Steven Pinker et de Yuval Noah Harari, qui ne concernent pas directement notre sujet, mais s’inscrivent dans une approche scientifique des sciences humaines que nous suivons. Nous avons également mentionné le programme minimaliste de Noam Chomsky, présenté dans son ouvrage de 1995.
+    Les ouvrages de Ferdinand \citet{saussure1916cours} et de Leonard \citet{bloomfield1933language} sont des monuments de la linguistique, dont la lecture reste toujours incontournable. Le livre de Wilhelm von Humboldt de 1836 est un ouvrage précurseur, mais difficile à lire aujourd’hui. La lecture des ouvrages de Claire Blanche-Benveniste est une excellente plongée dans les données véritablement attestées et ce qu’elles révèlent sur la syntaxe du français parlé et la langue en général. Le livre de Henry A. \citet{gleason1955introduction} est une introduction très pédagogique aux bases de la linguistique et de la syntaxe, qui a étonnamment peu vieillie. Le cours donné par Igor Mel’čuk au collège de France complétera les ouvrages de ce linguiste déjà mentionné dans l’\textit{Avant Propos}. Les lecteurs intéressés par l’histoire des sciences pourront consulter les premiers travaux sur la Théorie Sens-Texte de Žolkovskij et Mel’čuk (\citeyear{zolkovski1967semanticeskom}), traduits en français en 1970. Les bases de la génération automatique de textes sont développées dans l’ouvrage fondateur de Laurence \citet{danlos1987generation}. Nous avons également mentionné les ouvrages de Steven Pinker et de Yuval Noah Harari, qui ne concernent pas directement notre sujet, mais s’inscrivent dans une approche scientifique des sciences humaines que nous suivons. Nous avons également mentionné le programme minimaliste de Noam Chomsky, présenté dans son ouvrage de 1995.
 
     \FurtherReading{1-1}
 }

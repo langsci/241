@@ -25,7 +25,7 @@ Ces trois syntagmes expriment les mêmes sens avec les mêmes relations sémanti
 
 \begin{figure}
 \begin{tikzpicture}[>={Triangle[]}]
-    \begin{scope}[every node/.style={circle,draw},level distance=3\baselineskip]
+    \begin{scope}[every node/.style={CircleNode},level distance=3\baselineskip]
       \node (root) {}
         child { node{} 
             edge from parent[->] node[left,reset shape] {agent} }
@@ -583,7 +583,7 @@ On peut représenter une fragmentation par une structure arborescente, appelée 
 \begin{figure}
 \begin{tikzpicture}[every node/.style={font=\strut\itshape}]
 \begin{scope}[
-              every node/.style={circle,draw},level distance=2\baselineskip,
+              every node/.style={CircleNode},level distance=2\baselineskip,
               level 1/.style={sibling distance=60mm},
               level 2/.style={sibling distance=30mm},
               level 3/.style={sibling distance=15mm}

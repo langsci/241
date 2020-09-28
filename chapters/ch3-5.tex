@@ -189,7 +189,7 @@ Nous avons vu au \chapref{sec:3.3} comment représenter la structure syntaxique 
 
 \begin{figure}
 \begin{tikzpicture}
-    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip,
+    \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip,
                   level 1/.style={sibling distance=30mm},
                   level 2/.style={sibling distance=15mm},
                   level 3/.style={sibling distance=10mm}
@@ -214,7 +214,7 @@ Nous avons vu au \chapref{sec:3.3} comment représenter la structure syntaxique 
     \end{scope}
 \end{tikzpicture}\bigskip\\
 \begin{tikzpicture}
-\begin{scope}[every node/.style={circle,draw},grow=right]
+\begin{scope}[every node/.style={CircleNode},grow=right]
 \node (root) {} child { node {} child { node{} child { node{} child { node{}  
                     child { node{} child { node{} child { node{} } } } } } } }; 
 \end{scope}
@@ -231,7 +231,7 @@ On peut représenter la correspondance entre les deux structures, l’arbre de d
 
 \begin{figure}
 \begin{tikzpicture}
-\begin{scope}[every node/.style={circle,draw},grow=right]
+\begin{scope}[every node/.style={CircleNode},grow=right]
 \node (root) {} child { node {} child { node{} child { node{} child { node{}  
                     child { node{} child { node{} child { node{} } } } } } } }; 
 \end{scope}
@@ -270,7 +270,7 @@ L’ordre linéaire et l’arbre de dépendance sont en fait deux structures sur
 
 \begin{figure}
 \begin{tikzpicture}
-\begin{scope}[every node/.style={circle,draw},grow=right]
+\begin{scope}[every node/.style={CircleNode},grow=right]
 \node (root) {} child { node {} child { node{} child { node{} child { node{}  
                     child { node{} child { node{} child { node{} } } } } } } }; 
 \end{scope}
@@ -325,7 +325,7 @@ On notera que nous avons ajouté une dépendance verticale (sans gouverneur) mar
     \begin{figure}[H]
     \caption{{\color{red}Please provide a caption}\label{fig:}}
     \begin{tikzpicture}
-        \begin{scope}[every node/.style={circle,draw},grow=right]
+        \begin{scope}[every node/.style={CircleNode},grow=right]
         \node (root) {} child { node {} child { node{} child { node{} child { node{}  
                             child { node{} child { node{} child { node{} } } } } } } }; 
         \end{scope}
@@ -483,7 +483,7 @@ L’arbre de dépendance ordonné présenté tout à l’heure est projectif :
 
 \begin{figure}
 \begin{tikzpicture}
-\begin{scope}[every node/.style={circle,draw},grow=right]
+\begin{scope}[every node/.style={CircleNode},grow=right]
 \node (root) {} child { node {} child { node{} child { node{} child { node{}  
                     child { node{} child { node{} child { node{} } } } } } } }; 
 \end{scope}
@@ -514,7 +514,7 @@ La projectivité entraîne une certaine asymétrie des dépendances. En effet, s
                      matrix of nodes,
                      nodes in empty cells,
                      nodes = {text width=.75ex},
-                     row 1/.style = {nodes={circle,draw}},
+                     row 1/.style = {nodes={CircleNode}},
                      column sep = 2em
                     ]
       { & &   & & &   & & & \\
@@ -547,13 +547,13 @@ Cela concerne également la dépendance verticale qui marque la racine et qui do
 
 \begin{figure}
 \begin{subfigure}[c]{.5\linewidth}\centering
-\begin{tikzpicture}[every node/.style={circle,draw},grow=right]
+\begin{tikzpicture}[every node/.style={CircleNode},grow=right]
   \node at (0,0) (root) {} child { node {} child { node{} child { node{} } } };
   \path (root)   edge [bend left=45] (root-1-1)
         (root-1) edge [bend left=45] (root-1-1-1);
 \end{tikzpicture}\caption{~}\end{subfigure}%
 \begin{subfigure}[c]{.5\linewidth}\centering
-\begin{tikzpicture}[every node/.style={circle,draw},grow=right]        
+\begin{tikzpicture}[every node/.style={CircleNode},grow=right]        
   \node at (0,0) (root2) {} child { node {} child { node{} } };
   \path (root2)   edge [bend left=45] (root2-1-1);
   \draw [{Triangle[]}-] (root2-1) -- ++(0,1cm);
@@ -578,7 +578,7 @@ Le troisième vers de cette chanson a une structure non projective :
 
 \begin{figure}
 \begin{tikzpicture}[>={Triangle[]}]
-  \begin{scope}[every node/.style={circle,draw},grow=right,level distance=2cm]
+  \begin{scope}[every node/.style={CircleNode},grow=right,level distance=2cm]
   \node at (0,0) (root) {} child { node {} child { node{} } };
   \path (root) edge [bend left=45,->] (root-1-1)
         (root-1) edge [bend right,->] (root);
@@ -660,10 +660,10 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
        }
        \path (2) edge [bend left=45] (4);
        \path (3) edge [bend left=45] (5);
-       \node at (2) [fill=white,circle,draw] {};
-       \node at (3) [fill=white,circle,draw] {};
-       \node at (4) [fill=white,circle,draw] {};
-       \node at (5) [fill=white,circle,draw] {};
+       \node at (2) [fill=white,CircleNode] {};
+       \node at (3) [fill=white,CircleNode] {};
+       \node at (4) [fill=white,CircleNode] {};
+       \node at (5) [fill=white,CircleNode] {};
     \end{tikzpicture}}
     \columnbreak
     \ex\attop{\vskip-\baselineskip
@@ -676,16 +676,16 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
        } 
        \draw (1) -- (4);
        \path (3) edge [bend left=45] (5);
-       \node at (1) [fill=white,circle,draw,label=above:$\infty$] {};
-       \node at (3) [fill=white,circle,draw] {};
-       \node at (4) [fill=white,circle,draw] {};
-       \node at (5) [fill=white,circle,draw] {};
+       \node at (1) [fill=white,CircleNode,label=above:$\infty$] {};
+       \node at (3) [fill=white,CircleNode] {};
+       \node at (4) [fill=white,CircleNode] {};
+       \node at (5) [fill=white,CircleNode] {};
     \end{tikzpicture}}
     \columnbreak
     \ex K\textsubscript{4}\\
     \begin{tikzpicture} 
     \begin{scope}[local bounding box=graph]
-      \graph [nodes={circle,draw},empty nodes,clockwise=4] { subgraph K_n [n=4] };
+      \graph [nodes={CircleNode},empty nodes,clockwise=4] { subgraph K_n [n=4] };
     \end{scope}
     \end{tikzpicture}
     \z
@@ -717,7 +717,7 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
 
     \begin{figure}[H]
     \begin{tikzpicture}
-        \begin{scope}[every node/.style={circle,draw},grow=right,local bounding box=graph]
+        \begin{scope}[every node/.style={CircleNode},grow=right,local bounding box=graph]
             \node (root) {} child { node {} child { node{} child { node{} child { node{}  
                     child { node{} child { node{} child { node{} } } } } } } }; 
         \end{scope}
@@ -755,14 +755,14 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
     \ea
     %%[Warning: Draw object ignored]
     \ea Dépendances en bouquet\\
-    \begin{tikzpicture}[>={Triangle[]},every node/.style={circle,draw},grow=right]
+    \begin{tikzpicture}[>={Triangle[]},every node/.style={CircleNode},grow=right]
         \node at (0,0) (root) {} child { node {} child { node{} } };
         \path (root)   edge [bend left=45,->] (root-1)
               (root)   edge [bend left=60,->] (root-1-1);
         \draw [thick ]($ (root) !.5! (root-1) $) -- ++ (0,1.5cm) -- ++ (0,-2cm);
     \end{tikzpicture}
     \ex Dépendances disjointes\\
-    \begin{tikzpicture}[>={Triangle[]},every node/.style={circle,draw},grow=right]
+    \begin{tikzpicture}[>={Triangle[]},every node/.style={CircleNode},grow=right]
         \node at (0,0) (root) {} child { node {} child { node{} child { node{} } } };
         \path (root)   edge [bend left=60,->] (root-1-1-1)
               (root-1) edge [bend left=45,->] (root-1-1);
@@ -806,7 +806,7 @@ En projetant ces règles sur l’arbre de dépendance de la phrase, on obtient l
 
 \begin{figure}
 \begin{tikzpicture}
-    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip,
+    \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip,
                   level 1/.style={sibling distance=30mm},
                   level 2/.style={sibling distance=15mm},
                   level 3/.style={sibling distance=10mm}
@@ -857,7 +857,7 @@ Voici son arbre de dépendance (où nous indiquons les seules fonctions pertinen
 
 \begin{figure}
 \begin{tikzpicture}
-    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip,
+    \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip,
                   level 1/.style={sibling distance=20mm},
                   level 2/.style={sibling distance=15mm},
                   level 3/.style={sibling distance=10mm}
@@ -1005,7 +1005,7 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
 
     \ea\attop{\vskip-\baselineskip
     \begin{tikzpicture}
-    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip,
+    \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip,
                   level 1/.style={sibling distance=20mm},
                   level 2/.style={sibling distance=15mm},
                   level 3/.style={sibling distance=10mm}
@@ -1168,7 +1168,7 @@ Voyons maintenant comment linéariser un arbre de dépendance. Reprenons l’exe
 
 \begin{figure}
 \begin{tikzpicture}
-    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip,
+    \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip,
                   level 1/.style={sibling distance=20mm},
                   level 2/.style={sibling distance=15mm},
                   level 3/.style={sibling distance=10mm}
@@ -1232,7 +1232,7 @@ La structure topologique est un \textstyleTermes{arbre de constituants ordonné}
 
 \begin{figure}
 \begin{tikzpicture}
-    \begin{scope}[every node/.style={circle,draw},level distance=2\baselineskip,
+    \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip,
                   level 1/.style={sibling distance=18mm},
                   level 2/.style={sibling distance=9mm},
                   ]
@@ -1327,7 +1327,7 @@ Notons pour conclure que le modèle topologique n’utilise que des \textstyleTe
     %%[Warning: Draw object ignored]
     Arbre de constituants ordonné (hiérarchie implicite, ordre explicite)\\
     \begin{tikzpicture}
-    \begin{scope}[every node/.style={circle,draw},grow=right]
+    \begin{scope}[every node/.style={CircleNode},grow=right]
     \node (root) {} child { node {} child { node{} child { node{} child { node{}  
                     child { node{} } } } } }; 
     \end{scope}      
@@ -1384,9 +1384,9 @@ Notons pour conclure que le modèle topologique n’utilise que des \textstyleTe
          \draw ({360/6 * (\s - 1) + 90}:1cm) 
                arc ({360/6 * (\s - 1) + 90}:{360/6 * (\s) + 90}:1cm);
        } 
-       \node at (3) [fill=white,circle,draw] {};
-       \node at (4) [fill=white,circle,draw] {};
-       \node at (5) [fill=white,circle,draw] {};
+       \node at (3) [fill=white,CircleNode] {};
+       \node at (4) [fill=white,CircleNode] {};
+       \node at (5) [fill=white,CircleNode] {};
        \node [below=1pt of 1] {P};
        \node [below=5pt of 3] {GN};
        \node [below=5pt of 5] {GV};
@@ -1428,7 +1428,7 @@ Les projections topologiques associées à un arbre de dépendance ordonné donn
 \begin{minipage}[c]{.45\linewidth}\centering
 \begin{tikzpicture}[every node/.style={font=\strut\itshape}]
 \begin{scope}[
-    every node/.style={circle,draw}
+    every node/.style={CircleNode}
     ]
 \node (root) {}
     child { node { } 
@@ -1442,7 +1442,7 @@ Les projections topologiques associées à un arbre de dépendance ordonné donn
 \begin{minipage}[c]{.45\linewidth}\centering
 \begin{tikzpicture}[every node/.style={font=\strut}]
     \begin{scope}[
-    every node/.style={circle,draw},
+    every node/.style={CircleNode},
     sibling distance=20mm,
     level distance=3\baselineskip
     ]
@@ -1464,7 +1464,7 @@ Les projections topologiques associées à un arbre de dépendance ordonné donn
 \begin{figure}
 \begin{minipage}[c]{.45\linewidth}\centering
 \begin{tikzpicture}[>={Triangle[]}]
-  \begin{scope}[every node/.style={circle,draw},grow=right,level distance=2cm]
+  \begin{scope}[every node/.style={CircleNode},grow=right,level distance=2cm]
   \node at (0,0) (root) {} child { node {} child { node{} } };
   \path (root) edge [bend left=45,->] (root-1-1)
         (root-1) edge [bend right,->] (root);
@@ -1478,7 +1478,7 @@ Les projections topologiques associées à un arbre de dépendance ordonné donn
 $\Rightarrow$
 \end{minipage}\begin{minipage}[c]{.45\linewidth}\centering
 \begin{tikzpicture}
-  \begin{scope}[every node/.style={circle,draw},sibling distance=20mm]
+  \begin{scope}[every node/.style={CircleNode},sibling distance=20mm]
   \node (root) {} 
     child { node{} } 
     child { node{} edge from parent node [reset shape, midway, right] {T} } 
@@ -1506,7 +1506,7 @@ La comparaison entre l’arbre topologique induit et l’arbre de constituants s
 \begin{minipage}[c]{.5\linewidth}\centering
 \begin{tikzpicture}[every node/.style={font=\strut}]
     \begin{scope}[
-    every node/.style={circle,draw},
+    every node/.style={CircleNode},
     sibling distance=20mm,
     level distance=3\baselineskip
     ]
@@ -1523,7 +1523,7 @@ La comparaison entre l’arbre topologique induit et l’arbre de constituants s
     \end{tikzpicture}
 \end{minipage}\begin{minipage}[c]{.5\linewidth}\centering
 \begin{tikzpicture}
-  \begin{scope}[every node/.style={circle,draw},sibling distance=20mm]
+  \begin{scope}[every node/.style={CircleNode},sibling distance=20mm]
   \node (root) {} 
     child { node{} } 
     child { node{} edge from parent node [reset shape, midway, right] {T} } 
@@ -1597,7 +1597,7 @@ Dans ces constructions, le complément à droite du nom dépend de \textit{plus}
 
 \begin{figure}
 \begin{tikzpicture}
-\begin{scope}[every node/.style={circle,draw},grow=right]
+\begin{scope}[every node/.style={CircleNode},grow=right]
 \node (root) {} child { node {} child { node{} child { node{} child { node{}  
                     child { node{} child { node{} } } } } } }; 
 \end{scope}
@@ -1920,14 +1920,14 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     \begin{center}
     \begin{minipage}[c]{.5\linewidth}\centering
       \begin{tikzpicture}
-      \begin{scope}[local bounding box=graph,every node/.style={circle,draw}]
+      \begin{scope}[local bounding box=graph,every node/.style={CircleNode}]
         \graph [clockwise, empty nodes] { subgraph K_n [n=5] };
       \end{scope}
         \node[below=1pt of graph] {K\textsubscript{5}};
       \end{tikzpicture}
     \end{minipage}\begin{minipage}[c]{.5\linewidth}\centering
       \begin{tikzpicture}
-      \begin{scope}[local bounding box=graph,every node/.style={circle,draw}]
+      \begin{scope}[local bounding box=graph,every node/.style={CircleNode}]
         \graph [empty nodes, branch right, grow down] { subgraph K_nm [n=3, m=3] };
       \end{scope}
         \node[below=1pt of graph] {K\textsubscript{3, 3}};

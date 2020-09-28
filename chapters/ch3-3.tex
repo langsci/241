@@ -146,7 +146,7 @@ Concluons cette section en soulignant une propriété fondamentale que nous expl
         \begin{minipage}{.5\textwidth}\centering
         {\itshape Marie promet à Pierre de venir}\\
         \begin{tikzpicture}[>={Triangle[]}]
-        \graph [empty nodes, nodes={circle, draw},clockwise,n=4] 
+        \graph [empty nodes, nodes={CircleNode},clockwise,n=4] 
           {
             {[nodes={label=above:{‘promettre’}}] a},
             {[nodes={label=right:{‘Pierre’}}] b},
@@ -160,7 +160,7 @@ Concluons cette section en soulignant une propriété fondamentale que nous expl
         \begin{minipage}{.5\textwidth}\centering
         {\itshape Marie permet à Pierre de venir}\\
         \begin{tikzpicture}[>={Triangle[]}]
-        \graph [empty nodes, nodes={circle, draw},clockwise,n=4] 
+        \graph [empty nodes, nodes={CircleNode},clockwise,n=4] 
           {
             {[nodes={label=above:{‘permettre’}}] a},
             {[nodes={label=right:{‘Pierre’}}] b},
@@ -848,16 +848,16 @@ On peut encore appliquer le critère au cas des formes verbales comme \textit{ch
       ]
     \end{forest}\end{minipage}\begin{minipage}[c]{.5\linewidth}
     \begin{tikzpicture}[>={Triangle[]},label distance=-5pt]
-        \matrix (matrix) [nodes={circle, draw},
+        \matrix (matrix) [nodes={CircleNode},
                           ampersand replacement=\&,
                           row sep=1cm,
                           column sep=-10pt] 
           {
-            \& \node [label=above:{‘boire’}, circle, draw] (boire) {}; 
-            \& \& \node [label=above:{‘verre’}, circle, draw] (verre) {};\\
-            \node [label=below:{\strut‘Félix’}, circle, draw] (Felix) {}; 
-            \& \& \node [label=below:{\strut‘vin’}, circle, draw] (vin) {}; 
-            \& \& \node [label=below:{\strut‘un’}, circle, draw] (un) {};\\
+            \& \node [label=above:{‘boire’}, CircleNode] (boire) {}; 
+            \& \& \node [label=above:{‘verre’}, CircleNode] (verre) {};\\
+            \node [label=below:{\strut‘Félix’}, CircleNode] (Felix) {}; 
+            \& \& \node [label=below:{\strut‘vin’}, CircleNode] (vin) {}; 
+            \& \& \node [label=below:{\strut‘un’}, CircleNode] (un) {};\\
           };
           \draw[-{Triangle[]}] (boire) -- (Felix) node[EdgeLabel] {1};
           \draw[-{Triangle[]}] (verre) -- (vin) node[EdgeLabel] {1};
@@ -1333,9 +1333,9 @@ Si l’on adopte une représentation syntaxique très granulaire où les syntax�
 
     \ea
     \begin{tikzpicture}[baseline]
-    \node at (0,0) (A) [circle, draw, label=below:2] {};
-    \node at (2,0) (B) [circle, draw, label=below:1] {};
-    \node at (4,0) (C) [circle, draw, label=below:3] {};
+    \node at (0,0) (A) [CircleNode, label=below:2] {};
+    \node at (2,0) (B) [CircleNode, label=below:1] {};
+    \node at (4,0) (C) [CircleNode, label=below:3] {};
     
     \path [-{Triangle[]}] (A) edge [bend left] (B);
     \path [-{Triangle[]}] (B) edge [bend left] (A);
@@ -1353,19 +1353,19 @@ Si l’on adopte une représentation syntaxique très granulaire où les syntax�
     \ea
     %%[Warning: Draw object ignored]
     \ea Réflexivité\\
-      \tikz \node [circle,draw] {} edge [loop above] ();
+      \tikz \node [CircleNode] {} edge [loop above] ();
     \ex Symétrie\\
       \begin{tikzpicture}
-      \node at (0,0) (A) [circle, draw] {};
-      \node at (2,0) (B) [circle, draw] {};
+      \node at (0,0) (A) [CircleNode] {};
+      \node at (2,0) (B) [CircleNode] {};
       \path [-{Triangle[]}] (A) edge [bend left] (B);
       \path [-{Triangle[]}] (B) edge [bend left] (A);
       \end{tikzpicture}
     \ex Transitivité\\
       \begin{tikzpicture}
-      \node at (0,0) (A) [circle, draw] {};
-      \node at (2,0) (B) [circle, draw] {};
-      \node at (4,0) (C) [circle, draw] {};
+      \node at (0,0) (A) [CircleNode] {};
+      \node at (2,0) (B) [CircleNode] {};
+      \node at (4,0) (C) [CircleNode] {};
       \path [-{Triangle[]}] (A) edge [bend left] (B)
                                 edge [bend left, out=60, in=120, looseness=.75] (C);
       \path [-{Triangle[]}] (B) edge [bend left] (C);
@@ -1399,9 +1399,9 @@ Une dernière façon de caractériser une tête repose sur l’organisation lin�
 
 \begin{figure}
       \begin{tikzpicture}
-      \node at (0,0) (B) [circle, draw, label=below:B] {};
-      \node at (2,0) (A) [circle, draw, label=below:A] {};
-      \node at (4,0) (C) [circle, draw, label=below:C] {};
+      \node at (0,0) (B) [CircleNode, label=below:B] {};
+      \node at (2,0) (A) [CircleNode, label=below:A] {};
+      \node at (4,0) (C) [CircleNode, label=below:C] {};
       \path  (B) edge [bend left, out=60, in=120, looseness=.75] (C);
       \path [-{Triangle[]}] (A) edge [bend right] (B);
       \end{tikzpicture}

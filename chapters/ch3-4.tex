@@ -866,8 +866,8 @@ L’arbre de constituants obtenu (celui correspondant aux emboîtements) n’est
     Trois représentations de la construction subjectale\smallskip\\
     \begin{minipage}[c]{.3\linewidth}\centering
       \begin{tikzpicture} 
-        \node [circle,draw,label=below:N] at (0,0) (A) {};
-        \node [circle,draw,label=below:V] at (2,0) (B) {};
+        \node [CircleNode,label=below:N] at (0,0) (A) {};
+        \node [CircleNode,label=below:V] at (2,0) (B) {};
         \draw[-{Triangle[]}] (B) to [bend right] node [midway,above,font=\itshape] {sujet} (A);
       \end{tikzpicture}
     \end{minipage}\begin{minipage}[c]{.3\linewidth}\centering
@@ -897,9 +897,9 @@ L’arbre de constituants obtenu (celui correspondant aux emboîtements) n’est
      \end{forest}
     \end{minipage}\hfill\begin{minipage}[c]{.6\linewidth}\centering
     \begin{tikzpicture}
-      \node at (0,0) [circle,draw,label=below:N] (A) {};
-      \node at (2,0) [circle,draw,label=below:V] (B) {};
-      \node at (4,0) [circle,draw,label=below:N] (C) {};
+      \node at (0,0) [CircleNode,label=below:N] (A) {};
+      \node at (2,0) [CircleNode,label=below:V] (B) {};
+      \node at (4,0) [CircleNode,label=below:N] (C) {};
       \path [-{Triangle[]}] (B) edge [bend right] node [midway,above,font=\itshape]
         {sujet} (A)
                                 edge [bend left] node [midway,above,font=\itshape]
