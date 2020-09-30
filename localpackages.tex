@@ -9,6 +9,8 @@
 \usepackage{enumitem}
 
 \usepackage[linguistics,edges]{forest}
+\usepackage{tikz-dependency}
+
 \usetikzlibrary{matrix,
                 arrows,
                 arrows.meta,
@@ -20,6 +22,8 @@
                 3d,
                 perspective,
                 backgrounds}
+
+\pgfsetlayers{background,depgroups,lspcls_bg,main}
 
 \newfontfamily\cjkfont
   [Scale=MatchLowercase,BoldFont=SourceHanSerifSC-Bold.otf]{SourceHanSerifSC-Regular.otf}

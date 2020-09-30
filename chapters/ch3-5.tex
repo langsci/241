@@ -251,8 +251,7 @@ On peut représenter la correspondance entre les deux structures, l’arbre de d
         \node [
                 above=\distance\baselineskip of root\pos,
                 label=\place:{\itshape\strut\text},
-                circle,
-                draw
+                CircleNode
               ] (\text) {};
         \draw [ dashed ] (\text) -- (root\pos);
       }
@@ -351,7 +350,7 @@ On notera que nous avons ajouté une dépendance verticale (sans gouverneur) mar
             (root-1-1-1-1-1-1) edge[bend left,->] node  {comp} (root-1-1-1-1-1-1-1);
         \end{scope}
 
-        \draw[{Triangle[]}-] (root-1-1-1) -- ++(0,1cm) node [at end,above] {racine};
+        \draw[{Triangle[]}-] (root-1-1-1) -- ++(0,1cm) node [at end,above,font=\small] {racine};
     \end{tikzpicture} 
     \end{figure}
 
@@ -365,7 +364,11 @@ On notera que nous avons ajouté une dépendance verticale (sans gouverneur) mar
     Considérons la formule algébrique (7 \textrm{${\times}$} 19) + (5 \textrm{${\times}$} 31). Pour effectuer ce calcul, il faut nécessairement effectuer les deux multiplications avant de les sommer, ce que l’on peut représenter par le diagramme suivant, où le résultat de chaque calcul intermédiaire est donné sous une barre horizontale :
 
     \ea  Calcul du résultat de la formule (7 × 19) + (5 × 31)\\
-         $ \cfrac{ \cfrac{7\times 19}{133} + \cfrac{5\times 31}{155} }{288}$
+         \begin{tabular}{@{}c@{ }c@{ }c@{}}
+         $(7\times 19)$& + &$(5\times 31)$\\\hhline{-~-}
+         133 & & 155\\\hline
+         \multicolumn{3}{@{}c@{}}{288}
+         \end{tabular}
     \z
 
     On peut alors donner une représentation arborescente de la structure de ce calcul. Les signes + et \textrm{${\times}$} représentent des opérateurs binaires qui combinent deux nombres pour en fournir un troisième. Ces opérateurs ont donc deux arguments à l’image d’un verbe transitif et une représentation similaire, par un arbre de dépendance, peut être adoptée :
@@ -427,9 +430,21 @@ On notera que nous avons ajouté une dépendance verticale (sans gouverneur) mar
     \gll maeu  {euiyokjeok-i-n}  {haksaeng-deul-i}  {kukje}  {hakhoi-leu}   {jojikha-nda}\\
          très   {motivé-être-Q}   étudiant-PL-NOM  international  conférence-ACC  organiser-IND.PRES\\
 % %     (Q : translatif en qualificatif, PL : pluriel, NOM : nominatif, ACC : accusatif, PRES : présent)
-    \z
 
-    \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img029.png}
+    \begin{dependency}[font=\footnotesize,arc edge, arc angle=80, text only label, label style={above}]
+    \begin{deptext}
+    maeu  \& {euiyokjeok-i-n} \& {haksaeng-deul-i} \& {kukje}       \& {hakhoi-leu}   \& {jojikha-nda}\\
+    très  \& {motivé-être-\textsc{q}}  \& étudiant-\textsc{pl-nom}   \& international \& conférence-\textsc{acc} \& organiser-\textsc{ind.pres}\\
+    \end{deptext}
+    \deproot{6}{}
+    \depedge{6}{5}{}
+    \depedge{6}{3}{}
+    \depedge{5}{4}{}
+    \depedge{3}{2}{}
+    \depedge{2}{1}{}
+    \end{dependency}
+    \z
+%     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img029.png}
 
     La même phrase traduite en arabe classique (l’arabe du 7\textsuperscript{e} siècle utilisé dans le Coran) possède une structure inversée : tous les gouverneurs se trouvent devant leurs dépendants, y compris le verbe qui se trouve au tout début de la phrase. L’arabe classique est une langue à têtes initiales.
     
@@ -514,7 +529,7 @@ La projectivité entraîne une certaine asymétrie des dépendances. En effet, s
                      matrix of nodes,
                      nodes in empty cells,
                      nodes = {text width=.75ex},
-                     row 1/.style = {nodes={CircleNode}},
+                     row 1/.style = {nodes={CircleNode,inner sep=1.5pt}},
                      column sep = 2em
                     ]
       { & &   & & &   & & & \\
@@ -539,9 +554,8 @@ C’est sur cette asymétrie qu’est basé le test de recouvrement (\sectref{se
 
 Il existe une autre caractérisation de la projectivité, qui peut s’observer immédiatement sur une représentation graphique comme celle ci-dessus, où les nœuds sont placés sur une ligne et toutes les dépendances forment des arcs placés du même côté de la ligne.
 
-\begin{styleLivreImportant}
-Un arbre de dépendance ordonné est \textstyleTermes{projectif} si et seulement si \textbf{les dépendances ne se coupent pas}.
-\end{styleLivreImportant}
+\Definition{\textstyleTermes{projectif}}
+{Un arbre de dépendance ordonné est \textstyleTermes{projectif} si et seulement si \textbf{les dépendances ne se coupent pas}.}
 
 Cela concerne également la dépendance verticale qui marque la racine et qui doit être vue comme une dépendance infinie empêchant tout autre dépendance de passée au-dessus de la racine. Autrement dit, les deux configurations suivantes sont exclues d’un arbre de dépendance projectif :
 
