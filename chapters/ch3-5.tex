@@ -426,6 +426,7 @@ On notera que nous avons ajouté une dépendance verticale (sans gouverneur) mar
     \z
 
     Le coréen est une langue à têtes finales, et la traduction de cette phrase en coréen donne une phrase où tous les gouverneurs se trouvent à droite de leurs dépendants :
+    
     \ea
     \gll maeu  {euiyokjeok-i-n}  {haksaeng-deul-i}  {kukje}  {hakhoi-leu}   {jojikha-nda}\\
          très   {motivé-être-Q}   étudiant-PL-NOM  international  conférence-ACC  organiser-IND.PRES\\
@@ -434,7 +435,7 @@ On notera que nous avons ajouté une dépendance verticale (sans gouverneur) mar
     \begin{dependency}[font=\footnotesize,arc edge, arc angle=80, text only label, label style={above}]
     \begin{deptext}
     maeu  \& {euiyokjeok-i-n} \& {haksaeng-deul-i} \& {kukje}       \& {hakhoi-leu}   \& {jojikha-nda}\\
-    très  \& {motivé-être-\textsc{q}}  \& étudiant-\textsc{pl-nom}   \& international \& conférence-\textsc{acc} \& organiser-\textsc{ind.pres}\\
+    très  \& {motivé-être}  \& étudiant   \& international \& conférence \& organiser\\
     \end{deptext}
     \deproot{6}{}
     \depedge{6}{5}{}
@@ -444,21 +445,51 @@ On notera que nous avons ajouté une dépendance verticale (sans gouverneur) mar
     \depedge{2}{1}{}
     \end{dependency}
     \z
-%     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img029.png}
+% %     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img029.png}
 
     La même phrase traduite en arabe classique (l’arabe du 7\textsuperscript{e} siècle utilisé dans le Coran) possède une structure inversée : tous les gouverneurs se trouvent devant leurs dépendants, y compris le verbe qui se trouve au tout début de la phrase. L’arabe classique est une langue à têtes initiales.
     
     \ea
-    \glll junazʕimu  al+tula:b+u al+mutaħamiss+u:na ʒidan muʔtamar+a+n dawlij+a+n\\
-    V  D+N+NOM D+Adj+NOM  ADV N+ACC+D  Adj+ACC\\
-    organise.IND.PRES {les étudiants} {les enthousiasmés} très  une conférence internationale\\
+    \gll junaðʕimu  atʕ-tʕula꞉b-u al-mutaħammis-u꞉na ʒiddan muʔtamar-a-n  dawlij-a-n\\
+    organiser.\textsc{pres.3sg.masc} \textsc{def}-étudiant.\textsc{pl-nom} \textsc{def}-enthousiasmé.\textsc{pl-nom}  très conférence.\textsc{sg-acc-indef}  international.\textsc{sg-acc-indef}\\
+    
+    \begin{dependency}[font=\footnotesize,arc edge, arc angle=80, text only label, label style={above}]
+    \begin{deptext}
+    junaðʕimu \& {atʕ-tʕula꞉b-u} \& al-mutaħammis-u꞉na \& ʒiddan \& muʔtamar-a-n \& dawlij-a-n\\
+%     organiser.\textsc{pres.3sg.masc} \& \textsc{def}-étudiant.\textsc{pl-nom} \& \textsc{def}-enthousiasmé.\textsc{pl-nom} \& très conférence.\textsc{sg-acc-indef} \& international.\textsc{sg-acc-indef}\\
+    organiser  \& étudiant \& enthousiasmé \& très \& conférence \& international\\
+    \end{deptext}
+    \deproot{1}{}
+    \depedge{1}{2}{}
+    \depedge{2}{3}{}
+    \depedge{3}{4}{}
+    \depedge{1}{5}{}
+    \depedge{5}{6}{}
+    \end{dependency}
     \z
 
-    \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img030.png}
+% %     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img030.png}
 
     Le français est une langue intermédiaire. L’arbre de dépendance linéarisé de la phrase 1 possède des dépendances dans les deux directions :
+    
+    \ea
+    \begin{dependency}[font=\normalfont,arc edge, arc angle=80, text only label, label style={above}]
+    \begin{deptext}
+    Les \& étudiants \& très \& motivés \& organisent \& une \& conférence \& internationale\\
+%     organiser.\textsc{pres.3sg.masc} \& \textsc{def}-étudiant.\textsc{pl-nom} \& \textsc{def}-enthousiasmé.\textsc{pl-nom} \& très conférence.\textsc{sg-acc-indef} \& international.\textsc{sg-acc-indef}\\
+    \end{deptext}
+    \deproot{5}{}
+    \depedge{2}{1}{}
+    \depedge{2}{4}{}
+    \depedge{4}{3}{}
+    \depedge{5}{2}{}
+    \depedge{5}{7}{}
+    \depedge{7}{6}{}
+    \depedge{7}{8}{}
+    \end{dependency}    
+    \z
 
-    \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img031.png}
+% %     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img031.png}
 
     Notez quand même qu’en arabe classique, comme en coréen, il y a des exceptions à la règle du placement de la tête, et les notions de têtes initiales et têtes finales doivent être vue comme des tendances, plutôt que des règles absolues.
 }
