@@ -23,7 +23,7 @@
                 perspective,
                 backgrounds}
 
-\pgfsetlayers{background,depgroups,lspcls_bg,main}
+\pgfsetlayers{background,depgroups,lspcls_bg,main,foreground}
 
 \newfontfamily\cjkfont
   [Scale=MatchLowercase,BoldFont=SourceHanSerifSC-Bold.otf]{SourceHanSerifSC-Regular.otf}
@@ -50,6 +50,7 @@
 \usepackage{langsci-lgr}
 \usepackage{pgfplots,pgfplotstable}
 \usepackage{langsci-gb4e}
+\renewcommand{\eachwordone}{\itshape}
 \graphicspath{{figures/}}
 \usepackage{./langsci-tbls}
 \usepackage{hhline}
