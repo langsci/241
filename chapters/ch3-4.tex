@@ -164,7 +164,7 @@ Il est d’usage dans les arbres de constituants avec têtes (plats ou pas) d’
 \begin{figure} 
 \begin{tikzpicture}[every node/.style={font=\strut}]
 \begin{scope}[
-    every node/.style={circle,fill=black},
+    every node/.style={CircleFillNode},
     level 1/.style={sibling distance=30mm},
     level 2/.style={sibling distance=20mm},
     level 3/.style={sibling distance=15mm}
@@ -209,7 +209,7 @@ L’arbre de constituants plat est équivalent à l’arbre de Beauzée-Gladkij 
 \begin{figure}
 \fbox{\begin{tikzpicture}[every node/.style={font=\small\strut}]
 \begin{scope}[
-    every node/.style={circle,fill=black},
+    every node/.style={CircleFillNode},
     level 1/.style={sibling distance=30mm},
     level 2/.style={sibling distance=15mm},
     level 3/.style={sibling distance=15mm}
@@ -347,7 +347,7 @@ Les deux familles de méthodes conduisent à la même analyse structurelle, bien
     \begin{minipage}[c]{.5\linewidth}\centering
     \begin{tikzpicture}[every node/.style={font=\strut}]
     \begin{scope}[
-    every node/.style={circle,fill=black},
+    every node/.style={CircleFillNode},
     sibling distance=15mm,
     level distance=2\baselineskip
     ]
@@ -383,7 +383,7 @@ Les deux familles de méthodes conduisent à la même analyse structurelle, bien
     \begin{minipage}[c]{.5\linewidth}\centering
     \begin{tikzpicture}[every node/.style={font=\strut}]
     \begin{scope}[
-    every node/.style={circle,fill=black},
+    every node/.style={CircleFillNode},
     sibling distance=15mm,
     level distance=2\baselineskip
     ]
@@ -605,7 +605,7 @@ Nous obtenons le parenthésage suivant :
     \begin{minipage}[c]{.5\linewidth}\centering
       \begin{tikzpicture}[every node/.style={font=\strut}]
         \begin{scope}[
-            every node/.style={circle,fill=black},
+            every node/.style={CircleFillNode},
             sibling distance=15mm,
             level distance=2\baselineskip]
             \node (root) {} 
@@ -647,7 +647,7 @@ Un tel arbre a des avantages (la simplicité), mais il a aussi un inconvénient 
 \caption{\label{fig:}Arbre de constituants binaire avec têtes}
 \begin{tikzpicture}
 \begin{scope}[
-        every node/.style={circle,fill=black},
+        every node/.style={CircleFillNode},
         level distance=2\baselineskip,
         level 1/.style={sibling distance=60mm},
         level 2/.style={sibling distance=35mm},
@@ -830,9 +830,9 @@ L’arbre de constituants obtenu (celui correspondant aux emboîtements) n’est
     
     \ex Construction dans un arbre de constituants avec tête\smallskip\\
         \begin{tikzpicture}
-        \node [circle,fill=black] (root) {}
-            child { node [circle,fill=black] {} edge from parent node [near end,above] {T} }
-            child { node [circle,fill=black] {} };
+        \node [CircleFillNode] (root) {}
+            child { node [CircleFillNode] {} edge from parent node [near end,above] {T} }
+            child { node [CircleFillNode] {} };
         \node [above=1pt of root] {C};
         \node [below=1pt of root-1] {A};
         \node [below=1pt of root-2] {B};
@@ -983,7 +983,7 @@ Nous avons vu que l’arbre de constituants plat pouvait être déduit trivialem
 \caption{\label{fig:}Arbre de constituants binaire (avec têtes)\todo[inline]{Is this the same figure as above? If yes, maybe print only once?}}
 \begin{tikzpicture}
 \begin{scope}[
-        every node/.style={circle,fill=black},
+        every node/.style={CircleFillNode},
         level distance=2\baselineskip,
         level 1/.style={sibling distance=60mm},
         level 2/.style={sibling distance=35mm},
@@ -1022,16 +1022,16 @@ On peut interpréter chaque branchement binaire comme une connexion entre deux u
 \begin{figure}
 
 \begin{tikzpicture}
-  \node at (0,0) (A)  [circle,fill=black,label=below:A] {};
-  \node at (2,0) (B)  [circle,fill=black,label=below:B] {};
-  \node at (1,1) (U) [circle,fill=black,label=above:U] {};
+  \node at (0,0) (A)  [CircleFillNode,label=below:A] {};
+  \node at (2,0) (B)  [CircleFillNode,label=below:B] {};
+  \node at (1,1) (U) [CircleFillNode,label=above:U] {};
   
   \draw (A) -- node [midway,above] {T} (U)
             -- (B);
 
- \node at (3,0.5) {⇔}; 
- \node at (4,0) (A2)  [circle,fill=black,label=below:A] {};
- \node at (6,0) (B2)  [circle,fill=black,label=below:B] {};
+ \draw[double,{Triangle[open]}-{Triangle[open]}] (2.5,0.5) -- (3.5,0.5);
+ \node at (4,0) (A2)  [CircleFillNode,label=below:A] {};
+ \node at (6,0) (B2)  [CircleFillNode,label=below:B] {};
  \draw[-{Triangle[]}] (A2) to [bend left] node [above,midway] {U} (B2);
 \end{tikzpicture}
 
@@ -1183,7 +1183,7 @@ Dans l’exemple suivant (déjà étudié dans la \sectref{sec:3.3.23} \textit{N
 Arbre de constituants avec marquage partiel des têtes\medskip\\
 \begin{tikzpicture}[every node/.style={font=\strut}]
     \begin{scope}[
-    every node/.style={circle,fill=black},
+    every node/.style={CircleFillNode},
     sibling distance=15mm,
     level distance=2\baselineskip
     ]
@@ -1253,7 +1253,7 @@ Chaque flèche entre deux structures symbolise une opération élémentaire perm
     \begin{minipage}[c]{.5\linewidth}
     \begin{tikzpicture}[every node/.style={font=\strut}]
     \begin{scope}[
-    every node/.style={circle,fill=black},
+    every node/.style={CircleFillNode},
     sibling distance=15mm,
     level distance=2\baselineskip
     ]
@@ -1300,7 +1300,7 @@ Chaque flèche entre deux structures symbolise une opération élémentaire perm
     \begin{minipage}[c]{.5\linewidth}
     \begin{tikzpicture}[every node/.style={font=\strut}]
     \begin{scope}[
-    every node/.style={circle,fill=black},
+    every node/.style={CircleFillNode},
     level 1/.style={sibling distance=30mm},
     level 2/.style={sibling distance=15mm},
     level distance=2\baselineskip
@@ -1353,9 +1353,9 @@ Le secret douloureux qui me faisait languir.
 
 Nous allons analyser cet exemple en procédant aussi bien par décomposition que par combinaison. Nous pouvons effectuer quatre types d’opérations.
 
-\begin{styleLivreImportant}
+\begin{tblsframed}{}
 Nous pouvons repérer des \textbf{unités syntaxiques}, pas seulement des projections maximales ou partielles. Toute unité repérée peut être parenthésée ou entourée d’une bulle.
-\end{styleLivreImportant}
+\end{tblsframed}
 
 Illustration sur notre exemple : on peut par exemple s’appuyer sur la prosodie, la ponctuation ou, dans le cas d’un poème comme ici, sur le découpage en vers. Ces unités sont, en raison de leur autonomisabilité prosodique, des unités syntaxiques. En considérant que les vers et que les segments entre deux virgules sont des unités, nous obtenons le parenthésage suivant :
 
@@ -1375,9 +1375,9 @@ Illustration sur notre exemple : on peut par exemple s’appuyer sur la prosodie
 
 Plein d’autres découpages sont possibles. On voit en tout cas que même si notre exemple paraissait très complexe au départ, on s’est maintenant ramené à l’étude de segments beaucoup plus raisonnables.
 
-\begin{styleLivreImportant}
+\begin{tblsframed}{}
 Nous pouvons repérer des \textbf{connexions} entre unités. Dès qu’une connexion est repérée, on peut tracer un arc entre deux bulles.
-\end{styleLivreImportant}
+\end{tblsframed}
 
 Notre exemple est finalement assez simple, puisque chacune des unités que nous avons dégagées à la première étape se connecte à la précédente !
 
@@ -1397,9 +1397,9 @@ Notre exemple est finalement assez simple, puisque chacune des unités que nous 
 
 Pour vérifier que deux unités se connectent bien, il suffit de vérifier que leur combinaison donne un segment autonomisable.
 
-\begin{styleLivreImportant}
+\begin{tblsframed}{}
 Pour tout unité syntaxique, nous pouvons repérer sa \textbf{tête} et, par exemple la souligner.
-\end{styleLivreImportant}
+\end{tblsframed}
 
 Cette étape est plus complexe et amène à des discussions. Il faut en particulier décider quel élément est la tête dans des groupes coordonnés comme [~\textit{et des esclaves nus~}] ou dans une proposition relative comme [~\textit{qui me rafraîchissaient le front avec des palmes~}]. Voir pour cela les chapitres 5.3 et 5.4. Pour d’autres unités, sans être forcément triviale, la question peut être rapidement résolue en appliquant les tests : par exemple la tête de [~\textit{tout imprégnés d’odeurs~}] est \textit{imprégnés} car \textit{tout} est effaçable et \textit{d’odeurs} est régi par le verbe \textsc{imprégner} dont il est le complément d’agent (\textit{les odeurs imprègnent quelque chose}). Nous différons donc certaines décisions et obtenons pour le début de notre exemple :
 
@@ -1413,9 +1413,9 @@ Cette étape est plus complexe et amène à des discussions. Il faut en particul
 
 On aura noté que certaines formes qui étaient des amalgames ont été décomposées. On vérifie en particulier que \textit{des} contient bien la préposition \textsc{de} par la commutation avec \textit{de ces}.
 
-\begin{styleLivreImportant}
+\begin{tblsframed}{}
 Pour toute connexion, nous pouvons repérer sa tête et la hiérarchiser pour en faire une \textbf{dépendance}.
-\end{styleLivreImportant}
+\end{tblsframed}
 
 La première unité contient le verbe principal de la phrase et est donc la racine de la structure, ce qui nous hiérarchise un certain nombre de connexions. Pour les autres, le critère d’effacement suffit.
 \ea{}
@@ -1427,9 +1427,9 @@ La première unité contient le verbe principal de la phrase et est donc la raci
 \z
 Ces différentes étapes peuvent bien sûr être réalisées à tour de rôle et à plusieurs reprises :
 
-\begin{styleLivreImportant}
+\begin{tblsframed}{}
 A chaque fois qu’une unité est décomposée en de nouvelles unités, on pourra chercher à \textbf{raffiner les connexions} qu’elle entretient. Quand toutes les connexions d’une unité auront été attribuées à ses sous-unités, on pourra même effacer les frontières de cette unité.
-\end{styleLivreImportant}
+\end{tblsframed}
 
 Ainsi les frontières de l’unité [~et des esclaves nus tout imprégnés d’odeurs~] peuvent être effacées dès qu’on a établi que [et de les esclaves nus] se combinent avec [de les splendeurs].
 \ea{} [ \textit{c’est là que j’ai vécu dans les voluptés calmes} ]\\
@@ -1438,9 +1438,9 @@ Ainsi les frontières de l’unité [~et des esclaves nus tout imprégnés d’o
                           {}                          {$\searrow $} {[ \textit{qui me rafraîchissaient le front …} ]}\\
 \z
 
-\begin{styleLivreImportant}
+\begin{tblsframed}{}
 Dès qu’on a repéré la tête d’une unité, on pourra plus facilement en trouver les sous-unités (voir la \sectref{sec:3.4.6} sur \textit{Construire un arbre de dépendance par décomposition}).
-\end{styleLivreImportant}
+\end{tblsframed}
 
 Par exemple, une fois repérée la tête de [~\textit{tout imprégnés d’odeurs~}], on a immédiatement :
 
@@ -1575,25 +1575,26 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
 }
 \exercices{%\label{sec:3.4.30}
     \exercice{1} Nous proposons le parenthésage en constituants majeurs suivant :
-    \ea
-    ( ( \textit{son} ( ( \textit{petit} ) \textit{chat} ) ) \textit{est} ( \textit{allergique} ( \textit{à} ( \textit{la} ( \textit{moquette} ) ) ) ) )
-    \z
+    \begin{exe}
+    \exi{(i)} ( ( \textit{son} ( ( \textit{petit} ) \textit{chat} ) ) \textit{est} ( \textit{allergique} ( \textit{à} ( \textit{la} ( \textit{moquette} ) ) ) ) )
+    \end{exe}
     En déduire un arbre de constituant plat, puis un arbre de dépendance en appliquant la méthode de Lecerf.
 
     \exercice{2} Comparer :
-
-    a. \textit{Louise va partir en Italie.}
-
-    b. \textit{Louise veut partir en Italie.}
+    \begin{enumerate}[label=\alph*.]
+    \item \textit{Louise va partir en Italie.}
+    \item \textit{Louise veut partir en Italie.}
+    \end{enumerate}
 
     Etudiez le statut de constituant de \textit{partir en Italie} dans ces deux exemples. Montrez que les tests donnent des résultats différents. Qu’en déduit-on sur le plan théorique ?
 
     \exercice{3} Quel est l’intérêt du point de vue théorique d’utiliser des arbres de constituants qui sont binaires ?
 
     \exercice{4} Analysez aussi finement que vous le pouvez (sans descendre en deçà des mots) la phrase suivante de Marcel Proust extraite de \textit{Du côté de chez Swan} :
-    \ea
-    {à l’instant même où la gorgée mêlée des miettes du gâteau toucha mon palais, je tressaillis, attentif à ce qui se passait d’extraordinaire en moi.}
-    \z
+    
+    \begin{exe}
+    \exi{(i)}{à l’instant même où la gorgée mêlée des miettes du gâteau toucha mon palais, je tressaillis, attentif à ce qui se passait d’extraordinaire en moi.}
+    \end{exe}
     En déduire une structure de dépendance et un arbre de constituants binaire.
 }
 \lecturesadditionnelles{%\label{sec:3.4.31}
@@ -1609,23 +1610,26 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
 }
 \corrections{%\label{sec:3.4.32}
     \corrigé{1} On obtient l’arbre de dépendance suivant :
-    \ea
-    {petit} \textrm{←} \textit{chat} \textrm{←} \textit{son} \textrm{←} \textit{est} \textrm{→} \textit{allergique} \textrm{→} \textit{à} \textrm{→} \textit{la} \textrm{→} \textit{moquette}
-    \z
+    
+    \begin{exe}
+    \exi{(i)}     {petit} \textrm{←} \textit{chat} \textrm{←} \textit{son} \textrm{←} \textit{est} \textrm{→} \textit{allergique} \textrm{→} \textit{à} \textrm{→} \textit{la} \textrm{→} \textit{moquette}
+    \end{exe}
     \corrigé{2} Dans l’exemple b, \textit{partir en Italie} peut être interrogé (\textit{Que veut Louise} ? – \textit{Partir en Italie}.) et semi-clivé (\textit{Ce que veut Louise,} \textit{c’est} \textit{partir en Italie.}), mais ce n’est pas possible en a (*\textit{Que va Louise} ? ; *\textit{Ce que va Louise, c’est partir en Italie.}). Dans une analyse en dépendance, nous dirons que \textit{va partir} est très cohésif et qu’il n’est pas possible de les séparer, sans remettre en question que \textit{partir en Italie} est une unité et que donc \textit{partir} se combine avec \textit{en Italie}. Dans une analyse en constituants, il n’est pas possible de considérer à la fois \textit{va partir} et \textit{partir en Italie} comme des unités syntaxiques, ce qui est un problème.
 
     \corrigé{3} Un branchement binaire peut être interprété comme une connexion binaire et donc comme une construction élémentaire. Nous avons montré dans la \sectref{sec:3.4.21}--\ref{sec:3.4.23} comment les nœuds intérieurs d’un arbre de constituants binaires pouvaient être interprétés comme des connexions, puis des dépendances en cas de marquage d’un sous-constituant tête.
 
     \corrigé{4} En s’appuyant sur le découpage prosodique proposé par les virgules, on obtient un premier découpage : [ \textit{à l’instant même où la gorgée mêlée des miettes du gâteau toucha mon palais} ] [ \textit{je tressaillis} ] [ \textit{attentif à ce qui se passait d’extraordinaire en moi} ]. On peut ensuite continuer à réduire :
 
-    \ea\relax
+    \begin{exe}
+    \exi{(i)}\relax
     [ [\textit{à l'instant même}] — [ [\textit{où}] [ [\textit{la gorgée}] — [\textit{mêlée des miettes du gâteau}] ] — [\textit{toucha}] — [ \textit{mon palais} ] ]\\\relax
     [ [ [\textit{je}] — [\textit{tressaillis}] ] [ [\textit{attentif}] — [ [\textit{à ce qui}] — [\textit{se passait}] — [\textit{d'extraordinaire}] [\textit{en moi}] ]
-    \z
+    \end{exe}
 
     Nous proposons finalement la structure de dépendance suivante. Nous laissons sous-spécifié la tête de la relation déterminant-nom, ainsi que la relation entre le pronom relatif et verbe principale de la proposition relative.
     
-    \ea
+    \begin{exe}
+    \exi{(ii)}\relax
     \begin{forest} for tree = { }
     [tressaillis,calign=child,calign primary child=2
         [à
@@ -1677,10 +1681,12 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
         ]        
     ]
     \end{forest}
-    \z
+    \end{exe}
     Pour construire un arbre de constituants binaire, il faut décider dans quel ordre combiner chaque mot avec ses dépendants. Notons que lorsqu’une connexion n’est pas hiérarchisée, cette combinaison a lieu après les autres. Par exemple, si nous prenons la portion \textit{à l’instant même où la gorgée mêlée des miettes du gâteau toucha mon palais}, on obtient~la structure suivante, où le déterminant est le dernier élément à se combiner avec le nom :
-    \ea{}
+    
+    \begin{exe}
+    \exi{(iii)}\relax
         [ \textit{à} ( \textit{l’} [ (\textit{instant même}) ( \textit{où} [ \textit{la} (\textit{gorgée} [\textit{mêlée des miettes du gâteau}] ) ] [ \textit{toucha} (\textit{mon palais}) ] ) ] ) ]
-    \z
+    \end{exe}
     Nous devons également décider dans quel ordre regrouper les trois dépendants de la tête de la phrase, \textit{tressaillis}. Dans ce cas, l’analyse standard regroupera probablement le sujet \textit{je} en premier, car les deux autres dépendants sont des éléments détachés prosodiquement. Concluons en rappelant que la stratification de la structure de constituants ne nous semble pas une question très pertinente. Nous pensons que le regroupement en constituants doit être fait à un autre niveau d’analyse en utilisant des critères de cohésion syntaxique. Ce sera l’objet du chapitre suivant.
 }
