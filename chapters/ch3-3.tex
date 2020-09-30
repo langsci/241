@@ -59,8 +59,9 @@ Nous allons introduire un autre terme à ne pas confondre avec \textit{gouverneu
 
 Les notions de tête et de gouverneur renvoient au même concept, mais adopte des points de vue différents.
 
-\Definition{???}
-{Si A \textbf{gouverne} B, alors A et B forment une unité syntaxique ensemble et A en est la \textbf{tête}. Inversement, si A et B forment à eux deux une unité dont A est la \textbf{tête}, alors B est \textbf{dépendant} de A.}
+\begin{tblsframed}{}
+Si A \textbf{gouverne} B, alors A et B forment une unité syntaxique ensemble et A en est la \textbf{tête}. Inversement, si A et B forment à eux deux une unité dont A est la \textbf{tête}, alors B est \textbf{dépendant} de A.
+\end{tblsframed}
 
 Autrement dit, hiérarchiser une connexion revient donc à décider de quel côté est sa tête.
 
@@ -333,15 +334,13 @@ Une première définition possible d’une structure de dépendance se base sur 
 
 Illustrons cela avec la phrase :
 
-\ea{
-Pierre veut inviter Marie demain.
-}
-\z
+\ea Pierre veut inviter Marie demain.\z
 
 Si l’on a la structure de connexion de cette phrase (voir \chapref{sec:3.2}) et qu’on peut établir que \textit{veut} est la tête (voir \sectref{sec:3.3.8} suivante), on obtient immédiatement une structure de dépendance par le procédé que nous venons de décrire. La flèche blanche indique le nœud par lequel on attrape la structure pour la hiérarchiser. Ce nœud va gouverner les nœuds auxquels il est connecté, lesquels vont gouverner à leur tour les nœuds auxquels ils sont connectés et ainsi de suite.
 
 \begin{figure}
-\begin{tabular}{@{}>{\centering}m{5cm} m{1em} >{\centering\arraybackslash}m{5cm} @{}}
+\vskip\baselineskip
+\begin{tabular}{@{}>{\centering}m{5cm} m{2em} >{\centering\arraybackslash}m{5cm} @{}}
   \begin{tikzpicture}[every node/.style={ConcSet}]
     \node at (0,0)   (Pierre) {Pierre};
     \node at (1,-1.5)  (veut) {veut};
@@ -350,8 +349,9 @@ Si l’on a la structure de connexion de cette phrase (voir \chapref{sec:3.2}) e
     \node at (3,-1.5)  (demain) {demain};
     \draw (Pierre) -- (veut) -- (inviter) -- (Marie);
     \draw (inviter) -- (demain);
+    \draw [ConversionArrow] (veut) ++(-1,-1) -- (veut);
   \end{tikzpicture} 
-  & ⇒ 
+  & \tikz \draw[ConversionArrow] (0,0) -- (1,0); 
   & \begin{tikzpicture}[every node/.style={ConcSet},
                         edge from parent/.style={draw,-{Triangle[]}},
                         sibling distance=2cm
@@ -362,6 +362,7 @@ Si l’on a la structure de connexion de cette phrase (voir \chapref{sec:3.2}) e
             child { node {Marie} }
             child { node {demain } }
     };
+  \draw [ConversionArrow,overlay] (root) ++(0,1.33) -- (root);
   \end{tikzpicture}\\
   Structure de connexion & & Arbre de dépendance
 \end{tabular}
@@ -390,7 +391,7 @@ Si on reprend notre exemple avec X = \textit{Pierre habite,} A = \textit{une mai
 \draw (A) -- (B);
 \draw [-{Triangle[]}] (X) -- (AB);
 
-\node at (4,0) {⇒};
+\draw[ConversionArrow, thick] (3.5,0) -- (4.5,0);
 \node at (5,0) (X) {X};
 \node at (6,0) (A) {A};
 \node at (7,0) (B) {B};
@@ -856,14 +857,15 @@ On peut encore appliquer le critère au cas des formes verbales comme \textit{ch
             \& \node [label=above:{‘boire’}, CircleNode] (boire) {}; 
             \& \& \node [label=above:{‘verre’}, CircleNode] (verre) {};\\
             \node [label=below:{\strut‘Félix’}, CircleNode] (Felix) {}; 
-            \& \& \node [label=below:{\strut‘vin’}, CircleNode] (vin) {}; 
-            \& \& \node [label=below:{\strut‘un’}, CircleNode] (un) {};\\
+            \& \& \node [label=below:{\strut\vphantom{F}‘vin’}, CircleNode] (vin) {}; 
+            \& \& \node [label=below:{\strut\vphantom{F}‘un’}, CircleNode] (un) {};\\
           };
           \draw[-{Triangle[]}] (boire) -- (Felix) node[EdgeLabel] {1};
           \draw[-{Triangle[]}] (verre) -- (vin) node[EdgeLabel] {1};
           \draw[-{Triangle[]}] (boire) -- (vin) node[EdgeLabel] {2};
           \draw[-{Triangle[]}] (un) -- (verre) node[EdgeLabel] {1};
     \end{tikzpicture}\end{minipage}
+    \todo[inline]{baseline problems}
     \z
 
     Un autre cas de distorsion est illustré par l’exemple suivant :
@@ -1009,25 +1011,24 @@ Le déterminant et le nom forment avec leurs dépendants une unité que nous app
 
 La question de savoir qui du nom ou du déterminant est la tête est une question complexe qui a fait couler beaucoup d’encre. Il existe trois réponses possibles (et pas deux) : (A) le nom est la tête, (B) le déterminant est la tête, (C) les deux ont des propriétés de têtes et sont des co-têtes. Illustrons ces trois options sur un exemple simple, \textit{le petit chien dort~}:
 
-\begin{figure}
+\ea
 \begin{minipage}[t]{.3\linewidth}\centering
-(A) Nom tête\medskip\\
+a. Nom tête\medskip\\
 \begin{forest} for tree={font=\itshape}
 [dort [chien [le] [petit]]]
 \end{forest}
 \end{minipage}\hfill\begin{minipage}[t]{.3\linewidth}\centering
-(B) Déterminant tête\medskip\\
+b. Déterminant tête\medskip\\
 \begin{forest} for tree={font=\itshape}
 [dort [le [chien [petit]]]]
 \end{forest}
 \end{minipage}\hfill\begin{minipage}[t]{.3\linewidth}\centering
-(C) Co-têtes\medskip\\
+c. Co-têtes\medskip\\
 \begin{forest} for tree={font=\itshape}
 [dort [,nice empty nodes [le] [chien [petit]] ]]
 \end{forest}
 \end{minipage}
-   \caption{\label{fig:}}
-\end{figure}
+\z
 
 L’option (A) est celle de la grammaire traditionnelle, qui utilise le terme \textit{groupe nominal}. Elle a été sérieusement remise en question dans les années 1980, notamment par Richard \citet{hudson1984word} et la thèse de Steven \citet{abney1987english} qui défendait l’hypothèse du groupe déterminatif (\textit{DP-hypothesis}), et par l’adoption ensuite du DP (\textit{Determiner Phrase}) par la syntaxe X-barre en lieu et place du NP (\textit{Noun Phrase}). La troisième option est sérieusement envisagée par Lucien \citet{tesniere1959elements}, qui considère que les articles sont des indices qui marquent le rôle nominal du nom, et qui donc traite \textit{le chien} comme un nucléus translatif, lequel est représenté horizontalement, comme dans notre figure (C) (voir l’\encadref{fig:3.3.5} sur l’\textit{Historique des représentations syntaxiques par des diagrammes en dépendance}).
 
@@ -1225,7 +1226,7 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
     Nous avons discuté du nom ou du déterminant comme tête du groupe substantival. Mais il existe une autre solution encore. Nous avons vu que la flexion du verbe pouvait être considérée comme la tête de la proposition et prendre le sujet comme dépendant (voir la \sectref{sec:3.3.13} sur \textit{Le critère distributionnel sans effacement}). Une analyse similaire peut être proposée pour le nom. Les deux catégories flexionnelles du nom sont la définitude et le nombre (voir le \chapref{sec:4.2} sur les \textit{Catégories flexionnelles}). On peut alors proposer pour \textit{les deux amis} la structure suivante (dont les nœuds sont occupés par des syntaxèmes) :
 
     \ea
-    \begin{forest}
+    \begin{forest} for tree = {s sep=2cm, l=2cm}
     [défini
       [LE] [pluriel
         [DEUX] [AMI]
@@ -1246,7 +1247,7 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
     ]
     \draw ($ (defini) !0.5! (le) $) ellipse [x radius=2cm, y radius=1cm,rotate=45];
     \draw ($ (pluriel) !0.5! (deux) $) ellipse [x radius=2cm, y radius=1cm,rotate=45];
-    \end{forest}\hspace{2cm}%
+    \end{forest}\hfill%
     \begin{forest} for tree={font=\itshape, l=2cm}
     [les [deux [amis]]]
     \end{forest}
@@ -1261,8 +1262,8 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
         [DEUX] [AMI,name=ami]
       ]
     ]
-    \draw ($ (defini) !0.5! (ami) $) ellipse [x radius=3cm, y radius=1.5cm,rotate=-45];
-    \end{forest}\hspace{1cm}%
+    \draw [overlay] ($ (defini) !0.5! (ami) $) ellipse [x radius=3cm, y radius=1.5cm,rotate=-45];
+    \end{forest}\hfill%
     \begin{forest} for tree={font=\itshape, s sep=2cm, l=2cm}
     [amis [les] [deux]]
     \end{forest}
@@ -1317,8 +1318,9 @@ On dit simplement la \textstyleTermes{projection} de A lorsqu’on ne considère
 
 Dans la grammaire traditionnelle, les projections maximales sont appelées des \textstyleTermes{groupes~}: \textstyleTermes{groupe prépositionnel} (\textit{depuis ce matin}), \textstyleTermes{groupe adjectival} (\textit{très facile à comprendre}), \textstyleTermes{groupe adverbial} (\textit{beaucoup trop vite}), \textstyleTermes{groupe substantival} (\textit{la petite maison dans la prairie}), etc. La projection maximale de la forme verbale est la \textstyleTermes{proposition}. Pour le terme de \textbf{\textit{groupe verbal}}, dont nous ne faisons pas usage, nous renvoyons à l’\encadref{fig:3.4.20} éponyme.
 
-\Definition{}
-{Attention : dans beaucoup d’ouvrages de linguistiques, le terme \textit{syntagme} est utilisé (en traduction du terme anglais \textit{phrase}) pour désigner les groupes. Il est alors dit \textit{syntagme nominal} (angl. \textit{noun phrase}) pour \textit{groupe nominal}. \textbf{Nous rejetons cet emploi du terme \textit{syntagme}}, que nous utilisons dans son sens originel (celui donné par Saussure) d’unité obtenue par une combinaison syntagmatique.}
+\begin{tblsframed}{}
+\noindent Attention : dans beaucoup d’ouvrages de linguistiques, le terme \textit{syntagme} est utilisé (en traduction du terme anglais \textit{phrase}) pour désigner les groupes. Il est alors dit \textit{syntagme nominal} (angl. \textit{noun phrase}) pour \textit{groupe nominal}. \textbf{Nous rejetons cet emploi du terme \textit{syntagme}}, que nous utilisons dans son sens originel (celui donné par Saussure) d’unité obtenue par une combinaison syntagmatique.
+\end{tblsframed}
 
 Dans notre terminologie, groupe et syntagme sont deux notions bien distinctes : \textit{Marie} forme un groupe substantival sans être pour autant un syntagme (il n’y a pas de combinaison), tandis que \textit{aimeraient passer} est un syntagme, mais pas un groupe.
 
@@ -1377,7 +1379,7 @@ Si l’on adopte une représentation syntaxique très granulaire où les syntax�
 
     La \textstyleTermesapprof{relation de dominance} est la \textbf{clôture transitive et réflexive de la relation de dépendance}. En d’autres termes, il s’agit de la plus petite relation transitive et réflexive qui contienne la relation de dépendance. Elle est obtenue en ajoutant les configurations correspondant à la transitivité et la réflexivité sur l’arbre de dépendance jusqu’à saturation (c’est en ce sens qu’il s’agit d‘une \textbf{\textit{clôture}} pour la transitivité et la réflexivité).
 
-    Formellement, la \textstyleTermesapprof{clôture transitive et réflexive} d’une relation binaire R est la relation R* définie par : \textit{a~}R*\textit{~b} s’il existe \textit{n}+1 nœuds \textit{a}\textsubscript{0}, \textit{a}\textsubscript{1},…, \textit{a\textsubscript{n}} (pour un entier quelconque \textit{n} ${\geq}$ 0) tels que \textit{a} = \textit{a}\textsubscript{0}, \textit{b} = \textit{a\textsubscript{n}} et \textit{a\textsubscript{i}}~R~\textit{a\textsubscript{i}}\textsubscript{+1} pour tout \textit{i} compris entre 0 et \textit{n}{}-1. Autrement dit, \textit{a} R* \textit{b} s’il existe un chemin orienté de a à b dans le graphe de la relation R (de longueur éventuellement nulle pour \textit{n} = 0).
+    Formellement, la \textstyleTermesapprof{clôture transitive et réflexive} d’une relation binaire R est la relation R* définie par : \textit{a~}R*\textit{~b} s’il existe $n+1$ nœuds \textit{a}\textsubscript{0}, \textit{a}\textsubscript{1},…, \textit{a\textsubscript{n}} (pour un entier quelconque $n \geq 0$) tels que \textit{a} = \textit{a}\textsubscript{0}, \textit{b} = \textit{a\textsubscript{n}} et \textit{a\textsubscript{i}}~R~\textit{a\textsubscript{i}}\textsubscript{+1} pour tout \textit{i} compris entre 0 et $n-1$. Autrement dit, \textit{a} R* \textit{b} s’il existe un chemin orienté de a à b dans le graphe de la relation R (de longueur éventuellement nulle pour \textit{n} = 0).
 
     De même que nous avons construit la relation de dominance à partir de la relation de dépendance, on peut construire la relation de dépendance à partir de la relation de dominance. La relation de dominance est non seulement réflexive et transitive, mais elle est aussi antisymétrique, comme l’est la relation de dépendance. L’antisymétrie est un cas particulier de l’acyclicité. Une relation est \textstyleTermesapprof{antisymétrique} si la configuration correspondant à la symétrie n’apparaît jamais, c’est-à-dire s’il n’existe pas de nœuds \textit{a} et \textit{b} distincts avec \textit{a} R \textit{b} et \textit{b} R \textit{a}.
 
@@ -1465,9 +1467,9 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
 
     \exercice{3} Analyse distributionnelle. Montrer que les formes verbales infinitives ont une valence supérieure proche de celle des groupes substantifs. Montrer qu’il existe néanmoins des différences (on pourra regarder les contextes proposés par des verbes comme \textsc{vouloir,} \textsc{pouvoir} ou \textsc{tenter).}
 
-    \exercice{4} Dans son article de 1977 (p. 8), Paul Garde propose les trois critères suivants pour considérer que B est la tête de l’unité AB :
+    \exercice{4} Dans son article de \citeyear{garde1977ordre} (p. 8), Paul Garde propose les trois critères suivants pour considérer que B est la tête de l’unité AB :
     
-        «\begin{enumerate}
+        \begin{enumerate}
         \item dans un contexte donné, A peut être supprimé, non B :
 
         X (AB) → X (B) et non *X (A)
@@ -1479,37 +1481,39 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
        \item une modification du contexte entraîne un changement de B, non de A :
 
         X (AB) → Y (AB’) et non *Y (A’B)
-        \end{enumerate} »
+        \end{enumerate}
 
     Montrer qu’il s’agit, dans l’intention, des critères distributionnels avec et sans effacement, mais que, pour être corrects, les critères doivent être énoncés et formalisés de manière légèrement différente.
 
     \exercice{5} On considère les données suivantes :
     
-    \ea
-     \ea[]{Je prends les deux livres.}
-     \ex[]{Je prends les deux.}
-     \ex[]{Je les prends tous les deux.}
-     \ex[]{Je les prends tous.}
-     \ex[\textsuperscript{?}*]{\textit{Je les prends les deux}. (possible uniquement avec un détachement de \textit{les deux})}
-     \ex[*]{Je prends tous les deux.}
-     \z
-    \z
+    \begin{exe}
+    \judgewidth{\textsuperscript{?}*}
+     \exi{(1)}[]{Je prends les deux livres.}
+     \exi{(2)}[]{Je prends les deux.}
+     \exi{(3)}[]{Je les prends tous les deux.}
+     \exi{(4)}[]{Je les prends tous.}
+     \exi{(5)}[\textsuperscript{?}*]{\textit{Je les prends les deux}. (possible uniquement avec un détachement de \textit{les deux})}
+     \exi{(6)}[*]{Je prends tous les deux.}
+     \end{exe}
 
     Ces données nous permettent-elles de statuer sur la tête de l’unité \textit{tous les deux} ?
 
     \exercice{6} Montrer que le nom \textsc{fois} possède une valence supérieure différente des autres noms.
 
-    \exercice{7} a) Montrer que dans une forme verbale composée comme \textit{a dormi}, c’est le verbe auxiliaire qui régit le participe passé et non l’inverse.
-
-    b) Pourquoi ne retenons-nous pas le fait que certains verbes, comme \textsc{arriver}, prenne l’auxiliaire \textsc{être} et non \textsc{avoir} au passé composé comme un critère pertinent pour décider qui de l’auxiliaire ou du participe est la tête de la forme verbale composée ?
+    \exercice{7}
+    \begin{enumerate}[label=\alph*.]
+    \item Montrer que dans une forme verbale composée comme \textit{a dormi}, c’est le verbe auxiliaire qui régit le participe passé et non l’inverse.
+    \item Pourquoi ne retenons-nous pas le fait que certains verbes, comme \textsc{arriver}, prenne l’auxiliaire \textsc{être} et non \textsc{avoir} au passé composé comme un critère pertinent pour décider qui de l’auxiliaire ou du participe est la tête de la forme verbale composée ?
+    \end{enumerate}
 
     \exercice{8} La distribution des formes verbales infinitives du français est différente de celle des formes finies. Ceci plaide pour considérer la flexion comme la tête externe des formes verbales. Le syntaxème d’infinitif est-il aussi la tête interne de la forme verbale infinitive ?
 
     \exercice{9} On étudie les groupes substantifs de la phrase suivante :
 
-    \ea
-    {Le journal Libération a publié un article sur l’affaire Dreyfus}.
-    \z
+    \begin{exe}
+    \exi{(i)} Le journal Libération a publié un article sur l’affaire Dreyfus.
+    \end{exe}
 
     Comment déterminer la tête des groupes \textit{le journal Libération} et \textit{l’affaire Dreyfus} ? Montrer que seuls les critères topologiques et sémantiques s’appliquent réellement.
 
@@ -1517,17 +1521,15 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
 
     \exercice{11} Construire la structure de dépendance de n’importe quel énoncé dans n’importe quelle langue constitue un exercice d’application de ce chapitre. Nous proposons de chercher la structure syntaxique des exemples suivants :
 
-    \ea
-        \ea
-        J’y suis particulièrement sensible.
-        \ex     Un tiers des participants seront éliminés dès que le jeu commencera.
-        \ex     Ma voiture n’a pas voulu démarrer ce matin.
-        \ex     Le professeur est arrivé deux minutes après la sonnerie.
-        \ex     Ma chemise a l’air moins blanche qu’avant.
-        \ex     Epuisée par sa course, Zoé a préféré s’arrêter pour souffler un peu.
-        \ex     Seuls mes amis peuvent accepter une telle demande.
-        \z
-    \z
+    \begin{exe}
+        \exi{(1)}  J’y suis particulièrement sensible.
+        \exi{(2)}  Un tiers des participants seront éliminés dès que le jeu commencera.
+        \exi{(3)}  Ma voiture n’a pas voulu démarrer ce matin.
+        \exi{(4)}  Le professeur est arrivé deux minutes après la sonnerie.
+        \exi{(5)}  Ma chemise a l’air moins blanche qu’avant.
+        \exi{(6)}  Epuisée par sa course, Zoé a préféré s’arrêter pour souffler un peu.
+        \exi{(7)}  Seuls mes amis peuvent accepter une telle demande.
+    \end{exe}
     Chacun de ces exemples un problème de syntaxe que l’on tentera d’identifier et de résoudre. D’autres problèmes plus complexes, comme la coordination ou les pronoms relatives, seront présentés dans les chapitres 5.3 et 5.4.
 
     \exercice{12} La construction causative en \textsc{faire} Vinf (Vinf = verbe à l’infinitif) du français est particulièrement problématique. Elle possède deux propriétés~remarquables.
@@ -1544,37 +1546,37 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
 
     \exercice{13} En allemand, les prépositions locatives peuvent être suivies d’un groupe substantival au datif ou à l’accusatif. Le datif donne une interprétation statique au groupe prépositionnel, tandis que l’accusatif lui donne une interprétation dynamique/directionnelle. Ceci est illustré par la paire suivante :
 
-    \ea
-    \ea
+    \begin{exe}
+    \exi{(1)}
     \gll   Helga joggt oft in \textbf{diesem} Stadion.\\
     Helga court souvent dans ce.\textsc{dat} stade.\\
-    \ex
+    \exi{(2)}
     \gll   Helga joggt oft in \textbf{dieses} Stadion.\\
     Helga court souvent (qui se termine) dans ce.\textsc{acc} stade.\\
-    \z
-    \z
+    \end{exe}
+    \todo[inline]{Please check gloss}
 
     Certains verbes néanmoins ne permettent qu’un des deux cas :
 
-    \ea
-    \ea[]{
+    \begin{exe}
+    \judgewidth{\textsuperscript{\#??}}
+    \exi{(3)}[]{
     \gll   Wolfgang ist in der Schule.\\
     Wolfgang est à la.\textsc{dat} école.\\}
 
-    \ex[*]{
+    \exi{(4)}[*]{
     \gll   Wolfgang ist in die Schule. \\
     Wolfgang est à la.\textsc{acc} école.\\}
 
-    \ex[]{
+    \exi{(5)}[]{
     \gll Thomas zählt auf seine Mutter.\\
     Thomas compte sur sa.\textsc{acc} mère.\\}
 
-    \ex[\textsuperscript{\#??}]{
+    \exi{(6)}[\textsuperscript{\#??}]{
     \gll Thomas zählt auf seiner Mutter.\\
     Thomas compte sur sa.\textsc{dat} mère \\
     \glt    signifierait au mieux ‘Thomas compte en étant assis sur sa mère.’}
-    \z
-    \z
+    \end{exe}
 
     Qu’est que cela nous dit sur la tête du groupe prépositionnel ?
 
@@ -1636,7 +1638,8 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
 \corrections{%\label{sec:3.3.37}
     \corrigé{1} Nous proposons de traduire l’analyse de Buffier par le diagramme suivant où les flèches représentent les relations du type «~est déterminé par~» ou est «~est particularisé par~». Notons que, à l’exception du cas de \textit{avec des discours}, les deux termes de la relations sont à chaque fois clairement donnés par Buffier. Nous représentons pour cette raison la relation entre \textit{avec des discours} et son gouverneur en pointillé.
 
-    \ea Diagramme d’après \citet{buffier1709grammaire}\\
+    \begin{exe}
+    \exi{(i)} Diagramme d’après \citet{buffier1709grammaire}\\
     \begin{forest} for tree = {edge = -{Triangle[]}, calign=child, calign primary child=1}
     [un homme [qui [étourdit
         [les gens [qu’il rencontre]]
@@ -1645,18 +1648,18 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
         ]
     ]]]    
     \end{forest} 
-    
+    \exi{(ii)}
     \begin{forest} for tree = {edge = -{Triangle[]}}
      [a coutume 
         [de causer
             [beaucoup d’ennui, edge label={%
-                            node[near start,left=1em,font=\itshape]{régime absolu}}]    
+                            node[near start,left=1em,font=\normalfont]{régime absolu}}]    
             [à tout le monde, edge label={%
-                            node[near start,right=1em,font=\itshape]{régime respectif}}]
+                            node[near start,right=1em,font=\normalfont]{régime respectif}}]
         ]
      ]
     \end{forest}
-    \z
+    \end{exe}
 
     \corrigé{2} Du Marsais propose une analyse hybride entre dépendance et constituance immédiate. Il semble hésiter entre les deux approches et utilise notamment le même terme \textit{sujet} pour désigner la relation entre le groupe sujet et le groupe verbal (\textit{Celui} est le sujet de \textit{ne marche point dans les ténèbres}) et pour désigner un constituant de la proposition (\textit{Qui me suit}, ces trois mots font une proposition incidente […] \textit{Qui} est le sujet de cette proposition incidente).
 
@@ -1699,44 +1702,42 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
     Néanmoins, la commutation n’est pas toujours possible. Il existe des verbes comme \textsc{pouvoir} qui peuvent très difficilement prendre un substantif comme complément (\textit{Elle peut voyager} vs \textit{Elle peut tout} vs~\textsuperscript{?}\textit{Elle peut ça} vs *\textit{Elle peut un voyage}). Par ailleurs, si avec certains verbes, les substantifs commutent avec un infinitif nu (\textit{Elle veut un voyage} vs \textit{Elle veut voyager} vs *\textit{Elle veut de voyager}), d’autres imposent un infinitif précédé de la préposition \textsc{de} (\textit{Elle tente un voyage} vs *\textit{Elle tente voyager} vs \textit{Elle tente de voyager}). Dans la position sujet, les deux formes sont possibles (\textit{Voyager est un plaisir} vs \textit{De voyager est plaisir}).
 
     \corrigé{4} Le critère 1 de Paul Garde vise le critère distributionnel avec effacement. Il faut néanmoins préciser a) que le critère doit être valable pour tout contexte (l’ensemble des X constitue alors la distribution de l’unité considérée) ; b) que A doit être supprimable dans au moins un contexte ; c) que la réciproque doit être vraie. Par ailleurs, il n’est pas nécessaire de spécifier que B ne peut être supprimé (voir le cas des têtes effaçables dans l’\encadref{fig:3.3.12}). En adoptant les notations de Garde, on peut donc reformuler le critère de la façon suivante :
-    \ea
-    1a) si A est supprimable dans un contexte, il doit l’être dans tous les contextes :
+    \begin{enumerate}[label=1\alph*.]
+    \item si A est supprimable dans un contexte, il doit l’être dans tous les contextes :
 
         pour tout X, X (AB) → X (B)
 
-    1b) inversement, A doit pouvoir être ajouté à B dans tous les contextes
+    \item inversement, A doit pouvoir être ajouté à B dans tous les contextes
 
         pour tout X, X (B) → X (AB).
-    \z
+    \end{enumerate}
     Les critères 2 et 3 visent le critère distributionnel sans effacement. La quantification sur les contextes doit être précisée comme précédemment. Le critère 2 dit deux choses : d’une part, que A peut être remplacé par un A’ dans n’importe quel contexte (à condition évidemment que A’ puisse se combiner avec B dans au moins un contexte) :
-    \ea
-    pour tout A’, s’il existe Y tel que Y (A’B), alors, pour tout X, X (AB) → X (A’B).
-    \z
+    
+    \begin{enumerate}[label=2a.] \item    pour tout A’, s’il existe Y tel que Y (A’B), alors, pour tout X, X (AB) → X (A’B).\end{enumerate}
     Et d’autre part, que cette propriété n’est pas vraie pour B, c’est-à-dire qu’il doit exister au moins un contexte où B ne peut pas être remplacé par un B’ (qui peut pourtant se combiner avec A) :
-    \ea
-    il existe B’, Y et X tels que Y (AB’), X (AB) et *X (AB’).
-    \z
+    
+    \begin{enumerate}[label=2b.] \item  il existe B’, Y et X tels que Y (AB’), X (AB) et *X (AB’). \end{enumerate}
     Le critère 3 dit qu’(au moins) une modification du contexte entraîne un changement de B, ce qui devrait être formalisé par :
-    \ea
-    il existe Y et B’ tel que *Y (AB) et Y (AB’) ].
-    \z
+    
+    \begin{enumerate}[label=3a.] \item il existe Y et B’ tel que *Y (AB) et Y (AB’).\end{enumerate}
     Dire que la même propriété n’est pas vraie pour A se formalise par :
-    \ea
-    pour tout Y et A’, *Y (AB) → *Y(A’B).
-    \z
+    
+    \begin{enumerate}[label=3b.] \item  pour tout Y et A’, *Y (AB) → *Y(A’B). \end{enumerate}
     Le critères 2 et 3 visent bien à dire que B contrôle la distribution de AB, c’est-à-dire qu’il existe un B’ tel que AB et AB’ aient des distributions différentes. Il faut néanmoins bien préciser que B’ commute avec B et que donc B et B’ s’excluent mutuellement :
-    \ea
-    pour tout X, *X (ABB’).
-    \z
+    
+    \begin{enumerate}[label=4.] \item   pour tout X, *X (ABB’).\end{enumerate}
     Même chose avec A et A’.
 
     \corrigé{5} On voit que dans le contexte \textit{Je les prends \-\_}, U = \textit{tous les deux} peut commuter avec A =~\textit{tous}, mais pas B = \textit{les deux}. Par ailleurs, dans le contexte \textit{Je prends \-\_}, B est possible, mais pas U ou A. Autrement dit, U et A ont la même distribution, différente de B. Toutes ces données concordent pour désigner A = \textit{tous} comme la tête de U.
 
     \corrigé{6} Le nom \textsc{fois} combiné avec un déterminant se comporte comme un groupe adverbial (\textit{Il vient en avril et en mai} vs \textit{Il vient plusieurs fois}) et plus difficilement comme un groupe substantif, mais s’il peut être sujet (\textit{Une fois suffit~}; \textit{Cette fois sera la bonne}). Voir la \sectref{sec:3.3.24} \textit{Nom comme tête} ?.
 
-    \corrigé{7} a) Nous avons que dans la \sectref{sec:3.3.13} sur \textit{Le critère distributionnel sans effacement} que la flexion verbale contrôle la distribution de la forme verbale. Pour la même raison, l’auxiliaire, puisqu’il porte la flexion verbale va contrôler la distribution. Voir d’autres arguments dans la \sectref{sec:3.3.8} \textit{Tête d’un énoncé}.
+    \corrigé{7}
+    \begin{enumerate}[label=\alph*.]
+    \item Nous avons que dans la \sectref{sec:3.3.13} sur \textit{Le critère distributionnel sans effacement} que la flexion verbale contrôle la distribution de la forme verbale. Pour la même raison, l’auxiliaire, puisqu’il porte la flexion verbale va contrôler la distribution. Voir d’autres arguments dans la \sectref{sec:3.3.8} \textit{Tête d’un énoncé}.
 
-    b) Nous avons vu dans la \sectref{sec:3.3.25} que le dépendant peut contrôler son gouverneur. Le choix de l’auxiliaire est un cas particulier de contrôle.
+    \item Nous avons vu dans la \sectref{sec:3.3.25} que le dépendant peut contrôler son gouverneur. Le choix de l’auxiliaire est un cas particulier de contrôle.
+    \end{enumerate}
 
     \corrigé{8} L’infinitif bloque la réalisation du sujet du verbe. D’après le critère d’indépendance des codépendants (section~3.3.16), un élément ne peut pas bloquer la réalisation d’un codépendant. Le syntaxème d’’infinitif ne peut donc être dépendant du lexème verbal.
 
@@ -1744,19 +1745,16 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
 
     \corrigé{10} Le test de déplacement montre l’impossibilité de permuter les syntagmes en À et en \textsc{de~}: *\textit{le train à Marseille de Paris}, *\textit{il travaille au vendredi du lundi}. Il semble donc qu’il ne s’agisse pas de deux groupes prépositionnels indépendants, lesquels peuvent généralement commuter (\textit{Elle parle de Marie à Zoé}, \textit{un timbre de ma collection à 10 euros}). Le test de clivage (voir la \sectref{sec:3.4.10} sur \textit{Les tests de constituance}) confirme cela : *\textit{c’est au vendredi qu’il travaille du lundi} vs *\textit{c’est du lundi qu’il travaille au vendredi} vs \textit{c’est du lundi au vendredi qu’il travaille}. Nous verrons dans le \chapref{sec:5.3} qu’on peut traiter cette construction comme une coordination.
 
-    \corrigé{11} a. On remarque que le clitique \textit{y} commute avec un groupe prépositionnel comme \textit{à ça} qui forme un syntagme avec \textit{sensible} (\textit{sensible à ça}). On a donc \textit{particulièrement ← sensible → y.}
-
-    b. Si l’on traite les déterminants comme dépendant du nom, le groupe substantival sujet s’analyse \textit{un ← tiers → de → participants → les.} Le reste s’analyse : \textit{seront → éliminés → dès →que → commencera → jeu → le.}
-
-    c. La négation du français est constituée de deux mots qui se place avant et après une forme finie. C’est un argument essentiellement topologique qui nous fait dépendre \textit{pas} de l’auxiliaire : \textit{ne ← a → pas}. On note en effet qu’on peut insérer une unité après, mais plus difficilement avant \textit{pas~}: \textit{elle n’a pas, comme tu sais, voulu démarrer} vs~\textsuperscript{?}\textit{*elle n’a, comme tu sais, pas voulu démarrer.}
-
-    d. La difficulté concerne ici le syntagme \textit{deux minutes}. Celui dépend de \textit{après} puisqu’il forme un syntagme avec lui (\textit{deux minutes après}) et que la distribution du tout est celle de \textit{après} (\textit{il est arrivé après} vs *\textit{il est arrivé deux minutes}).
-
-    e. On remarque \textit{qu’avant} peut former un syntagme avec \textit{moins} (\textit{moins qu’avant}, mais pas avec \textit{blanche} (*\textit{blanche qu’avant}). On a donc : \textit{blanche → moins → que → avant}. On notera également que l’adjectif \textit{blanche} est en position d’attribut, car il s’accorde avec le sujet \textit{ma chemise} et non avec \textit{l’air}. Il devient du coup difficile de décider si \textit{blanche} dépend de \textit{a} ou de \textit{air}. Ici un argument topologique, l’impossibilité de permuter \textit{l’air} et \textit{blanche} (*\textit{elle a blanche l’air}) peut nous faire préférer la dépendance à \textit{air}.
-
-    f. Le problème est ici le rattachement de \textit{épuisée par sa course}. Malgré le fait que \textit{épuisée} s’accorde avec \textit{Max}, il paraît difficile de considérer qu’ils forment un syntagme. En particulier, \textit{Max} peut commuter avec \textit{il} qui n’accepte pas de dépendant a priori. On peut noter que cette unité peut être déplacée (\textit{Max a préféré s’arrêter, épuisé par sa course}). Nous considérons donc qu’\textit{épuisée par sa course} dépend du verbe.
-
-    g. La question est ici la position de \textit{seuls}. Il n’est pas parfaitement clair que \textit{seuls} se combine avec \textit{mes amis} (\textit{Qui peut accepter une telle demande} ? - \textsuperscript{??}\textit{Seuls mes amis}). On notera néanmoins que \textit{mes amis} doit être pronominalisé par \textit{eux} et pas par \textit{ils} et qu’on préfère alors l’ordre inverse (*\textit{Seuls ils peuvent accepter} vs~\textsuperscript{?}\textit{Seuls eux peuvent accepter} vs \textit{Eux seuls peuvent accepter}). Ceci semble indiquer que \textsc{seul} se combine bien avec le substantif sujet. Notons maintenant que la tête de ce groupe n’est pas non plus très claire : en position sujet, \textit{seuls mes amis} commute avec \textit{mes amis} et pas avec \textit{seuls}, ce qui ferait de \textit{seuls} le dépendant de \textit{mes amis}. Mais dans d’autres positions, \textit{mes amis} ne commute plus avec \textit{seuls mes amis~}: \textit{*J’invite seuls mes amis~}; *\textit{Je parle à seuls mes amis}. Au final, si l’on privilégie, le critère distributionnel avec effacement sur le critère d’effacement simple, c’est donc plutôt \textit{seuls} qui semble être la tête de la combinaison \textit{seuls mes amis}.
+    \corrigé{11}
+    \begin{exe}
+    \exi{(1)} On remarque que le clitique \textit{y} commute avec un groupe prépositionnel comme \textit{à ça} qui forme un syntagme avec \textit{sensible} (\textit{sensible à ça}). On a donc \textit{particulièrement ← sensible → y.}
+    \exi{(2)} Si l’on traite les déterminants comme dépendant du nom, le groupe substantival sujet s’analyse \textit{un ← tiers → de → participants → les.} Le reste s’analyse : \textit{seront → éliminés → dès →que → commencera → jeu → le.}
+    \exi{(3)} La négation du français est constituée de deux mots qui se place avant et après une forme finie. C’est un argument essentiellement topologique qui nous fait dépendre \textit{pas} de l’auxiliaire : \textit{ne ← a → pas}. On note en effet qu’on peut insérer une unité après, mais plus difficilement avant \textit{pas~}: \textit{elle n’a pas, comme tu sais, voulu démarrer} vs~\textsuperscript{?}\textit{*elle n’a, comme tu sais, pas voulu démarrer.}
+    \exi{(4)} La difficulté concerne ici le syntagme \textit{deux minutes}. Celui dépend de \textit{après} puisqu’il forme un syntagme avec lui (\textit{deux minutes après}) et que la distribution du tout est celle de \textit{après} (\textit{il est arrivé après} vs *\textit{il est arrivé deux minutes}).
+    \exi{(5)} On remarque \textit{qu’avant} peut former un syntagme avec \textit{moins} (\textit{moins qu’avant}, mais pas avec \textit{blanche} (*\textit{blanche qu’avant}). On a donc : \textit{blanche → moins → que → avant}. On notera également que l’adjectif \textit{blanche} est en position d’attribut, car il s’accorde avec le sujet \textit{ma chemise} et non avec \textit{l’air}. Il devient du coup difficile de décider si \textit{blanche} dépend de \textit{a} ou de \textit{air}. Ici un argument topologique, l’impossibilité de permuter \textit{l’air} et \textit{blanche} (*\textit{elle a blanche l’air}) peut nous faire préférer la dépendance à \textit{air}.
+    \exi{(6)} Le problème est ici le rattachement de \textit{épuisée par sa course}. Malgré le fait que \textit{épuisée} s’accorde avec \textit{Max}, il paraît difficile de considérer qu’ils forment un syntagme. En particulier, \textit{Max} peut commuter avec \textit{il} qui n’accepte pas de dépendant a priori. On peut noter que cette unité peut être déplacée (\textit{Max a préféré s’arrêter, épuisé par sa course}). Nous considérons donc qu’\textit{épuisée par sa course} dépend du verbe.
+    \exi{(7)} La question est ici la position de \textit{seuls}. Il n’est pas parfaitement clair que \textit{seuls} se combine avec \textit{mes amis} (\textit{Qui peut accepter une telle demande} ? - \textsuperscript{??}\textit{Seuls mes amis}). On notera néanmoins que \textit{mes amis} doit être pronominalisé par \textit{eux} et pas par \textit{ils} et qu’on préfère alors l’ordre inverse (*\textit{Seuls ils peuvent accepter} vs~\textsuperscript{?}\textit{Seuls eux peuvent accepter} vs \textit{Eux seuls peuvent accepter}). Ceci semble indiquer que \textsc{seul} se combine bien avec le substantif sujet. Notons maintenant que la tête de ce groupe n’est pas non plus très claire : en position sujet, \textit{seuls mes amis} commute avec \textit{mes amis} et pas avec \textit{seuls}, ce qui ferait de \textit{seuls} le dépendant de \textit{mes amis}. Mais dans d’autres positions, \textit{mes amis} ne commute plus avec \textit{seuls mes amis~}: \textit{*J’invite seuls mes amis~}; *\textit{Je parle à seuls mes amis}. Au final, si l’on privilégie, le critère distributionnel avec effacement sur le critère d’effacement simple, c’est donc plutôt \textit{seuls} qui semble être la tête de la combinaison \textit{seuls mes amis}.
+    \end{exe}
 
     \corrigé{12} La construction causative \textsc{faire} Vinf du français est très cohésive et il n’est pas certain que la question posée soit légitime : on peut considérer que le sujet rétrogradé dépend du complexe verbal et pas précisément d’un des deux verbes. En particulier, dans \textit{Zoé fait dormir les enfants}, on peut difficilement considérer comme valide \textit{fait les enfants} ou \textit{dormir les enfants} et donc le critère d’autonomisabilité ne s’applique pas. Le critère le utile semble le critère rectionnel: la réalisation du sujet rétrogradé comme objet direct, indirect ou oblique dépend complètement de la valence du Vinf et le désigne donc comme gouverneur. En effet, le sujet retrogradé aura la fonction d’objet direct si celle-ci n’est pas occupée (même si le verbe est transitif : \textit{Zoé a fait mangé les enfants}), il sera objet indirect si le Vinf a un objet direct mais pas d’objet indirect réalisé et il sera complément oblique en \textsc{par} sinon. Le critère de recouvrement s’applique et désigne plutôt \textsc{faire}, puisque les pronoms clitiques ne se placent pas sur le Vinf. Mais comme les compléments du Vinf se cliticisent aussi sur \textsc{faire}, cela n’invalide pas le choix du Vinf comme tête. Notons tout de même que, pour un énoncé comme \textit{Zoé lui fait parler à Max}, le clitique \textit{lui} correspond nécessairement au sujet retrogradé et \textit{à Max} au destinataire des paroles, ce qui indique une plus grande proximité du sujet retrogradé avec \textsc{faire}.
 

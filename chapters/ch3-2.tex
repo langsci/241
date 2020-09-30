@@ -890,8 +890,8 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
 
 \begin{center}
 \begin{tikzpicture}[every node/.style={font=\footnotesize,inner sep=3pt}]
- \node at (0,0) (A) [ConcSet] {ça};
- \node [right=1em of A] (B) [ConcSet] {a};
+ \node at (0,0) (A) [draw,circle,font=\itshape\strut] {ça};
+ \node [right=1em of A] (B) [draw,circle,font=\itshape\strut] {a};
  \node [right=1em of B] (C) [ConcSet] {commencé};
  \node [right=1em of C] (D) [ConcSet] {tard};
  \node [right=1em of D] (E) [ConcSet] {plus};
@@ -913,7 +913,7 @@ Mais on peut aussi accepter que dans cette construction \textit{le} joue un doub
 
 \hfill\begin{tikzpicture}
 \matrix (matrix) [matrix of nodes, 
-                  nodes = {ConcSet},
+                  nodes = {ConcSet, minimum width=3em},
                   ampersand replacement=\&,
                   row sep=1em,
                   column sep=.5em]
@@ -923,7 +923,7 @@ Mais on peut aussi accepter que dans cette construction \textit{le} joue un doub
 \draw (matrix-1-1) -- (matrix-1-2) -- (matrix-1-4) -- (matrix-2-3);
 \end{tikzpicture}\hfill\begin{tikzpicture}
 \matrix (matrix) [matrix of nodes, 
-                  nodes = {ConcSet},
+                  nodes = {ConcSet, minimum width=3em},
                   ampersand replacement=\&,
                   row sep=1em,
                   column sep=.5em] 
