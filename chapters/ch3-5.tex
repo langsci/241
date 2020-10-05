@@ -686,9 +686,9 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
     \z
 
     Le graphe circulaire d’un arbre projectif a une propriété un peu plus forte que la planarité : il est planaire extérieur.
-    \ea
-    Un graphe est dit \textstyleTermesapprof{planaire extérieur} s’il peut être dessiné avec tous ses nœuds accessibles de l’extérieur et sans qu’aucunes de ses arêtes ne se coupent.
-    \z
+    
+    \Definition{\textstyleTermesapprof{planaire extérieur}}
+    {Un graphe est dit \textstyleTermesapprof{planaire extérieur} s’il peut être dessiné avec tous ses nœuds accessibles de l’extérieur et sans qu’aucunes de ses arêtes ne se coupent.}
     On peut montrer que pour qu’un graphe soit planaire extérieur, il faut et il suffit qu’il ne puisse pas être réduit à un graphe particulier qu’on appelle K\textsubscript{4}. La \textstyleTermesapprof{réduction} d’un graphe consiste à agréger ensemble des nœuds qui sont liés. C’est une opération importante de notre point de vue, car elle consiste à regarder la structure avec une granularité moins importante (voir la \sectref{sec:3.2.20} sur la \textit{Granularité}). Le graphe K\textsubscript{4} est le graphe complet à 4 nœuds, c’est-à-dire le graphe à 4 nœuds où tous les nœuds sont liés deux à deux. Les deux configurations rejetées par la projectivité sont exactement le graphe K\textsubscript{4}, comme le montre la figure suivante.
 
     \ea
@@ -909,9 +909,9 @@ Voici son arbre de dépendance (où nous indiquons les seules fonctions pertinen
                   ]
       \node (root) {} child { node{} child { node{} } child { node{} } edge from parent node [reset shape,midway,above] {sujet} }
                       child { node{} }
-                      child { node{} }
-                      child { node{} }
-                      child { node{} child { node{} } child { node{} } child { node{} } edge from parent node [reset shape,midway,above] {objet} };
+                      child { node [xshift=-7mm] {} }
+                      child { node [xshift=-7mm] {} }
+                      child { node [xshift=-7mm] {} child { node [xshift=5mm] {} } child { node [xshift=5mm] {} } child { node [xshift=5mm] {} } edge from parent node [reset shape,midway,above] {objet} };
     \end{scope}
     \begin{scope}[every node/.style={font=\itshape\strut}]
     \node [above=1pt of root] {prêtera};
@@ -928,7 +928,6 @@ Voici son arbre de dépendance (où nous indiquons les seules fonctions pertinen
     \end{scope}
 \end{tikzpicture}
 \caption{\label{fig:}Arbre de dépendance}
-
 \end{figure}
 
  (Remarque : nous décidons dans cet arbre de prendre le nom comme tête du groupe substantival. Comme nous l’avons expliqué dans le \chapref{sec:3.3}, le déterminant comme le nom ont des propriétés de tête. Le choix du déterminant comme tête poserait encore moins de problème pour la linéarisation.)
@@ -973,12 +972,12 @@ Et ainsi de suite.
     Nous avons, dans le début de ce chapitre, considéré que l’exclusion mutuelle pouvait découler soit de l’occupation d’une même position syntaxique (*\textbf{\textit{Qui}} \textit{Pierre} \textbf{\textit{la}} \textit{regarde-t-il} ?), soit d’une même position topologique (*\textit{Leider Peter popelt schon wieder in seiner Nase}, voir l’\encadref{fig:3.5.5} sur \textit{Le cas des langues V2}). Il existe néanmoins des cas d’exclusion qui ne relèvent ni d’une situation, ni de l’autre. Tel est le cas des clitiques \textit{te} et \textit{lui} (et des clitiques qui appartiennent aux mêmes paradigmes). Voici les données :
     
     \ea
-      \ea[]{Il te/la vendra au roi.  [ici \textit{te} ou \textit{la} sont objets direct]}
-      \ex[]{Il me/lui vendra sa fille.  [ici \textit{me} ou \textit{lui} sont objet indirect]}
-      \ex[]{Il me la vendra.}
-      \ex[]{Il la lui vendra.}
-      \ex[*]{Il me te vendra    (vs. \textit{Il te vendra à moi}.)}
-      \ex[*]{Il te lui vendra.  (vs. \textit{Il te vendra à lui}.)}
+      \ea[]{\textit{Il te/la vendra au roi.}  [ici \textit{te} ou \textit{la} sont objets direct]}
+      \ex[]{\textit{Il me/lui vendra sa fille.}  [ici \textit{me} ou \textit{lui} sont objet indirect]}
+      \ex[]{\itshape Il me la vendra.}
+      \ex[]{\itshape Il la lui vendra.}
+      \ex[*]{{\itshape Il me te vendra}  (vs. \textit{Il te vendra à moi}.)}
+      \ex[*]{{\itshape Il te lui vendra.}  (vs. \textit{Il te vendra à lui}.)}
     \z
     \z
 
@@ -986,15 +985,14 @@ Et ainsi de suite.
 
     Tout se passe comme si \textit{te} ou \textit{me} (en tant qu’objet direct) bloquait les trois positions topologiques à la fois (celles de \textit{te/me} objet indirect, \textit{le} et \textit{lui}).
     
-    \begin{center}
-    \begin{tabular}{|l|l|l|l|l|l|l|l|}
+    \ea
+    \begin{tabular}[c]{|l|l|l|l|l|l|l|l|}
     \hhline{--------}
      \textit{il} & \textit{ne} &  \textit{me} (indirect) &  \textit{le} &  \textit{lui} & \textit{y} & \textit{en} &  verbe\\
     \hhline{--------}
     \multicolumn{2}{c}{} & \multicolumn{3}{|c|}{\textit{me} (direct)} & \multicolumn{3}{c}{} \\
     \hhline{~~---~~~}
-    \end{tabular}
-    \end{center}
+    \end{tabular}\z
 
     Le fait que cette exclusion ne puisse être clairement imputée ni à des règles syntaxiques, ni à des règles topologiques est un des arguments avancés pour considérer que la grammaire des clitiques préverbaux du français relèvent aujourd’hui de la conjugaison du verbe, laquelle, on le sait, est beaucoup plus irrégulière que la microsyntaxe. Nous considérons pour notre part qu’il s’agit effectivement de nanosyntaxe, sans considérer pour autant qu’il s’agit de flexion (voir \chapref{sec:4.2}).
 }
@@ -1009,6 +1007,7 @@ La méthode des gabarits permet de rendre compte des contraintes d’ordre rigid
 Nous modélisons cela en indiquant que les deux compléments vont dans le même champ (que nous avons appelé le champ final). Il y a néanmoins des préférences entre les deux ordres dont la méthode des gabarits ne rend pas compte. Ces préférences dépendent de différents paramètres, les deux principaux étant le poids et la saillance communicative.
 
 Le \textstyleTermes{poids} d’un constituant correspond en fait à sa taille du point de vue phonologique, c’est-à-dire à son nombre de syllabes. Un constituant qui possède un grand nombre de syllabes est dit \textstyleTermes{lourd}, alors qu’un petit constituant, généralement monosyllabique, est dit \textstyleTermes{léger}. Plus un constituant est lourd, plus il a tendance à être éloigné de son gouverneur. Par exemple, en linéarisant l’arbre de dépendance de notre exemple favori, nous avons obtenu la phrase \textit{Beaucoup de gens aimeraient passer en Laponie Noël}, qui apparaît moins naturelle que la phrase d’origine. On l’améliore nettement en alourdissant le poids de l’objet direct :
+
 \ea
     {Beaucoup de gens aimeraient passer en Laponie les fêtes de fin d’année}.
 \z
@@ -1105,12 +1104,18 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
     Notez ensuite que, abstraction faite des mots fonctionnels des différentes constructions, dans les deux langues considérées, le russe et le français, les trois mots lexicaux se trouvent toujours dans le même ordre. À cela s’ajoute que les principaux prosodèmes, qui constituent l’intonation de la phrase se ressemblent pour chacun des ordres possibles. La phrase 2 par exemple, a une courbe intonative que l’on peut schématiser comme suit, avec une intonation montante sur le thème (\textit{prigotovil Vanya}) et une intonation descendante sur le rhème (\textit{malinu}).
 
     \ea
-    %%[Warning: Draw object ignored]
-    %%[Warning: Draw object ignored]
-
-        {Prigotovil}   {Vanya}   {malinu}
-
-    ‘Ce que prépare  Vanya,  c’est les framboises’
+    \attop{%
+    \begin{tikzpicture}
+    \matrix (matrix) [matrix of nodes, nodes in empty cells, column sep=5mm,
+                      ampersand replacement=\&,every node/.style={font=\strut,anchor=base west}]
+      {
+        \phantom{Vrigotovil}         \& \phantom{Vanya}   \&      \vphantom{V}\hphantom{alinu}\\
+        \textit{Prigotovil}  \& \textit{Vanya} \&  \textit{malinu}\\
+        ‘Ce que prépare      \&   Vanya,       \& c’est les framboises’\\
+      }; 
+      \draw (matrix-1-1.west) -- (matrix-1-2.center) -- (matrix-1-2.north east);
+      \draw (matrix-1-3.north west) -- (matrix-1-3.north) -- (matrix-1-3.east);
+    \end{tikzpicture}}
     \z
 
     Il paraît évident qu’il existe une relation entre l’existence d’un système casuel et la liberté dans le placement des arguments verbaux : il serait en effet redondant d’obliger un objet à la fois à porter un marqueur casuel d’accusatif \textit{et} à occuper une place fixe. L’inverse, par contre, n’est pas tout à fait vrai. Une langue sans système casuel n’est pas forcément très restrictive quant à l’ordre des arguments verbaux. Un bel exemple est le bahasa, la principale langue parlée en Malaisie et en Indonésie, aussi appelée le malais ou l’indonésien selon ses variantes dialectales. Cette langue ne connait pas de flexion casuelle et pourtant elle permet une plus grande liberté de mots que d’autres langues sans flexion. Si l’ordre dominant est l’ordre SVO comme dans la phrase a, il est possible de postposer le sujet comme en b et d’antéposer l’objet comme en c.
@@ -1220,9 +1225,9 @@ Voyons maintenant comment linéariser un arbre de dépendance. Reprenons l’exe
                   ]
       \node (root) {} child { node{} child { node{} } child { node{} } edge from parent node [reset shape,midway,above] {sujet} }
                       child { node{} }
-                      child { node{} }
-                      child { node{} }
-                      child { node{} child { node{} } child { node{} } child { node{} } edge from parent node [reset shape,midway,above] {objet} };
+                      child { node [xshift=-7mm] {} }
+                      child { node [xshift=-7mm] {} }
+                      child { node [xshift=-7mm] {} child { node [xshift=5mm] {} } child { node [xshift=5mm] {} } child { node [xshift=5mm] {} } edge from parent node [reset shape,midway,above] {objet} };
     \end{scope}
     \begin{scope}[every node/.style={font=\itshape\strut}]
     \node [above=1pt of root] {prêtera};
@@ -1238,7 +1243,7 @@ Voyons maintenant comment linéariser un arbre de dépendance. Reprenons l’exe
     \node [below=1pt of root-5-3] {autre};
     \end{scope}
 \end{tikzpicture}
-\caption{Arbre de dépendance\label{fig:}}
+\caption{\label{fig:}Arbre de dépendance}
 \end{figure}
 
 Nous procédons en parcourant l’arbre de dépendance à partir de la racine. On commence donc par considérer le verbe \textit{prêtera} qui va ouvrir un domaine verbal. Les règles d’ordre indiquent pour chaque dépendant dans quel champ il peut aller en fonction de sa nature et de sa fonction : un sujet peut aller dans le champ ch-initial, un clitique dans un champ ch-cl-X, etc. On obtient au final la configuration suivante (où les champs non remplis ne sont pas représentés) :
@@ -1282,10 +1287,10 @@ La structure topologique est un \textstyleTermes{arbre de constituants ordonné}
                   level 2/.style={sibling distance=9mm},
                   ]
       \node (root) {} child { node{} child { node{} } child { node{} } child { node{} } } 
-                      child { node{} }
-                      child { node{} }
-                      child { node{} }
-                      child { node{} }
+                      child { node [xshift = 3mm] {} }
+                      child { node [xshift = 1mm] {} }
+                      child { node [xshift = -1mm] {} }
+                      child { node [xshift = -3mm] {} }
                       child { node{} child { node{} } child { node{} } child { node{} } child { node{} } }; 
     \end{scope}
     \node [above=1pt of root] {domaine verbal};
@@ -1383,7 +1388,7 @@ Notons pour conclure que le modèle topologique n’utilise que des \textstyleTe
            (root-1-1-1-1) edge[bend left] node[midway, above] {N} (root-1-1-1-1-1)
            (root)         edge[bend left=66] node[midway, above] {GN} (root-1-1)
            (root-1-1-1)   edge[bend left=66] node[midway, above] {GN} (root-1-1-1-1-1)
-           (root-1-1)   edge[bend left=90] node[midway, above] {GV} (root-1-1-1-1-1)
+           (root-1-1)     edge[bend left=90] node[midway, above] {GV} (root-1-1-1-1-1)
            (root)         edge[bend left=90] node[midway, above] {P} (root-1-1-1-1-1);
            
      \coordinate (1) at ($ (root) !.5! (root-1) $);
@@ -1423,18 +1428,15 @@ Notons pour conclure que le modèle topologique n’utilise que des \textstyleTe
         \end{forest}
         \end{minipage}\begin{minipage}[c]{.5\linewidth}\centering
         \begin{tikzpicture} 
-        \foreach \s in {1,...,6}
-       {
-         \node at ({360/6 * (\s - 1) + 90}:1cm) (\s) {};
-         \draw ({360/6 * (\s - 1) + 90}:1cm) 
-               arc ({360/6 * (\s - 1) + 90}:{360/6 * (\s) + 90}:1cm);
-       } 
-       \node at (3) [fill=white,CircleNode] {};
-       \node at (4) [fill=white,CircleNode] {};
-       \node at (5) [fill=white,CircleNode] {};
-       \node [below=1pt of 1] {P};
-       \node [below=5pt of 3] {GN};
-       \node [below=5pt of 5] {GV};
+       \node at (0,0) (GN) [fill=white,CircleNode] {};
+       \node at (1,-1) (empty) [fill=white,CircleNode] {};
+       \node at (2,0) (GV) [fill=white,CircleNode] {};
+%        \node [below=1pt of 1] {P};
+       \node [below left = 2pt of GN] {GN};
+       \node [below right = 2pt of GV] {GV};
+       \path (GN) edge [out=270,in=180] (empty)
+             (empty) edge [out=0,in=270] (GV)
+             (GN) edge [bend left=66] node [below,midway] {P} (GV);
        \end{tikzpicture}
     \end{minipage}
     \z
@@ -1483,7 +1485,7 @@ Les projections topologiques associées à un arbre de dépendance ordonné donn
 \node[left=1pt of root] {est entrée};
 \node[left=1pt of root-1] {une belle};
 \node[left=1pt of root-1-1] {qui voulait les acheter};
-\end{tikzpicture}\end{minipage}\begin{minipage}[c]{.1\linewidth} \centering $\Rightarrow$ \end{minipage}%
+\end{tikzpicture}\end{minipage}\begin{minipage}[c]{.1\linewidth} \begin{tikzpicture} \draw[ConversionArrow] (0,0) -- (1,0);\end{tikzpicture} \end{minipage}%
 \begin{minipage}[c]{.45\linewidth}\centering
 \begin{tikzpicture}[every node/.style={font=\strut}]
     \begin{scope}[
@@ -1520,7 +1522,7 @@ Les projections topologiques associées à un arbre de dépendance ordonné donn
   \node [below=1pt of root-1-1, font=\itshape,align=center] {\strut qui voulait\\les acheter};
 \end{tikzpicture}
 \end{minipage}\begin{minipage}[c]{.1\linewidth}\centering
-$\Rightarrow$
+\begin{tikzpicture} \draw[ConversionArrow] (0,0) -- (1,0);\end{tikzpicture}
 \end{minipage}\begin{minipage}[c]{.45\linewidth}\centering
 \begin{tikzpicture}
   \begin{scope}[every node/.style={CircleNode},sibling distance=20mm]
@@ -1596,16 +1598,11 @@ Nous allons présenter les principaux cas de non-projectivité en français et v
 
 \subsection{Montée des clitiques}
 \ea
-\ea
-{Zoé} \textbf{{lui}}  {a parlé.}
-\ex
- {Zoé} \textbf{{y}}  {est sensible.}
-\ex
- {Zoé} \textbf{{le}}  {fait appeler par un ami.}
-\ex
- {Zoé} \textbf{{en}}  {a envie.}
-\ex
- {Zoé} \textbf{{en}}  {connaît la moitié.}
+\ea \itshape Zoé \textbf{lui} a parlé.
+\ex \itshape Zoé \textbf{y}   est sensible.
+\ex \itshape Zoé \textbf{le}  fait appeler par un ami.
+\ex \itshape Zoé \textbf{en}  a envie.
+\ex \itshape Zoé \textbf{en}  connaît la moitié.
 \z
 \z
 
@@ -1631,10 +1628,8 @@ Un infinitif peut normalement accueillir des clitiques (\textit{Zoé veut} \text
 \subsection{Comparatif et superlatif}
 
 \ea
-\ea
-{un plus beau livre} \textbf{{que le mien~}};
-\ex
- {le plus beau livre} \textbf{{du monde}}.
+\ea \itshape un plus beau livre \textbf{que le mien~};
+\ex \itshape le plus beau livre \textbf{du monde}.
 \z
 \z
 
@@ -1666,16 +1661,16 @@ Le complément du superlatif va donc s’émanciper, non seulement du constituan
 
 \subsection{Extraction}
 \ea
-\ea \textbf{{L’année}  {prochaine}},  {je pense que Zoé habitera ailleurs.}
-\ex \textbf{{A quel endroit}}  {Zoé a-t-elle envie d’habiter} ?
-\ex {l’endroit} \textbf{{où}}  {il est probable que Zoé habitera.}
+\ea \itshape \textbf{L’année  prochaine},  je pense que Zoé habitera ailleurs.
+\ex \itshape \textbf{A quel endroit}  Zoé a-t-elle envie d’habiter ?
+\ex \itshape l’endroit \textbf{où}  il est probable que Zoé habitera.
 \z
 \z
 Dans ces exemples, un complément d’un verbe subordonné, ici \textit{habiter/habitera}, est placé en tête de la proposition principale : un tel complément est dit extrait. Nous consacrerons l’entièreté du \chapref{sec:5.4} à l’étude de ce phénomène, notamment lorsqu’il met en jeu des pronoms interrogatifs ou relatifs. Le premier exemple, qui illustre la \textstyleTermes{topicalisation} d’un complément circonstanciel, peut déjà être modélisé avec les outils introduits dans ce chapitre : il s’agit d’une émancipation du complément qui vient se placer dans le champ pré-noyau ouvert par un verbe à l’indicatif. Ce champ peut également accueillir des \textstyleTermes{compléments} dits \textstyleTermes{disloqués} (car ils sont repris par un pronom) comme \textit{Zoé} dans l’exemple suivant :
 
 \ea
-\ea \textbf{{Zoé}},  {l’année}  {prochaine,}  {je pense qu’}\textbf{{elle}}  {habitera ailleurs.}
-\ex {L’année}  {prochaine,} \textbf{{Zoé}},  {je pense qu’}\textbf{{elle}}  {habitera ailleurs.}
+\ea \itshape \textbf{Zoé},  l’année  prochaine,  je pense qu’\textbf{elle}  habitera ailleurs.
+\ex \itshape L’année  prochaine, \textbf{Zoé},  je pense qu’\textbf{elle}  habitera ailleurs.
 \z
 \z
 
@@ -1687,7 +1682,7 @@ On note que le champ pré-noyau peut accueillir plusieurs éléments (ici le com
     Un arbre de dépendance comprend des nœuds d’une certaine catégorie reliés par des dépendances portant une certaine relation. La grammaire topologique s’appuie sur les catégories et les relations utilisées pour l’arbre de dépendance et introduit deux autres types d’éléments : des constituants topologiques et des champs. Une \textstyleTermesapprof{grammaire topologique} est donc la donnée de quatre ensembles d’étiquettes (\textbf{catégories,} \textbf{relations,} \textbf{constituants,} \textbf{champs}), d’un champ initial \textit{i} et de quatre types de règles :
 
     \begin{enumerate}
-    \item \textbf{Description des constituants (topologiques).} Un constituant est un gabarit de places linéaires, c’est-à-dire une liste de champs. Les règles de ce type indiquent donc pour chaque constituant quelle est la liste des champs qui le compose. Ces règles se rapprochent des règles de réécriture d’une PSG (voir l’\encadref{fig:3.5.29} \textit{Grammaire de réécriture}) et l’on peut utiliser un notation similaire : D \textrm{→} f\textsubscript{1} f\textsubscript{2} … f{\textsubscript{n}}, où D est un type de constituant (D comme domaine) et les f{\textsubscript{i}} des noms de champs. Nous utilisons la lettre f pour les noms de champs (de l’angl. \textit{field}, all. \textit{Feld}).
+    \item \textit{Description des constituants (topologiques).} Un constituant est un gabarit de places linéaires, c’est-à-dire une liste de champs. Les règles de ce type indiquent donc pour chaque constituant quelle est la liste des champs qui le compose. Ces règles se rapprochent des règles de réécriture d’une PSG (voir l’\encadref{fig:3.5.29} \textit{Grammaire de réécriture}) et l’on peut utiliser un notation similaire : D \textrm{→} $f_1 \: f_2 \ldots f_n$, où D est un type de constituant (D comme domaine) et les $f_i$ des noms de champs. Nous utilisons la lettre $f$ pour les noms de champs (de l’angl. \textit{field}, all. \textit{Feld}).
 
     \begin{center}
       \begin{tabular}{|c|c|c|c|}
@@ -1702,21 +1697,59 @@ On note que le champ pré-noyau peut accueillir plusieurs éléments (ici le com
 
     La principale différence avec les règles de réécriture est qu’un constituant n’est pas réécrit en une liste de constituants, mais en une liste de champs, auxquels sont assignés des constituants par d’autres règles.
 
-    \item \textbf{Description des champs.~}Certains champs peuvent ne recevoir qu’un élément (le champ initial du français ou de l’allemand ou les champs clitiques), tandis que d’autres peuvent recevoir un nombre quelconque d’éléments. Certains champs peuvent rester vide, tandis que d’autres ne le peuvent pas. Les règles de description de champs associent donc à un champ une des quatre valeurs suivantes : ! = ‘un et un seul constituant’, ? = ‘au plus un constituant’, + = ‘au moins un constituant’, \textrm{$*$} = ‘un nombre quelconque de constituants’.
+    \item \textit{Description des champs.~}Certains champs peuvent ne recevoir qu’un élément (le champ initial du français ou de l’allemand ou les champs clitiques), tandis que d’autres peuvent recevoir un nombre quelconque d’éléments. Certains champs peuvent rester vide, tandis que d’autres ne le peuvent pas. Les règles de description de champs associent donc à un champ une des quatre valeurs suivantes : ! = ‘un et un seul constituant’, ? = ‘au plus un constituant’, + = ‘au moins un constituant’, \textrm{$*$} = ‘un nombre quelconque de constituants’.
 
-    \item \textbf{Règle de correspondance.} Ce sont les règles qui assurent réellement la linéarisation, en indiquant, pour une dépendance donnée \textit{x} \textrm{→} \textit{y}, dans quel champ f peut aller le dépendant \textit{y}. La règle dépend des catégories C\textsubscript{1} et C\textsubscript{2} de x et y et de la relation syntaxique \textit{r} entre \textit{x} et \textit{y} (c’est-à-dire l’étiquette de la dépendance \textit{x} \textrm{→} \textit{y}). Par défaut, le nœud y se place par rapport à son gouverneur \textit{x} et le champ f est donc l’un des champs du constituant ouvert par \textit{x}.
+    \item \textit{Règle de correspondance.} Ce sont les règles qui assurent réellement la linéarisation, en indiquant, pour une dépendance donnée \textit{x} \textrm{→} \textit{y}, dans quel champ f peut aller le dépendant \textit{y}. La règle dépend des catégories C\textsubscript{1} et C\textsubscript{2} de x et y et de la relation syntaxique \textit{r} entre \textit{x} et \textit{y} (c’est-à-dire l’étiquette de la dépendance \textit{x} \textrm{→} \textit{y}). Par défaut, le nœud y se place par rapport à son gouverneur \textit{x} et le champ f est donc l’un des champs du constituant ouvert par \textit{x}.
 
-    \ea \todo[inline]{Format of figure in original submission unclear, please submit again}
+    \ea \begin{tikzpicture}
+          \begin{scope}[on background layer]
+          \matrix (matrix) [matrix of math nodes, ampersand replacement=\&, 
+                            every node/.style={draw,font=\strut},minimum size=24pt, inner sep=12pt]
+            {
+              ... \& |[fill=lsDOIGray]| $x$ \& ... \& $y$ \& ...\\
+            };
+          \node at (matrix-1-4.south east) [anchor=south east] {\footnotesize $f$};
+          \end{scope}
+          \path[-{Triangle[sep=4pt]}] (matrix-1-2.center) ++(0,4pt) edge [bend left=66, looseness=1.25] node [midway,above] {$r$} (matrix-1-4.center);
+        \end{tikzpicture} 
     \z
 
     Une telle règle peut aussi indiquer la possibilité pour \textit{y} de s’émanciper. On peut contrôler l’émancipation de différentes façons : celle que nous retenons est d’indiquer quelles frontières de constituants peut «~traverser~» \textit{y} pour se placer dans un champ d’un constituant ouvert par un ancêtre de \textit{x.}
     
-    \ea \todo[inline]{Format of figure in original submission unclear, please submit again} \z
+    \ea \begin{tikzpicture}
+      \matrix (matrix) [ampersand replacement = \&, every node/.style={font=\strut}, column sep=18pt]
+        {
+          \node (dots1) {...}; \& \node (inner) [inner sep=1pt, draw, rectangle split, 
+                                rectangle split parts=3,
+                                rectangle split part fill={white, lsDOIGray, white},
+                                rectangle split horizontal] {...\nodepart{two}$x$\nodepart{three}...};
+                       \& [1pt] \node (Y) {$y$}; \& [4pt] \node (dots2) {...};\\
+        };
+      \node (inner2) [draw,fit=(inner)] {};
+      \begin{scope}[every node/.style={draw, minimum size=36pt}]
+        \node [fit=(dots1)] {};
+        \node [fit=(inner2)] {};
+        \node (Yfit) [fit=(Y)] {};
+        \node [fit=(dots2)] {};
+      \end{scope}
+      \node at (Yfit.south east) [anchor=south east] {\footnotesize $f$};
+      \path[-{Triangle[sep=4pt]}] (inner.center) ++(0,4pt) edge [bend left=66, looseness=1.66] node [midway,above] {$r$} (Y.center);
+    \end{tikzpicture}
+    \z
 
-    \item \textbf{Création de constituant.} À chaque fois qu’un nœud \textit{x} de l’arbre de dépendance est placé dans un champ (par une des règles précédentes), \textit{x} ouvre à son tour un constituant pour placer ses dépendants. Une règle de ce type indique donc le type de constituant D créé en fonction de la catégorie C de \textit{x} et du champ f dans lequel \textit{x} est placé.
+    \item \textit{Création de constituant.} À chaque fois qu’un nœud \textit{x} de l’arbre de dépendance est placé dans un champ (par une des règles précédentes), \textit{x} ouvre à son tour un constituant pour placer ses dépendants. Une règle de ce type indique donc le type de constituant D créé en fonction de la catégorie C de \textit{x} et du champ f dans lequel \textit{x} est placé.
 
-    \ea
-    \todo[inline]{Format of figure in original submission unclear, please submit again}
+    \ea \begin{tikzpicture}
+      \matrix (matrix) [ampersand replacement=\&, every node/.style={font=\strut}, column sep=18pt]
+        {
+          \node[draw,minimum size=36pt] {...}; \& \node (inner) [minimum height=6pt, minimum width=24pt,
+                               rectangle split, rectangle split parts=2, inner sep=1pt, draw,
+                               rectangle split part fill={lsDOIGray, white}] {D\nodepart{two}$x$}; 
+          \& \node[draw,minimum size=36pt] {...};\\
+        };
+        \node (outer) [draw, minimum width=60pt, fit=(inner), inner sep=1.8pt] {};
+        \node at (outer.south east) [anchor=south east] {\footnotesize $f$};
+    \end{tikzpicture}
     \z
     \end{enumerate}
     Signalons le cas particulier de la \textbf{règle d’initialisation} qui indique le type de constituant D créé en fonction de la catégorie C de la racine de l’arbre de dépendance lorsque celle-ci est placée dans le champ initial \textit{i}.
