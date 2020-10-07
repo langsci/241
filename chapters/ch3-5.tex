@@ -421,15 +421,13 @@ On notera que nous avons ajouté une dépendance verticale (sans gouverneur) mar
 
     Nous allons comparer des langues représentatives de ces deux tendances, en nous basant sur l’exemple suivant :
 
-    \ea
-    {Les étudiants très motivés organisent une conférence internationale.}
-    \z
+    \ea {Les étudiants très motivés organisent une conférence internationale.} \z
 
     Le coréen est une langue à têtes finales, et la traduction de cette phrase en coréen donne une phrase où tous les gouverneurs se trouvent à droite de leurs dépendants :
     
     \ea
     \gll maeu  {euiyokjeok-i-n}  {haksaeng-deul-i}  {kukje}  {hakhoi-leu}   {jojikha-nda}\\
-         très   {motivé-être-Q}   étudiant-PL-NOM  international  conférence-ACC  organiser-IND.PRES\\
+         très   {motivé-être-\Q}   {étudiant-\PL-\NOM}  international  {conférence-\ACC}  organiser-\IND.\PRS\\
 % %     (Q : translatif en qualificatif, PL : pluriel, NOM : nominatif, ACC : accusatif, PRES : présent)
 
     \begin{dependency}[font=\footnotesize,arc edge, arc angle=80, text only label, label style={above}]
@@ -1775,7 +1773,31 @@ On parlera alors de \textstyleTermes{domaine macrosyntaxique}.
 On peut considérer chacune de ces unités comme autant de \textstyleTermes{constituants topologiques intermédiaires}. Ceci nous amène à décomposer le \textbf{domaine verbal} (voir la \sectref{sec:3.5.19} sur la \textit{Linéarisation des codépendants}) en un enchâssement de plusieurs constituants :
 
 \begin{figure}
-%%[Warning: Draw object ignored]
+\def\arraystretch{1.2}
+\footnotesize
+\begin{tabular}{|>{\raggedright}p{\widthof{noyau}}|l|>{\raggedright\arraybackslash}p{\widthof{noyau}}|}
+\hline
+\multicolumn{3}{|c|}{\cellcolor{lsDOIGray}Domaine macrosyntaxique}\\
+\hline
+ch-pré-noyau & 
+  \begin{tabular}{|>{\raggedright}p{\widthof{initial}}|l|>{\raggedright\arraybackslash}p{\widthof{final}}|}  
+  \multicolumn{3}{c}{}\\
+  \hline
+  \multicolumn{3}{|c|}{\cellcolor{lsDOIGray}Domaine microsyntaxique}\\
+  \hline
+  ch-initial & 
+    \begin{tabular}{*{10}{|l}|}
+    \multicolumn{3}{c}{}\\
+    \hline
+    \multicolumn{10}{|c|}{\cellcolor{lsDOIGray}Amas verbal}\\
+    \hline
+    \rotatebox{90}{ch-cl-suj} & \rotatebox{90}{ch-cl-ne} & \rotatebox{90}{ch-cl-se} & \rotatebox{90}{ch-cl-le} & \rotatebox{90}{ch-cl-lui} & \rotatebox{90}{ch-cl-y} & \rotatebox{90}{ch-cl-en} & \cellcolor{lsDOIGray}\rotatebox{90}{ch-verbe} & \rotatebox{90}{ch-adv} & \rotatebox{90}{ch-vb-sub}\\\hline
+    \multicolumn{10}{c}{}\\
+    \end{tabular} &
+  ch-final\\\hline\multicolumn{3}{c}{}\\
+  \end{tabular} & 
+ch-post-noyau\\\hline
+\end{tabular}
 \caption{\label{fig:}}
 \end{figure}
 
@@ -1788,7 +1810,7 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
 \loupe{Topologie et prosodie}{%\label{sec:3.5.35}
     Nous avons déjà évoqué la prosodie et discuté des contraintes entre la structure syntaxique et la structure prosodique dans la \sectref{sec:3.2.11} \textit{Unité syntaxique autonomisable}. Nous avons postulé que, à l’exception du cas des clitiques, les unités prosodiques sont des portions connexes de la structure syntaxique (c’est-à-dire des catenae pour reprendre le terme introduit dans l’\encadref{fig:3.2.20} \textit{Les limites de la dualité}).
 
-    À ces contraintes s’ajoutent des contraintes plus topologiques qui concernent la cohésion des unités et que nous avons présentées dans la section précédente. Certains constituants topologiques comme les amas sont très cohésifs et accepte difficilement d’être rompus par une frontière prosodique. À l’inverse, les différentes unités du domaine macroyntaxique forment normalement des unités prosodiques distinctes. À l’intérieur du domaine microsyntaxique, les choses sont plus complexes et dépendent beaucoup de la structure communicative. Par ailleurs, il existe des contraintes propres à chaque langue : en français, par exemple, les groupes accentuels tendent à être particulièrement équilibrés et font autour de 6 ou 7 syllabes (cette longueur est aussi dépendante du débit de parole).
+    À ces contraintes s’ajoutent des contraintes plus topologiques qui concernent la cohésion des unités et que nous avons présentées dans la section précédente. Certains constituants topologiques comme les amas sont très cohésifs et accepte difficilement d’être rompus par une frontière prosodique. À l’inverse, les différentes unités du domaine macrosyntaxique forment normalement des unités prosodiques distinctes. À l’intérieur du domaine microsyntaxique, les choses sont plus complexes et dépendent beaucoup de la structure communicative. Par ailleurs, il existe des contraintes propres à chaque langue : en français, par exemple, les groupes accentuels tendent à être particulièrement équilibrés et font autour de 6 ou 7 syllabes (cette longueur est aussi dépendante du débit de parole).
 
     En prenant en compte ces différentes contraintes, on peut faire d’assez bonnes prédictions sur les prosodies possibles. Cela dit, les locuteurs prennent pas mal de liberté et applique souvent un principe de complémentarité et de compensation qui veut que la prosodie tendra à compenser une absence de marquage syntaxique (notamment lorsque la structure est syntaxiquement ambiguë), mais pourra être plus relâchée quand la structure syntaxique est claire.
 }
@@ -1807,9 +1829,9 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     Les propositions subordonnées, complétives et relatives, ont une structure réduite, sans Vorfeld, et l’élément qui introduit la proposition, le complémenteur ou le pronom relatif, occupe la parenthèse gauche. Tous les verbes se placent dans la parenthèse droite. Les verbes recteurs se placent à droite de leur dépendant verbal.
 
     \ea
-    \gll  Ich glaube,   [dass Peter mal wieder in seiner Nase zu popeln\textsubscript{3} gewagt\textsubscript{2} hat\textsubscript{1}   ].\\
+    \gll  Ich glaube,   {\ob} dass Peter mal wieder in seiner Nase zu popeln\textsubscript{3} gewagt\textsubscript{2} hat\textsubscript{1}   {\cb}.\\
     Je crois   [ que  Peter à nouveau dans son nez   de creuser  osé        a   ]\\
-    ‘Je crois que Peter a osé se crotter le nez à nouveau.’
+    \glt ‘Je crois que Peter a osé se crotter le nez à nouveau.’
     \z
     Le placement des verbes dans la parenthèse droite peut aussi être décrit par une structure topologique : l’amas verbal. Il est composé de trois champs : le \textbf{champ supérieur} ou \textbf{Oberfeld}, le champ tête et le \textbf{champ inférieur} ou \textbf{Unterfeld}.
 
@@ -1827,10 +1849,10 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
 
     \ea\label{ex:popel}
     \ea[\textsuperscript{?}]{
-    \gll Ich glaube,  [ dass Peter mal wieder in seiner Nase popeln\textsubscript{3} gekonnt\textsubscript{2}  hat\textsubscript{1}   ].\\
+    \gll Ich glaube,  {\ob} dass Peter mal wieder in seiner Nase popeln\textsubscript{3} gekonnt\textsubscript{2}  hat\textsubscript{1}   {\cb}.\\
         Je crois  [ que   Peter à nouveau dans son nez   creuser  pu           a   ]\\}
     \ex[]{
-    \gll Ich glaube,  [ dass Peter mal wieder in seiner Nase hat\textsubscript{1} popeln\textsubscript{3} können\textsubscript{2}   ].\\
+    \gll Ich glaube,  {\ob} dass Peter mal wieder in seiner Nase hat\textsubscript{1} popeln\textsubscript{3} können\textsubscript{2}   {\cb}.\\
     Je crois   [ que   Peter à nouveau dans son nez  a     creuser  pu   ]\\
     \glt  ‘Je crois que Peter a pu se crotter le nez à nouveau.’}
     \z
@@ -1841,9 +1863,9 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     \begin{exe}
     \exr{ex:popel}
     \begin{xlist}
-    \exi{c.} \textit{Ich glaube,}  [\,\textit{dass Peter mal wieder in seiner Nase}  \textit{popeln\textsubscript{3}} \textit{hat\textsubscript{1} }\textit{können\textsubscript{2}}\,].\\
-    Je crois   [ que   Peter à nouveau dans son nez  creuser  a     pu   ]\\
-    ‘Je crois que Peter a pu se crotter le nez à nouveau.’
+    \exi{c.} \gll Ich glaube,  {\ob} dass Peter mal wieder in seiner Nase  popeln\textsubscript{3} hat\textsubscript{1} können\textsubscript{2} {\cb}.\\
+    Je crois   {\ob} que   Peter à nouveau dans son nez  creuser  a     pu {\cb}\\
+    \glt ‘Je crois que Peter a pu se crotter le nez à nouveau.’
     \end{xlist}
     \end{exe}
 }
@@ -1885,82 +1907,97 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     \end{enumerate}
     \exercice{3} Projectivité. Construire la structure de dépendance de la phrase suivante et vérifier qu’elle est non projective :
 
-    \ea À \textit{cette heure-là, je pense qu’il est déjà parti.} \z
+    \begin{exe} \exi{(i)} À \textit{cette heure-là, je pense qu’il est déjà parti.} \end{exe}
 
     \exercice{4} Théorie des graphes. Le graphe K\textsubscript{4} n’est pas planaire extérieur (voir \encadref{fig:3.5.15} \textit{Projectivité et planarité}). Montrer qu’il est néanmoins planaire et que donc tous les graphes de 4 nœuds ou moins sont planaires. Chercher les graphes non-planaires les plus simples à 5 et à 6 nœuds.
 
     \exercice{5} Topologie du groupe substantival en français. On s’intéresse plus particulièrement au placement des déterminants et des numéraux en français. Comment rendre compte des données suivantes dans un modèle topologique ?
 
-    \ea
-    \ea[]{les/mes/ces/deux/quelques/des/plusieurs amis sont venus}
-    \ex[]{les/mes/ces deux/quelques amis sont venus}
-    \ex[*]{les mes/ces/des/plusieurs amis sont venus}
-    \ex[*]{amis sont venus}
-    \z
-    \z
+    \begin{exe}
+    \exi{(i)}
+    \begin{xlista}
+    \ex[]{\itshape les/mes/ces/deux/quelques/des/plusieurs amis sont venus}
+    \ex[]{\itshape les/mes/ces deux/quelques amis sont venus}
+    \ex[*]{\itshape les mes/ces/des/plusieurs amis sont venus}
+    \ex[*]{\itshape amis sont venus}
+    \end{xlista}
+    \end{exe}
 
     \exercice{6} Interrogation en français. On observe un contraste entre le fonctionnement des interrogatifs \textit{à qui} et \textit{que~}:
     
-    \ea
-    \ea[]{À qui parle-t-elle ?}
-    \ex[]{À qui Marie parle-t-elle ?}
-    \ex[]{Que dit-elle ?}
-    \ex[*]{Que Marie dit-elle ?}
-    \z
-    \z
+    \begin{exe}
+    \exi{(i)}
+    \begin{xlista}
+    \ex[]{\itshape À qui parle-t-elle ?}
+    \ex[]{\itshape À qui Marie parle-t-elle ?}
+    \ex[]{\itshape Que dit-elle ?}
+    \ex[*]{\itshape Que Marie dit-elle ?}
+    \end{xlista}
+    \end{exe}
     Comment expliquer cette différence de comportement dans le cadre d’un modèle topologique ?
 
     \exercice{7} Topologie de l’anglais. L’anglais possède une classe de verbes que l’on appelle les modaux qui comprend les auxiliaires \textsc{be} ‘être’ et \textsc{have} ‘avoir’ et quelques verbes à valeur modale comme \textsc{can} ‘pouvoir, \textsc{must} ‘devoir, \textsc{will} (auxiliaire du futur) ou \textsc{would} (auxiliaire du conditionnel) qui ont la particularité d’être invariables, ainsi que \textsc{do} ‘faire’. Ces verbes ont également des propriétés distributionnelles qui les distinguent des autres verbes. Premièrement, les adverbes se placent de préférence après les modaux et avant les verbes ordinaires :
     
-    \ea
-    \ea[]{Mary often calls Peter     ‘Marie appelle souvent Pierre’}
+    \begin{exe}
+    \exi{(i)}
+    \begin{xlista}
+    \ex[]{\textit{Mary often calls Peter}     ‘Marie appelle souvent Pierre’}
     \ex[\textsuperscript{??}]{\textit{Mary calls often Peter}}
-    \ex[]{Mary would often call Peter   ‘Marie appellerait souvent Pierre’}
+    \ex[]{\textit{Mary would often call Peter}   ‘Marie appellerait souvent Pierre’}
     \ex[\textsuperscript{??}]{\textit{Mary often would call Peter}}
-    \z
-    \z
+    \end{xlista}
+    \end{exe}
 
     Deuxièmement, dans les interrogatives, le sujet se place entre le modal et le verbe, et en cas d’absence de modal, \textsc{do} est introduit :
     
-    \ea
-    \ea[]{Would Mary call Peter?     ‘Marie appellerait-elle Pierre ?’}
-    \ex[*]{Calls Mary Peter?}
-    \ex[]{Does Mary call Peter?     ‘Marie appelle-t-elle Pierre ?’}
-    \z
-    \z
+    \begin{exe}
+    \exi{(ii)}
+    \begin{xlista}
+    \ex[]{\textit{Would Mary call Peter?}     ‘Marie appellerait-elle Pierre ?’}
+    \ex[*]{\itshape Calls Mary Peter?}
+    \ex[]{\textit{Does Mary call Peter?}     ‘Marie appelle-t-elle Pierre ?’}
+    \end{xlista}
+    \end{exe}
     La position initiale peut aussi être occupée par un pronom interrogatif :
     
-    \ea
-    \ea[]{Why would Mary call Peter?   ‘Pourquoi Marie appellerait-elle Pierre ?’}
-    \ex[]{Who does Mary call?     ‘Qui Marie appelle-t-elle ?’}
-    \z
-    \z
+    \begin{exe}
+    \exi{(iii)}
+    \begin{xlista}
+    \ex[]{\textit{Why would Mary call Peter?}   ‘Pourquoi Marie appellerait-elle Pierre ?’}
+    \ex[]{\textit{Who does Mary call?}     ‘Qui Marie appelle-t-elle ?’}
+    \end{xlista}
+    \end{exe}
     
     Troisièmement, la négation se place obligatoirement sur un modal et donc comme dans le cas de l’interrogation, \textsc{do} doit être introduit en l’absence d’un autre modal :
     
-    \ea
-    \ea[]{Mary would not call Peter     ‘Marie n’appellerait pas Pierre’}
-    \ex[*]{Mary calls not Peter}
-    \ex[]{Mary does not call Peter    ‘Marie n’appelle pas Pierre’}
-    \z
-    \z
+    \begin{exe}
+    \exi{(iv)}
+    \begin{xlista}
+    \ex[]{\textit{Mary would not call Peter}     ‘Marie n’appellerait pas Pierre’}
+    \ex[*]{\itshape Mary calls not Peter}
+    \ex[]{\textit{Mary does not call Peter}    ‘Marie n’appelle pas Pierre’}
+    \end{xlista}
+    \end{exe}
 
     Quatrièmement, le sujet peut être inversé dans certains cas :
     
-    \ea
-    \ea  {Never would Mary call Peter}   ‘Jamais Marie n’appellerait Pierre’
-    \ex  {Here are two nice people}     ‘Ici sont deux chouettes personnes’
-    \z
-    \z
+    \begin{exe}
+    \exi{(v)}
+    \begin{xlista}
+    \ex  \textit{Never would Mary call Peter}   ‘Jamais Marie n’appellerait Pierre’
+    \ex  \textit{Here are two nice people}     ‘Ici sont deux chouettes personnes’
+    \end{xlista}
+    \end{exe}
     Rappelons également que, en anglais, l’objet direct doit précéder tous les autres compléments. De quelle façon un modèle topologique de l’anglais peut-il rendre compte de ces propriétés ?
 
     \exercice{8} Topologie de l’allemand. Les exemples que nous avons présentés dans l’\encadref{fig:3.5.36} acceptent encore d’autres ordres, comme, par exemple :
 
-    \ea
+    \begin{exe}
+    \exi{(i)}
     \gll In seiner Nase zu popeln hat Peter mal wieder gewagt.\\
          dans son nez  de creuser  a   Peter   à nouveau   osé\\
     \glt   ‘Peter a à nouveau osé se crotter le nez.’
-    \z
+    \end{exe}
 
     Comment pouvez-vous intégrer cet exemple au modèle topologique de l’allemand ?
 
