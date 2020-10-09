@@ -16,9 +16,9 @@ Insistons aussi sur le fait qu’une structure syntaxique modélise des contrain
 
 Rappelons le type d’arguments que nous avons introduits dans le \chapref{sec:1.2} pour justifier l’introduction d’une structure syntaxique. Nous avons montré qu’il existait des contraintes sur la production d’un énoncé et qu’on pouvait à juste titre considérer que ces contraintes s’appliquaient de façon hiérarchique, chaque choix à son tour imposant des contraintes sur les choix suivants. Donnons un nouvel exemple :
 
-\ea La France produit du lait.
-\ex la production laitière de la France
-\ex la production française de lait
+\ea \itshape La France produit du lait.
+\ex \itshape la production laitière de la France
+\ex \itshape la production française de lait
 \z
 
 Ces trois syntagmes expriment les mêmes sens avec les mêmes relations sémantiques : un prédicat binaire, ‘produire’, exprimable par le verbe \textsc{produire} ou le nom \textsc{production,} et deux éléments de sens, ‘la France’ et ‘lait’, qui remplissent les rôles d’agent (celui qui produit) et de patient (ce qui est produit) de ce prédicat, ce qu’on peut schématiser comme suit (voir le \chapref{sec:3.6} pour plus de détails) :
@@ -296,7 +296,7 @@ Raisonner en termes de composition n’est pas complètement équivalent à rais
 
 La deuxième représentation, avec des bulles qui s’enchevêtrent, n’est pas usuelle et nous l’éviterons également.
 
-Si l’on raisonne en termes de décomposition, on partira du tout U que forment A, B et C (U = ABC). On aura alors trois façons de décomposer U : 1) une décomposition ternaire U = A ${\oplus}$ B ${\oplus}$ C ; 2) une décomposition binaire U = A ${\oplus}$ BC ; et 3) une décomposition binaire U = AB ${\oplus}$ C.
+Si l’on raisonne en termes de décomposition, on partira du tout U que forment A, B et C (U = ABC). On aura alors trois façons de décomposer U : (1) une décomposition ternaire U = A ${\oplus}$ B ${\oplus}$ C ; (2) une décomposition binaire U = A ${\oplus}$ BC ; et (3) une décomposition binaire U = AB ${\oplus}$ C.
 
 \begin{figure}
 \begin{tikzpicture}
@@ -402,15 +402,15 @@ Les énoncés des tests que nous avons donnés sont très généraux. Ils vont t
 En français, l’usage le plus courant du test de déplacement concerne les dépendants du nom, qui, à l’exception de certains adjectifs, se placent tous à droite du nom dont ils dépendent. Nous allons donner deux illustrations. La première concerne les propositions :
 
 \ea
-  \ea Pierre a acheté une glace à la boulangerie.
-  \ex Pierre a acheté une glace à la fraise.
+  \ea \itshape Pierre a acheté une glace à la boulangerie.
+  \ex \itshape Pierre a acheté une glace à la fraise.
   \z
 \z
 
 Dans les deux exemples, on a un groupe prépositionnel B introduit par \textit{à} dont on cherche à savoir s’il est connecté à A = \textit{une glace}. La permutation de A et B offre immédiatement une réponse :
 \ea
-    \ea[]{Pierre a acheté \textbf{à la boulangerie}  une glace.}
-    \ex[*]{Pierre a acheté \textbf{à la fraise}  une glace.}
+    \ea[] {\itshape Pierre a acheté \textbf{à la boulangerie}  une glace.}
+    \ex[*]{\itshape Pierre a acheté \textbf{à la fraise}  une glace.}
     \z
 \z
 
@@ -660,30 +660,31 @@ Les structures de connexion ne sont pas n’importe quel graphe à bulles. D’u
 Enfin, les structures de connexion ont généralement la propriété de binarité suivante : chaque bulle se décompose en deux bulles connectées entre elles. Il est alors possible d’utiliser un autre mode de représentation, où les bulles ne sont pas représentées : un lien dont le sommet est une bulle composée de deux sous-bulles connectées entre elles sera attribué au lien entre les deux sous-bulles. On obtient une nouvelle structure, que nous appelons un \textstyleTermesapprof{polygraphe}, où une arête peut avoir pour sommet un nœud ou une arête. Nous donnons ci-dessous une version polygraphique de la structure connexion de la section précédente.
 
 \begin{figure}
-\begin{tikzpicture}
-  \matrix [matrix of nodes,
-           nodes={ConcSet,font=\footnotesize},
-           row sep=1em,
-           column sep=.333em,
-           ampersand replacement=\&] (matrix)
-    {
-      \& étudiant \& \& acheter \& \& livre \& \& syntaxe\\
-      cet \& \& veut \& \& un \& \& de \& \\
-    };
-    \coordinate (intersection1) at ($ (matrix-1-2) !.5! (matrix-2-1) $);
-    \coordinate (intersection2) at ($ (matrix-1-6) !.5! (matrix-2-5) $);
-    \coordinate (intersection3) at ($ (matrix-1-8) !.5! (matrix-2-7) $);
-    \draw (intersection1) -- (matrix-2-1);
-    \draw (intersection1) -- (matrix-1-2);
-    \draw (intersection1) -- (matrix-2-3);
-    \draw (matrix-2-3)    -- (matrix-1-4);
-    \draw (intersection2) -- (matrix-1-4);
-    \draw (intersection2) -- (matrix-2-5);
-    \draw (intersection2) -- (matrix-1-6);
-    \draw (intersection3) -- (matrix-1-6);
-    \draw (intersection3) -- (matrix-2-7);
-    \draw (intersection3) -- (matrix-1-8);
-\end{tikzpicture}         
+\includegraphics[scale=.75]{figures/ceetudiantveutacheterunlivredesyntaxe.pdf}
+% % % \begin{tikzpicture}
+% % %   \matrix [matrix of nodes,
+% % %            nodes={ConcSet,font=\footnotesize},
+% % %            row sep=1em,
+% % %            column sep=.333em,
+% % %            ampersand replacement=\&] (matrix)
+% % %     {
+% % %       \& étudiant \& \& acheter \& \& livre \& \& syntaxe\\
+% % %       cet \& \& veut \& \& un \& \& de \& \\
+% % %     };
+% % %     \coordinate (intersection1) at ($ (matrix-1-2) !.5! (matrix-2-1) $);
+% % %     \coordinate (intersection2) at ($ (matrix-1-6) !.5! (matrix-2-5) $);
+% % %     \coordinate (intersection3) at ($ (matrix-1-8) !.5! (matrix-2-7) $);
+% % %     \draw (intersection1) -- (matrix-2-1);
+% % %     \draw (intersection1) -- (matrix-1-2);
+% % %     \draw (intersection1) -- (matrix-2-3);
+% % %     \draw (matrix-2-3)    -- (matrix-1-4);
+% % %     \draw (intersection2) -- (matrix-1-4);
+% % %     \draw (intersection2) -- (matrix-2-5);
+% % %     \draw (intersection2) -- (matrix-1-6);
+% % %     \draw (intersection3) -- (matrix-1-6);
+% % %     \draw (intersection3) -- (matrix-2-7);
+% % %     \draw (intersection3) -- (matrix-1-8);
+% % % \end{tikzpicture}         
 \caption{\label{fig:}Polygraphe représentant une structure de connexion}
 \end{figure}
 }
@@ -752,8 +753,8 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
     Il est généralement admis que les locuteurs traitent les énoncés de manière \textstyleTermesapprof{incrémentale}, c’est-à-dire au fur et à mesure qu’ils les perçoivent. Une expérience classique est celle des \textstyleTermesapprof{garden paths} (en anglais \textit{to lead somebody up the garden path} signifie ‘mener quelqu’un en bateau’). Lisez les deux phrases suivantes :
 
     \ea
-      \ea L’espion reconduit à la frontière un diplomate américain.
-      \ex L’espion reconduit à la frontière est un diplomate russe.
+      \ea \itshape L’espion reconduit à la frontière un diplomate américain.
+      \ex \itshape L’espion reconduit à la frontière est un diplomate russe.
       \z
     \z
 
@@ -812,25 +813,26 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
     \exercice{5} On propose la structure de connexion suivante pour \textit{Le chat dort sur le lit}.
 
     \begin{center}
-    \begin{tikzpicture}
-      \matrix (matrix) [matrix of nodes,
-                        nodes={ConcSet},
-                        row sep=1em, 
-                        column sep=1em,
-                        ampersand replacement=\&]
-        {
-          \& chat \& \& sur \& \& lit\\
-          le \& \& dort \& \& le \& \\
-        };
-      \coordinate (intersection1) at ( $ (matrix-2-1) !.5! (matrix-1-2) $ );
-      \coordinate (intersection2) at ( $ (matrix-2-5) !.5! (matrix-1-6) $ );
-      \coordinate (intersection3) at ( $ (matrix-1-4) !.5! (intersection2) $ );
-      \draw (matrix-2-1)    -- (matrix-1-2);
-      \draw (intersection1) -- (matrix-2-3)
-                            -- (intersection3);
-      \draw (matrix-1-4)    -- (intersection2);
-      \draw (matrix-1-6)    -- (matrix-2-5);
-    \end{tikzpicture}
+    \includegraphics[scale=.75]{lechatdortsurlelit.pdf}
+% %     \begin{tikzpicture}
+% %       \matrix (matrix) [matrix of nodes,
+% %                         nodes={ConcSet},
+% %                         row sep=1em, 
+% %                         column sep=1em,
+% %                         ampersand replacement=\&]
+% %         {
+% %           \& chat \& \& sur \& \& lit\\
+% %           le \& \& dort \& \& le \& \\
+% %         };
+% %       \coordinate (intersection1) at ( $ (matrix-2-1) !.5! (matrix-1-2) $ );
+% %       \coordinate (intersection2) at ( $ (matrix-2-5) !.5! (matrix-1-6) $ );
+% %       \coordinate (intersection3) at ( $ (matrix-1-4) !.5! (intersection2) $ );
+% %       \draw (matrix-2-1)    -- (matrix-1-2);
+% %       \draw (intersection1) -- (matrix-2-3)
+% %                             -- (intersection3);
+% %       \draw (matrix-1-4)    -- (intersection2);
+% %       \draw (matrix-1-6)    -- (matrix-2-5);
+% %     \end{tikzpicture}
     \end{center}
 
     Cette structure est donnée sous forme de polygraphe (voir \encadref{fig:3.2.23}).
@@ -889,7 +891,7 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
    
 
 \begin{center}
-\begin{tikzpicture}[every node/.style={font=\footnotesize,inner sep=3pt}]
+\begin{tikzpicture}[every node/.style={font=\footnotesize,inner sep=1pt}]
  \node at (0,0) (A) [draw,circle,font=\itshape\strut] {ça};
  \node [right=1em of A] (B) [draw,circle,font=\itshape\strut] {a};
  \node [right=1em of B] (C) [ConcSet] {commencé};
@@ -911,12 +913,14 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
 
 Mais on peut aussi accepter que dans cette construction \textit{le} joue un double rôle : à la fois article défini (\textit{le mur}) et marqueur du superlatif (le plus), ce qui donne une structure cyclique.
 
-\hfill\begin{tikzpicture}
+\begin{tikzpicture}
 \matrix (matrix) [matrix of nodes, 
                   nodes = {ConcSet, minimum width=3em},
                   ampersand replacement=\&,
                   row sep=1em,
-                  column sep=.5em]
+                  column sep=.33em,
+                  inner sep = 0pt,
+                  font=\small]
   {plus \& haut \& \& mur\\
         \& \& le \& \\  
   };
@@ -926,7 +930,9 @@ Mais on peut aussi accepter que dans cette construction \textit{le} joue un doub
                   nodes = {ConcSet, minimum width=3em},
                   ampersand replacement=\&,
                   row sep=1em,
-                  column sep=.5em] 
+                  column sep=.33em,
+                  inner sep = 0pt,
+                  font=\small] 
   {
     \& haut \& \& mur\\
     plus \& \& le\\

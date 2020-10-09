@@ -722,15 +722,15 @@ Alors qu’un arbre de dépendance correspond naturellement à un arbre de const
 \begin{figure}
 \begin{forest} for tree={font=\itshape}
 [aimeraient
-  [beaucoup,edge label={node[near end,above] {2}}
-    [de,edge label={node[midway,left] {1}}
-        [gens,edge label={node[midway,left] {1}}]
+  [beaucoup,edge label={node[near end,above,font=\footnotesize] {2}}
+    [de,edge label={node[midway,left,font=\footnotesize] {1}}
+        [gens,edge label={node[midway,left,font=\footnotesize] {1}}]
     ]
   ]
-  [passer,edge label={node[near end,above] {1}}
-    [Noël,edge label={node[near end,above] {1}}] 
-    [en,edge label={node[near end,above] {2}} 
-        [Laponie,edge label={node[midway,right] {1}}]
+  [passer,edge label={node[near end,above,font=\footnotesize] {1}}
+    [Noël,edge label={node[near end,above,font=\footnotesize] {1}}] 
+    [en,edge label={node[near end,above,font=\footnotesize] {2}} 
+        [Laponie,edge label={node[midway,right,font=\footnotesize] {1}}]
     ]
   ]
 ]
@@ -743,15 +743,15 @@ On déduit facilement de cet \textstyleTermes{arbre de dépendance avec ordre de
 \begin{figure}
 \begin{forest} for tree={font=\itshape, s sep= 2cm}
 [aimeraient,name=aimeraient
-  [beaucoup,no edge,name=beaucoup,edge label={node[near end,above] {2}}
-    [de,no edge,name=de,edge label={node[midway,left] {1}}
-        [gens,name=gens,edge label={node[midway,left] {1}}]
+  [beaucoup,no edge,name=beaucoup,edge label={node[near end,above,font=\footnotesize] {2}}
+    [de,no edge,name=de,edge label={node[midway,left,font=\footnotesize] {1}}
+        [gens,name=gens,edge label={node[midway,left,font=\footnotesize] {1}}]
     ]
   ]
-  [passer,no edge,name=passer,edge label={node[midway,above] {1}}
-    [Noël,name=Noel,edge label={node[near end,above] {1}}] 
-    [en,name=en,edge label={node[near end,above] {2}} 
-        [Laponie,name=Laponie,edge label={node[midway,right] {1}}]
+  [passer,no edge,name=passer,edge label={node[midway,above,font=\footnotesize] {1}}
+    [Noël,name=Noel,edge label={node[near end,above,font=\footnotesize] {1}}] 
+    [en,name=en,edge label={node[near end,above,font=\footnotesize] {2}} 
+        [Laponie,name=Laponie,edge label={node[midway,right,font=\footnotesize] {1}}]
     ]
   ]
 ]
@@ -872,11 +872,11 @@ L’arbre de constituants obtenu (celui correspondant aux emboîtements) n’est
       \end{tikzpicture}
     \end{minipage}\begin{minipage}[c]{.3\linewidth}\centering
       \begin{forest}
-       forked edges
+       forked edges, for tree = {font=\normalfont}
        [S [NP] [VP]]
       \end{forest}
     \end{minipage}\begin{minipage}[c]{.3\linewidth}\centering
-      \begin{forest}
+      \begin{forest} for tree = {font=\normalfont}
         [S [NP] [VP]]
       \end{forest}
     \end{minipage}    
@@ -892,7 +892,7 @@ L’arbre de constituants obtenu (celui correspondant aux emboîtements) n’est
     %%[Warning: Draw object ignored]
     Deux représentations des constructions subjectale et objectale\smallskip\\
     \begin{minipage}[c]{.3\linewidth}\centering
-     \begin{forest}
+     \begin{forest} for tree = {font=\normalfont}
        [S [NP] [VP [V] [NP]]]
      \end{forest}
     \end{minipage}\hfill\begin{minipage}[c]{.6\linewidth}\centering
@@ -1115,14 +1115,42 @@ Si l’on s’abstrait complètement de l’ordre linéaire et que l’on garde 
 
 \begin{figure}
 \caption{\label{fig:}Polygraphe orienté (non ordonné)}
-\begin{forest} nice empty nodes, for tree={font=\itshape}
-[aimeraient
-    [ 
-        [ [beaucoup] [ [gens] [de] ] ] 
-        [ [ [passer] [Noël] ] [ [en] [Laponie] ] ]
-    ]
-]
-\end{forest}
+\begin{turn}{-45}
+	\begin{tikzpicture}
+		\node (passer)   at (4,5)  [rotate=45] {passer};
+		\node (b)   at (5,5)  [rotate=45] {};
+		\node (Noël)   at (6,5)  [rotate=45] {Noël};
+		%
+		\node (aimeraient)   at (1,4)  [rotate=45] {aimeraient};
+		\node (x)   at (3,4)  [rotate=45] {};
+		\node (y)   at (5,4)  [rotate=45] {};
+		%
+		\node (en)   at (4,3)  [rotate=45] {en};
+		\node (a)   at (5,3)  [rotate=45] {};
+		\node (Laponie)   at (6,3)  [rotate=45] {Laponie};
+		%
+		\node (de)   at (4,2)  [rotate=45] {de};
+		%
+		\node (beaucoup)   at (2,1)  [rotate=45] {beaucoup};
+		\node (z)   at (3,1)  [rotate=45] {};
+		\node (c)   at (4,1)  [rotate=45] {};
+		
+		%
+		\node (gens)   at (4,0)   [rotate=45]  {gens};
+		%
+		\draw[thick,shorten <=2mm, shorten >=3mm] (4,5) -- (6,5);
+		\draw[thick,shorten <=3mm, shorten >=1mm] (1,4) -- (5,4);
+		\draw[thick,shorten <=2mm, shorten >=3mm] (4,3) -- (6,3);
+		% 2
+		\draw[thick,shorten <=2mm, shorten >=2mm] (2,1) -- (4,1);
+		
+		%
+		% \draw[thick] (z) -- (x);
+		\draw[thick,shorten <=2mm, shorten >=2mm] (3,1) -- (3,4);
+		\draw[thick] (gens) -- (de);
+		\draw[thick] (a) -- (b);
+	\end{tikzpicture}
+\end{turn}
 \end{figure}
 
 Bien que cela n’apparaisse pas au premier coup d’œil, la structure ci-dessus est un extrait de la structure précédente : c’est le même \textbf{polygraphe orienté} que précédemment, mais sans l’ordre des mots et avec une autre convention de représentation : au lieu d’indiquer la tête de la connexion par une flèche, celle-ci est placée au-dessus de son dépendant. Or ce polygraphe orienté, qui a donc été extrait automatiquement de l’arbre de constituants binaires en mettant en évidence les connexions, est très proche d’un arbre de dépendance. Pour obtenir l’arbre de dépendance, il suffit de \textbf{faire glisser chaque dépendance} le long des dépendances sur lesquelles elle s’appuie:

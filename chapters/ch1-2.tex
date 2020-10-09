@@ -165,12 +165,10 @@ Comment peut-on exprimer le sens que nous avons considéré en français ? Nous 
 
 \ea%1
     \label{ex:key:1}
-
-          La maladie d’Ali a duré deux semaines.
+          \itshape La maladie d’Ali a duré deux semaines.
 \ex%2
     \label{ex:key:2}
-
-           Ali a été malade pendant deux semaines.
+           \itshape Ali a été malade pendant deux semaines.
 \z
 
 L’analyse de la production de ces deux énoncés va nous permettre de mettre en évidence de nombreuses règles de grammaire, appartenant à la langue en général ou spécifiques au français.
@@ -220,12 +218,13 @@ Lors du passage du sens au texte, tout se passe comme si on suspendait le graphe
     \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip]
       \node (root) {}
         child { node{} 
-            child { node{} edge from parent[->] node[left,FnEdgeLabel] {\itshape 1} } 
+            child { node{} edge from parent[->] node[left,FnEdgeLabel] {1} } 
             edge from parent[->] node[left,FnEdgeLabel] {1} }
         child { node{} 
             child { node{} edge from parent[<-] node[right,FnEdgeLabel] {1} } 
             edge from parent[->] node[right,FnEdgeLabel] {2} };
     \end{scope}
+    \draw [ConversionArrow] (root) ++(-1,1) -- (root);
     \node [right=.25ex of root] {`durer'};
     \node [left=.25ex of root-1] {`malade'};
     \node [left=.25ex of root-1-1] {`Ali'};
@@ -233,7 +232,7 @@ Lors du passage du sens au texte, tout se passe comme si on suspendait le graphe
     \node [right=.25ex of root-2-1] {`deux'};
 \end{tikzpicture}
 \end{minipage}\begin{minipage}[c]{.5\textwidth}\centering%
-\begin{forest}
+\begin{forest} for tree={font=\normalfont}
 [DURER
   [MALADIE\textsubscript{sg,déf},edge label={node[midway,above,font=\footnotesize]{1}}
     [Adj\textsubscript{0}(ALI),edge label={node[midway,left,font=\footnotesize]{1}}]
@@ -259,6 +258,7 @@ Lors du passage du sens au texte, tout se passe comme si on suspendait le graphe
                     edge from parent[->] node[right,FnEdgeLabel] {2} } 
             edge from parent[<-] node[right,FnEdgeLabel] {1} };
     \end{scope}
+    \draw [ConversionArrow,overlay] (root) ++(1,1) -- (root);
     \node [left=.25ex of root] {`malade'};
     \node [left=.25ex of root-1] {`Ali'};
     \node [right=.25ex of root-2] {`durer'};
@@ -266,7 +266,7 @@ Lors du passage du sens au texte, tout se passe comme si on suspendait le graphe
     \node [right=.25ex of root-2-1-1] {`deux'};
 \end{tikzpicture}
 \end{minipage}\begin{minipage}[c]{.5\textwidth}\centering
-\begin{forest}
+\begin{forest} for tree={font=\normalfont}
 [V\textsubscript{0}(MALADE)\textsubscript{passé}
   [ALI,edge label={node[near start,left,xshift=-5pt,font=\footnotesize]{1}}]
   [PENDANT,edge label={node[near start,right,xshift=5pt,font=\footnotesize\itshape]{MOD}}
@@ -501,15 +501,18 @@ L’expression même des contraintes grammaticales repose sur les «~connexions~
 \corrections{%\label{sec:1.2.19}
      \corrigé{1} Il existe de nombreux exemples. Nous en proposons deux :
      
-    \ea
-     \ea Ali pleure parce que Zoé est partie.
+    \begin{exe}
+    \exi{(i)}
+    \begin{xlista}
+     \ex Ali pleure parce que Zoé est partie.
      \ex Le départ de Zoé a fait pleurer Ali.
-    \z
-    \ex
-      \ea Les Chinois consomment de plus en plus de viande.
+    \end{xlista}
+    \exi{(ii)}
+    \begin{xlista}
+      \ex Les Chinois consomment de plus en plus de viande.
       \ex La consommation de viande des Chinois a augmenté.
-    \z
-    \z
+    \end{xlista}
+    \end{exe}
 
     Pour la représentation sémantique et les représentations syntaxiques profondes, voir le \chapref{sec:3.6}. Vous pouvez néanmoins vous essayer dès maintenant à proposer des représentations pour les exemples ci-dessus.
 

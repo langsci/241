@@ -326,14 +326,54 @@ Notons pour conclure cette section que l’on utilise généralement une termino
     Si cette analyse contient déjà des symboles spéciaux (comme les flèches à double pointe \textrm{$\twoheadrightarrow $} pour les relatives), ce n’est que plus tard que Tesnière introduira les symboles en T pour la translation. Les structures de l’ouvrage de 1959 ne sont plus totalement hiérarchique comme le montre notre interprétation polygraphique ci-dessous de la représentation proposée par Tesnière pour \textit{Écrivez dans le livre de votre ami} !.
 
     \begin{figure}
-    \begin{minipage}[t]{.4\textwidth}\centering
-    Stemma de \citet{tesniere1959elements}\medskip\\
-    \includegraphics[width=4cm]{figures/StemmadeTesniere}
-    \end{minipage}%
-    \begin{minipage}[t]{.6\textwidth}\centering
-    Interprétation polygraphique du stemma\medskip\\
-    \includegraphics[width=4cm]{figures/Stemma}
-    \end{minipage}
+    \caption{\color{red}Please provide a caption}
+    \begin{subfigure}[b]{.5\textwidth}\centering
+% %     \includegraphics[width=4cm]{figures/StemmadeTesniere}
+         \begin{tikzpicture}
+           \node (dans) at (.5,3) {\textit{dans}};
+           \node (écrivez) at (1,4.3) {\textit{écrivez}};
+           \node (de) at (1.4,1.5) {\textit{de}};
+           \node (le livre) at (1.7,3) {\textit{le livre}};
+           \node (ami) at (2.2,1.5) {\textit{ami}};
+           \node (votre) at (2.2,0.5) {\textit{votre}};
+         
+           \draw[thick] (dans.north west) -- (le livre.north east);
+           \draw[thick] (de.north west) -- (ami.north east);
+           \draw[thick] (dans.north east) -- (dans.south east);
+           \draw[thick] (de.north east) -- (de.south east);
+         
+           \draw[thick] (dans.north west) -- +(-2mm, -2mm);
+           \draw[thick] (le livre.north east) -- +(2mm, 2mm);
+           \draw[thick] (de.north west) -- +(-2mm, -2mm);
+           \draw[thick] (ami.north east) -- +(2mm, 2mm);
+         
+         
+           \draw[thick] (de.south east) -- +(-2mm, -2mm);
+         
+           \draw[thick,shorten >=2mm] (écrivez) -- (1,3);
+           \draw[thick,shorten >=4mm] (le livre) -- (1.7,1.5);
+           \draw[thick] (ami) -- (votre);
+         \end{tikzpicture}
+    \caption{Stemma de \citet{tesniere1959elements}}
+    \end{subfigure}%
+    \begin{subfigure}[b]{.5\textwidth}\centering
+% %     \includegraphics[width=4cm]{figures/Stemma}
+        \begin{tikzpicture}
+          \node (dans) at (.5,3) {\textit{dans}};
+          \node (écrivez) at (1,4) {\textit{écrivez}};
+          \node (de) at (1.5,2) {\textit{de}};
+          \node (le livre) at (2,3) {\textit{le livre}};
+          \node (ami) at (2.5,2) {\textit{ami}};
+          \node (votre) at (2.5,1) {\textit{votre}};
+        
+          \draw[thick] (dans) -- (le livre);
+          \draw[thick] (de) -- (ami);
+          \draw[thick,shorten >=2mm] (écrivez) -- (1,3);
+          \draw[thick,shorten >=2mm] (le livre) -- (2,2);
+          \draw[thick] (ami) -- (votre);
+        \end{tikzpicture}
+    \caption{Interprétation polygraphique du stemma}
+    \end{subfigure}
     \end{figure}
 }
 \section{Arbre et représentation planaire}\label{sec:3.3.6}
@@ -407,7 +447,7 @@ Si on reprend notre exemple avec X = \textit{Pierre habite,} A = \textit{une mai
 \draw (A) -- (B);
 \draw [-{Triangle[]}] (X) -- (AB);
 
-\draw[ConversionArrow, thick] (3.5,0) -- (4.5,0);
+\draw[ConversionArrow] (3.5,0) -- (4.5,0);
 \node at (5,0) (X) {X};
 \node at (6,0) (A) {A};
 \node at (7,0) (B) {B};
@@ -519,27 +559,25 @@ Le même type de raisonnement permet d’identifier la tête d’une proposition
 \begin{enumerate}
     \item Commençons par l’anglais, qui est une langue très proche du français, mais dont le fonctionnement est quand même différent. Considérons l’énoncé \textit{Peter has slept} ‘Pierre a (déjà) dormi’. Comme en français, la négation va sur l’auxiliaire sur lequel elle se cliticise :
     \ea
-        {Peter} \textbf{{hasn’t}}  {slept.}  ‘Pierre n’a pas dormi.’
+        {Peter} \textbf{{hasn’t}}  {slept.} \\\glt ‘Pierre n’a pas dormi.’
     \z
     Quant à la question, elle est normalement formée par l’antéposition de l’auxiliaire :
     \ea
-        \textbf{{Has}}  {Peter slept?}    ‘Pierre a-t-il dormi ?’
+        \textbf{{Has}}  {Peter slept?} \\\glt   ‘Pierre a-t-il dormi ?’
     \z
     On peut considérer que cette place particulière de l’auxiliaire le marque comme la tête. D’ailleurs, un verbe ordinaire ne peut recevoir directement la négation, ni être antéposé. Le passage à une forme interrogative ou négative nécessite l’introduction de l’auxiliaire \textsc{do} ‘faire’ :
     
     \ea
-      \ea Peter slept.    ‘Pierre a dormi.’
-      \ex \textbf{{Did}}  {Peter sleep?}    ‘Pierre a-t-il dormi ?’
-      \ex {Peter} \textbf{{didn’t}}  {sleep.}  ‘Pierre n’a pas dormi.’
+      \ea Peter slept.  \\\glt  ‘Pierre a dormi.’
+      \ex \textbf{{Did}}  {Peter sleep?}  \\\glt  ‘Pierre a-t-il dormi ?’
+      \ex {Peter} \textbf{{didn’t}}  {sleep.} \\\glt ‘Pierre n’a pas dormi.’
       \z
     \z
     Comme on le voit, la forme passé \textit{slept} passe à la forme infinitive. L’auxiliaire lui-même hérite de la finitude (\textit{did} est la forme passé de \textsc{do}) et constitue donc la tête de la phrase quand il est présent. En l’absence d’auxiliaire, c’est la forme verbale simple qui est la tête, puisque c’est elle qui est affectée lorsque l’auxiliaire est introduit. On notera que l’auxiliaire, bien qu’il soit la tête de la phrase, peut dans certains cas se cliticiser sur le sujet (c’est-à-dire perdre la possibilité de recevoir un accent tonique et former un mot prosodique avec le dernier mot du sujet) :
     
     \ea
-      \ea
-        {Peter}\textbf{{’s}}  {sleeping} =  {Peter} \textbf{{is}}  {sleeping}  ‘Pierre est en train de dormir’, lit. Pierre est dormant.
-      \ex
-        {Peter}\textbf{{’s}}  {eaten}   =   {Peter} \textbf{{has}}  {eaten}   ‘Pierre a (déjà) mangé’
+      \ea {Peter}\textbf{{’s}}  {sleeping} =  {Peter} \textbf{{is}}  {sleeping} \\\glt ‘Pierre est en train de dormir’, lit. Pierre est dormant.
+      \ex {Peter}\textbf{{’s}}  {eaten}   =   {Peter} \textbf{{has}}  {eaten}  \\\glt ‘Pierre a (déjà) mangé’
         \z
     \z
     \item En coréen, le verbe principal d’un énoncé est caractérisé par un marqueur de politesse qu’il est le seul à pouvoir porter. Cette particule s’ajoute optionnellement sur le verbe principal, mais jamais sur un verbe subordonné. Le coréen utilise essentiellement des constructions à verbe support (voir \chapref{sec:2.4}) avec le verbe \textsc{hada} ‘faire’. Dans la phrase suivante, le sens ‘aimer’ est ainsi lexicalisé par le nom \textsc{sarang} ‘amour’ et le sens ‘croire’ par le nom \textsc{saenggak} ‘pensée’, tous deux «~verbalisés~» par le verbe \textsc{hada}. La deuxième occurrence de \textsc{hada} peut porter le morphème de politesse \textit{yo}, mais pas la première. (Nous reviendrons sur les marqueurs illocutoires du coréen dans l’\encadref{fig:5.1.12} \textit{Des prédicatifs uniquement locutifs assertifs}.)
@@ -788,8 +826,8 @@ Donnons l’exemple du wolof. Le verbe en wolof est quasiment invariable, mais i
 manger  \textsc{part=S3pl=imp} \textsc{iààndef}  mouton\\
 \glt `Ils mangent un mouton.’
 \ex
-\gll \textbf{{da}}{{}-ñu=y              lekk         am      xar~}\\
-\textsc{part=S3pl=imp} manger  \textsc{indef}  mouton\\
+\gll {\textbf{da}-ñu=y}   lekk         am      xar\\
+\textsc{part=S3pl=imp}    manger  \textsc{indef}  mouton\\
 \glt `(Le fait est que) ils mangent un mouton.’
 \z
 \z
@@ -1025,7 +1063,7 @@ Il existe néanmoins un certain nombre de cas problématiques qui sont au centre
 
 Le déterminant et le nom forment avec leurs dépendants une unité que nous appelons le \textstyleTermes{groupe substantival}. Le groupe substantival est souvent appelé \textstyleTermes{groupe nominal} ou \textstyleTermes{groupe déterminatif}, selon que l’on considère que sa tête est le nom ou le déterminant. Nous avons choisi à dessein un terme neutre qui ne présuppose aucune des deux analyses. Qui plus est ce terme est conforme aux choix terminologiques fait en typologie qui distingue généralement \textstyleTermes{substantif} (une unité qui peut référer à une substance) et \textstyleTermes{nom} (une catégorie lexicale). (Pour plus de détails, voir la \sectref{sec:5.1.14} sur \textit{Substantifs et noms.})
 
-La question de savoir qui du nom ou du déterminant est la tête est une question complexe qui a fait couler beaucoup d’encre. Il existe trois réponses possibles (et pas deux) : (A) le nom est la tête, (B) le déterminant est la tête, (C) les deux ont des propriétés de têtes et sont des co-têtes. Illustrons ces trois options sur un exemple simple, \textit{le petit chien dort~}:
+La question de savoir qui du nom ou du déterminant est la tête est une question complexe qui a fait couler beaucoup d’encre. Il existe trois réponses possibles (et pas deux) : a. le nom est la tête, b. le déterminant est la tête, c. les deux ont des propriétés de têtes et sont des co-têtes. Illustrons ces trois options sur un exemple simple, \textit{le petit chien dort~}:
 
 \ea
 \begin{minipage}[t]{.3\linewidth}\centering
@@ -1046,7 +1084,7 @@ c. Co-têtes\medskip\\
 \end{minipage}
 \z
 
-L’option (A) est celle de la grammaire traditionnelle, qui utilise le terme \textit{groupe nominal}. Elle a été sérieusement remise en question dans les années 1980, notamment par Richard \citet{hudson1984word} et la thèse de Steven \citet{abney1987english} qui défendait l’hypothèse du groupe déterminatif (\textit{DP-hypothesis}), et par l’adoption ensuite du DP (\textit{Determiner Phrase}) par la syntaxe X-barre en lieu et place du NP (\textit{Noun Phrase}). La troisième option est sérieusement envisagée par Lucien \citet{tesniere1959elements}, qui considère que les articles sont des indices qui marquent le rôle nominal du nom, et qui donc traite \textit{le chien} comme un nucléus translatif, lequel est représenté horizontalement, comme dans notre figure (C) (voir l’\encadref{fig:3.3.5} sur l’\textit{Historique des représentations syntaxiques par des diagrammes en dépendance}).
+L’option a. est celle de la grammaire traditionnelle, qui utilise le terme \textit{groupe nominal}. Elle a été sérieusement remise en question dans les années 1980, notamment par Richard \citet{hudson1984word} et la thèse de Steven \citet{abney1987english} qui défendait l’hypothèse du groupe déterminatif (\textit{DP-hypothesis}), et par l’adoption ensuite du DP (\textit{Determiner Phrase}) par la syntaxe X-barre en lieu et place du NP (\textit{Noun Phrase}). La troisième option est sérieusement envisagée par Lucien \citet{tesniere1959elements}, qui considère que les articles sont des indices qui marquent le rôle nominal du nom, et qui donc traite \textit{le chien} comme un nucléus translatif, lequel est représenté horizontalement, comme dans notre figure c. (voir l’\encadref{fig:3.3.5} sur l’\textit{Historique des représentations syntaxiques par des diagrammes en dépendance}).
 
 Nous allons discuter les arguments pour les différentes options.
 

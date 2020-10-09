@@ -905,11 +905,11 @@ Voici son arbre de dépendance (où nous indiquons les seules fonctions pertinen
                   level 2/.style={sibling distance=15mm},
                   level 3/.style={sibling distance=10mm}
                   ]
-      \node (root) {} child { node{} child { node{} } child { node{} } edge from parent node [reset shape,midway,above] {sujet} }
+      \node (root) {} child { node{} child { node{} } child { node{} } edge from parent node [reset shape,midway,above,font=\footnotesize] {sujet} }
                       child { node{} }
                       child { node [xshift=-7mm] {} }
                       child { node [xshift=-7mm] {} }
-                      child { node [xshift=-7mm] {} child { node [xshift=5mm] {} } child { node [xshift=5mm] {} } child { node [xshift=5mm] {} } edge from parent node [reset shape,midway,above] {objet} };
+                      child { node [xshift=-7mm] {} child { node [xshift=5mm] {} } child { node [xshift=5mm] {} } child { node [xshift=5mm] {} } edge from parent node [reset shape,midway,above,font=\footnotesize] {objet} };
     \end{scope}
     \begin{scope}[every node/.style={font=\itshape\strut}]
     \node [above=1pt of root] {prêtera};
