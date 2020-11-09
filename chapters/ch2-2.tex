@@ -18,7 +18,7 @@ Nous nous limitons pour l’instant à la combinaison des signifiants par concat
 
 Pour considérer qu’il y a vraiment commutation, il faut remplir une condition supplémentaire qu’on appelle l’\textstyleTermes{exclusion mutuelle}. Considérons des énoncés comme \textit{Pierre vient demain} et \textit{Pierre vient en voiture}. On ne veut pas dire ici que \textit{demain} et \textit{en voiture} commutent dans l’environnement «~\textit{Pierre vient {\longrule}\_}~», car les deux compléments sont cumulables (\textit{Pierre vient en voiture demain}) et qu’aucun n’est obligatoire (\textit{Pierre vient}). Il est donc clair que \textit{demain} et \textit{en voiture} n’occupent pas à proprement parler la même place et ne se remplacent pas l’un l’autre.
 
-\Definition{\textstyleTermes{commutent}}
+\Definition{\textstyleTermes{commutation  (avec exclusion mutuelle)}}
 {Nous dirons donc que deux signes A et B \textstyleTermes{commutent} dans l’environnement X{\longrule}Y s’ils \textbf{peuvent se remplacer} l’un l’autre et qu’en plus ils \textbf{s’excluent} l’un l’autre, c’est-à-dire que XAY et XBY sont acceptables et que XABY et XBAY sont inacceptables.}
 
 Par exemple, A = \textit{pas} et B = \textit{jamais} commutent dans l’environnement \textit{Pierre ne vient {\longrule}} \textit{en voiture}. Ou encore A = \textit{{}-ait} et B = \textit{{}-era} commutent dans l’environnement \textit{chant{\longrule}}.
@@ -41,7 +41,7 @@ Le fait qu’une commutation soit possible n’assure pas que les unités dégag
 
 Nous allons ajouter une condition qui assure qu’un segment mis à jour par une commutation possède un signifié et définir un \textbf{principe de commutation enrichi} qui prend en compte le signe dans sa globalité, signifié et syntactique compris.
 
-\Definition{\textstyleTermes{se décompose proprement}}
+\Definition{\textstyleTermes{décomposition propre}}
 {Le signe X \textstyleTermes{se décompose proprement} en A + B si X = A + B, s’il existe des segments A’ et B’ tels A + B’, A’ + B et A’ + B’ soient des signes et si \textbf{A +} \textbf{B est à A’} \textbf{+} \textbf{B ce que A +} \textbf{B’} \textbf{est à A’} \textbf{+} \textbf{B’} (ou, ce qui revient plus ou moins au même, si A~+ B est à A~+ B’ ce que A’ + B est à A’ + B’).}
 
 \Definition{\textstyleTermes{opération de combinaison propre}}
@@ -57,15 +57,15 @@ Le signe X = \textit{broyeur} se décompose proprement en A ${\boxplus}$ B avec 
 
 Un cas particulier important est celui où A existe en tant que signe autonome et l’on peut donc prendre pour B’ un segment vide. On a alors :
 
-\Definition{\textstyleTermes{se décompose proprement}}
-{Le signe X \textstyleTermes{se décompose proprement} en A ${\boxplus}$ B si X = A + B, si A est un signe et s’il existe un autre signe A’ tel que A’ + B soit un signe et que A + B soit à A’ + B ce que A est à A’ (ou, ce qui revient plus ou moins au même, que A~+ B soit à A ce que A’ + B est à A’).}
+\Definition{\textstyleTermes{décomposition propre}}
+{Le signe X \textstyleTermes{se décompose proprement} en A + B si X = A + B, si A est un signe et s’il existe un autre signe A’ tel que A’ + B soit un signe et que A + B soit à A’ + B ce que A est à A’ (ou, ce qui revient plus ou moins au même, que A~+ B soit à A ce que A’ + B est à A’).}
 
 Ainsi le signe X = \textit{facilement} se décompose proprement en A ${\boxplus}$ B avec A = \textit{facile} et B = \textit{{}-ment}, puisqu’on peut faire commuter A avec A’ = \textit{utile} et que \textit{facilement} est à \textit{facile} ce que \textit{utilement} est à \textit{utile}.
 
 On peut représenter l’application du principe de commutation enrichi par un \textstyleTermes{rectangle analogique}. Les quatre combinaisons A + B, A + B’, A’ + B et A’ + B’ occupent les quatre coins du rectangle et les côtés opposés du rectangle indiquent des rapports de proportionnalité équivalents :
 
 \begin{figure}
-\caption{\label{fig:}\color{red}Please provide a caption}
+\caption{\label{fig:}Rectangle analogique}
 \begin{tikzpicture}[baseline]
   \matrix [matrix of nodes, row sep=1cm, column sep=1cm, nodes={font=\strut}] 
     (matrix1) {
@@ -90,7 +90,7 @@ On peut représenter l’application du principe de commutation enrichi par un \
 \end{figure}
 
 
-\Definition{\textstyleTermes{diagrammatique}}
+\Definition{\textstyleTermes{diagrammaticité}}
 {Un signe linguistique qui se décompose proprement est dit \textstyleTermes{diagrammatique}.}
 
 On peut voir la \textstyleTermes{diagrammaticité} comme la possibilité d’être décomposé par un diagramme tel qu’un rectangle analogique. Un signe diagrammatique est nécessairement construit à partir d’autres signes et sa constructionalité est \textbf{visible} (\textstyleTermes{iconique} dirait le logicien américain Charles S. Peirce, qui est à l’origine d’une grande partie de la terminologie utilisée aujourd’hui en sémiotique et notamment du terme \textit{diagramme}).
@@ -182,7 +182,7 @@ On peut inverser le point de vue et voir -\textit{ure} comme un environnement.
 
 Dire que la distribution de -\textit{ure} est irrégulière revient à dire que la classe des signes qui peuvent se combiner avec -\textit{ure} est irrégulière.
 
-\Definition{\textstyleTermes{commute librement}}
+\Definition{\textstyleTermes{combinaison libre}}
 {On dit que A \textstyleTermes{commute librement} dans la combinaison propre A~${\boxplus}$~B si la classe des signes qui \textbf{commutent proprement} avec A est assez \textbf{régulière} et peut notamment se déduire des classes de signes qui commutent avec A dans d’autres combinaisons.}
 
 Dans l’énoncé \textit{Le chat avançait}, les quatre sous-segments \textit{le, chat, avanç-, -ait} sont des unités syntaxiques. Chaque segment est bien le signifiant d’un signe comme le montre les commutations propres suivantes :
@@ -550,7 +550,7 @@ Les syntaxèmes zéros sont des objets abstraits introduits par les linguistes p
 
 \ea
 \gll {cat-∅}  \hspace{1em}  {cat-s}\\
-      chat-\SG  {}  chat-\PL\\
+      {chat-\SG}  {}  {chat-\PL}\\
 \z
 
 Les syntaxèmes zéros appartiennent toujours à un \textbf{paradigme fermé}, condition sine qua non pour que \textbf{l’absence} \textbf{soit signifiante}. Ce sont donc nécessairement des \textbf{syntaxèmes flexionnels}.
