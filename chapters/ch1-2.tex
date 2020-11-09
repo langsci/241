@@ -62,25 +62,23 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
     Un \textstyleTermes{graphe} est une structure liant ensemble des éléments. Les éléments sont appelés les \textstyleTermes{nœuds} du graphe et les liens les \textstyleTermes{arêtes}. Un graphe est dit \textstyleTermes{connexe} lorsque pour chaque couple de nœuds du graphe, il existe un ensemble d’arêtes formant un chemin connectant un nœud à l’autre.
 
     \begin{figure}
-    \tikz \graph [empty nodes, nodes={CircleNode}] { f -- a -- {b--d, c--e} };
-    \caption{Graphe connexe}  
-    \end{figure}
-
-    \begin{figure}
-    \caption{Graphe non connexe}
-    \tikz \graph [empty nodes, nodes={CircleNode}] { f -- a -- b--d, c--e };
+    \begin{floatrow}
+    \ffigbox{\tikz \graph [empty nodes, nodes={CircleNode}] { f -- a -- {b--d, c--e} };}
+    {\caption{Graphe connexe}}
+    \ffigbox{\tikz \graph [empty nodes, nodes={CircleNode}] { f -- a -- b--d, c--e };}
+    {\caption{Graphe non connexe}}
+    \end{floatrow}
     \end{figure}
 
     Un graphe est dit \textstyleTermes{acyclique} s’il n’existe aucun chemin partant d’un nœud et revenant à ce nœud sans emprunter deux fois la même arête.
 
     \begin{figure}
-    \tikz \graph [empty nodes, nodes={CircleNode}] { f -- a -- {b--d, c--e} };
-    \caption{Graphe acyclique}   
-    \end{figure}
-    
-    \begin{figure} 
-    \tikz \graph [empty nodes, nodes={CircleNode}] { f -- a -- {b--d, c--e}, e--d };
-    \caption{Graphe avec cycle}
+    \begin{floatrow}
+    \ffigbox{\tikz \graph [empty nodes, nodes={CircleNode}] { f -- a -- {b--d, c--e} };}
+    {\caption{Graphe acyclique}}
+    \ffigbox{\tikz \graph [empty nodes, nodes={CircleNode}] { f -- a -- {b--d, c--e}, e--d };}
+    {\caption{Graphe avec cycle}}
+    \end{floatrow}
     \end{figure}
 
     Un \textstyleTermes{arbre} est un graphe connexe et acyclique dont un nœud, qu’on appelle la \textstyleTermes{racine}, est pointé. Cela revient à orienter les arêtes à partir de ce point. On peut donc aussi définir un graphe comme un cas particulier de graphe orienté.
@@ -90,6 +88,7 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
     Un \textstyleTermes{arbre} est donc aussi un graphe orienté connexe pour lequel chaque nœud est la cible d’une seule arête à l’exception d’un nœud, la racine de l’arbre. Tout nœud autre que la racine de l’arbre possède ainsi un \textstyleTermes{gouverneur} qui est l’unique nœud qui le prend pour cible. On représente traditionnellement les arbres «~à l’envers~» avec la racine en haut. Les nœuds qui ne sont le gouverneur d’aucun nœud, c’est-à-dire qui n’ont pas de \textstyleTermes{dépendants}, sont appelés les \textstyleTermes{feuilles} de l’arbre. Un chemin orienté allant de la racine ou d’un nœud intérieur à une feuille est appelé une \textstyleTermes{branche}. Du fait que, par convention, chaque arête est toujours orientée vers le bas (la cible est en dessous de la source), il n’est pas nécessaire d’utiliser une deuxième convention et d’indiquer l’orientation par une flèche.
 
     \begin{figure}
+    \hfill
     \begin{tikzpicture}
       \node at (0,0) (nodeA) [CircleNode] {};
       \node[below=2\baselineskip of nodeA] (nodeB) [CircleNode] {};
@@ -103,10 +102,7 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
       \draw[-{Latex[round,open]},gray] (nodeADesc) -- ($ (nodeA) + (2mm,0mm) $);
       \draw[-{Latex[round,open]},gray] (edgeDesc)  -- ($ (nodeA) !.5! (nodeB) + (2mm,0mm) $);
     \end{tikzpicture}
-    \caption{Dépendance}  
-    \end{figure}
-    
-    \begin{figure}
+    \hfill
     \begin{tikzpicture}[decoration={brace,amplitude=5pt,aspect=0.6,raise=3pt}]
     \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip]
       \node (root) {}
@@ -122,7 +118,8 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
     \draw[-{Latex[round,open]},gray] (feuille) -- ($ (child) + (2mm,0mm) $);
     \draw[-{Latex[round,open]},gray] (branche) -- ++(-1.6cm,0pt);
     \end{tikzpicture}
-    \caption{Branche}
+    \hfill\hbox{}
+    \caption{Dépendance et branche}  
     \end{figure}
 
     La structure syntaxique d’une phrase est généralement représentée par un arbre dont les nœuds sont les unités lexicales.
