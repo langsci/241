@@ -110,8 +110,8 @@ La structure topologique sera présentée au \chapref{sec:3.5}.
 
 La connexion est pour nous la première des notions syntaxiques. Cette notion est élémentaire et peut être appréhendée avec un minimum de moyens, avant des notions plus complexes telles que celles de dépendance ou de constituance.
 
-\Definition{\textstyleTermes{connexion}}
-{Il y a \textstyleTermes{connexion} (syntaxique) dès que deux éléments \textbf{se combinent} pour former un syntagme. Nous verrons que la connexion est une forme d’abstraction sur la notion de combinaison. Une connexion peut être réalisée par différentes combinaisons équivalentes.}
+\Definition{\textstyleTermes{connexion (syntaxique)}}
+{Il y a \textstyleTermes{connexion} (\textstyleTermes{syntaxique}) dès que deux éléments \textbf{se combinent} pour former un syntagme. Nous verrons que la connexion est une forme d’abstraction sur la notion de combinaison. Une connexion peut être réalisée par différentes combinaisons équivalentes.}
 
 La notion de connexion est due à Lucien Tesnière, qui à défaut d’en donner une caractérisation, lui attribue un rôle central dans le fonctionnement de la langue. Tesnière défend le fait que la connexion est un élément à part entière de la phrase. Au premier chapitre de son ouvrage posthume de 1959, \textit{Éléments de syntaxe structurale}, on trouve :
 
@@ -155,10 +155,10 @@ Dans la délimitation des unités syntaxiques, il est essentiel de savoir détec
 
 \ea%1
     \label{ex:key:1}
-          {Jean-Claude}  {déteste}  {le}  {coca}  {éventé.}
+     \itshape     {Jean-Claude}  {déteste}  {le}  {coca}  {éventé.}
 \ex%2
     \label{ex:key:2}
-          {Jean-Claude}  {n’aime}  {pas}  {le}  {café.}
+     \itshape     {Jean-Claude}  {n’aime}  {pas}  {le}  {café.}
 \z
 
 Nous considérons que le segment \textit{Jean-Claude déteste le coca} est bien une unité syntaxique de l’énoncé \REF{ex:key:1}, car il possède la même interprétation sans ou avec le mot \textit{éventé}, bien qu’il se peut que Jean-Claude aime le coca avec bulles. Le problème vient du fait que \textit{le coca éventé} dénote une partie seulement de ce que dénote \textit{le coca}. Pareillement, on considère que la négation intervient dans l’énoncé \REF{ex:key:2} sans que le reste de l’énoncé ne change d’interprétation. On veut dire par là que le sens de \textit{Jean-Claude aime le café} reste inchangé quand cette proposition est niée : la phrase \textit{Jean-Claude n’aime pas le café} est synonyme de \textit{il est faux que Jean-Claude aime le café} et le sens de l’énoncé \REF{ex:key:2} ou de sa paraphrase est bien obtenu par la composition du sens de \textit{Jean-Claude aime le café} et de la négation (\textit{ne…pas} ou \textit{il est faux que}).
@@ -169,24 +169,23 @@ Nous allons continuer à préciser la définition des unités syntaxiques et don
 
 La \textstyleTermes{commutation} avec d’autres segments est un bon critère pour voir si l’on a affaire à une unité syntaxique, puisque les unités syntaxiques, par définition, commutent librement dans leur contexte (commutation qui, rappelons-le, doit préserver le sens du contexte) (voir \sectref{sec:2.2.1} \textit{Commutation et exclusion mutuelle}).
 
-\Definition{\textstyleTermes{Test de commutation}}
-{\textstyleTermes{Test de commutation}. Une unité syntaxique appartient à un paradigme d’unités syntaxiques de même distribution. Si le segment A commute avec un segment qui est clairement une unité syntaxique, alors A est potentiellement une unité syntaxique.}
+\Definition{\textstyleTermes{est de commutation}}
+{\textstyleTermes{test de commutation}. Une unité syntaxique appartient à un paradigme d’unités syntaxiques de même distribution. Si le segment A commute avec un segment qui est clairement une unité syntaxique, alors A est potentiellement une unité syntaxique.}
 
 En particulier, le fait de pouvoir remplacer une portion de l’énoncé par un mot est un bon indice du fait qu’il s’agit d’une unité syntaxique, puisque le mot est une unité syntaxique. Un test courant, appelé \textstyleTermes{test de pronominalisation}, est de vérifier la commutation avec un pronom : tout segment qui commute avec un pronom est une unité syntaxique. Ce test permet en plus de caractériser certains types d’unités selon les pronoms avec lesquels elles commutent. Nous y reviendrons dans la \sectref{sec:3.4.9} sur \textit{Les tests de constituance}.
 
 Considérons l’énoncé suivant et demandons-nous quels sont les segments de deux mots qui forment une unité syntaxique :
 
 \ea\label{ex:3:2:9}
-    {Cet étudiant veut acheter un livre de syntaxe.}
+    \textit{Cet étudiant veut acheter un livre de syntaxe.}
 \z
 
 Cet énoncé contient quatre segments de deux mots qui commutent avec un mot :
 
-\begin{exe}
-\exp{ex:3:2:9}
-\gll {Cet étudiant}  {veut acheter}  {un livre}  {de syntaxe}\\
+\ea\label{ex:3:2:9:star}
+\gll \uline{Cet étudiant}  \uline{veut acheter}  \uline{un livre}  \uline{de syntaxe}\\
      Il  achète  celui  neuf\\
-\end{exe}
+\z
 
 Chacun de ces segments est bien une unité syntaxique. Attention, ce critère ne suffit pas : par exemple, \textit{acheter un} peut commuter avec \textit{parler} et donne une phrase acceptable (\textit{Il veut parler livre de syntaxe}, au sens de \textit{Il aime parler politique}), mais \textit{acheter un} n’est pas clairement une unité syntaxique de cet énoncé, car on ne peut pas l’utiliser isolément, ni l’utiliser dans un autre type de contexte.
 
@@ -210,15 +209,15 @@ On considère en particulier que la réponse à une question est un énoncé aut
 
 Toutes les unités syntaxiques ne sont pas illocutoirement autonomisables, mais un grand nombre le sont et notamment les propositions, groupes substantivaux, groupes prépositionnels, groupes adjectivaux, etc.
 
-\Definition{\textstyleTermes{Test d’automisabilité illocutoire}}
-{\textstyleTermes{Test d’automisabilité illocutoire}. Tout portion (continue ou non) d’un énoncé qui est illocutoirement autonomisable, c’est-à-dire qui peut \textbf{former un énoncé autonome} sans modification de sens, est une unité syntaxique.}
+\Definition{\textstyleTermes{test d’automisabilité illocutoire}}
+{\textstyleTermes{test d’automisabilité illocutoire}. Tout portion (continue ou non) d’un énoncé qui est illocutoirement autonomisable, c’est-à-dire qui peut \textbf{former un énoncé autonome} sans modification de sens, est une unité syntaxique.}
 
 Il s’agit d’un \textbf{critère suffisant} pour être une unité syntaxique, mais pas nécessaire. Ce que de nombreux linguistes appelle le groupe verbal (voir \sectref{sec:3.4.19}) forme une unité syntaxique, mais n’est en général pas illocutoirement autonomisable. Par exemple, si l’on reprend l’exemple de la \sectref{sec:3.2.10}, \textit{cet étudiant, un livre} ou \textit{de syntaxe} sont illocutoirement autonomisables (\textit{C’est un livre de quoi} ? \textbf{\textit{De syntaxe}}), mais pas \textit{veut acheter} ou \textit{veut acheter un livre de syntaxe} ou \textit{veut}, que nous classons pourtant intuitivement parmi les unités syntaxiques.
 
 Pour inclure ces dernières unités, on peut relâcher le critère d’autonomisabilité et considérer non seulement les unités qui peuvent former un tour de parole, mais aussi celles qui peuvent former une \textbf{unité prosodique} dans un tour de parole.
 
-\Definition{\textstyleTermes{Test d’automisabilité prosodique}}
-{\textstyleTermes{Test d’automisabilité prosodique}. Tout segment d’un énoncé qui est prosodiquement autonomisable, c’est-à-dire qui peut \textbf{former une unité prosodique} sans que cela modifie le sens de l’énoncé, est une unité syntaxique.}
+\Definition{\textstyleTermes{test d’automisabilité prosodique}}
+{\textstyleTermes{test d’automisabilité prosodique}. Tout segment d’un énoncé qui est prosodiquement autonomisable, c’est-à-dire qui peut \textbf{former une unité prosodique} sans que cela modifie le sens de l’énoncé, est une unité syntaxique.}
 
 Ce test repose sur la définition préalable des unités prosodiques, ce qui n’est pas sans poser problème. Nous nous contenterons d’une notion intuitive de cohésion prosodique, basée sur la perception d’une coupure mélodique marquée ou non par une pause. Les \textstyleTermes{frontières prosodiques} sont essentiellement marquées en français par l’\textbf{allongement} de la dernière syllabe (la dernière voyelle est tenue plus longtemps qu’ailleurs), des \textbf{variations} importantes de la \textbf{fréquence fondamentale} et pour les frontières majeures des \textbf{pauses}, c’est-à-dire une interruption du son de l’ordre du dixième de seconde au moins.
 
@@ -391,11 +390,11 @@ On verra dans le \chapref{sec:3.4} des tests suffisants pour caractériser une u
 
 L’\textstyleTermes{ordre des mots} (que nous préférons appeler la \textstyleTermes{topologie}, notamment car cela ne concerne pas que les mots ; voir \chapref{sec:3.5}) est une des propriétés qui caractérise les connexions. Les principes généraux sont que l’ordre des unités syntaxiques dépend fortement des connexions : les unités syntaxiques qui sont connectées tendent à se placer \textbf{les unes par rapport aux autres} et \textbf{les unes à côté des autres}. Ceci nous donne deux tests.
 
-\Definition{Test de déplacement}
-{\textstyleTermes{Test de déplacement}. Plus les placements des unités syntaxiques A et de B sont dépendants l’un de l’autre, plus il y a des chances que A et B soit connectés.}
+\Definition{test de déplacement}
+{\textstyleTermes{test de déplacement}. Plus les placements des unités syntaxiques A et de B sont dépendants l’un de l’autre, plus il y a des chances que A et B soit connectés.}
 
-\Definition{\textstyleTermes{Test d’insertion}}
-{\textstyleTermes{Test d’insertion}. Si on ne peut pas insérer entre A et B d’unité qui ne soit pas connectée à A et B, alors A et B sont probablement connectés.}
+\Definition{\textstyleTermes{test d’insertion}}
+{\textstyleTermes{test d’insertion}. Si on ne peut pas insérer entre A et B d’unité qui ne soit pas connectée à A et B, alors A et B sont probablement connectés.}
 
 Les énoncés des tests que nous avons donnés sont très généraux. Ils vont trouver des déclinaisons particulières selon les langues étudiées et les constructions concernées.
 
@@ -631,7 +630,7 @@ Prenons l’exemple de la section précédente et l’arbre de fragmentation que
 \begin{figure}
 \begin{tikzpicture}
   \matrix [matrix of nodes, 
-           nodes={ConcSet,font=\footnotesize}, 
+           nodes={ConcSet,font=\footnotesize\itshape}, 
            row sep=1em, 
            column sep=.333em] (matrix)
           {
@@ -706,19 +705,19 @@ Enfin, les structures de connexion ont généralement la propriété de binarit�
 \end{subfigure}%
 \begin{subfigure}[c]{.5\linewidth}
 \centering
-\caption{\textit{la montée du nationalisme en Catalogne}}
+\caption{\textit{Je l’ai vu hier à l’école.}}
 \begin{tikzpicture}
   \graph [clockwise=3,radius=3em, phase=180, clockwise=3,nodes={draw,ellipse,inner sep=1pt,font=\footnotesize\itshape\strut}] {
-     {[cycle] {je l’ai vu}, {hier}, {à l’école} }
+     {[cycle] {la montée}, {du nationalisme}, {en Catalogne} }
   };
 \end{tikzpicture}
 \end{subfigure}\medskip\\
 \begin{subfigure}[c]{.5\linewidth}
 \centering
-\caption{\textit{Je l’ai vu hier à l’école.}}
+\caption{\textit{la montée du nationalisme en Catalogne}}
 \begin{tikzpicture}
   \graph [clockwise=3,radius=3em, phase=180, clockwise=3,nodes={draw,ellipse,inner sep=1pt,font=\footnotesize\itshape\strut}] {
-     {[cycle] {la montée}, {du nationalisme}, {en Catalogne} }
+     {[cycle] {je l’ai vu}, {hier}, {à l’école} }
   };
 \end{tikzpicture}
 \end{subfigure}%
@@ -921,10 +920,10 @@ Mais on peut aussi accepter que dans cette construction \textit{le} joue un doub
                   column sep=.33em,
                   inner sep = 0pt,
                   font=\small]
-  {plus \& haut \& \& mur\\
-        \& \& le \& \\  
+  { \& haut \& \& mur\\
+      plus \& \& le\\  
   };
-\draw (matrix-1-1) -- (matrix-1-2) -- (matrix-1-4) -- (matrix-2-3);
+\draw (matrix-2-1) -- (matrix-1-2) -- (matrix-1-4) -- (matrix-2-3);
 \end{tikzpicture}\hfill\begin{tikzpicture}
 \matrix (matrix) [matrix of nodes, 
                   nodes = {ConcSet, minimum width=3em},

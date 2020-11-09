@@ -9,6 +9,7 @@
 \renewcommand{\sectref}[1]{section~\ref{#1}}
 
 \newcommand*{\Boite}{\bgroup\normalfont\ttfamily ▢\egroup}
+\setkomafont{descriptionlabel}{\normalfont}
 
 \tcbuselibrary{theorems}
 
@@ -80,7 +81,7 @@
     EdgeLabel/.style = {
       midway,
       above,
-      sloped,
+%       sloped,
       font=\small
     },
     every loop/.style={

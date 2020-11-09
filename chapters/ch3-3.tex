@@ -20,7 +20,7 @@ La hiérarchie de la structure syntaxique se traduit par une asymétrie des comb
 \Definition{\textstyleTermes{dépendance}}
 {Une \textbf{connexion hiérarchisée} est appelée une \textstyleTermes{dépendance}.}
 
-\Definition{\textstyleTermes{gouverne}, \textstyleTermes{dépend}, \textstyleTermes{gouverneur}, \textstyleTermes{dépendant}}
+\Definition{\textstyleTermes{gouverneur}, \textstyleTermes{dépendant}}
 {Si A et B sont connectés et que A est hiérarchiquement supérieur à B, on dit que A \textstyleTermes{gouverne} B et que B \textstyleTermes{dépend} de A. Ou encore que A est le \textstyleTermes{gouverneur} de B et que B est un \textstyleTermes{dépendant} de A. En général, un élément peut avoir un nombre quelconque de dépendants, mais il n’a qu’un seul gouverneur.}
 
 En syntaxe de dépendance, depuis les travaux fondateurs de Lucien Tesnière, les dépendances syntaxiques lient des mots entre eux. Dans notre approche, les dépendances, comme les connexions, peuvent être considérées entre n’importe quelles unités syntaxiques et une même dépendance peut être décrite de façon plus ou moins fine en l’attribuant à des unités syntaxiques plus ou moins larges (voir la \sectref{sec:3.2.14} sur \textit{La connexion et ses instances}). Nous manipulerons des structures de granularité variable : parfois les mots seront les nœuds de la structure, mais parfois nous considérerons des unités plus fines (les syntaxèmes) ou des unités plus larges (voir la \sectref{sec:3.2.18} sur \textit{Structures de connexion, granularité et critères} et la \sectref{sec:3.4.1} sur l’\textit{Arbre de Beauzée-Gladkij}).
@@ -64,11 +64,6 @@ Si A \textbf{gouverne} B, alors A et B forment une unité syntaxique ensemble et
 \end{tblsframed}
 
 Autrement dit, hiérarchiser une connexion revient donc à décider de quel côté est sa tête.
-
-\begin{figure}
-%%[Warning: Draw object ignored]
-\caption{\label{fig:}}
-\end{figure}
 
 On aura noté que pour une unité syntaxique U donnée, \textbf{la tête de U est un élément de U}, en quelque sorte l’élément le plus important de U du point de vue de la syntaxe, tandis que \textbf{le gouverneur de U est un élément extérieur à U}. (On peut se souvenir, pour ne pas confondre les deux termes, que la tête d’une personne fait toujours partie de cette personne.) Illustrons ces notions avec \textit{une très jolie valise} et U = \textit{très jolie}. La tête de U est \textit{jolie}, tandis que le gouverneur de U est \textit{valise}.
 
@@ -154,7 +149,7 @@ Concluons cette section en soulignant une propriété fondamentale que nous expl
             {[nodes={label=below:{‘venir’}}] c},
             {[nodes={label=left:{‘Marie’}}] d},
             {[edge node={node[EdgeLabel] {1}}]a -> d, c->d},
-            {[edge node={node[EdgeLabel] {2}}]a->c},
+            {[edge node={node[midway,right,font=\small] {2}}]a->c},
             {[edge node={node[EdgeLabel] {3}}]a->b}
           };
         \end{tikzpicture}\end{minipage}%
@@ -168,7 +163,7 @@ Concluons cette section en soulignant une propriété fondamentale que nous expl
             {[nodes={label=below:{‘venir’}}] c},
             {[nodes={label=left:{‘Marie’}}] d},
             {[edge node={node[EdgeLabel] {1}}]a -> d, c->b},
-            {[edge node={node[EdgeLabel] {2}}]a->c},
+            {[edge node={node[midway,right,font=\small] {2}}]a->c},
             {[edge node={node[EdgeLabel] {3}}]a->b}
           };
         \end{tikzpicture}
@@ -204,7 +199,7 @@ Concluons cette section en soulignant une propriété fondamentale que nous expl
 
 Au chapitre précédent, nous avons présenté la structure de connexion, qui peut être un \textbf{graphe} ou plus généralement un graphe à bulles ou un \textbf{polygraphe} (voir l’\encadref{fig:3.2.23} \textit{Graphe à bulles et polygraphe}). Les connexions sont des liens syntaxiques non hiérarchisés : elles lient deux unités syntaxiques sans attribuer de rôle particulier à l’un ou l’autre.
 
-\Definition{\textstyleTermes{structure de dépendance}, \textstyleTermes{partielle}}
+\Definition{\textstyleTermes{structure de dépendance (partielle)}}
 {Une \textstyleTermes{structure de dépendance} est une structure du même type qu’une structure de connexion, mais dont certains liens syntaxiques sont des dépendances, c’est-à-dire des liens hiérarchisés liant un gouverneur à un dépendant. La structure de dépendance est dite \textstyleTermes{partielle} quand au moins une connexion n’est pas hiérarchisée.}
 
 Pour que la structure de dépendance représente une \textbf{hiérarchie}, il ne suffit pas que chaque lien soit hiérarchisé. Il faut que la structure possède une autre propriété, l’\textbf{acyclicité}, c’est-à-dire qu’elle ne doit contenir de cycles orientés (voir l’\encadref{fig:1.2.3} \textit{Graphe et arbre}). Autrement dit, une structure de dépendance ne contient pas de \textbf{cycles de dépendances}, c’est-à-dire de boucles que l’on peut parcourir de gouverneur en dépendant pour revenir au même point. (Nous verrons une exception au \chapref{sec:5.4} lorsque nous étudierons les pronoms interrogatifs et relatifs.)
@@ -212,8 +207,7 @@ Pour que la structure de dépendance représente une \textbf{hiérarchie}, il ne
 L’acyclicité n’exclut pas les cycles non orientés de connexions comme on l’a vu dans l’\encadref{fig:3.2.24} \textit{Cycle de connexions}.
 
 \begin{figure}
-\begin{minipage}{.5\textwidth}\centering
-\textit{Marie commet une faute envers Pierre}\medskip\\
+\begin{subfigure}[b]{.5\textwidth}\centering
 \begin{tikzpicture}[every node/.style={font=\small\strut}]
 \node at (0,0) (A) [ConcSet] {Marie commet};
 \node at (2,2) (B) [ConcSet] {une faute};
@@ -223,9 +217,9 @@ L’acyclicité n’exclut pas les cycles non orientés de connexions comme on l
 \draw[-{Triangle[]}] (A) -- (C);
 \draw[-{Triangle[]}] (B) -- (C);
 \end{tikzpicture}
-\end{minipage}%                         
-\begin{minipage}{.5\textwidth}\centering
-\textit{la montée du nationalisme en Catalogne}\medskip\\
+\caption{\textit{Marie commet une faute envers Pierre}}
+\end{subfigure}%                         
+\begin{subfigure}[b]{.5\textwidth}\centering
 \begin{tikzpicture}[every node/.style={font=\small\strut}]
 \node at (0,0) (A) [ConcSet] {la montée};
 \node at (2,2) (B) [ConcSet] {du nationalisme};
@@ -235,7 +229,8 @@ L’acyclicité n’exclut pas les cycles non orientés de connexions comme on l
 \draw[-{Triangle[]}] (A) -- (C);
 \draw[-{Triangle[]}] (B) -- (C);
 \end{tikzpicture}
-\end{minipage}
+\caption{\textit{la montée du nationalisme en Catalogne}}
+\end{subfigure}
 \caption{Cycles non orientés\label{fig:}}
 \end{figure}
 
@@ -299,8 +294,8 @@ Notons pour conclure cette section que l’on utilise généralement une termino
 
     \begin{figure}
       \caption{Arbres de dépendance de \citet[10]{kern1883zur}}
-    \includegraphics[width=.33\textwidth]{figures/Kern1883-1.png}
-    \includegraphics[width=.33\textwidth]{figures/Kern1883-2.png}\medskip\\
+    \includegraphics[height=2cm]{figures/Kern1883-1.png}
+    \includegraphics[height=2cm]{figures/Kern1883-2.png}\medskip\\
     \raggedright 
     \textit{Eine alte Kirche wurde ausgebessert}\\
     ‘Une ancienne église a été reconstruite’
@@ -326,7 +321,7 @@ Notons pour conclure cette section que l’on utilise généralement une termino
     Si cette analyse contient déjà des symboles spéciaux (comme les flèches à double pointe \textrm{$\twoheadrightarrow $} pour les relatives), ce n’est que plus tard que Tesnière introduira les symboles en T pour la translation. Les structures de l’ouvrage de 1959 ne sont plus totalement hiérarchique comme le montre notre interprétation polygraphique ci-dessous de la représentation proposée par Tesnière pour \textit{Écrivez dans le livre de votre ami} !.
 
     \begin{figure}
-    \caption{\color{red}Please provide a caption}
+    \caption{Interprétation polygraphique d'un stemma}
     \begin{subfigure}[b]{.5\textwidth}\centering
 % %     \includegraphics[width=4cm]{figures/StemmadeTesniere}
          \begin{tikzpicture}
@@ -372,7 +367,7 @@ Notons pour conclure cette section que l’on utilise généralement une termino
           \draw[thick,shorten >=2mm] (le livre) -- (2,2);
           \draw[thick] (ami) -- (votre);
         \end{tikzpicture}
-    \caption{Interprétation polygraphique du stemma}
+    \caption{Interprétation polygraphique}
     \end{subfigure}
     \end{figure}
 }
@@ -396,6 +391,7 @@ Si l’on a la structure de connexion de cette phrase (voir \chapref{sec:3.2}) e
 
 \begin{figure}
 \vskip\baselineskip
+\caption{Hiérarchisation d'une structure de connexion}
 \begin{tabular}{@{}>{\centering}m{5cm} m{2em} >{\centering\arraybackslash}m{5cm} @{}}
   \begin{tikzpicture}[every node/.style={ConcSet}]
     \node at (0,0)   (Pierre) {Pierre};
@@ -464,8 +460,8 @@ Passons maintenant à l’autonomisabilité prosodique, le deuxième critère qu
 
 L’autonomisabilité prosodique donne le critère suivant.
 
-\Definition{\textstyleTermes{Critère prosodique}}
-{\textstyleTermes{Critère prosodique~}: si X est le gouverneur de AB et si X \textbf{peut former une unité prosodique avec} A sans B (sans changer significativement le sens), alors A est \textbf{la tête de l’unité} AB.}
+\Definition{\textstyleTermes{critère prosodique}}
+{\textstyleTermes{critère prosodique~}: si X est le gouverneur de AB et si X \textbf{peut former une unité prosodique avec} A sans B (sans changer significativement le sens), alors A est \textbf{la tête de l’unité} AB.}
 
 Les deux critères que nous venons de proposer sont insuffisants pour plusieurs raisons.
 
@@ -494,10 +490,10 @@ Ceci nous amène à considérer quatre types d’énoncés : \textstyleTermes{as
 
 Les assertions peuvent être acceptés ou refusées par le destinataire ; elles se caractérisent par le fait de pouvoir être falsifiées par «~\textit{C’est faux.}~» ou au contraire validées par «~\textit{C’est vrai.}~». Par exemple, si quelqu’un nous dit «~\textit{J’ai mal au ventre}.~», on peut lui répondre «~\textit{C’est faux.}~», mais s’il dit «~\textit{Aie} !~», ce n’est plus possible. De même, on ne peut répondre «~\textit{C’est faux.}~» a une question ou une injonction. Les questions attentent une réponse. Les injonctions attendent généralement un acte non verbal. Les exclamations attendent simplement d’être partagées par le destinataire éventuel.
 
-La fonction illocutoire a souvent un marquage spécifique. Les éléments qui servent à marquer la fonction illocutoire seront appelés des \textstyleTermes{marqueurs illocutoires}.
+La fonction illocutoire a souvent un marquage spécifique. Les éléments qui servent à marquer la fonction illocutoire seront appelés des \textstyleTermes{marqueurs illocutoires}. La fonction illocutoire de l'énoncé conditionne son contexte, caractérise le type d'action que va effectuer en retour l'interlocuteur : acquiescer, répondre, obéir, etc. En conséquence, on considère que l'élément de l'énoncé qui porte la fonction illocutoire est la tête de l'énoncé.
 
-\Definition{\textstyleTermes{tête syntaxique de l’énoncé}}
-{Nous faisons l’hypothèse que les \textbf{marqueurs illocutoires} sont \textbf{portés} par la \textstyleTermes{tête syntaxique de l’énoncé} et la caractérise.}
+\Definition{\textstyleTermes{critère illocutoire}}
+{\textstyleTermes{critère illocutoire}. Les \textbf{marqueurs illocutoires} sont \textbf{portés} par la \textbf{tête syntaxique de l’énoncé} et la caractérise.}
 
 En français, le principal marqueur illocutoire est la prosodie (transcrit à l’écrit par des signes de ponctuation comme « ?~» ou « !~»). Mais pour les énoncés à tête verbale en français, il existe d’autres marques. Voyons sur un exemple :
 
@@ -639,7 +635,7 @@ Les critères distributionnels s’appliquent à une unité syntaxique U dont on
 
 Nous allons voir deux critères distributionnels. Le premier, le critère distributionnel avec effacement suppose que A et B ne sont pas mutuellement indissociables pour être appliqué.
 
-\Definition{\textstyleTermes{Critère distributionnel avec effacement}}
+\Definition{\textstyleTermes{critère distributionnel avec effacement}}
 {\textstyleTermes{Critère distributionnel avec effacement~}: Si A est autonomisable (et donc B est effaçable) et que A a la \textbf{même valence supérieure} que U = A ${\oplus}$ B alors A est une \textbf{tête distributionnelle} de U. Inversement, si A est autonomisable (et B est effaçable), mais que A n’a \textbf{pas} la même valence supérieure que U = A ${\oplus}$ B, alors B est une \textbf{tête distributionnelle} de U.}
 
 Ce critère généralise le critère d’effacement simple. Le critère d’effacement simple s’applique à une unité U à l’intérieur d’un énoncé donné, sans faire varier le gouverneur de U. Ici on considère la distribution de U, c’est-à-dire tous les gouverneurs potentiels de U.
@@ -691,7 +687,7 @@ Le critère distributionnel avec effacement n’est applicable à une unité U =
 \Definition{\textstyleTermes{Critère distributionnel sans effacement}}
 {\textstyleTermes{Critère distributionnel sans effacement} : C’est seulement si A est une \textbf{tête distributionnelle} de U que la commutation de A avec A’ peut donner une nouvelle unité U’ dont la \textbf{valence supérieure} est \textbf{différente} de celle de U. Autrement dit, si U = A ${\oplus}$ B, A commute avec A’ et U’ = A’ ${\oplus}$ B a une valence supérieure différente de A, alors A est une tête distributionnelle de U.}
 
-(Voir l’exercice 4 de ce chapitre et sa correction pour une autre formulation du critère due à Paul \citealt[8]{garde1977ordre}.\todo{Garde 1977 does not have a page no 8}) Si l’on applique ce critère à une unité U = A ${\oplus}$ B dont on veut déterminer la tête, on considèrera le paradigme des éléments A’ qui commutent avec A et le paradigme des éléments B’ qui commute avec B et on comparera les valences supérieures de U~= A ${\oplus}$ B, U’ = A’ ${\oplus}$ B et U” = A ${\oplus}$ B’, c’est-à-dire le paradigme des unités X qui peuvent gouverner ces différentes unités.
+(Voir l’exercice 4 de ce chapitre et sa correction pour une autre formulation du critère due à Paul \citealt{garde1977ordre}.) Si l’on applique ce critère à une unité U = A ${\oplus}$ B dont on veut déterminer la tête, on considèrera le paradigme des éléments A’ qui commutent avec A et le paradigme des éléments B’ qui commute avec B et on comparera les valences supérieures de U~= A ${\oplus}$ B, U’ = A’ ${\oplus}$ B et U” = A ${\oplus}$ B’, c’est-à-dire le paradigme des unités X qui peuvent gouverner ces différentes unités.
 
 \begin{figure}
 \caption{\label{fig:}Application du critère distributionnel sans effacement}
@@ -734,7 +730,7 @@ Reprenons l’exemple de U = \textit{à Marie,} avec A = \textit{à} et B = \tex
 
 Le substantif B = \textit{Marie} peut commuter avec beaucoup de groupes substantivaux sans que cela n’affecte la valence supérieure du groupe (\textit{Pierre téléphone à}\textbf{ \textbf{une} \textit{amie/à} \textit{tout le monde/aux} \textit{autres/…}}), mais B peut difficilement commuter avec un inanimé (\textit{Pierre téléphone à} \textbf{\textit{quelqu’un}};~\textsuperscript{?*}\textit{Pierre téléphone à} \textbf{\textit{quelque chose}}). De plus, B peut commuter avec un infinitif, mais pas dans ce contexte (\textit{Pierre commence} \textbf{\textit{à partir}} vs *\textit{Pierre téléphone à} \textbf{\textit{partir}}). On en déduit que la préposition \textit{à} est plutôt la tête distributionnelle, mais que le substantif contrôle quand même une partie de la distribution.
 
-\Definition{\textstyleTermes{faible}}
+\Definition{\textstyleTermes{tête faible}}
 {Lorsqu’un deuxième élément contrôle également la distribution de l’unité U, la tête de U est dite \textstyleTermes{faible}.}
 
 Le groupe prépositionnel est donc une unité à tête faible. Ceci nous permet de postuler la structure de dépendance ci-dessous (figure de gauche). Mais on peut aussi vouloir privilégier le rôle de tête de la préposition et obtenir un arbre de dépendance (figure de droite).
@@ -783,7 +779,7 @@ Notons qu’il existe une solution plus «~lexicale~» au fait que la prépositi
 
 La \textbf{tête distributionnelle} est aussi appelée la \textstyleTermes{tête externe}, parce que c’est l’élément qui est «~visible~» de l’extérieur d’une unité syntaxique. On peut opposer aux critères externes de l’effacement et de la distribution, des critères internes, que nous appellerons les \textstyleTermes{critères de rection}. Ceux-ci s’appliquent à la combinaison de deux éléments, indépendamment des contextes où peut être placée l’unité formée par leur combinaison et donc sans regard pour ce qui se passe à l’extérieur de cette combinaison.
 
-\Definition{\textstyleTermes{tête interne}, \textstyleTermes{régissant}, \textstyleTermes{régi}}
+\Definition{\textstyleTermes{tête interne}, \textstyleTermes{régissant}}
 {On appelle \textstyleTermes{tête interne} d’une combinaison l’élément qui semble imposer à l’autre sa forme, sa catégorie ou sa position linéaire. La tête interne est encore appelée le \textstyleTermes{régissant} et l’élément qui dépend de lui est dit \textstyleTermes{régi}.}
 
 Par exemple, le verbe \textsc{téléphoner} impose à son complément d’être combiné avec la proposition À (\textit{Pierre téléphone à Marie}) tandis que le verbe \textsc{regarder} demande un complément nu (\textit{Pierre regarde Marie}).
@@ -803,10 +799,11 @@ Le critère rectionnel permet par exemple de confirmer que l’auxiliaire est bi
 
 On voit que l’auxiliaire du passé impose au verbe lexical d’être au participe passé, tandis que l’auxiliaire du futur impose au verbe d’être à l’infinitif. On en déduit que l’auxiliaire régit le verbe auxilié.
 
-Une formulation inverse du critère rectionnel est le \textstyleTermes{critère d’indépendance des codépendants}. On appelle \textstyleTermes{codépendants} deux éléments qui dépendent du même regissant.~
+Une formulation inverse du critère rectionnel est le \textstyleTermes{critère d’indépendance des codépendants}. On appelle \textstyleTermes{codépendants} deux éléments qui dépendent du même regissant.
 
-\Definition{???}
-{Un élément n’impose pas à un codépendant sa forme, sa catégorie ou sa position linéaire.}
+\begin{tblsframed}{}
+Un élément n’impose pas à un codépendant sa forme, sa catégorie ou sa position linéaire.
+\end{tblsframed}
 
 Un élément peut toutefois occuper la place habituellement dévolue à un de ses codépendant, mais il ne contrôle pas la place où celui-ci est déplacé.
 
@@ -863,8 +860,8 @@ En effet, ici clairement, \textit{les autres} renvoie aux autres livres et pas a
 
 Un élément X comme \textit{rouge} qui prend son gouverneur syntaxique comme argument sémantique, c’est-à-dire qui est à la fois dépendant syntaxique et gouverneur sémantique d’un élément Y est appelé \textstyleTermes{modifieur} de Y (voir le \chapref{sec:3.6} sur la \textit{Structure syntaxique profonde}). Les modifieurs sont toujours effaçables a priori car ils ne sont pas indispensables à leur gouverneur syntaxique. Ceci nous donne un nouveau critère sémantique qui est le pendant du critère d’effacement simple (il s’applique quand le critère d’effacement simple ne s’applique pas) et que nous appelons donc le critère sémantique de non-effacement.
 
-\Definition{\textstyleTermes{Critère sémantique de non-effacement}}
-{\textstyleTermes{Critère sémantique de non-effacement~}: si l’unité U = AB est gouverné syntaxiquement par X, que A est le \textbf{gouverneur sémantique} de B et A est \textbf{non effaçable}, alors A est une \textbf{tête syntaxique} de U.}
+\Definition{\textstyleTermes{critère sémantique de non-effacement}}
+{\textstyleTermes{critère sémantique de non-effacement~}: si l’unité U = AB est gouverné syntaxiquement par X, que A est le \textbf{gouverneur sémantique} de B et A est \textbf{non effaçable}, alors A est une \textbf{tête syntaxique} de U.}
 
 Autrement dit, si A est non effaçable, il ne peut être un modifieur de B. Comme il est le gouverneur sémantique de B, il ne peut être son dépendant syntaxique et il a donc des propriétés de tête.
 
@@ -883,16 +880,16 @@ On peut encore appliquer le critère au cas des formes verbales comme \textit{ch
 
     \ea
     \ea  Félix achète un verre à vin (\textit{et le casse}).
-    \ex  Félix achète un verre de vin (\textit{et le boit}).
+    \ex  Félix achète un verre de vin (\textit{et le boit}).\label{ex:3-3-24b}
     \z
     \z
 
     On peut supposer que ces deux exemples ont la même structure syntaxique, que dans les deux cas \textit{un verre} est la tête syntaxique de l’objet de \textit{achète} et que \textit{vin} est complément de la préposition \textit{à} ou \textit{de} et dépend de \textit{un verre} par l’intermédiaire de cette préposition. Par contre, du point de vue sémantique, les situations sont très différentes : si ce que Félix casse est bien un verre, ce qu’il boit est du vin. Dans \textit{un verre de vin}, \textit{un verre} sert uniquement à mesurer la quantité de vin et pas à déterminer la catégorie ontologique de la chose désignée par le syntagme \textit{un verre de vin}. On en déduit donc que la tête sémantique de \textit{verre à vin} est \textit{verre}, tandis que la tête sémantique de \textit{verre de vin} est \textit{vin}. Il y a ainsi une distorsion sémantique-syntaxe dans la phrase \textit{Félix achète/boit un verre de vin}. Nous représentons ci-dessous son arbre de dépendance syntaxique et son graphe sémantique (pour ce dernier on consultera les chapitres \ref{sec:1.2}, \ref{sec:2.4} ou \ref{sec:3.6}) :
 
-    \ea
+    \ea Représentations syntaxique et sémantique de \REF{ex:3-3-24b}\\
     \begin{minipage}[c]{.5\linewidth}
     \begin{forest} for tree={font=\itshape}
-      [boit
+      [achète
         [Félix]
         [verre
           [un]
@@ -908,16 +905,16 @@ On peut encore appliquer le critère au cas des formes verbales comme \textit{ch
                           row sep=1cm,
                           column sep=-10pt] 
           {
-            \& \node [label=above:{‘boire’}, CircleNode] (boire) {}; 
+            \& \node [label=above:{‘acheter’}, CircleNode] (acheter) {}; 
             \& \& \node [label=above:{‘verre’}, CircleNode] (verre) {};\\
             \node [label=below:{\strut‘Félix’}, CircleNode] (Felix) {}; 
             \& \& \node [label=below:{\strut\vphantom{F}‘vin’}, CircleNode] (vin) {}; 
             \& \& \node [label=below:{\strut\vphantom{F}‘un’}, CircleNode] (un) {};\\
           };
-          \draw[-{Triangle[]}] (boire) -- (Felix) node[EdgeLabel] {1};
-          \draw[-{Triangle[]}] (verre) -- (vin) node[EdgeLabel] {1};
-          \draw[-{Triangle[]}] (boire) -- (vin) node[EdgeLabel] {2};
-          \draw[-{Triangle[]}] (un) -- (verre) node[EdgeLabel] {1};
+          \draw[-{Triangle[]}] (acheter) -- (Felix) node[left,midway,font=\small] {1};
+          \draw[-{Triangle[]}] (verre) -- (vin)     node[left,midway,font=\small] {1};
+          \draw[-{Triangle[]}] (acheter) -- (vin)   node[right,midway,font=\small] {2};
+          \draw[-{Triangle[]}] (un) -- (verre)      node[right,midway,font=\small] {1};
     \end{tikzpicture}\end{minipage}
     \todo[inline]{baseline problems}
     \z
@@ -945,7 +942,7 @@ On peut encore appliquer le critère au cas des formes verbales comme \textit{ch
     lit. `Antony nagea à travers la rivière'
     \z
 
-    Cette \textbf{réorganisation syntaxique} a été décrite par \citet{tesniere1959elements} : \chapref{sec:131}) et nommé par lui \textstyleTermesapprof{métataxe}. Le phénomène a été rendu fameux par les études de Leonard Talmy (voir son article de 1983, \textit{How language structures space}, ou son ouvrage de 2003, \textit{Toward a cognitive semantics}). Talmy montre que certaines langues, comme le français, \textbf{favorise le déplacement} (\textit{path-incorporating}), lequel est exprimé par le verbe (\textit{entrer, sortir, monter, descendre, traverser,} etc.), alors que celui-ci est exprimé par une préposition ou une particule dépendant du verbe en anglais (\textit{in, out, up, down, accross}, etc.). D’autres langues, comme l’anglais, \textbf{favorise à l’inverse} \textbf{la manière} (\textit{manner-incorporating}) dont le mouvement a lieu (\textit{swim} ‘nager’, \textit{run} ‘courir’, \textit{drive} ‘se déplacer en voiture’, \textit{bike} ‘se déplacer en vélo’, etc.), alors que celle-ci est généralement exprimée par un modifieur en français (\textit{à la nage, en courant, en voiture, en vélo,} etc.). Il ne s’agit pas à proprement parler d’un exemple de distorsion syntaxe-sémantique (puisque finalement chaque langue adapte sa hiérarchie sémantique et syntaxique à son lexique dans ce cas), mais plutôt d’une illustration du fait que la hiérarchie syntaxique ne découle pas seulement d’une hiérarchie de l’information à communiquer, mais aussi de propriétés de la langue qui sert à l’exprimer.
+    Cette \textbf{réorganisation syntaxique} a été décrite par \citet[chapitre 131]{tesniere1959elements} et nommé par lui \textstyleTermesapprof{métataxe}. Le phénomène a été rendu fameux par les études de Leonard Talmy (voir son article de 1983, \textit{How language structures space}, ou son ouvrage de 2003, \textit{Toward a cognitive semantics}). Talmy montre que certaines langues, comme le français, \textbf{favorise le déplacement} (\textit{path-incorporating}), lequel est exprimé par le verbe (\textit{entrer, sortir, monter, descendre, traverser,} etc.), alors que celui-ci est exprimé par une préposition ou une particule dépendant du verbe en anglais (\textit{in, out, up, down, accross}, etc.). D’autres langues, comme l’anglais, \textbf{favorise à l’inverse} \textbf{la manière} (\textit{manner-incorporating}) dont le mouvement a lieu (\textit{swim} ‘nager’, \textit{run} ‘courir’, \textit{drive} ‘se déplacer en voiture’, \textit{bike} ‘se déplacer en vélo’, etc.), alors que celle-ci est généralement exprimée par un modifieur en français (\textit{à la nage, en courant, en voiture, en vélo,} etc.). Il ne s’agit pas à proprement parler d’un exemple de distorsion syntaxe-sémantique (puisque finalement chaque langue adapte sa hiérarchie sémantique et syntaxique à son lexique dans ce cas), mais plutôt d’une illustration du fait que la hiérarchie syntaxique ne découle pas seulement d’une hiérarchie de l’information à communiquer, mais aussi de propriétés de la langue qui sert à l’exprimer.
 }
 \section{Synthèse des critères pour la tête syntaxique}\label{sec:3.3.20}
 
@@ -1328,7 +1325,7 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
 
 La dépendance induit une autre relation : la \textstyleTermes{dominance} (voir l’encadré \textit{Dépendance, dominance et transitivité} ci-dessous pour une définition formelle).
 
-\Definition{\textstyleTermes{dominé}}
+\Definition{\textstyleTermes{domination}}
 {Nous dirons qu’un nœud B est \textstyleTermes{dominé} par le nœud A si B = A ou bien si B dépend de A ou bien si B dépend d’un dépendant de A et ainsi de suite. Autrement dit, B est dominé par A si B appartient au sous-arbre de dépendance dont A est la racine.}
 
 Prenons un exemple :
@@ -1450,8 +1447,8 @@ Si l’on adopte une représentation syntaxique très granulaire où les syntax�
 
 Une dernière façon de caractériser une tête repose sur l’organisation linéaire ou \textstyleTermes{topologie} (traditionnellement appelée l’\textstyleTermes{ordre des mots}) (voir \chapref{sec:3.5}). Le test de recouvrement est un cas particulier de la propriété de projectivité que nous présenterons à la \sectref{sec:3.5.14} \textit{Projectivité et dépendance projective}. L’idée générale est que les dépendants tendent à se placer à côté de leur gouverneur. Cela n’est pas toujours possible~si le gouverneur B a beaucoup de dépendants et il est donc possible qu’un autre dépendant de B se place entre B et son dépendant C. Mais par contre, il n’est généralement pas possible que le gouverneur de B se place entre B et son dépendant C.
 
-\Definition{\textstyleTermes{Critère de recouvrement}}
-{\textstyleTermes{Critère de recouvrement}. Si A est \textbf{entre} B et C et que B et C sont connectés, alors il est peu probable que A gouverne B. Ou dit autrement, si A gouverne B, alors la connexions entre B et un de ses dépendants C ne peut généralement \textbf{pas recouvrir} A.}
+\Definition{\textstyleTermes{critère de recouvrement}}
+{\textstyleTermes{critère de recouvrement}. Si A est \textbf{entre} B et C et que B et C sont connectés, alors il est peu probable que A gouverne B. Ou dit autrement, si A gouverne B, alors la connexions entre B et un de ses dépendants C ne peut généralement \textbf{pas recouvrir} A.}
 
 \begin{figure}
       \begin{tikzpicture}
@@ -1502,11 +1499,14 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
 
 \exercices{%\label{sec:3.3.35}
     \exercice{1} Nous donnons ci-après une analyse faite par Claude Buffier au début du 18\textsuperscript{e} siècle. Nous vous proposons de traduire graphiquement cette analyse à l’aide d’un diagramme. Vous représenterez les relations entre les unités syntaxiques par des flèches.
-
+    
+    \begin{quote}
     «~\textit{Un homme qui étourdit les gens qu’il rencontre avec de frivoles discours a coutume de causer beaucoup d’ennui à tout le monde}. Je dis que dans ce discours, tous les mots sont pour modifier le nom \textit{un homme}, et le verbe \textit{a coutume}, et que c’est en cela que consiste tout le mystère et toute l’essence de la syntaxe des langues : 1° le nom \textit{un homme}, est modifié d’abord par le \textit{qui} déterminatif : car il ne s’agit pas ici d’un homme en général, mais d’\textit{un homme} marqué et déterminé en particulier par l’action qu’il fait d’\textit{étourdir} ; de même il ne s’agit pas d’un homme \textit{qui étourdit} en général, mais \textit{qui étourdit} en particulier \textit{les gens}, et non pas les gens en général, mais en particulier les gens \textit{qu’il rencontre}. Or cet homme qui étourdit ceux qu’il rencontre, est encore particularisé par \textit{avec des discours}, et \textit{discours} est encore particularisé par \textit{frivoles}. On peut voir le même dans la suite de la phrase : \textit{a coutume} est particularisé par \textit{de causer}, \textit{de causer} est particularisé par ses deux régimes, par son régime absolu, savoir, \textit{beaucoup d’ennui}, et par son régime respectif, \textit{à tout le monde}. Voilà donc comment tous les mots d’une phrase quelque longue qu’elle soit, ne sont que pour modifier le nom et le verbe.~» (\citealt{buffier1709grammaire}, p.~84, nous modernisons l’orthographe)
+    \end{quote}
 
     \exercice{2} Nous donnons ci-après une analyse faite par Claude Chesneau dit Du Marsais dans l’article «~Construction~» de l’\textit{Encyclopédie} de Diderot et d’Alembert. Nous vous proposons de traduire graphiquement cette analyse à l’aide d’un diagramme. Vous représenterez les unités syntaxiques considérées par des bulles ; les termes relationnels seront associés à des flèches entre les bulles et les termes non relationnels seront traités comme des étiquettes des bulles.
 
+    \begin{quote}
     «~\textit{Celui qui me suit, dit Jésus-Christ, ne marche point dans les ténèbres} : considérons d’abord cette phrase ou cet assemblage de mots grammaticalement, c’est-à-dire selon les rapports que les mots ont entre eux ; rapports d’où résulte le sens : je trouve que cette phrase, au lieu d’une seule proposition, en contient trois.
 
     1°. \textit{Celui} est le sujet de \textit{ne marche point dans les ténèbres} ; et voilà une proposition principale ; \textit{celui}, étant le sujet, est ce que les Grammairiens appellent \textit{le nominatif du verbe}. \textit{Ne marche point dans les ténèbres}, c’est l’attribut ; […] \textit{ne point} est la négation, qui nie du sujet l’action de marcher dans les ténèbres.
@@ -1518,6 +1518,7 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
     \textit{Qui} est le sujet de cette proposition incidente ; \textit{me suit} est l’attribut ; \textit{suit} est le verbe ; \textit{me} est le dé​​terminant ou terme de l’action de \textit{suit} : […]
 
     3°. \textit{Dit Jésus-Christ}, c’est une troisième proposition qui fait une incise ou sens détaché ; c’est un adjoint : en ces occasions la construction usuelle met le sujet de la proposition après le verbe : \textit{Jésus-Christ} est le sujet et \textit{dit} est l’attribut.~» (Dumarsais, article «~Construction~», \textit{Encyclopédie}, vol. 4, 1754)
+    \end{quote}
 
     \exercice{3} Analyse distributionnelle. Montrer que les formes verbales infinitives ont une valence supérieure proche de celle des groupes substantifs. Montrer qu’il existe néanmoins des différences (on pourra regarder les contextes proposés par des verbes comme \textsc{vouloir,} \textsc{pouvoir} ou \textsc{tenter).}
 
@@ -1526,15 +1527,15 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
         \begin{enumerate}
         \item dans un contexte donné, A peut être supprimé, non B :
 
-        X (AB) → X (B) et non *X (A)
+        \begin{center} X (AB) → X (B) et non *X (A) \end{center}
 
        \item dans un contexte donné, A peut être remplacé par autre chose, B ne le peut pas :
 
-        X (AB) → X (A’B) et non *X (AB’)
+        \begin{center} X (AB) → X (A’B) et non *X (AB’) \end{center}
 
        \item une modification du contexte entraîne un changement de B, non de A :
 
-        X (AB) → Y (AB’) et non *Y (A’B)
+        \begin{center}  X (AB) → Y (AB’) et non *Y (A’B) \end{center}
         \end{enumerate}
 
     Montrer qu’il s’agit, dans l’intention, des critères distributionnels avec et sans effacement, mais que, pour être corrects, les critères doivent être énoncés et formalisés de manière légèrement différente.
@@ -1707,9 +1708,9 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
      [a coutume 
         [de causer
             [beaucoup d’ennui, edge label={%
-                            node[near start,left=1em,font=\normalfont]{régime absolu}}]    
+                            node[near start,left=1em,font=\small\itshape]{régime absolu}}]    
             [à tout le monde, edge label={%
-                            node[near start,right=1em,font=\normalfont]{régime respectif}}]
+                            node[near start,right=1em,font=\small\itshape]{régime respectif}}]
         ]
      ]
     \end{forest}
@@ -1759,11 +1760,11 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
     \begin{enumerate}[label=1\alph*.]
     \item si A est supprimable dans un contexte, il doit l’être dans tous les contextes :
 
-        pour tout X, X (AB) → X (B)
+        \begin{center} pour tout X, X (AB) → X (B)\end{center}
 
-    \item inversement, A doit pouvoir être ajouté à B dans tous les contextes
+    \item inversement, A doit pouvoir être ajouté à B dans tous les contextes :
 
-        pour tout X, X (B) → X (AB).
+        \begin{center}pour tout X, X (B) → X (AB).\end{center}
     \end{enumerate}
     Les critères 2 et 3 visent le critère distributionnel sans effacement. La quantification sur les contextes doit être précisée comme précédemment. Le critère 2 dit deux choses : d’une part, que A peut être remplacé par un A’ dans n’importe quel contexte (à condition évidemment que A’ puisse se combiner avec B dans au moins un contexte) :
     

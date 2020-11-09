@@ -187,16 +187,16 @@ Il est d’usage dans les arbres de constituants avec têtes (plats ou pas) d’
         }
     };
 \end{scope}
+\begin{scope}[every node/.style={font=\itshape}]
 \node[below=1pt of root-1-1] {beaucoup};
 \node[below=1pt of root-1-2-1] {de};
 \node[below=1pt of root-1-2-2] {gens};
-
 \node[below=1pt of root-2] {aimeraient};
-
 \node[below=1pt of root-3-1] {passer};
 \node[below=1pt of root-3-2] {Noël};
 \node[below=1pt of root-3-3-1] {en};
 \node[below=1pt of root-3-3-2] {Laponie};
+\end{scope}
 \end{tikzpicture}
 
 \caption{\label{fig:}Arbre de constituants plat avec explicitation des têtes}
@@ -237,6 +237,7 @@ L’arbre de constituants plat est équivalent à l’arbre de Beauzée-Gladkij 
         }
     };
 \end{scope}
+\begin{scope}[every node/.style={font=\itshape}]
 \node[below=1pt of root-1-2] (beaucoup) {beaucoup};
 \node[below=1pt of root-1-3-2] (de) {de};
 \node[below=1pt of root-1-3-3] (gens) {gens};
@@ -247,7 +248,7 @@ L’arbre de constituants plat est équivalent à l’arbre de Beauzée-Gladkij 
 \node[below=1pt of root-3-4]   (Noel) {Noël};
 \node[below=1pt of root-3-5-2] (en) {en};
 \node[below=1pt of root-3-5-3] (Laponie) {Laponie};
-
+\end{scope}
 \begin{scope}[
         on background layer,
         every node/.style={fill=black!20,inner sep=1pt}, 
@@ -265,7 +266,7 @@ L’arbre de constituants plat est équivalent à l’arbre de Beauzée-Gladkij 
 \smallskip\\
 \begin{tikzpicture} \draw[ConversionArrow, very thick] (0,0) -- (0,-1);\end{tikzpicture}
 \medskip\\
-\fbox{\begin{forest} for tree = {fill=black!20}
+\fbox{\begin{forest} for tree = {fill=black!20,font=\itshape}
 [aimeraient
   [beaucoup [de [gens]]]
   [passer
@@ -691,7 +692,7 @@ Dans un tel arbre, chaque décomposition correspond à une connexion, comme nous
 
 Dans un arbre de constituants binaire, un nœud terminal (mot ou syntaxème selon la granularité de l’analyse) peut être la tête de plusieurs constituants : ainsi \textit{passer} est-il à la fois la tête de \textit{passer Noël} et de \textit{passer Noël en Laponie} ou \textit{aimeraient} est-il la tête de \textit{aimeraient passer Noël en Laponie} et de la phrase entière. Les différents constituants dont un nœud terminal est la tête sont appelés ses \textstyleTermes{projections}. Le plus grand constituant dont un nœud terminal est la tête est sa \textstyleTermes{projection maximale}. Les constituants entre un nœud terminal et sa projection maximale sont appelés des \textstyleTermes{constituants intermédiaires}.
 
-\Definition{\textstyleTermes{stratifié}, \textstyleTermes{stratification}}
+\Definition{\textstyleTermes{stratification}}
 {Un arbre binaire contient ainsi davantage de «~strates~» qu’un arbre plat. Nous dirons qu’il est davantage \textstyleTermes{stratifié} et l’opération qui consiste à ajouter des constituants intermédiaires est appelée la \textstyleTermes{stratification}.}
 
 \section{Projections partielles et ordre de saillance}\label{sec:3.4.15}
@@ -784,6 +785,7 @@ L’arbre de constituants obtenu (celui correspondant aux emboîtements) n’est
 }
 
 \chevalier{Historique des représentations syntaxiques par des diagrammes en constituants}{%\label{sec:3.4.17}
+%     \ohead{Historique des représentations syntaxiques en constituants}
     Si l’on excepte l’unique diagramme de Billroth de 1932, les premiers diagrammes présentant des analyses syntaxiques apparaissent à notre connaissance dans l’ouvrage de Frederick A. P. Barnard de 1836, \textit{Analytic Grammar with Symbolic Illustrations}. Dans cette grammaire de l’anglais, le savant américain, alors âgé de 27 ans, professeur dans un asile pour sourds et muets et lui-même atteint de problèmes de surdité, propose un certain nombre de signes graphiques pour représenter les parties du discours. Mais ce qui nous intéresse surtout ici est qu’il utilise ces symboles pour décrire la structure complète d’une phrase. Barnard remarque qu’un syntagme peut se comporter de la même façon qu’un mot : par exemple, dans l’exemple qui suit, \textit{in disposition} lit. ‘en caractère’ se comporte comme un adverbe. Ceci est indiqué dans le diagramme par une accolade horizontale qui regroupe \textit{in} et \textit{disposition} et par le symbole          associé à ce groupe, qui est le même que celui associé aux mots \textit{very} et \textit{never} et désigne donc un adverbe.
 
     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img018.png}

@@ -432,7 +432,7 @@ On notera que nous avons ajouté une dépendance verticale (sans gouverneur) mar
 
     \begin{dependency}[font=\footnotesize,arc edge, arc angle=80, text only label, label style={above}]
     \begin{deptext}
-    maeu  \& {euiyokjeok-i-n} \& {haksaeng-deul-i} \& {kukje}       \& {hakhoi-leu}   \& {jojikha-nda}\\
+    \textit{maeu}  \& \textit{euiyokjeok-i-n} \& \textit{haksaeng-deul-i} \& \textit{kukje} \& \textit{hakhoi-leu} \& \textit{jojikha-nda}\\
     très  \& {motivé-être}  \& étudiant   \& international \& conférence \& organiser\\
     \end{deptext}
     \deproot{6}{}
@@ -453,7 +453,7 @@ On notera que nous avons ajouté une dépendance verticale (sans gouverneur) mar
     
     \begin{dependency}[font=\footnotesize,arc edge, arc angle=80, text only label, label style={above}]
     \begin{deptext}
-    junaðʕimu \& {atʕ-tʕula꞉b-u} \& al-mutaħammis-u꞉na \& ʒiddan \& muʔtamar-a-n \& dawlij-a-n\\
+    \textit{junaðʕimu} \& \textit{atʕ-tʕula}꞉\textit{b-u} \& \textit{al-mutaħammis-u}꞉\textit{na} \& \textit{ʒiddan} \& \textit{muʔtamar-a-n} \& \textit{dawlij-a-n}\\
 %     organiser.\textsc{pres.3sg.masc} \& \textsc{def}-étudiant.\textsc{pl-nom} \& \textsc{def}-enthousiasmé.\textsc{pl-nom} \& très conférence.\textsc{sg-acc-indef} \& international.\textsc{sg-acc-indef}\\
     organiser  \& étudiant \& enthousiasmé \& très \& conférence \& international\\
     \end{deptext}
@@ -471,7 +471,7 @@ On notera que nous avons ajouté une dépendance verticale (sans gouverneur) mar
     Le français est une langue intermédiaire. L’arbre de dépendance linéarisé de la phrase 1 possède des dépendances dans les deux directions :
     
     \ea
-    \begin{dependency}[font=\normalfont,arc edge, arc angle=80, text only label, label style={above}]
+    \begin{dependency}[font=\normalfont\itshape,arc edge, arc angle=80, text only label, label style={above}]
     \begin{deptext}
     Les \& étudiants \& très \& motivés \& organisent \& une \& conférence \& internationale\\
 %     organiser.\textsc{pres.3sg.masc} \& \textsc{def}-étudiant.\textsc{pl-nom} \& \textsc{def}-enthousiasmé.\textsc{pl-nom} \& très conférence.\textsc{sg-acc-indef} \& international.\textsc{sg-acc-indef}\\
@@ -518,7 +518,7 @@ La \textstyleTermes{projectivité} est une propriété qui contraint la linéari
 
 Intuitivement, un arbre de dépendance dont tous les mots se placent autour de leur gouverneur est dit projectif. Donnons une première définition formelle de la projectivité :
 
-\Definition{\textstyleTermes{projectif}}
+\Definition{\textstyleTermes{projectivité}}
 {Un arbre de dépendance ordonné est dit \textstyleTermes{projectif} si chacune de ses \textbf{projections} (maximales) est \textbf{continue}, c’est-à-dire forme une portion continue de la chaîne linéaire.}
 
 Le terme \textit{projectivité}, forgé par le mathématicien Yves Lecerf en 1960, renvoie directement à la notion de projection. Dire que la projection de A est continue revient à dire que les dépendants de A se sont placés autour de A et les dépendants de ses dépendants aussi et ainsi de suite et que donc l’ensemble forme un segment continu autour de A.
@@ -583,7 +583,7 @@ C’est sur cette asymétrie qu’est basé le test de recouvrement (\sectref{se
 
 Il existe une autre caractérisation de la projectivité, qui peut s’observer immédiatement sur une représentation graphique comme celle ci-dessus, où les nœuds sont placés sur une ligne et toutes les dépendances forment des arcs placés du même côté de la ligne.
 
-\Definition{\textstyleTermes{projectif}}
+\Definition{\textstyleTermes{projectivité} (2)}
 {Un arbre de dépendance ordonné est \textstyleTermes{projectif} si et seulement si \textbf{les dépendances ne se coupent pas}.}
 
 Cela concerne également la dépendance verticale qui marque la racine et qui doit être vue comme une dépendance infinie empêchant tout autre dépendance de passée au-dessus de la racine. Autrement dit, les deux configurations suivantes sont exclues d’un arbre de dépendance projectif :
@@ -643,7 +643,7 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
 \maths{Projectivité et planarité}{%\label{sec:3.5.15}
     La deuxième définition de la projectivité que nous avons donnée (en termes de coupure) est un cas particulier d’une propriété plus générale des graphes que l’on appelle la \textstyleTermesapprof{planarité}. (Pour la notion de graphe voir l’\encadref{fig:1.2.3} sur \textit{Graphe et arbre.})
     
-    \Definition{\textstyleTermes{planaire}}
+    \Definition{\textstyleTermes{planarité}}
     {Un graphe est dit \textstyleTermesapprof{planaire} s’il peut être dessiné dans un plan sans qu’aucunes de ses arêtes ne se coupent.}
     Dans le cas de la projectivité d’un arbre ordonné, on s’intéresse à une propriété qui concerne la relation entre la structure d’arbre et l’ordre linéaire sur les nœuds de l’arbre. Le graphe qui nous intéresse doit donc contenir ces deux structures. Au graphe que forme l’arbre, nous allons ajouter l’ordre linéaire sous la forme d’arêtes entre deux nœuds successifs, ce qui revient à placer les nœuds du graphe sur une ligne dans l’ordre linéaire. Pour prendre totalement en compte la structure hiérarchique de l’arbre, il faut encoder le fait que l’arbre possède un nœud, la racine, qui domine tous les autres. Pour cela, on attache l’arbre par sa racine à un nœud spécial qu’on appelle le nœud à l’infini (noté \textrm{${\infty}$}). Cela revient à placer les nœuds de l’arbre sur un cercle dans l’ordre linéaire avec le nœud à l’infini entre le premier et le dernier nœud. Nous appellerons ce graphe le \textstyleTermesapprof{graphe circulaire} associé à un arbre linéairement ordonné.
 
@@ -685,7 +685,7 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
 
     Le graphe circulaire d’un arbre projectif a une propriété un peu plus forte que la planarité : il est planaire extérieur.
     
-    \Definition{\textstyleTermesapprof{planaire extérieur}}
+    \Definition{\textstyleTermesapprof{planarité extérieure}}
     {Un graphe est dit \textstyleTermesapprof{planaire extérieur} s’il peut être dessiné avec tous ses nœuds accessibles de l’extérieur et sans qu’aucunes de ses arêtes ne se coupent.}
     On peut montrer que pour qu’un graphe soit planaire extérieur, il faut et il suffit qu’il ne puisse pas être réduit à un graphe particulier qu’on appelle K\textsubscript{4}. La \textstyleTermesapprof{réduction} d’un graphe consiste à agréger ensemble des nœuds qui sont liés. C’est une opération importante de notre point de vue, car elle consiste à regarder la structure avec une granularité moins importante (voir la \sectref{sec:3.2.20} sur la \textit{Granularité}). Le graphe K\textsubscript{4} est le graphe complet à 4 nœuds, c’est-à-dire le graphe à 4 nœuds où tous les nœuds sont liés deux à deux. Les deux configurations rejetées par la projectivité sont exactement le graphe K\textsubscript{4}, comme le montre la figure suivante.
 
@@ -739,10 +739,10 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
 \loupe{Équivalence des définitions de la projectivité}{%\label{sec:3.5.16}
     On peut donner encore une autre caractérisation de la non-projectivité :
 
-    \Definition{\textstyleTermesapprof{non projective}}
+    \Definition{\textstyleTermesapprof{dépendance non projective}}
     {Une \textbf{dépendance ordonnée} est \textstyleTermesapprof{non projective} si elle couvre un élément qui n’appartient pas à la projection de la tête de cette dépendance.}
 
-    \Definition{\textstyleTermesapprof{non projectif}}
+    \Definition{\textstyleTermesapprof{projectivité} (3)}
     {Un \textbf{arbre de dépendance ordonné} est \textstyleTermesapprof{non projectif} si et seulement s’il contient une dépendance non projective.}
 
     Soit T un arbre de dépendance ordonné. On veut montrer l’équivalence des trois propriétés suivantes :
@@ -795,24 +795,27 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
     La première propriété du flux est qu’il semble être naturellement \textbf{borné}, c’est-à-dire que le nombre de dépendances qui appartiennent simultanément au flux en n’importe quel point de la chaîne parlée ne dépasse jamais une certaine valeur. De ce point de vue, il faut distinguer deux types de configurations : les dépendances en bouquet, qui partagent une extrémité commune, et les dépendances disjointes. Les dépendances disjointes correspondent à des enchâssements centrés (angl. \textit{center embeddings}) de syntagmes, qui s’avère beaucoup plus coûteux pour le traitement que la présence de plusieurs dépendants sur un même élément.
 
 
-    \ea
-    %%[Warning: Draw object ignored]
-    \ea Dépendances en bouquet\\
+    \begin{figure}
+    \caption{Configurations de dépendances à un point du flux}
+    \begin{subfigure}[b]{.5\linewidth}
     \begin{tikzpicture}[>={Triangle[]},every node/.style={CircleNode},grow=right]
         \node at (0,0) (root) {} child { node {} child { node{} } };
         \path (root)   edge [bend left=45,->] (root-1)
               (root)   edge [bend left=60,->] (root-1-1);
         \draw [thick ]($ (root) !.5! (root-1) $) -- ++ (0,1.5cm) -- ++ (0,-2cm);
     \end{tikzpicture}
-    \ex Dépendances disjointes\\
+    \caption{Dépendances en bouquet}
+    \end{subfigure}%
+    \begin{subfigure}[b]{.5\linewidth}
     \begin{tikzpicture}[>={Triangle[]},every node/.style={CircleNode},grow=right]
         \node at (0,0) (root) {} child { node {} child { node{} child { node{} } } };
         \path (root)   edge [bend left=60,->] (root-1-1-1)
               (root-1) edge [bend left=45,->] (root-1-1);
         \draw [thick]($ (root-1) !.5! (root-1-1) $) -- ++ (0,1.5cm) -- ++ (0,-2cm);
     \end{tikzpicture}
-    \z
-    \z
+    \caption{Dépendances disjointes}
+    \end{subfigure}
+    \end{figure}
 
     Les études faites sur des corpus annotés dans plus de 70 langues montrent que le flux n’a jamais plus de 6 dépendances disjointes et que ce nombre n’est quasiment jamais atteint. Plusieurs expériences en psychologie ont montré que le nombre de paramètres que l’on peut conserver simultanément dans sa \textbf{mémoire immédiate} dépasse rarement 7 (voir le fameux article du psychologue George Miller de 1956 intitulé \textit{The magical number seven, plus or minus two: Some limits on our capacity for processing information}). Par exemple, si vous montrez pendant une fraction de seconde à une personne un écran noir avec 5 ou 6 points blancs disposés aléatoirement, elle devrait être capable de vous dire précisément le nombre de points qui sont apparus à l’écran. Mais si vous faites la même expérience avec 8 ou 9 points, cela devient beaucoup plus difficile. On peut penser que la même contrainte agit sur le flux de dépendances et rend compte du fait que nous ne sommes pas capable de traiter simultanément plus de 6 dépendances disjointes lorsque nous écoutons une phrase et l’analysons au fur et à mesure de son écoute. La même contrainte agit lorsque nous produisons un énoncé et que nous devons gérer le flux de dépendances pour assurer la cohésion de notre propos.
 
@@ -941,7 +944,7 @@ La deuxième méthode pour ordonner les co-dépendants consiste donc à donner d
 Voici le gabarit qu’ouvre un verbe à l’indicatif en français :
 
 \begin{figure}\small
-\caption{{\color{red}Please provide a caption}\label{tab:}}
+\caption{Gabarit topologique du domaine verbal\label{tab:}}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
 \multicolumn{14}{|c|}{\cellcolor{lsDOIGray}Domaine verbal}\\
@@ -983,14 +986,16 @@ Et ainsi de suite.
 
     Tout se passe comme si \textit{te} ou \textit{me} (en tant qu’objet direct) bloquait les trois positions topologiques à la fois (celles de \textit{te/me} objet indirect, \textit{le} et \textit{lui}).
     
-    \ea
+    \begin{figure}
     \begin{tabular}[c]{|l|l|l|l|l|l|l|l|}
     \hhline{--------}
      \textit{il} & \textit{ne} &  \textit{me} (indirect) &  \textit{le} &  \textit{lui} & \textit{y} & \textit{en} &  verbe\\
     \hhline{--------}
     \multicolumn{2}{c}{} & \multicolumn{3}{|c|}{\textit{me} (direct)} & \multicolumn{3}{c}{} \\
     \hhline{~~---~~~}
-    \end{tabular}\z
+    \end{tabular}
+    \caption{Les champs clitique du domaine verbal}
+    \end{figure}
 
     Le fait que cette exclusion ne puisse être clairement imputée ni à des règles syntaxiques, ni à des règles topologiques est un des arguments avancés pour considérer que la grammaire des clitiques préverbaux du français relèvent aujourd’hui de la conjugaison du verbe, laquelle, on le sait, est beaucoup plus irrégulière que la microsyntaxe. Nous considérons pour notre part qu’il s’agit effectivement de nanosyntaxe, sans considérer pour autant qu’il s’agit de flexion (voir \chapref{sec:4.2}).
 }
@@ -1156,7 +1161,7 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
 
     On peut postuler qu’en russe, l’ordre linéaire de la phrase obéit au gabarit suivant :
 
-    \ea%
+    \ea Gabarit topologique de la phrase en russe\\
     \hfill
     \begin{tabular}{|c|c|c|}
     \hhline{---}
@@ -1187,7 +1192,7 @@ Nous allons voir de manière un peu plus précise comment fonctionne le modèle 
 Nous avons donné le gabarit topologique du verbe à l’indicatif en français à la \sectref{sec:3.5.19} sur la \textit{Linéarisation des co-dépendants}. Rappelons-le :
 
 \begin{figure}\small
-\caption{{\color{red}Caption to be repeated from orig fig}\label{tab:}}
+\caption{Gabarit toplogique du domaine verbal\label{tab:}}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
 \multicolumn{14}{|c|}{\cellcolor{lsDOIGray}Domaine verbal}\\
@@ -1200,7 +1205,7 @@ Nous avons donné le gabarit topologique du verbe à l’indicatif en français 
 Le gabarit topologique du nom en français est quant à lui :
 
 \begin{figure}\small
-\caption{{\color{red}Please provide a caption}\label{tab:}}
+\caption{Gabarit toplogique du domaine nominal\label{tab:}}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 \hline
 \multicolumn{9}{|c|}{\cellcolor{lsDOIGray}Domaine nominal}\\
@@ -1585,7 +1590,7 @@ La comparaison entre l’arbre topologique induit et l’arbre de constituants s
 
 Comme on le voit, la relative \textit{qui voulait les acheter} n’est pas à la même position dans les deux arbres : dans l’arbre syntaxique, la relative est un nœud fils du groupe substantival dont \textit{la belle} est la tête, alors que dans l’arbre topologique, elle est un nœud fils de la phrase entière dont \textit{est entrée} est la tête. Autrement dit, la relative ne s’est pas positionnée par rapport à son gouverneur syntaxique \textit{la belle}, mais par rapport au gouverneur de celui-ci, \textit{est entrée}.
 
-\Definition{\textstyleTermes{émancipé}, \textstyleTermes{hôte topologique}}
+\Definition{\textstyleTermes{élément émancipé}, \textstyleTermes{hôte topologique}}
 {Un élément qui ne se place pas par rapport à son gouverneur, mais par rapport à un ancêtre plus éloigné est dit \textstyleTermes{émancipé}. L’ancêtre par rapport auquel se place un élément donné est appelé son \textstyleTermes{hôte topologique}.}
 
 Si l’on prend maintenant le point de vue de l’hôte topologique, nous dirons qu’un élément qui vient se placer par rapport à lui sans être un dépendant syntaxique est un \textstyleTermes{visiteur topologique}.
@@ -1608,8 +1613,8 @@ Dans tous ces exemples, le clitique se place sur le verbe fini, alors qu’il es
 
 Autrement dit, le gouverneur syntaxique du clitique n’offre pas de place au clitique, forçant son émancipation. Un participe passé, par exemple, ne peut jamais accueillir des clitiques, qu’il dépende d’un verbe, comme précédemment, ou qu’il dépende d’un nom (\textit{le livre donné à Zoé} vs \textit{*le livre lui donné}). Il va donc ouvrir un constituant avec un gabarit différent de celui d’un verbe fini :
 
-\begin{table}
-\caption{\label{tab:}{\color{red}Please provide a caption}}
+\begin{figure}
+\caption{\label{tab:}Gabarit topologique du dome verbal réduit}
 \def\arraystretch{1.5}
 \setlength{\tabcolsep}{3ex}
 \begin{tabular}{|c|c|c|c|c|}
@@ -1619,7 +1624,7 @@ Autrement dit, le gouverneur syntaxique du clitique n’offre pas de place au cl
 ch-adv & \cellcolor{lsDOIGray}ch-verbe & ch-adv & ch-vb-sub & ch-final\\
 \hline
 \end{tabular}
-\end{table}
+\end{figure}
 
 Un infinitif peut normalement accueillir des clitiques (\textit{Zoé veut} \textbf{\textit{l’}}\textit{appeler}), mais pas quand il est dans la construction causative. Il ouvrira dans ce cas un constituant réduit comme celui d’un participe passé.
 
@@ -1682,7 +1687,7 @@ On note que le champ pré-noyau peut accueillir plusieurs éléments (ici le com
     \begin{enumerate}
     \item \textit{Description des constituants (topologiques).} Un constituant est un gabarit de places linéaires, c’est-à-dire une liste de champs. Les règles de ce type indiquent donc pour chaque constituant quelle est la liste des champs qui le compose. Ces règles se rapprochent des règles de réécriture d’une PSG (voir l’\encadref{fig:3.5.29} \textit{Grammaire de réécriture}) et l’on peut utiliser un notation similaire : D \textrm{→} $f_1 \: f_2 \ldots f_n$, où D est un type de constituant (D comme domaine) et les $f_i$ des noms de champs. Nous utilisons la lettre $f$ pour les noms de champs (de l’angl. \textit{field}, all. \textit{Feld}).
 
-    \begin{center}
+    \begin{figure}
       \begin{tabular}{|c|c|c|c|}
       \hline
       \multicolumn{4}{|c|}{\cellcolor{lsDOIGray}D}\\
@@ -1690,7 +1695,8 @@ On note que le champ pré-noyau peut accueillir plusieurs éléments (ici le com
       $f_1$ & $f_2$ & ... & $f_n$\\
       \hline
       \end{tabular}
-    \end{center}
+      \caption{Description des champs du domaine D}
+    \end{figure}
 
 
     La principale différence avec les règles de réécriture est qu’un constituant n’est pas réécrit en une liste de constituants, mais en une liste de champs, auxquels sont assignés des constituants par d’autres règles.
@@ -1699,7 +1705,8 @@ On note que le champ pré-noyau peut accueillir plusieurs éléments (ici le com
 
     \item \textit{Règle de correspondance.} Ce sont les règles qui assurent réellement la linéarisation, en indiquant, pour une dépendance donnée \textit{x} \textrm{→} \textit{y}, dans quel champ f peut aller le dépendant \textit{y}. La règle dépend des catégories C\textsubscript{1} et C\textsubscript{2} de x et y et de la relation syntaxique \textit{r} entre \textit{x} et \textit{y} (c’est-à-dire l’étiquette de la dépendance \textit{x} \textrm{→} \textit{y}). Par défaut, le nœud y se place par rapport à son gouverneur \textit{x} et le champ f est donc l’un des champs du constituant ouvert par \textit{x}.
 
-    \ea \begin{tikzpicture}
+    \begin{figure}
+       \begin{tikzpicture}
           \begin{scope}[on background layer]
           \matrix (matrix) [matrix of math nodes, ampersand replacement=\&, 
                             every node/.style={draw,font=\strut},minimum size=24pt, inner sep=12pt]
@@ -1710,11 +1717,13 @@ On note que le champ pré-noyau peut accueillir plusieurs éléments (ici le com
           \end{scope}
           \path[-{Triangle[sep=4pt]}] (matrix-1-2.center) ++(0,4pt) edge [bend left=66, looseness=1.25] node [midway,above] {$r$} (matrix-1-4.center);
         \end{tikzpicture} 
-    \z
+        \caption{Règle de correspondance : le dépendant $y$ est placé dans le champ $f$ du constituant ouvert par $x$}
+      \end{figure}
 
     Une telle règle peut aussi indiquer la possibilité pour \textit{y} de s’émanciper. On peut contrôler l’émancipation de différentes façons : celle que nous retenons est d’indiquer quelles frontières de constituants peut «~traverser~» \textit{y} pour se placer dans un champ d’un constituant ouvert par un ancêtre de \textit{x.}
     
-    \ea \begin{tikzpicture}
+    \begin{figure}
+     \begin{tikzpicture}
       \matrix (matrix) [ampersand replacement = \&, every node/.style={font=\strut}, column sep=18pt]
         {
           \node (dots1) {...}; \& \node (inner) [inner sep=1pt, draw, rectangle split, 
@@ -1733,11 +1742,13 @@ On note que le champ pré-noyau peut accueillir plusieurs éléments (ici le com
       \node at (Yfit.south east) [anchor=south east] {\footnotesize $f$};
       \path[-{Triangle[sep=4pt]}] (inner.center) ++(0,4pt) edge [bend left=66, looseness=1.66] node [midway,above] {$r$} (Y.center);
     \end{tikzpicture}
-    \z
+    \caption{Règle d'émancipation : $y$ est placé dans un champ $f$ hors du constituant ouvert par son gouverneur $x$}
+    \end{figure}
 
     \item \textit{Création de constituant.} À chaque fois qu’un nœud \textit{x} de l’arbre de dépendance est placé dans un champ (par une des règles précédentes), \textit{x} ouvre à son tour un constituant pour placer ses dépendants. Une règle de ce type indique donc le type de constituant D créé en fonction de la catégorie C de \textit{x} et du champ f dans lequel \textit{x} est placé.
 
-    \ea \begin{tikzpicture}
+    \begin{figure}
+     \begin{tikzpicture}
       \matrix (matrix) [ampersand replacement=\&, every node/.style={font=\strut}, column sep=18pt]
         {
           \node[draw,minimum size=36pt] {...}; \& \node (inner) [minimum height=6pt, minimum width=24pt,
@@ -1748,7 +1759,8 @@ On note que le champ pré-noyau peut accueillir plusieurs éléments (ici le com
         \node (outer) [draw, minimum width=60pt, fit=(inner), inner sep=1.8pt] {};
         \node at (outer.south east) [anchor=south east] {\footnotesize $f$};
     \end{tikzpicture}
-    \z
+    \caption{Création du constituant D lorsque $x$ est placé dans le champs $f$}
+    \end{figure}
     \end{enumerate}
     Signalons le cas particulier de la \textbf{règle d’initialisation} qui indique le type de constituant D créé en fonction de la catégorie C de la racine de l’arbre de dépendance lorsque celle-ci est placée dans le champ initial \textit{i}.
 
@@ -1764,8 +1776,8 @@ Nous avons vu qu’un verbe à l’indicatif ouvre un constituant avec un grand 
 
 Un premier niveau de cohésion est le \textstyleTermes{mot~}: les syntaxèmes à l’intérieur du mot sont \textbf{indissociables} et \textbf{inséparables} comme nous le verrons dans la partie 4 consacrée à la nanosyntaxe. Autour du verbe s’amassent d’autres mots avec un \textbf{ordre très rigide~}: clitiques préverbaux, adverbes comme \textit{pas}, participe dépendant d’un auxiliaire. Nous appellerons cette unité, que nous étudierions au \chapref{sec:5.4}, l’\textstyleTermes{amas verbal}. Un troisième niveau de cohésion est celui de la \textstyleTermes{proposition} avec les champs initiaux et finaux qui vont accueillir le sujet et les compléments du verbe. On appelle encore cette unité le \textstyleTermes{domaine microsyntaxique} du verbe. Au-delà peuvent encore se placer d’autres éléments qui sont détachés prosodiquement du verbe et n’entretiennent pas nécessairement de relation de rection avec le verbe. Dans l’exemple suivant, le groupe substantif \textit{l’itinéraire} \textit{que je vous indique} ne porte aucune marque qui indique sa fonction et il sera nécessairement détaché prosodiquement de la proposition qui suit, bien qu’il forme indéniablement une seule assertion avec lui~(voir partie 6).
 
-\ea
- {ah oui non là} \textbf{{l’itinéraire}  {que je vous indique}}  {hein vous en avez pour cinquante minutes} (oral, service de renseignement téléphonique)
+\ea\itshape
+ ah oui non là \textbf{{l’itinéraire}  {que je vous indique}}  {hein vous en avez pour cinquante minutes} (oral, service de renseignement téléphonique)
 \z
 
 On parlera alors de \textstyleTermes{domaine macrosyntaxique}.
@@ -1798,7 +1810,7 @@ ch-pré-noyau &
   \end{tabular} & 
 ch-post-noyau\\\hline
 \end{tabular}
-\caption{\label{fig:}}
+\caption{Constituants topologiques enchâssés ouverts par un verbe en français\label{fig:}}
 \end{figure}
 
 Cette décomposition ne change pas grand-chose au fonctionnement du modèle topologique lui-même, si ce n’est qu’au lieu d’ouvrir un seul constituant, un verbe ouvrira successivement un domaine macrosyntaxique, un domaine micro-syntaxique, puis un amas verbal. Par ailleurs dès qu’un dépendant du verbe ne sera pas placé dans le dernier constituant ouvert, il devra «~s’émanciper~» de celui-ci pour atteindre les constituants supérieurs.
@@ -1815,8 +1827,12 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     En prenant en compte ces différentes contraintes, on peut faire d’assez bonnes prédictions sur les prosodies possibles. Cela dit, les locuteurs prennent pas mal de liberté et applique souvent un principe de complémentarité et de compensation qui veut que la prosodie tendra à compenser une absence de marquage syntaxique (notamment lorsque la structure est syntaxiquement ambiguë), mais pourra être plus relâchée quand la structure syntaxique est claire.
 }
 \globe{La structure topologique de l’allemand}{%\label{sec:3.5.36}
-    Nous avons déjà esquissé le modèle topologique de l’allemand dans la \sectref{sec:3.5.5} \textit{Le cas des langues V2}. La plupart des règles de l’ordre des mots en allemand se comprennent facilement en considérant qu’une phrase déclarative est constituée de 5 champs consécutifs qui forment le domaine principal.\smallskip\\    
+    Nous avons déjà esquissé le modèle topologique de l’allemand dans la \sectref{sec:3.5.5} \textit{Le cas des langues V2}. La plupart des règles de l’ordre des mots en allemand se comprennent facilement en considérant qu’une phrase déclarative est constituée de 5 champs consécutifs qui forment le domaine principal.
+    
+    \begin{figure}   
     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img032.png}
+    \caption{Domaine principal de l'allemand et placement V2 de l'auxiliaire {\itshape hat}}
+    \end{figure}
 
     Le verbe principal, c’est-à-dire le verbe qui porte le mode indicatif, comme l’auxiliaire \textit{hat} ‘a’ dans notre exemple, se place en 2\textsuperscript{e} position, appelée \textbf{parenthèse gauche}, après l’unique constituant occupant le \textbf{champ initial} ou \textbf{Vorfeld} ‘pré-champ’. La parenthèse gauche entoure, avec la \textbf{parenthèse droite}, le \textbf{champ du milieu} ou \textbf{Mittelfeld}. Un \textbf{champ final} ou \textbf{Nachfeld} suit la parenthèse droite. Les \textbf{champs} dits \textbf{majeurs} \-– Vorfeld, Mittelfeld et Nachfeld – accueillent les syntagmes nominaux ou adverbiaux. Les dépendants verbaux vont généralement dans la parenthèse droite. Si une phrase n’utilise que le domaine principal pour placer les mots, on parle d’une \textit{structure plate}, par exemple :
     \ea
@@ -1835,7 +1851,7 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     \z
     Le placement des verbes dans la parenthèse droite peut aussi être décrit par une structure topologique : l’amas verbal. Il est composé de trois champs : le \textbf{champ supérieur} ou \textbf{Oberfeld}, le champ tête et le \textbf{champ inférieur} ou \textbf{Unterfeld}.
 
-    \begin{center}
+    \begin{figure}
     \def\arraystretch{1.5}
     \setlength{\tabcolsep}{4ex}
     \begin{tabular}{|c|c|c|}
@@ -1843,7 +1859,8 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     Oberfeld & champ tête & Unterfeld\\
     \hline
     \end{tabular}
-    \end{center}
+    \caption{Gabarit topologique de l'amas verbal en l'allemand}
+    \end{figure}
     
     Sans rentrer dans tous les détails de l’amas verbal, remarquons que pour les dépendants de certains verbes, en particulier les modaux, l’Unterfeld est préférable à l’Oberfeld :
 
