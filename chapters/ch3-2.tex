@@ -169,7 +169,7 @@ Nous allons continuer à préciser la définition des unités syntaxiques et don
 
 La \textstyleTermes{commutation} avec d’autres segments est un bon critère pour voir si l’on a affaire à une unité syntaxique, puisque les unités syntaxiques, par définition, commutent librement dans leur contexte (commutation qui, rappelons-le, doit préserver le sens du contexte) (voir \sectref{sec:2.2.1} \textit{Commutation et exclusion mutuelle}).
 
-\Definition{\textstyleTermes{est de commutation}}
+\Definition{\textstyleTermes{test de commutation}}
 {\textstyleTermes{test de commutation}. Une unité syntaxique appartient à un paradigme d’unités syntaxiques de même distribution. Si le segment A commute avec un segment qui est clairement une unité syntaxique, alors A est potentiellement une unité syntaxique.}
 
 En particulier, le fait de pouvoir remplacer une portion de l’énoncé par un mot est un bon indice du fait qu’il s’agit d’une unité syntaxique, puisque le mot est une unité syntaxique. Un test courant, appelé \textstyleTermes{test de pronominalisation}, est de vérifier la commutation avec un pronom : tout segment qui commute avec un pronom est une unité syntaxique. Ce test permet en plus de caractériser certains types d’unités selon les pronoms avec lesquels elles commutent. Nous y reviendrons dans la \sectref{sec:3.4.9} sur \textit{Les tests de constituance}.
@@ -344,14 +344,14 @@ On peut décomposer notre phrase en \textit{cet étudiant veut acheter} ${\oplus
                          }
                   ] 
   {
-     cet étudiant  & veut &  acheter   &   $\oplus$  & un livre &  de syntaxe\\
+     cet étudiant  &[4pt] veut &  acheter   &[2em]   $\oplus$  &[1em] un livre &  de syntaxe\\
   };
-\node [draw, circle, inner sep=0pt, fit=(matrix-1-3)] {};
-\node [draw, circle, inner sep=2pt, fit=(matrix-1-3) (matrix-1-2)] {};
-\node [draw, circle, inner sep=3pt, fit=(matrix-1-3) (matrix-1-2) (matrix-1-1)] {};
+\node [draw, ellipse, inner sep=-1pt, fit=(matrix-1-3)] {};
+\node [draw, ellipse, inner xsep=-1pt, inner ysep=1pt, fit=(matrix-1-3) (matrix-1-2)] {};
+\node [draw, ellipse, inner xsep=0pt, inner ysep=4pt, fit=(matrix-1-3) (matrix-1-2) (matrix-1-1)] {};
 
-\node [draw, circle, inner sep=0pt, fit=(matrix-1-5)] {};
-\node [draw, circle, inner sep=2pt, fit=(matrix-1-5) (matrix-1-6)] {};
+\node [draw, ellipse, inner sep=-1pt, fit=(matrix-1-5)] {};
+\node [draw, ellipse, inner xsep=-1pt, inner ysep=2pt, fit=(matrix-1-5) (matrix-1-6)] {};
 \end{tikzpicture}
 \caption{\label{fig:}Combinaisons équivalentes}
 \end{figure}

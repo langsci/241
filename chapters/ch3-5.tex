@@ -647,6 +647,7 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
     {Un graphe est dit \textstyleTermesapprof{planaire} s’il peut être dessiné dans un plan sans qu’aucunes de ses arêtes ne se coupent.}
     Dans le cas de la projectivité d’un arbre ordonné, on s’intéresse à une propriété qui concerne la relation entre la structure d’arbre et l’ordre linéaire sur les nœuds de l’arbre. Le graphe qui nous intéresse doit donc contenir ces deux structures. Au graphe que forme l’arbre, nous allons ajouter l’ordre linéaire sous la forme d’arêtes entre deux nœuds successifs, ce qui revient à placer les nœuds du graphe sur une ligne dans l’ordre linéaire. Pour prendre totalement en compte la structure hiérarchique de l’arbre, il faut encoder le fait que l’arbre possède un nœud, la racine, qui domine tous les autres. Pour cela, on attache l’arbre par sa racine à un nœud spécial qu’on appelle le nœud à l’infini (noté \textrm{${\infty}$}). Cela revient à placer les nœuds de l’arbre sur un cercle dans l’ordre linéaire avec le nœud à l’infini entre le premier et le dernier nœud. Nous appellerons ce graphe le \textstyleTermesapprof{graphe circulaire} associé à un arbre linéairement ordonné.
 
+    \todo[inline]{If examples are converted to Figures, they can change their position in the text. This is because figures are floating environments. Before we convert examples to figures, I'd therefore recommend that we make an explicit refernce to the figure in the text to ensure reader orientation.}
     \ea Graphe circulaire\\
     \begin{tikzpicture}[label distance=2pt,>={Triangle[]}] % Following an idea by Jerome Tremblay
     \def \radius {2cm}
@@ -718,7 +719,7 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
                arc ({360/6 * (\s - 1) + 90}:{360/6 * (\s) + 90}:1cm);
        } 
        \draw (1) -- (4);
-       \path (3) edge [bend left=45] (5);
+       \path (3.base) edge [bend left=45] (5.base);
        \node at (1) [fill=white,CircleNode,label=above:$\infty$] {};
        \node at (3) [fill=white,CircleNode] {};
        \node at (4) [fill=white,CircleNode] {};
@@ -1054,7 +1055,7 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
     \begin{tikzpicture}
     \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip,
                   level 1/.style={sibling distance=20mm},
-                  level 2/.style={sibling distance=15mm},
+                  level 2/.style={sibling distance=10mm},
                   level 3/.style={sibling distance=10mm}
                   ]
     \node (root) {} child {node {}} 
@@ -1435,10 +1436,10 @@ Notons pour conclure que le modèle topologique n’utilise que des \textstyleTe
        \node at (1,-1) (empty) [fill=white,CircleNode] {};
        \node at (2,0) (GV) [fill=white,CircleNode] {};
 %        \node [below=1pt of 1] {P};
-       \node [below left = 2pt of GN] {GN};
-       \node [below right = 2pt of GV] {GV};
-       \path (GN) edge [out=270,in=180] (empty)
-             (empty) edge [out=0,in=270] (GV)
+%        \node [below left = 2pt of GN] {GN};
+%        \node [below right = 2pt of GV] {GV};
+       \path (GN) edge [out=270,in=180] node [left,midway] {GN} (empty)
+             (empty) edge [out=0,in=270] node [right,midway] {GV} (GV)
              (GN) edge [bend left=66] node [below,midway] {P} (GV);
        \end{tikzpicture}
     \end{minipage}

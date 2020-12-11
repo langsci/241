@@ -418,6 +418,7 @@ Si l’on a la structure de connexion de cette phrase (voir \chapref{sec:3.2}) e
   \end{tikzpicture}\\
   Structure de connexion & & Arbre de dépendance
 \end{tabular}
+\todo[inline]{Please let me know which arrow tips and line types you'd like for each relation}
 \end{figure}
 
 Si la structure de connexion n’a que des connexions élémentaires (voir l’\encadref{fig:3.2.23} \textit{Graphe à bulles et polygraphe}) et pas de cycles, on obtient un arbre de dépendance, comme dans l’exemple précédent.
@@ -691,27 +692,27 @@ Le critère distributionnel avec effacement n’est applicable à une unité U =
 
 \begin{figure}
 \caption{\label{fig:}Application du critère distributionnel sans effacement}
-\begin{minipage}{.3\textwidth}\centering
-  \begin{tikzpicture}[every node/.style={AbsSet},inner sep=1pt]
+\begin{minipage}{.32\textwidth}\centering
+  \begin{tikzpicture}[every node/.style={draw,ellipse,inner xsep=6pt}]
     \node at (0,0) (X) {X};
-    \node at (-.75,-4) (A) {A'};
-    \node at (.75,-4) (B) {B};
+    \node at (-.75,-3) (A) {A'};
+    \node at (.75,-3) (B) {B};
     \node [fit = (A) (B), inner sep=0pt,pin=south east:U'] (U) {};
     \draw (X) -- (U) node[midway,right,reset shape] {?};
   \end{tikzpicture}
-\end{minipage}\begin{minipage}{.3\textwidth}\centering
-  \begin{tikzpicture}[every node/.style={AbsSet}]
+\end{minipage}\begin{minipage}{.32\textwidth}\centering
+  \begin{tikzpicture}[every node/.style={draw,ellipse,inner xsep=6pt}]
     \node at (0,0) (X) {X};
-    \node at (-.75,-4) (A) {A};
-    \node at (.75,-4) (B) {B};
+    \node at (-.75,-3) (A) {A};
+    \node at (.75,-3) (B) {B};
     \node [fit = (A) (B), inner sep=0pt,pin=south east:U] (U) {};
     \draw (X) -- (U);
   \end{tikzpicture}
-\end{minipage}\begin{minipage}{.3\textwidth}\centering
-  \begin{tikzpicture}[every node/.style={AbsSet}]
+\end{minipage}\begin{minipage}{.32\textwidth}\centering
+  \begin{tikzpicture}[every node/.style={draw,ellipse,inner xsep=6pt}]
     \node at (0,0) (X) {X};
-    \node at (-.75,-4) (A) {A};
-    \node at (.75,-4) (B) {B'};
+    \node at (-.75,-3) (A) {A};
+    \node at (.75,-3) (B) {B'};
     \node [fit = (A) (B), inner sep=0pt,pin=south east:{U{'}{'}}] (U) {};
     \draw (X) -- (U) node[midway,right,reset shape] {?};
   \end{tikzpicture}
@@ -1277,7 +1278,7 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
     Nous avons discuté du nom ou du déterminant comme tête du groupe substantival. Mais il existe une autre solution encore. Nous avons vu que la flexion du verbe pouvait être considérée comme la tête de la proposition et prendre le sujet comme dépendant (voir la \sectref{sec:3.3.13} sur \textit{Le critère distributionnel sans effacement}). Une analyse similaire peut être proposée pour le nom. Les deux catégories flexionnelles du nom sont la définitude et le nombre (voir le \chapref{sec:4.2} sur les \textit{Catégories flexionnelles}). On peut alors proposer pour \textit{les deux amis} la structure suivante (dont les nœuds sont occupés par des syntaxèmes) :
 
     \ea
-    \begin{forest} for tree = {s sep=2cm, l=2cm}
+    \begin{forest}
     [défini
       [LE] [pluriel
         [DEUX] [AMI]
@@ -1290,16 +1291,18 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
     \begin{itemize}
     \item soit on amalgame les grammèmes avec le lexème qui les marque :
     \ea
-    \begin{forest} for tree = {s sep=2cm, l=2cm}
+    \begin{forest}
     [défini,name=defini
       [LE,name=le] [pluriel,name=pluriel
         [DEUX,name=deux] [AMI]
       ]
     ]
-    \draw ($ (defini) !0.5! (le) $) ellipse [x radius=2cm, y radius=1cm,rotate=45];
-    \draw ($ (pluriel) !0.5! (deux) $) ellipse [x radius=2cm, y radius=1cm,rotate=45];
+    \begin{pgfonlayer}{background}
+      \draw[line width=1cm,color=gray!30,line cap=round,line join=round] ($(defini.north)!0.5!(defini.north)$) +(2pt,-12pt) -- ($(le)!0.5!(le)$);
+      \draw[line width=1.1cm,color=gray!30,line cap=round,line join=round] ($(pluriel.north)!0.5!(pluriel.north)$) +(0pt,-12pt) -- ($(deux)!0.5!(deux)$);
+    \end{pgfonlayer}
     \end{forest}\hfill%
-    \begin{forest} for tree={font=\itshape, l=2cm}
+    \begin{forest} for tree={font=\itshape}
     [les [deux [amis]]]
     \end{forest}
     \z
@@ -1307,15 +1310,18 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
     Comme on le voit, on retombe ainsi sur les deux arbres qu’on aurait obtenu en décidant soit que le déterminant est la tête, soit que le nom est la tête. Ceci est encore une façon de dire que le choix du nom ou du déterminant comme tête est finalement secondaire, puisqu’on peut voir ça comme deux réductions différentes d’une même analyse sous-jacente.
     
     \ea 
-    \begin{forest} for tree = {s sep=2cm, l=2cm}
+    \begin{forest} 
     [défini,name=defini
-      [LE] [pluriel
+      [LE] [pluriel,name=pluriel
         [DEUX] [AMI,name=ami]
       ]
     ]
-    \draw [overlay] ($ (defini) !0.5! (ami) $) ellipse [x radius=3cm, y radius=1.5cm,rotate=-45];
+    \begin{pgfonlayer}{background}
+      \draw[line width=1cm,color=gray!30,line cap=round,line join=round] ($(defini.north)!0.5!(defini.north)$) +(0pt,-12pt) -- (pluriel.center);
+      \draw[line width=1cm,color=gray!30,line cap=round,line join=round] (pluriel.center) -- ($(ami)!0.5!(ami)$);
+    \end{pgfonlayer}
     \end{forest}\hfill%
-    \begin{forest} for tree={font=\itshape, s sep=2cm, l=2cm}
+    \begin{forest}
     [amis [les] [deux]]
     \end{forest}
     \z
