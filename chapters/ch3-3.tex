@@ -138,7 +138,7 @@ Concluons cette section en soulignant une propriété fondamentale que nous expl
 
     Les \textstyleTermesapprof{dépendances sémantiques} sont les \textbf{relations prédicat-argument} qui existent entre les signifiés des sémantèmes (voir chapitres \ref{sec:1.2} et \ref{sec:2.4}). Par exemple, un verbe à l’infinitif n’a jamais de sujet, mais il possède toujours un argument sémantique qui peut être restitué par une paraphrase où le verbe est à une forme finie. Par exemple, si on compare \textit{Marie promet à Pierre de venir} et \textit{Marie permet à Pierre de venir}, dans le premier cas ‘Marie’ est l’argument de ‘venir’ (\textit{Marie promet qu’elle viendra}) et dans le deuxième cas ‘Pierre’ est l’argument de ‘venir’ (\textit{Marie permet que Pierre vienne}). Dans les deux cas, la dépendance sémantique ne correspond pas à une dépendance syntaxique, car ni \textit{Marie de venir,} ni \textit{à Pierre de venir} ne sont des unités syntaxiques. Les dépendances sémantiques seront à nouveau considérées dans le \chapref{sec:3.6} sur la \textit{Syntaxe profonde}, ainsi que dans le \chapref{sec:5.3} où nous étudierons les distorsions entre structures syntaxique et sémantique dans les phénomènes d’extraction.
     
-    \begin{figure}
+    \begin{figure}[H]
         \begin{minipage}{.5\textwidth}\centering
         {\itshape Marie promet à Pierre de venir}\\
         \begin{tikzpicture}[>={Triangle[]}]
@@ -241,14 +241,14 @@ Notons pour conclure cette section que l’on utilise généralement une termino
 \chevalier{Historique des représentations syntaxiques  par des diagrammes en dépendance}{%\label{sec:3.3.5}
     La première représentation dépendentielle que nous connaissons est un diagramme, unique, proposé par le philosophe et grammairien allemand Johann Billroth dans sa grammaire du latin (\textit{Lateinische Syntax}) publiée en 1832, à seulement 24 ans (il décédera à 28 ans).
 
-    \begin{figure}
+    \begin{figure}[H]
     \includegraphics[width=.75\textwidth]{figures/Billroth1832.png}
     \caption{\label{fig:}Diagramme de \citet[102]{Billroth1832}}
     \end{figure}
 
     Stephen W. Clark est le premier grammairien à réellement exploiter des diagrammes dépendentiels dans sa grammaire de l’anglais de 1847 intitulé \textit{The science of the English grammar: A practical grammar in which words, phrases, and sentences are classified to their offices, and their relation to each other, illustrated by a complete system of diagrams} ‘La science de la grammaire anglaise : une grammaire pratique dans laquelle les mots, les syntagmes et les phrases sont classées selon leurs fonctions et leurs relations les uns aux autres par un système complet de diagrammes’. Dans les représentations de Clark, les connexions ne sont pas représentées en tant que telles : un mot qui en «~qualifie~» un autre (pour reprendre les termes de Clark) est placé dans une bulle sous la bulle de son gouverneur. Les prépositions comme \textit{by} ‘par’ ou \textit{of} ‘de’ dans la figure ci-dessous reçoivent une forme particulière indiquant qu’elles servent à «~connecter~» deux mots. Le sujet, le verbe et l’objet direct sont placés au même niveau, comme ici \textit{ressources} and \textit{are developed}. Les groupes prépositionnels sont entourés par des bulles en pointillés.
 
-    \begin{figure}
+    \begin{figure}[H]
     \caption{\label{fig:}Diagramme de \citet[17]{Clark1847}}
     \includegraphics[width=.75\textwidth]{figures/Clark1847.png}\medskip\\
     \raggedright\textit{Our national resources are developed by an earnest culture of the arts of peace}\\
@@ -259,7 +259,7 @@ Notons pour conclure cette section que l’on utilise généralement une termino
 
     Ce ne sont pas les diagrammes de Clark qui sont passés à la postérité, mais ceux de ses suiveurs, \textbf{Alonzo Reed} and \textbf{Brainerd Kellogg}. Leurs diagrammes, proposés pour la première fois en 1877 et toujours utilisés aujourd’hui par certains enseignants d’anglais, sont équivalents à ceux de Clark, mais utilisent des conventions différentes : les mots ne sont plus placés dans des bulles, mais au-dessus de segments de traits. Les verbes et les noms reçoivent des segments horizontaux, comme \textit{pleased} ‘enchanté’ ou \textit{news} ‘nouvelles’ dans le diagramme qui suit, tandis que les autres mots, comme la préposition \textit{with} ‘avec’ ou l’adjectif ‘good’, reçoivent des segments en diagonal. Comme chez Clark, le sujet le verbe et l’objet sont au même niveau. Les connections apparaissent de manière plus explicite à la jointure de deux segments. La connexion entre le sujet et le verbe (\textit{girls – are pleased}) est symbolisée par un trait vertical et celle entre l’auxiliaire et le participe (\textit{are – pleased}) par un trait oblique.
 
-    \begin{figure}
+    \begin{figure}[H]
     %%[Warning: Draw object ignored]
     \includegraphics[width=7cm]{figures/ReedKellog}\medskip\\
     \raggedright\textit{The girls are pleased with the good news}\\
@@ -269,7 +269,7 @@ Notons pour conclure cette section que l’on utilise généralement une termino
 
     On peut traduire cette structure dans les conventions utilisées ici, en réifiant les connexions et en mettant en évidence le fait que certaines connexions ne sont pas hiérarchisées :
 
-    \begin{figure}
+    \begin{figure}[H]
     \caption{Interprétation du diagramme de Reed \& Kellogg}
 % %     \includegraphics[width=7cm]{figures/ReedKellogTree}    
     \begin{forest} for tree={font=\itshape\strut}
@@ -292,7 +292,7 @@ Notons pour conclure cette section que l’on utilise généralement une termino
 
     En 1883, dans un livre sur la grammaire allemande (\textit{Zur Methodik des deutschen Unterrichts} ‘Sur la méthodologie de l’enseignement de l’allemand’), \textbf{Franz Kern} propose de véritables arbres de dépendance. Voici ce qu’il écrit : «~Le mot déterminant dépend de celui qu’il détermine ou, en d’autres termes, est régi par lui. On désigne (graphiquement, par un schéma) la dépendance d’un mot d’un autre par un trait partant du mot régissant vers le bas et allant vers le mot régi~(ou dépendant) [figure de gauche] ou encore sans mot par de simples relations grammaticales [figure de droite].~» Ce texte est accompagné des deux figures suivantes pour la phrase \textit{Eine alte Kirche wurde ausgebessert} ‘Une vielle église a été réparée’. Dans la figure de gauche figurent les mots de la phrase, le complexe verbal n’étant pas décomposé. Dans la figure de droite, l’article (appelé \textit{Adj. (Zeiger)} ‘adjectif (pointeur)’) et l’adjectif qualificatif (\textit{Adjektiv}) dépendent du mot sujet (\textit{Subjektswort}) qui dépend du verbe fini (\textit{Finites Verbum}).
 
-    \begin{figure}
+    \begin{figure}[H]
       \caption{Arbres de dépendance de \citet[10]{kern1883zur}}
     \includegraphics[height=2cm]{figures/Kern1883-1.png}
     \includegraphics[height=2cm]{figures/Kern1883-2.png}\medskip\\
@@ -303,7 +303,7 @@ Notons pour conclure cette section que l’on utilise généralement une termino
 
     La notion de \textit{valence} a été introduite par le sémioticien anglais Charles S. Peirce dans un article de 1897. Peirce compare la possibilité qu’a le verbe \textit{give} ‘donner’ de se combiner avec trois éléments (\textit{John gives John to John}) avec la possibilité qu’à l’atome d’azote N de se combiner avec trois atomes d’hydrogène H pour donner une molécule d’ammoniac NH\textsubscript{3}. Cette métaphore de la connexion entre mots par la connexion entre atomes est accompagnée de la figure suivante :
 
-    \begin{figure}
+    \begin{figure}[H]
     \caption{Schéma valenciel de \citet{Peirce1897}}
     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img016.png}
     \end{figure}
@@ -312,7 +312,7 @@ Notons pour conclure cette section que l’on utilise généralement une termino
 
     C’est à Lucien Tesnière qu’on attribue les bases théoriques de la syntaxe de dépendance, exposées brièvement dans son article de 1934, \textit{Comment construire une syntaxe}, puis en détail dans son ouvrage posthume de 1959, \textit{Éléments de syntaxe structurale}. On notera, dans l’analyse suivante de 1934, que Tesnière considère la préposition comme dépendant du nom qu’elle introduit. (Le diagramme contient par ailleurs une erreur, qui n’est pas dans le manuscrit de Tesnière : le lien entre \textit{apporte} et \textit{vigueur} a été erronément attribué à \textit{elle}.)
 
-    \begin{figure}
+    \begin{figure}[H]
     \caption{Diagramme (tronqué) de \citet{tesniere1934comment}}
     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img017.png}\medskip\\
     \raggedright\textit{Ainsi cette vertu céleste, qui est contenue dans les écrits de saint Paul, même dans cette simplicité de style, conserve toute la vigueur qu’elle apporte du ciel d’où elle descend.} (Bossuet)
@@ -320,7 +320,7 @@ Notons pour conclure cette section que l’on utilise généralement une termino
 
     Si cette analyse contient déjà des symboles spéciaux (comme les flèches à double pointe \textrm{$\twoheadrightarrow $} pour les relatives), ce n’est que plus tard que Tesnière introduira les symboles en T pour la translation. Les structures de l’ouvrage de 1959 ne sont plus totalement hiérarchique comme le montre notre interprétation polygraphique ci-dessous de la représentation proposée par Tesnière pour \textit{Écrivez dans le livre de votre ami} !.
 
-    \begin{figure}
+    \begin{figure}[H]
     \caption{Interprétation polygraphique d'un stemma}
     \begin{subfigure}[b]{.5\textwidth}\centering
 % %     \includegraphics[width=4cm]{figures/StemmadeTesniere}

@@ -796,7 +796,7 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
     La première propriété du flux est qu’il semble être naturellement \textbf{borné}, c’est-à-dire que le nombre de dépendances qui appartiennent simultanément au flux en n’importe quel point de la chaîne parlée ne dépasse jamais une certaine valeur. De ce point de vue, il faut distinguer deux types de configurations : les dépendances en bouquet, qui partagent une extrémité commune, et les dépendances disjointes. Les dépendances disjointes correspondent à des enchâssements centrés (angl. \textit{center embeddings}) de syntagmes, qui s’avère beaucoup plus coûteux pour le traitement que la présence de plusieurs dépendants sur un même élément.
 
 
-    \begin{figure}
+    \begin{figure}[H]
     \caption{Configurations de dépendances à un point du flux}
     \begin{subfigure}[b]{.5\linewidth}
     \begin{tikzpicture}[>={Triangle[]},every node/.style={CircleNode},grow=right]
@@ -987,7 +987,7 @@ Et ainsi de suite.
 
     Tout se passe comme si \textit{te} ou \textit{me} (en tant qu’objet direct) bloquait les trois positions topologiques à la fois (celles de \textit{te/me} objet indirect, \textit{le} et \textit{lui}).
     
-    \begin{figure}
+    \begin{figure}[H]
     \begin{tabular}[c]{|l|l|l|l|l|l|l|l|}
     \hhline{--------}
      \textit{il} & \textit{ne} &  \textit{me} (indirect) &  \textit{le} &  \textit{lui} & \textit{y} & \textit{en} &  verbe\\
@@ -1688,7 +1688,7 @@ On note que le champ pré-noyau peut accueillir plusieurs éléments (ici le com
     \begin{enumerate}
     \item \textit{Description des constituants (topologiques).} Un constituant est un gabarit de places linéaires, c’est-à-dire une liste de champs. Les règles de ce type indiquent donc pour chaque constituant quelle est la liste des champs qui le compose. Ces règles se rapprochent des règles de réécriture d’une PSG (voir l’\encadref{fig:3.5.29} \textit{Grammaire de réécriture}) et l’on peut utiliser un notation similaire : D \textrm{→} $f_1 \: f_2 \ldots f_n$, où D est un type de constituant (D comme domaine) et les $f_i$ des noms de champs. Nous utilisons la lettre $f$ pour les noms de champs (de l’angl. \textit{field}, all. \textit{Feld}).
 
-    \begin{figure}
+    \begin{figure}[H]
       \begin{tabular}{|c|c|c|c|}
       \hline
       \multicolumn{4}{|c|}{\cellcolor{lsDOIGray}D}\\
@@ -1706,7 +1706,7 @@ On note que le champ pré-noyau peut accueillir plusieurs éléments (ici le com
 
     \item \textit{Règle de correspondance.} Ce sont les règles qui assurent réellement la linéarisation, en indiquant, pour une dépendance donnée \textit{x} \textrm{→} \textit{y}, dans quel champ f peut aller le dépendant \textit{y}. La règle dépend des catégories C\textsubscript{1} et C\textsubscript{2} de x et y et de la relation syntaxique \textit{r} entre \textit{x} et \textit{y} (c’est-à-dire l’étiquette de la dépendance \textit{x} \textrm{→} \textit{y}). Par défaut, le nœud y se place par rapport à son gouverneur \textit{x} et le champ f est donc l’un des champs du constituant ouvert par \textit{x}.
 
-    \begin{figure}
+    \begin{figure}[H]
        \begin{tikzpicture}
           \begin{scope}[on background layer]
           \matrix (matrix) [matrix of math nodes, ampersand replacement=\&, 
@@ -1723,7 +1723,7 @@ On note que le champ pré-noyau peut accueillir plusieurs éléments (ici le com
 
     Une telle règle peut aussi indiquer la possibilité pour \textit{y} de s’émanciper. On peut contrôler l’émancipation de différentes façons : celle que nous retenons est d’indiquer quelles frontières de constituants peut «~traverser~» \textit{y} pour se placer dans un champ d’un constituant ouvert par un ancêtre de \textit{x.}
     
-    \begin{figure}
+    \begin{figure}[H]
      \begin{tikzpicture}
       \matrix (matrix) [ampersand replacement = \&, every node/.style={font=\strut}, column sep=18pt]
         {
@@ -1748,7 +1748,7 @@ On note que le champ pré-noyau peut accueillir plusieurs éléments (ici le com
 
     \item \textit{Création de constituant.} À chaque fois qu’un nœud \textit{x} de l’arbre de dépendance est placé dans un champ (par une des règles précédentes), \textit{x} ouvre à son tour un constituant pour placer ses dépendants. Une règle de ce type indique donc le type de constituant D créé en fonction de la catégorie C de \textit{x} et du champ f dans lequel \textit{x} est placé.
 
-    \begin{figure}
+    \begin{figure}[H]
      \begin{tikzpicture}
       \matrix (matrix) [ampersand replacement=\&, every node/.style={font=\strut}, column sep=18pt]
         {
@@ -1830,7 +1830,7 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
 \globe{La structure topologique de l’allemand}{%\label{sec:3.5.36}
     Nous avons déjà esquissé le modèle topologique de l’allemand dans la \sectref{sec:3.5.5} \textit{Le cas des langues V2}. La plupart des règles de l’ordre des mots en allemand se comprennent facilement en considérant qu’une phrase déclarative est constituée de 5 champs consécutifs qui forment le domaine principal.
     
-    \begin{figure}   
+    \begin{figure}[H]
     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img032.png}
     \caption{Domaine principal de l'allemand et placement V2 de l'auxiliaire {\itshape hat}}
     \end{figure}
@@ -1852,7 +1852,7 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     \z
     Le placement des verbes dans la parenthèse droite peut aussi être décrit par une structure topologique : l’amas verbal. Il est composé de trois champs : le \textbf{champ supérieur} ou \textbf{Oberfeld}, le champ tête et le \textbf{champ inférieur} ou \textbf{Unterfeld}.
 
-    \begin{figure}
+    \begin{figure}[H]
     \def\arraystretch{1.5}
     \setlength{\tabcolsep}{4ex}
     \begin{tabular}{|c|c|c|}

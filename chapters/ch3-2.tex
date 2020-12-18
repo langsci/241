@@ -499,7 +499,7 @@ Les deux tests que nous venons d’énoncer, le test de déplacement et le test 
 
     Du point de vue mathématique, les connexions ternaires ne posent pas de problème en soi, mais elles nécessitent d’introduire des structures légèrement différentes des arbres et es habituellement utilisés en modélisation des langues. (Un graphe, au sens usuel, ne contient que des connexions binaires.) Considérer que \textit{plein de gens} est une connexion ternaire revient à considérer que \textit{plein} et \textit{gens} se combinent directement et qu’ils ne peuvent se combiner qu’en présence du marqueur \textit{de}, ce qui est finalement assez facile à concevoir. On peut par exemple représenter cela par un lien entre \textit{plein} et \textit{gens} surmonté par \textit{de} :
 
-    \begin{figure}
+    \begin{figure}[H]
     \begin{tikzpicture}
       \node at (0,0) (A) [ConcSet] {plein};
       \node [right=2em of A, ConcSet] (B) {gens};
@@ -659,7 +659,7 @@ Les structures de connexion ne sont pas n’importe quel graphe à bulles. D’u
 
 Enfin, les structures de connexion ont généralement la propriété de binarité suivante : chaque bulle se décompose en deux bulles connectées entre elles. Il est alors possible d’utiliser un autre mode de représentation, où les bulles ne sont pas représentées : un lien dont le sommet est une bulle composée de deux sous-bulles connectées entre elles sera attribué au lien entre les deux sous-bulles. On obtient une nouvelle structure, que nous appelons un \textstyleTermesapprof{polygraphe}, où une arête peut avoir pour sommet un nœud ou une arête. Nous donnons ci-dessous une version polygraphique de la structure connexion de la section précédente.
 
-\begin{figure}
+\begin{figure}[H]
 \includegraphics[scale=.75]{figures/ceetudiantveutacheterunlivredesyntaxe.pdf}
 % % % \begin{tikzpicture}
 % % %   \matrix [matrix of nodes,
@@ -693,7 +693,7 @@ Enfin, les structures de connexion ont généralement la propriété de binarit�
 \loupe{Cycle de connexions}{%\label{sec:3.2.24}
     Il peut arriver qu’une unité ABC possède comme sous-unités à la fois AB, BC et AC et que les trois combinaisons A \textrm{${\oplus}$} B, B \textrm{${\oplus}$} C et A \textrm{${\oplus}$} C soient possibles, ce qui donne un \textbf{cycle} (non orienté) de connexions. (On verra, lorsqu’on considérera la dépendance et que les connexions sont orientées, qu’il ne peut pas s’agir d’un cycle orienté ; voir la \sectref{sec:3.3.4} \textit{Structure de dépendance et arbre de dépendance}.) Cette situation se rencontre avec les exemples suivants.
 
-\begin{figure}
+\begin{figure}[H]
 \caption{\label{fig:}Structures de connexion avec cycle}
 \begin{subfigure}[c]{.5\linewidth}
 \centering
@@ -766,7 +766,7 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
 
     Prenons un exemple : \textit{L’autre jour, j’ai rencontré quelqu’un que j’avais pas revu depuis l’école primaire}. Même si \textit{l’autre jour} est détaché et que le reste de l’énoncé forme une unité plus cohésive (un noyau, nous verrons), on n’attend pas d’avoir la totalité du noyau pour connecter \textit{l’autre jour} à la construction verbale. Le complément d’objet direct de \textsc{rencontrer} est un groupe substantival assez long : \textit{quelqu’un que j’avais pas revu depuis l’école primaire}. Même s’il faut avoir traité l’ensemble de ce groupe pour savoir ‘ce que j’ai rencontré’, on n’a pas besoin d’attendre d’avoir traité la relative pour connecter \textit{quelqu’un} à \textit{j’ai rencontré}. Il est d’ailleurs assez probable que l’énoncé soit segmenté prosodiquement de la façon suivante : \textit{l’autre jour {\textbar} j’ai rencontré quelqu’un {\textbar} que j’avais pas revu {\textbar} depuis l’école primaire}, puisque les groupes accentuels tendent à faire autour de 6 syllabes, et qu’il faut que, à chaque frontière de groupe accentuel (marquées ici par {\textbar} ), l’ensemble de ce qui précède reçoive une analyse syntaxique complète. Chacun des quatre groupes prosodiques peut recevoir une analyse complète indépendamment des autres groupes, puis être connecté aux autres, ce qui donne quelque chose comme ça :
 
-    \begin{figure}
+    \begin{figure}[H]
     \begin{tikzpicture}
     \node at (0,0)  [ConcSet,font=\small] (A) {l’autre jour};
     \node at (3,-1) [ConcSet,font=\small] (B) {j’ai rencontré quelqu’un};

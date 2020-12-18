@@ -63,7 +63,7 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
 
     Un \textstyleTermes{graphe} est une structure liant ensemble des éléments. Les éléments sont appelés les \textstyleTermes{nœuds} du graphe et les liens les \textstyleTermes{arêtes}. Un graphe est dit \textstyleTermes{connexe} lorsque pour chaque couple de nœuds du graphe, il existe un ensemble d’arêtes formant un chemin connectant un nœud à l’autre.
 
-    \begin{figure}
+    \begin{figure}[H]
     \begin{floatrow}
     \ffigbox{\tikz \graph [empty nodes, nodes={CircleNode}] { f -- a -- {b--d, c--e} };}
     {\caption{Graphe connexe}}
@@ -74,7 +74,7 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
 
     Un graphe est dit \textstyleTermes{acyclique} s’il n’existe aucun chemin partant d’un nœud et revenant à ce nœud sans emprunter deux fois la même arête.
 
-    \begin{figure}
+    \begin{figure}[H]
     \begin{floatrow}
     \ffigbox{\tikz \graph [empty nodes, nodes={CircleNode}] { f -- a -- {b--d, c--e} };}
     {\caption{Graphe acyclique}}
@@ -89,7 +89,7 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
 
     Un \textstyleTermes{arbre} est donc aussi un graphe orienté connexe pour lequel chaque nœud est la cible d’une seule arête à l’exception d’un nœud, la racine de l’arbre. Tout nœud autre que la racine de l’arbre possède ainsi un \textstyleTermes{gouverneur} qui est l’unique nœud qui le prend pour cible. On représente traditionnellement les arbres «~à l’envers~» avec la racine en haut. Les nœuds qui ne sont le gouverneur d’aucun nœud, c’est-à-dire qui n’ont pas de \textstyleTermes{dépendants}, sont appelés les \textstyleTermes{feuilles} de l’arbre. Un chemin orienté allant de la racine ou d’un nœud intérieur à une feuille est appelé une \textstyleTermes{branche}. Du fait que, par convention, chaque arête est toujours orientée vers le bas (la cible est en dessous de la source), il n’est pas nécessaire d’utiliser une deuxième convention et d’indiquer l’orientation par une flèche.
 
-    \begin{figure}
+    \begin{figure}[H]
     \hfill
     \begin{tikzpicture}
       \node at (0,0) (nodeA) [CircleNode] {};
@@ -128,14 +128,14 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
 
     Notons encore qu’il existe une notion d’acyclicité plus restrictive pour les graphes orientés : un graphe orienté est dit \textstyleTermes{acyclique} s’il n’existe aucun chemin orienté permettant de partir d’un nœud et de source en cible de revenir au même nœud.
 
-    \begin{figure}
+    \begin{figure}[H]
     \tikz[>={Triangle[]}] \graph [empty nodes, nodes={CircleNode}, multi, grow down=1.5cm] {a ->[bend right] b, b ->[bend right] a};
     \hspace{2cm}
     \tikz[>={Triangle[]}] \graph [empty nodes, nodes={CircleNode}] { subgraph C_n [n=3, clockwise, ->]};
     \caption{Graphes avec cycle orienté}  
     \end{figure}
     
-    \begin{figure}
+    \begin{figure}[H]
     \tikz[>={Triangle[]}] \graph [empty nodes, nodes={CircleNode}, clockwise, n=3] { [path, ->] a, b, c; a ->[bend right] c; a ->[bend left] c };
     \caption{Graphe sans cycle orienté}
     \end{figure}
@@ -348,7 +348,7 @@ Comme nous l’avons expliqué dans la section précédente, chaque unité lexic
 
     La phase de hiérarchisation s’accompagne d’une phase de «~lexicalisation~», c’est-à-dire de choix de signes linguistiques élémentaires, des unités lexicales et des unités grammaticales, qui se contraignent les unes les autres. La phase de linéarisation s’accompagne d’une «~morphologisation~» des signes, c’est-à-dire de combinaison des signifiants selon des règles morpho-phonologiques propres à chaque langue. Une telle architecture est à la base de la  Théorie Sens-Texte, que nous évoquerons dans l’\encadref{fig:1.3.9} éponyme.
 
-    \begin{figure}
+    \begin{figure}[H]
     \begin{tikzpicture}[level distance=4\baselineskip]
     \node [font=\bfseries] (root) {sens}
         child { node[font=\bfseries] {arbre syntaxique}
