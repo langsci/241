@@ -38,10 +38,10 @@
     bottom = 5mm,
     left = 5mm,
     right = 5mm,
-    frame engine = path,
-    frame style = {fill=black!12},
+    borderline = {0.8mm}{0pt}{\lsSeriesColor},
     sharp corners = all,
-    before upper = {\hspace*{-\parindent}}
+    before upper = {\hspace*{-\parindent}},
+    beforeafter skip balanced = \baselineskip
   }
   {def}
 
@@ -196,23 +196,23 @@
 % \renewcommand{\gkboxsection}[3]{\section{#2}#3}
 \newcommand{\encadref}[1]{encadré~\ref{#1}}
 
-\newcommand{\loupe}[2]{\gkboxsection{tbls-loupe}{#1}{#2}}
+\newcommand{\loupe}[2]{\gkboxsection{tbls-glass}{#1}{#2}}
 \newcommand{\eiffel}[2]{\gkboxsection{tbls-eiffel}{#1}{#2}}
 \newcommand{\globe}[2]{\gkboxsection{tbls-world}{#1}{#2}}
 \newcommand{\chevalier}[2]{\gkboxsection{tbls-history}{#1}{#2}}
 \newcommand{\maths}[2]{\gkboxsection{tbls-math}{#1}{#2}}
 
-\renewcommand{\loupe}[2]{\gkboxsection{tbls-loupe}{#1}{#2}}
+\renewcommand{\loupe}[2]{\gkboxsection{tbls-glass}{#1}{#2}}
 \renewcommand{\eiffel}[2]{\gkboxsection{tbls-eiffel}{#1}{#2}}
 \renewcommand{\globe}[2]{\gkboxsection{tbls-world}{#1}{#2}}
 \renewcommand{\chevalier}[2]{\gkboxsection{tbls-history}{#1}{#2}}
 \renewcommand{\maths}[2]{\gkboxsection{tbls-math}{#1}{#2}}
 
-\renewcommand{\loupe}[2]{\begin{encadre}{#1}{loupe}#2\end{encadre}}
-\renewcommand{\eiffel}[2]{\begin{encadre}{#1}{eiffel}#2\end{encadre}}
+\renewcommand{\loupe}[2]{\begin{encadre}{#1}{glass}#2\end{encadre}}
+\renewcommand{\eiffel}[2]{\begin{encadre}{#1}{explore}#2\end{encadre}}
 \renewcommand{\globe}[2]{\begin{encadre}{#1}{world}#2\end{encadre}}
 \renewcommand{\chevalier}[2]{\begin{encadre}{#1}{history}#2\end{encadre}}
-\renewcommand{\maths}[2]{\begin{encadre}{#1}{math}#2\end{encadre}}
+\renewcommand{\maths}[2]{\begin{encadre}{#1}{calc}#2\end{encadre}}
 
 \newcommand{\corrections}[1]{\begin{tblsfilledsymbol}{Corrections des exercices}{checkmark}#1\end{tblsfilledsymbol}}
 \newcommand{\exercices}[1]{\begin{tblsfilledsymbol}{Exercices}{pencil}#1\end{tblsfilledsymbol}}
