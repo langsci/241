@@ -1592,7 +1592,7 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
 \exercices{%\label{sec:3.4.30}
     \exercice{1} Nous proposons le parenthésage en constituants majeurs suivant :
     \begin{exe}
-    \exi{(i)} ( ( \textit{son} ( ( \textit{petit} ) \textit{chat} ) ) \textit{est} ( \textit{allergique} ( \textit{à} ( \textit{la} ( \textit{moquette} ) ) ) ) )
+    \exi{}{( [ \textit{son} ( [ \textit{petit} ] \textit{chat} ) ] \textit{est} [ \textit{allergique} ( \textit{à} [ \textit{la} ( \textit{moquette} ) ] ) ] )}
     \end{exe}
     En déduire un arbre de constituant plat, puis un arbre de dépendance en appliquant la méthode de Lecerf.
 
@@ -1602,23 +1602,28 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     \item \textit{Louise veut partir en Italie.}
     \end{enumerate}
 
-    Etudiez le statut de constituant de \textit{partir en Italie} dans ces deux exemples. Montrez que les tests donnent des résultats différents. Qu’en déduit-on sur le plan théorique ?
+    \noindent Étudiez le statut de constituant de \textit{partir en Italie} dans ces deux exemples. Montrez que les tests donnent des résultats différents. Qu’en déduit-on sur le plan théorique ?
 
     \exercice{3} Quel est l’intérêt du point de vue théorique d’utiliser des arbres de constituants qui sont binaires ?
 
     \exercice{4} Analysez aussi finement que vous le pouvez (sans descendre en deçà des mots) la phrase suivante de Marcel Proust extraite de \textit{Du côté de chez Swan} :
     
     \begin{exe}
-    \exi{(i)}{à l’instant même où la gorgée mêlée des miettes du gâteau toucha mon palais, je tressaillis, attentif à ce qui se passait d’extraordinaire en moi.}
+    \exi{}{\textit{à l’instant même où la gorgée mêlée des miettes du gâteau toucha mon palais, je tressaillis, attentif à ce qui se passait d’extraordinaire en moi.}}
     \end{exe}
     En déduire une structure de dépendance et un arbre de constituants binaire.
+    
+     \exercice{5} On s’intéresse à la construction \textit{de X à Y}, illustrée par des exemples comme \textit{le train de Paris à Marseille} ou \textit{il travaille du lundi au vendredi}. À quelle hypothèse nous conduit l’application du test de déplacement (voir la \sectref{sec:3.2.16} \textit{Tests pour la connexion}) ? 
+     Cette hypothèse est-elle confirmée par d’autres tests ? Comment analyser alors la construction ?
 }
 \lecturesadditionnelles{%\label{sec:3.4.31}
     Concernant l’analyse en constituants immédiats, on consultera les ouvrages de \citet{bloomfield1933language}, \citet{gleason1955introduction} et \citet{hockett1958course}, plusieurs fois cités déjà, ainsi que l’article de \citet{wells1947immediate}. Les ouvrages plus tardifs ont tendance à prendre l’ACI pour acquise et n’en discutent pas les fondements. C’est en particulier le cas des travaux de \citet{chomsky1957syntactic,chomsky1965aspects}. Pour l’origine des diagrammes en constituants, on consultera \citet{barnard1836analytic}, \citet{nida1943morphology} et \citet{chomsky1955three,chomsky1957syntactic}. \citet{nida1966synopsys} est une édition de sa thèse sur l’ACI soutenue en 1936, dans laquelle a été ajouté un chapitre introductif comprenant des dizaines de diagrammes syntaxiques. La syntaxe X-barre est introduite dans l’article de \citet{chomsky1970remarks} et l’ouvrage de \citet{jackendoff1977x}. Les liens entre l’ACI et la syntaxe de dépendance sont étudiés dans un article de \citet{mazziotta2017what}.
+    
+    Les tests de constituance sont présentés dans la plupart des ouvrage de linguistique basé sur la syntaxe de constituants. Pour une présentation des tests de constituance dans le cadre de la syntaxe de dépendance et une large bibliographie sur ces tests, on pourra consulter le livre de Timothy \citet{osborne2019dependency}.
 
-    Les arbres de Beauzée-Gladkij ont été décrits dans l’entrée \textit{Régime} de l’Encyclopédie et diagrammatisés par \citet{gladkij1968describing} dans un article écrit en russe.
+    Les arbres de Beauzée-Gladkij ont été décrits dans l’entrée \textit{Régime} de l’Encyclopédie de \citeyear{Beauzée1765} et diagrammatisés par \citet{gladkij1968describing} dans un article écrit en russe.
 
-    Dans la \sectref{sec:3.4.7} sur la \textit{Décomposition récursive}, nous avons évoqué le pirahã, une langue parlée par une tribu d’Amazonie, qui a été étudiée par le linguiste Dan Everett. Nous renvoyons à un remarquable article en ligne du New Yorker de 2007, écrit par John Colapinto, sur ce linguiste et la controverse qu’il a soulevé à propos du caractère non récursif de cette langue.
+    Dans l'\encadref{sec:3.4.7} sur la \textit{Décomposition récursive}, nous avons évoqué le pirahã, une langue parlée par une tribu d’Amazonie, qui a été étudiée par le linguiste Dan Everett. Nous renvoyons à un remarquable article en ligne du New Yorker de \citeyear{colapinto2007has}, écrit par John Colapinto, sur ce linguiste et la controverse qu’il a soulevé à propos du caractère non récursif de cette langue.
 
     Ceux qui s’intéressent à l’algorithmique d’Earley pourront lire l’article original d’\citet{earley1970efficient} ; celui-ci est également décrit dans de nombreux ouvrages d’introduction à la théorie des langages formels.
 
@@ -1628,23 +1633,23 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     \corrigé{1} On obtient l’arbre de dépendance suivant :
     
     \begin{exe}
-    \exi{(i)}     {petit} \textrm{←} \textit{chat} \textrm{←} \textit{son} \textrm{←} \textit{est} \textrm{→} \textit{allergique} \textrm{→} \textit{à} \textrm{→} \textit{la} \textrm{→} \textit{moquette}
+    \exi{}     {\textit{petit}} \textrm{←} \textit{chat} \textrm{←} \textit{son} \textrm{←} \textit{est} \textrm{→} \textit{allergique} \textrm{→} \textit{à} \textrm{→} \textit{la} \textrm{→} \textit{moquette}
     \end{exe}
     \corrigé{2} Dans l’exemple b, \textit{partir en Italie} peut être interrogé (\textit{Que veut Louise} ? – \textit{Partir en Italie}.) et semi-clivé (\textit{Ce que veut Louise,} \textit{c’est} \textit{partir en Italie.}), mais ce n’est pas possible en a (*\textit{Que va Louise} ? ; *\textit{Ce que va Louise, c’est partir en Italie.}). Dans une analyse en dépendance, nous dirons que \textit{va partir} est très cohésif et qu’il n’est pas possible de les séparer, sans remettre en question que \textit{partir en Italie} est une unité et que donc \textit{partir} se combine avec \textit{en Italie}. Dans une analyse en constituants, il n’est pas possible de considérer à la fois \textit{va partir} et \textit{partir en Italie} comme des unités syntaxiques, ce qui est un problème.
 
-    \corrigé{3} Un branchement binaire peut être interprété comme une connexion binaire et donc comme une construction élémentaire. Nous avons montré dans la \sectref{sec:3.4.21}--\ref{sec:3.4.23} comment les nœuds intérieurs d’un arbre de constituants binaires pouvaient être interprétés comme des connexions, puis des dépendances en cas de marquage d’un sous-constituant tête.
+    \corrigé{3} Un branchement binaire peut être interprété comme une connexion binaire et donc comme une construction élémentaire. Nous avons montré dans la \sectref{sec:3.4.21} et les suivantes comment les nœuds intérieurs d’un arbre de constituants binaires pouvaient être interprétés comme des connexions, puis des dépendances en cas de marquage d’un sous-constituant tête.
 
     \corrigé{4} En s’appuyant sur le découpage prosodique proposé par les virgules, on obtient un premier découpage : [ \textit{à l’instant même où la gorgée mêlée des miettes du gâteau toucha mon palais} ] [ \textit{je tressaillis} ] [ \textit{attentif à ce qui se passait d’extraordinaire en moi} ]. On peut ensuite continuer à réduire :
 
     \begin{exe}
-    \exi{(i)}\relax
+    \exi{i}\relax
     [ [\textit{à l'instant même}] — [ [\textit{où}] [ [\textit{la gorgée}] — [\textit{mêlée des miettes du gâteau}] ] — [\textit{toucha}] — [ \textit{mon palais} ] ]\\\relax
     [ [ [\textit{je}] — [\textit{tressaillis}] ] [ [\textit{attentif}] — [ [\textit{à ce qui}] — [\textit{se passait}] — [\textit{d'extraordinaire}] [\textit{en moi}] ]
     \end{exe}
 
-    Nous proposons finalement la structure de dépendance suivante. Nous laissons sous-spécifié la tête de la relation déterminant-nom, ainsi que la relation entre le pronom relatif et verbe principale de la proposition relative.
+    Nous proposons finalement la structure de dépendance de la figure \ref{fig:proust}. Nous laissons sous-spécifié la tête de la relation déterminant-nom, ainsi que la relation entre le pronom relatif et verbe principal des propositions relatives.
     
-    \begin{exe}
+    \begin{figure}
     \exi{(ii)}\relax
     \begin{forest} for tree = { }
     [tressaillis,calign=child,calign primary child=2
@@ -1697,12 +1702,18 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
         ]        
     ]
     \end{forest}
-    \end{exe}
-    Pour construire un arbre de constituants binaire, il faut décider dans quel ordre combiner chaque mot avec ses dépendants. Notons que lorsqu’une connexion n’est pas hiérarchisée, cette combinaison a lieu après les autres. Par exemple, si nous prenons la portion \textit{à l’instant même où la gorgée mêlée des miettes du gâteau toucha mon palais}, on obtient~la structure suivante, où le déterminant est le dernier élément à se combiner avec le nom :
+    \caption{\label{fig:proust}}
+    \end{figure}
+    \todo[inline]{It is a polygraph. See original.}
+    
+    Pour construire un arbre de constituants binaire, il faut décider dans quel ordre combiner chaque mot avec ses dépendants. Notons que lorsqu’une connexion n’est pas hiérarchisée, cette combinaison a lieu après les autres. Par exemple, si nous prenons la portion \textit{à l’instant même où la gorgée mêlée des miettes du gâteau toucha mon palais}, on obtient~la structure (ii), où le déterminant est le dernier élément à se combiner avec le nom :
     
     \begin{exe}
-    \exi{(iii)}\relax
+    \exi{(ii)}\relax
         [ \textit{à} ( \textit{l’} [ (\textit{instant même}) ( \textit{où} [ \textit{la} (\textit{gorgée} [\textit{mêlée des miettes du gâteau}] ) ] [ \textit{toucha} (\textit{mon palais}) ] ) ] ) ]
     \end{exe}
     Nous devons également décider dans quel ordre regrouper les trois dépendants de la tête de la phrase, \textit{tressaillis}. Dans ce cas, l’analyse standard regroupera probablement le sujet \textit{je} en premier, car les deux autres dépendants sont des éléments détachés prosodiquement. Concluons en rappelant que la stratification de la structure de constituants ne nous semble pas une question très pertinente. Nous pensons que le regroupement en constituants doit être fait à un autre niveau d’analyse en utilisant des critères de cohésion syntaxique. Ce sera l’objet du chapitre suivant.
+ 
+ \corrigé{5} Le test de déplacement montre l’impossibilité de permuter les syntagmes en \textsc{à} et en \textsc{de} : *\textit{le train à Marseille de Paris}, *\textit{il travaille au vendredi du lundi}. Il semble donc qu’il ne s’agisse pas de deux groupes prépositionnels indépendants, lesquels peuvent généralement commuter (\textit{Elle parle de Marie à Zoé}, \textit{un timbre de ma collection à 10 euros}). Le test de clivage (voir la \sectref{sec:3.4.10} sur \textit{Les tests de constituance}) confirme cela : *\textit{c’est au vendredi qu’il travaille du lundi} vs *\textit{c’est du lundi qu’il travaille au vendredi} vs \textit{c’est du lundi au vendredi qu’il travaille}. Nous verrons dans le \chapfuturef{19} qu’on peut traiter cette construction comme une coordination.
 }
+
