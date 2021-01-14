@@ -237,7 +237,7 @@ Si nous reprenons l’exemple des chapitres précédents (\textit{Beaucoup de ge
 \end{figure}
 
 
-On peut représenter la correspondance entre les deux structures, l’arbre de dépendance et l’ordre linéaire, en alignant les nœuds qui se correspondent deux à deux. Cette représentation qui apparaît dans les travaux d'Yves \citet{lecerf1960programme}, sera appelée la représentation à la Lecerf de l'arbre de dépendance ordonné. Dans cette représentation, les deux structure en correspondance sont bien séparées et la correspondance est représentée de manière explicite par des lignes verticales (en pointillée), que Lecerf appelle des \textstyleTermesapprof{projetantes}.
+On peut représenter la correspondance entre les deux structures, l’arbre de dépendance et l’ordre linéaire, en alignant les nœuds qui se correspondent deux à deux. Cette représentation qui apparaît dans les travaux d'Yves \citet{lecerf1960programme}, sera appelée l'\textstyleTermesapprof{arbre de dépendance projeté} ou la  \textstyleTermesapprof{représentation à la Lecerf} de l'arbre de dépendance ordonné. Dans cette représentation, les deux structure en correspondance sont bien séparées et la correspondance est représentée de manière explicite par des lignes verticales (en pointillée), que Lecerf appelle des \textstyleTermesapprof{projetantes}.
 
 \begin{figure}
 \begin{tikzpicture}
@@ -275,11 +275,8 @@ On peut représenter la correspondance entre les deux structures, l’arbre de d
 
 \end{figure}
 
-L’ordre linéaire et l’arbre de dépendance sont en fait deux structures sur \textbf{un même ensemble} d’éléments.  Une structure combinant ainsi deux structures est appelée une \textstyleTermesapprof{structure produit}.
-Une structure produit est davantage que la réunion de deux structures, il s'agit de deux structures combinées entre elles.
-L'arbre de dépendance ordonné est une structure produit.
-
-On peut représenter sur un unique ensemble de nœuds la structure produit que forment ensemble l’ordre linéaire et l’arbre de dépendance. La représentation résultante, donnée dans la figure \ref{fig:noel-Hudson}, a été introduite Richard \cite{hudson1984word}. Dans cette représentation toutes les dépendances sont représentée dans le même demi-plan au-dessus de la ligne formée par la chaîne linéaire. Une dépendance verticale (sans gouverneur) vient en plus marquer la position de la racine de l'arbre de dépendance. L’intérêt de cette dépendance apparaîtra clairement lorsque nous parlerons de projectivité (\sectref{sec:3.5.14} sur \textit{Projectivité et dépendances projectives}). Nous appellerons cette représentation la représentation en ligne ou la représentation à la Hudson d'un arbre de dépendance ordonné.
+L’ordre linéaire et l’arbre de dépendance sont en fait deux structures sur \textbf{un même ensemble} d’éléments.  Une structure combinant ainsi deux structures est appelée une \textstyleTermesapprof{structure produits} en mathématique.
+Une représentation la structure produit que forment ensemble l’ordre linéaire et l’arbre de dépendance est donnée dans la figure \ref{fig:noel-Hudson}. Dans cette représentation, introduite par Richard \cite{hudson1984word}, toutes les dépendances sont représentée dans le même demi-plan au-dessus de la ligne formée par la chaîne linéaire. Une dépendance verticale (sans gouverneur) vient en plus marquer la position de la racine de l'arbre de dépendance. L’intérêt de cette dépendance apparaîtra clairement lorsque nous parlerons de projectivité (\sectref{sec:3.5.14} sur \textit{Projectivité et dépendances projectives}). Nous appellerons cette représentation la  \textstyleTermesapprof{représentation en ligne} ou la  \textstyleTermesapprof{représentation à la Hudson} d'un arbre de dépendance ordonné.
 
 \begin{figure}
 \begin{tikzpicture}
@@ -308,10 +305,10 @@ On peut représenter sur un unique ensemble de nœuds la structure produit que f
 
 
 \loupe{Format tabulaire}{%\label{sec:3.5.10}
-    Un arbre de dépendance ordonné peut être encodé dans un tableau comme le suivant :
+    Un arbre de dépendance ordonné peut être encodé dans un \textstyleTermesapprof{format tabulaire} comme dans la table \ref{tab:conll}.
     
     \begin{table}[H]
-    \caption{Encodage tabulaire d'un arbre de dépendance ordonné\label{tab:}}
+    \caption{Encodage tabulaire d'un arbre de dépendance ordonné\label{tab:conll}}
     \begin{tabular}{cllcl}
     \lsptoprule
     Identifiant & Mot & Catégorie & Gouverneur & Fonction\\
@@ -330,12 +327,12 @@ On peut représenter sur un unique ensemble de nœuds la structure produit que f
 
     Ce tableau a 5 colonnes. La deuxième contient les mots de la phrase dans l’ordre. Pour chacun de ces mots, on peut donner autant d’informations qu’on veut : ici on donne leur catégorie syntaxique dans la troisième colonne. La première colonne attribue un identifiant à chaque mot. Grace à cet identifiant, on peut faire référence à n’importe quel mot de la même phrase. Ainsi dans la quatrième colonne, on indique pour chaque mot quel est son gouverneur. On peut ensuite ajouter des informations sur cette relation : la dernière colonne indique la fonction syntaxique que remplit chaque mot par rapport à son gouverneur.
 
-    Le tableau se lit donc ainsi : le mot 5 est \textit{passer}. Ce mot est un verbe qui a pour gouverneur le mot 4 dont il est l’objet. Le mot 4 est \textit{aimeraient}. Ce verbe est la racine de l’arbre de dépendance. Il n’a donc pas de gouverneur, ce que nous indiquons par le 0.
+    Le tableau se lit donc ainsi : le mot 5 est \textit{passer}. Ce mot est un verbe qui a pour gouverneur le mot 4 dont il est l’objet. Le mot 4 est \textit{aimeraient}. Ce verbe est la racine de l’arbre de dépendance. Il n’a donc pas de gouverneur, ce que nous indiquons par un identifiant 0 pour le gouverneur.
 
-    On peut représenter l’information contenue dans le tableau par une structure étiquetée :
+    On peut représenter l’information contenue dans le table \ref{tab:conll} par une structure étiquetée :
 
     \begin{figure}[H]
-    \caption{{\color{red}Please provide a caption}\label{fig:}}
+    \caption{Arbre de dépendance ordonné étiqueté\label{fig:noel-conll}}
     \begin{tikzpicture}
         \begin{scope}[every node/.style={CircleNode},grow=right]
         \node (root) {} child { node {} child { node{} child { node{} child { node{}  
@@ -367,27 +364,32 @@ On peut représenter sur un unique ensemble de nœuds la structure produit que f
     \end{tikzpicture} 
     \end{figure}
 
-    Ce \textstyleTermesapprof{format tabulaire}, également appelé \textstyleTermesapprof{format CoNLL} d’après la conférence éponyme en apprentissage automatique (\textit{Conférence in Natural Language Learning}), est extrêmement économique et sert en traitement automatique des langues à encoder des corpus de textes analysés syntaxiquement. Les présupposés théoriques se reflètent dans l’économie du format : on ne peut encoder qu’un seul gouverneur par mot (la structure doit être un arbre) et les liens sont restreints aux mots de la même phrase. Il existe différentes extensions de ce format permettant d’encoder des graphes et mêmes des graphes à bulles.
+    Le format tabulaire de la table \ref{tab:conll}, également appelé \textstyleTermesapprof{format CoNLL} d’après la conférence éponyme en apprentissage automatique (\textit{Conférence in Natural Language Learning}), est extrêmement économique et sert en traitement automatique des langues à encoder des corpus de textes analysés syntaxiquement. Les présupposés théoriques se reflètent dans l’économie du format : on ne peut encoder qu’un seul gouverneur par mot (la structure doit être un arbre) et les liens sont restreints aux mots de la même phrase. Il existe différentes extensions de ce format permettant d’encoder des graphes et mêmes des graphes à bulles.
 
     Les corpus annotés avec des arbres de dépendance sont appelés des \textstyleTermesapprof{corpus arborés en dépendance} ou \textstyleTermesapprof{banques d’arbres de dépendance} ou en anglais \textstyleTermesapprof{dependency treebanks}. Ils servent pour des études sur les propriétés d’une langue donnée, aussi bien qu’à l’apprentissage automatique d’outils logiciels comme des analyseurs syntaxiques automatiques.
 }
 \maths{Notation polonaise inverse}{%\label{sec:3.5.11}
     Nous allons nous intéresser à la structure d’un calcul algébrique élémentaire et voir que le rapport entre une structure arborescente et l’ordre n’est pas qu’une question interne à la linguistique. La question a d’ailleurs intéressé les mathématiciens avant les linguistes.
 
-    Considérons la formule algébrique (7 \textrm{${\times}$} 19) + (5 \textrm{${\times}$} 31). Pour effectuer ce calcul, il faut nécessairement effectuer les deux multiplications avant de les sommer, ce que l’on peut représenter par le diagramme suivant, où le résultat de chaque calcul intermédiaire est donné sous une barre horizontale :
+    Considérons la formule algébrique (7 \textrm{${\times}$} 19) + (5 \textrm{${\times}$} 31). Pour effectuer ce calcul, il faut nécessairement effectuer les deux multiplications avant de les sommer, ce que l’on peut représenter, comme dans la figure \ref{fig: \centeringmule-calcul}, par un diagramme où le résultat de chaque calcul intermédiaire est donné sous une barre horizontale.
 
-    \ea  Calcul du résultat de la formule (7 × 19) + (5 × 31)\\
-         \begin{tabular}{@{}c@{ }c@{ }c@{}}
+\begin{figure} \centering
+      \caption{Calcul du résultat de la formule (7 × 19) + (5 × 31)}
+    \label{fig:formule-calcul}
+      \begin{tabular}{@{}c@{ }c@{ }c@{}}
          $(7\times 19)$& + &$(5\times 31)$\\\hhline{-~-}
          133 & & 155\\\hline
          \multicolumn{3}{@{}c@{}}{288}
          \end{tabular}
-    \z
+  \end{figure}
 
-    On peut alors donner une représentation arborescente de la structure de ce calcul. Les signes + et \textrm{${\times}$} représentent des opérateurs binaires qui combinent deux nombres pour en fournir un troisième. Ces opérateurs ont donc deux arguments à l’image d’un verbe transitif et une représentation similaire, par un arbre de dépendance, peut être adoptée :
-    
-    \ea  Arbre de dépendance de la formule (7 × 19) + (5 × 31)\\
-    \begin{forest}
+    On peut alors donner une représentation arborescente de la structure de ce calcul. Les signes + et \textrm{${\times}$} représentent des opérateurs binaires qui combinent deux nombres pour en fournir un troisième. Ces opérateurs ont donc deux arguments à l’image d’un verbe transitif et une représentation similaire, par un arbre de dépendance, peut être adoptée. La figure \ref{fig:fig:formule-arbre} donne l'arbre de dépendance de notre formule.
+   
+   \begin{figure}
+    \centering
+   \caption{Arbre de dépendance de la formule (7 × 19) + (5 × 31)}
+    \label{fig:formule-arbre}
+   \begin{forest}
     [$+$
       [$\times$
         [7] [19]
@@ -397,15 +399,20 @@ On peut représenter sur un unique ensemble de nœuds la structure produit que f
       ]
     ]
     \end{forest}
-    \z
+ \end{figure}
 
-    De telles structures de dépendance pour les formules ont été introduites à la suite des travaux du logicien polonais Jan Łukasiewicz, qui a montré vers 1920 qu’il y avait plusieurs façons d’encoder linéairement un tel arbre. Une première façon est celle que nous utilisons quand nous écrivons la formule (7 \textrm{${\times}$} 19) + (5 \textrm{${\times}$} 31), où à chaque fois l’opérateur binaire a été placé entre ses deux dépendants. Cette écriture, dite \textstyleTermesapprof{infixée}, nécessite des parenthèses pour ne pas être ambiguë : en effet, 7 \textrm{${\times}$} 19 + 5 \textrm{${\times}$} 31 peut tout aussi bien correspondre à 7 \textrm{${\times}$} (19 + (5 \textrm{${\times}$} 31)), ((7 \textrm{${\times}$} 19) + 5) \textrm{${\times}$} 31 ou encore (7 \textrm{${\times}$} (19 + 5)) \textrm{${\times}$} 31.
 
-    Une autre écriture, dite \textstyleTermesapprof{écriture polonaise} ou \textstyleTermesapprof{préfixée}, consiste à lire l’arbre en ramassant toujours le gouverneur avant ses dépendants et les dépendants de gauche à droite : + \textrm{${\times}$} 7 19 \textrm{${\times}$} 5 31 (voir \textit{Exercices} en fin de chapitre). Cette formule n’est pas ambiguë, malgré l’absence de parenthèses : il suffit de connaître l’\textstyleTermesapprof{arité} de chaque symbole, c’est-à-dire le nombre d’arguments et donc de dépendants qu’il a. Les opérateurs + et \textrm{${\times}$} sont \textstyleTermesapprof{binaires}, c’est-à-dire d’arité 2, tandis que les nombres sont d’arité 0.
+    De telles structures de dépendance pour les formules ont été introduites à la suite des travaux du logicien polonais Jan Łukasiewicz, qui a montré vers 1920 qu’il y avait plusieurs façons d’encoder linéairement une formule. Une première façon est celle que nous utilisons quand nous écrivons la formule sous la forme (7 \textrm{${\times}$} 19) + (5 \textrm{${\times}$} 31), où à chaque fois l’opérateur binaire a été placé entre ses deux dépendants. Cette écriture, dite \textstyleTermesapprof{infixée}, nécessite des parenthèses pour ne pas être ambiguë : en effet, 7 \textrm{${\times}$} 19 + 5 \textrm{${\times}$} 31 peut tout aussi bien correspondre à 7 \textrm{${\times}$} (19 + (5 \textrm{${\times}$} 31)) ou bien (7 \textrm{${\times}$} (19 + 5)) \textrm{${\times}$} 31.
 
-    La \textstyleTermesapprof{lecture}\textstyleTermes{} \textstyleTermesapprof{postfixée} ou \textstyleTermesapprof{polonaise inverse}, où le gouverneur est ramassé après ses dépendants, est particulièrement appropriée au calcul et utilisée par les calculateurs automatiques, y compris certaines machines à calculer d’usage courant : en effet, pour effectuer le calcul 7 19 \textrm{${\times}$} 5 31 + \textrm{${\times}$}, il suffit d’empiler les nombres au fur et à mesure de la lecture et à la lecture de chaque opérateur binaire d’effectuer l’opération sur les nombres des deux lignes qui précèdent en les supprimant :
+    Une autre écriture, dite \textstyleTermesapprof{écriture polonaise} ou \textstyleTermesapprof{préfixée}, consiste à lire l’arbre de dépendance de la formule en ramassant toujours le gouverneur avant ses dépendants et les dépendants de gauche à droite : + \textrm{${\times}$} 7 19 \textrm{${\times}$} 5 31 . Cette formule n’est pas ambiguë, malgré l’absence de parenthèses : il suffit de connaître l’\textstyleTermesapprof{arité} de chaque symbole, c’est-à-dire le nombre d’arguments et donc de dépendants qu’il a pour reconstruire l'arbre (voir \textit{Exercices} en fin de chapitre). Les opérateurs + et \textrm{${\times}$} sont \textstyleTermesapprof{binaires}, c’est-à-dire d’arité 2, tandis que les nombres sont d’arité 0.
 
-    \ea
+    La \textstyleTermesapprof{lecture}\textstyleTermes{} \textstyleTermesapprof{postfixée} ou \textstyleTermesapprof{polonaise inverse}, où le gouverneur est ramassé après ses dépendants, est particulièrement appropriée au calcul et utilisée par les calculateurs automatiques, y compris certaines machines à calculer d’usage courant : en effet, pour effectuer le calcul 7 19 \textrm{${\times}$} 5 31 + \textrm{${\times}$}, il suffit d’empiler les nombres au fur et à mesure de la lecture et à la lecture de chaque opérateur binaire d’effectuer l’opération sur les nombres des deux lignes qui précèdent en les supprimant (voir la figure \ref{fig:formule-calcul2}).
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Calcul du résultat de la formule  7 19 \textrm{${\times}$} 5 31 + \textrm{${\times}$}}
+    \label{fig:formule-calcul2}
     \attop{%
     \begin{tikzpicture}
       \matrix (matrix) [matrix of math nodes, nodes in empty cells, 
@@ -413,36 +420,44 @@ On peut représenter sur un unique ensemble de nœuds la structure produit que f
         {
           7 \& \& \&\\
           19 \& \& \& \\
-          \times \& 133 \& 133 \&\\
+          \times \& \textit{133} \& \textit{133} \&\\
                  \& 5 \& \& \\
                  \& 31 \& \& \\
-                 \& \times \& 155 \&\\
-                 \& \& + \& 288\\
+                 \& \times \& \textit{155} \&\\
+                 \& \& + \& \textit{288}\\
         };
         \node at ($(matrix-3-1) !.5! (matrix-3-2) $) [inner sep=0pt,font=\Large] {▶};
         \node at ($(matrix-6-2) !.5! (matrix-6-3) $) [inner sep=0pt,font=\Large] {▶};
         \node at ($(matrix-7-3) !.5! (matrix-7-4) $) [inner sep=0pt,font=\Large] {▶};
     \end{tikzpicture}}
-    \z
+\end{figure}
+\todo[inline]{Is it possible to have the non-empty cells in white?}
 
     Ces différentes stratégies pour passer d’une structure hiérarchique à un ordre linéaire se retrouvent dans les langues naturelles (voir l’\encadref{fig:3.5.12} qui suit). Ceci montre la nécessité de distinguer, pour les calculs comme pour les énoncés linguistiques, la structure et son encodage linéaire. Notre calcul, encodé par la formule (7 \textrm{${\times}$} 19) + (5 \textrm{${\times}$} 31), aussi bien que par les formules + \textrm{${\times}$} 7 19 \textrm{${\times}$} 5 31 ou 7 19 \textrm{${\times}$} 5 31 + \textrm{${\times}$}, est totalement indépendant de la convention qui sert à l’encoder linéairement. Autrement dit la structure du calcul n’est pas ordonnée : seule la structure hiérarchique encodée par l’arbre de dépendance est pertinente. (Avec des opérateurs non commutatifs, comme la soustraction ou la division, l’ordre sur les fils d’un opérateur peut également être pertinent.) L’ordre linéaire résulte uniquement d’une convention d’encodage. Ceci est en grande partie vrai des langues naturelles : l’ordre linéaire des syntaxèmes imposé par la grammaire de la langue est une convention pour encoder la structure syntaxique de l’énoncé. Autrement dit, la structure syntaxique d’un énoncé, qui indique comment les éléments de cet énoncé se combinent les uns aux autres, est une structure qui est fondamentalement indépendante de l’ordre conventionnellement utilisé pour l’encoder linéairement.
 }
 \globe{Langues à têtes finales et langues à têtes initiales}{%\label{sec:3.5.12}
-    Les travaux en typologie, notamment le travail fondateur de Joseph Greenberg (\textit{Universals of Language}, 1963), puis l’étude de Matthew S. \citet{dryer1992greenbergian} sur plus de 500 langues, ont pu montrer une corrélation entre la place du verbe dans la phrase et la place du nom dans le groupe nominal ou de l’adjectif dans le groupe adjectival : ainsi les langues qui placent le verbe en fin de phrase tendent très fortement à placer les noms en fin de groupe nominal et vice versa.
+    Les travaux en typologie, notamment le travail fondateur de Joseph Greenberg (\textit{Universals of Language}, \citeyear{greenberg1963universals}), puis l’étude de Matthew S. \citet{dryer1992greenbergian} sur plus de 500 langues, ont pu montrer une corrélation entre la place du verbe dans la phrase et la place du nom dans le groupe nominal ou de l’adjectif dans le groupe adjectival : ainsi les langues qui placent le verbe en fin de phrase tendent très fortement à placer les noms en fin de groupe nominal et vice versa.
 
-    Henri Weil (1818--1909) a anticipé ces résultats en classant les langues selon la place de la tête par rapport à ses dépendants. Il distingue ainsi les \textstyleTermesapprof{langues descendantes} où la tête précède ses dépendants (et où en avançant dans la phrase on descend dans l’arbre et on s’éloigne de la racine) des \textstyleTermesapprof{langues montantes} où la tête suit ses dépendants (et où en avançant dans la phrase on monte dans l’arbre et on se rapproche de la racine). Lucien Tesnière (1989--1954), en comparant près de 200 langues (comme on peut le voir dans ses archives conservées à la Bibliothèque National de France), a repris cette classification en distinguant les \textstyleTermesapprof{langues centrifuges} (du latin \textit{centrum} ‘centre’ et \textit{fugio} ‘fuir’) où les dépendants suivent leur gouverneur des \textstyleTermesapprof{langues centripètes} (de \textit{peto} ‘tendre vers’) ou les dépendants précèdent leur tête. On parle aujourd’hui de \textstyleTermesapprof{langues à têtes finales} et de \textstyleTermesapprof{langues à têtes initiales} (et en anglais de \textit{head-final} et \textit{head-initial languages}).
+    Henri \citet{weil1844de} a anticipé ces résultats en classant les langues selon la place de la tête par rapport à ses dépendants. Il distingue ainsi les \textstyleTermesapprof{langues descendantes} où la tête précède ses dépendants (et où en avançant dans la phrase on descend dans l’arbre et on s’éloigne de la racine) des \textstyleTermesapprof{langues montantes} où la tête suit ses dépendants (et où en avançant dans la phrase on monte dans l’arbre et on se rapproche de la racine). Lucien Tesnière, en comparant près de 200 langues (comme on peut le voir dans ses archives conservées à la Bibliothèque National de France), a repris cette classification en distinguant, dans son ouvrage posthume de \citeyear{tesniere1959elements}, les \textstyleTermesapprof{langues centrifuges} (du latin \textit{centrum} ‘centre’ et \textit{fugio} ‘fuir’) où les dépendants suivent leur gouverneur des \textstyleTermesapprof{langues centripètes} (de \textit{peto} ‘tendre vers’) ou les dépendants précèdent leur tête. On parle aujourd’hui de \textstyleTermesapprof{langues à têtes finales} et de \textstyleTermesapprof{langues à têtes initiales} (et en anglais de \textit{head-final} et \textit{head-initial languages}).
 
-    Nous allons comparer des langues représentatives de ces deux tendances, en nous basant sur l’exemple suivant :
+    Nous allons comparer des langues représentatives de ces deux tendances, en nous basant sur l’exemple suivant en \textbf{français} et ses traductions en \textbf{coréen} et en \textbf{arabe standard}. Les syntaxèmes flexionnels dans les gloses de \REF{ex:motives} sont : \Q = translatif en qualificatif, \textsc{sg} = singulier, \PL = pluriel, \NOM = nominatif, \ACC = accusatif, \IND = indicatif, \PRS = présent, \textsc{def} = défini, \textsc{indef} = indéfini, \textsc{masc} = masculin.
 
-    \ea {Les étudiants très motivés organisent une conférence internationale.} \z
-
-    Le coréen est une langue à têtes finales, et la traduction de cette phrase en coréen donne une phrase où tous les gouverneurs se trouvent à droite de leurs dépendants :
-    
-    \ea
-    \gll maeu  {euiyokjeok-i-n}  {haksaeng-deul-i}  {kukje}  {hakhoi-leu}   {jojikha-nda}\\
+\ea \label{ex:motives}
+    \ea \textit{{Les étudiants très motivés organisent une conférence internationale.}} 
+    \ex \gll maeu  {euiyokjeok-i-n}  {haksaeng-deul-i}  {kukje}  {hakhoi-leu}   {jojikha-nda}\\
          très   {motivé-être-\Q}   {étudiant-\PL-\NOM}  international  {conférence-\ACC}  organiser-\IND.\PRS\\
-% %     (Q : translatif en qualificatif, PL : pluriel, NOM : nominatif, ACC : accusatif, PRES : présent)
+    \ex \gll junaðʕimu  atʕ-tʕul\=ab-u al-mutaħammis-\=una ʒiddan muʔtamar-a-n  dawlij-a-n\\
+    organiser.\textsc{prs.3sg.masc} \textsc{def}-étudiant.\textsc{pl-nom} \textsc{def}-enthousiasmé.\textsc{pl-nom}  très conférence.\textsc{sg-acc-indef}  international.\textsc{sg-acc-indef}\\
+  \z
+\todo[inline]{\=a and \=u must should be a and u with a bar. Verify here and in fig:motives-arabe}
+    
+    Le coréen est une langue à têtes finales : la traduction de \REF{ex:motives}a en coréen donne la phrase \REF{ex:motives}b où tous les gouverneurs se trouvent à droite de leurs dépendants, comme on peut le voir dans la figure \ref{fig:motives-coreen}. La même phrase traduite en arabe standard possède une structure inversée : comme on peut le voir dans la figure \ref{fig:motives-coreen}, tous les gouverneurs se trouvent devant leurs dépendants, y compris le verbe qui se trouve au tout début de la phrase. L’arabe standard est une langue à têtes initiales, même si, notamment sous l'influence des arabes dialectaux, eux-mêmes influencés par le français et l'anglais, il y a beaucoup exceptions à la règle du placement de la tête en premier. Les notions de «~têtes initiales~» et «~têtes finales~» doivent être vue comme des tendances, plutôt que des règles absolues.
 
+   
+\begin{figure}
+    \centering
+    \caption{Arbre de dépendance de la phrase \REF{ex:motives}b en coréen}
+    \label{fig:motives-coreen}
     \begin{dependency}[font=\footnotesize,arc edge, arc angle=80, text only label, label style={above}]
     \begin{deptext}
     \textit{maeu}  \& \textit{euiyokjeok-i-n} \& \textit{haksaeng-deul-i} \& \textit{kukje} \& \textit{hakhoi-leu} \& \textit{jojikha-nda}\\
@@ -455,20 +470,18 @@ On peut représenter sur un unique ensemble de nœuds la structure produit que f
     \depedge{3}{2}{}
     \depedge{2}{1}{}
     \end{dependency}
-    \z
-% %     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img029.png}
+\end{figure}
 
-    La même phrase traduite en arabe classique (l’arabe du 7\textsuperscript{e} siècle utilisé dans le Coran) possède une structure inversée : tous les gouverneurs se trouvent devant leurs dépendants, y compris le verbe qui se trouve au tout début de la phrase. L’arabe classique est une langue à têtes initiales.
+
     
-    \ea
-    \gll junaðʕimu  atʕ-tʕula꞉b-u al-mutaħammis-u꞉na ʒiddan muʔtamar-a-n  dawlij-a-n\\
-    organiser.\textsc{pres.3sg.masc} \textsc{def}-étudiant.\textsc{pl-nom} \textsc{def}-enthousiasmé.\textsc{pl-nom}  très conférence.\textsc{sg-acc-indef}  international.\textsc{sg-acc-indef}\\
-    
-    \begin{dependency}[font=\footnotesize,arc edge, arc angle=80, text only label, label style={above}]
+\begin{figure}
+    \centering
+     \caption{Arbre de dépendance de la phrase \REF{ex:motives}c en arabe standard}
+    \label{fig:motives-arabe}
+  \begin{dependency}[font=\footnotesize,arc edge, arc angle=80, text only label, label style={above}]
     \begin{deptext}
-    \textit{junaðʕimu} \& \textit{atʕ-tʕula}꞉\textit{b-u} \& \textit{al-mutaħammis-u}꞉\textit{na} \& \textit{ʒiddan} \& \textit{muʔtamar-a-n} \& \textit{dawlij-a-n}\\
-%     organiser.\textsc{pres.3sg.masc} \& \textsc{def}-étudiant.\textsc{pl-nom} \& \textsc{def}-enthousiasmé.\textsc{pl-nom} \& très conférence.\textsc{sg-acc-indef} \& international.\textsc{sg-acc-indef}\\
-    organiser  \& étudiant \& enthousiasmé \& très \& conférence \& international\\
+    \textit{junaðʕimu} \& \textit{atʕ-tʕul\=ab-u} \& \textit{al-mutaħammis-\=una} \& \textit{ʒiddan} \& \textit{muʔtamar-a-n} \& \textit{dawlij-a-n}\\
+   organiser  \& étudiant \& enthousiasmé \& très \& conférence \& international\\
     \end{deptext}
     \deproot{1}{}
     \depedge{1}{2}{}
@@ -477,17 +490,16 @@ On peut représenter sur un unique ensemble de nœuds la structure produit que f
     \depedge{1}{5}{}
     \depedge{5}{6}{}
     \end{dependency}
-    \z
+\end{figure}
 
-% %     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img030.png}
-
-    Le français est une langue intermédiaire. L’arbre de dépendance linéarisé de la phrase 1 possède des dépendances dans les deux directions :
+    Le français est une langue intermédiaire. L’arbre de dépendance linéarisé de la phrase 1 possède des dépendances dans les deux directions, comme le montre la  figure \ref{fig:motives-francais}.
     
-    \ea
+    \begin{figure}
+    \centering
+    \caption{Arbre de dépendance de la phrase \REF{ex:motives}a}
     \begin{dependency}[font=\normalfont\itshape,arc edge, arc angle=80, text only label, label style={above}]
     \begin{deptext}
     Les \& étudiants \& très \& motivés \& organisent \& une \& conférence \& internationale\\
-%     organiser.\textsc{pres.3sg.masc} \& \textsc{def}-étudiant.\textsc{pl-nom} \& \textsc{def}-enthousiasmé.\textsc{pl-nom} \& très conférence.\textsc{sg-acc-indef} \& international.\textsc{sg-acc-indef}\\
     \end{deptext}
     \deproot{5}{}
     \depedge{2}{1}{}
@@ -498,13 +510,10 @@ On peut représenter sur un unique ensemble de nœuds la structure produit que f
     \depedge{7}{6}{}
     \depedge{7}{8}{}
     \end{dependency}    
-    \z
-
-% %     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img031.png}
-
-    Notez quand même qu’en arabe classique, comme en coréen, il y a des exceptions à la règle du placement de la tête, et les notions de têtes initiales et têtes finales doivent être vue comme des tendances, plutôt que des règles absolues.
+\label{fig:motives-francais}
+\end{figure}
 }
-\globe{Classification des langues selon l’ordre V, S, O}{%\label{sec:3.5.13}
+\globe{Classification des langues selon l’ordre entre V, S et O}{%\label{sec:3.5.13}
     Depuis les travaux de Greenberg, il est d’usage de classer les langues selon l’ordre dominant entre le verbe (V), son sujet (S) et son objet (O). On considère qu’il y a un \textstyleTermesapprof{ordre dominant} lorsqu’un des six ordres possibles entre V, S et O domine significativement les autres. C’est le cas du français où l’ordre SVO domine largement. La place des S et O pronominaux n’est pas prise en compte, car celle-ci diffère parfois de l’ordre dominant, comme en français où la cliticisation de l’objet (\textit{il} \textbf{\textit{la}} \textit{regarde}) entraine un ordre SOV.
 
     Le \textit{World Atlas of Language Structures Online} recense actuellement :
@@ -519,7 +528,7 @@ On peut représenter sur un unique ensemble de nœuds la structure produit que f
     \item et 189 langues sans ordre dominant, soit 14\%.
     \end{itemize}
 
-    Comme on le voit, les langues à têtes finales sont beaucoup plus répandues que les langues à têtes initiales et le sujet a nettement tendance à se placer avant l’objet. Il existe une grande proportion de langues SVO, comme le français, où le verbe tend à se placer entre son sujet et son objet, mais l’ordre le plus répandu est quand même l’ordre SOV, celui du coréen. Il est à noter que le classement des langues selon ce principe présuppose que les notions de sujet et d’objet soient pertinentes pour n’importe quelle langue et qu’on soit capable de les identifier. Nous verrons au \chapref{sec:5.2} que la question est loin d’être simple en raison de l’existence de langues dite \textbf{ergatives}. Dans le classement ci-dessus, c’est en fait l’\textbf{agent} et le \textbf{patient}, plus simple à identifier que le sujet et l’objet, qui correspondent à S et O (voir \chapref{sec:5.2}).
+    Comme on le voit, les langues à têtes finales sont beaucoup plus répandues que les langues à têtes initiales et le sujet a nettement tendance à se placer avant l’objet. Il existe une grande proportion de langues SVO, comme le français, où le verbe tend à se placer entre son sujet et son objet, mais l’ordre le plus répandu est quand même l’ordre SOV, celui du coréen. Il est à noter que le classement des langues selon ce principe présuppose que les notions de sujet et d’objet soient pertinentes pour n’importe quelle langue et qu’on soit capable de les identifier. Nous verrons au \chapfuturef{18} sur les \textit{Relations syntaxiques} que la question est loin d’être simple en raison de l’existence de langues dite \textbf{ergatives}. Dans le classement ci-dessus, c’est en fait l’\textbf{agent} et le \textbf{patient}, plus simple à identifier que le sujet et l’objet, qui correspondent à S et O.
 
     Nous poursuivrons la discussion sur topologie et typologie dans l’\encadref{fig:3.5.23} sur les \textit{Langues dites à ordre libre}, qui n’ont généralement pas d’ordre dominant.
 }
@@ -531,12 +540,12 @@ La \textstyleTermes{projectivité} est une propriété qui contraint la linéari
 
 Intuitivement, un arbre de dépendance dont tous les mots se placent autour de leur gouverneur est dit projectif. Donnons une première définition formelle de la projectivité :
 
-\Definition{\textstyleTermes{projectivité}}
-{Un arbre de dépendance ordonné est dit \textstyleTermes{projectif} si chacune de ses \textbf{projections} (maximales) est \textbf{continue}, c’est-à-dire forme une portion continue de la chaîne linéaire.}
+\Definition{\textstyleTermes{projectivité (1)}}
+{Un arbre de dépendance ordonné est dit \textstyleTermes{projectif} si chacune de ses \textbf{projections maximales} est \textbf{continue}, c’est-à-dire forme une portion continue de la chaîne linéaire.}
 
 Le terme \textit{projectivité}, forgé par le mathématicien Yves Lecerf en 1960, renvoie directement à la notion de projection. Dire que la projection de A est continue revient à dire que les dépendants de A se sont placés autour de A et les dépendants de ses dépendants aussi et ainsi de suite et que donc l’ensemble forme un segment continu autour de A.
 
-L’arbre de dépendance ordonné présenté tout à l’heure est projectif :
+L’arbre de dépendance ordonné de la figure \ref{fig:noel-proj}, déjà présenté dans la figure \ref{fig:noel-Hudson}, est projectif : chaque projection maximale est continue. Par exemple, la projection de \textit{passer}, qui est l’ensemble des mots \textit{passer, Noël, en} et \textit{Laponie} forme le segment \textit{passer Noël en Laponie}, qui est un segment linéairement continu.
 
 \begin{figure}
 \begin{tikzpicture}
@@ -558,12 +567,13 @@ L’arbre de dépendance ordonné présenté tout à l’heure est projectif :
 
 \draw[{Triangle[]}-] (root-1-1-1) -- ++(0,1cm);
 \end{tikzpicture}
-\caption{\label{fig:}Arbre de dépendance projectif}
+\caption{\label{fig:noel-proj}Arbre de dépendance projectif}
 \end{figure}
 
-En effet, chaque projection est continue. Par exemple, la projection de \textit{passer}, qui est l’ensemble formé par les mots \textit{passer, Noël, en} et \textit{Laponie}, forme le segment \textit{passer Noël en Laponie}, qui est une portion linéairement continue.
 
-La projectivité entraîne une certaine asymétrie des dépendances. En effet, si A gouverne B, alors la projection de B sera entièrement d’un des deux côtés de A, tandis que la projection de A pourra très bien avoir des parties à gauche et à droite de B.
+
+La projectivité entraîne une certaine asymétrie entre les deux extrémités d'une dépendance. En effet, si A gouverne B, alors la projection de B sera entièrement d’un des deux côtés de A, tandis que la projection de A pourra très bien avoir des parties à gauche et à droite de B, comme le montre la figure \ref{fig:ABproj}. C’est sur cette asymétrie qu’est basé le test de recouvrement (\sectref{sec:3.3.32} éponyme) : un dépendant de A peut-être au-delà de B, mais l'inverse est plus rare.
+
 
 \begin{figure}
 \begin{tikzpicture}[>={Triangle[]},decoration={brace,mirror}]
@@ -589,17 +599,16 @@ La projectivité entraîne une certaine asymétrie des dépendances. En effet, s
 \draw[decorate,decoration={raise=1.5\baselineskip}] (matrix-2-1.west) -- (matrix-2-9.east) node [midway,below=1.66\baselineskip] {projection de A};
 
 \end{tikzpicture}
-\caption{\label{fig:}Projections maximales continues}
+\caption{\label{fig:ABproj}Projections maximales et test de recouvrement}
 \end{figure}
 
-C’est sur cette asymétrie qu’est basé le test de recouvrement (\sectref{sec:3.3.32} éponyme).
 
-Il existe une autre caractérisation de la projectivité, qui peut s’observer immédiatement sur une représentation graphique comme celle ci-dessus, où les nœuds sont placés sur une ligne et toutes les dépendances forment des arcs placés du même côté de la ligne.
+Il existe une autre caractérisation de la projectivité, qui peut s’observer immédiatement sur la représentation en ligne (à la Hudson) des arbres de dépendance ordonnés, où les nœuds sont placés sur une ligne et toutes les dépendances forment des arcs placés du même côté de la ligne.
 
 \Definition{\textstyleTermes{projectivité} (2)}
-{Un arbre de dépendance ordonné est \textstyleTermes{projectif} si et seulement si \textbf{les dépendances ne se coupent pas}.}
+{Un arbre de dépendance ordonné est \textstyleTermes{projectif} si et seulement si \textbf{les dépendances ne se coupent pas} dans la représentation en ligne.}
 
-Cela concerne également la dépendance verticale qui marque la racine et qui doit être vue comme une dépendance infinie empêchant tout autre dépendance de passée au-dessus de la racine. Autrement dit, les deux configurations suivantes sont exclues d’un arbre de dépendance projectif :
+Cela concerne également la dépendance verticale qui marque la racine et qui doit être vue comme une dépendance infinie empêchant tout autre dépendance de passée au-dessus de la racine. Autrement dit,  deux configurations sont exclues d’un arbre de dépendance projectif, le croisement de deux dépendance et le recouvrement de la racine de l'arbre.
 
 \begin{figure}
 \begin{subfigure}[c]{.5\linewidth}\centering
@@ -615,22 +624,25 @@ Cela concerne également la dépendance verticale qui marque la racine et qui do
   \draw [{Triangle[]}-] (root2-1) -- ++(0,1cm);
 \end{tikzpicture}\caption{~}
 \end{subfigure}
-\caption{\label{fig:}Configurations non projectives}
+\caption{\label{fig:nonproj-config}Configurations non projectives}
 \end{figure}
+\todo[inline]{I would like to replace (a) and (b) by:
+a. Croisement de dépendances
+b. Recouvrement de la racine}
 
 Donnons un exemple de structure non projective :
 
-\ea
+\ea\label{ex:belle}\itshape
 Un petit cordonnier qui voulait aller danser\\
 Avait fabriqué de petits souliers.\\
 \textbf{Une belle est entrée qui voulait les acheter,}\\
 Mais le cordonnier lui a déclaré :\\
 «~Ils seront à vous sans qu’il vous coûte un sou,\\
 Mais il vous faudra danser avec moi.~»\\
-(\textit{Le petit cordonnier}, chanson de Francis Lemarque, 1953)
+\textrm{(\textit{Le petit cordonnier}, chanson de Francis Lemarque, 1953)}
 \z
 
-Le troisième vers de cette chanson a une structure non projective :
+Le troisième vers de cette chanson a une structure non projective, comme le montre la figure \ref{fig:nonproj-belle}. Dans cette figure, nous faisons une analyse très peu granulaire. Toute analyse plus fine, au niveau du mot par exemple, conservera les trois mêmes dépendances et donc la configuration non projective. (Faire une analyse moins granulaire revient à réduire le graphe. Voir la définition de la réduction dans l’encadré qui suit.) 
 
 \begin{figure}
 \begin{tikzpicture}[>={Triangle[]}]
@@ -644,10 +656,10 @@ Le troisième vers de cette chanson a une structure non projective :
   \node [below=1pt of root-1, font=\itshape\strut] {est entrée};
   \node [below=1pt of root-1-1, font=\itshape,align=center] {\strut qui voulait\\les acheter};
 \end{tikzpicture}
-\caption{\label{fig:}Arbre de dépendance non projectif}
+\caption{\label{fig:nonproj-belle}Arbre de dépendance non projectif}
 \end{figure}
 
-Nous avons fait ici une analyse très peu granulaire. Toute analyse plus fine, au niveau du mot par exemple, conservera ces trois dépendances et donc la configuration non projective. (Faire une analyse moins granulaire revient à réduire le graphe. Voir la définition de la réduction dans l’encadré qui suit.)
+
 
 Comme on le voit sur la figure, la dépendance qui relie \textit{une belle} à la relative \textit{qui voulait les acheter} couvre la racine \textit{est entrée} et coupe donc la dépendance verticale. Il s’en suit que le groupe substantival \textit{une belle qui voulait les acheter} est discontinu.
 
