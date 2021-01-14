@@ -2,21 +2,21 @@
 
 \section{La linéarité de la langue}\label{sec:3.5.0}
 
-Une des caractéristiques de la langue est la \textstyleTermes{linéarité} de la chaîne parlée : les sons sont prononcés les uns à la suite des autres et il en va ainsi en général des unités de la langue et notamment des mots et des syntaxèmes. Les syntaxèmes, sauf rares exceptions (voir encadré ci-dessous), se suivent selon un \textstyleTermes{ordre linéaire}. (Un ordre linéaire est encore dit \textstyleTermes{total} car tous les éléments sont ordonnés les uns par rapport aux autres.)
+Une des caractéristiques de la langue est la \textstyleTermes{linéarité} de la chaîne parlée : les sons sont prononcés les uns à la suite des autres et il en va ainsi en général des unités de la langue et notamment des mots et des syntaxèmes. Les syntaxèmes, sauf rares exceptions (voir encadré ci-dessous), se suivent selon un \textstyleTermes{ordre linéaire}. (Un ordre linéaire est encore dit \textstyleTermes{total}, car \textbf{tous les éléments sont ordonnés les uns par rapport aux autres}.)
 
 La \textstyleTermes{place} qu’occupe chaque syntaxème dans l’ordre linéaire participe pleinement au sens de l’énoncé. Elle peut permettre de décider comment les unités sont combinées, et même si une combinaison est possible ou non. Par exemple, on peut envisager de placer les trois mots \textit{Marie}, \textit{Pierre} et \textit{poursuit} selon 6 ordres linéaires différents :
 
-\ea
-\ea Marie poursuit Pierre
-\ex Pierre poursuit Marie
-\ex Pierre Marie poursuit
-\ex Marie Pierre poursuit
-\ex poursuit Marie Pierre
-\ex poursuit Pierre Marie
+\ea\label{ex:poursuit}
+\ea \textit{Marie poursuit Pierre}
+\ex \textit{Pierre poursuit Marie}
+\ex \textit{Pierre Marie poursuit}
+\ex \textit{Marie Pierre poursuit}
+\ex \textit{poursuit Marie Pierre}
+\ex \textit{poursuit Pierre Marie}
 \z
 \z
 
-Seules les combinaisons \REF{ex:key:1} et \REF{ex:key:2} portent des sens clairs en français. Et ces sens sont différents : les fonctions syntaxiques de \textit{Marie} et \textit{Pierre}, sujet \textit{vs} objet du verbe \textsc{poursuivre}, et les rôles sémantiques qu’ils expriment, agent \textit{vs} patient du prédicat ‘poursuivre’, sont attribués en fonction de la place des unités dans la phrase : l’élément devant le verbe est interprété comme sujet, celui après le verbe comme objet.
+Seules les combinaisons \REF{ex:poursuit}a et b portent des sens clairs en français. Et ces sens sont différents : les \textbf{fonctions syntaxiques} de \textit{Marie} et \textit{Pierre}, sujet \textit{vs} objet du verbe \textsc{poursuivre}, et les rôles sémantiques qu’ils expriment, agent \textit{vs} patient du prédicat ‘poursuivre’, sont \textbf{attribués en fonction de la place} des unités dans la phrase : l’élément devant le verbe est interprété comme sujet, celui après le verbe comme objet.
 
 Les autres combinaisons ne sont pas nécessairement dépourvues de sens (si un étranger prononçait ces énoncés, on pourrait au moins comprendre qu’il s’agit d’une histoire de poursuite entre Pierre et Marie), mais elles ne respectent pas la syntaxe du français. Il est clair que la description précise d’une langue doit inclure les \textbf{contraintes sur l’ordre} des syntaxèmes et sur la façon dont ils se regroupent. C’est ce que nous appelons la \textstyleTermes{topologie}, du grec \textit{topos}+\textit{logos} ‘étude des lieux’. Ce chapitre a comme but de proposer un modèle, appelé \textstyleTermes{modèle topologique} ou \textstyleTermes{interface syntaxe-topologie}, permettant d’exprimer facilement les différentes contraintes qui existent selon les langues dans la correspondance entre la structure syntaxique et la représentation qui exprime l’ordre linéaire et les regroupements linéaires, que nous appelons la \textstyleTermes{structure topologique}.
 
@@ -25,12 +25,14 @@ Les autres combinaisons ne sont pas nécessairement dépourvues de sens (si un �
 
     La segmentabilité possède un certain nombre d’exceptions.
 
-    \begin{enumerate}
-    \item Malgré le caractère linéaire de la chaîne parlée, il est possible de jouer sur les différents paramètres du son pour communiquer deux informations simultanément. Ainsi, certains éléments de sens, comme par exemple les marqueurs d’interrogation ou de doute, ou la mise en avant de certains éléments de sens sont réalisés en utilisant la prosodie (l’intonation et le rythme — la mélodie de la phrase). Ces unités — les \textstyleTermesapprof{prosodèmes} — sont dites \textstyleTermesapprof{supra-segmentales}, car elles se superposent à la chaîne des unités segmentales que sont les phonèmes. À noter que la prosodie véhicule aussi, en plus de cela, des informations utiles pour le calcul des regroupements des unités linguistiques~et que les émotions du locuteur modifient également de manière significative la prosodie.
-    \item Dans les langues flexionnelles, certaines combinaisons de syntaxèmes \textbf{fusionnent} en un unique morphe, tant et si bien qu’on ne peut plus discerner les signifiants des différents syntaxèmes et qu’il n’y a donc plus d’ordre entre eux (voir la \sectref{sec:2.2.22} sur \textit{Amalgame, alternance et mégamorphe}). Il existe aussi des syntaxèmes qui s’enchevêtrent comme dans la conjugaison des langues sémitiques, où les lexèmes verbaux sont réalisés par des consonnes et la flexion par des voyelles intercalées (voir l’\encadref{fig:3.1.15} sur les \textit{Syntaxèmes discontinus}). Pour une typologie des différents cas de non-segmentabilité des syntaxèmes flexionnels, voir l’\encadref{fig:4.1.17} sur les \textit{Langues isolantes, agglutinantes et flexionnelles}).
-    \item Si les syntaxèmes sont globalement continus (à l’exception des situations rappelées ci-dessus), ce n’est pas le cas des sémantèmes. Les phrasèmes peuvent être réalisés par des configurations de syntaxèmes qui ne se placeront pas nécessairement les uns à côté des autres : \textit{il ne} \textbf{\textit{bris}}\textit{a pas immédiatement} \textbf{\textit{la glace}}, «~\textit{Fais pas} \textbf{\textit{ci}}, \textit{fais pas} \textbf{\textit{ça~}}!~». Il faut néanmoins remarquer que la réalisation de sémantèmes discontinus passe presque uniquement par le recours à des constructions syntaxiques qui sont utilisées par ailleurs pour réaliser des combinaisons libres de syntaxèmes et qui s’appliquent aux différentes composantes du sémantème (voir \chapref{sec:2.4}).
-    \item Il est important de souligner que les contraintes sur la linéarité sont l’apanage des \textbf{langues vocales} (c’est-à-dire utilisant la voix comme canal de communication) et de leurs contreparties écrites. Les \textbf{langues des signes}, réalisées par des gestes dans l’espace à trois dimensions, échappent en partie à la contrainte de linéarité. Il est possible en réalisant le signe associé à un sens donné (‘chien’, ‘voiture’, ‘maison’, ‘maladie’, etc.) de produire en même temps toutes sortes de modifieurs en adaptant la réalisation du geste : un chien agressif ou au contraire affectueux, une voiture rapide ou aux mouvements chaotiques, une grande maison, etc. Cette particularité des langues des signes par rapport aux langues vocales est généralement appelée l’\textstyleTermesapprof{iconicité} : il s’agit de la possibilité de réaliser des signes iconiques, c’est-à-dire qui ont une ressemblance avec l’objet qu’il dénote. Même sans utiliser l’iconicité, la réalisation d’un signe verbal comme ‘demander’ (réalisé en joignant les mains à plat) indiquera en fonction de l’orientation du geste (vers le locuteur, l’interlocuteur ou un autre point de l’espace) qui demande à qui, sans qu’il soit nécessaire d’ajouter des pronoms. La diathèse du lexème est donc réalisée en même temps que le lexème. C’est bien la réalisation du signal dans un espace tridimensionnel qui permet de cumuler autant d’informations en un seul geste.
-    \end{enumerate}
+    
+    \smallskip\noindent \textbf{Prosodie.} Malgré le caractère linéaire de la chaîne parlée, il est possible de jouer sur les différents paramètres du son pour communiquer deux informations simultanément. Ainsi, certains éléments de sens, comme par exemple les marqueurs d’interrogation ou de doute, ou la mise en avant de certains éléments de sens sont réalisés en utilisant la prosodie (l’intonation et le rythme — la mélodie de la phrase). Ces unités — les \textstyleTermesapprof{prosodèmes} — sont dites \textstyleTermesapprof{supra-segmentales}, car elles se superposent à la chaîne des unités segmentales que sont les phonèmes. À noter que la prosodie véhicule aussi, en plus de cela, des informations utiles pour le calcul des regroupements des unités linguistiques~et que les émotions du locuteur modifient également de manière significative la prosodie.
+   
+   \smallskip\noindent \textbf{Fusion.} Dans les langues flexionnelles, certaines combinaisons de syntaxèmes \textbf{fusionnent} en un unique morphe, tant et si bien qu’on ne peut plus discerner les signifiants des différents syntaxèmes et qu’il n’y a donc plus d’ordre entre eux (voir la \sectref{sec:2.2.22} sur \textit{Amalgame, alternance et mégamorphe}). Il existe aussi des syntaxèmes qui s’enchevêtrent, comme dans la conjugaison des langues sémitiques, où les lexèmes verbaux sont réalisés par des consonnes et la flexion par des voyelles intercalées (voir l’\encadref{fig:3.1.15} sur les \textit{Syntaxèmes discontinus}). Pour une typologie des différents cas de non-segmentabilité des syntaxèmes flexionnels, voir l’encadré sur les \textit{Langues isolantes, agglutinantes et flexionnelles} du \chapfuturef{14}).
+    
+    \smallskip\noindent \textbf{Phrasèmes.} Si les syntaxèmes sont globalement continus (à l’exception des situations rappelées ci-dessus), ce n’est pas le cas des sémantèmes. Les phrasèmes peuvent être réalisés par des configurations de syntaxèmes qui ne se placeront pas nécessairement les uns à côté des autres : \textit{il ne} \textbf{\textit{bris}}\textit{a pas immédiatement} \textbf{\textit{la glace}}, «~\textit{Fais pas} \textbf{\textit{ci}}, \textit{fais pas} \textbf{\textit{ça~}}!~». Il faut néanmoins remarquer que la réalisation de sémantèmes discontinus passe presque uniquement par le recours à des constructions syntaxiques qui sont utilisées par ailleurs pour réaliser des combinaisons libres de syntaxèmes et qui s’appliquent aux différentes composantes du sémantème (voir \chapref{sec:2.3}).
+    
+    \smallskip\noindent \textbf{Langues des signes.} Il est important de souligner que les contraintes sur la linéarité sont l’apanage des \textbf{langues vocales} (c’est-à-dire utilisant la voix comme canal de communication) et de leurs contreparties écrites. Les \textbf{langues des signes}, réalisées par des gestes dans l’espace à trois dimensions, échappent en partie à la contrainte de linéarité. Il est possible en réalisant le signe associé à un sens donné (‘chien’, ‘voiture’, ‘maison’, ‘maladie’, etc.) de produire en même temps toutes sortes de modifieurs en adaptant la réalisation du geste : un chien agressif ou au contraire affectueux, une voiture rapide ou aux mouvements chaotiques, une grande maison, etc. Cette particularité des langues des signes par rapport aux langues vocales est généralement appelée l’\textstyleTermesapprof{iconicité} : il s’agit de la possibilité de réaliser des signes iconiques, c’est-à-dire qui ont une ressemblance avec l’objet qu’il dénote. Même sans utiliser l’iconicité, la réalisation d’un signe verbal comme ‘demander’ (réalisé en joignant les mains à plat) indiquera en fonction de l’orientation du geste (vers le locuteur, l’interlocuteur ou un autre point de l’espace) qui demande à qui, sans qu’il soit nécessaire d’ajouter des pronoms. La diathèse du lexème est donc réalisée en même temps que le lexème. C’est bien la réalisation du signal dans un espace tridimensionnel qui permet de cumuler autant d’informations en un seul geste.
 }
 \section{Ordre des mots \textit{vs.} topologie}\label{sec:3.5.2}
 
@@ -42,27 +44,26 @@ Deuxièmement, nous ne nous intéressons pas seulement à l’ordre relatif des 
 
 Troisièmement, le terme \textit{topologie} (du grec \textit{logos} ‘étude’), à la différence de \textit{ordre des mots}, renvoie clairement à un domaine d’étude de la langue ; il permet de plus de dériver l’adjectif \textit{topologique} et de parler par exemple de structure topologique, de constituant topologique ou de niveau topologique.
 
-Le terme \textit{topologie} provient de la tradition grammaticale allemande où le terme est d’usage depuis le milieu du 20\textsuperscript{e} siècle (voir la \sectref{sec:3.5.38} sur \textit{l’Historique de la description topologique}). Les mathématiques ont également un sous-domaine nommé \textit{topologie}, lui aussi préoccupé de la façon dont les éléments se placent les uns par rapport aux autres dans des ensembles munis d’une structure, mais sans rapport direct avec la topologie linguistique.
+Le terme \textit{topologie} provient de la tradition grammaticale allemande où le terme est d’usage depuis le milieu du 20\textsuperscript{e} siècle (voir l'\encadref{fig:3.5.38} sur \textit{l’Historique de la description topologique}). Les mathématiques ont également un sous-domaine nommé \textit{topologie}, qui s'intéresse aussi lui aussi à la façon dont les éléments se placent les uns par rapport aux autres dans des ensembles munis d’une structure, mais sans rapport direct avec la topologie linguistique.
 
 \section{Place linéaire et position syntaxique}\label{sec:3.5.3}
 
-Tout unité linguistique (phonologique, morphologique, syntaxique ou sémantique) émise en contexte, dès qu’elle est segmentable, a une place dans l’ordre linéaire. Dans tout cet ouvrage, nous opposons les termes \textstyleTermes{place (linéaire)} et \textstyleTermes{positions (structurelles)~}: \textit{place} est toujours associé à un lieu dans l’ordre linéaire, tandis que \textit{position} est associé à un lieu dans une structure plus complexe. On peut penser, comme moyen mnémotechnique, à une personne assise sur une chaise : cette personne peut changer de position sans changer de place. Les syntaxèmes sont comme des personnes assises sur des chaises les unes à la suite des autres : chacun à une place sur une chaise et peut adopter une position particulière ; il peut changer de position en restant à la même place (on parlera d’\textstyleTermes{ambiguïté syntaxique}) ou changer de place en gardant la même position (on parlera d’\textstyleTermes{ordre libre}).
+Tout unité linguistique (phonologique, morphologique, syntaxique ou sémantique) émise en contexte, dès qu’elle est segmentable, a une place dans l’ordre linéaire. Dans tout cet ouvrage, nous opposons les termes \textstyleTermes{place (linéaire)} et \textstyleTermes{position (structurelle)} : \textit{place} est toujours associé à un lieu dans l’ordre linéaire, tandis que \textit{position} est associé à un lieu dans une structure plus complexe. On peut penser, comme moyen mnémotechnique, à une personne assise sur une chaise : cette personne peut changer de position sans changer de place. Les syntaxèmes sont comme des personnes assises sur des chaises les unes à la suite des autres : chacun à une place sur une chaise et peut adopter une position particulière en s'adressant à son voisin de gauche ou de droite ou à quelqu'un de plus éloigné ; il peut changer de position en restant à la même place (on parlera d’\textstyleTermes{ambiguïté syntaxique}) ou changer de place en gardant la même position (on parlera d’\textstyleTermes{ordre libre}).
 
 Nous avons défini aux chapitres précédents la structure syntaxique. La position d’un élément dans la structure syntaxique est appelée sa \textstyleTermes{position syntaxique}. La syntaxe s’intéresse aux combinaisons libres (voir la \sectref{sec:3.1.6} sur \textit{Syntaxe et morphologie}) et la position syntaxique d’un élément indique donc avec quoi il se combine, sans référence à l’ordre linéaire. Deux éléments occupent la même position syntaxique s’ils jouent un rôle similaire et s’excluent mutuellement. Ainsi dans :
 
 \ea
-  \ea {Pierre regarde} \textbf{{Marie}}.
-  \ex {Pierre} \textbf{{la}}  {regarde.}
-  \ex \textbf{{Qui}}  {Pierre regarde-t-il} ?
+  \ea \textit{{Pierre regarde} \textbf{{Marie}}.}
+  \ex \textit{{Pierre} \textbf{{la}}  {regarde.}}
+  \ex \textit{\textbf{{Qui}}  {Pierre regarde-t-il} ?}
   \z
 \z
-
-les unités  {Marie, la} et \textit{qui} occupent la même position syntaxique, car elles correspondent toutes à la personne que Pierre regarde et elles \textbf{s’excluent} \textbf{mutuellement~}:
+les unités  \textit{Marie}, \textit{la} et \textit{qui} occupent la même position syntaxique, car elles correspondent toutes à la personne que Pierre regarde et elles \textbf{s’excluent} \textbf{mutuellement~}:
 
 \ea
-\ea[*]{{Pierre} \textbf{{la}}  {regarde} \textbf{{Marie}}.}
-\ex[*]{\textbf{Qui}  {Pierre} \textbf{{la}} \textit{regarde-t-il} ?}
-\ex[*]{\textbf{Qui}  {Pierre regarde-t-il} \textbf{{Marie}} ?}
+\ea[*]{\textit{{Pierre} \textbf{{la}}  {regarde} \textbf{{Marie}}.}}
+\ex[*]{\\textit{textbf{Qui}  {Pierre} \textbf{{la}} \textit{regarde-t-il} ?}}
+\ex[*]{\textit{\textbf{Qui}  {Pierre regarde-t-il} \textbf{{Marie}} ?}}
 \z
 \z
 
@@ -70,7 +71,7 @@ Cette impossibilité pour les unités \textit{Marie, la} et \textit{qui} de cooc
 
 \section{Position topologique}\label{sec:3.5.4}
 
-Nous venons de voir que des éléments occupant la même position syntaxique pouvaient être à différentes places linéaires. À l’inverse des éléments de positions syntaxiques différentes peuvent venir occuper la même place linéaire.
+Nous venons de voir que des éléments occupant la même position syntaxique pouvaient être à des places linéaires différentes. À l’inverse des éléments de positions syntaxiques différentes peuvent venir occuper la même place linéaire.
 
 Par exemple, en français, le sujet du verbe se place généralement devant le verbe :
 
@@ -81,20 +82,20 @@ Par exemple, en français, le sujet du verbe se place généralement devant le v
 Mais il est parfois possible que le sujet se place après le verbe, notamment lorsqu’un complément locatif est placé devant le verbe :
 
 \ea
-\textbf{{Au plafond}}  {pendaient des guirlandes}.
+\textit{\textbf{{Au plafond}}  {pendaient des guirlandes}.}
 \z
 
 On peut ici considérer que le complément locatif vient occuper la place qu’occupe usuellement le sujet, puisqu’il n’est pas possible que le sujet se place après le verbe si le locatif ne vient pas devant le verbe :
 
 \ea
-\ea[\textsuperscript{??}]{Pendaient au plafond des guirlandes.}
-\ex[\textsuperscript{?}*]{Pendaient des guirlandes au plafond.}
+\ea[\textsuperscript{??}]{\textit{Pendaient au plafond des guirlandes.}}
+\ex[\textsuperscript{?}*]{\textit{Pendaient des guirlandes au plafond.}}
 \z
 \z
 
 Par ailleurs, lorsque le locatif et le sujet sont tous les deux devant le verbe, le locatif est obligatoirement dans une position détachée, avec un contour prosodique particulier, sanctionné à l’écrit par une virgule :
 
-\ea Au plafond, des guirlandes pendaient. \z
+\ea \textit{Au plafond, des guirlandes pendaient.} \z
 
 Lorsque le locatif est entre le sujet et le verbe, il est immédiatement interprété comme faisant partie du sujet :
 
@@ -103,89 +104,99 @@ Lorsque le locatif est entre le sujet et le verbe, il est immédiatement interpr
 Cette exclusion mutuelle dans un lieu de l’ordre linéaire laisse supposer qu’un tel lieu est plus qu’une simple place, qu’il y a de la structure qui est en jeu. Cette structure, nous l’appellerons la \textstyleTermes{structure topologique} et un lieu de cette structure, comme celui où \textit{des guirlandes} et \textit{au plafond} commutent devant le verbe, sera appelé une \textstyleTermes{position topologique}. On peut ainsi reformuler ce que nous venons de dire concernant le sujet et le complément locatif : en français, il existe devant le verbe fini une position topologique qui accueille en général le sujet, mais qui peut être aussi remplie par un complément locatif, le sujet allant dans ce cas dans une autre position topologique.
 
 \globe{Le cas des langues V2}{%\label{sec:3.5.5}
-    Il existe différentes langues, dites \textstyleTermes{V2}, où le verbe occupe nécessairement la \textbf{deuxième place}. Autrement dit, il existe devant le verbe une unique position topologique qui doit être remplie par une et une seule unité syntaxique. Tel est le cas des langues germaniques.
+    Il existe différentes langues, dites \textstyleTermes{V2}, où la tête de la phrase, généralement un verbe, occupe nécessairement la \textbf{deuxième place}. Autrement dit, il existe devant le verbe une unique position topologique qui doit être remplie par une et une seule unité syntaxique. Tel est le cas des langues germaniques.
 
     Contrairement au français où toute phrase peut contenir un nombre quelconque de compléments circonstanciels antéposés au verbe, l’allemand contraint toute phrase déclarative à avoir un unique constituant devant le verbe. Et contrairement au français, ce constituant n’a pas plus à être le sujet que n’importe quel autre dépendant du verbe. Ainsi la phrase française \textit{Malheureusement, Peter se crotte encore le nez} permet-elle des traductions à ordres variés. Parmi elles :
     
-    \ea \ea \gll   Peter popelt leider schon wieder  in seiner Nase.\\
-                Peter   creuse   malheureusement déjà à\_nouveau  dans son nez.\\
-    \ex     Leider       popelt   Peter   schon wieder  in seiner Nase.
-    \ex     Schon wieder   popelt   leider   Peter    in seiner Nase.
-    \ex     In seiner Nase   popelt   leider   schon wieder   Peter.
+    \ea \label{ex:Nase1}
+    \ea \gll   Peter popelt leider {schon wieder}  in seiner Nase.\\
+                Peter   creuse   malheureusement encore  dans son nez.\\
+    \ex     \textit{Leider       popelt   Peter   schon wieder  in seiner Nase.}
+    \ex     \textit{Schon wieder   popelt   leider   Peter    in seiner Nase.}
+    \ex     \textit{In seiner Nase   popelt   leider   schon wieder   Peter.}
     \z
     \z
     Par contre, une traduction qui suivrait le même ordre des mots que la phrase française initiale serait agrammaticale :
-    \ea[*]{Leider Peter popelt schon wieder in seiner Nase.}\z
+    \ea[*]{\itshape Leider Peter popelt schon wieder in seiner Nase.}\z
 
-    Ceci parce que \textit{leider} ‘malheureusement’ et \textit{Peter} ne forment pas ensemble un seul constituant. Ce constituant initial de toute phrase déclarative de l’allemand est dit occuper le \textstyleTermesapprof{champ initial} (ou Vorfeld ‘pré-champ’), le verbe fini juste après est dit être en position \textstyleTermesapprof{V2}. Le champ initial (mis entre crochets dans les exemples suivants) peut être occupé par un seul constituant quelle que soit sa complexité, y compris un participe passé comme dans les exemples suivants :
+    Ceci parce que \textit{leider} ‘malheureusement’ et \textit{Peter} ne forment pas ensemble un seul constituant. Ce constituant initial de toute phrase déclarative de l’allemand est dit occuper le \textstyleTermesapprof{champ initial} (ou \textit{Vorfeld} ‘pré-champ’), le verbe fini juste après est dit être en position \textstyleTermesapprof{V2}. Le champ initial (mis entre crochets dans les exemples suivants) peut être occupé par un seul constituant quelle que soit sa complexité, y compris un participe passé comme dans les exemples suivants :
 
-    \ea
+    \ea\label{ex:Nase-participe}
     \ea
     \gll [In seiner Nase gepopelt]   hat leider {mal wieder} Peter.\\
          {\db}Dans son nez creusé   a   malheureusement   à\_nouveau   Peter.\\
     \glt   ‘Peter s’est malheureusement à nouveau crotté le nez.’
     \ex
-    \gll [Vor allen mal wieder in seiner Nase zu popeln gewagt] hat leider Peter.\\
-     {\db}Devant tous à nouveau dans son nez de creuser osé   a   malheureusement   Peter.\\
+    \gll [Vor allen {mal wieder} in seiner Nase zu popeln gewagt] hat leider Peter.\\
+     {\db}Devant tous à\_nouveau dans son nez de creuser osé   a   malheureusement   Peter.\\
     \glt   ‘Peter a malheureusement à nouveau osé se crotter le nez devant tout le monde.’
     \z
     \z
 
+Nous présenterons plus en détail la modélisation de l'ordre des mots en allemand dans l'\encadref{fig:3.5.36} sur \textit{La structure topologique de l'allemand}.
+
     Comme nous l’avons montré dans la \sectref{sec:3.5.4} qui précède, le français possède aussi une forme de syntaxe V2 avec une position devant le verbe qui doit être occupée soit par le sujet, soit par un complément locatif en cas d’inversion du sujet. De ce point de vue, le français conserve des traces d’une syntaxe germanique héritée de l’époque où le latin a évolué en roman, puis en ancien français par l’intégration de peuples germaniques dans l’espace latinophone. Il s’agit d’un phénomène assez courant comparable à la créolisation : lorsqu’un groupe important de locuteurs non natifs est contraint de parler une nouvelle langue (ici le latin), il en adopte le lexique, tout en conservant partiellement la syntaxe de sa langue d’origine (ici des langues germaniques, et notamment le francique, la langue des Francs).
 
-    On retrouve des restes de ce caractère V2 en anglais, qui est aussi une langue d’origine germanique (voir l’exercice 7 sur la topologie de l’anglais). Les langues germaniques ne sont pas les seules langues V2 de par le monde : on peut mentionner par exemple le breton, une langue celtique, et le wolof, une langue Niger-Congo parlée au Sénégal. Le serbe, une langue slave, possède un phénomène comparable avec un amas de clitiques qui vient se placer en deuxième position.
+    On retrouve des restes de ce caractère V2 en anglais, qui est aussi une langue d’origine germanique (voir l’exercice 7 sur la topologie de l’anglais). Les langues germaniques ne sont pas les seules langues V2 de par le monde : on peut mentionner par exemple le breton, une langue celtique, ou le wolof, une langue Niger-Congo parlée au Sénégal. Le serbe, une langue slave, possède un phénomène comparable avec un amas de clitiques qui vient se placer en deuxième position.
 }
 \section{Linéarisation}\label{sec:3.5.6}
 
 Il est important de souligner que nous concevons l’ordre des syntaxèmes comme le résultat d’un processus nécessaire dans l’expression du sens. Le sens n’est pas linéaire a priori (ni même hiérarchisé, voir la \sectref{sec:1.2.9} sur la \textit{Structure hiérarchique}), mais l’usage du canal vocal oblige à un encodage linéaire de l’information. La question de l’ordre des syntaxèmes est donc vue comme un processus de \textstyleTermes{linéarisation} de l’information.
 
-La linéarisation est modélisée comme une correspondance entre deux structures de niveaux différents : une structure hiérarchique non ordonnée — la structure syntaxique (voir \chapref{sec:3.3}) — et une structure ordonnée. Cette idée est centrale dans les \textit{Éléments de syntaxe structurale} de Lucien \citet{tesniere1959elements}, qui distingue l’\textbf{ordre structural} et de l’\textbf{ordre linéaire}. On trouve déjà chez Claude \citet{buffier1709grammaire} la distinction entre syntaxe et style, puis chez Dumarsais entre syntaxe et construction. Voici ce qu’il en dit dans l’article «~Construction~» de l’\textit{Encyclopédie} publié en 1754~(p. 72) :
+La linéarisation est modélisée comme une correspondance entre deux structures de niveaux différents : une structure hiérarchique non ordonnée — la structure syntaxique (voir \chapref{sec:3.3}) — et une structure ordonnée. Cette idée est centrale dans les \textit{Éléments de syntaxe structurale} de Lucien \citet{tesniere1959elements}, qui distingue l’\textbf{ordre structural} et de l’\textbf{ordre linéaire}. On trouve déjà chez Claude \citet{buffier1709grammaire} la distinction entre syntaxe et style, puis chez Dumarsais entre syntaxe et construction. Voici ce que ce dernier en dit dans l’article «~Construction~» de l’\textit{Encyclopédie} :
 
 \begin{quote}
-    «~Je crois qu’on ne doit pas confondre \textit{construction} avec \textit{syntaxe}. Construction ne présente que l’idée de combinaison et d’arrangement. Cicéron a dit selon trois combinaisons différentes, \textit{accepi litteras tuas, tuas accepi litteras}, et \textit{litteras accepi tuas} : il y a là trois \textit{constructions}, puisqu’il y a trois différents arrangements de mots ; cependant il n’y a qu’une syntaxe ; car dans chacune de ces constructions il y a les mêmes signes des rapports que les mots ont entre eux, ainsi ces rapports sont les mêmes dans chacune de ces phrases.~»
+    «~Je crois qu’on ne doit pas confondre \textit{construction} avec \textit{syntaxe}. Construction ne présente que l’idée de combinaison et d’arrangement. Cicéron a dit selon trois combinaisons différentes, \textit{accepi litteras tuas, tuas accepi litteras}, et \textit{litteras accepi tuas} : il y a là trois \textit{constructions}, puisqu’il y a trois différents arrangements de mots ; cependant il n’y a qu’une syntaxe ; car dans chacune de ces constructions il y a les mêmes signes des rapports que les mots ont entre eux, ainsi ces rapports sont les mêmes dans chacune de ces phrases.~» (\cite{Dumarsais1754} : 72)
 \end{quote}
 
 Nous pensons pour notre part que la structure ordonnée est plus complexe qu’un ordre linéaire et qu’il s’agit d’un arbre de constituants ordonné que nous appelons la \textstyleTermes{structure topologique}. Les \textstyleTermes{constituants topologiques} jouent notamment un rôle dans le calcul de la prosodie (voir l’\encadref{fig:3.5.35} sur \textit{Topologie et prosodie}).
 
-La grammaire qui assure la correspondance entre la structure syntaxique et la structure topologique, et donc en particulier la linéarisation, s’appelle un \textstyleTermes{modèle topologique}. Dans la suite, nous allons présenter le cadre général de la construction d’un modèle topologique et nous construirons notamment les modèles topologiques du français et de l’allemand.
+La partie de la grammaire qui assure la correspondance entre la structure syntaxique et la structure topologique, et donc en particulier la linéarisation, s’appelle le \textstyleTermes{modèle topologique}. Dans la suite, nous allons présenter le cadre général de la construction d’un modèle topologique et nous construirons notamment les modèles topologiques du français et de l’allemand.
 
 \loupe{Une représentation syntaxique non ordonnée ?}{%\label{sec:3.5.7}
-    La linéarisation est une étape dans le processus de synthèse d’un énoncé à partir d’un sens (voir la \sectref{sec:1.1.1} \textit{La langue comme correspondance sens-son} et le \chapref{sec:1.2} \textit{Production d’un énoncé}). Nous pensons que l’information à communiquer par un locuteur, qui va constituer le sens de son message, n’est pas linéarisée, ni même hiérarchisée a priori. C’est le processus de communication qui oblige à linéariser. La \textstyleTermesapprof{structure communicative}, qui encode la façon dont l’information est structurée pour être communiquée (voir la \sectref{sec:1.2.4} sur \textit{Les composantes du sens}), joue ainsi dans de nombreuses langues un rôle primordial dans l’ordre des syntaxèmes (voir l’\encadref{fig:3.5.24} sur l’\textit{Ordre communicativement dirigé}).
+    La linéarisation est une étape dans le processus de synthèse d’un énoncé à partir d’un sens (voir l'\encadref{sec:1.1.1} \textit{La langue comme correspondance sens-son} et le \chapref{sec:1.2} \textit{Production d’un énoncé}). Nous pensons que l’information à communiquer par un locuteur, qui va constituer le sens de son message, n’est pas linéarisée, ni même hiérarchisée a priori. C’est le processus de communication qui oblige à linéariser. La \textstyleTermesapprof{structure communicative}, qui encode la façon dont l’information est structurée pour être communiquée (voir l’\encadref{sec:1.2.4} sur \textit{Les composantes du sens}), joue ainsi dans de nombreuses langues un rôle primordial dans l’ordre des syntaxèmes (voir l’\encadref{fig:3.5.24} sur l’\textit{Ordre communicativement dirigé}).
 
     Nous considérons que la structure communicative fait partie de la représentation du sens à communiquer et ceci quelle que soit la langue, alors que l’ordre linéaire, qui en découle parfois directement, ne fait pas lui-même partie du sens. En procédant ainsi, nous pouvons nous abstraire des idiosyncrasies d’une langue particulière et nous rapprocher d’une représentation du sens plus universelle. Une telle représentation permet alors de modéliser la traduction ou le paraphrasage (qui est une traduction intra-langue) : en effet, des traductions ou paraphrases peuvent partager le même sens et des structures communicatives similaires, tout en ayant des ordres linéaires très différents (voir l’\encadref{fig:3.5.13} sur l’\textit{Ordre dominant}).
 
     Même si l’on admet que le sens est non ordonné, on est en droit de se demander pourquoi nous considérons une \textbf{représentation syntaxique non ordonnée} (l’arbre de dépendance) entre le sens et l’ordre linéaire.
 
-    Premièrement, on a vu qu’il est possible de définir une structure hiérarchique qui rend compte de propriétés importantes de l’énoncé sur la combinaison des unités entre elles (voir \chapref{sec:3.2}) et de considérer cette structure indépendamment de l’ordre linéaire. C’est même la possibilité de complètement séparer la structure de dépendance de l’ordre linéaire qui est une des raisons de son succès en traitement automatique des langues.
+    Premièrement, on a vu qu’il est possible de définir une structure hiérarchique qui rend compte de propriétés importantes de l’énoncé sur la combinaison des unités entre elles (voir \chapref{sec:3.2}) et de considérer cette structure indépendamment de l’ordre linéaire. 
 
-    Deuxièmement, il y a de bonnes raisons de penser que la structure hiérarchique est bien un intermédiaire entre le sens et l’ordre linéaire. Avant tout parce que le sens est multidimensionnel, la structure hiérarchique bidimensionnel et l’ordre linéaire unidimensionnel. Ensuite, comme nous l’avons vu au \chapref{sec:1.2}, on peut associer assez naturellement une structure hiérarchique à un sens et comme nous le verrons ici on peut associer tout aussi naturellement un ordre linéaire à la structure hiérarchique. Il serait beaucoup moins simple d’associer directement un ordre linéaire à un sens.
+    Deuxièmement, il y a de bonnes raisons de penser que la structure hiérarchique est bien un intermédiaire entre le sens et l’ordre linéaire. Avant tout parce que le sens est multidimensionnel, la structure hiérarchique bidimensionnel et l’ordre linéaire unidimensionnel (voir l'\encadref{fig:1.2.10} \textit{Du sens au texte : de 3D à 1D}). Ensuite, comme nous l’avons vu au \chapref{sec:1.2}, on peut associer assez naturellement une structure hiérarchique à un sens et comme nous le verrons ici on peut associer tout aussi naturellement un ordre linéaire à la structure hiérarchique. Il serait beaucoup moins simple d’associer directement un ordre linéaire à un sens.
 
     Cette dernière affirmation doit quand même être modulée : dans le processus de synthèse d’un texte à partir d’un sens, l’ordre linéaire semble parfois prévaloir sur la structure hiérarchique. On a notamment cette impression lorsqu’on compare des constructions de français oral avec des constructions plus écrites, comme dans ces exemples classiques :
 
     \ea
-    \ea  Moi, mon frère, son vélo, le guidon, il est cassé.
-    \ex  Le guidon du vélo de mon frère est cassé.
+    \ea  \textit{Moi, mon frère, son vélo, le guidon, il est cassé.}
+    \ex  \textit{Le guidon du vélo de mon frère est cassé.}
     \z
     \z
 
     Comme on le voit dans le premier énoncé, le plus oral des deux, chaque élément de sens forme un îlot rectionnel indépendant et cet énoncé échappe ainsi à une structure hiérarchique complète, à l’inverse du deuxième énoncé. On est en droit de se demander si dans ce premier énoncé, la structure communicative n’a pas d’abord permis de construire une structure topologique avec des places qu’on est ensuite venu remplir avec de petits segments organisés hiérarchiquement. Cela ne remet toutefois pas en cause la possibilité de considérer la structure linéaire et la structure hiérarchique indépendamment l’une de l’autre.
 
-    Dire que l’on peut considérer ces deux structures indépendamment l’une de l’autre ne signifie absolument pas qu’elles sont indépendantes l’une de l’autre. Bien au contraire, elles se contraignent l’une l’autre par un ensemble de propriétés qui constituent le module topologique. Dans la suite, nous allons donc nous intéresser au «~produit~» de ces deux structures, l’arbre de dépendance ordonné.
+    Dire que l’on peut considérer ces deux structures indépendamment l’une de l’autre ne signifie absolument pas qu’elles sont indépendantes l’une de l’autre. Bien au contraire, elles se contraignent l’une l’autre par un ensemble de propriétés qui constituent les règles du modèle topologique. Dans la suite, nous allons donc nous intéresser au «~produit~» de ces deux structures, l’arbre de dépendance ordonné.
 }
 \loupe{Mouvement et ordre de base}{%\label{sec:3.5.8}
     Notre conception de l’ordre des syntaxèmes s’oppose à une autre conception, celle de la grammaire générative, développée autour de Noam Chomsky depuis la fin des années 1950. Dans cette conception, une unique structure syntaxique de base \textbf{ordonnée} est postulée pour chaque construction de chaque langue. Les différents ordres observés sont obtenus par des \textstyleTermesapprof{mouvements} au sein de la structure syntaxique de base.
 
-    Le mouvement repose sur l’idée que tout changement de place linéaire est aussi un changement de position syntaxique. Nous distinguons pour notre part position topologique et position syntaxique : à chaque position syntaxique correspond au moins autant de positions topologiques qu’il y a de placements possibles. Que l’on considère \textit{le livre que} \textbf{\textit{Zoé lit}} ou \textit{le livre que}\textbf{ \textbf{lit} \textit{Zoé}}, le nom \textit{Zoé} occupe toujours la même position syntaxique de sujet du verbe \textit{lit} ; seule sa position topologique change. Autrement dit, à partir de la structure syntaxique commune à ces deux syntagmes, on aura deux linéarisations possibles.
+    La notion de mouvement repose sur l’idée que tout changement de place linéaire est aussi un changement de position syntaxique. Nous distinguons pour notre part position topologique et position syntaxique : à chaque position syntaxique correspond au moins autant de positions topologiques qu’il y a de placements possibles. Que l’on considère \textit{le livre que} \textbf{\textit{Zoé lit}} ou \textit{le livre que}\textbf{ \textit{lit} \textit{Zoé}}, le nom \textit{Zoé} occupe toujours la même position syntaxique de sujet de la forme verbale \textit{lit} ; seule sa position topologique change. Autrement dit, à partir de la structure syntaxique commune à ces deux syntagmes, on aura deux linéarisations possibles.
 
     Nous renvoyons également à l’\encadref{fig:3.2.7} \textit{De la non-séparation des ordres aux mouvements}, où nous montrons que l’introduction du mouvement dans un modèle linguistique est une conséquence immédiate de la non-distinction de la position syntaxique et de la place linéaire, caractéristique des modèles générativistes. Dans ces modèles, il est supposé que toute construction possède un \textbf{ordre de base}. Ainsi en français, l’ordre de base entre le verbe et son sujet est l’ordre sujet-verbe (\textbf{\textit{Zoé lit}} \textit{un livre}). Lorsque le sujet est après le verbe (\textit{le livre que} \textbf{\textit{lit Zoé}}), on parle traditionnellement de \textbf{sujet inversé}. C’est une terminologie traditionnelle, mais problématique, car elle suggère qu’il y a une opération d\textbf{’inversion} (\textit{le livre que Zoé lit} \textrm{→} \textit{le livre que lit Zoé}) à partir de l’ordre de base.
 
-    Nous rejetons pour notre part la notion d’ordre de base. Nous considérons qu’il y a un processus de linéarisation qui permet de calculer à partir d’une structure syntaxique non ordonnée différents ordres possibles. Il est bien sûr possible qu’un des ordres soit \textbf{privilégié}, voire \textbf{obligatoire}, et nous parlerons alors d’\textstyleTermesapprof{ordre dominant} (voir les encadrés 3.5.13 sur l’\textit{Ordre dominant} et 3.5.23 sur \textit{Les langues dites à ordre libre}). L’ordre dominant\textstyleTermesapprof{} est un \textbf{ordre par défaut}, généralement peu marqué communicativement, mais qui en aucun cas ne sert de base au calcul des autres ordres possibles.
+    Nous rejetons pour notre part la notion d’ordre de base. Nous considérons qu’il y a un processus de linéarisation qui permet de calculer à partir d’une structure syntaxique non ordonnée différents ordres possibles. Il est bien sûr possible qu’un des ordres soit \textbf{privilégié}, voire \textbf{obligatoire}, et nous parlerons alors d’\textstyleTermesapprof{ordre dominant} (voir l'\encadref{fig:3.5.13} sur l’\textit{Ordre dominant} et l'\encadref{fig:3.5.23} sur \textit{Les langues dites à ordre libre}). L’ordre dominant est un \textbf{ordre par défaut}, généralement peu marqué communicativement, mais qui ne sert en aucun cas de base au calcul des autres ordres possibles.
 
-    L’idée d’un ordre de base et la notion d’inversion par rapport à l’ordre de base remonte au moins au 18\textsuperscript{e} siècle. L’article «~Inversion~» de l’\textit{Encyclopédie} écrit par Nicolas Beauzée et publié en 1765 s’inscrit parfaitement dans son temps en faisant référence à un ordre analytique supposé l’ordre naturel de la pensée et donc universel : «~C’est l’ordinaire dans toutes ces langues que le sujet précède le verbe, parce qu’il est dans l’ordre que l’esprit voie d’abord un être avant qu’il en observe la manière d’être ; que le verbe soit suivi de son complément, parce que toute action doit commencer avant que d’arriver à son terme ; que la préposition ait de même son complément après elle, parce qu’elle exprime de même un sens commencé que le complément achève.~» Voir également, dans l’\encadref{fig:3.5.24} \textit{Ordre communicativement dirigé,} la distinction entre langues analogues et langues transpositives introduite par \citet{girad1747vrais}. Néanmoins, à cette époque déjà, le débat est vif et d’autres linguistes ont une approche beaucoup plus nuancée, comme Dumarsais, qui dans l’article «~Construction~» de l’\textit{Encyclopédie} publié en 1754, souligne que, s’il peut y avoir un ordre dominant, celui-ci est avant tout acquis : «~La construction simple est aussi appelée construction naturelle, parce que c’est celle que nous avons apprise sans maître, par la seule constitution mécanique de nos organes, par notre attention et notre penchant à l’imitation. […] Telle est la relation établie entre la pensée et les mots, c’est-à-dire, entre la chose et les signes qui la font connaître : connaissance acquise dès les premières années de la vie, par des actes si souvent répétés, qu’il en résulte une habitude que nous regardons comme un effet naturel.~»
+    L’idée d’un ordre de base et la notion d’inversion par rapport à l’ordre de base remonte au moins au 18\textsuperscript{e} siècle. L’article «~Inversion~» de l’\textit{Encyclopédie} écrit par Nicolas Beauzée et publié en \citeyear{Beauzée1765} s’inscrit parfaitement dans son temps en faisant référence à un ordre analytique supposé l’ordre naturel de la pensée et donc universel : «~C’est l’ordinaire dans toutes ces langues que le sujet précède le verbe, parce qu’il est dans l’ordre que l’esprit voie d’abord un être avant qu’il en observe la manière d’être ; que le verbe soit suivi de son complément, parce que toute action doit commencer avant que d’arriver à son terme ; que la préposition ait de même son complément après elle, parce qu’elle exprime de même un sens commencé que le complément achève.~» Voir également, dans l’\encadref{fig:3.5.24} \textit{Ordre communicativement dirigé,} la distinction entre langues analogues et langues transpositives introduite par \citet{girad1747vrais}. Néanmoins, à cette époque déjà, le débat est vif et d’autres linguistes ont une approche beaucoup plus nuancée, comme Dumarsais, qui dans l’article «~Construction~» de l’\textit{Encyclopédie} publié en \citeyear{Dumarsais1754}, souligne que, s’il peut y avoir un ordre dominant, celui-ci est avant tout acquis : «~La construction simple est aussi appelée construction naturelle, parce que c’est celle que nous avons apprise sans maître, par la seule constitution mécanique de nos organes, par notre attention et notre penchant à l’imitation. […] Telle est la relation établie entre la pensée et les mots, c’est-à-dire, entre la chose et les signes qui la font connaître : connaissance acquise dès les premières années de la vie, par des actes si souvent répétés, qu’il en résulte une habitude que nous regardons comme un effet naturel.~»
 }
 \section{Arbre de dépendance ordonné}\label{sec:3.5.9}
 
-Nous avons vu au \chapref{sec:3.3} comment représenter la structure syntaxique à l’aide d’un arbre de dépendance. Nous envisageons la linéarisation comme la correspondance entre un arbre de dépendance (non ordonné) et un ordre linéaire. Si nous reprenons l’exemple des chapitres précédents (\textit{Beaucoup de gens aimeraient passer Noël en Laponie}), nous devons mettre en correspondance les deux structures suivantes :
+Nous avons vu au \chapref{sec:3.3} comment représenter la structure syntaxique à l’aide d’un arbre de dépendance. Nous envisageons la linéarisation comme la correspondance entre un arbre de dépendance (non ordonné) et un ordre linéaire. 
+
+\Definition{\textstyleTermesapprof{arbre de dépendance ordonné}}{
+La structure combinant un arbre de dépendance et un ordre linéaire sur les nœuds de cet arbre est appelé un \textstyleTermesapprof{arbre de dépendance ordonné}.
+}
+
+Si nous reprenons l’exemple des chapitres précédents (\textit{Beaucoup de gens aimeraient passer Noël en Laponie}), nous devons mettre en correspondance les deux structures de la figure \ref{fig:noel-double}, où l’ordre linéaire est représentée par la relation de précédence qui unit les nœuds successifs (sur le lien entre la relation d’ordre et la relation de précédence, on pourra consulter l’\encadref{fig:3.3.30} sur \textit{Dépendance, dominance et transitivité}).
+
 
 \begin{figure}
 \begin{tikzpicture}
@@ -222,12 +233,11 @@ Nous avons vu au \chapref{sec:3.3} comment représenter la structure syntaxique 
                         -1-1-1-1-1/Noël, -1-1-1-1-1-1/en, -1-1-1-1-1-1-1/Laponie} 
       {\node [font={\itshape\strut}, below=1pt of root\pos] {\text};}
 \end{tikzpicture}
-\caption{\label{fig:}Arbre de dépendance et ordre linéaire}
+\caption{\label{fig:noel-double}Arbre de dépendance et ordre linéaire}
 \end{figure}
 
-Dans la figure précédente, l’ordre linéaire est représentée par la relation de précédence qui unit les nœuds successifs (sur le lien entre la relation d’ordre et la relation de précédence, on pourra consulter l’\encadref{fig:3.3.30} sur \textit{Dépendance, dominance et transitivité}).
 
-On peut représenter la correspondance entre les deux structures, l’arbre de dépendance et l’ordre linéaire, en alignant les nœuds qui se correspondent deux à deux :
+On peut représenter la correspondance entre les deux structures, l’arbre de dépendance et l’ordre linéaire, en alignant les nœuds qui se correspondent deux à deux. Cette représentation qui apparaît dans les travaux d'Yves \citet{lecerf1960programme}, sera appelée la représentation à la Lecerf de l'arbre de dépendance ordonné. Dans cette représentation, les deux structure en correspondance sont bien séparées et la correspondance est représentée de manière explicite par des lignes verticales (en pointillée), que Lecerf appelle des \textstyleTermesapprof{projetantes}.
 
 \begin{figure}
 \begin{tikzpicture}
@@ -261,11 +271,15 @@ On peut représenter la correspondance entre les deux structures, l’arbre de d
         \draw (passer) -- (en) -- (Laponie);
       \end{scope}
 \end{tikzpicture}
-\caption{Correspondance entre arbre de dépendance et ordre linéaire\label{fig:}}
+\caption{représentation à la Lecerf d'un arbre de dépendance ordonné\label{fig:noel-Lecerf}}
 
 \end{figure}
 
-L’ordre linéaire et l’arbre de dépendance sont en fait deux structures sur \textbf{un même ensemble} d’éléments. On peut donc représenter ces deux structures ensemble sur un unique ensemble de nœuds :
+L’ordre linéaire et l’arbre de dépendance sont en fait deux structures sur \textbf{un même ensemble} d’éléments.  Une structure combinant ainsi deux structures est appelée une \textstyleTermesapprof{structure produit}.
+Une structure produit est davantage que la réunion de deux structures, il s'agit de deux structures combinées entre elles.
+L'arbre de dépendance ordonné est une structure produit.
+
+On peut représenter sur un unique ensemble de nœuds la structure produit que forment ensemble l’ordre linéaire et l’arbre de dépendance. La représentation résultante, donnée dans la figure \ref{fig:noel-Hudson}, a été introduite Richard \cite{hudson1984word}. Dans cette représentation toutes les dépendances sont représentée dans le même demi-plan au-dessus de la ligne formée par la chaîne linéaire. Une dépendance verticale (sans gouverneur) vient en plus marquer la position de la racine de l'arbre de dépendance. L’intérêt de cette dépendance apparaîtra clairement lorsque nous parlerons de projectivité (\sectref{sec:3.5.14} sur \textit{Projectivité et dépendances projectives}). Nous appellerons cette représentation la représentation en ligne ou la représentation à la Hudson d'un arbre de dépendance ordonné.
 
 \begin{figure}
 \begin{tikzpicture}
@@ -287,12 +301,11 @@ L’ordre linéaire et l’arbre de dépendance sont en fait deux structures sur
 
 \draw[{Triangle[]}-] (root-1-1-1) -- ++(0,1cm);
 \end{tikzpicture}
-\caption{Arbre de dépendance ordonné\label{fig:}}
+\caption{Arbre de dépendance ordonné\label{fig:noel-Hudson}}
 \end{figure}
 
-Une structure combinant ainsi deux structures est appelée une \textstyleTermes{structure produit} en mathématiques. La structure obtenue par le produit d’un arbre de dépendance et d’un ordre linéaire est appelée un \textstyleTermes{arbre de dépendance ordonné}.
 
-On notera que nous avons ajouté une dépendance verticale (sans gouverneur) marquant la racine de l’arbre de dépendance. L’intérêt de cette dépendance apparaîtra clairement lorsque nous parlerons de projectivité (\sectref{sec:3.5.14} sur \textit{Projectivité et dépendances projectives}).
+
 
 \loupe{Format tabulaire}{%\label{sec:3.5.10}
     Un arbre de dépendance ordonné peut être encodé dans un tableau comme le suivant :
@@ -2082,5 +2095,6 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
 
     Le sujet va dans le champ initial, sauf quand celui-ci est occupé par un pronom interrogatif, une négation ou un locatif, ou quand il reste vide dans une interrogative totale. Le champ modal peut rester vide quand le sujet occupe le champ initial et qu’il n’y a pas la négation \textit{not} dans le champ adverbial. Le sujet inversé va dans le champ adverbial.
 
-    \corrigé{8} Cet exemple montre qu’un constituant à tête verbale, comme \textit{in seiner Nase zu popeln} ‘de se crotter le nez’, peut également venir se placer dans le Vorfeld. Il n’est pas nécessaire d’aménager davantage le modèle.
+    \corrigé{8} Cet exemple montre qu’un constituant à tête verbale, comme \textit{in seiner Nase zu popeln} ‘de se crotter le nez’, peut également venir se placer dans le Vorfeld. Nous avons vu un cas similaire dans l'exemple \REF{ex:Nase-participe}a, où un verbe au participe passé est placé dans le Vorfeld. Il suffit d'indiquer dans la règle de correspondance de placement dans le Vorfeld d'indiquer quelles sont la catégories syntaxiques qui sont éligible.
+    Il n’est pas nécessaire d’aménager davantage le modèle.
 }
