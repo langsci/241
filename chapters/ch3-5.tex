@@ -149,7 +149,7 @@ La linéarisation est modélisée comme une correspondance entre deux structures
     «~Je crois qu’on ne doit pas confondre \textit{construction} avec \textit{syntaxe}. Construction ne présente que l’idée de combinaison et d’arrangement. Cicéron a dit selon trois combinaisons différentes, \textit{accepi litteras tuas, tuas accepi litteras}, et \textit{litteras accepi tuas} : il y a là trois \textit{constructions}, puisqu’il y a trois différents arrangements de mots ; cependant il n’y a qu’une syntaxe ; car dans chacune de ces constructions il y a les mêmes signes des rapports que les mots ont entre eux, ainsi ces rapports sont les mêmes dans chacune de ces phrases.~» (\cite{Dumarsais1754} : 72)
 \end{quote}
 
-Nous pensons pour notre part que la structure ordonnée est plus complexe qu’un ordre linéaire et qu’il s’agit d’un arbre de constituants ordonné que nous appelons la \textstyleTermes{structure topologique}. Les \textstyleTermes{constituants topologiques} jouent notamment un rôle dans le calcul de la prosodie (voir l’\encadref{fig:3.5.35} sur \textit{Topologie et prosodie}).
+Nous pensons pour notre part que la structure ordonnée est plus complexe qu’un ordre linéaire et qu’il s’agit d’un emboîtement de constituants, que nous appelons les \textstyleTermes{constituants topologiques}. Ceux-ci jouent un rôle dans la linéarisation et calcul de l'ordre des mots, mais aussi dans le calcul de la prosodie (voir l’\encadref{fig:3.5.35} sur \textit{Topologie et prosodie}).
 
 La partie de la grammaire qui assure la correspondance entre la structure syntaxique et la structure topologique, et donc en particulier la linéarisation, s’appelle le \textstyleTermes{modèle topologique}. Dans la suite, nous allons présenter le cadre général de la construction d’un modèle topologique et nous construirons notamment les modèles topologiques du français et de l’allemand.
 
@@ -304,7 +304,7 @@ Une représentation la structure produit que forment ensemble l’ordre linéair
 
 
 
-\loupe{Format tabulaire}{%\label{sec:3.5.10}
+\loupe{Format tabulaire et treebanks}{%\label{sec:3.5.10}
     Un arbre de dépendance ordonné peut être encodé dans un \textstyleTermesapprof{format tabulaire} comme dans la table \ref{tab:conll}.
     
     \begin{table}[H]
@@ -367,6 +367,8 @@ Une représentation la structure produit que forment ensemble l’ordre linéair
     Le format tabulaire de la table \ref{tab:conll}, également appelé \textstyleTermesapprof{format CoNLL} d’après la conférence éponyme en apprentissage automatique (\textit{Conférence in Natural Language Learning}), est extrêmement économique et sert en traitement automatique des langues à encoder des corpus de textes analysés syntaxiquement. Les présupposés théoriques se reflètent dans l’économie du format : on ne peut encoder qu’un seul gouverneur par mot (la structure doit être un arbre) et les liens sont restreints aux mots de la même phrase. Il existe différentes extensions de ce format permettant d’encoder des graphes et mêmes des graphes à bulles.
 
     Les corpus annotés avec des arbres de dépendance sont appelés des \textstyleTermesapprof{corpus arborés en dépendance} ou \textstyleTermesapprof{banques d’arbres de dépendance} ou en anglais \textstyleTermesapprof{dependency treebanks}. Ils servent pour des études sur les propriétés d’une langue donnée, aussi bien qu’à l’apprentissage automatique d’outils logiciels comme des analyseurs syntaxiques automatiques.
+    
+    Il existe aujourd'hui des treebanks en dépendance pour un grand nombre de langues. La plus importante collection de treebanks actuelle est la collection \textit{Universal Dependencies} (\textit{UD}), entièrement accessible en ligne à l'adresse universaldependencies.org. Cette collection, développée depuis 2014, comprend des corpus annotés en dépendance pour près d'une centaine de langues et ne cesse de grossir. De plus, tous ces treebanks sont annotés dans un même schéma d'annotation âprement discuté par l'ensemble de la communauté scientifique. Ces treebanks sont également convertis dans un schéma d'annotation plus proche des analyses que nous présentons dans ce livre, nommé \textit{Surface-Syntactic UD} (\textit{SUD}) et disponible sur le site surfacesyntacticud.github.io.
 }
 \maths{Notation polonaise inverse}{%\label{sec:3.5.11}
     Nous allons nous intéresser à la structure d’un calcul algébrique élémentaire et voir que le rapport entre une structure arborescente et l’ordre n’est pas qu’une question interne à la linguistique. La question a d’ailleurs intéressé les mathématiciens avant les linguistes.
@@ -663,17 +665,19 @@ Le troisième vers de cette chanson a une structure non projective, comme le mon
 
 Comme on le voit sur la figure, la dépendance qui relie \textit{une belle} à la relative \textit{qui voulait les acheter} couvre la racine \textit{est entrée} et coupe donc la dépendance verticale. Il s’en suit que le groupe substantival \textit{une belle qui voulait les acheter} est discontinu.
 
-La projectivité est en partie énoncée par Nicolas Beauzée dans l’article «~Régime~» de l’\textit{Encyclopédie} publié en 1765 (voir la discussion dans l’\encadref{fig:3.3.2} \textit{Historique des notions de dépendance et de tête}) : «~Il ne faut jamais rompre l’unité d’un complément total, pour jeter entre ses parties un autre complément du même mot.~», ce qui reviendrait effectivement à ce que le premier complément soit discontinu. Beauzée note également que les langues à cas peuvent violer la projectivité : «~je crois qu’il est bon de remarquer, que les règles que je viens d’assigner sur l’arrangement de divers compléments, ne peuvent concerner que l’ordre analytique qu’il faut suivre quand on fait la construction d’une phrase, ou l’ordre usuel des langues analogues comme la nôtre. Car pour les langues transpositives, où la terminaison des mots sert à caractériser l’espèce de rapport auquel ils sont employés, la nécessité de marquer ce rapport par la place des mots n’existe plus au même degré.~» La notion de \textit{langue analogue} renvoie ici aux langues ayant un ordre fixe similaire au français (voir l’\encadref{fig:3.5.24} sur l’\textit{Ordre communicativement dirigé}).
+La projectivité est en partie énoncée par Nicolas Beauzée dans l’article «~Régime~» de l’\textit{Encyclopédie} publié en \citeyear{Beauzée1765} (voir la discussion dans l’\encadref{fig:3.3.2} \textit{Historique des notions de dépendance et de tête}) : «~Il ne faut jamais rompre l’unité d’un complément total, pour jeter entre ses parties un autre complément du même mot.~», ce qui reviendrait effectivement à ce que le premier complément soit discontinu. Beauzée note également que les langues à ordre libre, qu'ils appelle les langues transpositives, peuvent violer la projectivité : «~je crois qu’il est bon de remarquer, que les règles que je viens d’assigner sur l’arrangement de divers compléments, ne peuvent concerner que l’ordre analytique qu’il faut suivre quand on fait la construction d’une phrase, ou l’ordre usuel des langues analogues comme la nôtre. Car pour les langues transpositives, où la terminaison des mots sert à caractériser l’espèce de rapport auquel ils sont employés, la nécessité de marquer ce rapport par la place des mots n’existe plus au même degré.~» La notion de \textit{langue analogue} renvoie ici aux langues ayant un ordre fixe similaire au français et supposé analogue à la pensée (voir l’\encadref{fig:3.5.8} \textit{Mouvement et ordre de base}).
+
 
 \maths{Projectivité et planarité}{%\label{sec:3.5.15}
     La deuxième définition de la projectivité que nous avons donnée (en termes de coupure) est un cas particulier d’une propriété plus générale des graphes que l’on appelle la \textstyleTermesapprof{planarité}. (Pour la notion de graphe voir l’\encadref{fig:1.2.3} sur \textit{Graphe et arbre.})
-    
-    \Definition{\textstyleTermes{planarité}}
-    {Un graphe est dit \textstyleTermesapprof{planaire} s’il peut être dessiné dans un plan sans qu’aucunes de ses arêtes ne se coupent.}
-    Dans le cas de la projectivité d’un arbre ordonné, on s’intéresse à une propriété qui concerne la relation entre la structure d’arbre et l’ordre linéaire sur les nœuds de l’arbre. Le graphe qui nous intéresse doit donc contenir ces deux structures. Au graphe que forme l’arbre, nous allons ajouter l’ordre linéaire sous la forme d’arêtes entre deux nœuds successifs, ce qui revient à placer les nœuds du graphe sur une ligne dans l’ordre linéaire. Pour prendre totalement en compte la structure hiérarchique de l’arbre, il faut encoder le fait que l’arbre possède un nœud, la racine, qui domine tous les autres. Pour cela, on attache l’arbre par sa racine à un nœud spécial qu’on appelle le nœud à l’infini (noté \textrm{${\infty}$}). Cela revient à placer les nœuds de l’arbre sur un cercle dans l’ordre linéaire avec le nœud à l’infini entre le premier et le dernier nœud. Nous appellerons ce graphe le \textstyleTermesapprof{graphe circulaire} associé à un arbre linéairement ordonné.
+   {Un graphe est dit \textstyleTermesapprof{planaire} s’il peut être \textbf{dessiné dans un plan} sans qu’\textbf{aucunes de ses arêtes ne se coupent}.}
+   
+    Dans le cas de la projectivité d’un arbre ordonné, on s’intéresse à une propriété qui concerne la relation entre la structure d’arbre et l’ordre linéaire sur les nœuds de l’arbre. Le graphe qui nous intéresse doit donc contenir ces deux structures. Au graphe que forme l’arbre, nous allons ajouter l’ordre linéaire sous la forme d’arêtes entre deux nœuds successifs, ce qui revient à placer les nœuds du graphe sur une ligne dans l’ordre linéaire. Pour prendre totalement en compte la structure hiérarchique de l’arbre, il faut encoder le fait que l’arbre possède un nœud, la racine, qui domine tous les autres. Pour cela, on attache l’arbre par sa racine à un nœud spécial qu’on appelle le nœud à l’infini (noté \textrm{${\infty}$}). Cela revient à placer les nœuds de l’arbre sur un cercle dans l’ordre linéaire avec le nœud à l’infini entre le premier et le dernier nœud. Nous appelons ce graphe le \textstyleTermesapprof{graphe circulaire} pour un arbre linéairement ordonné (voir la figure \ref{fig:noel-circulaire}).
 
-    \todo[inline]{If examples are converted to Figures, they can change their position in the text. This is because figures are floating environments. Before we convert examples to figures, I'd therefore recommend that we make an explicit refernce to the figure in the text to ensure reader orientation.}
-    \ea Graphe circulaire\\
+\begin{figure}
+    \centering
+     \caption{Graphe circulaire pour un arbre de dépendance ordonné}
+    \label{fig:noel-circulaire}
     \begin{tikzpicture}[label distance=2pt,>={Triangle[]}] % Following an idea by Jerome Tremblay
     \def \radius {2cm}
     \def \margin {5}
@@ -707,17 +711,20 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
               edge[->, bend left=45] (8)
           (8) edge[->, bend left] (9);
     \end{tikzpicture}
-    \z
+ \end{figure}
+
 
     Le graphe circulaire d’un arbre projectif a une propriété un peu plus forte que la planarité : il est planaire extérieur.
-    
-    \Definition{\textstyleTermesapprof{planarité extérieure}}
-    {Un graphe est dit \textstyleTermesapprof{planaire extérieur} s’il peut être dessiné avec tous ses nœuds accessibles de l’extérieur et sans qu’aucunes de ses arêtes ne se coupent.}
-    On peut montrer que pour qu’un graphe soit planaire extérieur, il faut et il suffit qu’il ne puisse pas être réduit à un graphe particulier qu’on appelle K\textsubscript{4}. La \textstyleTermesapprof{réduction} d’un graphe consiste à agréger ensemble des nœuds qui sont liés. C’est une opération importante de notre point de vue, car elle consiste à regarder la structure avec une granularité moins importante (voir la \sectref{sec:3.2.20} sur la \textit{Granularité}). Le graphe K\textsubscript{4} est le graphe complet à 4 nœuds, c’est-à-dire le graphe à 4 nœuds où tous les nœuds sont liés deux à deux. Les deux configurations rejetées par la projectivité sont exactement le graphe K\textsubscript{4}, comme le montre la figure suivante.
-
-    \ea
-    %%[Warning: Draw object ignored]
-    Equivalence entre K\textsubscript{4} et les configurations non projectives\\
+     {Un graphe est dit \textstyleTermesapprof{planaire extérieur} s’il peut être dessiné avec tous ses nœuds accessibles de l’extérieur et sans qu’aucunes de ses arêtes ne se coupent.}
+   On peut montrer que pour qu’un graphe soit planaire extérieur, il faut et il suffit qu’il ne puisse pas être réduit à un graphe particulier qu’on appelle K\textsubscript{4}. La \textstyleTermesapprof{réduction} d’un graphe consiste à \textbf{agréger ensemble des nœuds qui sont liés}. C’est une opération importante de notre point de vue, car elle consiste à diminuer la granularité de l'analyse en regarder la structure avec un grain plu grossier (voir la \sectref{sec:3.2.20} sur la \textit{Granularité}). Le graphe K\textsubscript{4} est le graphe complet à 4 nœuds, c’est-à-dire le graphe à 4 nœuds où tous les nœuds sont liés deux à deux. Les deux configurations rejetées par la projectivité sont exactement des sous-graphes K\textsubscript{4} du graohe circulaire, comme le montre la figure \ref{fig:nonproj-K4}.
+   
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Equivalence entre K\textsubscript{4} et les configurations non projectives}
+    \label{fig:nonproj-K4}
+     %%[Warning: Draw object ignored]
+    \\
     \begin{multicols}{3}\raggedcolumns
     \ea\attop{%
     \begin{tikzpicture} 
@@ -759,30 +766,34 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
     \end{tikzpicture}
     \z
     \end{multicols}
-    \z
+ \end{figure}
+\todo[inline]{Add title to a and b
+a. Croisement des dépendances
+b. recouvrement de la racine}
 }
 
 \loupe{Équivalence des définitions de la projectivité}{%\label{sec:3.5.16}
     On peut donner encore une autre caractérisation de la non-projectivité :
+     {un arbre de dépendance ordonné est \textstyleTermesapprof{non projectif} si et seulement s’il contient une dépendance non projective.} {Une \textbf{dépendance ordonnée} est \textstyleTermesapprof{non projective} si elle couvre un élément qui n’appartient pas à la projection de la tête de cette dépendance.}
 
-    \Definition{\textstyleTermesapprof{dépendance non projective}}
-    {Une \textbf{dépendance ordonnée} est \textstyleTermesapprof{non projective} si elle couvre un élément qui n’appartient pas à la projection de la tête de cette dépendance.}
-
-    \Definition{\textstyleTermesapprof{projectivité} (3)}
-    {Un \textbf{arbre de dépendance ordonné} est \textstyleTermesapprof{non projectif} si et seulement s’il contient une dépendance non projective.}
-
-    Soit T un arbre de dépendance ordonné. On veut montrer l’équivalence des trois propriétés suivantes :
+Cette définition est intéressante, car elle permet d'identifier les dépendances qui créent la non-projectivité et donc de quantifier la proportion de non-projectivité dans un corpus.
+    
+Pour un arbre de dépendance ordonné T, on a donc les trois propriétés suivantes :
 
     \begin{description}
     \item[P1 :] T contient une dépendance non projective.
     \item[P2 :] T contient un nœud dont la projection est discontinue.
-    \item[P3 :] T contient deux dépendances qui se coupent.
+    \item[P3 :] T contient deux dépendances qui se coupent (dans le graphe circulaire).
     \end{description}
+
+Montrons l’équivalence des trois propriétés .
 
     Supposons P1. Alors il existe un dépendance \textit{x} \textrm{→} \textit{y} non projective. Cette dépendance couvre un ancêtre \textit{z} de \textit{x}. Par définition, \textit{z} n’est pas dominé par \textit{x} et n’appartient donc pas à la projection X de \textit{x}. Comme z est entre \textit{x} et \textit{y} qui appartiennent à X, X est donc discontinu, d’où P2. Supposons maintenant P2. Soit X un projection discontinue et \textit{z} un élément au milieu de X n’appartenant pas à X. X étant connexe pour la dépendance il existe nécessairement une dépendance \textit{x} \textrm{→} \textit{y} entre deux éléments de X qui relie les parties à gauche et à droite de \textit{z}. Il existe une chaîne de dépendances entre le nœud à l’infini et \textit{z}. Aucun des éléments de cette chaîne ne peut appartenir à X et l’une des dépendances de cette chaîne coupe \textit{x} \textrm{→} \textit{y}, d’où P3. Enfin, si on a P3, nécessairement l’une des deux dépendances qui se coupent est non projective et on à P1. Nous avons montré l’équivalence des trois propriétés.
 }
 \loupe{Flux de dépendances}{%\label{sec:3.5.17}
-    Le \textstyleTermesapprof{flux de dépendances} en un point de l’ordre linéaire est l’\textbf{ensemble des dépendances} qui \textbf{relient} un \textbf{nœud} \textbf{à gauche} à un \textbf{nœud} \textbf{à droite} de ce point. Le flux de dépendance est défini pour un arbre linéairement ordonné. Ce qu’on appelle un point de l’ordre linéaire est une position sur la ligne que forment les mots lorsqu’on les aligne de gauche à droite dans l’ordre linéaire. On s’intéresse généralement au flux entre deux mots successifs, c’est-à-dire au \textbf{flux inter-mot}, mais on peut aussi regarder le flux au-dessus d’un syntaxème donné.
+    Le \textstyleTermesapprof{flux de dépendances} en un point de l’ordre linéaire (dans un arbre de déêndance ordonné) est l’\textbf{ensemble des dépendances} qui \textbf{relient} un \textbf{nœud} \textbf{à gauche} à un \textbf{nœud} \textbf{à droite} de ce point. Le flux de dépendance est défini pour un arbre linéairement ordonné. Ce qu’on appelle un point de l’ordre linéaire est une position sur la ligne que forment les mots lorsqu’on les aligne de gauche à droite dans l’ordre linéaire. On s’intéresse généralement au flux entre deux mots successifs, c’est-à-dire au \textstyleTermesapprof{flux inter-mot}, mais on peut aussi regarder le flux au-dessus d’un syntaxème donné. 
+    
+    La figure \ref{fig:noel-flux} montre les flux inter-mot pour notre exemple favori. Dans cette figure, le flux en un point de la phrase est l’ensemble des dépendances qui coupent le trait vertical en ce point. Le flux entre deux phrases est vide (à moins que l’on considère aussi des dépendances entre phrases). En toute position inter-mot de la phrase, le flux contient au moins une dépendance. Le flux entre \textit{de} et \textit{gens} ou entre \textit{passer} et \textit{Noël} contient deux dépendances.
 
     \begin{figure}[H]
     \begin{tikzpicture}
@@ -813,12 +824,14 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
          \draw [thick] (root-1-1-1-1-1-1-1.east) ++(5mm,0) -- ++ (0,2cm) -- ++ (0,-3cm);
                   
     \end{tikzpicture}
-    \caption{Flux inter-mot\label{fig:}}
+    \caption{Flux inter-mot\label{fig:noel-flux}}
     \end{figure}
+    \todo[inline]{The figure is not centerd. Maybe we just need to suppress the indentation. This is true for most of the figures, but here the figure is out of the border}
+    \todo[inline]{Maybe we could reduce a few the font size to avaoid some words to touch the vertical lines }
 
-    Dans notre figure, le flux en un point de la phrase est l’ensemble des dépendances qui coupent le trait vertical en ce point. Le flux entre deux phrases est vide (à moins que l’on considère aussi des dépendances entre phrases). En toute position inter-mot de la phrase, le flux contient au moins une dépendance. Le flux entre \textit{de} et \textit{gens} ou entre \textit{passer} et \textit{Noël} contient deux dépendances.
+    
 
-    La première propriété du flux est qu’il semble être naturellement \textbf{borné}, c’est-à-dire que le nombre de dépendances qui appartiennent simultanément au flux en n’importe quel point de la chaîne parlée ne dépasse jamais une certaine valeur. De ce point de vue, il faut distinguer deux types de configurations : les dépendances en bouquet, qui partagent une extrémité commune, et les dépendances disjointes. Les dépendances disjointes correspondent à des enchâssements centrés (angl. \textit{center embeddings}) de syntagmes, qui s’avère beaucoup plus coûteux pour le traitement que la présence de plusieurs dépendants sur un même élément.
+    La première propriété du flux est qu’il semble être naturellement \textbf{borné}, c’est-à-dire que le nombre de dépendances qui appartiennent simultanément au flux en n’importe quel point de la chaîne parlée ne dépasse jamais une certaine valeur. De ce point de vue, il faut distinguer deux types de configurations : les \textstyleTermesapprof{dépendances en bouquet}, qui partagent une extrémité commune, et les \textstyleTermesapprof{dépendances disjointes}. Les dépendances disjointes correspondent à des enchâssements centrés (angl. \textit{center embeddings}) de syntagmes, qui s’avère beaucoup plus coûteux pour le traitement cognitif que les bouquets.
 
 
     \begin{figure}[H]
@@ -842,28 +855,27 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
     \caption{Dépendances disjointes}
     \end{subfigure}
     \end{figure}
+    \todo[inline]{I would like to have a. rather than (a) for the subtitles. Moreover in some figures the subtitles are on top and sometimes on the bottom. Please unify.}
 
-    Les études faites sur des corpus annotés dans plus de 70 langues montrent que le flux n’a jamais plus de 6 dépendances disjointes et que ce nombre n’est quasiment jamais atteint. Plusieurs expériences en psychologie ont montré que le nombre de paramètres que l’on peut conserver simultanément dans sa \textbf{mémoire immédiate} dépasse rarement 7 (voir le fameux article du psychologue George Miller de 1956 intitulé \textit{The magical number seven, plus or minus two: Some limits on our capacity for processing information}). Par exemple, si vous montrez pendant une fraction de seconde à une personne un écran noir avec 5 ou 6 points blancs disposés aléatoirement, elle devrait être capable de vous dire précisément le nombre de points qui sont apparus à l’écran. Mais si vous faites la même expérience avec 8 ou 9 points, cela devient beaucoup plus difficile. On peut penser que la même contrainte agit sur le flux de dépendances et rend compte du fait que nous ne sommes pas capable de traiter simultanément plus de 6 dépendances disjointes lorsque nous écoutons une phrase et l’analysons au fur et à mesure de son écoute. La même contrainte agit lorsque nous produisons un énoncé et que nous devons gérer le flux de dépendances pour assurer la cohésion de notre propos.
+ 
+    Les études faites sur la centaine de langues des treebanks Universal Dependencies (voir l'\encadref{fig:3.5.10} sur \textit{Format tabulaire et treebanks})
+    montrent que le flux n’a jamais plus de 6 dépendances disjointes et que ce nombre n’est quasiment jamais atteint.
+    Plusieurs expériences en psychologie ont montré que le nombre de paramètres que l’on peut conserver simultanément dans sa \textbf{mémoire immédiate} dépasse rarement 7 (voir le fameux article du psychologue George A.\ Miller de \citeyear{miller1956magical} intitulé \textit{The magical number seven, plus or minus two: Some limits on our capacity for processing information}). Par exemple, si vous montrez pendant une fraction de seconde à une personne un écran noir avec 5 ou 6 points blancs disposés aléatoirement, elle devrait être capable de vous dire précisément le nombre de points qui sont apparus à l’écran. Mais si vous faites la même expérience avec 8 ou 9 points, cela devient beaucoup plus difficile. On peut penser que la même contrainte agit sur le flux de dépendances et rend compte du fait que nous ne sommes pas capable de \textbf{traiter simultanément} plus de 6 \textbf{dépendances disjointes} lorsque nous écoutons une phrase et l’analysons au fur et à mesure de son écoute. La même contrainte agit lorsque nous produisons un énoncé et que nous devons gérer le flux de dépendances pour assurer la cohésion de notre propos.
 
-    Nous allons maintenant préciser les liens entre le flux de dépendances et l’analyse d’un énoncé. Pour un arbre projectif, le flux est naturellement ordonné. Deux dépendances sont dites \textstyleTermesapprof{concomitantes} si elles appartiennent ensemble au flux à un moment donné. Lorsque l’arbre est projectif, deux dépendances concomitantes vérifient toujours la propriété suivante : l’un des dépendances couvre entièrement l’autre. On peut donc \textbf{ordonner le flux} de la plus petite dépendance à la plus grande et voir l’ensemble des dépendances à traiter à un moment donné comme une \textstyleTermesapprof{pile de dépendances} (ici pile fait référence à une pile d’assiettes). Cette idée a été exploitée pour le calcul automatique d’un arbre dépendance. Nous considérons que l’analyse d’une phrase se fait \textbf{incrémentalement}, c’est-à-dire en traitant les mots les uns après les autres dans leur ordre linéaire. À chaque mot traité, de nouvelles connexions sont effectuées et le flux de dépendances est mis à jour. Autrement dit, traiter un nouveau mot consiste à chercher ses connexions à gauche (c’est-à-dire parmi les mots déjà traités) et à introduire dans le flux ses connexions potentielles à droite. Dans l’absolu, le nombre d’information à traiter devrait grossir au fur et à mesure que de nouveaux mots sont considérés. C’est là qu’intervient la projectivité : en raison des contraintes de projectivité, les connexions potentielles qui figurent dans le flux sont ordonnées. Ce sont les dernières connexions entrées dans le flux qui doivent être traitées les premières, d’où l’idée de traiter l’ensemble des dépendances comme une pile d’assiettes : la dernière dépendance potentielle entrée dans le flux est posée sur le haut de la pile. Lorsqu’un nouveau mot est traité, seul le haut de la pile est considéré et le mot courant peut ou non accepter la connexion potentielle qui s’y trouve. S’il veut accéder à une autre connexion potentielle, il faut que la connexion potentielle qui est sur le dessus de la pile soit supprimable et supprimée. La procédure d’analyse que nous venons de décrire est appelée l’\textstyleTermesapprof{analyse en flux}.
+    Nous allons maintenant préciser les liens entre le flux de dépendances et l’analyse d’un énoncé. Pour un arbre projectif, le flux est naturellement ordonné. Deux dépendances sont dites \textstyleTermesapprof{concomitantes} si elles appartiennent ensemble au flux dans une position inter-mot. Lorsque l’arbre est projectif, deux dépendances concomitantes vérifient toujours la propriété suivante : l’un des dépendances couvre entièrement l’autre. On peut donc \textbf{ordonner le flux} de la plus petite dépendance à la plus grande et voir l’ensemble des dépendances à traiter à un moment donné comme une \textstyleTermesapprof{pile de dépendances} (ici \textit{pile} fait référence à une pile d’assiettes). Cette idée a été exploitée pour le calcul automatique d’un arbre dépendance. Nous considérons que l’analyse d’une phrase se fait \textbf{incrémentalement}, c’est-à-dire en traitant les mots les uns après les autres dans leur ordre linéaire. À chaque mot traité, de nouvelles connexions sont effectuées et le flux de dépendances est mis à jour. Autrement dit, traiter un nouveau mot consiste à chercher ses connexions à gauche (c’est-à-dire parmi les mots déjà traités) et à introduire dans le flux ses connexions potentielles à droite. Dans l’absolu, le nombre d’information à traiter devrait grossir au fur et à mesure que de nouveaux mots sont considérés. C’est là qu’intervient la projectivité : en raison des contraintes de projectivité, les connexions potentielles qui figurent dans le flux sont ordonnées. Ce sont les dernières connexions entrées dans le flux qui doivent être traitées les premières, d’où l’idée de traiter l’ensemble des dépendances comme une pile d’assiettes : la dernière dépendance potentielle entrée dans le flux est posée sur le haut de la pile. Lorsqu’un nouveau mot est traité, seul le haut de la pile est considéré et le mot courant peut ou non accepter la connexion potentielle qui s’y trouve. S’il veut accéder à une autre connexion potentielle, il faut que la connexion potentielle qui est sur le dessus de la pile soit supprimable et supprimée. La procédure d’analyse que nous venons de décrire est appelée l’\textstyleTermesapprof{analyse en flux}. Elle a été implémentée pour la première fois avec succès par Daniel Sleator et Davy Temperley en \citeyear{sleator1993parsing} basé sur un formalisme appelé la \textit{Link Grammar}. Elle est aujourd'hui couramment utilisée par des \textbf{analyseurs automatiques} dits \textbf{basés sur les transitions} (\textit{transition-based parsers}). (On pourra consulter la présentation de \citet{kubler2009dependency} sur le parsing en dépendance, même si le domaine a beaucoup évolué depuis avec les progrès de l'Intelligence Artificielle et les méthodes neuronales.)
 
     On peut encore noter que les positions inter-mot et les dépendances se correspondent une à une. En effet, un arbre de dépendance à \textit{n} nœuds contient \textit{n}–1 dépendances et, s’il est linéairement ordonné, il possède \textit{n}–1 positions inter-mot. En tout point de l’ordre linéaire où le fux est projectif, on peut identifier une plus petite dépendance couvrant ce point que l’on appelle la \textstyleTermesapprof{voûte} et associer ainsi cette position inter-mot à cette dépendance. Il est intéressant de noter que cette dépendance donne une information importante sur la position inter-mot en tant que frontière. Reprenons l’exemple au début de cet encadré. La voûte de la position inter-mot entre \textit{gens} et \textit{aimeraient} est la relation sujet entre \textit{aimeraient} et \textit{beaucoup~}; la position est donc la frontière droite du sujet.
 }
 \section{Linéarisation projective}\label{sec:3.5.18}
 
-Nous allons maintenant étudier l’ordre des mots, c’est-à-dire la correspondance entre la structure de dépendance syntaxique et l’ordre linéaire, en nous plaçant dans la situation où nous voudrions ordonner un arbre de dépendance d’une langue donnée. Nous commençons par le cas, plus simple, où la linéarisation de l’arbre de dépendance donne un arbre ordonné projectif.
+Nous allons maintenant étudier la \textstyleTermesapprof{linéarisation}, c’est-à-dire la \textbf{correspondance entre la structure de dépendance syntaxique et l’ordre linéaire}, en nous plaçant dans la situation où nous voudrions ordonner un arbre de dépendance d’une langue donnée. Nous commençons par le cas, plus simple, où la linéarisation de l’arbre de dépendance donne un arbre ordonné projectif.
 
 La projectivité contraint fortement les linéarisations possibles d’un arbre de dépendance. Elle contraint chaque nœud de l’arbre de dépendance syntaxique à rester proche de son gouverneur et donc à \textbf{se placer par rapport à son gouverneur et à ses co-dépendants} (c’est-à-dire les éléments qui dépendent du même nœud que lui).
 
 Nous allons commencer par montrer comment le placement par rapport au gouverneur combiné avec la projectivité permet de spécifier un certain nombre d’ordres linéaires possibles, puis nous étudierons le placement par rapport aux co-dépendants dans les sections suivantes. Nous terminerons ce chapitre en étudiant la linéarisation non projective, pour laquelle le placement ne se fait plus par rapport au gouverneur.
 
-Reprenons notre exemple favori :
 
-\ea
-{Beaucoup de gens aimeraient passer Noël en Laponie}.
-\z
-
-Indiquons pour chaque type de mot comment il se place par rapport à son gouverneur en français :
+Donc quelques règles de linéarisation en français :
 
 \begin{itemize}
 \item le sujet précède le verbe dont il dépend ;
@@ -872,9 +884,9 @@ Indiquons pour chaque type de mot comment il se place par rapport à son gouvern
 \item le complément d’une préposition se place après celle-ci.
 \end{itemize}
 
-De telles règles sont appelées des \textstyleTermes{règles de précédence linéaire}. Elles peuvent être énoncées en termes de dépendances ou de constituants, peu importe la granularité de la combinaison que nous considérons pour un type de connexion donnée.
+De telles règles sont appelées des \textstyleTermes{règles de précédence linéaire}. Elles peu\-vent être énoncées en termes de dépendances, peu importe la granularité de la combinaison que nous considérons pour un type de connexion donné. (Elles sont souvent énoncées en termes de constituants syntaxiques, ce qui n'est pas sans poser problème, en entretenant une confusion entre constituants syntaxiques et constituants topologiques sur laquelle nous reviendrons.)
 
-En projetant ces règles sur l’arbre de dépendance de la phrase, on obtient la structure suivante où est indiqué, pour chaque dépendance, si le dépendant se place avant (<) ou après (>) le gouverneur :
+Les règles de précédence linéaire précédentes sont suffisante pour ordonner notre exemple favori. Pour cela, nous allons partir de son arbre de dépendance, que nous avons déjà présenté plusieurs fois, et projeter les informations données par les règles directement sur l'arbre. On obtient la structure de la figure \ref{fig:noel<}, où est indiqué, pour chaque dépendance, si le dépendant se place avant (<) ou après (>) le gouverneur.
 
 \begin{figure}
 \begin{tikzpicture}
@@ -904,16 +916,16 @@ En projetant ces règles sur l’arbre de dépendance de la phrase, on obtient l
     \node [right=1pt of root-2-2-1] {Laponie};
     \end{scope}
 \end{tikzpicture}
-\caption{Arbre de dépendance avec spécifications d’ordre\label{fig:}}
+\caption{Arbre de dépendance avec spécifications d’ordre\label{fig:noel<}}
 \end{figure}
 
 Pour ordonner linéairement les nœuds de l’arbre, on peut par exemple parcourir l’arbre à partir de sa racine en plaçant les nœuds au fur et à mesure. On place donc d’abord le verbe \textit{aimeraient}, puis ses deux dépendants, l’un à gauche (\textit{beaucoup}) et l’autre à droite (\textit{passer}) :
 \ea
-    {beaucoup aimeraient passer}
+    \textit{{beaucoup $<$ aimeraient $>$ passer}}
 \z
-On place ensuite le dépendant de \textit{beaucoup} à sa droite. La projectivité bloque une linéarisation telle *\textit{beaucoup aimeraient} \textbf{\textit{de gens}} \textit{passer}, qui respecte pourtant les règles de placement dépendant-gouverneur. En effet, \textit{de gens} doit se passer après \textit{beaucoup}, mais il ne peut pas aller au-delà de \textit{aimeraient,} car \textit{aimeraient} n’est pas dans la projection de \textit{beaucoup}. On a donc nécessairement :
+On place ensuite le dépendant de \textit{beaucoup} à sa droite. La projectivité bloque une linéarisation telle que *\textit{beaucoup aimeraient} \textbf{\textit{de gens}} \textit{passer}, qui respecte pourtant les règles de placement dépendant-gouverneur. En effet, \textit{de gens} doit se passer après \textit{beaucoup}, mais il ne peut pas aller au-delà de \textit{aimeraient,} car \textit{aimeraient} n’est pas dans la projection de \textit{beaucoup}. On a donc nécessairement :
 \ea
-    {beaucoup de gens aimeraient passer}
+    \textit{{beaucoup $>$ de $>$ gens aimeraient passer}}
 \z
 On place ensuite les dépendants de \textit{passer} à sa droite. À défaut de règles ordonnant les co-dépendants, on obtient deux ordres possibles : notre phrase de départ et la phrase \textit{Beaucoup de gens aimeraient passer en Laponie Noël} (sur laquelle nous reviendrons dans l’\encadref{fig:3.5.21} sur les \textit{Préférences dans l’ordre}).
 
@@ -922,10 +934,12 @@ Comme on le voit, la projectivité et des règles indiquant l’ordre dépendant
 \section{Linéarisation des co-dépendants}\label{sec:3.5.19}
 
 Dès qu’un nœud a plus de deux dépendants, l’un des dépendants ne pourra pas être accolé à son gouverneur. Considérons l’exemple suivant :
-\ea
-{Le petit garçon ne lui prêtera pas son autre gros ballon}.
+\ea\label{ex:ballon}
+\textit{{Le petit garçon ne lui prêtera pas son autre gros ballon}.}
 \z
-Voici son arbre de dépendance (où nous indiquons les seules fonctions pertinentes pour la suite de discussion, à savoir \textit{sujet} et \textit{objet}) :
+
+Son arbre de dépendance est donné dans la figure \ref{fig:ballon-dep}. Nous indiquons les seules fonctions pertinentes pour la suite de discussion, à savoir \textit{sujet} et \textit{objet}).
+ (Remarque : nous décidons dans cet arbre de prendre le nom comme tête du groupe substantival. Comme nous l’avons expliqué dans le \chapref{sec:3.3}, le déterminant comme le nom ont des propriétés de tête. Le choix du déterminant comme tête poserait encore moins de problème pour la linéarisation.)
 
 \begin{figure}
 \begin{tikzpicture}
@@ -954,40 +968,39 @@ Voici son arbre de dépendance (où nous indiquons les seules fonctions pertinen
     \node [below=1pt of root-5-3] {autre};
     \end{scope}
 \end{tikzpicture}
-\caption{\label{fig:}Arbre de dépendance}
+\caption{\label{fig:ballon-dep}Arbre de dépendance de \REF{ex:ballon}}
 \end{figure}
-
- (Remarque : nous décidons dans cet arbre de prendre le nom comme tête du groupe substantival. Comme nous l’avons expliqué dans le \chapref{sec:3.3}, le déterminant comme le nom ont des propriétés de tête. Le choix du déterminant comme tête poserait encore moins de problème pour la linéarisation.)
 
 L’ordre dépendant-gouverneur n’est pas suffisant pour contraindre correctement les ordres possibles : il est également nécessaire d’\textbf{ordonner entre eux les co-dépendants} \textbf{d’un} \textbf{même nœud} qui se placent du même côté de leur gouverneur commun.
 
-On peut envisager deux façons d’exprimer les règles d’ordre entre co-dépendants.
+On peut envisager deux façons d’exprimer les règles d’ordre entre co-dépen\-dants.
+Une première méthode consiste à considérer des règles d’\textbf{ordre des co-dépendants} \textbf{deux à deux} (ce serait à nouveau des \textbf{règles de précédence linéaire}). Par exemple, pour obtenir l’ordre \textit{le petit garçon} et bannir *\textit{petit le garçon}, on indiquera que~le déterminant se place devant les adjectifs qui dépendent du même nom. 
 
-Une première méthode consiste à considérer des règles d’\textbf{ordre des co-dépendants} \textbf{deux à deux} (ce serait à nouveau des \textbf{règles de précédence linéaire}). Par exemple, pour obtenir l’ordre \textit{le petit garçon} et bannir *\textit{petit le garçon}, on indiquera que~le déterminant se place devant les adjectifs qui dépendent du même nom. Si l’on regarde maintenant, l’ordre des dépendants à gauche du verbe \textit{prêtera}, on indiquera que le sujet se place avant les clitiques et que le clitique \textit{ne} précède toujours les clitiques datifs (comme \textit{lui}). Si on regarde plus précisément l’ordre des clitiques préverbaux du français, on voit qu’on a toujours \textit{je} < \textit{ne} < \textit{me} < \textit{le} < \textit{lui} < \textit{y} < \textit{en} < verbe : \textit{il me le donne, je le lui donne, il n’y en a pas,} etc. Comme l’ordre entre les clitiques est total, il est plus économique de donner directement l’ordre complet comme nous l’avons fait, que de donner les ordres des co-dépendants deux à deux (étant donné qu’il y a 8 éléments à ordonner, cela nous fait 7${\times}$8/2, soit 28 couples à ordonner).
+Si l’on regarde maintenant, l’ordre des dépendants à gauche du verbe \textit{prêtera}, on indiquera que le sujet se place avant les clitiques et que le clitique \textit{ne} précède toujours les clitiques datifs (comme \textit{lui}). Si on regarde plus précisément l’ordre des clitiques préverbaux du français, on voit qu’on a toujours \textit{je} < \textit{ne} < \textit{me} < \textit{le} < \textit{lui} < \textit{y} < \textit{en} < verbe : \textit{il me le donne, je le lui donne, il n’y en a pas,} etc. Comme l’ordre entre les clitiques est total, il est plus économique de donner directement l’ordre complet comme nous l’avons fait, que de donner les ordres des co-dépendants deux à deux (étant donné qu’il y a 8 éléments à ordonner, cela nous fait 7${\times}$8/2, soit 28 couples à ordonner).
 
 La deuxième méthode pour ordonner les co-dépendants consiste donc à donner d’un coup l’ensemble des règles d’ordre concernant un nœud et ses dépendants. Cela peut être fait en considérant que chaque nœud de l’arbre de dépendance ouvre une \textbf{boîte ordonnée} avec des positions prévues pour les différents dépendants selon leur nature et leur fonction. Nous appellerons une telle boîte un \textstyleTermes{gabarit topologique} et chacune des cases de la boîte un \textstyleTermes{champ topologique}.
 
-Voici le gabarit qu’ouvre un verbe à l’indicatif en français :
+Le gabarit qu’ouvre un verbe à l’indicatif en français est donné dans la figure \ref{fig:domaine-verbal}. Ce gabarit contient 7 champs préverbaux pour des clitiques (les champs ch-cl-X), un champ initial dont nous avons parlé au début de ce chapitre et qui accueille en général le sujet, un champ final qui accueille les compléments du verbe, un champ pour un verbe subordonné (notamment pour le participe des formes verbales complexes comme \textit{a dormi}) précédé d’un champ adverbial (pour la négation \textit{pas} entre autres) et des champs pré-noyau et post-noyau qui accueillent les éléments détachés à gauche et à droite (voir partie 6 sur la \textit{Macrosyntaxe}). Les éléments qui viennent se placer dans le gabarit ouvert par le verbe vont former avec lui un constituant, topologique, que nous appelons le \textstyleTermes{domaine verbal}.
 
 \begin{figure}\small
-\caption{Gabarit topologique du domaine verbal\label{tab:}}
+\caption{Gabarit topologique du domaine verbal\label{fig:domaine-verbal}}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
 \multicolumn{14}{|c|}{\cellcolor{lsDOIGray}Domaine verbal}\\
 \hline
-\rotatebox{90}{ch-pré-noyau} &  \rotatebox{90}{ch-initial} &  \rotatebox{90}{ch-cl-sujet} &  \rotatebox{90}{ch-cl-ne} &  \rotatebox{90}{ch-cl-se} &  \rotatebox{90}{ch-cl-le} &  \rotatebox{90}{ch-cl-lui} &  \rotatebox{90}{ch-cl-y} &  \rotatebox{90}{ch-cl-en} & \cellcolor{lsDOIGray} \rotatebox{90}{ch-verbe} &  \rotatebox{90}{ch-adv} &  \rotatebox{90}{ch-vb-sub} &  \rotatebox{90}{ch-final} &  \rotatebox{90}{ch-post-noyau}\\
+\rotatebox{90}{ch-pré-noyau} &  \rotatebox{90}{ch-initial} &  \rotatebox{90}{ch-cl-sujet} &  \rotatebox{90}{ch-cl-ne} &  \rotatebox{90}{ch-cl-se} &  \rotatebox{90}{ch-cl-le} &  \rotatebox{90}{ch-cl-lui} &  \rotatebox{90}{ch-cl-y} &  \rotatebox{90}{ch-cl-en} & \cellcolor{lsDOIGray} \rotatebox{90}{ch-verbe} &  \rotatebox{90}{ch-adv} &  \rotatebox{90}{ch-vb-sub} &  \rotatebox{90}{ch-final} &  \rotatebox{90}{ch-post-noyau~}\\
 \hline
 \end{tabular}
 \end{figure}
 
-Ce gabarit contient 7 champs préverbaux pour des clitiques (les champs ch-cl-X), un champ initial dont nous avons parlé au début de ce chapitre et qui accueille en général le sujet, un champ final qui accueille les compléments du verbe, un champ pour un verbe subordonné (notamment pour le participe des formes verbales complexes comme \textit{a dormi}) précédé d’un champ adverbial (pour la négation \textit{pas} entre autres) et des champs pré-noyau et post-noyau qui accueillent les éléments détachés à gauche et à droite (voir partie 6 sur la macrosyntaxe). Les éléments qui viennent se placer dans le gabarit ouvert par le verbe vont former avec lui un constituant, dit \textstyleTermes{constituant topologique}, que nous appelons le \textstyleTermes{domaine verbal}.
+
 
 Les champs possèdent des \textstyleTermes{contraintes d’occupation} diverses. Certains champs ne peuvent recevoir qu’un seul élément, comme les champs clitiques ou le champ initial. D’autres peuvent recevoir plusieurs éléments comme le champ final où les champs pré- et post-noyau. Certains champs sont liés comme le champ initial et le champ clitique sujet qui ne peuvent être remplis tous les deux. (Voir aussi l’\encadref{fig:3.5.20} qui suit).
 
 La méthode avec gabarit a l’avantage que les règles d’ordre reste finalement essentiellement des règles d’ordre d’un nœud par rapport à son gouverneur. Mais au lieu d’indiquer simplement si le dépendant va à gauche ou à droite de son dépendant (< ou >), \textbf{une règle d’ordre} \textbf{indique dans quel champ du gabarit ouvert par son gouverneur va chaque dépendant}. Par exemple :
 
 \begin{itemize}
-\item Le sujet non clitique peut aller dans le champ initial ; les sujets clitiques ne vont pas dans le champ initial, car à la différence des sujets non-clitiques, ils ne peuvent pas être séparés du verbe par un insertion : \textit{Félix, je pense, prêtera son ballon} vs. *\textit{Il, je pense, prêtera son ballon}. En plus, les sujets clitiques déclenchent une liaison obligatoire (\textit{elles aiment} [ɛl\textbf{z}ɛm], *[ɛlɛm]), alors qu'un sujet non-clitique n'autorise pas la liaison (\textit{les filles aiment} [lefijɛm], *[lefijzɛm]).
+\item Le sujet non clitique peut aller dans le champ initial ; les sujets clitiques ne vont pas dans le champ initial, car à la différence des sujets non-clitiques, ils ne peuvent pas être séparés du verbe par une \textbf{insertion} : \textit{Félix, je pense, prêtera son ballon} vs. *\textit{Il, je pense, prêtera son ballon}. En plus, les sujets clitiques déclenchent une \textbf{liaison obligatoire} (\textit{elles aiment} [ɛl\textbf{z}ɛm], *[ɛlɛm]), alors qu'un sujet non-clitique n'autorise pas la liaison (\textit{les filles aiment} [lefijɛm], *[lefijzɛm]).
 \item Un pronom clitique de 1\textsuperscript{ère} ou 2\textsuperscript{ème} personne va dans le champ clitique ch-cl-se (\textit{il ne} \textbf{\textit{vous}} \textit{le donnera pas}).
 \item Un complément non clitique peut aller dans le champ final.
 \end{itemize}
@@ -998,7 +1011,7 @@ Et ainsi de suite.
 
     Nous avons, dans le début de ce chapitre, considéré que l’exclusion mutuelle pouvait découler soit de l’occupation d’une même position syntaxique (*\textbf{\textit{Qui}} \textit{Pierre} \textbf{\textit{la}} \textit{regarde-t-il} ?), soit d’une même position topologique (*\textit{Leider Peter popelt schon wieder in seiner Nase}, voir l’\encadref{fig:3.5.5} sur \textit{Le cas des langues V2}). Il existe néanmoins des cas d’exclusion qui ne relèvent ni d’une situation, ni de l’autre. Tel est le cas des clitiques \textit{te} et \textit{lui} (et des clitiques qui appartiennent aux mêmes paradigmes). Voici les données :
     
-    \ea
+    \ea\label{ex:me}
       \ea[]{\textit{Il te/la vendra au roi.}  [ici \textit{te} ou \textit{la} sont objets direct]}
       \ex[]{\textit{Il me/lui vendra sa fille.}  [ici \textit{me} ou \textit{lui} sont objet indirect]}
       \ex[]{\itshape Il me la vendra.}
@@ -1008,7 +1021,7 @@ Et ainsi de suite.
     \z
     \z
 
-    L’inacceptabilité des deux derniers exemples ne vient pas d’une exclusion syntaxique, puisque \textit{te} et \textit{me}/\textit{lui} n’occupe pas la même position syntaxique (l’un est objet direct et l’autre objet indirect). Or il ne semble pas s’agir non plus d’une exclusion topologique, puisque \textit{me} objet indirect et \textit{lui} occupent des positions topologiques différentes (l’un se place avant \textit{la} et l’autre après).
+    L’inacceptabilité des deux derniers exemples ne vient pas d’une exclusion syntaxique, puisque \textit{te} et \textit{me}/\textit{lui} n’occupe pas la même position syntaxique (l’un est objet direct et l’autre objet indirect). Or il ne semble pas s’agir non plus d’une exclusion topologique, puisque \textit{me} objet indirect et \textit{lui} occupent des positions topologiques différentes (l’un se place avant \textit{la} et l’autre après, comme le montre \REF{ex:me}c et d).
 
     Tout se passe comme si \textit{te} ou \textit{me} (en tant qu’objet direct) bloquait les trois positions topologiques à la fois (celles de \textit{te/me} objet indirect, \textit{le} et \textit{lui}).
     
@@ -1023,38 +1036,38 @@ Et ainsi de suite.
     \caption{Les champs clitique du domaine verbal}
     \end{figure}
 
-    Le fait que cette exclusion ne puisse être clairement imputée ni à des règles syntaxiques, ni à des règles topologiques est un des arguments avancés pour considérer que la grammaire des clitiques préverbaux du français relèvent aujourd’hui de la conjugaison du verbe, laquelle, on le sait, est beaucoup plus irrégulière que la microsyntaxe. Nous considérons pour notre part qu’il s’agit effectivement de nanosyntaxe, sans considérer pour autant qu’il s’agit de flexion (voir \chapref{sec:4.2}).
+    Le fait que cette exclusion ne puisse être clairement imputée ni à des règles syntaxiques, ni à des règles topologiques est un des arguments avancés pour considérer que la grammaire des clitiques préverbaux du français relèvent aujourd’hui de la conjugaison du verbe, laquelle, on le sait, est beaucoup plus irrégulière que la microsyntaxe. Nous considérons pour notre part qu’il s’agit effectivement de nanosyntaxe, sans considérer pour autant qu’il s’agit de flexion (voir \chapfuturef{15}).
 }
 \section{Préférences dans l’ordre}\label{sec:3.5.21}
 
 La méthode des gabarits permet de rendre compte des contraintes d’ordre rigides, comme celles des clitiques préverbaux : ici chaque élément occupe une position précise et toute variation est agrammaticale. Mais il arrive plus couramment que l’ordre entre deux co-dépendants soit libre. Tel est le cas des compléments du verbe en français. Comme le montre les exemples suivants, l’objet direct et l’objet indirect peuvent se placer assez librement l’un par rapport à l’autre :
 
-\ea \ea {Félix a prêté} un livre \textbf{{à sa sœur.}}
-    \ex {Félix a prêté} \textbf{{à sa sœur}} un livre qu’il aime bien.
+\ea \ea \textit{{Félix a prêté} un livre \textbf{{à sa sœur.}}}
+    \ex \textit{{Félix a prêté} \textbf{{à sa sœur}} un livre qu’il aime bien.}
     \z
 \z
 Nous modélisons cela en indiquant que les deux compléments vont dans le même champ (que nous avons appelé le champ final). Il y a néanmoins des préférences entre les deux ordres dont la méthode des gabarits ne rend pas compte. Ces préférences dépendent de différents paramètres, les deux principaux étant le poids et la saillance communicative.
 
 Le \textstyleTermes{poids} d’un constituant correspond en fait à sa taille du point de vue phonologique, c’est-à-dire à son nombre de syllabes. Un constituant qui possède un grand nombre de syllabes est dit \textstyleTermes{lourd}, alors qu’un petit constituant, généralement monosyllabique, est dit \textstyleTermes{léger}. Plus un constituant est lourd, plus il a tendance à être éloigné de son gouverneur. Par exemple, en linéarisant l’arbre de dépendance de notre exemple favori, nous avons obtenu la phrase \textit{Beaucoup de gens aimeraient passer en Laponie Noël}, qui apparaît moins naturelle que la phrase d’origine. On l’améliore nettement en alourdissant le poids de l’objet direct :
 
-\ea
-    {Beaucoup de gens aimeraient passer en Laponie les fêtes de fin d’année}.
+\ea\label{ex:fetes}
+    {\itshape Beaucoup de gens aimeraient passer en Laponie les fêtes de fin d’année}.
 \z
-Il est possible que joue ici une contrainte prosodique. Comme nous l’avons déjà vu dans la \sectref{sec:3.2.11} sur l’\textit{Unité syntaxique autonomisable}, les constituants prosodiques sont des unités syntaxiques, c’est-à-dire des unités connexes pour la dépendance. Considérons l’exemple suivant, \textit{là} est séparé de son gouverneur \textit{passer} par un co-dépendant, \textit{les fêtes de fin d’année~}:
+Il est possible que joue ici une contrainte prosodique. Comme nous l’avons déjà vu dans la \sectref{sec:3.2.11} sur l’\textit{Unité syntaxique autonomisable}, les constituants prosodiques sont des unités syntaxiques, c’est-à-dire des unités connexes pour la dépendance. Considérons l’exemple suivant, où \textit{là} est séparé de son gouverneur \textit{passer} par un co-dépendant, \textit{les fêtes de fin d’année~}:
 
 \ea
 {Beaucoup de gens aimeraient passer les fêtes de fin d’année} \textbf{{là}}.
 \z
-Un constituant qui est séparé de son gouverneur par un co-dépendant ne peut former d’unité syntaxique avec son voisin sans inclure leur gouverneur commun. Si un constituant léger n’est pas à côté de son gouverneur, il est donc contraint soit à former une petite unité prosodique à lui-seul, soit au contraire à former une grande unité prosodique avec ses voisins qui devra inclure leur gouverneur commun \textit{passer}. Dans les deux cas, cela nuit à l’équilibre prosodique de l’énoncé. On préférera généralement l’ordre inverse (\textit{passer là les fêtes de fin d’année}) beaucoup moins contraignant.
+Un constituant qui est séparé de son gouverneur par un co-dépendant ne peut former d’unité syntaxique avec son voisin sans inclure leur gouverneur commun. Si un constituant léger n’est pas à côté de son gouverneur, il est donc contraint soit à former une petite unité prosodique à lui-seul, soit au contraire à former une grande unité prosodique avec ses voisins qui devra inclure leur gouverneur commun (\textit{passer} dans l'exemple \REF{ex:fetes}). Dans les deux cas, cela nuit à l’équilibre prosodique de l’énoncé. On préférera généralement l’ordre inverse (\textit{passer là les fêtes de fin d’année}) beaucoup moins contraignant prosodiquement.
 
 La \textstyleTermes{saillance communicative} d’un constituant est l’importance que joue ce constituant du point de vue de l’information à communiquer. Par exemple, si on parle de la Laponie et que c’est bien l’information \textit{Noël} que l’on souhaite mettre en avant, il devient plus naturel de produire la phrase \textit{Beaucoup de gens aimeraient passer en Laponie Noël}. Il y a par ailleurs une corrélation entre saillance et poids, puisqu’un des moyens de rendre saillante une information est de lui donner du poids.
 
-Ce phénomène de \textstyleTermes{rejet des constituants lourds} (appelé par les générativistes \textit{heavy shift}) a été remarqué il y a bien longtemps. Ainsi, Claude Buffier, dans sa \textit{Grammaire françoise sur un plan nouveau} de 1709 disait (p. 313) :
+Ce phénomène de \textstyleTermes{rejet des constituants lourds}, appelé par les générativistes \textit{heavy constituent shift} depuis la thèse de John R. \citet{ross1967constraints}, a été remarqué il y a bien longtemps. Ainsi, Claude Buffier, dans sa \textit{Grammaire françoise sur un plan nouveau} de \citeyear{buffier1709grammaire} disait (p. 313) :
 
 \begin{quote}
     «~Les régimes [= compléments] doivent être le plus près qu’il se peut du mot régissant ; ce qui feroit pas si l’on mettoit d’abord le plus long qui éloigneroit trop le plus court.~»
 \end{quote}
-Nicolas Beauzée développait cette remarque dans l’entrée «~Régime~» de l’\textit{Encyclopédie} en 1765 (celle-là même où il définit le complément) :
+Nicolas Beauzée développait cette remarque dans l’entrée «~Régime~» de l’\textit{Encyclopédie} en \citeyear{Beauzée1765} (celle-là même où il définit le complément) :
 
 \begin{quote}
     «~De plusieurs \textit{compléments} qui tombent sur le même mot, il faut mettre le plus court le premier après le mot \textit{complété ;} ensuite le plus court de ceux qui restent, et ainsi de suite jusqu’au plus long de tous qui doit être le dernier. […] il importe à la netteté de l’expression, \textit{\textit{cujus summa laus perspicuitas}}, de n’éloigner d’un mot, que le moins qu’il est possible, ce qui lui sert de \textit{complément}. Cependant quand plusieurs \textit{compléments} concourent à la détermination d’un même terme, ils ne peuvent pas tous le suivre immédiatement ; et il ne reste plus qu’à en rapprocher le plus qu’il est possible celui qu’on est forcé d’en tenir éloigné : c’est ce que l’on fait en mettant d’abord le premier celui qui a le plus de brièveté, et réservant pour la fin celui qui a le plus d’étendue.~»
@@ -1072,11 +1085,14 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
 \loupe{Contraintes de poids}{%\label{sec:3.5.22}
     Une façon de rendre contre des préférences dans l’ordre des co-dépendants est de voir certaines dépendances comme pourvu d’\textstyleTermesapprof{élasticité}. On peut ainsi distinguer des dépendances rigides comme la dépendance entre un clitique préverbal et le verbe dont la «~longueur~» est fixe et des dépendances beaucoup plus souples comme celle entre un complément non clitique et le verbe. On peut alors se représenter les \textstyleTermesapprof{contraintes de poids} des constituants lourds comme véritablement exercées par les forces gravitationnelles : les différents dépendants sont comme suspendus à leur gouverneur et plus ceux-ci sont lourds, plus ils allongent la dépendance qui les relie à leur gouverneur et s’en trouvent éloignés. Considérons la phrase :
     \ea
-    {Le professeur propose aujourd’hui à ses élèves un exercice sur l’ordre des mots.}
+    {\itshape Le professeur propose aujourd’hui à ses élèves un exercice sur l’ordre des mots.}
     \z
-    Voici comment s’étirent, en fonction de leur poids, les différentes dépendance entre le verbe \textit{propose} et ses compléments :
+    La figure \ref{fig:elastic} représente comment s’étirent, en fonction de leur poids, les différentes dépendance entre le verbe \textit{propose} et ses compléments.
 
-    \ea\attop{\vskip-\baselineskip
+\begin{figure}
+    \centering
+     \caption{Arbre de dépendance avec des dépendances élastiques}
+    \label{fig:elastic}
     \begin{tikzpicture}
     \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip,
                   level 1/.style={sibling distance=20mm},
@@ -1094,18 +1110,19 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
     \node [below=1pt of root-3] {un exercice\\sur l’ordre\\des mots};
     \node [below=1pt of root-4] {à ses élèves};
     \end{scope}
-    \end{tikzpicture}}
-    \z
+    \end{tikzpicture}
+\end{figure}
+\todo[inline]{à ses éleves must between the two other dependents. The length of dependencies is very relevant in this diagram. Please look again at the original.}
 
-    La position finale d’un dépendant se trouve alors déterminée par la «~longueur~» initiale de la dépendance (déterminée par la fonction et la nature du dépendant comme dans le modèle avec gabarit), l’élasticité de cette dépendance et différents paramètres comme le poids ou la saillance.
+    La position finale d’un dépendant se trouve alors déterminée par la «~longueur~» initiale de la dépendance (déterminée par la fonction et la nature du dépendant comme dans le modèle avec gabarit), l’\textbf{élasticité} de cette dépendance et différents paramètres comme le poids ou la saillance.
 }
 \globe{Les langues dites à ordre libre}{%\label{sec:3.5.23}
     Une langue est dite \textstyleTermesapprof{à ordre libre} quand une tête et ses dépendants (et notamment le verbe, son sujet et son objet) peuvent être dans n’importe quel ordre. Lorsque, au contraire, un seul ordre est possible, on dit que la langue est \textstyleTermesapprof{à ordre rigide}. Il existe entre les deux toute une gamme de langues à ordre plus ou moins libre ou plus ou moins rigide.
 
-    L’ordre des mots en français est particulièrement rigide, même s’il l’est un peu moins qu’en anglais. L’allemand a un ordre plus libre que le français. Par exemple, on peut traduire \textit{Marie poursuit Pierre} par \textit{die Marie verfolgt den Pierre} ou bien par \textit{den Pierre verfolgt die Marie.} Les deux phrases ont le même \textbf{contenu informationnel} (voir chapitre \ref{sec:1.2}), c’est-à-dire qu’elles décrivent le même état du monde : chaque fois c’est Marie qui poursuit Pierre et pas l’inverse. Le repérage des dépendants du verbe est effectué en allemand grâce à un \textstyleTermesapprof{système casuel}, c’est-à-dire des marques sur certains mots du syntagme substantival qui n’ont pas d’autre rôle que justement d’indiquer la relation qu’entretient le syntagme avec le verbe. (Voir la notion de \textit{cas} au \chapref{sec:4.2}.) Ce sont avant tout les déterminants qui portent l’information casuelle en allemand. Dans notre exemple, le fait que \textit{den Pierre} soit l’objet est marqué par le cas accusatif du déterminant masculin singulier \textit{den} (qui s’oppose au déterminant au nominatif \textit{der}).
+    L’ordre des mots en français est particulièrement rigide, même s’il l’est un peu moins qu’en anglais. L’allemand a un ordre plus libre que le français. Par exemple, on peut traduire \textit{Marie poursuit Pierre} par \textit{die Marie verfolgt den Pierre} ou bien par \textit{den Pierre verfolgt die Marie.} Les deux phrases ont le même \textbf{contenu informationnel} (voir chapitre \ref{sec:1.2}), c’est-à-dire qu’elles décrivent le même état du monde : chaque fois c’est Marie qui poursuit Pierre et pas l’inverse. Le repérage des dépendants du verbe est effectué en allemand grâce à un \textstyleTermesapprof{système casuel}, c’est-à-dire des marques sur certains mots du syntagme substantival qui n’ont pas d’autre rôle que justement d’indiquer la relation qu’entretient le syntagme avec le verbe. (Voir la notion de \textit{cas} au \chapfuturef{15}.) Ce sont avant tout les déterminants qui portent l’information casuelle en allemand. Dans notre exemple, le fait que \textit{den Pierre} soit l’objet est marqué par le cas accusatif du déterminant masculin singulier \textit{den} (qui s’oppose à la forme nominative \textit{der} de l'article défini).
 
-    L’ordre des mots en allemand n’est cependant pas libre au sens où seuls deux des six ordres possibles entre les trois mots correspondant à \textit{Marie}, \textit{Pierre} et \textit{poursuit} sont possibles pour une phrase déclarative. Il existe d’autres langues, comme les langues slaves ou le grec moderne, où les six ordres des trois mots sont acceptables et désignent le même état du monde. Voici un exemple du russe :
-\ea
+    L’ordre des mots en allemand n’est cependant pas totalement libre au sens où seuls deux des six ordres possibles entre les trois mots correspondant à \textit{Marie}, \textit{Pierre} et \textit{poursuit} sont possibles pour une phrase déclarative. Il existe d’autres langues, comme les langues slaves ou le grec moderne, où les six ordres des trois mots sont acceptables et désignent le même état du monde. Voici un exemple du russe :
+\ea\label{ex:malinu}
     \ea\itshape    Vanya prigotovil malinu\\
     \glt  ‘Vanya a préparé les framboises’ \\
     \glt  ‘Ce que Vanya a préparé, c’est les framboises’
@@ -1128,9 +1145,9 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
 \z
     Nous avons donné ici les traductions en français lorsque ces phrases répondent à une question sous-jacente telle \textit{Qu’a préparé Vanya} ?, c’est-à-dire que \textit{malinu} ‘les framboises’ est le \textstyleTermesapprof{rhème} (ce qu’on dit), tandis que \textit{Vanya prigotovil} ‘Vanya a préparé’ est le \textstyleTermesapprof{thème} (ce dont on parle).
 
-    Si on regarde les traductions françaises, on remarque que les variations entre ces phrases sont constituées de constructions qui servent à mettre en avant un élément de la phrase. La construction avec «~\textit{C’est … que}~», appelée \textstyleTermesapprof{clivée} (voir le test de clivage en 3.4.9) est utilisée dans les traductions des phrases 3, 4 et 6 pour mettre en valeur un élément rhématique non verbal~(ici \textit{les framboises}). Très similaire est la \textstyleTermesapprof{pseudo-clivée} «~Ce que …, c’est … » utilisée pour les traductions des phrases 1, 2 et 5. À ces constructions s’opposent la \textstyleTermesapprof{dislocation gauche}, qui sert à distinguer un élément thématique, comme \textit{Vanya} dans la traduction de la phrase 6. Similairement, on peut aussi disloquer un élément thématique à droite comme \textit{Vanya} dans la traduction de phrase 5. Les six ordres en russe s’accompagnent évidemment de légères différences de sens, relevant de la structure communicative (voir l’encadré suivant), similaires à celles que montrent leurs traductions en français. Il n’en reste pas moins que les six ordres sont possibles.
+    Si on regarde les traductions françaises, on remarque que les variations entre ces phrases sont constituées de constructions qui servent à mettre en avant un élément de la phrase. La construction clivée en «~\textit{C’est … que}~», appelée \textstyleTermesapprof{clivée} (voir le test de clivage dans la \sectref{sec:3.4.9}) est utilisée dans les traductions des phrases \REF{ex:malinu}c, d et f pour mettre en valeur un élément rhématique non verbal~(ici \textit{les framboises}). Très similaire est la constructionpseudo-clivée en «~Ce que …, c’est … » utilisée pour les traductions des phrases \REF{ex:malinu}a, b et e. À ces constructions s’opposent la \textstyleTermesapprof{dislocation gauche}, qui sert à distinguer un élément thématique, comme \textit{Vanya} dans la traduction de la phrase 6. Similairement, on peut aussi disloquer un élément thématique à droite comme \textit{Vanya} dans la traduction de phrase 5. Les six ordres en russe s’accompagnent évidemment de légères différences de sens, relevant de la structure communicative (voir l’encadré suivant), similaires à celles que montrent leurs traductions en français. Il n’en reste pas moins que les six ordres sont possibles.
 
-    Notez ensuite que, abstraction faite des mots fonctionnels des différentes constructions, dans les deux langues considérées, le russe et le français, les trois mots lexicaux se trouvent toujours dans le même ordre. À cela s’ajoute que les principaux prosodèmes, qui constituent l’intonation de la phrase se ressemblent pour chacun des ordres possibles. La phrase 2 par exemple, a une courbe intonative que l’on peut schématiser comme suit, avec une intonation montante sur le thème (\textit{prigotovil Vanya}) et une intonation descendante sur le rhème (\textit{malinu}).
+    Notez ensuite que, abstraction faite des mots fonctionnels des différentes constructions, dans les deux langues considérées, le russe et le français, les trois mots lexicaux se trouvent toujours dans le même ordre. À cela s’ajoute que les principaux prosodèmes, qui constituent l’intonation de la phrase se ressemblent pour chacun des ordres possibles. La phrase \REF{ex:malinu}b par exemple, a une courbe intonative que l’on peut schématiser comme suit, avec une intonation montante sur le thème (\textit{prigotovil Vanya}) et une intonation descendante sur le rhème (\textit{malinu}).
 
     \ea
     \attop{%
@@ -1146,9 +1163,10 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
       \draw (matrix-1-3.north west) -- (matrix-1-3.north) -- (matrix-1-3.east);
     \end{tikzpicture}}
     \z
+\todo[inline]{hskip can be reduced. vskip can also be slightly reduced to be similar with other glosses.}
 
-    Il paraît évident qu’il existe une relation entre l’existence d’un système casuel et la liberté dans le placement des arguments verbaux : il serait en effet redondant d’obliger un objet à la fois à porter un marqueur casuel d’accusatif \textit{et} à occuper une place fixe. L’inverse, par contre, n’est pas tout à fait vrai. Une langue sans système casuel n’est pas forcément très restrictive quant à l’ordre des arguments verbaux. Un bel exemple est le bahasa, la principale langue parlée en Malaisie et en Indonésie, aussi appelée le malais ou l’indonésien selon ses variantes dialectales. Cette langue ne connait pas de flexion casuelle et pourtant elle permet une plus grande liberté de mots que d’autres langues sans flexion. Si l’ordre dominant est l’ordre SVO comme dans la phrase a, il est possible de postposer le sujet comme en b et d’antéposer l’objet comme en c.
-    \ea
+    Il paraît évident qu’il existe une relation entre l’existence d’un système casuel et la liberté dans le placement des arguments verbaux : il serait en effet redondant d’obliger un objet à la fois à porter un marqueur casuel d’accusatif \textit{et} à occuper une place fixe. L’inverse, par contre, n’est pas tout à fait vrai. Une langue sans système casuel n’est pas forcément très restrictive quant à l’ordre des arguments verbaux. Un bel exemple est le bahasa, la principale langue parlée en Malaisie et en Indonésie, aussi appelée le malais ou l’indonésien selon ses variantes dialectales. Cette langue ne connait pas de flexion casuelle et pourtant elle permet une plus grande liberté de mots que d’autres langues sans flexion. Si l’ordre dominant est l’ordre SVO comme dans la phrase \REF{ex:bahasa}a, il est possible de postposer le sujet comme en b et d’antéposer l’objet comme en c.
+    \ea\label{ex:bahasa}
     \ea
     \gll Ali baca buku itu.\\
     Ali lire    livre  ce\\
@@ -1181,31 +1199,34 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
 
     A l’inverse dans \textbf{les langues à ordre libre}, la fonction syntaxique joue peu de rôle, puisque, quelle que soit la fonction syntaxique, tous les ordres sont possibles. Il ne faut pas croire pour autant que l’ordre dans ces langues soit non motivé et que tous les ordres se valent. Il existe un \textbf{principe d’économie} qui veut que les langues cherchent à en dire le maximum avec le minimum de moyens : il n’est donc même pas imaginable qu’un moyen aussi disponible que l’ordre linéaire ne soit pas exploitée par la grammaire. À quelle fin est alors utilisé l’ordre linéaire quand il ne sert pas à exprimer la fonction syntaxique ?
 
-    Il semble que dès que l’ordre n’est pas syntaxiquement dirigé, il serve principalement à exprimer la \textstyleTermesapprof{structure communicative} (voir l’\encadref{fig:1.2.4} sur \textit{Les composantes du sens}) et en particulier à indiquer de quoi on parle et ce qu’on en dit (l’\textstyleTermesapprof{opposition thème/rhème}) et ce que l’on souhaite contraster (la \textstyleTermesapprof{focalisation}). Les langues à ordre libre sont donc généralement des langues à \textstyleTermesapprof{ordre communicativement dirigé}.
+    Il semble que, dès que l’ordre n’est pas syntaxiquement dirigé, il serve principalement à exprimer la \textstyleTermesapprof{structure communicative} (voir l’\encadref{fig:1.2.4} sur \textit{Les composantes du sens}) et en particulier à indiquer de quoi on parle et ce qu’on en dit (l’\textstyleTermesapprof{opposition thème/rhème}) et ce que l’on souhaite contraster (la \textstyleTermesapprof{focalisation}). Les langues à ordre libre sont donc généralement des langues à \textstyleTermesapprof{ordre communicativement dirigé}.
 
     Nous avons vu, dans l’encadré qui précède, que le russe permettait tous les ordres possibles du verbe avec son sujet et son objet. Les traductions que nous avons proposées montrent que ces variations d’ordres correspondent en français à des constructions telles que le clivage ou la dislocation. En français, le clivage sert à marquer un \textbf{rhème focalisé~}: autrement dit, dans la phrase \textbf{\textit{C’est}} \textit{les framboises} \textbf{\textit{que}} \textit{Vanya préfère}, non seulement \textit{les framboises} est rhématique (ce qu’on dit, l’information qui est communiquée, c’est \textit{les framboises}), mais en plus cette information est \textstyleTermesapprof{focalisée}, c’est-à-dire qu’elle est contrastée avec tous les autres éléments qui pourraient occuper cette position : c’est les framboises qu’il préfère, à l’exclusion de toutes les autres choses pertinentes dans le contexte d’énonciation. La dislocation gauche quant à elle sert à marquer un \textbf{thème focalisé~}: autrement dit, dans la phrase \textit{Les framboises, Vanya aime ça}, non seulement \textit{les framboises} est thématique (ce dont on parle, ce qui est le thème de l’information que je vais communiquer, c’est \textit{les framboises}), mais en plus cette information est focalisée, c’est-à-dire qu’elle est contrastée avec tous les autres éléments qui pourraient occuper cette position dans le contexte d’énonciation : les framboises, il aime ça, les autres fruits rouges, c’est moins sûr.
 
-    On peut postuler qu’en russe, l’ordre linéaire de la phrase obéit au gabarit suivant :
+    On peut postuler qu’en russe, l’ordre linéaire de la phrase obéit au gabarit de la figure \ref{fig:topo-russe}.
 
-    \ea Gabarit topologique de la phrase en russe\\
-    \hfill
-    \begin{tabular}{|c|c|c|}
+    \begin{figure}\centering
+\caption{Gabarit topologique de la phrase en russe\label{fig:topo-russe}}
+\begin{tabular}{|c|c|c|}
+     \hline
+    \multicolumn{3}{|c|}{\cellcolor{lsDOIGray}Domaine verbal}\\
     \hhline{---}
     thème-foc & rhème & thème\\
     \hhline{---}
     \end{tabular}
-    \hfill\hbox{}\z
+\end{figure}
+
 
 
     Le verbe en fonction de sa valeur communicative va venir dans un des trois champs. Les dépendants qui on la même valeur communicative que lui se placeront dans le même champ, tandis que ceux qui ont d’autres valeurs iront dans d’autres champs. La prosodie viendra souligner cette répartition avec une intonation montante sur le thème focalisé, descendante sur le rhème et généralement plate sur le thème.
 
-    Dès le 18\textsuperscript{e} siècle, l’abbé Gabriel Girard, dans son ouvrage \textit{Les Vrais principes de la langue françoise, ou la Parole réduite en méthode} paru en 1747, distinguait les \textit{langues} dites \textit{analogues}, dont l’ordre est supposé analogue à celui de la pensée, c’est-à-dire du français, des \textit{langues} dites \textit{transpositives}, comme le latin ou le grec, dont l’ordre est plus libre et «~transpose~» l’ordre de la pensée. C’est à Henri Weil, dans sa thèse publiée en 1844 (déjà mentionné dans l’\encadref{fig:3.5.12} sur les \textit{Langues à têtes finales et langues à têtes initiales}), que l’on doit d’avoir introduit les notions de thème et rhème et d’avoir noté que trois facteurs pouvaient influencer l’ordre des mots : la structure de dépendance, la structure communicative et la prosodie. En comparant le français, l’anglais, l’allemand, le turc, le chinois, le latin et le grec ancien, il remarque que certaines langues ont un ordre davantage contrôlé par la syntaxe (les langues dites à ordre rigide) et d’autres davantage contrôlé par la structure communicative (les langues dites à ordre libre).
+    C’est à Henri Weil, dans sa thèse publiée en \citeyear{weil1844de} (déjà mentionné dans l’\encadref{fig:3.5.12} sur les \textit{Langues à têtes finales et langues à têtes initiales}), que l’on doit d’avoir introduit les notions de thème et rhème et d’avoir noté que trois facteurs pouvaient influencer l’ordre des mots : la structure de dépendance, la structure communicative et la prosodie. En comparant le français, l’anglais, l’allemand, le turc, le chinois, le latin et le grec ancien, il remarque que certaines langues ont un ordre davantage contrôlé par la syntaxe (les langues dites à ordre rigide) et d’autres davantage contrôlé par la structure communicative (les langues dites à ordre libre).
 }
 
 \loupe{Les autres usages de l’ordre linéaire}{%\label{sec:3.5.25}
     Nous venons de voir, dans les deux encadrés qui précèdent, les deux principaux usages de l’ordre linéaire : le marquage de la fonction syntaxique et le marquage de la structure communicative. Il existe trois autres usages de l’ordre linéaire.
 
-    Premièrement, certaines syntaxèmes peuvent avoir des contraintes de placement très particulières. En arabe, par exemple, le déterminant défini se place devant le nom (\textit{al+}ʔ\textit{awlaad+u} ‘les enfants\textsubscript{NOM}’), alors que l’indéfini se place après \textit{(ʔawlaad+u+n} ‘des enfants\textsubscript{NOM}’). En français, certains adjectifs tendent à se placer devant le verbe (\textit{un} \textbf{\textit{petit}} \textit{ballon}), certains se placent obligatoirement après (\textit{un ballon} \textbf{\textit{rouge}}), tandis que, pour d’autres encore, l’ordre est relativement libre (\textit{un} \textbf{\textit{superbe}} \textit{ballon~}; \textit{un ballon} \textbf{\textit{superbe}}). Certains adjectifs peuvent avoir selon leur acception des placements différents : \textit{un homme grand} (un homme grand parmi les hommes) vs \textit{un grand homme} (un homme grand dans l’humanité), \textit{un marié jeune} (une personne jeune parmi les mariés) vs \textit{un jeune marié} (une personne jeune dans son mariage).
+    Premièrement, certaines syntaxèmes peuvent avoir des contraintes de placement très particulières. En arabe, par exemple, le déterminant défini se place devant le nom (\textit{\textbf{al}-}ʔ\textit{awlaad-u}, \textsc{def}-enfant-\textsc{nom.pl} ‘les enfants’), alors que l’indéfini se place après (\textit{ʔawlaad-u-\textbf{n}}, enfant-\textsc{nom.pl-indef} ‘des enfants’). En français, certains adjectifs tendent à se placer devant le verbe (\textit{un} \textbf{\textit{petit}} \textit{ballon}), certains se placent obligatoirement après (\textit{un ballon} \textbf{\textit{rouge}}), tandis que, pour d’autres encore, l’ordre est relativement libre (\textit{un} \textbf{\textit{superbe}} \textit{ballon~}; \textit{un ballon} \textbf{\textit{superbe}}). Certains adjectifs peuvent avoir selon leur acception des placements différents : \textit{un homme grand} (un homme grand parmi les hommes) vs \textit{un grand homme} (un homme grand dans l’humanité), \textit{un marié jeune} (une personne jeune parmi les mariés) vs \textit{un jeune marié} (une personne jeune dans son mariage).
 
     Deuxièmement, les mêmes éléments lexicaux peuvent selon l’ordre déclencher des constructions différentes. Tel est le cas en russe : le numéral se place normalement devant le nom, comme dans \textit{sto metrov} ‘cent mètres’, mais on peut aussi placer le numéral après le nom. Néanmoins, il s’agit d’une autre construction, car le sens change : \textit{metrov sto} ‘approximativement cent mètres’.
 
@@ -1215,20 +1236,8 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
 
 Nous allons voir de manière un peu plus précise comment fonctionne le modèle topologique basé sur les gabarits.
 
-Nous avons donné le gabarit topologique du verbe à l’indicatif en français à la \sectref{sec:3.5.19} sur la \textit{Linéarisation des co-dépendants}. Rappelons-le :
-
-\begin{figure}\small
-\caption{Gabarit toplogique du domaine verbal\label{tab:}}
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-\hline
-\multicolumn{14}{|c|}{\cellcolor{lsDOIGray}Domaine verbal}\\
-\hline
-\rotatebox{90}{ch-pré-noyau} &  \rotatebox{90}{ch-initial} &  \rotatebox{90}{ch-cl-sujet} &  \rotatebox{90}{ch-cl-ne} &  \rotatebox{90}{ch-cl-se} &  \rotatebox{90}{ch-cl-le} &  \rotatebox{90}{ch-cl-lui} &  \rotatebox{90}{ch-cl-y} &  \rotatebox{90}{ch-cl-en} & \cellcolor{lsDOIGray} \rotatebox{90}{ch-verbe} &  \rotatebox{90}{ch-adv} &  \rotatebox{90}{ch-vb-sub} &  \rotatebox{90}{ch-final} &  \rotatebox{90}{ch-post-noyau}\\
-\hline
-\end{tabular}
-\end{figure}
-
-Le gabarit topologique du nom en français est quant à lui :
+Nous avons donné le gabarit topologique du verbe à l’indicatif en français dans la figure \ref{fig:domaine-verbal} de la \sectref{sec:3.5.19} sur la \textit{Linéarisation des co-dépendants}. Nous donnons le gabarit topologique du nom en français dans la figure \ref{fig:domaine-nominal}.
+Le nom possède un champ final à sa droite où les compléments peuvent se placer assez librement (avec des préférences en fonction de leur poids et de leur saillance), tandis que l’ordre à gauche du nom est assez rigide : ainsi, un syntagme comme \textit{les deux seules autres petites tables} n’accepte pas d’autre ordre que celui qu’il a. Voir l’\encadref{fig:3.5.27} sur la \textit{Topologie du groupe substantival en français}.
 
 \begin{figure}\small
 \caption{Gabarit toplogique du domaine nominal\label{tab:}}
@@ -1241,9 +1250,7 @@ Le gabarit topologique du nom en français est quant à lui :
 \end{tabular}
 \end{figure}
 
-Autrement dit, le nom possède un champ final à sa droite où les compléments peuvent se placer assez librement (avec des préférences en fonction de leur poids et de leur saillance), tandis que l’ordre à gauche du nom est assez rigide : ainsi, un syntagme comme \textit{les deux seules autres petites tables} n’accepte pas d’autre ordre que celui qu’il a. Voir l’\encadref{fig:3.5.27} sur la \textit{Topologie du groupe substantival en français}.
-
-Voyons maintenant comment linéariser un arbre de dépendance. Reprenons l’exemple de la \sectref{sec:3.5.19} sur \textit{La linéarisation des codépendants} :
+Voyons maintenant comment linéariser un arbre de dépendance. Nous redonnons dans la figure \ref{fig:ballon-dep2} l'arbre de dépendance discuté dans la \sectref{sec:3.5.19} sur \textit{La linéarisation des codépendants}.
 
 \begin{figure}
 \begin{tikzpicture}
@@ -1272,7 +1279,7 @@ Voyons maintenant comment linéariser un arbre de dépendance. Reprenons l’exe
     \node [below=1pt of root-5-3] {autre};
     \end{scope}
 \end{tikzpicture}
-\caption{\label{fig:}Arbre de dépendance}
+\caption{\label{fig:ballon-dep2}Arbre de dépendance de \REF{ex:ballon}}
 \end{figure}
 
 Nous procédons en parcourant l’arbre de dépendance à partir de la racine. On commence donc par considérer le verbe \textit{prêtera} qui va ouvrir un domaine verbal. Les règles d’ordre indiquent pour chaque dépendant dans quel champ il peut aller en fonction de sa nature et de sa fonction : un sujet peut aller dans le champ ch-initial, un clitique dans un champ ch-cl-X, etc. On obtient au final la configuration suivante (où les champs non remplis ne sont pas représentés) :
@@ -1286,7 +1293,8 @@ garçon & ne & lui & \cellcolor{lsDOIGray}prêtera & pas & ballon\\
 
 Chaque mot va ensuite ouvrir dans la position qu’il occupe un constituant topologique qui accueillera ses dépendants. Le gabarit du constituant dépendra de la nature de l’élément qui l’ouvre et du champ qu’il occupe (voir, pour le rôle joué par le champ, le cas des adjectifs du français dans l’\encadref{fig:3.5.27}, et celui des verbes en allemand dans l’\encadref{fig:3.5.36} sur \textit{La structure topologique de l’allemand}). Ainsi les noms \textit{garçon} et \textit{ballon} vont-ils ouvrir des domaines nominaux, pour accueillir leurs dépendants, et donner l’ordre final suivant :
 
-\ea\resizebox{\linewidth}{!}{\def\arraystretch{1.5}\begin{tabular}{|l|l|l|l|l|l|}
+\ea\label{ex:topo-ballon}
+\resizebox{\linewidth}{!}{\def\arraystretch{1.5}\begin{tabular}{|l|l|l|l|l|l|}
 \hline
   {\def\arraystretch{1}
   \begin{tabular}{@{}|l|l|l|@{}}
@@ -1304,10 +1312,16 @@ Chaque mot va ensuite ouvrir dans la position qu’il occupe un constituant topo
 \hline
 \end{tabular}}
 \z
+\todo[inline]{Align the tabular with the example number as in the previous example}
+\todo[inline]{Add a similar vspace above and below subboxes}
 
-On notera qu’en plus de l’ordre linéaire, nous avons obtenu une structure avec des constituants emboîtés, que nous appelons la \textstyleTermes{structure topologique} de la phrase.
+On notera qu’en plus de l’ordre linéaire, nous avons obtenu une structure avec des constituants emboîtés.
 
-La structure topologique est un \textstyleTermes{arbre de constituants ordonné}, c’est-à-dire un arbre de constituants (voir la \sectref{sec:3.4.2} sur \textit{Arbre de constituants majeurs}) avec en plus un ordre linéaire sur les fils de chaque nœud (voir l’\encadref{fig:3.5.28} sur \textit{Arbre de constituants ordonné}). Dans le cas de la structure topologique, l’ordre linéaire sur les fils d’un nœud est donné par le gabarit du constituant, qui est une liste linéairement ordonnée de champs.
+\Definition{\textstyleTermes{structure topologique}}{La structure d'\textbf{emboîtement} que forme les \textbf{constituants topologiques} est appelée la \textstyleTermes{structure topologique}. Dans une structure topologique, chaque constituant occupe un \textbf{champ topologique}.}
+
+La structure topologique est un \textstyleTermes{arbre de constituants ordonné}, c’est-à-dire un arbre de constituants  avec un ordre linéaire sur les fils de chaque nœud (voir l’\encadref{fig:3.5.28} sur \textit{Arbre de constituants ordonné}). Dans le cas de la structure topologique, l’ordre linéaire sur les fils d’un nœud est donné par le gabarit du constituant, qui est une liste linéairement ordonnée de champs. Les structures topologiques se distinguent notamment des arbres de constituants syntaxiques par le fait chaque constituant est associé à un champ topologique.
+
+La structure topologique de l'exemple \REF{ex:ballon} est donnée sous la forme d'un emboîtement de constituants en \REF{ex:topo-ballon} et sous forme d'arbre dans la figure \ref{fig:topo-ballon}. La deuxième représentation comporte en plus des étiquettes catégorielles sur les constituants topologiques. Il est encore possible d'enrichir la représentation en ajoutant pour  le nom du champ occupé par chaque constituant.
 
 \begin{figure}
 \begin{tikzpicture}
@@ -1339,10 +1353,10 @@ La structure topologique est un \textstyleTermes{arbre de constituants ordonné}
     \node [below=1pt of root-6-4] {ballon};
     \end{scope}
 \end{tikzpicture}
-\caption{\label{fig:}Arbre topologique}
+\caption{\label{fig:topo-ballon}Arbre topologique}
 \end{figure}
+\todo[inline]{Another example of a figure which is not centered and is out of the border}
 
-Notons pour conclure que le modèle topologique n’utilise que des \textstyleTermes{règles locales}, c’est-à-dire des règles qui ne prennent en compte que des portions bien délimitées des structures mises en correspondance. En effet, les règles d’ordre ne concernent qu’un gouverneur et ses dépendants.
 
 \eiffel{Topologie du groupe substantival en français}{%\label{sec:3.5.27}
     Dans le gabarit pour le nom proposé à la \sectref{sec:3.5.26} figure un champ ch-deN, juste après le champ qu’occupe le nom. Il existe en effet une contrainte d’ordre qui concerne les compléments en \textit{de} N (préposition \textsc{de} suivi d’un \textbf{nom nu}, c’est-à-dire sans déterminant). Prenons l’exemple des dépendants d’\textit{une chemise}. Nous pouvons modifié \textit{une chemise} par \textit{pour homme}, \textit{en coton} ou \textit{pour le sport}. Chacun de ces trois compléments peut aussi être réalisé par un complément en \textit{de} N : \textit{d’homme}, \textit{de coton}, \textit{de sport}. Contrairement à leurs équivalents, les compléments en \textit{de} N supporte très mal d’être séparé du nom : alors qu’on dira \textit{une chemise orange en coton}, on dira difficilement\textit{~}\textsuperscript{??}\textit{une chemise orange de coton} (on préfère \textit{une chemise de coton orange}) Il semble également difficile de réaliser deux compléments en \textit{de} N (\textsuperscript{??}\textit{une chemise de coton de sport}). Quand on réalise un complément en \textit{de} N avec un autre complément prépositionnel, le complément en \textit{de} N doit précéder l’autre : \textsuperscript{??}\textit{une chemise en coton de sport} vs \textit{une chemise de sport en coton} ; \textsuperscript{??}\textit{une chemise pour le sport de coton} vs \textit{une chemise de coton pour le sport}.
