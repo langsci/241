@@ -499,27 +499,29 @@ Le test d’insertion est un cas particulier de la propriété de projectivité 
 
 Les deux tests que nous venons d’énoncer, le test de déplacement et le test d’insertion, sont des tests qui s’appliquent seulement à certaines connexions et qui dépendent de propriétés générales de la langue et de propriétés particulières de certaines constructions. Par exemple, si le test d’insertion s’applique bien à la connexion entre un nom et un complément de nom en français, il n’en sera pas de même dans des langues qui acceptent plus facilement des configurations non projectives ou pour d’autres constructions du français (voir la \encadref{fig:3.5.33} \textit{Non-projectivité} \textit{en français}).
 
-\loupe{Connexion binaire ?}{%\label{sec:3.2.17}
-    Notre définition de la connexion présuppose que toute \textbf{connexion} est \textbf{binaire}, c’est-à-dire que les unités syntaxiques se combinent deux par deux. Ceci revient à supposer qu’on peut décomposer toute unité en deux morceaux. Existe-t-il des unités qui ne peuvent être décomposées qu’en trois morceaux ?
-
-    Considérons l’énoncé \textit{il a invité plein de gens}. En première analyse, \textit{plein de gens} ne peut pas être décomposé en deux morceaux. Il contient trois morceaux qui forment des unités syntaxiques — \textit{plein, de} et \textit{gens —}, mais aucune combinaison deux à deux de ces éléments ne forme un segment clairement autonomisable: *\textit{plein de}, *\textit{de gens}, *\textit{plein gens}. Si tel est le cas, il faut envisager une \textbf{connexion ternaire}, c’est-à-dire une connexion à trois sommets.
-
-    La syntaxe de dépendance repose traditionnellement sur le présupposé que toutes les combinaisons sont binaires. Cette hypothèse mérite d’être discutée. On peut évidemment toujours réduire (artificiellement) une connexion ternaire à deux connexions binaires. Par exemple dans notre exemple, considérer que \textit{de} et \textit{gens} se combinent ensemble avant de se combiner avec \textit{plein} ou au contraire considérer que \textit{plein} et \textit{de} se combinent ensemble avant de se combiner avec \textit{gens}. Les deux analyses ont été proposées ; la première revient à faire de \textit{de gens} un groupe prépositionnel (et se justifie par la pronominalisation en \textit{en} (\textit{il} \textbf{\textit{en}} \textit{a invité plein}) et par des coordinations comme \textit{plein} \textbf{\textit{de chats}} \textit{et} \textbf{\textit{de chiens}}), tandis que la deuxième fait de \textit{plein de} un déterminant complexe (et se justifie par la commutation de \textit{plein de} avec des déterminants simples comme \textit{des} ou \textit{plusieurs}) (voir l’\encadref{fig:3.3.22} sur les \textit{«~Déterminants complexes~»}).
-
-    Du point de vue mathématique, les connexions ternaires ne posent pas de problème en soi, mais elles nécessitent d’introduire des structures légèrement différentes des arbres habituellement utilisés en modélisation des langues. (Un graphe, au sens usuel, ne contient que des connexions binaires.) Considérer que \textit{plein de gens} est une connexion ternaire revient à considérer que \textit{plein} et \textit{gens} se combinent directement et qu’ils ne peuvent se combiner qu’en présence du marqueur \textit{de}, ce qui est finalement assez facile à concevoir. On peut par exemple représenter cela par un lien entre \textit{plein} et \textit{gens} surmonté par \textit{de} :
-
-    \begin{figure}[H]
-    \begin{tikzpicture}
-      \node at (0,0) (A) [ConcSet] {plein};
-      \node [right=2em of A, ConcSet] (B) {gens};
-      \path (A) edge [bend left] node [above] {\textit{de}} (B);
-    \end{tikzpicture}
-    \caption{\label{fig:}Connexion ternaire}
+\loupe{Connexion ternaire}{%\label{sec:3.2.17}
+    Notre définition de la connexion présuppose que toute \textbf{connexion} est \textbf{binaire}, c’est-à-dire que les unités syntaxiques se combinent deux par deux. Ceci revient à supposer qu’on peut décomposer toute unité en deux morceaux. Nous n'avons pas vraiment d'exemples où une unité ne peut pas être décomposée en deux et nous n'introduirons donc pas, dans cet ouvrage, de \textstyleTermes{connexion ternaire}, c'est-à-dire de connexion liant trois éléments. Nous néanmoins aimerions souligner qu'il est possible de considérer des connexions ternaires et que cela a déjà été fait par différents auteurs.
+    
+    Les connexions ternaires sont introduites pour modéliser le fait qu'un élément grammatical marque la connexion entre deux éléments lexicaux. Par exemple, dans \textit{Ali parle à Zoé}, la préposition \textsc{à} marque la combinaison entre le verbe \textsc{parler} et le substantif \textsc{Zoé}. On peut donc adopter la représentation de la figure \ref{fig:ternaire}, où \textit{à} est placé sur le lien entre \textit{parle}  et \textit{Zoé}. Il s'agit bien d'une connexion ternaire liant directement \textit{parle}, \textit{à} et \textit{Zoé}.
+    
+    \begin{figure}
+       \begin{forest}for tree={font=\itshape,edge=-{Triangle[]}}
+[parle
+  [Ali]
+  [Zoé]
+]
+\end{forest}
+    \caption{Arbre de dépendance avec une connexion ternaire}
+        \label{fig:ternaire}
     \end{figure}
+    \todo[inline]{This is a new figure. Please add \textit{à} on the dependency between parle and Zoé}
 
-    Dans une telle représentation, le trait de connexion lie bien trois éléments et représente donc une connexion ternaire. Néanmoins, la position particulière donnée à \textit{de} revient à lui donner un statut particulier, qui peut être justifiée par le fait que \textit{de} ne peut pas entretenir d’autres liens et joue uniquement un rôle de marqueur dans la combinaison de deux lexèmes.
+Le fait d'utiliser un lien ternaire ne permet pas d'indiquer si parmi la combinaison des trois éléments, il y a des combinaisons deux à deux possibles et, par exemple, si \textit{parle à} ou \textit{à Zoé} sont des combinaisons acceptables. L'objectif de ce type de représentation est généralement plus sémantique que syntaxique, en montrant qu'il y a une relation sémantique entre \textsc{parler} et \textsc{Zoé} qui est marquée syntaxiquement par la préposition sémantiquement vide \textsc{à}. 
 
-    Pour notre part, nous travaillerons essentiellement avec des connexions binaires, mais nous garderons à l’esprit des représentations telle que la précédente, qui ont l’avantage de ne pas obliger à privilégier un des deux découpages binaires possibles pour \textit{plein de gens}. De telles représentations restent assez simples et intuitives et elles ont été utilisées par certains auteurs. Nous discuterons d’une représentation de ce type utilisée pour la coordination par Tesnière au \chapfuturef{19}.
+Nous verrons, dans l'\encadref{fig:3.3.5} 
+\textit{Historique des représentations syntaxiques par des diagrammes en dépendance},
+un exemple de connexion ternaire pour la coordination proposé par Lucien Tesnière dans son article de \citeyear{tesniere1934comment}, où la conjonction de coordination \textit{et} est placée sur le lien entre deux conjoints. Cette analyse sera rediscutée dans l'\encadref{fig:3.4.26} \textit{Deux types d’arbres de constituants}, 
+puis dans le \chapfuturef{19} sur les \textit{Listes} et le cas particulier de la coordination.
 }
 \section{Structures de connexion, granularité et critères}\label{sec:3.2.18}
 
