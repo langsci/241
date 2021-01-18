@@ -392,9 +392,9 @@ Si l’on a la structure de connexion de cette phrase (voir \chapref{sec:3.2}) e
 \todo[inline]{The text must be finalized when the types of the arrows have been decided.}
 indique le nœud par lequel on attrape la structure pour la hiérarchiser. Ce nœud va gouverner les nœuds auxquels il est connecté, lesquels vont gouverner à leur tour les nœuds auxquels ils sont connectés et ainsi de suite.
 
-\begin{figure}\label{fig:hierarchie}
+\begin{figure}
 \vskip\baselineskip
-\caption{Hiérarchisation d'une structure de connexion}
+\caption{Hiérarchisation d'une structure de connexion\label{fig:hierarchie}}
 \begin{tabular}{@{}>{\centering}m{5cm} m{2em} >{\centering\arraybackslash}m{5cm} @{}}
   \begin{tikzpicture}[every node/.style={ConcSet}]
     \node at (0,0)   (Pierre) {Pierre};
@@ -421,9 +421,9 @@ indique le nœud par lequel on attrape la structure pour la hiérarchiser. Ce n�
   \end{tikzpicture}\\
   Structure de connexion & & Arbre de dépendance
 \end{tabular}
-\todo[inline]{The arrow between the two subfigures indicates a conversion: transformation of the left figure implies the right figure. A big \Longrightarrow would be ok.}
-\todo[inline]{The arrow in the two subfigures pointing on "veut" is a pointer. I would like a fat arrow, white or black. The same pointers appear in figures in chapter 3.}
 \end{figure}
+\todo[inline]{The arrow between the two subfigures indicates a conversion: transformation of the left figure implies the right figure. A big \textbackslash Longrightarrow would be ok.}
+\todo[inline]{The arrow in the two subfigures pointing on "veut" is a pointer. I would like a fat arrow, white or black. The same pointers appear in figures in chapter 3.}
 
 Si la structure de connexion n’a que des connexions élémentaires (voir l’\encadref{fig:3.2.23} \textit{Graphe à bulles et polygraphe}) et pas de cycles, on obtient un arbre de dépendance, comme dans l’exemple précédent.
 
@@ -459,7 +459,7 @@ On a donc X = \textit{part,} A = \textit{demain} et B = \textit{matin}. Une fois
 \end{tikzpicture}
 \caption{\label{fig:}Application du critère d’effacement simple}
 \end{figure}
-\todo[inline]{Same \Longrightarrow would be ok.}
+\todo[inline]{Same \textbackslash Longrightarrow would be ok.}
 
 Attention : la présence d’un gouverneur est essentielle dans la formulation du  critère d’effacement simple. On trouve souvent la \textbf{mauvaise formulation} suivante : le dépendant d’une connexion est l’élément qui peut le plus facilement être effacé. Cette propriété n’est valable qu’en présence d’un gouverneur. Si AB est un énoncé autonome ou plus généralement si AB n’est pas gouverné on peut très bien effacer la tête de AB. Par exemple, dans \textit{Zoé chantait} (A = \textit{chantait}, B = \textit{Zoé}), on peut effacer A et pas B (\textit{Zoé} peut former un énoncé autonome, mais pas \textit{chantait}), alors que c’est A qui est la tête !
 
@@ -1275,7 +1275,7 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
     [les [deux [amis]]]
     \end{forest}
     \z
-    \todo[inline]{Add a \Longrightarrow between the two subfigures and move the right figure to the left.}
+    \todo[inline]{Add a \textbackslash Longrightarrow between the two subfigures and move the right figure to the left.}
     \todo[inline]{The two bubbles are nice, but could be darker}
 
     \item soit on considère que ces grammèmes sont des flexions du nom et on les amalgame avec lui :
@@ -1299,7 +1299,7 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
     \z
     \end{itemize}
 }
-\todo[inline]{Same remarks: \Longrightarrow, move, darker}
+\todo[inline]{Same remarks: \textbackslash Longrightarrow, move, darker}
 
 \section{Dominance et projections maximales}\label{sec:3.3.30}
 

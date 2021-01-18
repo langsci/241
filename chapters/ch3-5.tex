@@ -62,7 +62,7 @@ les unités  \textit{Marie}, \textit{la} et \textit{qui} occupent la même posit
 
 \ea
 \ea[*]{\textit{{Pierre} \textbf{{la}}  {regarde} \textbf{{Marie}}.}}
-\ex[*]{\\textit{textbf{Qui}  {Pierre} \textbf{{la}} \textit{regarde-t-il} ?}}
+\ex[*]{\textit{textbf{Qui}  {Pierre} \textbf{{la}} \textit{regarde-t-il} ?}}
 \ex[*]{\textit{\textbf{Qui}  {Pierre regarde-t-il} \textbf{{Marie}} ?}}
 \z
 \z
@@ -373,9 +373,9 @@ Une représentation la structure produit que forment ensemble l’ordre linéair
 \maths{Notation polonaise inverse}{%\label{sec:3.5.11}
     Nous allons nous intéresser à la structure d’un calcul algébrique élémentaire et voir que le rapport entre une structure arborescente et l’ordre n’est pas qu’une question interne à la linguistique. La question a d’ailleurs intéressé les mathématiciens avant les linguistes.
 
-    Considérons la formule algébrique (7 \textrm{${\times}$} 19) + (5 \textrm{${\times}$} 31). Pour effectuer ce calcul, il faut nécessairement effectuer les deux multiplications avant de les sommer, ce que l’on peut représenter, comme dans la figure \ref{fig: \centeringmule-calcul}, par un diagramme où le résultat de chaque calcul intermédiaire est donné sous une barre horizontale.
+    Considérons la formule algébrique (7 \textrm{${\times}$} 19) + (5 \textrm{${\times}$} 31). Pour effectuer ce calcul, il faut nécessairement effectuer les deux multiplications avant de les sommer, ce que l’on peut représenter, comme dans la figure \ref{fig:formule-calcul}, par un diagramme où le résultat de chaque calcul intermédiaire est donné sous une barre horizontale.
 
-\begin{figure} \centering
+\begin{figure}[H]
       \caption{Calcul du résultat de la formule (7 × 19) + (5 × 31)}
     \label{fig:formule-calcul}
       \begin{tabular}{@{}c@{ }c@{ }c@{}}
@@ -387,7 +387,7 @@ Une représentation la structure produit que forment ensemble l’ordre linéair
 
     On peut alors donner une représentation arborescente de la structure de ce calcul. Les signes + et \textrm{${\times}$} représentent des opérateurs binaires qui combinent deux nombres pour en fournir un troisième. Ces opérateurs ont donc deux arguments à l’image d’un verbe transitif et une représentation similaire, par un arbre de dépendance, peut être adoptée. La figure \ref{fig:fig:formule-arbre} donne l'arbre de dépendance de notre formule.
    
-   \begin{figure}
+   \begin{figure}[H]
     \centering
    \caption{Arbre de dépendance de la formule (7 × 19) + (5 × 31)}
     \label{fig:formule-arbre}
@@ -410,12 +410,9 @@ Une représentation la structure produit que forment ensemble l’ordre linéair
 
     La \textstyleTermesapprof{lecture}\textstyleTermes{} \textstyleTermesapprof{postfixée} ou \textstyleTermesapprof{polonaise inverse}, où le gouverneur est ramassé après ses dépendants, est particulièrement appropriée au calcul et utilisée par les calculateurs automatiques, y compris certaines machines à calculer d’usage courant : en effet, pour effectuer le calcul 7 19 \textrm{${\times}$} 5 31 + \textrm{${\times}$}, il suffit d’empiler les nombres au fur et à mesure de la lecture et à la lecture de chaque opérateur binaire d’effectuer l’opération sur les nombres des deux lignes qui précèdent en les supprimant (voir la figure \ref{fig:formule-calcul2}).
 
-\begin{figure}
-    \centering
-    \includegraphics{}
-    \caption{Calcul du résultat de la formule  7 19 \textrm{${\times}$} 5 31 + \textrm{${\times}$}}
-    \label{fig:formule-calcul2}
-    \attop{%
+\begin{figure}[H]
+    \caption{Calcul du résultat de la formule  7 19 \textrm{${\times}$} 5 31 + \textrm{${\times}$}\label{fig:formule-calcul2}}
+%     \attop{%
     \begin{tikzpicture}
       \matrix (matrix) [matrix of math nodes, nodes in empty cells, 
                nodes={minimum width=9mm,draw,font=\strut}, ampersand replacement=\&]
@@ -431,7 +428,8 @@ Une représentation la structure produit que forment ensemble l’ordre linéair
         \node at ($(matrix-3-1) !.5! (matrix-3-2) $) [inner sep=0pt,font=\Large] {▶};
         \node at ($(matrix-6-2) !.5! (matrix-6-3) $) [inner sep=0pt,font=\Large] {▶};
         \node at ($(matrix-7-3) !.5! (matrix-7-4) $) [inner sep=0pt,font=\Large] {▶};
-    \end{tikzpicture}}
+    \end{tikzpicture}
+%     }
 \end{figure}
 \todo[inline]{Is it possible to have the non-empty cells in white?}
 
@@ -446,21 +444,20 @@ Une représentation la structure produit que forment ensemble l’ordre linéair
 
 \ea \label{ex:motives}
     \ea \textit{{Les étudiants très motivés organisent une conférence internationale.}} 
-    \ex \gll 매우  {의욕적인}  {학생들이}  {국제}  {학회를}   {조직한다}\\
-    \ex \gll maeu  {euiyokjeok-i-n}  {haksaeng-deul-i}  {kukje}  {hakhoi-leu}   {jojikha-nda}\\
+    \ex \glll {\cjkfont 매우}  {\cjkfont 의욕적인}  {\cjkfont 학생들이}  {\cjkfont 국제}  {\cjkfont 학회를}   {\cjkfont 조직한다}\\
+         maeu  {euiyokjeok-i-n}  {haksaeng-deul-i}  {kukje}  {hakhoi-leu}   {jojikha-nda}\\
          très   {motivé-être-\Q}   {étudiant-\PL-\NOM}  international  {conférence-\ACC}  organiser-\IND.\PRS\\
     \ex \gll junaðʕimu  atʕ-tʕul\=ab-u al-mutaħammis-\=una ʒiddan muʔtamar-a-n  dawlij-a-n\\
     organiser.\textsc{prs.3sg.masc} \textsc{def}-étudiant.\textsc{pl-nom} \textsc{def}-enthousiasmé.\textsc{pl-nom}  très conférence.\textsc{sg-acc-indef}  international.\textsc{sg-acc-indef}\\
   \z
+\z
 \todo[inline]{\=a and \=u must should be a and u with a bar. Verify here and in fig:motives-arabe}
     
     Le coréen est une langue à têtes finales : la traduction de \REF{ex:motives}a en coréen donne la phrase \REF{ex:motives}b où tous les gouverneurs se trouvent à droite de leurs dépendants, comme on peut le voir dans la figure \ref{fig:motives-coreen}. La même phrase traduite en arabe standard possède une structure inversée : comme on peut le voir dans la figure \ref{fig:motives-coreen}, tous les gouverneurs se trouvent devant leurs dépendants, y compris le verbe qui se trouve au tout début de la phrase. L’arabe standard est une langue à têtes initiales, même si, notamment sous l'influence des arabes dialectaux, eux-mêmes influencés par le français et l'anglais, il y a beaucoup exceptions à la règle du placement de la tête en premier. Les notions de «~têtes initiales~» et «~têtes finales~» doivent être vue comme des tendances, plutôt que des règles absolues.
 
    
-\begin{figure}
-    \centering
-    \caption{Arbre de dépendance de la phrase \REF{ex:motives}b en coréen}
-    \label{fig:motives-coreen}
+\begin{figure}[H]
+    \caption{Arbre de dépendance de la phrase \REF{ex:motives}b en coréen\label{fig:motives-coreen}}
     \begin{dependency}[font=\footnotesize,arc edge, arc angle=80, text only label, label style={above}]
     \begin{deptext}
     \textit{maeu}  \& \textit{euiyokjeok-i-n} \& \textit{haksaeng-deul-i} \& \textit{kukje} \& \textit{hakhoi-leu} \& \textit{jojikha-nda}\\
@@ -475,10 +472,8 @@ Une représentation la structure produit que forment ensemble l’ordre linéair
     \end{dependency}
 \end{figure}
 
-
     
-\begin{figure}
-    \centering
+\begin{figure}[H]
      \caption{Arbre de dépendance de la phrase \REF{ex:motives}c en arabe standard}
     \label{fig:motives-arabe}
   \begin{dependency}[font=\footnotesize,arc edge, arc angle=80, text only label, label style={above}]
@@ -497,8 +492,7 @@ Une représentation la structure produit que forment ensemble l’ordre linéair
 
     Le français est une langue intermédiaire. L’arbre de dépendance linéarisé de la phrase 1 possède des dépendances dans les deux directions, comme le montre la  figure \ref{fig:motives-francais}.
     
-    \begin{figure}
-    \centering
+    \begin{figure}[H]
     \caption{Arbre de dépendance de la phrase \REF{ex:motives}a}
     \begin{dependency}[font=\normalfont\itshape,arc edge, arc angle=80, text only label, label style={above}]
     \begin{deptext}
@@ -675,10 +669,8 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
    
     Dans le cas de la projectivité d’un arbre ordonné, on s’intéresse à une propriété qui concerne la relation entre la structure d’arbre et l’ordre linéaire sur les nœuds de l’arbre. Le graphe qui nous intéresse doit donc contenir ces deux structures. Au graphe que forme l’arbre, nous allons ajouter l’ordre linéaire sous la forme d’arêtes entre deux nœuds successifs, ce qui revient à placer les nœuds du graphe sur une ligne dans l’ordre linéaire. Pour prendre totalement en compte la structure hiérarchique de l’arbre, il faut encoder le fait que l’arbre possède un nœud, la racine, qui domine tous les autres. Pour cela, on attache l’arbre par sa racine à un nœud spécial qu’on appelle le nœud à l’infini (noté \textrm{${\infty}$}). Cela revient à placer les nœuds de l’arbre sur un cercle dans l’ordre linéaire avec le nœud à l’infini entre le premier et le dernier nœud. Nous appelons ce graphe le \textstyleTermesapprof{graphe circulaire} pour un arbre linéairement ordonné (voir la figure \ref{fig:noel-circulaire}).
 
-\begin{figure}
-    \centering
-     \caption{Graphe circulaire pour un arbre de dépendance ordonné}
-    \label{fig:noel-circulaire}
+\begin{figure}[H]
+    \caption{Graphe circulaire pour un arbre de dépendance ordonné\label{fig:noel-circulaire}}
     \begin{tikzpicture}[label distance=2pt,>={Triangle[]}] % Following an idea by Jerome Tremblay
     \def \radius {2cm}
     \def \margin {5}
@@ -719,13 +711,12 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
      {Un graphe est dit \textstyleTermesapprof{planaire extérieur} s’il peut être dessiné avec tous ses nœuds accessibles de l’extérieur et sans qu’aucunes de ses arêtes ne se coupent.}
    On peut montrer que pour qu’un graphe soit planaire extérieur, il faut et il suffit qu’il ne puisse pas être réduit à un graphe particulier qu’on appelle K\textsubscript{4}. La \textstyleTermesapprof{réduction} d’un graphe consiste à \textbf{agréger ensemble des nœuds qui sont liés}. C’est une opération importante de notre point de vue, car elle consiste à diminuer la granularité de l'analyse en regarder la structure avec un grain plu grossier (voir la \sectref{sec:3.2.20} sur la \textit{Granularité}). Le graphe K\textsubscript{4} est le graphe complet à 4 nœuds, c’est-à-dire le graphe à 4 nœuds où tous les nœuds sont liés deux à deux. Les deux configurations rejetées par la projectivité sont exactement des sous-graphes K\textsubscript{4} du graohe circulaire, comme le montre la figure \ref{fig:nonproj-K4}.
    
-\begin{figure}
-    \centering
-    \includegraphics{}
+\begin{figure}[H]
     \caption{Equivalence entre K\textsubscript{4} et les configurations non projectives}
     \label{fig:nonproj-K4}
      %%[Warning: Draw object ignored]
-    \\
+\end{figure}
+%     \\
     \begin{multicols}{3}\raggedcolumns
     \ea\attop{%
     \begin{tikzpicture} 
@@ -767,7 +758,7 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
     \end{tikzpicture}
     \z
     \end{multicols}
- \end{figure}
+%  \end{figure}
 \todo[inline]{Add title to a and b
 a. Croisement des dépendances
 b. recouvrement de la racine}
@@ -1071,7 +1062,7 @@ Ce phénomène de \textstyleTermes{rejet des constituants lourds}, appelé par l
 Nicolas Beauzée développait cette remarque dans l’entrée «~Régime~» de l’\textit{Encyclopédie} en \citeyear{Beauzée1765} (celle-là même où il définit le complément) :
 
 \begin{quote}
-    «~De plusieurs \textit{compléments} qui tombent sur le même mot, il faut mettre le plus court le premier après le mot \textit{complété ;} ensuite le plus court de ceux qui restent, et ainsi de suite jusqu’au plus long de tous qui doit être le dernier. […] il importe à la netteté de l’expression, \textit{\textit{cujus summa laus perspicuitas}}, de n’éloigner d’un mot, que le moins qu’il est possible, ce qui lui sert de \textit{complément}. Cependant quand plusieurs \textit{compléments} concourent à la détermination d’un même terme, ils ne peuvent pas tous le suivre immédiatement ; et il ne reste plus qu’à en rapprocher le plus qu’il est possible celui qu’on est forcé d’en tenir éloigné : c’est ce que l’on fait en mettant d’abord le premier celui qui a le plus de brièveté, et réservant pour la fin celui qui a le plus d’étendue.~»
+    «~De plusieurs \textit{compléments} qui tombent sur le même mot, il faut mettre le plus court le premier après le mot \textit{complété ;} ensuite le plus court de ceux qui restent, et ainsi de suite jusqu’au plus long de tous qui doit être le dernier. […] il importe à la netteté de l’expression, \textit{cujus summa laus perspicuitas}, de n’éloigner d’un mot, que le moins qu’il est possible, ce qui lui sert de \textit{complément}. Cependant quand plusieurs \textit{compléments} concourent à la détermination d’un même terme, ils ne peuvent pas tous le suivre immédiatement ; et il ne reste plus qu’à en rapprocher le plus qu’il est possible celui qu’on est forcé d’en tenir éloigné : c’est ce que l’on fait en mettant d’abord le premier celui qui a le plus de brièveté, et réservant pour la fin celui qui a le plus d’étendue.~»
 \end{quote}
 Mais c’est à Henri Weil (\citeyear[97--102]{weil1844de}), critiquant Beauzée (critique qui s’appliquerait à bien des analyses depuis) qu’on doit, à notre avis, l’analyse la plus pertinente :
 
@@ -1083,6 +1074,7 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
 \begin{quote}
     «~La parole est au service de la pensée, et non pas la pensée au service de la parole.~»
 \end{quote}
+
 \loupe{Contraintes de poids}{%\label{sec:3.5.22}
     Une façon de rendre contre des préférences dans l’ordre des co-dépendants est de voir certaines dépendances comme pourvu d’\textstyleTermesapprof{élasticité}. On peut ainsi distinguer des dépendances rigides comme la dépendance entre un clitique préverbal et le verbe dont la «~longueur~» est fixe et des dépendances beaucoup plus souples comme celle entre un complément non clitique et le verbe. On peut alors se représenter les \textstyleTermesapprof{contraintes de poids} des constituants lourds comme véritablement exercées par les forces gravitationnelles : les différents dépendants sont comme suspendus à leur gouverneur et plus ceux-ci sont lourds, plus ils allongent la dépendance qui les relie à leur gouverneur et s’en trouvent éloignés. Considérons la phrase :
     \ea
@@ -1090,10 +1082,8 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
     \z
     La figure \ref{fig:elastic} représente comment s’étirent, en fonction de leur poids, les différentes dépendance entre le verbe \textit{propose} et ses compléments.
 
-\begin{figure}
-    \centering
-     \caption{Arbre de dépendance avec des dépendances élastiques}
-    \label{fig:elastic}
+\begin{figure}[H]
+\caption{Arbre de dépendance avec des dépendances élastiques\label{fig:elastic}}
     \begin{tikzpicture}
     \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip,
                   level 1/.style={sibling distance=20mm},
@@ -1206,18 +1196,16 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
 
     On peut postuler qu’en russe, l’ordre linéaire de la phrase obéit au gabarit de la figure \ref{fig:topo-russe}.
 
-    \begin{figure}\centering
-\caption{Gabarit topologique de la phrase en russe\label{fig:topo-russe}}
-\begin{tabular}{|c|c|c|}
+    \begin{figure}[H]
+    \caption{Gabarit topologique de la phrase en russe\label{fig:topo-russe}}
+    \begin{tabular}{|c|c|c|}
      \hline
     \multicolumn{3}{|c|}{\cellcolor{lsDOIGray}Domaine principal}\\
     \hhline{---}
     thème-foc & rhème & thème\\
     \hhline{---}
     \end{tabular}
-\end{figure}
-
-
+    \end{figure}
 
     Le verbe en fonction de sa valeur communicative va venir dans un des trois champs. Les dépendants qui on la même valeur communicative que lui se placeront dans le même champ, tandis que ceux qui ont d’autres valeurs iront dans d’autres champs. La prosodie viendra souligner cette répartition avec une intonation montante sur le thème focalisé, descendante sur le rhème et généralement plate sur le thème.
 
@@ -1375,9 +1363,9 @@ La structure topologique de l'exemple \REF{ex:ballon} est donnée sous la forme 
   \ea\label{ex:coton2}
    \ea[\textsuperscript{??}]{\textit{une chemise de coton de sport}}
  \ex[]{textit{une chemise de coton pour le sport}}
-\ex[\textsuperscript{??}]{{\textit{une chemise pour le sport de coton}}
+\ex[\textsuperscript{??}]{\textit{une chemise pour le sport de coton}}
  \ex[]{\textit{une chemise de sport en coton}}
- \ex[\textsuperscript{??}\textit{une chemise en coton de sport}}
+ \ex[\textsuperscript{??}]{\textit{une chemise en coton de sport}}
      \z\z
 
     Pour les autres dépendants postposés au nom (adjectifs, compléments prépositionnels, participiales, relatives), nous considérons qu’ils vont tous dans un même champ, car leur ordre est relativement libre et semble suivre avant tout des contraintes de poids. Ainsi un adjectif se placera-t-il plutôt avant un complément prépositionnel (\textit{un mur ancien en pierre}), mais pour peu que cet adjectif soit un peu plus lourd, il se place sans difficulté après le complément prépositionnel (\textit{un mur en pierre très ancien}).
@@ -1396,7 +1384,7 @@ La structure topologique de l'exemple \REF{ex:ballon} est donnée sous la forme 
     
     Du point de vue du modèle topologique, cela signifie que l’adjectif \textit{haut} n’ouvre pas un domaine adjectival complet lorsqu’il est antéposé, mais un \textstyleTermes{domaine réduit} où ne figure pas le champ final qui accueille normalement les compléments de l’adjectif. Voir la figure \ref{fig:domaine-adjectiva} : le domaine adjectival complet est utilisé à droite du verbe comme en \REF{ex:mur}d, tandis que le domaine réduit sera utilisé à gauche du verbe comme en \REF{ex:mur}a et b et bloque c, puisqu'il n'y aura pas de place pour le complément prépositionnel de l'adjectif.
 
-\begin{figure}
+\begin{figure}[H]
     \caption{Gabarits pour le domaine adjectival}
     \label{fig:domaine-adjectival}
         \begin{center}
@@ -1446,10 +1434,8 @@ la \textbf{représentation traditionnelle} d'un arbre de constituants ordonné, 
 la \textbf{structure d'arbre} est \textbf{explicite} et
 l'\textbf{ordre} est \textbf{implicite}, c’est-à-dire qu’il est représenté par la position relative des nœuds sur l’axe horizontal, mais n’est pas explicitement encodé par des relations de précédence entre nœuds.
 
-\begin{figure}
-    \centering
-    \caption{Représentation traditionnelle d'un arbre de constituants ordonné (hiérarchie explicite, ordre implicite)}
-    \label{fig:arbre-tradi}
+\begin{figure}[H]
+    \caption{Représentation traditionnelle d'un arbre de constituants ordonné (hiérarchie explicite, ordre implicite)\label{fig:arbre-tradi}}
     \begin{forest}
     [\textrm{P}
       [GN [D [\textit{un}]] [N [\textit{chat}]] ]
@@ -1463,10 +1449,8 @@ Dans la deuxième représentation, donnée dans la figure \ref{fig:arbre-cellule
  Bien que cette représentation soit beaucoup moins usuelle, elle est tout aussi simple et légitime que la représentation traditionnelle.
  Cette représentation, où chaque décomposition d'un constituant (chaque connexion vue du point de vue dépendentiel) forme une «~cellule~», sera nommé la \textbf{représentation en cellules} d'un arbre de constituants ordonné ou plus simplement un \textstyleTermes{arbre en cellules}.
 
-\begin{figure}
-    \centering
-    \caption{Représentation en cellules d'un arbre de constituants ordonné (hiérarchie implicite, ordre explicite)}
-    \label{fig:arbre-cellule}
+\begin{figure}[H]
+    \caption{Représentation en cellules d'un arbre de constituants ordonné (hiérarchie implicite, ordre explicite)\label{fig:arbre-cellule}}
 \begin{tikzpicture}
     \begin{scope}[every node/.style={CircleNode},grow=right]
     \node (root) {} child { node {} child { node{} child { node{} child { node{}  
@@ -1513,9 +1497,8 @@ Notons qu'il est possible de combiner les deux représentations et d'expliciter 
 
     On peut réinterpréter les règles syntagmatiques comme des \textstyleTermesapprof{structures élémentaires}, c’est-à-dire des portions de la structure finale, un arbre de constituants ordonné dans notre cas, qui, assemblées, permettent de reconstituer la structure finale. La figure \ref{} donne un exemple pour la règle de réécriture P → GN GV. Nous utilisons les deux modes de représentation d’un arbre de constituants ordonné présentés dans l’encadré précédent.
 
-\begin{figure}
-    \centering
-    \includegraphics{}
+\begin{figure}[H]
+% %     \includegraphics{}
     \caption{La règle de réécriture P → GN GV vue comme une structure élémentaire}
     \label{fig:structureGNGV}
     \begin{minipage}[c]{.5\linewidth}\centering
@@ -1603,7 +1586,7 @@ Nous donnons dans la figure \ref{fig:induit-topo} l'arbre topologique à partir 
 \end{minipage}
 \caption{\label{fig:induit-topo}Arbre de dépendance ordonné et arbre de constituants topologiques induit}
 \end{figure}
-\todo[inline]{\Longrightarrow in both figures}
+\todo[inline]{\textbackslash Longrightarrow in both figures}
 
 Un arbre de dépendance ordonné induit donc deux arbres de constituants avec têtes : un arbre de constituants syntaxiques et un arbre de constituants topologiques. Nous donnons dans la figure \ref{fig:induit-synt} l'arbre de constituants syntaxiques de notre exemple.
 
@@ -1905,38 +1888,32 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
 \globe{La structure topologique de l’allemand}{%\label{sec:3.5.36}
     Nous avons déjà esquissé le modèle topologique de l’allemand dans la \sectref{sec:3.5.5} \textit{Le cas des langues V2}. La plupart des règles de l’ordre des mots en allemand se comprennent facilement en considérant qu’une phrase déclarative est constituée de 5 champs consécutifs qui forment le domaine principal.
     
-    \begin{figure}
    % \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img032.png}
-   \centering
-   \begin{figure}
+   \begin{figure}[H]
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 \multicolumn{5}{|c|}{\cellcolor{lsDOIGray}Domaine principal}\\
 \hline
-Vorfeld & \cellcolor{lsDOIGray}{parenthèse\\ gauche} & Mittelfeld & {parenthèse\\ droite} & Nachfeld
-\\
+Vorfeld & {\cellcolor{lsDOIGray}parenthèse gauche} & Mittelfeld & {parenthèse droite} & Nachfeld\\
 \hline
 \end{tabular}
-\end{figure}
-    \caption{Gabarit topologique du domaine principal de l'allemand}
-    \label{fig:gabarit-allemand}
+    \caption{Gabarit topologique du domaine principal de l'allemand\label{fig:gabarit-allemand}}
     \end{figure}
-\todo[]{I change this figure, add the next one, and change the next next one. To be verified}
+\todo[inline]{I change this figure, add the next one, and change the next next one. To be verified}
+\todo[inline]{FK: Line breaks were added here in places where they can't be. Unfortunately, it was not possible to determine the intended output.}
 
-    Le verbe principal de la phrase, c’est-à-dire le verbe qui porte le mode indicatif, se place en 2\textsuperscript{e} position, appelée \textbf{parenthèse gauche}, après l’unique constituant occupant le \textbf{champ initial} ou \textbf{Vorfeld} ‘pré-champ’. Les dépendants verbaux vont généralement dans la \textbf{parenthèse droite}. La parenthèse gauche entoure avec la parenthèse droite, le \textbf{champ du milieu} ou \textbf{Mittelfeld}. Un \textbf{champ final} ou \textbf{Nachfeld} suit la parenthèse droite. Les \textbf{champs} dits \textbf{majeurs} \-– Vorfeld, Mittelfeld et Nachfeld – accueillent les différents syntagmes nominaux ou adverbiaux. 
+    Le verbe principal de la phrase, c’est-à-dire le verbe qui porte le mode indicatif, se place en 2\textsuperscript{e} position, appelée \textbf{parenthèse gauche}, après l’unique constituant occupant le \textbf{champ initial} ou \textbf{Vorfeld} ‘pré-champ’. Les dépendants verbaux vont généralement dans la \textbf{parenthèse droite}. La parenthèse gauche entoure avec la parenthèse droite, le \textbf{champ du milieu} ou \textbf{Mittelfeld}. Un \textbf{champ final} ou \textbf{Nachfeld} suit la parenthèse droite. Les \textbf{champs} dits \textbf{majeurs} -- Vorfeld, Mittelfeld et Nachfeld -- accueillent les différents syntagmes nominaux ou adverbiaux. 
     
     Considérons la phrase \REF{ex:leider} et son arbre de dépendance, donné dans la figure \ref{fig:leider}.
     
     \ea\label{ex:leider}
     \gll Leider hat Peter {mal wieder} in seiner Nase zu popeln gewagt   vor der ganzen Familie.\\
-    Hélas   a   Peter   à_nouveau   dans son nez   de creuser osé   devant toute la famille\\
+    Hélas   a   Peter   à\_nouveau   dans son nez   de creuser osé   devant toute la famille\\
     \glt ‘Peter a malheureusement à nouveau osé se crotter le nez devant toute la famille.’
     \z
     
-    \begin{figure}
-          \caption{Arbre de dépendance de \REF{ex:leider}}
-        \label{fig:leider}
-    \begin{minipage}[t]{.5\linewidth}\centering
+    \begin{figure}[H]
+      \caption{Arbre de dépendance de \REF{ex:leider}\label{fig:leider}}
     \begin{forest} for tree={font=\itshape}
       [hat
         [leider]
@@ -1945,28 +1922,28 @@ Vorfeld & \cellcolor{lsDOIGray}{parenthèse\\ gauche} & Mittelfeld & {parenthès
         [zu popeln [in seiner Nase]]
         ]
       ]
-    \end{forest}\end{minipage}
- \end{figure}
+    \end{forest}
+   \end{figure}
    
-    La racine de l'arbre de \REF{ex:leider}, l'auxiliare \textit{hat} 'a' va dans la parenthèse gauche, tandis que le participe \textit{gewagt} 'osé' va dans la parenthèse droite, où il entraîne avec lui le verbe infinitif \textit{zu popeln} 'de creuser', qui se place devant lui. Les verbes de la parenthèse droite ne peuvent pas accueillir leur dépendants nominaux et adverbiaux, qui vont donc s'émanciper et se placer dans le domaine principal. Un des constituant doit occuper le Vorfeld : ici c'est \textit{leider} qui occupe cette place, mais n'importe quel autre constituant aurait pu prendre la place.
+    La racine de l'arbre de \REF{ex:leider}, l'auxiliare \textit{hat} `a' va dans la parenthèse gauche, tandis que le participe \textit{gewagt} 'osé' va dans la parenthèse droite, où il entraîne avec lui le verbe infinitif \textit{zu popeln} `de creuser', qui se place devant lui. Les verbes de la parenthèse droite ne peuvent pas accueillir leur dépendants nominaux et adverbiaux, qui vont donc s'émanciper et se placer dans le domaine principal. Un des constituant doit occuper le Vorfeld : ici c'est \textit{leider} qui occupe cette place, mais n'importe quel autre constituant aurait pu prendre la place.
     Le constituant \textit{vor der ganzen Familie} ‘devant toute la famille’ peut aller dans le Nachfeld, car il est assez lourd (et un placement dans le Mittelfeld séparerait trop les deux parenthèses). Des constituants légers comme \textit{mal wieder} ou \textit{Peter} préfèrent rester dans le Mittelfeld.
 
     Les propositions subordonnées, complétives et relatives, ont une structure réduite, sans Vorfeld, et l’élément qui introduit la proposition, le complémenteur ou le pronom relatif, occupe la parenthèse gauche. 
 
     \ea\label{ex:glaube}
-    \gll  Ich glaube,   {\ob} dass Peter {mal wieder} in seiner Nase zu popeln\textsubscript{3} gewagt\textsubscript{2} hat\textsubscript{1}   {\cb}.\\
+    \gll  Ich glaube,   {\ob} dass Peter {mal wieder} in seiner Nase zu {popeln\textsubscript{3}} {gewagt\textsubscript{2}} {hat\textsubscript{1}}   {\cb}.\\
     Je crois   [ que  Peter {une fois de plus} dans son nez   de creuser  osé        a   ]\\
     \glt ‘Je crois que Peter a osé se crotter le nez à nouveau.’
     \z
     
     Le placement des verbes dans la parenthèse droite est assez contraint et peut aussi être décrit par une structure topologique, l’amas verbal. Il est composé de trois champs : le \textbf{champ supérieur} ou \textbf{Oberfeld}, le champ tête et le \textbf{champ inférieur} ou \textbf{Unterfeld} (voir la figure \ref{fig:topo-amas-allemand}). Le placement le plus courant est celui illustré en \REF{ex:glaube}, où chaque verbe subordonné se place à gauche de son gouverneur, c'est-à-dire dans le champ Oberfeld.
 
-    \begin{figure}
+    \begin{figure}[H]
     \def\arraystretch{1.5}
     \setlength{\tabcolsep}{4ex}
     \begin{tabular}{|c|c|c|}
     \hline
-\multicolumn{3}{|c|}{\cellcolor{lsDOIGray}Amal verbal}\\
+    \multicolumn{3}{|c|}{\cellcolor{lsDOIGray}Amal verbal}\\
     \hline
     Oberfeld & \cellcolor{lsDOIGray}champ tête & Unterfeld\\
     \hline
@@ -1979,10 +1956,10 @@ Vorfeld & \cellcolor{lsDOIGray}{parenthèse\\ gauche} & Mittelfeld & {parenthès
 
     \ea\label{ex:konnen}
     \ea[\textsuperscript{?}]{
-    \gll Ich glaube,  {\ob} dass Peter {mal wieder} in seiner Nase popeln\textsubscript{3} gekonnt\textsubscript{2}  hat\textsubscript{1}   {\cb}.\\
+    \gll Ich glaube,  {\ob} dass Peter {mal wieder} in seiner Nase {popeln\textsubscript{3}} {gekonnt\textsubscript{2} } {hat\textsubscript{1}}   {\cb}.\\
         Je crois  [ que   Peter {une fois de plus} dans son nez   creuser  pu           a   ]\\}
     \ex[]{
-    \gll Ich glaube,  {\ob} dass Peter {mal wieder} in seiner Nase hat\textsubscript{1} popeln\textsubscript{3} können\textsubscript{2}   {\cb}.\\
+    \gll Ich glaube,  {\ob} dass Peter {mal wieder} in seiner Nase {hat\textsubscript{1}} {popeln\textsubscript{3}} {können\textsubscript{2}}   {\cb}.\\
     Je crois   [ que   Peter {une fois de plus} dans son nez  a     creuser  pu   ]\\
     \glt  ‘Je crois que Peter a pu se crotter le nez à nouveau.’}
     \z
@@ -1993,7 +1970,7 @@ Vorfeld & \cellcolor{lsDOIGray}{parenthèse\\ gauche} & Mittelfeld & {parenthès
     \begin{exe}
     \exr{ex:konnen}
     \begin{xlist}
-    \exi{c.} \gll Ich glaube,  {\ob} dass Peter {mal wieder} in seiner Nase  popeln\textsubscript{3} hat\textsubscript{1} können\textsubscript{2} {\cb}.\\
+    \exi{c.} \gll Ich glaube,  {\ob} dass Peter {mal wieder} in seiner Nase  {popeln\textsubscript{3}} {hat\textsubscript{1}} {können\textsubscript{2}} {\cb}.\\
     Je crois   {\ob} que   Peter {une fois de plus} dans son nez  creuser  a     pu {\cb}\\
     \glt ‘Je crois que Peter a pu se crotter le nez {une fois de plus}.’
     \end{xlist}
@@ -2193,10 +2170,8 @@ Vorfeld & \cellcolor{lsDOIGray}{parenthèse\\ gauche} & Mittelfeld & {parenthès
 
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
-ch\_initial & ch\_modal & ch\_adv & ch\_verbal & ch\_objet & ch\_compl\hline
-\end{tabular}
-
-    
+ch\_initial & ch\_modal & ch\_adv & ch\_verbal & ch\_objet & ch\_compl\\\hline
+\end{tabular}    
 
     Le sujet va dans le champ initial, sauf quand celui-ci est occupé par un pronom interrogatif, une négation ou un locatif, ou quand il reste vide dans une interrogative totale. Le champ modal peut rester vide quand le sujet occupe le champ initial et qu’il n’y a pas la négation \textit{not} dans le champ adverbial. Lorsque le champ initial est occupé par un autre élément, le sujet va dans le champ adverbial. Dans les interrogatives le sujet ne peut pas occuper le champ initial, qui peut reste vide en l'absence d'un pronom interrogatif. Le champ modal doit obligatoirement être occupé si la sujet n'est pas dans le champ initial.
 
