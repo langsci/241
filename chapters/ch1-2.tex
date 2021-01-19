@@ -9,9 +9,9 @@ Pour comprendre le fonctionnement de la langue, il est donc nécessaire d’étu
 \loupe{Les observables : textes et sens}{%\label{sec:1.2.1}
     Un modèle se construit à partir d’\textstyleTermes{observables}, puisqu’il modélise le fonctionnement de quelque chose de réel, que l’on peut observer. Néanmoins, un modèle est amené à faire des hypothèses sur la façon dont ces observables sont produits et à construire ainsi un certain nombre d’objets qui ne sont pas observables.
 
-    Pour ce qui est de la langue, deux choses sont réellement observables : les textes et les sens. Pour les textes, c’est assez évident, même si la question de savoir quelle est la représentation d’un texte dans notre cerveau reste un problème. Pour les sens, c’est plus complexe : on ne peut pas observer le sens en tant que tel, mais on peut s’assurer qu’un texte est compréhensible et qu’il est compris. L’un des outils d’observation est la paraphrase : on peut demander à un locuteur de reformuler un texte ou lui demander si deux textes ont le même sens. On peut ainsi considérer, à la suite d’Igor \citet[52]{melcuk1988dependency}, que «~avoir le même sens~» est un observable et \textbf{définir le sens} comme un invariant de paraphrases, c’est-à-dire comme ce qui est commun à tous les textes qui ont le même sens.
+    Pour ce qui est de la langue, deux choses sont réellement observables : les textes et les sens. Pour les textes, c’est assez évident, même si la question de savoir quelle est la représentation d’un texte dans notre cerveau reste un problème. Pour les sens, c’est plus complexe : on ne peut pas observer le sens en tant que tel, mais on peut s’assurer qu’un texte est compréhensible et qu’il est compris. L’un des outils d’observation est la paraphrase : on peut demander à un locuteur de reformuler un texte ou lui demander si deux textes ont le même sens. On peut ainsi considérer, à la suite d’Igor \citet[52]{melcuk1988dependency}, que «~avoir le même sens~» est un observable et \hi{définir le sens} comme un invariant de paraphrases, c’est-à-dire comme ce qui est commun à tous les textes qui ont le même sens.
 
-    Nous faisons l’hypothèse qu’il y a entre le sens et le texte un niveau d’organisation syntaxique. Cette organisation n’est pas directement observable. Dans la suite, nous serons amenés à construire un grand nombre d’objets linguistiques et notamment des représentations syntaxiques. Il s’agit de \textbf{constructions théoriques} et de rien d’autre. On ne prouve leur «~existence~» qu’à l’intérieur d’une théorie. Elles existent dans le modèle, mais cela ne prouve pas qu’elles existent dans l’objet réel que nous modélisons. On ne peut pas réfuter directement leur existence. On ne peut que réfuter l’adéquation du modèle avec l’objet modélisé. Néanmoins, si le modèle est adéquat et suffisamment économique, alors les objets construits par le modèle acquièrent une part de réalité, deviennent plus tangibles.
+    Nous faisons l’hypothèse qu’il y a entre le sens et le texte un niveau d’organisation syntaxique. Cette organisation n’est pas directement observable. Dans la suite, nous serons amenés à construire un grand nombre d’objets linguistiques et notamment des représentations syntaxiques. Il s’agit de \hi{constructions théoriques} et de rien d’autre. On ne prouve leur «~existence~» qu’à l’intérieur d’une théorie. Elles existent dans le modèle, mais cela ne prouve pas qu’elles existent dans l’objet réel que nous modélisons. On ne peut pas réfuter directement leur existence. On ne peut que réfuter l’adéquation du modèle avec l’objet modélisé. Néanmoins, si le modèle est adéquat et suffisamment économique, alors les objets construits par le modèle acquièrent une part de réalité, deviennent plus tangibles.
 }
 \section{Partir d’un sens}\label{sec:1.2.2}
 
@@ -37,7 +37,7 @@ Certains sens lexicaux fonctionnent comme des \textstyleTermes{prédicats} et po
 
 Nous nous contenterons de cette définition sommaire de la structure prédicative (voir compléments dans l’\encadref{fig:1.2.4} sur \textit{Les composantes du sens}). Une définition plus précise sera donnée au \chapfuturef{13} sur \textit{La structure syntaxique profonde}.
 
-Nous avons présenté la structure prédicative par une \textstyleTermes{formule}, mais on peut aussi la représenter par un \textstyleTermes{graphe} (voir l’\encadref{fig:2.1.3} qui suit) que nous appelons le \textstyleTermes{graphe sémantique}. Les nœuds du graphe sémantique sont les sens lexicaux ‘Ali’, ‘malade’, ‘durer’, ‘semaine’ et ‘deux’ et les arêtes représentent les \textstyleTermes{relations prédicat-argument}. Les arêtes sont matérialisées par des flèches. Les arêtes sont étiquetées par des chiffres permettant de distinguer les différents arguments d’un prédicat : 1 pour le premier argument, 2 pour le deuxième, etc. L’ordre dans lequel les arguments sont numérotés est l’\textstyleTermes{ordre de saillance}, dont nous reparlerons au \chapfuturef{18} sur \textit{Les relations syntaxiques}.
+Nous avons présenté la structure prédicative par une \textstyleTermes{formule}, mais on peut aussi la représenter par un \textstyleTermes{graphe} (voir l’\encadref{fig:2.1.3} qui suit) que nous appelons le \textstyleTermes{graphe sémantique}. Le graphe sémantique correspondant à la formule de la figure \ref{fig:sens-maladie} est donné dans la figure \ref{fig:graphe-maladie}. Les nœuds du graphe sémantique sont les sens lexicaux ‘Ali’, ‘malade’, ‘durer’, ‘semaine’ et ‘deux’ et les arêtes représentent les \textstyleTermes{relations prédicat-argument}. Les arêtes sont matérialisées par des flèches. Les arêtes sont étiquetées par des chiffres permettant de distinguer les différents arguments d’un prédicat : 1 pour le premier argument, 2 pour le deuxième, etc. L’ordre dans lequel les arguments sont numérotés est l’\textstyleTermes{ordre de saillance}, dont nous reparlerons au \chapfuturef{18} sur \textit{Les relations syntaxiques}.
 
 \begin{figure}
 \begin{tikzpicture}[>={Triangle[]},label distance=0pt]
@@ -58,7 +58,7 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
 \draw[-{Triangle[]}] (durer) -- (malade) node[font=\footnotesize,midway,left] {1};
 \draw[-{Triangle[]}] (malade) -- (Ali) node[font=\footnotesize,midway,left] {1};
 \end{tikzpicture}
-\caption{\label{fig:Graphe sémantique}Graphe sémantique}
+\caption{\label{fig:graphe-maladie}Graphe sémantique}
 \end{figure}
 
 \maths{Graphe et arbre}{%\label{sec:1.2.3}
@@ -143,10 +143,10 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
     \caption{Graphe sans cycle orienté}
     \end{figure}
 
-    La \textbf{structure prédicative} d’un énoncé peut être formalisée par un \textbf{graphe orienté connexe et acyclique} (encore appelé \textstyleTermes{dag}, de l’anglais \textit{directed acyclic graph}) dont les nœuds sont les sens lexicaux et grammaticaux et les arêtes sont les dépendances sémantiques ou relations prédicat-argument entre ces sens.
+    La \hi{structure prédicative} d’un énoncé peut être formalisée par un \hi{graphe orienté connexe et acyclique} (encore appelé \textstyleTermes{dag}, de l’anglais \textit{directed acyclic graph}) dont les nœuds sont les sens lexicaux et grammaticaux et les arêtes sont les dépendances sémantiques ou relations prédicat-argument entre ces sens.
 }
 \loupe{Les composantes du sens}{%\label{sec:1.2.4}
-    Nous avons déjà expliqué dans le chapitre précédent la distinction que nous faisons entre le \textstyleTermes{sens linguistique} et les \textstyleTermes{intentions communicatives} du locuteur. Reste à savoir, bien que cette question dépasse le cadre de cet ouvrage consacré à la syntaxe, comment modéliser le sens linguistique. Nous pensons que la structure prédicative (voir la \sectref{sec:1.2.2} \textit{Partir d’un sens}) exprime une partie et une partie seulement du sens linguistique : il s’agit de l’\textbf{information pure} contenue dans le message — quels sont les \textbf{sens de base} que nous souhaitons utiliser et comment ils se \textbf{combinent}.
+    Nous avons déjà expliqué dans le chapitre précédent la distinction que nous faisons entre le \textstyleTermes{sens linguistique} et les \textstyleTermes{intentions communicatives} du locuteur. Reste à savoir, bien que cette question dépasse le cadre de cet ouvrage consacré à la syntaxe, comment modéliser le sens linguistique. Nous pensons que la structure prédicative (voir la \sectref{sec:1.2.2} \textit{Partir d’un sens}) exprime une partie et une partie seulement du sens linguistique : il s’agit de l’\hi{information pure} contenue dans le message — quels sont les \hi{sens de base} que nous souhaitons utiliser et comment ils se \hi{combinent}.
 
     Au contenu informationnel s’ajoute au moins quatre autres types de contenus :
 
@@ -182,10 +182,10 @@ Comment se font les \textstyleTermes{choix lexicaux~}? Les choix lexicaux dépen
     Lorsque nous parlons, nous avons quatre moyens à notre disposition pour exprimer du sens.
 
     \begin{itemize}
-    \item Le premier moyen, ce sont les \textbf{mots} ou plus exactement les \textbf{unités lexicales et grammaticales} (voir la partie 2 consacrée aux \textit{Unités de la langue}).
-    \item Le deuxième moyen, c’est la façon de combiner les mots et en particulier l’\textbf{ordre} dans lequel nous les mettons : «~\textit{Ali regarde Zoé}» ne veut pas dire la même chose que «~\textit{Zoé regarde Ali}~». Plus subtilement, «~\textit{À Paris, Ali travaille le lundi~}» n’est pas exactement synonyme de «~\textit{Le lundi, Ali travaille à Paris}~» (le premier énoncé n’implique pas qu’Ali travaille tous les lundis et qu’il est à Paris tous les lundis où il travaille).
-    \item Le troisième moyen d’expression du langage est la \textbf{prosodie}. La séquence \textit{tu viens} peut être prononcée de bien des façons et avoir autant de sens différents. Prononcée avec une voix forte et autoritaire et un accent montant sur la première syllabe, ce sera un ordre : «~\textit{TU VIENS} !~». Prononcée d’une voix suave avec une courbe mélodique montante, ce sera une question ou une invitation : «~\textit{Tu viens} ?~». Prononcée d’une voix neutre avec une courbe mélodique descendante, ce sera une simple constatation : «~\textit{Tu viens.}~».
-    \item Le quatrième moyen à notre disposition dépasse le simple usage de la voix. Une énonciation en face à face s’accompagne toujours de \textbf{mimiques faciales} et de \textbf{gestes} divers. Ceux-ci sont beaucoup plus codifiés et beaucoup plus riches qu’on ne le pense généralement. Ils vont accompagner la parole et parfois se combiner avec elle. Ainsi «~\textit{Ton pull}~» suivi d’un geste avec le pouce levé est un énoncé équivalent à «~\textit{Ton pull est vraiment super}~». Et une moue désapprobatrice en prononçant «~\textit{Jean} ?~» en dira beaucoup plus qu’un long discours sur la confiance qu’on met en Jean.
+    \item Le premier moyen, ce sont les \hi{mots} ou plus exactement les \hi{unités lexicales et grammaticales} (voir la partie 2 consacrée aux \textit{Unités de la langue}).
+    \item Le deuxième moyen, c’est la façon de combiner les mots et en particulier l’\hi{ordre} dans lequel nous les mettons : «~\textit{Ali regarde Zoé}» ne veut pas dire la même chose que «~\textit{Zoé regarde Ali}~». Plus subtilement, «~\textit{À Paris, Ali travaille le lundi~}» n’est pas exactement synonyme de «~\textit{Le lundi, Ali travaille à Paris}~» (le premier énoncé n’implique pas qu’Ali travaille tous les lundis et qu’il est à Paris tous les lundis où il travaille).
+    \item Le troisième moyen d’expression du langage est la \hi{prosodie}. La séquence \textit{tu viens} peut être prononcée de bien des façons et avoir autant de sens différents. Prononcée avec une voix forte et autoritaire et un accent montant sur la première syllabe, ce sera un ordre : «~\textit{TU VIENS} !~». Prononcée d’une voix suave avec une courbe mélodique montante, ce sera une question ou une invitation : «~\textit{Tu viens} ?~». Prononcée d’une voix neutre avec une courbe mélodique descendante, ce sera une simple constatation : «~\textit{Tu viens.}~».
+    \item Le quatrième moyen à notre disposition dépasse le simple usage de la voix. Une énonciation en face à face s’accompagne toujours de \hi{mimiques faciales} et de \hi{gestes} divers. Ceux-ci sont beaucoup plus codifiés et beaucoup plus riches qu’on ne le pense généralement. Ils vont accompagner la parole et parfois se combiner avec elle. Ainsi «~\textit{Ton pull}~» suivi d’un geste avec le pouce levé est un énoncé équivalent à «~\textit{Ton pull est vraiment super}~». Et une moue désapprobatrice en prononçant «~\textit{Jean} ?~» en dira beaucoup plus qu’un long discours sur la confiance qu’on met en Jean.
     \end{itemize}
 }
 \section{Contraintes syntaxiques sur les choix lexicaux}\label{sec:1.2.7}
@@ -202,16 +202,18 @@ Le cas de la phrase \REF{maladie}b (\textit{Ali a été malade pendant deux sema
 
     La plupart des règles ont des exceptions. C’est le cas de la règle qui veut que l’élément principal d’une phrase soit un verbe conjugué. Il existe en effet quelques éléments lexicaux particuliers qui ne sont pas des verbes mais ont la propriété de pouvoir être l’élément principal d’une phrase, comme l’adverbe \textsc{heureusement} ou le bizarre \textsc{bonjour~}:
     
-    \begin{quote}
-    \textit{Heureusement qu’il y en a} !\\
-    \textit{Sinon, bonjour le chômage des linguistes.}
-    \end{quote}
+    \ea
+   \ea\textit{Heureusement qu’il y en a} !
+   \ex\textit{Sinon, bonjour le chômage des linguistes.}
+   \z\z
 
-    Par ailleurs, il existe des contextes où la règle ne s’applique pas, notamment en réponse à une question (\textit{Tu viens à la fac demain} ? \textit{Oui à 10h pour le cours de syntaxe}) ou encore pour les titres (\textit{Nouvel incident diplomatique entre la France et l’Allemagne}). Cela ne signifie pas que la règle est fausse, mais qu’il faut bien préciser quand elle s’applique. Quant aux exceptions, il faut les \textbf{lister} et inclure ces éléments dans une classe particulière d’élément que nous appelons les prédicatifs et les locutifs (voir le \chapfuturef{17} sur \textit{Les catégories microsyntaxiques}).
+    Par ailleurs, il existe des contextes où la règle ne s’applique pas, notamment en réponse à une question (\textit{Tu viens à la fac demain} ? \textit{Oui à 10h pour le cours de syntaxe}) ou encore pour les titres (\textit{Nouvel incident diplomatique entre la France et l’Allemagne}). Cela ne signifie pas que la règle est fausse, mais qu’il faut bien préciser quand elle s’applique. Quant aux exceptions, il faut les \hi{lister} et inclure ces éléments dans une classe particulière d’élément que nous appelons les prédicatifs et les locutifs (voir le \chapfuturef{17} sur \textit{Les catégories microsyntaxiques}).
 }
 \section{Structure hiérarchique}\label{sec:1.2.9}
 
-Lors du passage du sens au texte, tout se passe comme si on suspendait le graphe sémantique par l’un de ses nœuds dont on décide de faire le verbe principal de l’énoncé et qu’on parcourait le graphe à partir de ce nœud pour les autres lexicalisations. Nous pouvons illustrer cela par les schémas suivants : à gauche nous représentons le graphe sémantique suspendu par un de ses nœuds (visé ici par une grosse flèche blanche) et à droite nous avons la structure hiérarchique correspondante où les sens lexicaux ont été lexicalisés.
+Lors du passage du sens au texte, tout se passe comme si on suspendait le graphe sémantique par l’un de ses nœuds dont on décide de faire le verbe principal de l’énoncé et qu’on parcourait le graphe à partir de ce nœud pour les autres lexicalisations. Nous pouvons illustrer cela par les schémas des figures \ref{fig:hierarchie-durer} et \ref{fig:hierarchie-malade} : à gauche nous représentons le graphe sémantique suspendu par un de ses nœuds (visé ici par une grosse flèche blanche)
+\todo[inline]{The text describe the arrow pointing on the roots in the two next figures. We must choose the appropriate arrow and adapt the text.}
+et à droite nous avons la structure hiérarchique correspondante où les sens lexicaux ont été lexicalisés. La double flèche entre le graphe sémantique et l'arbre syntaxique indique qu'ils se correspondent.
 
 \begin{figure}
 \begin{minipage}[c]{.5\textwidth}\centering%
@@ -243,7 +245,7 @@ Lors du passage du sens au texte, tout se passe comme si on suspendait le graphe
   ]
 ]
 \end{forest}\end{minipage}
-\caption{\label{fig:}Hiérarchisation à partir de ‘durer’}
+\caption{\label{fig:hierarchie-durer}Hiérarchisation à partir de ‘durer’}
 \end{figure}
 
 \begin{figure}
@@ -277,12 +279,12 @@ Lors du passage du sens au texte, tout se passe comme si on suspendait le graphe
   ]
 ]
 \end{forest}\end{minipage}
-\caption{\label{fig:}Hiérarchisation à partir de ‘malade’}
+\caption{\label{fig:hierarchie-malade}Hiérarchisation à partir de ‘malade’}
 \end{figure}
 
-La structure que nous obtenons s’appelle un \textstyleTermes{arbre de dépendance syntaxique profond} (voir le \chapfuturef{13} entièrement consacré à \textit{La syntaxe profonde}). Chaque nœud de l’arbre est occupé par une unité lexicale correspondant à un sens. D’autres sens (non considéré ici) donne des éléments grammaticaux qui vont se combiner aux unités lexicales : temps pour les verbes (présent, passé, etc.), nombre (singulier, pluriel) et définitude (défini, indéfini) pour les noms. Le nœud au sommet est appelé la \textstyleTermes{racine} de l’arbre (voir l’\encadref{fig:1.2.3} sur \textit{Graphe et arbre}). Tous les nœuds à l’exception de la racine dépendent d’un autre nœud appelé leur \textstyleTermes{gouverneur} (syntaxique profond). À l’inverse, les nœuds qui dépendent d’un autre nœud en sont appelés les \textstyleTermes{dépendants} (syntaxiques profonds). Le lien entre deux nœuds est appelé une \textstyleTermes{dépendance} (syntaxique profonde).
+La structure que nous obtenons s’appelle un \textstyleTermes{arbre de dépendance syntaxique profond} (voir le \chapfuturefici{13} entièrement consacré à \textit{La syntaxe profonde}). Chaque nœud de l’arbre est occupé par une unité lexicale correspondant à un sens. D’autres sens (non considéré ici) donne des éléments grammaticaux qui vont se combiner aux unités lexicales : temps pour les verbes (présent, passé, etc.), nombre (singulier, pluriel) et définitude (défini, indéfini) pour les noms. Le nœud au sommet est appelé la \textstyleTermes{racine} de l’arbre (voir l’\encadref{fig:1.2.3} sur \textit{Graphe et arbre}). Tous les nœuds à l’exception de la racine dépendent d’un autre nœud appelé leur \textstyleTermes{gouverneur} (syntaxique profond). À l’inverse, les nœuds qui dépendent d’un autre nœud en sont appelés les \textstyleTermes{dépendants} (syntaxiques profonds). Le lien entre deux nœuds est appelé une \textstyleTermes{dépendance} (syntaxique profonde).
 
-Chaque dépendance est étiquetée en fonction de son parcours : les relations sémantiques qui ont été parcourues dans le sens de la flèche (du prédicat vers l’argument) donne une \textstyleTermes{dépendance syntaxique actancielle} (que nous numérotons comme la dépendance sémantique correspondante), tandis que les relations sémantiques qui ont été parcourues à contre-courant donne une \textstyleTermes{dépendance syntaxique modificative} (étiquetée \textit{MOD}).
+Chaque dépendance est étiquetée en fonction de son parcours : les relations sémantiques qui ont été parcourues dans le sens de la flèche (du prédicat vers l’argument) donne une \textstyleTermes{dépendance syntaxique actancielle} (que nous numérotons comme la dépendance sémantique correspondante), tandis que les relations sémantiques qui ont été parcourues à contre-courant donne une \textstyleTermes{dépendance syntaxique modificative} (étiquetée \textit{\textsc{mod}}).
 
 \begin{figure}
 \begin{minipage}[c]{.15\textwidth}\centering%
@@ -367,7 +369,7 @@ Comme nous l’avons expliqué dans la section précédente, chaque unité lexic
 }
 \section{Ce que la langue nous force à dire}\label{sec:1.2.11}
 
-En produisant les phrases \REF{ex:maladie}a et b (\sectref{sec:1.2.5}), nous avons exprimé plus que le sens de départ. Celui-ci ne contenait pas d’information temporelle sur le moment de la maladie d’Ali, mais nous avions besoin d’une telle information pour conjuguer le verbe principal. C’est la \textbf{grammaire} du français qui nous \textbf{contraint}, en nous obligeant à ajouter une flexion au verbe principal de la phrase, à situer l’événement dont nous voulons parler par rapport au moment où nous parlons. Nous devons décider si la maladie a eu lieu avant maintenant (\textit{Ali a été malade pendant deux semaines}) ou si l’événement aura lieu après maintenant (\textit{Ali sera malade pendant deux semaines}) ou encore s’il est en cours (\textit{Ali est malade depuis deux semaines}).
+En produisant les phrases \REF{ex:maladie}a et b (\sectref{sec:1.2.5}), nous avons exprimé plus que le sens de départ. Celui-ci ne contenait pas d’information temporelle sur le moment de la maladie d’Ali, mais nous avions besoin d’une telle information pour conjuguer le verbe principal. C’est la \hi{grammaire} du français qui nous \hi{contraint}, en nous obligeant à ajouter une flexion au verbe principal de la phrase, à situer l’événement dont nous voulons parler par rapport au moment où nous parlons. Nous devons décider si la maladie a eu lieu avant maintenant (\textit{Ali a été malade pendant deux semaines}) ou si l’événement aura lieu après maintenant (\textit{Ali sera malade pendant deux semaines}) ou encore s’il est en cours (\textit{Ali est malade depuis deux semaines}).
 
 De même, en français, on ne peut pas lexicaliser un sens par un nom sans préciser le nombre \textit{(Ali a mangé} \textbf{\textit{une}} \textit{pomme} vs \textit{Ali a mangé} \textbf{\textit{des}} \textit{pommes}) et sans préciser si la chose est déjà connue ou non (\textit{Ali a mangé} \textbf{\textit{la}} \textit{pomme} vs \textit{Ali a mangé} \textbf{\textit{une}} \textit{pomme}) (voir \chapfuturef{15}). C’est l’une des raisons pour lesquelles nos deux phrases de départ, \REF{ex:maladie}a et b, ne sont pas parfaitement synonymes, puisque, dans a, ‘malade’ est lexicalisé par un nom et est donc accompagné d’un article défini, lequel présuppose que la maladie d’Ali est connue des interlocuteurs au moment où la phrase est prononcée, ce qui n’est pas le cas en b.
 
@@ -378,9 +380,9 @@ En conclusion, il n’est pas possible en français de communiquer uniquement no
 
     Il existe quantités de sens plus ou moins curieux qui sont ainsi imposés par la grammaire d’une langue. Par exemple, il existe une langue amérindienne, le nootka, parlée sur l’île de Vancouver au Canada, où le verbe s’«~accorde~» avec son sujet en fonction de particularités physiques du référent sujet ; on doit nécessairement choisir entre l’une des sept possibilités suivantes : normal, trop gros, trop petit, borgne, bossu, boiteux, gaucher (\citealt{Sapir1915,melcuk1993cours}). On ne peut donc pas dire ce que fait une personne donnée sans dire si cette personne est normale ou si elle est affublée d’une des six particularités physiques retenues par la grammaire de cette langue.
 
-    Si la nature des sens qui sont grammaticalement exprimés au travers des langues du monde est assez vaste, elle est quand même assez homogène. D’une part, il s’agit généralement de sens abstraits ayant une \textbf{importance cognitive fondamentale} et qui ont de surcroît une importance culturelle énorme, puisqu’ils apparaissent dans pratiquement chaque phrase et donc modèlent la pensée des locuteurs à chaque instant. D’autre part, ces sens s’associent naturellement à certaines parties du discours : les langues ont ainsi généralement une classe d’éléments lexicaux qui varient en temps et/ou aspect et désignent des procès (et correspondent grosso modo à nos verbes) et une classe d’éléments lexicaux qui varient en nombre et désignent des entités (et correspondent à nos noms).
+    Si la nature des sens qui sont grammaticalement exprimés au travers des langues du monde est assez vaste, elle est quand même assez homogène. D’une part, il s’agit généralement de sens abstraits ayant une \hi{importance cognitive fondamentale} et qui ont de surcroît une importance culturelle énorme, puisqu’ils apparaissent dans pratiquement chaque phrase et donc modèlent la pensée des locuteurs à chaque instant. D’autre part, ces sens s’associent naturellement à certaines parties du discours : les langues ont ainsi généralement une classe d’éléments lexicaux qui varient en temps et/ou aspect et désignent des procès (et correspondent grosso modo à nos verbes) et une classe d’éléments lexicaux qui varient en nombre et désignent des entités (et correspondent à nos noms).
 
-    On trouvera dans le volume 2 du \textit{Cours de morphologie générale} d’Igor \cite{melcuk1993cours} une typologie de tous les sens qui doivent être exprimés obligatoirement dans une langue au moins. Nous donnons ici l’exemple du \textbf{respect} en japonais.
+    On trouvera dans le volume 2 du \textit{Cours de morphologie générale} d’Igor \cite{melcuk1993cours} une typologie de tous les sens qui doivent être exprimés obligatoirement dans une langue au moins. Nous donnons ici l’exemple du \textstyleTermes{respect} en japonais.
 
     Un Japonais ne peut pas dire «~\textit{Pierre est malade~}» sans préciser deux choses qui, au premier abord, peuvent sembler étonnantes à un locuteur du français :
 
@@ -401,7 +403,7 @@ En conclusion, il n’est pas possible en français de communiquer uniquement no
 
     La respectabilité envers Pierre est exprimée par le suffixe \textsc{san} et par le choix d’une forme polie \textsc{go-byoki} de l’adjectif ‘malade’. La respectabilité envers l’interlocuteur est exprimée par la forme polie de la copule, \textit{desu}, opposée à la forme neutre \textit{da}. Ces deux marques de respectabilité sont indépendantes, ce qui nous donne quatre formes possibles.
 
-    La respectabilité envers l’interlocuteur peut être comparée au \textbf{vouvoiement} en français. Mais alors que le choix entre \textit{tu} et \textit{vous} se limite au cas, évitable, où l’on interpelle directement son interlocuteur, le choix entre la forme verbale respectueuse et la forme familière se pose pour chaque phrase en japonais.
+    La respectabilité envers l’interlocuteur peut être comparée au \hi{vouvoiement} en français. Mais alors que le choix entre \textit{tu} et \textit{vous} se limite au cas, évitable, où l’on interpelle directement son interlocuteur, le choix entre la forme verbale respectueuse et la forme familière se pose pour chaque phrase en japonais.
 }
 \section{Choisir le verbe principal}\label{sec:1.2.13}
 
@@ -486,13 +488,13 @@ L’expression même des contraintes grammaticales repose sur les «~connexions~
     Citations de l’\encadref{fig:1.2.12}.
     }
 
-    \textbf{Jakobson} (1959)~\textbf{:}
+    \textbf{\citet{jakobson1959linguistic}} :
 
     \begin{quote}
     \textit{Languages} differ essentially in \textit{what} they must convey and not in \textit{what} they may convey.
     \end{quote}
 
-    \textbf{Boas} (1938:132) :
+    \textbf{\citet[132]{boas1938language}} :
 
     \begin{quote}
 

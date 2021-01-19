@@ -31,15 +31,18 @@ Nous allons préciser l’objectif de cet ouvrage. Avant cela, le lecteur qui n�
 
 
 
-\noindent   (Voir l’\encadref{sec:3.3.2} pour un \textit{Historique des notions de dépendance et de tête}, où l’on verra que cette idée est déjà dans un article de l’\textit{Encyclopédie} par Dumarsais en \citeyear{Dumarsais1754} et que Tesnière a eu de nombreux prédécesseurs.) Tesnière ajoute ensuite que ces connexions sont orientées, liant un gouverneur à un dépendant, et forment ainsi une structure hiérarchique. C’est ce que Tesnière appelait un \textstyleTermesapprof{stemma} et qu’on appelle aujourd’hui un \textstyleTermesapprof{arbre de dépendance} (voir l’\encadref{sec:1.2.3} sur \textit{Graphe et arbre}). Ainsi l’arbre de dépendance généralement proposé pour une phrase comme :
-
-    \ea
+\noindent   (Voir l’\encadref{sec:3.3.2} pour un \textit{Historique des notions de dépendance et de tête}, où l’on verra que cette idée est déjà dans un article de l’\textit{Encyclopédie} par Dumarsais en \citeyear{Dumarsais1754} et que Tesnière a eu de nombreux prédécesseurs.) Tesnière ajoute ensuite que ces connexions sont orientées, liant un gouverneur à un dépendant, et forment ainsi une structure hiérarchique. C’est ce que Tesnière appelait un \textstyleTermesapprof{stemma} et qu’on appelle aujourd’hui un \textstyleTermesapprof{arbre de dépendance} (voir l’\encadref{sec:1.2.3} sur \textit{Graphe et arbre}). Considérons la phrase suivante que nous étudierons à nouveau dans la partie 3 :
+3.
+    \ea\label{ex:laponie0}
     \textit{Beaucoup de gens aimeraient passer Noël en Laponie}.
     \z
 
- \noindent   est :
+ L'arbre de dépendance de \REF{ex:laponie0} est donné dans la figure \ref{fig:laponie0}
     
-    \ea
+\begin{figure}[H]
+    \centering
+     \caption{Arbre de dépendance}
+    \label{fig:laponie0}
     \begin{forest} for tree={font=\itshape}
     [aimeraient,s sep=1.5cm
         [beaucoup,edge label={node[near start,left=1.5em,font=\normalfont\footnotesize]{sujet}}
@@ -55,7 +58,8 @@ Nous allons préciser l’objectif de cet ouvrage. Avant cela, le lecteur qui n�
         ]
     ]    
     \end{forest}
-    \z
+ \end{figure}
+
     
     Dans cette représentation, les mots dépendent les uns des autres. Le mot le plus important, le verbe principal, est \textit{aimeraient}, qui occupe la racine de l’arbre et est placé tout en haut (l’arbre «~pousse~» à l’envers). Les dépendances sont étiquetées par des relations syntaxiques. Ainsi l’arbre nous dit que le sujet de \textit{aimeraient} est le groupe \textit{beaucoup de gens} et que le mot le plus important de ce groupe est \textit{beaucoup}, qui se retrouve ainsi lié à \textit{aimeraient}.
 
@@ -224,7 +228,7 @@ La deuxième partie pose la question des unités minimales de la langue (\chapre
 \z
 Il y a dans cet énoncé plusieurs sémantèmes qui sont exprimés par une combinaison de morphèmes : \textit{coup de main} bien sûr, qui ne signifie pas ici un coup de la main, mais aussi \textit{étudiant}, qui combine le radical du verbe \textsc{étudier} avec le morphème -\textit{ant} ou encore le passé composé exprimé par le verbe \textsc{avoir} combiné avec le morphème de participe passé \textit{{}-é}.
 
-La troisième partie introduit les \textstyleTermes{unités syntaxiques} et la façon dont celles-ci se combinent pour former la \textstyleTermes{structure syntaxique}. On y définit la syntaxe comme l’étude des \textstyleTermes{combinaisons libres} d’unités et on caractérise plus précisément le syntaxème (\chapref{sec:3.1}). Nous montrons que les différentes fragmentations d’un énoncé en unités syntaxiques définissent un graphe que nous appelons la \textstyleTermes{structure de connexion} et qui décrit les combinaisons entre syntaxèmes (\chapref{sec:3.2}). On peut en plus hiérarchiser cette structure en considérant la notion de \textstyleTermes{tête} d’une unité syntaxique et obtenir ainsi une \textstyleTermes{structure de dépendance} (\chapref{sec:3.3}). On montre comment représenter cette structure de manière plus ou moins équivalente par un \textstyleTermes{arbre de constituants} (\chapref{sec:3.4}). On s’intéresse ensuite au lien d’une part entre la structure et le texte et d’autre part entre la structure syntaxique et le sens. Le premier cas concerne l’ «~ordre des mots~», c’est-à-dire à la façon dont les syntaxèmes s’ordonnent les uns par rapport aux autres et se regroupent pour former des \textstyleTermes{constituants topologiques} au sein de la \textstyleTermes{structure topologique} (\chapref{sec:3.5}). Le deuxième cas concerne l’\textstyleTermes{interface} \textstyleTermes{sémantique-syntaxe}, c’est-à-dire à la façon dont les sémantèmes se combinent, ce que décrit la \textstyleTermes{structure syntaxique profonde}, qui rend compte de la distinction entre \textstyleTermes{actant} et \textstyleTermes{modifieur} et des restructurations parfois complexes entre la représentation sémantique et la structure syntaxique (\chapfuturef{13}
+La troisième partie introduit les \textstyleTermes{unités syntaxiques} et la façon dont celles-ci se combinent pour former la \textstyleTermes{structure syntaxique}. On y définit la syntaxe comme l’étude des \textstyleTermes{combinaisons libres} d’unités et on caractérise plus précisément le syntaxème (\chapref{sec:3.1}). Nous montrons que les différentes fragmentations d’un énoncé en unités syntaxiques définissent un graphe que nous appelons la \textstyleTermes{structure de connexion} et qui décrit les combinaisons entre syntaxèmes (\chapref{sec:3.2}). On peut en plus hiérarchiser cette structure en considérant la notion de \textstyleTermes{tête} d’une unité syntaxique et obtenir ainsi une \textstyleTermes{structure de dépendance} (\chapref{sec:3.3}). On montre comment représenter cette structure de manière plus ou moins équivalente par un \textstyleTermes{arbre de constituants} (\chapref{sec:3.4}). On s’intéresse ensuite au lien d’une part entre la structure et le texte et d’autre part entre la structure syntaxique et le sens. Le premier cas concerne l’ «~ordre des mots~», c’est-à-dire à la façon dont les syntaxèmes s’ordonnent les uns par rapport aux autres et se regroupent pour former des \textstyleTermes{constituants topologiques} au sein de la \textstyleTermes{structure topologique} (\chapref{sec:3.5}). Le deuxième cas concerne l’\textstyleTermes{interface} \textstyleTermes{sémantique-syntaxe}, c’est-à-dire à la façon dont les sémantèmes se combinent, ce que décrit la \textstyleTermes{structure syntaxique profonde}, qui rend compte de la distinction entre \textstyleTermes{actant} et \textstyleTermes{modifieur} et des restructurations parfois complexes entre la représentation sémantique et la structure syntaxique (\chapfuturefici{13}
 %\chapref{sec:3.6}
 ).
 
