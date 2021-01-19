@@ -6,7 +6,7 @@
 \DefineBibliographyExtras{french}{\restorecommand\mkbibnamefamily}
 \newcommand{\appref}[1]{Appendix \ref{#1}}
 \newcommand{\fnref}[1]{Footnote \ref{#1}}
-\renewcommand{\sectref}[1]{section~\ref{#1}}
+\renewcommand{\sectref}[1]{section \ref{#1}}
 
 \newcommand*{\Boite}{\bgroup\normalfont\ttfamily\char"25A2\egroup}
 \setkomafont{descriptionlabel}{\normalfont}
@@ -15,7 +15,8 @@
 
 \newcommand{\chapfuturef}[1]{chapitre #1 (vol. 2)}
 \newcommand{\chapfuturefici}[1]{chapitre #1}
-\renewcommand{\chapref}[1]{chapitre~\ref{#1}}
+\renewcommand{\chapref}[1]{chapitre \ref{#1}}
+\newcommand{\hi}[1]{\textit{#1}}
 
 \newcommand*{\FurtherReading}[1]
   {%
