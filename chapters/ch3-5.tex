@@ -1604,7 +1604,7 @@ Un arbre de dépendance ordonné induit donc deux arbres de constituants avec t�
 \end{scope}
 \node[left=1pt of root] {est entrée};
 \node[left=1pt of root-1] {une belle};
-\node[left=1pt of root-1-1] {qui voulait\\les acheter};
+\node[left=1pt of root-1-1, align=center] {qui voulait\\les acheter};
 \end{tikzpicture}\end{minipage}\begin{minipage}[c]{.1\linewidth} \begin{tikzpicture} \draw[ConversionArrow] (0,0) -- (1,0);\end{tikzpicture} \end{minipage}%
 \begin{minipage}[c]{.45\linewidth}\centering
 \begin{tikzpicture}[every node/.style={font=\strut}]
@@ -1894,13 +1894,13 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     
    % \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img032.png}
    \begin{figure}[H]
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\multicolumn{5}{|c|}{\cellcolor{lsDOIGray}Domaine principal}\\
-\hline
-Vorfeld & {\cellcolor{lsDOIGray}parenthèse\\gauche} & Mittelfeld & {parenthèse\\droite} & Nachfeld\\
-\hline
-\end{tabular}
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      \multicolumn{5}{|c|}{\cellcolor{lsDOIGray}Domaine principal}\\
+      \hline
+      Vorfeld & {\cellcolor{lsDOIGray}parenthèse gauche} & Mittelfeld & {parenthèse droite} & Nachfeld\\
+      \hline
+      \end{tabular}
     \caption{Gabarit topologique du domaine principal de l'allemand\label{fig:gabarit-allemand}}
     \end{figure}
 
@@ -1910,7 +1910,7 @@ Vorfeld & {\cellcolor{lsDOIGray}parenthèse\\gauche} & Mittelfeld & {parenthèse
     
     \ea\label{ex:leider}
     \gll Leider hat Peter {mal wieder} in seiner Nase zu popeln gewagt   vor der ganzen Familie.\\
-    Hélas   a   Peter   {une fois de plus}   dans son nez   de creuser osé   devant toute la famille\\
+         Hélas   a   Peter   {une fois de plus}   dans son nez   de creuser osé   devant toute la famille\\
     \glt ‘Peter a malheureusement osé à nouveau se crotter le nez devant toute la famille.’
     \z
     
@@ -1953,8 +1953,7 @@ Vorfeld & {\cellcolor{lsDOIGray}parenthèse\\gauche} & Mittelfeld & {parenthèse
     Oberfeld & \cellcolor{lsDOIGray}champ tête & Unterfeld\\
     \hline
     \end{tabular}
-    \caption{Gabarit topologique de l'amas verbal en l'allemand}
-    \label{fig:topo-amas-allemand}
+    \caption{Gabarit topologique de l'amas verbal en l'allemand\label{fig:topo-amas-allemand}}
     \end{figure}
     
     Sans rentrer dans tous les détails de l’amas verbal, remarquons que pour les dépendants de certains verbes, en particulier les modaux, l’Unterfeld est préférable à l’Oberfeld :

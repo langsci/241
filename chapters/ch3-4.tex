@@ -933,12 +933,11 @@ Alors qu’un arbre de dépendance correspond naturellement à un arbre de const
 
     La troisième caractéristique de la Syntaxe X-barre est que l’arbre de constituant est \hi{ordonné} et aucun constituant n’est discontinu, ce qui, pour les raisons que nous avons exposé dans l’\encadref{fig:3.2.7} \textit{De la non-séparation des ordres au mouvement}, entraîne la présence de nombreuses positions occupées par des traces co-indicés avec d’autres positions.
 
-    La quatrième caractéristique de l’arbre X-barre est qu’il est \hi{binaire}. Ainsi la combinaison de chaque dépendant avec son gouverneur correspond à une décomposition binaire différente, ce qui, d’une certaine façon, rapproche encore plus cet arbre d’un arbre de dépendance (voir l’\encadref{fig:3.4.18}). La conséquence est que si un syntaxème a beaucoup de dépendants, il sera la tête d’autant de projections. Si le syntaxème est de catégorie X, sa \hi{projection maximale} est notée XP (\textit{X Phrase}) et ses \hi{projections intermédiaires} X’ (à l’origine elles étaient notées $\overline{\textrm X}$, avec une ou plusieurs barres au-dessus de X, d’où le nom de syntaxe X-barre).
+    La quatrième caractéristique de l’arbre X-barre est qu’il est \hi{binaire}. Ainsi la combinaison de chaque dépendant avec son gouverneur correspond à une décomposition binaire différente, ce qui, d’une certaine façon, rapproche encore plus cet arbre d’un arbre de dépendance (voir l’\encadref{fig:3.4.18}). La conséquence est que si un syntaxème a beaucoup de dépendants, il sera la tête d’autant de projections. Si le syntaxème est de catégorie X, sa \hi{projection maximale} est notée XP (\textit{X Phrase}) et ses \hi{projections intermédiaires} X’ (à l’origine elles étaient notées $\overline{\text{X}}$, avec une ou plusieurs barres au-dessus de X, d’où le nom de syntaxe X-barre).
 
     La Syntaxe X-barre considère de plus que l’élément sous XP a des propriétés différentes des éléments sous X’ : le premier est un \hi{spécifieur}, alors que les autres sont des \hi{compléments} (figure \ref{fig:Xbarre}). Dans certaines versions de la Syntaxe X-barre \citep{jackendoff1977x}, les ajouts (ou modifieurs) sont structurellement distingués des compléments actanciels par l’ajout d’un niveau de stratification supplémentaire dans la configuration de base (c’est-à-dire que XP porte une «~barre~» supplémentaire).
 
-\begin{figure}
-    \centering
+\begin{figure}[H]
     \begin{forest} for tree = {font=\normalfont}
     [XP,calign=child, calign primary child=2
         [spécifieur] [X', calign=child, calign primary child=1
@@ -1051,11 +1050,11 @@ Si l’on applique la déréfication à tous les nœuds intérieurs de l’arbre
     Nous appelons \textstyleTermes{réification}, du latin \textit{res} ‘chose’, l'opération qui consiste à rendre concret un élément virtuel d'une structure, comme un point de contact entre deux objets. Pour mieux comprendre ce qu'est la réification, donnons un autre exemple, emprunté à la représentation sémantique des constructions transitives. Considérons une phrase élémentaire telle que :
 
     \ea\label{ex:frappe}
-    \textit{{Marie frappe Pierre.}}
+    \textit{Marie frappe Pierre.}
     \z
  Il y a là ce qu’on appelle un verbe transitif, \textit{frappe}, qui exprime une action d’un élément (\textit{Marie}) sur un autre (\textit{Pierre}). On dira encore que \textit{Marie} est l’\hi{agent} de l’action et \textit{Pierre} le \hi{patient}. Il y a alors plusieurs façons de représenter graphiquement le «~sens~» de cette phrase. Nous en proposons trois dans la figure \ref{fig:frappe-reif}.
 
-\begin{figure}[H]
+% \begin{figure}[H]
    \ea
     \ea\attop{%
       \begin{tikzpicture}
@@ -1081,12 +1080,14 @@ Si l’on applique la déréfication à tous les nœuds intérieurs de l’arbre
         \draw[-{Triangle[]}] (patient) edge node[midway,right] {2} (frappe)
                                      edge node[midway,right] {1} (Pierre);
       \end{tikzpicture}}
-\todo[inline]{in the first diagram, we want to have 3 objects with the label inside. So frappe should inside the arrow and the arrow must have a unique outline (no line between the head and the body). See original. This a very special arrow that is unique in the book.}
-\todo[inline]{Make a figure and maintain a,b,c, please}
-  \caption{\label{fig:frappe-reif}Trois niveaux de réification pour la représentation du sens de \REF{ex:frappe}}
-\end{figure}
+  \z
+\z
+% \todo[inline]{in the first diagram, we want to have 3 objects with the label inside. So frappe should inside the arrow and the arrow must have a unique outline (no line between the head and the body). See original. This a very special arrow that is unique in the book.}
+% \todo[inline]{Make a figure and maintain a,b,c, please}
+%   \caption{\label{fig:frappe-reif}Trois niveaux de réification pour la représentation du sens de \REF{ex:frappe}}
+% \end{figure}
 
-    Dans la représentation a, \textit{frappe} est directement modélisé comme une action de Marie sur Pierre : \textit{frappe~}(\textit{Marie}, \textit{Pierre}). Dans la représentation b, les relations qui lient \textit{frappe} à \textit{Marie} et \textit{Pierre} sont explicitées et nommées \textit{agent} et \textit{patient}. Dans la représentation c, les relations agent et patient sont vues comme des objets à part entière reliant les mots de la phrase : agent~(\textit{Marie}, \textit{frappe}) + patient~(\textit{Pierre}, \textit{frappe}). On l’aura deviné, les trois représentations sont des réifications successives des relations d’une même structure.
+    Dans la représentation a, \textit{frappe} est directement modélisé comme une action de Marie sur Pierre : \textit{frappe} (\textit{Marie}, \textit{Pierre}). Dans la représentation b, les relations qui lient \textit{frappe} à \textit{Marie} et \textit{Pierre} sont explicitées et nommées \textit{agent} et \textit{patient}. Dans la représentation c, les relations agent et patient sont vues comme des objets à part entière reliant les mots de la phrase : agent~(\textit{Marie}, \textit{frappe}) + patient~(\textit{Pierre}, \textit{frappe}). On l’aura deviné, les trois représentations sont des réifications successives des relations d’une même structure.
 
     Si toute structure peut-être réifiée à l’infini, comment choisir le bon niveau de réification ? Faire de la relation entre deux objets un objet n’a d’intérêt que si l’on veut considérer cet objet en tant que tel et lui attribuer des propriétés. Dans le cas de la transitivité, on peut préférer la représentation b qui explicite les relations d’agent et de patient et permet donc d’en parler, par exemple pour décrire la voix passive (voir le \chapfuturefici{13}).
 
@@ -1483,8 +1484,8 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     Notons par ailleurs que si le dépendant d’une connexion peut en général être interprété comme la projection maximale, c’est-à-dire un constituant majeur, il y a des cas pù cela est plus discutable. Comparons :
 
     \ea
-    \ea \itshapeLes linguistes qui étaient fatigués ont quitté la conférence.
-    \ex \itshapeLes linguistes, qui étaient fatigués, ont quitté la conférence.
+    \ea \itshape Les linguistes qui étaient fatigués ont quitté la conférence.
+    \ex \itshape Les linguistes, qui étaient fatigués, ont quitté la conférence.
     \z
     \z
 
@@ -1505,8 +1506,8 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     et donc par une analyse par un arbre de constituants stratifié. De la même façon, en comparant :
 
     \ea
-    \ea \itshapeles voitures coréennes chères
-    \ex \itshapeles voitures chères coréennes
+    \ea \itshape les voitures coréennes chères
+    \ex \itshape les voitures chères coréennes
     \z
     \z
     on voit que l’interprétation est différente selon que \textit{coréennes} est dans la portée de \textit{chères} ou l’inverse (les voitures coréennes chères ne sont pas nécessairement des voitures chères dans l'absolu). Ces phénomènes de portée peuvent tout de même être encodés dans un arbre de dépendance, à condition d’ajouter un ordre de combinaison avec la tête (voir l'encodage d'un ordre de saillance dans la \sectref{sec:3.4.15} sur les \textit{Projections partielles et ordre de saillance}), ou par un polygraphe, en indiquant que le second adjectif se combine avec le résultat de la combinaison du premier adjectif avec le nom :
@@ -1636,7 +1637,7 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
 
     Nous proposons finalement la structure de dépendance de la figure \ref{fig:proust}. Nous laissons sous-spécifié la tête de la relation déterminant-nom, ainsi que la relation entre le pronom relatif et verbe principal des propositions relatives.
     
-    \begin{figure}
+    \begin{figure}[H]
 %     \begin{forest} for tree = { }
 %     [tressaillis,calign=child,calign primary child=2
 %         [à
