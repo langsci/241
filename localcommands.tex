@@ -18,6 +18,8 @@
 \renewcommand{\chapref}[1]{chapitre \ref{#1}}
 \newcommand{\hi}[1]{\textit{#1}}
 
+\RedeclareSectionCommand[font={\sffamily},beforeskip=\baselineskip]{paragraph}
+
 \newcommand*{\FurtherReading}[1]
   {%
     \vskip\baselineskip
@@ -80,7 +82,15 @@
             line width = 0.8mm
           ] at (frame.north west) 
           {{\color{black!12}\includegraphics[width=10mm]{tbls-#2.pdf}}};
-      }
+      },
+    subtitle style = 
+      {
+        top = 3.25ex,
+%         before skip = \baselineskip,
+        boxrule = 0pt,
+        colback = black!12,
+        fontupper = \normalfont\sffamily\bfseries\large
+      } 
   }
 
 
