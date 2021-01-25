@@ -608,25 +608,22 @@ Il existe une autre caractérisation de la projectivité, qui peut s’observer 
 Cela concerne également la dépendance verticale qui marque la racine et qui doit être vue comme une dépendance infinie empêchant tout autre dépendance de passée au-dessus de la racine. Autrement dit,  deux configurations sont exclues d’un arbre de dépendance projectif, le croisement de deux dépendance et le recouvrement de la racine de l'arbre.
 
 \begin{figure}
-\begin{subfigure}[c]{.5\linewidth}\centering
+\begin{subfigure}[b]{.5\linewidth}\centering
 \begin{tikzpicture}[every node/.style={CircleNode},grow=right]
   \node at (0,0) (root) {} child { node {} child { node{} child { node{} } } };
   \path (root)   edge [bend left=45] (root-1-1)
         (root-1) edge [bend left=45] (root-1-1-1);
-\end{tikzpicture}\caption{~}\end{subfigure}%
-\begin{subfigure}[c]{.5\linewidth}\centering
+\end{tikzpicture}\caption{Croisement de dépendances}\end{subfigure}%
+\begin{subfigure}[b]{.5\linewidth}\centering
 \begin{tikzpicture}[every node/.style={CircleNode},grow=right]        
   \node at (0,0) (root2) {} child { node {} child { node{} } };
   \path (root2)   edge [bend left=45] (root2-1-1);
   \draw [{Triangle[]}-] (root2-1) -- ++(0,1cm);
-\end{tikzpicture}\caption{~}
+\end{tikzpicture}\caption{Recouvrement de la racine}
 \end{subfigure}
 \caption{\label{fig:nonproj-config}Configurations non projectives}
 \end{figure}
-\todo[inline]{I would like to replace (a) and (b) by:
-a. Croisement de dépendances
-and
-b. Recouvrement de la racine}
+\todo[inline]{I would like to replace (a) and (b) by: a. and b.}
 
 Donnons un exemple de structure non projective :
 

@@ -789,17 +789,16 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
     \begin{figure}[H]
     \begin{tikzpicture}
     \node at (0,0)  [ConcSet,font=\small] (A) {\textit{l’autre jour}};
-    \node at (3,-1) [ConcSet,font=\small] (B) {\textit{j’ai rencontré quelqu’un}};
-    \node at (6,-2) [ConcSet,font=\small] (C) {\textit{que j’avais pas revu}};
-    \node at (9,-3) [ConcSet,font=\small] (D) {\textit{depuis l’école primaire}};
+    \node at (2.5,-1) [ConcSet,font=\small] (B) {\textit{j’ai rencontré quelqu’un}};
+    \node at (5,-2) [ConcSet,font=\small] (C) {\textit{que j’avais pas revu}};
+    \node at (7.5,-3) [ConcSet,font=\small] (D) {\textit{depuis l’école primaire}};
     \path [draw] (A.north east) edge [out=45, in=80] (B)
-                 (B.north east) edge [out=45, in=80] (C)
-                 (C.north east) edge [out=45, in=80] (D);
+                 (B.north east) edge [out=45, in=90] (C.45)
+                 (C.north east) edge [out=45, in=90] (D.45);
     \end{tikzpicture}
     \caption{Structure de connexion induite par la prosodie}
     \label{fig:rencontre}
     \end{figure}
-    \todo[inline]{The figure is out of limits}
 
     Nous pouvons dire pour conclure que la représentation de l’organisation syntaxique d’un énoncé par une structure de connexions présente des avantages pour qui voudrait étudier plus avant le traitement cognitif de la parole et de la lecture, permettant de rendre compte d’une connexion à différents niveaux de granularité, d’attribuer des analyses à n’importe quelle portion d’un énoncé et de construire la structure d’un énoncé de manière incrémentale.
 }
@@ -812,8 +811,7 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
       \item   \textit{{Zoé a regardé} \textbf{{rapidement}}  {dans la pièce}.}
       \end{enumerate}
     \item Quelles contraintes agissent sur la réalisation de ‘épée’ dans les deux phrases suivantes ?
-     \todo[inline]{Continue the numbering: (3) and (4)}
-     \begin{enumerate}[label=(\arabic*)]
+     \begin{enumerate}[label=(\arabic*),resume]
       \item \textit{{Manier une} \textbf{{épée}}  {peut être dangereux.}}
       \item \textit{{Le maniement d’une} \textbf{{épée}}  {peut être dangereux}.}
       \end{enumerate}
