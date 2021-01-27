@@ -148,10 +148,10 @@ Nous montrerons dans cet ouvrage les différents problèmes que pose l’identif
 
     Ce calcul a été ensuite repris par Yehoshua Bar-Hillel en \citeyear{barhillel1953quasi}, qui a montré que si l’on veut modéliser les contraintes d’ordre, il fallait distinguer ce qu’on combine à droite de ce qu’on combine à gauche. On va donc associer à \textit{dort} la catégorie GN{\textbackslash}P (qui se lit «~GN sous P~») indiquant que le GN avec lequel le verbe doit se combiner pour former une P doit se trouver à gauche. Analysons \textit{Pierre mange une banane} avec cette grammaire. Les mots de cette phrase ont les catégories~\textit{Pierre} := GN, \textit{banane} := D{\textbackslash}GN, \textit{un~}:= D et \textit{mange~}:= (GN{\textbackslash}P)/GN. Le calcul est le suivant :
 
-\ea
+\ea\label{ex:Bar-Hillel}
    \settowidth{\tabcolsep}{~}
    \begin{tabular}[t]{@{}c c c c c c c@{}}
-    {Pierre} &   &  {mange} & &    {une} & &  {banane}\\
+    {\textit{Pierre}} &   &  {\textit{mange}} & &    {\textit{une}} & &  {\textit{banane}}\\
     GN       & · & (GN{\textbackslash}P)/GN & · & D & · & D{\textbackslash}GN\\\cmidrule{5-7}
     GN       & · & (GN{\textbackslash}P)/GN & · & \multicolumn{3}{c}{GN}\\\cmidrule{3-7}
     GN       & · & \multicolumn{5}{c}{GN{\textbackslash}P}\\\midrule
@@ -159,8 +159,30 @@ Nous montrerons dans cet ouvrage les différents problèmes que pose l’identif
    \end{tabular}
 \z
 
-
-    Cette séquence de mots est bien reconnue comme une phrase par notre grammaire. De plus, la structure du calcul est un arbre que l’on peut interpréter comme la structure syntaxique de la phrase.
+Le diagramme est à lire en partant du haut. On associe une catégorie à chaque mot de la phrase. Les catégories D et D{\textbackslash}GN associées à \textit{une} et \textit{banane} peuvent de combiner pour donner GN, qui peut ensuite se combiner avec (GN{\textbackslash}P)/GN pour donner GN{\textbackslash}P, puis avec le GN associé à \textit{Pierre} pour donne P.
+   Cette séquence de mots est bien reconnue comme une phrase par notre grammaire. De plus, la structure du calcul est un arbre (figure \ref{fig:Bar-Hillel}) que l’on peut interpréter comme la structure syntaxique de la phrase.
+   
+   \begin{figure}[H]
+    \centering
+     \caption{Arbre de constituants correspondant au calcul \REF{ex:Bar-Hillel}}
+    \label{fig:Bar-Hillel}
+    \begin{forest}
+    [\textrm{P}
+        [GN[\textit{Pierre}]
+        ]
+        [GN{\textbackslash}P
+            [(GN{\textbackslash}P)/GN[\textit{mange}]
+            ]
+            [GN
+                [D[\textit{une}]
+                ]
+                [D{\textbackslash}GN[\textit{banane}]
+                ]
+            ]
+        ]
+    ]
+    \end{forest}
+ \end{figure}
 
     Joachim Lambek a montré en 1958 que la règle de combinaison des catégories pouvait être interprétée comme une inférence logique. On peut en effet voir GN{\textbackslash}P comme une implication GN → P à interpréter comme «~si on me donne un GN à gauche, je formerai un P~». La règle de combinaison devient alors : «~de GN et de GN → P, je déduis P~», ce qui n’est autre que le \textit{modus ponens}, la règle de déduction de base de la logique («~de \textit{p} et de \textit{p} → \textit{q}, je déduis \textit{q}~»). L’analyse d’une phrase devient maintenant un \textstyleTermes{calcul logique}. Le calcul devient une \textit{preuve} que la suite de mots considérée au départ est bien une phrase. Il est intéressant de remarquer que la logique ainsi construite diffère de la logique classique, puisqu’elle est \hi{sensible aux ressources} (donner deux GN n’est pas équivalent à en donner un seul) \hi{et à l’ordre} (GN → P et P ← GN ne se comportent pas pareil, l’un attend un GN avant et l’autre après). Une telle logique, appelée \textstyleTermes{logique linéaire}, a des applications dans des domaines très éloignés de la linguistique et notamment en robotique où les actions doivent être effectuées dans un ordre bien précis.
 
