@@ -507,16 +507,14 @@ Les deux tests que nous venons d’énoncer, le test de déplacement et le test 
     Les connexions ternaires sont introduites pour modéliser le fait qu'un élément grammatical marque la connexion entre deux éléments lexicaux. Par exemple, dans \textit{Ali parle à Zoé}, la préposition \textsc{à} marque la combinaison entre le verbe \textsc{parler} et le substantif \textsc{Zoé}. On peut donc adopter la représentation de la figure \ref{fig:ternaire}, où \textit{à} est placé sur le lien entre \textit{parle}  et \textit{Zoé}. Il s'agit bien d'une connexion ternaire liant directement \textit{parle}, \textit{à} et \textit{Zoé}.
     
     \begin{figure}[H]
-       \begin{forest}for tree={font=\itshape}
-[parle
-  [Ali]
-  [Zoé]
-]
-\end{forest}
-    \caption{Arbre de dépendance avec une connexion ternaire}
-        \label{fig:ternaire}
+		\begin{forest}for tree={font=\itshape}
+			[parle
+                [Ali]
+                [Zoé, edge label={node[pos=0.25,right]{\textit{à}}}]
+			]
+		\end{forest}
+    \caption{Arbre de dépendance avec une connexion ternaire\label{fig:ternaire}}
     \end{figure}
-    \todo[inline]{This is a new figure. Please add \textit{à} on the dependency between parle and Zoé}
 
 Le fait d'utiliser un lien ternaire ne permet pas d'indiquer si parmi la combinaison des trois éléments, il y a des combinaisons deux à deux possibles et, par exemple, si \textit{parle à} ou \textit{à Zoé} sont des combinaisons acceptables. L'objectif de ce type de représentation est généralement plus sémantique que syntaxique, en montrant qu'il y a une relation sémantique entre \textsc{parler} et \textsc{Zoé} qui est marquée syntaxiquement par la préposition sémantiquement vide \textsc{à}. 
 
@@ -874,10 +872,9 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
     Sur le traitement cognitif de la syntaxe, on consultera les travaux précurseurs de Janet D. Fodor et de son étudiante Lyn Frazier. Dans leur article de \citeyear{frazier1978sausage}, elles défendent l’idée que les énoncés sont traités par petits paquets d’environ six mots qui sont ensuite connectés entre eux. Cette étude est suivie en \citeyear{frazier1982making} et \citeyear{fodor1994diagnosis} d’une analyse du traitement des phrases avec garden-path par l’analyse des mouvements oculaires, où il est défendu que l’énoncé n’est pas réanalysé, mais que le destinataire répare sa première analyse après avoir identifié la source de l’erreur.
     
     \FurtherReading{3-2}
-    \todo[inline]{citation of PhD theses is strange}\noindent
 }
 \citations{%\label{sec:3.2.29}
-    {\bfseries Citations de la \sectref{sec:3.2.25}.}
+    \noindent{\sffamily\bfseries Citations de la \sectref{sec:3.2.25}.}
 
     \citet[129--130]{gleason1955introduction} :
 
