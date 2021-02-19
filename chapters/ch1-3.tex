@@ -199,17 +199,16 @@ Dans la suite de cet ouvrage, nous montrerons qu’il existe plusieurs types d�
 
     \begin{figure}[H]
     \caption{Architecture stratifiée d'un modèle Ssns-Texte}
-    \begin{forest}for tree={font=\normalfont,l=3\baselineskip,edge={double,{Triangle[open]}-{Triangle[open]}}}
-    [\textbf{sens} {=} représentation sémantique
+    \begin{forest}for tree={font=\normalfont,l=2\baselineskip,edge={double,thick,{Implies[]}-{Implies[]}}}
+    [\textit{sens} {=} représentation sémantique
         [représentation syntaxique profonde
             [représentation syntaxique de surface
                 [représentation morphologique profonde
                     [représentation morphologique de surface
                         [représentation phonologique profonde
-                            [\textbf{texte} {=} représentation phonologique de surface]]]]]]]
+                            [\textit{texte} {=} représentation phonologique de surface]]]]]]]
     \end{forest}
     \end{figure}
-    \todo[inline]{$\Updownarrow$}
     
     Chaque $\Leftrightarrow$ représente un module effectuant la correspondance entre deux niveaux de représentation adjacents. On trouvera une présentation et une justification de cette architecture dans le cours donné par Igor Mel’čuk en \citeyear{melcuk1997vers} au Collège de France, \textit{Vers une linguistique Sens-Texte}, disponible en ligne.
 

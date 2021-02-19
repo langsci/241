@@ -214,10 +214,9 @@ Le cas de la phrase \REF{ex:maladie}b (\textit{Ali a été malade pendant deux s
 Lors du passage du sens au texte, tout se passe comme si on suspendait le graphe sémantique par l’un de ses nœuds dont on décide de faire le verbe principal de l’énoncé et qu’on parcourait le graphe à partir de ce nœud pour les autres lexicalisations. Nous pouvons illustrer cela par les schémas des figures \ref{fig:hierarchie-durer} et \ref{fig:hierarchie-malade} : à gauche nous représentons le graphe sémantique suspendu par un de ses nœuds (visé ici par une grosse flèche blanche)
 \todo[inline]{The text describe the arrow pointing on the roots in the two next figures. We must choose the appropriate arrow and adapt the text.}
 et à droite nous avons la structure hiérarchique correspondante où les sens lexicaux ont été lexicalisés. La double flèche entre le graphe sémantique et l'arbre syntaxique indique qu'ils se correspondent.
-\todo[inline]{add a big \textbackslash Rightleftarrow between the two diagrams in both next figures}
 
 \begin{figure}
-\begin{minipage}[c]{.5\textwidth}\centering%
+\begin{minipage}[c]{.45\textwidth}\centering%
 \begin{tikzpicture}[>={Triangle[]}]
     \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip]
       \node (root) {}
@@ -228,14 +227,17 @@ et à droite nous avons la structure hiérarchique correspondante où les sens l
             child { node{} edge from parent[<-] node[right,FnEdgeLabel] {1} } 
             edge from parent[->] node[right,FnEdgeLabel] {2} };
     \end{scope}
-    \draw [ConversionArrow] (root) ++(-1,1) -- (root);
+    \node [above left=1mm of root, single arrow, draw, inner sep=1pt, minimum height=1.5em,
+           shape border uses incircle, shape border rotate=315] {};
     \node [right=.25ex of root] {`durer'};
     \node [left=.25ex of root-1] {`malade'};
     \node [left=.25ex of root-1-1] {`Ali'};
     \node [right=.25ex of root-2] {`semaine'};
     \node [right=.25ex of root-2-1] {`deux'};
 \end{tikzpicture}
-\end{minipage}\begin{minipage}[c]{.5\textwidth}\centering%
+\end{minipage}%
+\begin{minipage}[c]{.1\textwidth}\centering\huge$\Leftrightarrow$\end{minipage}%
+\begin{minipage}[c]{.45\textwidth}\centering%
 \begin{forest} for tree={font=\normalfont}
 [\textsc{durer}
   [\textsc{maladie}\textsubscript{sg,déf},edge label={node[midway,above,font=\footnotesize]{1}}
@@ -250,7 +252,7 @@ et à droite nous avons la structure hiérarchique correspondante où les sens l
 \end{figure}
 
 \begin{figure}
-\begin{minipage}[c]{.5\textwidth}\centering%
+\begin{minipage}[c]{.45\textwidth}\centering%
 \begin{tikzpicture}[>={Triangle[]}]
     \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip]
       \node (root) {}
@@ -262,14 +264,17 @@ et à droite nous avons la structure hiérarchique correspondante où les sens l
                     edge from parent[->] node[right,FnEdgeLabel] {2} } 
             edge from parent[<-] node[right,FnEdgeLabel] {1} };
     \end{scope}
-    \draw [ConversionArrow,overlay] (root) ++(1,1) -- (root);
+    \node [above right=1mm of root, single arrow, draw, inner sep=1pt, minimum height=1.5em,
+           shape border uses incircle, shape border rotate=225] {};
     \node [left=.25ex of root] {`malade'};
     \node [left=.25ex of root-1] {`Ali'};
     \node [right=.25ex of root-2] {`durer'};
     \node [right=.25ex of root-2-1] {`semaine'};
     \node [right=.25ex of root-2-1-1] {`deux'};
 \end{tikzpicture}
-\end{minipage}\begin{minipage}[c]{.5\textwidth}\centering
+\end{minipage}%
+\begin{minipage}[c]{.1\textwidth}\centering\huge$\Leftrightarrow$\end{minipage}%
+\begin{minipage}[c]{.45\textwidth}\centering
 \begin{forest} for tree={font=\normalfont}
 [V\textsubscript{0}(\textsc{malade})\textsubscript{passé}
   [\textsc{Ali},edge label={node[near start,left,xshift=-5pt,font=\footnotesize]{1}}]
@@ -297,11 +302,13 @@ Chaque dépendance est étiquetée en fonction de son parcours : les relations s
                 node [right,FnEdgeLabel] {1}
                };
     \end{scope}
-    \draw[ConversionArrow] ($(root.south west) + (-1ex,-1.5ex)$) -- ($(root-1.north west) + (-1ex,1.5ex)$);
+    \node at ($(root) !.5! (root-1)$) [xshift=-1em, single arrow, draw, inner sep=1pt, 
+           minimum height=2em, shape border uses incircle, shape border rotate=270] {};
+%     \draw[ConversionArrow] ($(root.south west) + (-1ex,-1.5ex)$) -- ($(root-1.north west) + (-1ex,1.5ex)$);
     \node[above=.25ex of root]    {`durer'};
     \node[below=.25ex of root-1]  {`malade'};
 \end{tikzpicture}\end{minipage}
-\begin{minipage}[c]{.1\textwidth}\centering⇒\end{minipage}
+\begin{minipage}[c]{.1\textwidth}\centering\huge$\Rightarrow$\end{minipage}
 \begin{minipage}[c]{.15\textwidth}\centering%
 \begin{tikzpicture}
 \node (root) {\textsc{durer}}
@@ -323,11 +330,13 @@ Chaque dépendance est étiquetée en fonction de son parcours : les relations s
                 node [right,FnEdgeLabel] {1}
                };
     \end{scope}
-    \draw[ConversionArrow] ($(root.south west) + (-1ex,-1.5ex)$) -- ($(root-1.north west) + (-1ex,1.5ex)$);
+    \node at ($(root) !.5! (root-1)$) [xshift=-1em, single arrow, draw, inner sep=1pt, 
+           minimum height=2em, shape border uses incircle, shape border rotate=270] {};
+%     \draw[ConversionArrow] ($(root.south west) + (-1ex,-1.5ex)$) -- ($(root-1.north west) + (-1ex,1.5ex)$);
     \node[above=.25ex of root]    {`malade'};
     \node[below=.25ex of root-1]  {`durer'};
 \end{tikzpicture}\end{minipage}
-\begin{minipage}[c]{.1\textwidth}\centering⇒\end{minipage}
+\begin{minipage}[c]{.1\textwidth}\centering\huge$\Rightarrow$\end{minipage}
 \begin{minipage}[c]{.15\textwidth}\centering%
 \begin{tikzpicture}
 \node (root) {\textsc{malade}}
@@ -339,7 +348,6 @@ Chaque dépendance est étiquetée en fonction de son parcours : les relations s
 \end{minipage}
 \caption{Dépendance modificative}\label{fig:dep-mod}
 \end{figure}
-\todo[inline]{arrows}
 
 Comme nous l’avons expliqué dans la section précédente, chaque unité lexicale se voit imposer sa partie du discours par son gouverneur, la racine étant un verbe conjugué. Ainsi dans la phrase \REF{ex:maladie}a, \textsc{Ali}, qui dépend du nom \textsc{maladie}, devrait être réalisé par un adjectif, ce que nous indiquons par la notation Adj\textsubscript{0}(\textsc{Ali}). C’est la préposition DE qui assurera cette \textstyleTermes{translation} (\textit{la maladie} \textbf{\textit{d}}\textit{’Ali}) et permettra à \textsc{Ali} d’être complément du nom (voir la section du \chapfuturef{17} sur \textit{La translation}). De la même façon, la notation V\textsubscript{0}(\textsc{malade}) indique que \textsc{malade} occupe une position où un verbe est attendu et c’est la copule \textsc{être} qui assurera la translation d’adjectif en verbe.
 
@@ -359,16 +367,15 @@ Comme nous l’avons expliqué dans la section précédente, chaque unité lexic
     \node [font=\bfseries] (root) {sens}
         child { node[font=\bfseries] {arbre syntaxique}
                 child { node[font=\bfseries] {chaîne parlée} 
-                        edge from parent [ConversionArrow] node[left,text width=4cm,align=center]
+                        edge from parent [double,thick,-{Implies[]}] node[left,text width=4cm,align=center]
                                          {linéarisation\\«~morphologisation~»}
                        }
-                edge from parent [ConversionArrow] node[left,text width=4cm,align=center]
+                edge from parent [double,thick,-{Implies[]}] node[left,text width=4cm,align=center]
                                          {hiérarchisation\\«~lexicalisation~»}
             };
     \end{tikzpicture}
     \caption{\label{fig:}Les deux étapes du passage du sens au texte}
     \end{figure}
-    \todo[inline]{long $\Downarrow$}
 }
 \section{Ce que la langue nous force à dire}\label{sec:1.2.11}
 
@@ -452,10 +459,12 @@ L’expression même des contraintes grammaticales repose sur les «~connexions~
     La grammaire normative peut avoir une influence sur le comportement linguistique des locuteurs d’une langue. En effet, une prescription peut être acceptée par la langue et donc entrer dans les régularités de la langue. Dans ce cas-là, la linguistique s’intéresse bien entendu à cette régularité.
 
     Un exemple de ce phénomène concerne l’accord au masculin. Aujourd’hui, les francophones accordent naturellement au masculin des éléments coordonnés composés de noms de genre différents. On dit donc :
+    
     \ea
          \textit{{Arrivèrent alors un homme et cinquante femmes très} \textbf{{élégants}}.}
     \z
     et non :
+    
     \ea
         *\textit{{Arrivèrent alors un homme et cinquante femmes très} \textbf{{élégantes}}.}
     \z
