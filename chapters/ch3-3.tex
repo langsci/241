@@ -423,7 +423,8 @@ indique le nœud par lequel on attrape la structure pour la hiérarchiser. Ce n�
 \vskip\baselineskip
 \caption{Hiérarchisation d'une structure de connexion\label{fig:hierarchie}}
 \begin{tabular}{@{}>{\centering}m{5cm} m{2em} >{\centering\arraybackslash}m{5cm} @{}}
-  \begin{tikzpicture}[every node/.style={ConcSet}]
+  \begin{tikzpicture}
+    \begin{scope}[every node/.style={ConcSet}]
     \node at (0,0)   (Pierre) {Pierre};
     \node at (1,-1.5)  (veut) {veut};
     \node at (2,0)   (inviter) {inviter};
@@ -431,10 +432,13 @@ indique le nœud par lequel on attrape la structure pour la hiérarchiser. Ce n�
     \node at (3,-1.5)  (demain) {demain};
     \draw (Pierre) -- (veut) -- (inviter) -- (Marie);
     \draw (inviter) -- (demain);
-    \draw [ConversionArrow] (veut) ++(-1,-1) -- (veut);
+    \end{scope}
+    \node [below left=1mm of veut, single arrow, draw, inner sep=1pt, 
+           minimum height=1.5em, shape border uses incircle, shape border rotate=45] {};
   \end{tikzpicture} 
-  & \tikz \draw[ConversionArrow] (0,0) -- (1,0); 
-  & \begin{tikzpicture}[every node/.style={ConcSet},
+  & {\huge$\Rightarrow$} 
+  & \begin{tikzpicture}
+  \begin{scope}[every node/.style={ConcSet},
                         edge from parent/.style={draw,-{Triangle[]}},
                         sibling distance=2cm
                         ]
@@ -444,13 +448,13 @@ indique le nœud par lequel on attrape la structure pour la hiérarchiser. Ce n�
             child { node {Marie} }
             child { node {demain } }
     };
-  \draw [ConversionArrow,overlay] (root) ++(0,1.33) -- (root);
+  \end{scope}
+  \node [above=1mm of root, single arrow, draw, inner sep=1pt, minimum height=1.5em,
+           shape border uses incircle, shape border rotate=270] {};
   \end{tikzpicture}\\
   Structure de connexion & & Arbre de dépendance
 \end{tabular}
 \end{figure}
-\todo[inline]{The arrow between the two subfigures indicates a conversion: transformation of the left figure implies the right figure. A big \textbackslash Longrightarrow would be ok.}
-\todo[inline]{The arrow in the two subfigures pointing on "veut" is a pointer. I would like a fat arrow, white or black. The same pointers appear in figures in chapter 3.}
 
 Si la structure de connexion n’a que des connexions élémentaires (voir l’\encadref{fig:3.2.23} \textit{Graphe à bulles et polygraphe}) et pas de cycles, on obtient un arbre de dépendance, comme dans l’exemple précédent.
 
@@ -476,17 +480,16 @@ On a donc X = \textit{part,} A = \textit{demain} et B = \textit{matin}. Une fois
 \draw (A) -- (B);
 \draw [-{Triangle[]}] (X) -- (AB);
 
-\draw[ConversionArrow] (3.5,0) -- (4.5,0);
-\node at (5,0) (X) {X};
-\node at (6,0) (A) {A};
-\node at (7,0) (B) {B};
+\node at (4,0) {\huge$\Rightarrow$};
+\node at (5,0) (X2) {X};
+\node at (6,0) (A2) {A};
+\node at (7,0) (B2) {B};
 
-\draw [-{Triangle[]}] (X) -- (A);
-\draw [-{Triangle[]}] (A) -- (B);
+\draw [-{Triangle[]}] (X2) -- (A2);
+\draw [-{Triangle[]}] (A2) -- (B2);
 \end{tikzpicture}
 \caption{\label{fig:}Application du critère d’effacement simple}
 \end{figure}
-\todo[inline]{Same \textbackslash Longrightarrow would be ok.}
 
 Attention : la présence d’un gouverneur est essentielle dans la formulation du  critère d’effacement simple. On trouve souvent la \textbf{mauvaise formulation} suivante : le dépendant d’une connexion est l’élément qui peut le plus facilement être effacé. Cette propriété n’est valable qu’en présence d’un gouverneur. Si AB est un énoncé autonome ou plus généralement si AB n’est pas gouverné on peut très bien effacer la tête de AB. Par exemple, dans \textit{Zoé chantait} (A = \textit{chantait}, B = \textit{Zoé}), on peut effacer A et pas B (\textit{Zoé} peut former un énoncé autonome, mais pas \textit{chantait}), alors que c’est A qui est la tête !
 
@@ -1296,7 +1299,7 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
     \begin{itemize}
     \item soit on amalgame les grammèmes avec le lexème qui est porteur de la même valeur (\textsc{le} avec le défini, \textsc{deux} avec le pluriel)  (figure \ref{fig:mesdeux2}) ;
   \begin{figure}[H]
-    \centering
+    \begin{minipage}[c]{.45\linewidth}\centering
     \begin{forest}
     [défini,name=defini
       [\textsc{le},name=le] [\textit{pluriel},name=pluriel
@@ -1307,19 +1310,20 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
       \draw[line width=1cm,color=black!30,line cap=round,line join=round] ($(defini.north)!0.5!(defini.north)$) +(2pt,-12pt) -- ($(le)!0.5!(le)$);
       \draw[line width=1.1cm,color=black!30,line cap=round,line join=round] ($(pluriel.north)!0.5!(pluriel.north)$) +(0pt,-12pt) -- ($(deux)!0.5!(deux)$);
     \end{pgfonlayer}
-    \end{forest}\hfill%
+    \end{forest}\end{minipage}%
+    \begin{minipage}[c]{.1\linewidth}\centering\huge$\Rightarrow$\end{minipage}%
+    \begin{minipage}[c]{.45\linewidth}\centering
     \begin{forest} for tree={font=\itshape}
     [les [deux [amis]]]
     \end{forest}
-\caption{Amalgame des grammèmes avec le lexème qui porte la même valeur}
-    \label{fig:mesdeux2}
-    \todo[inline]{Add a \textbackslash Longrightarrow between the two subfigures and move the right figure to the left.}
+    \end{minipage}%
+    \caption{Amalgame des grammèmes avec le lexème qui porte la même valeur\label{fig:mesdeux2}}
 \end{figure}
 
     \item soit on considère que ces grammèmes sont des flexions du nom et on les amalgame avec lui (figure \ref{fig:mesdeux3}).
     
 \begin{figure}[H]
-    \centering
+    \begin{minipage}[c]{.45\linewidth}\centering
     \begin{forest} 
     [défini,name=defini
       [LE] [pluriel,name=pluriel
@@ -1330,15 +1334,16 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
       \draw[line width=1cm,color=black!30,line cap=round,line join=round] ($(defini.north)!0.5!(defini.north)$) +(0pt,-12pt) -- (pluriel.center);
       \draw[line width=1cm,color=black!30,line cap=round,line join=round] (pluriel.center) -- ($(ami)!0.5!(ami)$);
     \end{pgfonlayer}
-    \end{forest}\hfill%
+    \end{forest}\end{minipage}%
+    \begin{minipage}[c]{.1\linewidth}\centering\huge$\Rightarrow$\end{minipage}%
+    \begin{minipage}[c]{.45\linewidth}\centering
     \begin{forest} for tree={font=\itshape}
     [amis [les] [deux]]
     \end{forest}
-    \caption{Amalgame des grammèmes avec le nom}
-    \label{fig:mesdeux3}
-\todo[inline]{Same remarks: \textbackslash Longrightarrow, move}
-\end{figure}
-    \end{itemize}
+    \end{minipage}%
+    \caption{Amalgame des grammèmes avec le nom\label{fig:mesdeux3}}
+    \end{figure}
+\end{itemize}
 }
 
 
