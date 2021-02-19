@@ -1057,8 +1057,8 @@ Si l’on applique la déréfication à tous les nœuds intérieurs de l’arbre
     \ea\attop{%
       \begin{tikzpicture}
         \node at (0,0) [ConcSet] (Marie) {Marie};
-        \node at (4,0) [ConcSet] (Pierre) {Pierre};
-        \path[-{Triangle[open]}] (Marie) edge[double] node[midway,above] {\itshape frappe} (Pierre);
+        \node [right=1mm of Marie, draw, signal, signal to=east, font=\itshape] (frappe) {frappe}; 
+        \node [right=1mm of frappe, ConcSet] (Pierre) {Pierre};
       \end{tikzpicture}}\medskip\\
       \ex\attop{\begin{tikzpicture}
         \node at (0,0) [ConcSet] (frappe) {frappe};
