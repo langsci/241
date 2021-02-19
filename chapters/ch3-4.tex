@@ -92,7 +92,7 @@ L’arbre de Gladkij induit lui-même une nouvelle structure. Oublions les dépe
 \begin{figure}
 \begin{tikzpicture}[every node/.style={font=\strut,inner sep=1pt}]
  \matrix (matrix) [matrix of nodes,column sep=1em]
-    {beaucoup & de & gens & aimeraient & passer & Noël & en & Laponie\\};
+    {beaucoup & de & gens & [7pt] aimeraient & passer & Noël & en & Laponie\\};
 \begin{scope}[every node/.style={draw,rounded corners=2pt}]
  \node [fit = (matrix-1-3), inner sep=2pt] (gens) {};
  \node [fit = (matrix-1-6), inner sep=2pt] (Noel) {};
@@ -107,9 +107,7 @@ L’arbre de Gladkij induit lui-même une nouvelle structure. Oublions les dépe
  \node [fit = (beaucoupdegens) (passerenLaponie), inner sep=5pt] {};
 \end{scope}
 \end{tikzpicture}
-
 \caption{\label{fig:laponie-box}Emboîtement (de constituants majeurs)}
-\todo[inline]{Some words are not centered in their spéce, especially aimeraient}
 \end{figure}
 
 Il est d’usage d’appeler les unités dans une telle structure les constituants (voir l’\encadref{fig:3.4.3} sur \textit{Le terme} constituant).
