@@ -1557,7 +1557,7 @@ Nous donnons, dans la figure \ref{fig:induit-topo}, l'arbre topologique à parti
   \node [below=1pt of root-1-1, font=\itshape,align=center] {\strut qui voulait\\les acheter};
 \end{tikzpicture}
 \end{minipage}\begin{minipage}[c]{.1\linewidth}\centering
-\begin{tikzpicture} \draw[ConversionArrow] (0,0) -- (1,0);\end{tikzpicture}
+\huge$\Rightarrow$
 \end{minipage}\begin{minipage}[c]{.45\linewidth}\centering
 \begin{tikzpicture}
   \begin{scope}[every node/.style={CircleNode},sibling distance=20mm]
@@ -1574,7 +1574,6 @@ Nous donnons, dans la figure \ref{fig:induit-topo}, l'arbre topologique à parti
 \end{minipage}
 \caption{\label{fig:induit-topo}Arbre de dépendance ordonné et arbre de constituants topologiques induit}
 \end{figure}
-\todo[inline]{\textbackslash Longrightarrow in both figures}
 
 Un arbre de dépendance ordonné induit donc deux arbres de constituants avec têtes : un arbre de constituants syntaxiques et un arbre de constituants topologiques. Nous donnons, dans la figure \ref{fig:induit-synt}, l'arbre de constituants syntaxiques de notre exemple.
 
@@ -1593,7 +1592,7 @@ Un arbre de dépendance ordonné induit donc deux arbres de constituants avec t�
 \node[left=1pt of root] {est entrée};
 \node[left=1pt of root-1] {une belle};
 \node[left=1pt of root-1-1, align=center] {qui voulait\\les acheter};
-\end{tikzpicture}\end{minipage}\begin{minipage}[c]{.1\linewidth} \begin{tikzpicture} \draw[ConversionArrow] (0,0) -- (1,0);\end{tikzpicture} \end{minipage}%
+\end{tikzpicture}\end{minipage}\begin{minipage}[c]{.1\linewidth} \huge$\Rightarrow$ \end{minipage}%
 \begin{minipage}[c]{.45\linewidth}\centering
 \begin{tikzpicture}[every node/.style={font=\strut}]
     \begin{scope}[
@@ -2013,7 +2012,7 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     \exercice{5} (Topologie du groupe substantival en français.) On s’intéresse plus particulièrement au placement des déterminants et des numéraux en français. Comment rendre compte des données suivantes dans un modèle topologique ?
 
     \begin{exe}
-    \exi{(i)}
+    \sn
     \begin{xlista}
     \ex[]{\itshape les/mes/ces/deux/quelques/des/plusieurs amis sont venus}
     \ex[]{\itshape les/mes/ces deux/quelques amis sont venus}
@@ -2021,12 +2020,11 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     \ex[*]{\itshape amis sont venus}
     \end{xlista}
     \end{exe}
-\todo[inline]{Suppress (i)}
 
     \exercice{6} (Interrogation en français.) On observe un contraste entre le fonctionnement des interrogatifs \textit{à qui} et \textit{que~}:
     
     \begin{exe}
-    \exi{(i)}
+    \sn
     \begin{xlista}
     \ex[]{\itshape À qui parle-t-elle ?}
     \ex[]{\itshape À qui Marie parle-t-elle ?}
@@ -2035,7 +2033,6 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     \end{xlista}
     \end{exe}
     Comment expliquer cette différence de comportement dans le cadre d’un modèle topologique ?
-\todo[inline]{Suppress (i)}
 
     \exercice{7} (Topologie de l’anglais.) L’anglais possède une classe de verbes que l’on appelle les modaux qui comprend les auxiliaires \textsc{be} ‘être’ et \textsc{have} ‘avoir’ et quelques verbes à valeur modale comme \textsc{can} ‘pouvoir’, \textsc{must} ‘devoir’, \textsc{will} (auxiliaire du futur) ou \textsc{would} (auxiliaire du conditionnel) qui ont la particularité d’être invariables, ainsi que la proforme \textsc{do} ‘faire’. Ces verbes ont également des propriétés distributionnelles qui les distinguent des autres verbes. Premièrement, les adverbes se placent de préférence après les modaux et avant les verbes ordinaires :
     
@@ -2094,7 +2091,7 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     \exercice{8} (Topologie de l’allemand.) Les exemples que nous avons présentés dans l’\encadref{fig:3.5.36} acceptent encore d’autres ordres, comme, par exemple :
 
     \begin{exe}
-    \exi{(i)}
+    \sn
     \gll In seiner Nase zu popeln hat Peter {mal wieder} gewagt.\\
          dans son nez  de creuser  a   Peter   {une fois de plus}   osé\\
     \glt   ‘Peter a à nouveau osé se crotter le nez.’
