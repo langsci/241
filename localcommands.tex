@@ -58,12 +58,13 @@
    number within=chapter,
    list inside=encadre
   ]
-  {encadre}{m m}
+  {encadre}{O{} m m}
   {
+    label = #1,
     skin = enhanced,
     graphical environment = tikzpicture,
-    title = {Encadré~\thetcbcounter: #1},
-    list entry = {\protect\numberline{\thetcbcounter} #1},
+    title = {Encadré~\thetcbcounter: #2},
+    list entry = {\protect\numberline{\thetcbcounter} #2},
     boxsep = 0pt,
     toptitle = 10mm,
     top = 5mm,
@@ -86,7 +87,7 @@
             inner sep = 1mm,
             line width = 0.8mm
           ] at (frame.north west) 
-          {{\color{black!12}\includegraphics[width=10mm]{tbls-#2.pdf}}};
+          {{\color{black!12}\includegraphics[width=10mm]{tbls-#3.pdf}}};
       },
     subtitle style = 
       {
@@ -202,48 +203,22 @@
 \newcommand{\textstyleTermesapprof}[1]{\textsc{#1}}
 \newcommand{\textstyleTermesapprofondissement}[1]{\textsc{#1}}
 
-\newenvironment{styleExemplesuite}{}{}
-\newenvironment{styleillustrationAFaire}{\begin{exe}\ex}{\end{exe}} %this seems to be object language material, which should be set off from surrounding text
-
-\newenvironment{styleLivreImportant}{%
-\begin{tblsfilled}{}
-}{
-\end{tblsfilled}%
-}
-
-\newenvironment{styleTitreChapitre}{}{}
-\newenvironment{styleTitrePartie}{}{}
-\newenvironment{styleTitreSection}{}{}
-\newenvironment{styleTitreSousSection}{}{}
-
-\newenvironment{styleaprofondissementInterTitre}{\color{red}}{}
-
 %%%%%%%%%%%%%%%%%%%%%
-
 \setlength{\marginparwidth}{24pt}
 \KOMAoptions{headings=optiontotocandhead}
 \newcommand{\gkchapter}[2]{#1: #2}
-\newcommand{\gkboxsection}[3]{\section[#2]{#2\protect\marginpar{\protect\adjustbox{valign=c}{\includegraphics[width=24pt]{figures/#1.pdf}}}}#3}
-% \renewcommand{\gkboxsection}[3]{\section{#2}#3}
 \newcommand{\encadref}[1]{encadré~\ref{#1}}
 
-\newcommand{\loupe}[2]{\gkboxsection{tbls-glass}{#1}{#2}}
-\newcommand{\eiffel}[2]{\gkboxsection{tbls-eiffel}{#1}{#2}}
-\newcommand{\globe}[2]{\gkboxsection{tbls-world}{#1}{#2}}
-\newcommand{\chevalier}[2]{\gkboxsection{tbls-history}{#1}{#2}}
-\newcommand{\maths}[2]{\gkboxsection{tbls-math}{#1}{#2}}
-
-\renewcommand{\loupe}[2]{\gkboxsection{tbls-glass}{#1}{#2}}
-\renewcommand{\eiffel}[2]{\gkboxsection{tbls-eiffel}{#1}{#2}}
-\renewcommand{\globe}[2]{\gkboxsection{tbls-world}{#1}{#2}}
-\renewcommand{\chevalier}[2]{\gkboxsection{tbls-history}{#1}{#2}}
-\renewcommand{\maths}[2]{\gkboxsection{tbls-math}{#1}{#2}}
-
-\renewcommand{\loupe}[2]{\begin{encadre}{#1}{glass}#2\end{encadre}}
-\renewcommand{\eiffel}[2]{\begin{encadre}{#1}{french}#2\end{encadre}}
-\renewcommand{\globe}[2]{\begin{encadre}{#1}{world}#2\end{encadre}}
-\renewcommand{\chevalier}[2]{\begin{encadre}{#1}{history}#2\end{encadre}}
-\renewcommand{\maths}[2]{\begin{encadre}{#1}{calc}#2\end{encadre}}
+\NewDocumentCommand{\loupe}{O{} m +m}
+  {\begin{encadre}[#1]{#2}{glass}#3\end{encadre}}
+\NewDocumentCommand{\eiffel}{O{} m +m}
+  {\begin{encadre}[#1]{#2}{french}#3\end{encadre}}
+\NewDocumentCommand{\globe}{O{} m +m}
+  {\begin{encadre}[#1]{#2}{world}#3\end{encadre}}
+\NewDocumentCommand{\chevalier}{O{} m +m}
+  {\begin{encadre}[#1]{#2}{history}#3\end{encadre}}
+\NewDocumentCommand{\maths}{O{} m +m}
+  {\begin{encadre}[#1]{#2}{calc}#3\end{encadre}}
 
 \newcommand{\corrections}[1]{\begin{tblsfilledsymbol}{Corrections des exercices}{checkmark}#1\end{tblsfilledsymbol}}
 \newcommand{\exercices}[1]{\begin{tblsfilledsymbol}{Exercices}{pencil}#1\end{tblsfilledsymbol}}
