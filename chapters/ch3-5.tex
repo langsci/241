@@ -1401,7 +1401,7 @@ La structure topologique de l'exemple \REF{ex:ballon} est donnée sous la forme 
     Quant à l’ordre relatif des adjectifs antéposés, évoqué à la \sectref{sec:3.5.26}, il semble aller des \hi{éléments à valeur référentielle} (l’article qui indique si le référent est connu ou pas, le numéral qui donne le nombre de référents, \textit{seul} et \textit{autre} qui permettent de positionner ce référent dans l’ensemble des référents potentiels) à des \hi{adjectifs qualificatifs}, qui qualifie le référent, qui en précise la nature.
 }
 \maths{Arbre de constituants ordonné}{%\label{sec:3.5.28}
-En définissant la structure topologique dans la \sectref{sec:3.5.26}sur le {\textit{Modèle topologique}}, nous avons introduit rapidement la notion d'arbre de constituants ordonné. Nous allons préciser la nature de cette structure et les modes de représentation associés.
+En définissant la structure topologique dans la \sectref{sec:3.5.26} sur le {\textit{Modèle topologique}}, nous avons introduit rapidement la notion d'arbre de constituants ordonné. Nous allons préciser la nature de cette structure et les modes de représentation associés.
 
     Contrairement au cas des arbres de dépendance ordonné dont les nœuds sont totalement ordonnés, l’\hi{ordre} sur les nœuds d’un arbre de constituants est \hi{partiel}, puisque deux constituants qui sont dans une relation de partie-tout ne peuvent être dans une relation de précédence l’un par rapport à l’autre et que donc une telle spécification d’ordre ne serait pas pertinente.
 
@@ -1600,9 +1600,9 @@ Un arbre de dépendance ordonné induit donc deux arbres de constituants avec t�
     level distance=3\baselineskip
     ]
         \node (root) {}
-            child { node { } child { node { } edge from parent node [reset shape, near end, above] {T} } 
+            child { node { } child { node { } edge from parent node [reset shape, midway, anchor=base east] {T} } 
                             child { node { } } 
-                edge from parent node [reset shape, near end, above] {T} }
+                edge from parent node [reset shape, midway, anchor=base east] {T} }
             child { node { } };
     \end{scope}
     \begin{scope}[every node/.style={font=\strut\itshape}]
