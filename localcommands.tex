@@ -166,6 +166,21 @@
     }
   }% exceptions for the every node/.style key
 
+\forestset
+  {% Adapted from the decision tree example in the forest doc.
+    anchors/.style={anchor=#1,child anchor=#1,parent anchor=#1},
+    dot/.style={tikz+={\fill (.child anchor) circle[radius=#1];}},
+    dot/.default=3pt,
+    dot tree/.style = {
+      anchors=south, outer sep=2pt,
+      dot=3pt,for descendants=dot,
+      for tree = {
+        if n children=0{anchors=north}{
+        if n=1{anchors=south east}{anchors=south west}},
+      }
+    }
+  }  
+
 \newenvironment{langscibars}{\begin{axis}[ybar,xtick=data, xticklabels from table={\mydata}{pos},
         width  = \textwidth,
 	height = .3\textheight,

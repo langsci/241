@@ -699,9 +699,11 @@ Le même raisonnement est applicable à \textit{Marie dormait}. Ici encore, \tex
     \z\z
     La conjonction \textit{that} est bien effaçable, ce qui pourrait conduire à considérer que \textit{thinks} est directement connecté à \textit{slept} et donne la structure de connexion de la figure \ref{fig:that1}. Mais en même temps, on ne peut pas considérer que \textit{that} dépend de \textit{slept}, car \textit{that Peter slept} n’a pas la même valence supérieure que \textit{Peter slept} : si les deux peuvent dépendre de \textit{Mary thinks}, seul \textit{Peter slept} peut former un énoncé déclaratif ou bien se combiner avec une conjonction comme \textit{if} ‘si’ ou \textit{whether} ‘si (oui ou non)’. Comme un dépendant ne peut modifier la valence supérieure de son gouverneur, il est donc clair que \textit{that} n’est pas un dépendant du verbe \textit{slept}, d'où l'arbre de dépendance de la figure \ref{fig:that2}. (Voir l’\encadref{fig:3.3.28} sur la \textit{Co-occupation} pour une autre analyse de \textit{that}.)
 
-    \ea 
-    \ea Structure de connexion\label{fig:that1}\\
-            \begin{tikzpicture}[every node/.style={font=\itshape\strut,inner sep=1pt}]
+    \begin{figure}[H]
+    \begin{floatrow}
+    \captionsetup{margin=.05\linewidth}
+    \ffigbox[.5\linewidth]
+            {\begin{tikzpicture}[every node/.style={font=\itshape\strut,inner sep=1pt}]
             \node at (0,0) (Marie) {Marie};
             \node at (1,1) (thinks) {thinks};
             \node at (2,-0.5) (Peter) {Peter};
@@ -711,18 +713,18 @@ Le même raisonnement est applicable à \textit{Marie dormait}. Ici encore, \tex
             \draw (Marie) -- (thinks) -- (midpoint.west); 
             \draw (midpoint.east)-- (that);
             \draw (Peter) -- (slept);
-            \end{tikzpicture}
-    
-    \ex Arbre de dépendance\label{fig:that2}\\
-            \begin{forest} for tree = {font=\itshape}
+            \end{tikzpicture}}
+            {\caption{Structure de connexion\label{fig:that1}}}
+    \ffigbox[.5\linewidth]
+            {\begin{forest} for tree = {font=\itshape}
             [thinks
               [Mary]
               [that [slept [Peter]]]
             ]
-            \end{forest}
-    \z
-    \z
-    \todo[inline]{Transform into two figures}
+            \end{forest}}
+            {\caption{Arbre de dépendance\label{fig:that2}}}
+    \end{floatrow}
+    \end{figure}
    
    De tels cas sont rares et le critère d’effacement simple reste un critère simple généralement fiable.
 }

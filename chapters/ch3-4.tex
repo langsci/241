@@ -171,18 +171,18 @@ Il est d’usage dans les arbres de constituants avec têtes (plats ou pas) d’
     ]
 \node (root) {}
     child { node { } 
-        child { node { } edge from parent node [reset shape, midway,left] {T} }
+        child { node { } edge from parent node [reset shape, midway,anchor=base east] {T} }
         child { node { } 
-            child { node { } edge from parent node [reset shape, midway,left] {T} }
+            child { node { } edge from parent node [reset shape, midway,anchor=base east] {T} }
             child { node { } }
         }
     }
-    child { node { } edge from parent node [reset shape, midway,left] {T}  }
+    child { node { } edge from parent node [reset shape, midway,anchor=east] {T}  }
     child { node { }
-        child { node { } edge from parent node [reset shape, midway,left] {T} }
+        child { node { } edge from parent node [reset shape, midway,anchor=base east] {T} }
         child { node { } }
         child { node { } 
-            child { node { } edge from parent node [reset shape, midway,left] {T} }
+            child { node { } edge from parent node [reset shape, midway,anchor=base east] {T} }
             child { node { } }
         }
     };
@@ -217,22 +217,22 @@ L’arbre de constituants plat est équivalent à l’arbre de Beauzée-Gladkij 
 \node (root) {}
     child { node { }
         child [missing]
-        child { node { } edge from parent node [reset shape, midway,left] {T} }
+        child { node { } edge from parent node [reset shape, midway,anchor=east] {T} }
         child { node { }
             child [missing]
-            child { node { } edge from parent node [reset shape, midway,left] {T} }
+            child { node { } edge from parent node [reset shape, midway,anchor=east] {T} }
             child { node { } }
         }
     }
-    child { node { } edge from parent node [reset shape, midway,left] {T}  }
+    child { node { } edge from parent node [reset shape, midway,anchor=east] {T}  }
     child { node { }
         child [missing]
         child [missing]
-        child { node { } edge from parent node [reset shape, midway,left] {T} }
+        child { node { } edge from parent node [reset shape, midway,anchor=east] {T} }
         child { node { } }
         child { node { } 
             child [missing]
-            child { node { } edge from parent node [reset shape, midway,left] {T} }
+            child { node { } edge from parent node [reset shape, midway,anchor=east] {T} }
             child { node { } }
         }
     };
@@ -350,12 +350,12 @@ Les deux familles de méthodes conduisent à la même analyse structurelle, bien
         \node (root) {}
             child { node { } }
             child { node { } 
-                    child { node { } edge from parent node [reset shape, near start,left] {T} }
+                    child { node { } edge from parent node [reset shape, midway,anchor=base east] {T} }
                     child { node { } 
-                        child { node { } edge from parent node [reset shape, near start,left] {T} }
+                        child { node { } edge from parent node [reset shape, midway,anchor=base east] {T} }
                         child { node { } }
                     }
-                    edge from parent node [reset shape, near start,right] {T} };
+                    edge from parent node [reset shape, midway, anchor=base west] {T} };
     \end{scope}
     \begin{scope}[every node/.style={font=\strut\itshape}]
     \foreach \pos/\text in {1/Léa, 2-1/a, 2-2-1/invité, 2-2-2/Théo} 
@@ -390,11 +390,11 @@ Les deux familles de méthodes conduisent à la même analyse structurelle, bien
             child { node { } }
             child { node { } 
                     child { node { } 
-                        child { node { } edge from parent node [reset shape, near start,left] {T} }
+                        child { node { } edge from parent node [reset shape, midway, anchor=base east] {T} }
                         child { node { } }                    
-                        edge from parent node [reset shape, near start,left] {T} }
+                        edge from parent node [reset shape, midway, anchor=base east] {T} }
                     child { node { } }
-                    edge from parent node [reset shape, near start,right] {T} };
+                    edge from parent node [reset shape, midway, anchor=base west] {T} };
     \end{scope}
     \begin{scope}[every node/.style={font=\strut\itshape}]
     \foreach \pos/\text in {1/Léa, 2-1-1/a, 2-1-2/invité, 2-2/Théo} 
@@ -609,12 +609,12 @@ Nous obtenons le parenthésage suivant :
             \node (root) {} 
                 child { node {} }
                 child { node {} 
-                      child { node {} edge from parent node [reset shape, near start,left] {T} }
+                      child { node {} edge from parent node [reset shape, midway, anchor=base east] {T} }
                       child { node {} 
-                        child { node {} edge from parent node [reset shape, near start,left] {T} }
+                        child { node {} edge from parent node [reset shape, midway, anchor=base east] {T} }
                         child { node {} }
                         }
-                      edge from parent node [reset shape, near start,right] {T}
+                      edge from parent node [reset shape, midway, anchor=base west] {T}
                       };
         \end{scope}
         \foreach \pos/\text in {1/Léa, 2-1/-era, 2-2-1/invit-, 2-2-2/Théo} 
@@ -623,6 +623,18 @@ Nous obtenons le parenthésage suivant :
         \node [right=1pt of root-2] {I'};
         \node [above=1pt of root] {IP};
       \end{tikzpicture}
+%       \begin{forest}dot tree, fit=band
+%       [IP,anchors=south
+%           [\textit{Léa}]
+%           [I'
+%             [\textit{-era}]
+%             [VP
+%               [\textit{invit-}]
+%               [\textit{Théo}]
+%             ]
+%           ]
+%       ]
+%       \end{forest}
     \end{minipage}%
     \begin{minipage}[c]{.1\linewidth}\centering
     \huge$\Rightarrow$
@@ -647,7 +659,7 @@ Un tel arbre a des avantages (la simplicité), mais il a aussi un inconvénient 
 
 \begin{figure}
 \caption{\label{fig:laponie-T2}Arbre de constituants binaire avec têtes}
-\begin{tikzpicture}
+\resizebox{\textwidth}{!}{\begin{tikzpicture}
 \begin{scope}[
         every node/.style={CircleFillNode},
         level distance=2\baselineskip,
@@ -658,31 +670,30 @@ Un tel arbre a des avantages (la simplicité), mais il a aussi un inconvénient 
         ]
   \node (root) {}
     child { node {} 
-            child { node {} edge from parent node [reset shape, midway,above] {T} }
+            child { node {} edge from parent node [reset shape, midway,above, anchor=base east] {T} }
             child { node {} 
-                child { node {} edge from parent node [reset shape, midway,above] {T} }
-                child { node {} }
+                child [sibling distance=15mm] { node {} edge from parent node [reset shape, midway,above,anchor=base east] {T} } 
+                child [sibling distance=15mm] { node {} }
             }
           }
     child { node {} 
-            child { node {} edge from parent node [reset shape, midway, above] {T} }
+            child { node {} edge from parent node [reset shape, midway, anchor=base east] {T} }
             child { node {} 
                 child { node {} 
-                    child { node {} edge from parent node [reset shape, near start,left] {T} }
+                    child { node {} edge from parent node [reset shape, midway, anchor=base east] {T} }
                     child { node {} }
-                 edge from parent node [reset shape, near start,left] {T} }
+                 edge from parent node [reset shape, midway, anchor=base east] {T} }
                 child { node {} 
-                    child { node {} edge from parent node [reset shape, near start,left] {T} }
+                    child { node {} edge from parent node [reset shape, midway, anchor=base east] {T} }
                     child { node {} }
                 }
-            } edge from parent node [reset shape, midway,above] {T}
+            } edge from parent node [reset shape, midway, anchor=south] {T}
           };
 \end{scope}
 \foreach \pos/\text in {1-1/beaucoup, 1-2-1/de, 1-2-2/gens, 2-1/aimeraient, 2-2-1-1/passer, 2-2-1-2/Noël, 2-2-2-1/en, 2-2-2-2/Laponie}
   {\node[below=1pt of root-\pos,font=\strut\itshape] {\text};}
-\end{tikzpicture}
+\end{tikzpicture}}
 \end{figure}
-\todo[inline]{if possible, reduce the width on level 2 et level 3  on the left , to be similar as level 3 and 4 on the right}
 
 
 Dans un tel arbre, chaque décomposition correspond à une connexion, comme nous le montrerons plus en détail dans les sections \ref{sec:3.4.21} sur \textit{Arbre de constituants binaire et polygraphe} et \ref{sec:3.4.23} sur \textit{Polygraphe orienté et arbre de dépendance}. Voici le parenthésage correspondant à l’arbre de la figure \ref{fig:laponie-T2} avec les connexions indiquées en plus :
@@ -843,7 +854,7 @@ Alors qu’un arbre de dépendance correspond naturellement à un arbre de const
     \end{subfigure}\begin{subfigure}[t]{.5\textwidth}\centering
         \begin{tikzpicture}
         \node [CircleFillNode] (root) {}
-            child { node [CircleFillNode] {} edge from parent node [near end,above] {T} }
+            child { node [CircleFillNode] {} edge from parent node [midway,anchor=east] {T} }
             child { node [CircleFillNode] {} };
         \node [above=1pt of root] {C};
         \node [below=1pt of root-1] {A};
@@ -1025,13 +1036,13 @@ On peut interpréter chaque branchement binaire comme une connexion entre deux u
   \node at (2,0) (B)  [CircleFillNode,label=below:B] {};
   \node at (1,1) (U) [CircleFillNode,label=above:U] {};
   
-  \draw (A) -- node [midway,above] {T} (U)
+  \draw (A) -- node [midway,anchor=base east] {T} (U)
             -- (B);
 
  \node at (3,0.5) {\huge$\Leftrightarrow$};
  \node at (4,0) (A2)  [CircleFillNode,label=below:A] {};
  \node at (6,0) (B2)  [CircleFillNode,label=below:B] {};
- \draw[-{Triangle[]}] (A2) to [bend left] node [above,midway] {U} (B2);
+ \draw[-{Triangle[]}] (A2) to [bend left] node [midway,above] {U} (B2);
 \end{tikzpicture}
 
 \caption{\label{fig:dereification}Passage d’un branchement binaire à une dépendance par déréification d’un nœud non terminal}
@@ -1197,7 +1208,7 @@ nice empty nodes,for tree={font=\itshape}
 Nous appellerons \textstyleTermes{méthode par déréification }la méthode que nous venons de présenter, qui permet de passer d’un arbre de constituants binaire avec têtes à un arbre de dépendance. La méthode par déréification peut s’appliquer à des arbres de constituants dont certains branchements décrivent des constructions exocentriques et n’ont donc pas de marquage de la tête. Dans l’exemple \textit{le petit chien dort} (déjà étudié dans la \sectref{sec:3.3.23} \textit{Nom ou déterminant comme tête} ?), si l'on ne décide pas qui de l’article \textit{le} ou du nom \textit{chien} est la tête du groupe substantival, on obtient par déréification une connexion non orientée, qu’on ne peut pas faire «~glisser~» comme on l’a fait précédemment pour les connexions orientées. Comme le montre la figure \ref{fig:lechien2}, nous retombons sur le polygraphe de la figure \ref{fig:lechien}, que nous avions proposé pour l'analyse d'une construction exocentrique.
 
 \begin{figure}
-\begin{minipage}[t]{.45\textwidth}\centering
+\begin{minipage}[c]{.45\textwidth}\centering
 \begin{tikzpicture}[every node/.style={font=\strut}]
     \begin{scope}[
     every node/.style={CircleFillNode},
@@ -1209,10 +1220,10 @@ Nous appellerons \textstyleTermes{méthode par déréification }la méthode que 
                     child { node { } }
                     child { node { } 
                         child { node { } }
-                        child { node { } edge from parent node [reset shape, near start,right] {T} }
+                        child { node { } edge from parent node [reset shape, midway,anchor=base west] {T} }
                     }
                    }
-            child { node { } edge from parent node [reset shape, near start,right] {T} };
+            child { node { } edge from parent node [reset shape, midway, anchor=base west] {T} };
     \end{scope}
     \begin{scope}[every node/.style={font=\strut\itshape}]
     \foreach \pos/\text in {1-1/le, 1-2-1/petit, 1-2-2/chien, 2/dort} 
@@ -1221,11 +1232,11 @@ Nous appellerons \textstyleTermes{méthode par déréification }la méthode que 
     \end{tikzpicture}
     \end{minipage}
     \hfill%
-      \begin{minipage}{.05\textwidth}\centering
-        $\Rightarrow$
+      \begin{minipage}[c]{.05\textwidth}\centering
+        \huge$\Rightarrow$
       \end{minipage}
     \hfill%
-    \begin{minipage}[t]{.33\textwidth}\centering
+    \begin{minipage}[c]{.33\textwidth}\centering
     \begin{forest} for tree={font=\itshape}
     [dort
       [,nice empty nodes
@@ -1237,8 +1248,6 @@ Nous appellerons \textstyleTermes{méthode par déréification }la méthode que 
 \caption{\label{fig:lechien2}Conversion d'un arbre de constituants avec marquage partiel des têtes en une structure de dépendance par la méthode de déréification}
 \end{figure}
 \todo[inline]{the subfigure on the right is a polygraph with an horizontal line between le and chien, see figure \ref{fig:lechien}}
-\todo[inline]{put the big \rightarrow bewteen the two diagrams}
-
 
 \section{Comparaison des méthodes par décomposition}\label{sec:3.4.24}
 
@@ -1276,10 +1285,10 @@ Chaque flèche $\Rightarrow$ ou $\Leftrightarrow$ entre deux structures symbolis
     level distance=2\baselineskip
     ]
         \node (root) {}
-            child { node { } edge from parent node [reset shape, above, left] {T} } 
+            child { node { } edge from parent node [reset shape, midway,anchor=base east] {T} } 
             child { node { } }
             child { node { } 
-                child { node { } edge from parent node [reset shape, near start, left] {T} }
+                child { node { } edge from parent node [reset shape, midway,anchor=base east] {T} }
                 child { node { } }
                 };
     \end{scope}
@@ -1318,7 +1327,7 @@ Chaque flèche $\Rightarrow$ ou $\Leftrightarrow$ entre deux structures symbolis
     Cette analyse est ce qu’on appelle l’\hi{analyse symétrique de la coordination} (voir le \chapfuturef{19}) : dans \textit{Marie et Pierre dorment}, les conjoints (c’est le nom que l’on donne aux éléments coordonnés, \textit{Marie} et \textit{Pierre}) sont considérés comme des co-têtes, qui contribuent à égalité à la distribution du syntagme (lequel déclenche un accord pluriel du verbe). Il s’agit alors d’une construction ternaire, que nous pouvons représenter par une connexion ternaire en suivant les conventions de représentation utilisées par Tesnière dans son article de \citeyear{tesniere1934comment} \textit{Comment construire une syntaxe ?} : les deux conjoints \textit{Marie} et \textit{Pierre} sont au même niveau, reliés par une connexion horizontale, et la conjonction, qui est le troisième «~sommet~» de cette connexion, est placé en dessous.
 
 \begin{figure}[H]
-    \begin{minipage}[c]{.5\linewidth}
+    \begin{minipage}[c]{.55\linewidth}\centering
     \begin{tikzpicture}[every node/.style={font=\strut}]
     \begin{scope}[
     every node/.style={CircleFillNode},
@@ -1328,11 +1337,11 @@ Chaque flèche $\Rightarrow$ ou $\Leftrightarrow$ entre deux structures symbolis
     ]
         \node (root) {}
             child { node { } 
-                child { node { } edge from parent node [reset shape, midway, above] {T} }
+                child { node { } edge from parent node [reset shape, midway, anchor=base east] {T} }
                 child { node { } }
-                child { node { } edge from parent node [reset shape, midway, above] {T} }
+                child { node { } edge from parent node [reset shape, midway, anchor=base west] {T} }
                   }
-            child { node { } edge from parent node [reset shape, midway, above] {T} }; 
+            child { node { } edge from parent node [reset shape, midway, anchor=base west] {T} }; 
     \end{scope}
     \begin{scope}[every node/.style={font=\strut\itshape}]
     \foreach \pos/\text in {1-1/Marie, 1-2/et, 1-3/Pierre, 2/dorment} 
@@ -1340,7 +1349,8 @@ Chaque flèche $\Rightarrow$ ou $\Leftrightarrow$ entre deux structures symbolis
     \end{scope}
     \end{tikzpicture}
     \end{minipage}%
-    \begin{minipage}[c]{.5\textwidth}\centering
+    \begin{minipage}[c]{.1\linewidth}\centering\huge$\Rightarrow$\end{minipage}%
+    \begin{minipage}[c]{.35\textwidth}\centering
     \begin{forest} for tree={font=\itshape}
     [dorment
       [,nice empty nodes
@@ -1353,7 +1363,6 @@ Chaque flèche $\Rightarrow$ ou $\Leftrightarrow$ entre deux structures symbolis
     \caption{\label{fig:polygraphe-coord}Branchement ternaire et correspondance par la méthode de déréification}
 \end{figure}
 \todo[inline]{The right figure is a polygraph. The word "et" is a label on the horizontal edge. See original}
-\todo[inline]{add a \textbackslash Rightleftarrow between the two diagrams}
 
     La structure de dépendance de droite peut être obtenue en appliquant la méthode de conversion par déréification à l’arbre de constituant à gauche. Le branchement ternaire donne une connexion ternaire, où \textit{Marie} et \textit{Pierre} occupent des positions symétriques (puisqu’ils sont co-têtes), tandis que la conjonction \textit{et} occupe une troisième position, comme «~dépendant~» des co-têtes. La convention de Tesnière rend bien compte de cela.
 
