@@ -657,7 +657,7 @@ L’asymétrie syntaxique nous amène à distinguer deux parties dans la valence
 \Definition{\textstyleTermes{valence inférieure}}
 {A l’inverse, la \textstyleTermes{valence inférieure} d’une unité syntaxique est l’ensemble des positions syntaxiques qui \hi{dépendent} potentiellement de cette unité.}
 
-Les notions de valences supérieure et inférieure ont été introduites par Igor Mel’čuk, qui les nomment \textit{valence passive} et \textit{valence active}. Nous préférons garder ces termes pour parler de la partition de la valence selon le point de vue sémantique (voir \chapfuturefici{13}).
+Les notions de valences supérieure et inférieure ont été introduites par Igor Mel’čuk, qui les nomment \textit{valence passive} et \textit{valence active}. Nous préférons éviter le terme de \textit{valence passive}, un peu trompeur dans le cas des modifieurs, qui prennent leur gouverneur syntaxique dans leur valence sémantique (voir \chapfuturefici{13}).
 
 Deuxièmement, nous souhaitons utiliser l’analyse distributionnelle pour caractériser la tête d’une unité. Nous cherchons donc à repérer dans le contexte syntaxique d’une unité le contexte qui caractérise plus particulièrement la tête, c’est-à-dire la valence supérieure.
 
@@ -940,6 +940,76 @@ Ici ‘sur’ est un prédicat binaire qui exprime une relation de localisation 
 D’après le critère d’effacement simple, si B est effaçable, alors A est une tête syntaxique, indépendamment de savoir si A gouverne sémantiquement B ou pas. Le critère du gouverneur sémantique est donc vraiment intéressant quand ni A, ni B n’est effaçable dans un contexte donné.
 
 On peut encore appliquer le critère au cas des formes verbales comme \textit{chant-ait}. C’est la flexion qui gouverne sémantiquement le lexème verbal : le temps verbal exprime un sens fondamentalement prédicatif (‘avoir lieu dans le passé’) dont le signifié du lexème verbal est l’argument. Nous verrons une autre application pour le cas de la connexion déterminant-nom à la \sectref{sec:3.3.26} \textit{Déterminant comme tête} ?.
+
+\loupe[sec:3.3.19]{Distorsions sémantique-syntaxe}
+    {Indépendamment de la question des éléments grammaticaux, il existe certaines configurations de deux éléments lexicaux où tête syntaxique et tête sémantique ne semblent pas se correspondre. On parle alors de \textstyleTermesapprof{distorsions} (en anglais de \textstyleTermesapprof{mismatches}) (voir la \sectref{sec:13-mismatch} pour d'autres exemples de distorsions sémantique-syntaxe). Le plus flagrant des exemples de ce type est mis en évidence par la paire minimale suivante, déjà utilisée à de nombreuses reprises par des linguistes (le Dictionnaire de l’Académie Française de 1798 contient déjà deux entrées séparées pour \textsc{verre} en tant que contenant et contenu) :
+
+    \ea
+    \ea  \textit{Félix achète un verre à vin} (\textit{et le casse}).\z
+    \ex  \textit{Félix achète un verre de vin} (\textit{et le boit}).\label{ex:3-3-24b}
+\z
+    \z
+
+    On peut supposer que ces deux exemples ont la même structure syntaxique, que dans les deux cas \textit{un verre} est la tête syntaxique de l’objet de \textit{achète} et que \textit{vin} est complément de la préposition \textit{à} ou \textit{de} et dépend de \textit{un verre} par l’intermédiaire de cette préposition. Par contre, du point de vue sémantique, les situations sont très différentes : si ce que Félix casse est bien un verre, ce qu’il boit est du vin. Dans \textit{un verre de vin}, \textit{un verre} sert uniquement à mesurer la quantité de vin et pas à déterminer la catégorie ontologique de la chose désignée par le syntagme \textit{un verre de vin}. On en déduit donc que la tête sémantique de \textit{verre à vin} est \textit{verre}, tandis que la tête sémantique de \textit{verre de vin} est \textit{vin}. Il y a ainsi une distorsion sémantique-syntaxe dans la phrase \textit{Félix achète/boit un verre de vin}. Nous représentons ci-dessous son arbre de dépendance syntaxique et son graphe sémantique (pour ce dernier on consultera les chapitres \ref{sec:1.2} et \ref{sec:2.3}) :
+
+    \ea Représentations syntaxique et sémantique de \REF{ex:3-3-24b}\\
+    \begin{minipage}[c]{.5\linewidth}
+    \begin{forest} for tree={font=\itshape}
+      [achète
+        [Félix]
+        [verre
+          [un]
+          [de
+            [vin]
+          ]
+        ]
+      ]
+    \end{forest}\end{minipage}\begin{minipage}[c]{.5\linewidth}
+    \begin{tikzpicture}[>={Triangle[]},label distance=-5pt]
+        \matrix (matrix) [nodes={CircleNode},
+                          ampersand replacement=\&,
+                          row sep=1cm,
+                          column sep=-10pt] 
+          {
+            \& \node [label=above:{‘acheter’}, CircleNode] (acheter) {}; 
+            \& \& \node [label=above:{‘verre’}, CircleNode] (verre) {};\\
+            \node [label=below:{\strut‘Félix’}, CircleNode] (Felix) {}; 
+            \& \& \node [label=below:{\strut\vphantom{F}‘vin’}, CircleNode] (vin) {}; 
+            \& \& \node [label=below:{\strut\vphantom{F}‘un’}, CircleNode] (un) {};\\
+          };
+          \draw[-{Triangle[]}] (acheter) -- (Felix) node[left,midway,font=\small] {1};
+          \draw[-{Triangle[]}] (verre) -- (vin)     node[left,midway,font=\small] {1};
+          \draw[-{Triangle[]}] (acheter) -- (vin)   node[right,midway,font=\small] {2};
+          \draw[-{Triangle[]}] (un) -- (verre)      node[right,midway,font=\small] {1};
+    \end{tikzpicture}\end{minipage}
+    \todo[inline]{baseline problems}
+    \z
+
+    Un autre cas de distorsion est illustré par l’exemple suivant :
+    \ea
+    \textit{{Il paraît que le président était au courant.}}
+    \z
+    Nous savons que la tête syntaxique de cette phrase est la forme verbale \textit{paraît}. Pourtant, à une telle déclaration, un interlocuteur peut répondre «~\textit{Non, je ne crois pas.}~», ce qui en général voudra dire ‘je ne crois pas que le président était au courant’ et non pas ‘je ne crois pas qu’il paraît que le président est au courant’. Autrement dit, tout se passe comme si \textit{il paraît que} était un modifieur de \textit{le président était au courant}. Cet emploi du verbe \textsc{paraître} a déjà été qualifié de \textstyleTermesapprof{recteur faible} pour cette raison par Claire \citet{blanche-benveniste1989constructions}. Ce verbe s’emploie d’ailleurs dans une autre construction où non seulement il n’est pas la tête sémantique, mais il n’est plus non plus la tête syntaxique, la relation de rection n’étant plus exprimée :
+    \ea
+    \textit{{Le président était au courant, il paraît.}}
+    \z
+    On notera également que dans d’autres langues, notamment une langue agglutinante comme le japonais, un sens comme ‘il paraît’ est réalisé par un affixe verbal. Ainsi, le verbe {\cjkfont 通じる} tsūjiru ‘comprendre’ est suivi d’une série d’affixes modaux terminant sur {\cjkfont そうだ} \textit{sōda} ‘il paraît’.
+    \ea\relax
+    {\cjkfont 議長は事情に通じていた\textbf{そうだ}。}\\
+    \gll {Gichō-wa}  {jijō-ni}  {tsūjite-ita-\textbf{sōda}}.\\
+    président-\textsc{top} circonstances-\textsc{dat} saisir-en_train-être.\textsc{passé}-\textbf{paraît}.\\
+    ‘Il \textbf{paraît} que président était au courant.’
+    \z
+
+    Donnons un dernier exemple qui montre que le choix de la tête syntaxique dépend parfois davantage de la façon dont le lexique de la langue est organisé que d’un choix conscient du locuteur. Voici un exemple classique de distorsion lors d’une traduction :
+    \ea
+    \ea\textit{Antoine traversa la rivière à la nage}.\z
+    \ex\textit{Antony swam accross the river}.\\
+    lit. `Antony nagea à travers la rivière.'\z
+    \z
+
+    Cette \textbf{réorganisation syntaxique} a été décrite par \citet[chapitre 131]{tesniere1959elements} et nommé par lui \textstyleTermesapprof{métataxe}. Le phénomène a été rendu fameux par les études de Leonard Talmy (voir son article de 1983, \textit{How language structures space}, ou son ouvrage de 2003, \textit{Toward a cognitive semantics}). Talmy montre que certaines langues, comme le français, \textbf{favorise} l'expression du \textbf{déplacement} (\textit{path-incorporating}) par le verbe (\textit{entrer, sortir, monter, descendre, traverser,} etc.), alors que celui-ci est exprimé par une préposition ou une particule dépendant du verbe en anglais (\textit{in, out, up, down, accross}, etc.). D’autres langues, comme l’anglais, \textbf{favorise à l’inverse} l'expression de la \textbf{manière} (\textit{manner-incorporating}) dont le mouvement a lieu (\textit{swim} ‘nager’, \textit{run} ‘courir’, \textit{drive} ‘se déplacer en voiture’, \textit{bike} ‘se déplacer en vélo’, etc.), alors que celle-ci est généralement exprimée par un modifieur en français (\textit{à la nage, en courant, en voiture, en vélo,} etc.). Il ne s’agit pas à proprement parler d’un exemple de distorsion syntaxe-sémantique (puisque finalement chaque langue adapte sa hiérarchie sémantique et syntaxique à son lexique dans ce cas), mais plutôt d’une illustration du fait que la hiérarchie syntaxique ne découle pas seulement d’une hiérarchie de l’information à communiquer, mais aussi de propriétés de la langue qui sert à l’exprimer.
+}
 
 
 \section{Synthèse des critères pour la tête syntaxique}\label{sec:3.3.20}
