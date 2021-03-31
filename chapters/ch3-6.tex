@@ -1,0 +1,355 @@
+\chapter{\gkchapter{La syntaxe profonde}{Entre syntaxe et sémantique}}\label{sec:13}
+
+\section{Sémantique, syntaxe profonde, syntaxe de surface}
+
+La \terme{syntaxe profonde} étudie le lien entre le niveau syntaxique et le sens. C’est le contrepoint de la topologie qui s’intéresse au lien entre le niveau syntaxique et le texte.
+
+La structure syntaxique proprement dite, qui décrit comment se combinent les syntaxèmes, est aussi appelée la \terme{structure syntaxique de surface}, par contraste avec la syntaxe profonde. La structure sémantique, et plus précisément la structure prédicative (voir la \sectref{sec:1.2.2} \textit{Partir d’un sens}), décrit les relations prédicat-argument entre les sémantèmes. La syntaxe profonde s’intéresse à la correspondance entre la structure sémantique et la structure syntaxique de surface, c’est-à-dire à l’\terme{interface sémantique-syntaxe}. Cette correspondance est décrite au travers d’une structure qu’on appelle la structure syntaxique profonde.
+
+\definition{\terme{structure syntaxique profonde}, \terme{relation syntaxique profonde}}
+{La \terme{structure syntaxique profonde} d’un énoncé est une structure qui indique comment les \hi{sémantèmes} de cet énoncé se sont \hi{combinés}. Les \terme{relations syntaxiques profondes} entre les sémantèmes indiquent à la fois la nature de la relation sémantique et de la relation syntaxique entre eux.}
+
+Donnons un premier exemple de structure syntaxique profonde, en la contrastant avec la structure syntaxique de surface et la structure sémantique (figure \ref{fig:jambe}). Les conventions utilisées dans cette représentation seront explicitées dans la suite. On notera tout de suite que les articles, qui sont des lexèmes très grammaticalisés, sont considérés comme la réalisation par défaut d’un sémantème de définitude. Rappelons que les signifiés des sémantèmes lexicaux ou lexies sont indiqués entre guillemets simples (‘prof’, ‘tenir la jambe’, …). Les signifiés des sémantèmes grammaticaux ou grammies peuvent être désignés par des termes (singulier, passé, …) ou par des paraphrases (‘un’, ‘avant maintenant’, …). 
+
+\ea\label{ex:jambe} \textit{Zoé a tenu la jambe à la prof pendant une heure.}\z
+
+FIGURE\label{fig:jambe} a. déclaration, Zoé, tenir la jambe, prof, défini, singulier, durer, heure, un, indéfini, avant maintenant
+b. Zoé, tenir la jambe_passé, prof sg, déf, pendant, heure, sg, indéf
+c. Zoé, avoir ind prés 3 sg, tenir part_passé, le fém sg, jambe sg, à, le fém sg, prof sg, pendant, un fém sg, heure sg
+\caption{Structure sémantique, syntaxique profonde, syntaxique de surface de \ref{ex:jambe}}
+
+On peut voir la structure syntaxique profonde essentiellement comme une \hi{projection de la structure prédicative sur la structure syntaxique de surface} et donc comme une structure syntaxique de surface dont la granularité serait celle des sémantèmes. Néanmoins les relations syntaxiques profondes indiquent à la fois les connexions syntaxiques et les relations prédicat-argument, qui peuvent, dans certains cas, ne pas se superposer aux connexions syntaxiques.
+On peut aussi voir la structure syntaxique profonde, à l’inverse, comme une projection de la structure syntaxique sur la structure prédicative, c’est-à-dire comme une \hi{structure sémantique hiérarchisée}. La structure syntaxique profonde se distingue néanmoins de la structure sémantique par la nature des unités en jeu : si la structure sémantique représente a priori un sens et donc la combinaison des signifiés des sémantèmes, la structure syntaxique profonde représente la combinaison des sémantèmes proprement dit, c’est-à-dire d’unités lexicales et grammaticales. Nous allons préciser ce point dans la section suivante.
+
+\chevalier[sec:13-historique]{Historique de la notion de syntaxe profonde}
+
+{La distinction entre syntaxe profonde et syntaxe de surface telle que nous la concevons est due aux travaux d’Igor Mel’čuk dans le cadre de la théorie Sens-Texte. Pour Mel’čuk, la structure syntaxique profonde est une structure intermédiaire entre la structure sémantique et la structure syntaxique de surface. Dans son cadre théorique, le passage du sens au texte est modélisé par un premier ensemble de règles qui transforme la structure sémantique, qui comprend des relations prédicat-argument entre signifiants lexicaux, en une structure syntaxique profonde arborescente, qui est ensuite transformée en la structure syntaxique de surface. Plutôt qu’une structure intermédiaire, nous préférons voir la structure syntaxique profonde comme un témoin de la correspondance entre la structure sémantique et la structure syntaxique de surface (voir l’\encadref{sec:13-derivation} sur \textit{Lexique syntaxique et interface sémantique-syntaxe}). 
+
+L’idée d’une structure syntaxique profonde, appelée \terme{structure tectogrammaticale} (voir l’\encadref{sec:13-derivation} pour l’origine du terme), est également présente dans les travaux des Pragois réunis autour de Petr Sgall, qui est l’un des premiers, si ce n’est le premier linguiste (voir son article de \citeyear{sgall1967functional}), à défendre l’idée d’un modèle stratifié des langues, avec différents niveaux de représentation en correspondance les uns avec les autres. On retrouve également un niveau de représentation profond dans un des modèles post-générativistes, la \textit{Lexical Functional Grammar} (LFG) de Joan Bresnan et Ronald Kaplan (\citeyear{kaplan1981functional}) : ici une structure syntaxique en constituants, la c-structure, encode la syntaxe de surface et est opposée à une structure de dépendance dite \terme{structure fonctionnelle}, la f-structure, qui s’apparente à une structure syntaxique profonde.
+
+L’opposition terminologique entre structure profonde (\textit{deep structure}) et structure de surface (\textit{surface structure}) a également été utilisée par Noam  \cite{chomsky1965aspects} dans le cadre de la grammaire générative-transformationnelle. L’usage est différent : la structure profonde n’est pas réellement un niveau de représentation différent de la structure de surface, mais une structure syntaxique sous-jacente à la structure de surface, la structure de surface étant obtenue par l’application (éventuelle) de transformations sur la structure profonde. Alors que la structure profonde de Mel’čuk est clairement une structure qui manipulent des sémantèmes et pas des syntaxèmes, la structure profonde de Chomsky manipulent les mêmes unités que sa structure de surface. De plus, chez Mel’čuk, la structure syntaxique profonde est un arbre de dépendance non ordonnée, l’ordre linéaire n’étant introduit qu’au moment de l’interface entre la syntaxe de surface et le texte, tandis que chez Chomsky, la structure profonde et la structure de surface sont des structures de constituants ordonnées. Il s’ensuit des discussions théoriques, qui nous semblent sans fondement, sur l’ordre de base des constructions syntaxiques, l’ordre de base étant l’ordre dans lequel les éléments se trouvent dans la structure profonde avant que des transformations les déplacent vers leur position en surface (voir l’\encadref{sec:3.5.8} \textit{Mouvement et ordre de base}).}
+
+\section{Actant et modifieur}
+Les \hi{relations syntaxiques de surface} comme les \hi{relations sémantiques} sont \hi{asymétriques} : les relations syntaxiques de surface lient un gouverneur à un dépendant, tandis que les relations sémantiques lient un prédicat à un argument. Cette \hi{double asymétrie} entraine qu’il existe deux grands types de \terme{relations syntaxiques profondes} (voir les figures \ref{fig:dep-actant} et \ref{fig:dep-mod} du \chapref{sec:1.2} \textit{Produire un énoncé}).
+
+\definition{\terme{relation actancielle}, \terme{actant}}
+{La relation entre deux sémantèmes est dite \terme{actancielle} quand l’un des sémantèmes est \hi{à la fois le dépendant syntaxique et l’argument sémantique} de l’autre sémantème. Le sémantème dépendant est appelé un \terme{actant} du sémantème gouverneur.}
+
+\definition{\terme{relation modificative}, \terme{modifieur}}
+{La relation entre deux sémantèmes est dite \terme{modificative} quand l’un des sémantèmes est \hi{à la fois le gouverneur syntaxique et l’argument sémantique} de l’autre sémantème. Le sémantème dépendant est appelé un \terme{modifieur} du sémantème gouverneur.}
+
+Le terme \textit{modifieur} est également utilisé pour désigner les sémantèmes qui ont la capacité de modifier un autre sémantème. Nous dirons ainsi que les adjectifs, les adverbes, les prépositions et les conjonctions de subordination sont des modifieurs.
+
+Les arguments d’un sémantème sont numérotés dans l’\terme{ordre d’oblicité} croissante. L’ordre d’oblicité et son inverse, l’\terme{ordre de saillance}, seront définis dans le \chapfuturef{18}. Disons juste que le sujet est la relation la plus saillante, suivie du complément d’objet indirect, puis du complément d’objet indirect. Le sujet est donc le premier argument des verbes et par conséquent le \hi{premier actant}. Pour les modifieurs, le gouverneur syntaxique est considéré comme le premier argument. Ceci est justifié par le fait que lorsqu’un modifieur est verbalisé, son gouverneur devient le sujet de la construction (\textit{une \underline{maison} \textbf{blanche}}, \textit{la \underline{maison} \textbf{est blanche}}). Le deuxième argument d’un modifieur est appelé le deuxième actant.
+
+Les relations modificatives sont étiquetées \textsc{mod} dans les structures syntaxiques profondes. Les relations actancielles sont numérotées dans l’ordre d’oblicité.
+
+Nous verrons dans la \sectref{sec:13-distorsion} qu’il existe des cas où les relations syntaxiques de surface et les relations sémantiques ne se superposent pas, ce qui nous amènera à considérer deux autres types de relations syntaxiques profondes : les relations syntaxiques asémantiques et les relations sémantiques asyntaxiques.
+
+Les structures syntaxiques profondes contiennent également des relations de coréférence et des relations d’ancrage, dont nous discuterons dans la \sectref{sec:13-unites} et l’\encadref{sec:13-ancrage}.
+
+Lorsque nous étudierons les listes paradigmatiques (\chapfuturef{20}) et la macrosyntaxe (\chapfuturef{21}), nous introduirons encore d’autres relations syntaxiques profondes.
+
+\section{Les unités (potentielles) de la syntaxe profonde}
+\label{sec:13-unites}
+L’objectif de la syntaxe profonde est d’étudier les combinaisons entre sémantèmes, c’est-à-dire les unités lexicales et grammaticales qui ont une contribution sémantique. Les unités de base de la structure syntaxique profonde sont donc avant tout les sémantèmes. Mais plusieurs questions se posent et nous allons donc passer en revue les unités qui sont nécessairement dans la structure, celles qui n’y apparaissent pas explicitement et celles qui pourraient y apparaître.
+
+\subsection{Les unités de la syntaxe profonde}
+
+\smallskip\noindent\textbf{Les sémantèmes lexicaux.} Ce sont les \hi{unités lexicales} ou \hi{lexies}. Les lexies peuvent correspondre, du coté syntaxique, à un lexème ou à un phrasème composé de plusieurs lexèmes, comme \phraseme{tenir la jambe} dans l’exemple \ref{ex:jambe}. Elles peuvent éventuellement contenir des grammèmes, comme la lexie \textsc{travaux} (\textit{Il y a des \textbf{travaux} dans ma rue.}), qui contient un pluriel inhérent.
+
+Du côté sémantique, les lexies ont un signifié bien déterminé et sont donc des unités non ambigües, qui sont associées à des acceptions précises de lexèmes. (Dans nos représentations, nous n’indiquons pas quelle acception de chaque unité lexicale est considérée, car cela nécessite d’avoir un lexique de référence.)
+
+\smallskip\noindent\textbf{Les sémantèmes grammaticaux.} Ce sont les \hi{unités grammaticales} ou \hi{grammies}. Une grammie peut correspondre du coté syntaxique à un grammème, comme l’imparfait, ou à une combinaison de grammèmes et de lexèmes, l’un des grammèmes se combinant avec un lexème ne faisant pas partie de la grammie. Ce dernier cas peut être illustré par l’accompli, formé en français d’un auxiliaire, \textsc{avoir} ou \textsc{être}, et d’un grammème de participe passé (voir la figure \ref{fig:accompli}).
+
+\ea\label{ex:accompli} \textit{J’ai peur d’avoir répondu trop vite.}\z
+
+FIGURE\label{fig:accompli}  moi <-1- \phraseme{avoir peur}_prés -2-> répondre_accompli -MOD-> vite -MOD-> trop
+\caption{Structure syntaxique profonde de \REF{ex:accompli}}
+
+(Il existe une autre acception de \phraseme{avoir peur} qui est une collocation, où \textsc{peur} est modifiable et avoir commute avec \textsc{faire} : j’ai une peur bleue des araignées. Mais le sens figuré utilisé en \REF{ex:accompli} est bien un phrasème \phraseme{avoir peur}.)
+
+\subsection{Les unités de la syntaxe de surface qui ne sont pas des unités de la syntaxe profonde}
+
+\smallskip\noindent\textbf{Les lexèmes polysémiques.} Nous avons défini les syntaxèmes sur des critères purement syntaxiques. Un lexème, c’est-à-dire un syntaxème lexical, peut tout à fait être polysémique et correspondre à plusieurs sémantèmes. Dans ce cas, c’est une acception précise du lexème, correspondant à un sens particulier, qui figure dans la structure syntaxique profonde.
+
+\smallskip\noindent\textbf{Les lexèmes qui font partie d’un phrasème.} Dans ce cas, le lexème n’apparait pas en tant que tel : c’est le phrasème qui sera une unité minimale de la structure syntaxique profonde.
+
+\smallskip\noindent\textbf{Les régimes.} Les syntaxèmes qui marquent la relation syntaxique entre deux sémantèmes n’apparaissent pas explicitement dans la structure syntaxique profonde. Ils ne correspondent pas à un choix séparé du locuteur, mais sont imposés par le régime du gouverneur. C’est le cas de la préposition \textsc{à} dans l’exemple \REF{ex:jambe}, qui est imposé par le régime de \phraseme{tenir la jambe}. C’est aussi le cas des syntaxèmes flexionnels de cas, comme le nominatif porté par les pronoms personnel sujet en français (cf. je = \textsc{moi}_nominatif, dans l’exemple \REF{ex:accompli}).
+
+\smallskip\noindent\textbf{Les syntaxèmes d’accord.} Les syntaxèmes flexionnels qui marquent l’accord, comme l’accord en genre des adjectifs du français (\textit{maison blanche}), n’ont pas de contribution sémantique. Ces syntaxèmes servent généralement à marquer des relations syntaxiques. Le cas de l’accord en nombre entre le nom et l’article ((\textit{les chevaux}) est plus complexe, car il y a bien un sémantème de pluriel, qui correspond à deux syntaxèmes. Nous positionnons le sémantème sur le nom, puisque c’est sur le nom que porte sémantiquement le nombre (même si en français, le nombre est morphologiquement marqué avant tout sur l’article).
+
+\subsection{Les unités potentielles de la syntaxe profonde}\label{sec:13-potentiel}
+
+\smallskip\noindent\textbf{Les collocatifs.} Les collocatifs sont des sémantèmes, mais leur choix est contraint par la base de la collocation et leur sens dans le contexte de la collocation est généralement différent de leur sens habituel. Dans l’exemple \REF{ex:peurbleue}, \textsc{faire} et \textsc{bleu} sont des collocatifs de \textsc{peur}, qui expriment respectivement des sens de causation (‘Zoé cause que j’ai peur’) et d’intensification (‘Ma peur est intense’), que nous représentons dans la représentation sémantique de la phrase par les signifiés génériques ‘causer’ et ‘intense’. A partir de là deux choix sont possibles : on peut introduire des lexies \textsc{faire} et \textsc{bleu} particulières, utilisées avec les sens ‘causer’ et ‘intense’ dans le contexte de \textsc{peur}. Ou bien, comme le propose Igor Mel’čuk, considérer que \textsc{faire} et \textsc{bleu} sont des lexèmes qui réalisent en surface les valeurs d’un « sémantème » plus abstrait, qu’il appelle des \terme{fonctions lexicales} (voir l\encadref{sec:2.3.11} sur les \textit{Fonctions lexicales}) et que nous nommons Caus et Magn dans la figure \ref{fig:peurbleue}.
+
+\ea\label{ex:peurbleue} \textit{Zoé m’a fait une peur bleue.}\z
+
+FIGURE \label{fig:peurbleue}
+a.	 ‘Zoé’ <-1- ‘causer’ -2-> ‘peur’ -1-> ‘moi’
+<-1- ‘intense’
+b. Zoé <-1- Caus_passé -2-> peur -MOD-> Magn
+		      -3->  moi
+\caption{Structures sémantique et syntaxique profonde de \REF{ex:peurbleue}}
+
+\smallskip\noindent\textbf{Les translatifs purs.} Les \hi{translatifs} sont des syntaxèmes dont la fonction est de permettre à un lexème d’une catégorie donnée d’occuper une position syntaxique dont les éléments prototypiques appartiennent à une autre catégorie (voir le \chafuturef{18} sur les \textit{Catégories microsyntaxiques}). Ainsi dans l’exemple \REF{ex:content}a, la copule \textsc{être} permet à l’adjectif \textsc{content} de se comporter comme un prédicat verbal et d’occuper la position de complément du verbe \textsc{penser}. Une autre construction est possible, \REF{ex:content}b, sans copule. La synonymie entre les deux constructions montre l’absence de contribution sémantique de la copule. Un translatif sans réelle contribution sémantique est dit \hi{pur}.
+
+\ea\label{ex:content}
+\ea \textit{Ali pense que Zoé est contente.}\z
+\ex \textit{Ali pense Zoé contente.}\z\z
+
+Malgré l’absence de contribution sémantique des translatifs purs, nous décidons de les faire figurer dans la structure syntaxique profonde, car on peut considérer que le fait de ne pas utiliser, dans une position donnée, une lexie de la catégorie attendue est un choix du locuteur (souvent contraint par l’absence d’une possible réalisation dans la catégorie attendue du sens à lexicaliser) et que ce choix induit une lexicalisation particulière dans la position considérée. De plus, dans un cas comme celui de \textsc{content} dans \REF{ex:content}a, le fait que l’adjectif soit combiné avec un translatif en verbe entraîne la présence d’une grammie de temps, le présent dans cet exemple, dont le choix est en partie libre. 
+Il existe plusieurs possibilités pour modéliser la copule dans la structure syntaxique profonde de \REF{ex :content}a. Dans la figure \ref{fig:content}a, nous représentons la copule comme un opérateur V de verbalisation, tandis que, en b, nous lui attribuons une véritable position dans la structure (ce qui nous rapproche davantage de la structure syntaxique de surface). Dans ce deuxième cas, nous utilisons l’étiquette Pred, proposée par Mel’čuk. 
+
+FIGURE \label{fig:content} a. V(content) -> Zoé, b. Zoé <- Pred -> content
+\caption{Structure syntaxique profonde de \REF{ex:content}a et b}
+
+Notons que la conjonction de subordination \textsc{que} est également un translatif de verbe en substantif. Nous aurions donc pu aussi l’introduire dans les représentations b et c de la figure \ref{fig:content}. Nous ne l’avons pas fait, car on considère que la conjonction de subordination \textsc{que} fait partie du régime de \textsc{penser}.
+
+Notons également que les translatifs peuvent en plus être des collocatifs : tel est le cas des verbes supports qui permettent à des noms prédicatifs d’occuper des positions verbales (\textit{\textbf{poser une question}}, (\textit{\textbf{faire une sieste}}, (\textit{\textbf{pousser un cri}}, etc.) (voir l’\encadref{sec:2.3.9} sur les \textit{Verbes supports et unités grammaticales}).
+
+\smallskip\noindent\textbf{Les sémantèmes constructionnels.} Il existe des syntaxèmes qui n’expriment pas des sens proprement dits, mais qui ont à voir avec la structure communicative, la façon dont on présente l’information (voir l’\encadref{sec:13-packaging}). Nous considérons qu’il s’agit de sémantèmes d’un type particulier, que nous appelons les \terme{sémantèmes constructionnels}. Nous distinguons ceux comme le clivage, qui sont réalisés par des lexèmes et des grammèmes distincts de la forme verbale et que nous traitons comme des lexies, et ceux comme le passif, qui sont réalisés par un grammème sur le verbe et que nous traitons comme des grammies.
+
+Nous avons déjà parlé du clivage dans la section 11.8 sur Les tests de constituance et dont nous reparlerons dans le \chapfuturef{20}. Le clivage, réalisé par \textit{c’est} X \textit{qui/que} Y, s’applique à une proposition Y dont il promeut l’un des éléments X. Il possède donc deux actants : l’élément promu X est le premier actant et la proposition Y privée de cet élément est le deuxième actant.
+
+\ea\label{ex:13-clivage}
+\ea \textit{\textbf{C’est} Zoé \textbf{qui} viendra.}\z
+\ex \textit{\textbf{C’est} à Zoé \textbf{que} j’ai parlé.}\z\z
+
+Nous modélisons le clivage comme une lexie que nous appelons « clivage ». Dans la figure \ref{fig:13-clivage}, la flèche haché représente une dépendance sémantique qui n’est pas réalisée par une dépendance syntaxique entre les mêmes éléments. Nous y reviendrons dans la \sectref{sec:13-controle} sur le \textit{Contrôle}.
+
+Figure\label{fig:13-clivage}
+ a. Zoé <-1- clivage -2-> venir_fut ..1..> Zoé
+b. Zoé <-1- clivage -2-> parler_passé ..2..> Zoé
+						-1-> moi
+\caption{Structure syntaxique profonde de \REF{ex:13-clivage}a et b}
+
+Le passif est l’exemple le plus connu de redistribution : il a pour effet de promouvoir l’objet d’un verbe transitif dans la position sujet et d’effacer ou de rétrograder le sujet du verbe. En français, il est réalisé par un grammème de participe passé sur le verbe, généralement combiné avec la copule \textsc{être}. En conséquence de cette redistribution, le deuxième argument du verbe devient le premier actant, tandis que le premier argument est retrogradé dans un rôle que nous notons ∞. (Nous utilisons cet étiquette pour indiquer que le \terme{complément retrogradé}, appelé \terme{complément d’agent} par la grammaire traditionnelle, occupe toujours une position plus oblique que les autres actants. Voir la section suivante pour la numérotation des actants.)
+
+\ea\label{ex:13-passif}
+\ea \textit{une fille poursuivie par un chien}\z
+ \ex \textit{Zoé est poursuivie par un chien.}\z\z
+
+Figure\label{fig:13-passif}
+a.	fille_sg, indéf -MOD-> poursuivre_passif -∞-> chien_sg, indéf
+b.	Zoé <-1- V(poursuivre_passif)_prés -∞-> chien_sg, indéf`
+\caption{Structure syntaxique profonde de \REF{ex:13-passif}a et b}
+
+Notons que dans le cas du participe passif dépendant d’un nom, le passif, en plus d’opérer une redistribution, joue aussi le rôle de translatif de verbe en adjectif (figure \ref{fig:13-passif}a). Le passif en \textsc{être} peut alors être vu comme une double translation, du verbe en adjectif, puis d’adjectif en verbe par la copule. C’est ainsi que nous le modélisons (en français) (figure \ref{fig:13-passif}b).
+
+Nous n’indiquons pas quand le verbe est à l’actif, considérant qu’il s’agit de la construction de base du verbe et qu’il n’y a donc pas de redistribution en jeu.
+
+\smallskip\noindent\textbf{Les pronoms.} Certains pronoms résultent du dédoublement d’un nœud sémantique, comme le pronom elle en \REF{ex:13-pronom}a. Le pronom n’est pas un sémantème standard, puisqu’il n’a pas de signifié distinct qui apparaisse dans la structure sémantique, comme on le voit dans la structure sémantique de la figure \ref{fig:13-pronom-sem} commune aux deux exemples en \REF{ex:13-pronom}.
+
+\ea\label{ex:13-pronom}
+\ea Zoé pense qu’elle viendra.\z
+\ex Zoé pense venir.\z\z
+
+FIGURE
+\label{fig:13-pronom-sem}: Zoé <-1- penser -2-> venir -1-> (Zoé)
+\caption{Structure sémantique commune à \REF{ex:13-pronom} a et b}
+
+La représentation que nous proposons pour \REF{ex:13-pronom}a est d’indiquer qu’il y a un sémantème « pro » coréférent avec \textsc{Zoé}. La coréférence est indiquée par une double flèche en pointillé (voir la figure \ref{fig:13-pronom-pro}a). Ce lien indique que le sémantème « pro » provient du dédoublement du sémantème ‘Zoé’ et il permet d’assurer l’accord de « pro » avec \textsc{Zoé} au niveau syntaxique de surface Dans le cas de \REF{ex:13-pronom}b, où il n’y a pas de pronom, nous indiquons que la dépendance entre le verbe subordonné et son premier argument est uniquement sémantique (par une flèche hachée) (figure \ref{fig:13-pronom-pro}b). Nous reviendrons sur cette construction dans la \sectref{sec:13-contrôle} sur le \textit{Contrôle}.
+
+Figure\label{fig:13-pronom-pro}
+a.	Zoé <-1- penser_prés -2-> venir_futur -1-> PRO <….> (Zoé)
+b.	Zoé <-1- penser_ prés -2-> venir ..1..> (Zoé)
+\caption{Structure syntaxique profonde de \REF{ex:13-clivage}a et b}
+
+D’autres représentations plus proches de la sémantique ont été proposées : Mel’čuk propose une représentation commune pour les deux phrases de \REF{ex:13-pronom}, avec deux nœuds \textsc{Zoé} lié par un lien de coréférence. Une alternative à cette représentation est de garder un seul nœud \textsc{Zoé} et d’avoir deux gouverneurs syntaxique pour ce nœud, ce qui donne une structure de dag (directed acyclic graph, voir l’\encadref{sec:1.2.3}sur \textit{Graphe et arbre}).
+
+\smallskip\noindent\textbf{La finitude-mode.} On appelle finitude-mode la catégorie comprenant les grammèmes indicatif, subjonctif, impératif, infinitif, participe présent et participe passé. A l’exception de l’impératif, ces grammèmes n’ont généralement pas de contribution sémantique. Par exemple, l’indicatif ou l’infinitif sur le verbe \textsc{venir} dans les exemples \REF{ex:13-pronom} est imposé par le verbe \textsc{penser} qui le régit et nous le faisons donc pas figurer dans les structures syntaxiques profondes de ces exemples. Cette décision est tout de même discutable, car même si l’indicatif et l’infinitif n’ont pas ici de contribution sémantique, le choix de l’indicatif plutôt que l’infinitif a des conséquences sur la présence d’un sémantème de temps et sur la réalisation d’un pronom.
+
+La question se pose aussi pour l’indicatif sur le verbe principal. Nous considérons que que la réalisation d’un verbe à l’indicatif n’est pas réellement un choix du locuteur et ne correspond pas à l’expression d’un sens particulier. Ce n’est pas tout à fait vrai, puisque le choix de l’indicatif (\textit{Tu fais ce que tu veux.}) s’oppose à celui de l’impératif (\textit{Fais ce que tu veux !}) ou du subjonctif (\textit{Qu’il fasse ce qu’il veut !}) et indique qu’il s’agit d’une assertion ou d’une question et pas d’une injonction.
+
+Il existe des cas où l’infinitif possède réellement une contribution sémantique et n’est pas imposé par le régime d’un verbe. C’est par exemple le cas dans l’exemple \REF{ex:13-fumer}a : la grammie infinitif de \textit{fumer} en position sujet réalise une valeur générique du premier argument de \textsc{fumer}, que l’on peut aussi exprimer en français avec le pronom \textsc{on}, comme le montre la paraphrase avec \REF{ex:13-fumer}b. 
+
+\ea\label{ex:13-fumer}
+\ea \textit{Fumer est dangereux pour la santé.}\z
+\ex \textit{Quand on fume, on met sa santé en danger.}\z\z
+
+Nous donnons dans la figure \ref{fig:13-fumer} les représentations sémantique et syntaxique profonde de \REF\label{ex:13-fumer}. Nous représentons le sens générique par une étiquette « générique ». Ce sens est exprimé par grammie infinitif dans la structure syntaxique profonde. Notons que l’infinitif n’apparait pas dans la structure syntaxique profonde quand il ne s’agit pas d’un sémantème comme ici (voir l’analyse des exemples \REF{ex:13-venir} et \REF{ex:13-dormir}).
+
+\label{fig:13-fumer} 
+a. fumer_inf <-1- V(dangereux)_prés -2-> santé_def
+b. générique <-1- ‘fumer’ <-1- ‘dangereux’ -2-> ‘santé’
+\caption{Structures sémantique et syntaxique profonde pour \REF{ex:13-fumer}}
+
+Nous avons déjà donné des exemples avec le grammème de participe passé et vu qu’il pouvait faire partie d’une grammie complexe exprimant le passé (\textsc{avoir}\subscript{présent} + V\subscript{part-passé}) ou l’accompli (\textsc{avoir} + V\subscript{part-passé}) ou qu’il pouvait réaliser la grammie du passif (voir l’analyse de \REF{ex:13-passif}).
+
+Le grammème de participe présent lui est utilisé dans deux emplois en français :  comme un translatif pur de verbe en adjectif, comme en {ex:13-suivant}a, ou comme un translatif de verbe en adverbe dans la grammie complexe \textsc{en} + V\subscript{part-présent}, comme en \REF{ex:13-suivant}b (voir la figure \ref{fig:13-suivant}).
+
+\ea\label{ex:13-suivant}  
+\ea \textit{un chemin suivant la rivière}\z
+\ex \textit{Ali est allé à la poste en suivant la rivière.}\z\z
+
+Figure\label{fig:13-suivant} 
+a. chemin_sg, déf -MOD-> Adj(suivre) -2-> rivière_sg, déf
+b. Ali <-1- aller_passé -2-> poste_sg, déf
+			-MOD-> Adv(suivre) -2-> rivière_sg, déf
+\caption{Structures syntaxiques profondes de \REF{ex:13-suivant}a et b}
+
+\smallskip\noindent\textbf{Les sémantèmes cachés.} Nous appelons \textsc{sémantèmes cachés} des sens qui naissent d’une configuration particulière sans être réellement réalisé par un syntaxème. Notre premier exemple est illustré par une construction particulière du russe relevée par \cite[141]{melcuk1988dependency}. En russe, le numéral se place normalement avant le nom. Il est néanmoins possible de placer le numéral après le nom, mais cela change le sens : le numéral est alors interprété comme une valeur approximative. C’est donc l’ordre des mots qui est signifiant. 
+
+\ea\label{ex:13-approx}  
+\ea \textit{Ja polučil desjat’ rublej.}\\ ‘J’ai reçu dix roubles.’\z
+\ex \textit{Ja polučil rublej desjat’.}\\ ‘J’ai reçu environ dix roubles.’\z\z
+
+Nous indiquons cette valeur par un sémantème « approx », qui se combine avec le numéral (voir figure \ref{fig:13-approx}). Plus généralement, nous représentons les sémantèmes cachés comme des sémantèmes opérationnels s’appliquant à un autre sémantème.
+
+Figure\label{fig:13-approx} (quels sont les lemmes des formes en jeu ? Kim ?)
+ja <-1- polučil_accompli -2-> rublej -MOD-> approx(desjat’)
+\caption{Structure syntaxique profonde de \REF{ex:13-approx}b}
+
+La \hi{dislocation} est également un cas de sémantème constructionnel. La dislocation n’a pas vraiment de marqueur lexical : elle met en jeu un pronom qui reprend l’élément disloqué, mais le pronom n’est pas en soi le signifiant d’une dislocation. Nous considérons donc qu’il s’agit d’un sémantème caché, que nous notons « disloc » (voir la figure \ref{fig:13-disloc}).
+
+\ea\label{ex:13-disloc} \textit{Zoé, j’ai l’intention de lui parler.}\z
+FIGURE\label{fig:13-disloc}
+moi <-1- V(intention)_prés -2-> parler -2-> disloc(Zoé)
+					..1..> (moi)
+\caption{Structure syntaxique profonde de \REF{ex:13-disloc}}
+
+Un dernier exemple de sémantème constructionnel est celui des conversions massif-comptable. Un nom comme \tetxsc{vin} ou \tetxsc{sable} est dit \terme{massif}, car on ne compte pas le vin ou le sable et que du vin séparé en deux donne toujours du vin. Dans l’exemple \REF{ex:13-vin}a, nous considérons que \textsc{vin} ne se combine pas avec une grammie de nombre, car le grammème de singulier ne résulte pas d’un choix et ne s’oppose pas à un grammème de pluriel (voir la figure \ref{fig:13-vin}a). Pour quantifier du vin ou du sable, on doit ajouter un « classifieur » : \textit{deux \textbf{bouteilles} de vin}, \textit{trois \textbf{kilos} de sable}. On peut néanmoins combiner les massifs directement avec des numéraux, mais alors le nom X est interprété comme dénotant un « type de X ». Nous considérons donc que dans l’exemple \REF{ex:13-vin}b se cache un sémantème opérationnel, « type » (figure \ref{fig:13-vin}b). On notera aussi, dans les exemples \REF{ex:13-vin}, le contraste entre l’indéfini réalisé par \textsc{du} pour les massifs et par \textsc{un} pour les comptables.
+
+\ea\label{ex:13-vin}
+\ea \textit{Zoé a bu du vin.}\z
+\ex \textit{Zoé a gouté un bon vin.}\z\z
+
+Figure\label{fig:13-vin}
+a. Zoé <-1- boire_passé -2-> vin_indéf
+b. Zoé <-1- goûter_passé -2-> type(vin)_sg, indéf -MOD-> bon
+\caption{Structure syntaxiques profondes de \REF{ex:13-vin}a et b}
+
+\loupe[sec:13-packaging]{Structure communicative et syntaxe profonde}
+
+{La \terme{structure communicative}, encore appelée \hi{information packaging} en anglais, est une composante de la représentation sémantique qui se superpose à la structure prédicative pour indiquer comment l’information doit être communiquée (voir l’\encadref{1.2.4} sur \textit{Les composantes du sens}). La principale composante de la structure communicative est la partition thème-rhème : le \terme{rhème} est \hi{ce qu’on dit}, l’information qui est réellement communiquée, tandis que le \terme{thème} désigne \hi{ce dont on parle}, ce à propos de quoi le rhème communique une information.  
+
+Nous avons vu que dans les langues dites à ordre libre l’ordre des mots peut être utilisé pour encoder la structure communicative (avec le support de la prosodie). Par contre, dans les langues à ordre plus strict, comme le français, il existe des constructions dédiées pour exprimer la structure communicative. Nous en avons introduit deux dans la \sectref{sec:13-unites} sur \textit{Les unités (potentielles) de la syntaxe profonde} : le clivage et la dislocation. Le clivage est l’expression d’un \terme{rhème focalisé}, c’est-à-dire un rhème que l’on souhaite contraster avec les informations concurrentes. A l’inverse, la dislocation gauche marque un \terme{thème focalisé}, indiquant que c’est à propos de cet élément et pas d’un autre que l’information est communiquée.
+
+\ea
+\ea \textit{C’est \textbf{à Zoé} que je parle} (et ce n’est pas à quelqu’un d’autre).\z
+\ex \textit{\textbf{Zoé}, je ne lui parle pas} (les autres, je leur parle).\z\z
+
+Nous avons fait le choix d’indiquer explicitement les constructions qui sont déclenchées, puisqu’elles peuvent mettre en jeu des unités lexicales, comme le clivage, et faire intervenir une réorganisation de la structure syntaxique de surface. L’exemple \REF{ex:13-excellent} montre que si l’argument de l’adjectif \textsc{excellent} est disloqué, alors il n’est plus nécessaire de translater l’adjectif en verbe pour réaliser cet argument. Voir la figure \ref{fig:13-excellent} qui donne les structures syntaxiques profondes correspondantes.
+
+\ea\label{ex:13-excellent}
+\ea \textit{Excellent, ce café !}\z
+\ex \textit{Ce café est excellent.}\z\z
+
+Figure \label{fig:13-excellent}
+a. cet <-MOD- disloc(café) <-1- excellent
+b. cet <-MOD- café <-1- V(excellent)
+\caption{Structure syntaxiques profondes de \REF{ex:13-excellent}a et b}
+
+A la différence du français, dans d’autres langues, comme les langues slaves, la structure communicative ne déclenche pas de modifications de la structure syntaxique proprement dite, mais va être réalisée par des variations dans l’ordre des mots (voir l’\encadref{sec:3.5.23} sur \textit{Les langues dites à ordre libre}). On peut considérer que, dans ce cas, la structure communicative n’est pas consommée par l’interface sémantique-syntaxe et qu’elle devra être prive en compte directement par le module topologique. On peut donc décider de ne pas la mentionner dans la structure syntaxique profonde. C’est ce qu’on fera dans un modèle distribué où les différents niveaux de représentation peuvent communiquer entre eux et où la grammaire topologique peut accéder à des informations de niveau sémantique. Dans un modèle stratifié, la structure communicative devra être recopiée aux différents niveaux de représentation jusqu’à ce qu’elle soit consommée et elle apparaîtra donc dans les représentations syntaxiques profonde et de surface.}
+
+\section{Structure prédicative des sémantèmes}
+Les sens linguistiques fonctionnent comme des prédicats qui prennent d’autres sens comme arguments. Lorsque deux sémantèmes sont combinés, nous constatons que l’un des deux est l’argument de l’autre. Cette propriété, que nous ne pouvons pas démontrer, nous permet de postuler la structure prédicative des différents sémantèmes. 
+
+\definition{\terme{valence sémantique}, \terme{structure prédicative}, \terme{régime}}
+{La \terme{structure prédicative} du sémantème est l’\hi{ensemble des positions argumentales} qu’il ouvre. La \terme{valence sémantique} d’un sémantème est le \hi{nombre d’arguments sémantiques} que possède le sémantème. Le \terme{régime} du sémantème est l’\hi{ensemble des contraintes syntaxiques de surface} s’appliquant sur ses arguments.}
+
+Nous adoptons une définition très sémantique des arguments. Les arguments correspondent à des éléments essentiels dans la \hi{définition du sens} d’un sémantème. Par exemple, un verbe comme \textsc{vendre}, comparé à \textsc{donner}, est considéré comme quadrivalent : quelqu’un donne quelque chose à quelqu’un, mais pour vendre il faut en plus recevoir un montant en échange. Le verbe \textsc{louer} est quant à lui est pentavalent, puisque, contrairement à la vente qui est une cession pleine, la location se fait pour une durée déterminée.
+
+Les arguments peuvent aussi être caractérisés par des contraintes de réalisation particulières au niveau syntaxique de surface. Par exemple, le montant pour un verbe comme \textsc{vendre} est réalisé par un complément direct (\textit{elle l’a vendu \textbf{100 euros}}) qui peut en plus commuter avec l’adjectif \textsc{cher} (\textit{elle l’a vendu \textbf{cher}}). Ces propriétés montrent qu’il ne s’agit pas d’un modifieur. Les modifieurs verbaux peuvent être combinés avec la plupart des verbes, ce qui n’est évidemment pas le cas d’un tel complément.
+
+Nous allons étudier la structure prédicative des différents sémantèmes en procédant par parties du discours en commençant par les verbes, les noms, puis les modifieurs.
+
+\smallskip\noindent\textbf{Les verbes.} La valence des verbes est la plus étudiée. Nous en avons déjà donné quelques exemples. Il existe des \hi{verbes avalents}, comme les verbes météorologiques \textsc{pleuvoir} ou \textsc{neiger}, des \hi{verbes monovalents} comme \textsc{dormir} ou \textsc{courir}, des \hi{verbes bivalents} comme \textsc{manger} ou \textsc{penser}. Parmi les compléments locatifs, on distingue les modifieurs qui indiquent le lieu et le moment du procès d’arguments qui indiquent une destination. Par exemple, \textsc{aller} est bivalent (quelqu’un va quelque part), \textsc{mettre} est trivalent (quelqu’un met quelque chose quelque part). Certains cas sont délicats à trancher : par exemple, le complément \textit{à la bibliothèque} est un modifieur s’il indique le lieu où je travaille aujourd’hui, mais il est un argument si \REF{ex:travailler} est utilisé pour dire ‘je suis un employé de la bibliothèque’.
+
+\ea\label{ex:travailler} \textit{Je travaille à la bibliothèque.}\z
+
+\smallskip\noindent\textbf{Les noms.} Les noms posent un problème délicat. Un nom comme \textsc{sœur} est bivalent : il exprime la relation entre deux personnes et le sens de ‘sœur’ ne peut être définie sans faire intervenir ces deux personnes. Néanmoins son premier actant ne peut être exprimé que lorsque le nom est translaté en verbe comme en \REF{ex:13-soeur}a. Lorsque \textsc{sœur} occupe une position nominale, comme en  \REF{ex:13-soeur}b, seul son deuxième actant est exprimable. On dit, dans ce cas, que le nom \terme{intègre} son premier actant, le nom désigne le premier actant lui-même.
+
+\ea\label{ex:13-soeur}
+\ea \textit{Zoé est la sœur de Luce.}\z
+\ex \textit{La sœur de Luce dort.}\z\z
+
+Figure
+a. ‘Zoé’ <-1- ‘sœur’ -2-> ‘Luce’
+b. ‘Luce’ <-2- ‘sœur’ <-1- ‘dormir’
+\caption{Structures sémantiques de \REF{ex:13-soeur}a et b}
+
+Figure : 
+a. Zoé <-1- V(sœur)_présent -2-> Luce
+b. Luce <-2- sœur_sg, déf <-1- dormir_présent
+\caption{Structures syntaxiques profondes de \REF{ex:13-soeur}a et b}
+
+On peut considérer, comme l’on fait les logiciens depuis au moins \cite{frege1892uber}, que tous les noms intègrent un premier actant, qui ne peut être réalisé que lorsque le nom est utilisé comme attribut du sujet. Cependant la plupart des noms ne sont quasiment jamais utilisés comme attribut du sujet. De plus, lorsque le nom est défini, il s’agit souvent d’une \terme{proposition équative}, où le verbe \textsc{être} indique l’identité de deux choses, comme en \REF{ex:Mars}.
+
+\ea \textit{Mars est la troisième planète du système solaire.}\z
+
+Figure : ‘Mars’ <-1- ‘être’ -2-> ‘planète’ <-1- ‘appartenir’ -2-> ‘système’ <-1- ‘solaire’
+Mars <-1- être_présent -2-> planète_sg, déf -MOD-> de -2-> système -MOD-> solaire
+\caption{Structure syntaxique profonde de \REF{ex:Mars}}
+
+Il existe aussi des noms qui sont fondamentalement prédicatifs. Par exemple, un nom comme \textsc{question} est parallèle au verbe \textsc{questionner} : X \textit{questionne} Y \textit{à propos de} Z, \textit{la question de} X \textit{à}Y \textit{à propos de} Z. Il peut être utilisé dans des constructions à verbes support : X \textit{pose une question} Y, Y \textit{répond à la question} de X. Nous considérons donc que le nom \textsc{question} est un nom trivalent. On pourrait considérer qu’il intègre aussi un quatrième actant (pour les constructions attributives), mais par soucis de simplicité nous numéroterons les actants du nom \textsc{question} comme ceux du verbe \textsc{questionner}.
+
+\smallskip\noindent\textbf{Les modifieurs.} Les adjectifs, les adverbes, les prépositions ou les conjonctions de subordination sont intrinsèquement des \terme{modifieurs}, c’est-à-dire des sémantèmes, qui dépendent syntaxiquement de leur premier argument. Des adjectifs comme \textsc{rouge} ou \textsc{beau} désigne des propriétés d’une entité et ne peuvent être définis sans faire intervenir cette entité. Des adverbes comme \textsc{vite} ou \textsc{facilement} désigne des propriétés d’un procès et ne peuvent être définis sans faire intervenir ce procès. Des prépositions comme \textsc{sur} ou \textsc{chez} exprime la relation entre deux éléments (quelque chose est sur quelque chose, quelque chose est chez quelqu’un) et sont donc bivalentes (voir la figure \ref{ex:chez}). Une préposition comme \textsc{avant} est même trivalente : \textit{son anniversaire est deux jours avant Noël}. Les prépositions peuvent intégrer leur premier actant comme les noms, lorsqu’elles sont l’actant d’un verbe de mouvement (voir la figure \ref{ex:chez}c).
+
+\ea\label{ex:chez} 
+\ea Luce est chez Zoé.\z
+\ex Luce dort chez Zoé.\z
+\ex Luce va chez Zoé.\z\z
+
+Figure : a. Luce <-1- V(chez)_présent -2-> Zoé
+b. Luce <-1- dormir_présent <-MOD- chez -2-> Zoé
+c. Luce <-1- aller_présent -2-> chez -2-> Zoé
+\caption{Structures syntaxiques profondes de \REF{ex:chez}a, b et c}
+
+Une conjonction de subordination comme \textsc{parce que} est également bivalente : elle indique une relation de cause à effet entre deux faits. 
+
+Les adjectifs ou les adverbes peuvent aussi occuper une position actancielle, comme dans \REF{ex:13-francais}a et c. Ils intègrent alors leur premier argument : on comparera les deux emplois de \textsc{français} dans la figure \ref{fig:13-francais}.
+
+\ea\label{ex:13-francais}
+\ea \textit{la production \textbf{française} de lait}\z
+\ex \textit{une tomate française}\z
+\ex \textit{Luce s’est \textbf{mal} comportée.}\z\z
+
+Figure\label{fig:13-francais}
+a. production_sg, déf -1-> français
+					-2-> Adj(lait)
+b. tomate_sg, déf -MOD-> français
+\caption{Structures syntaxiques profondes de \REF{ex:13-francais}a et b}
+
+\smallskip\noindent\textbf{Les sémantèmes grammaticaux.} Les grammies sont toujours des prédicats unaires, qui prennent une lexie comme unique argument. La grammie exprime une propriété associée à la lexie : par exemple, un temps passé exprime que le procès décrit par le verbe a lieu avant maintenant, un nombre pluriel exprime qu’il y a plus d’une entité dénotée par le nom. Dans la représentation sémantique, on peut d’ailleurs faire figurer aussi bien le terme associé à la grammie (passé ou pluriel) que la glose lexicale (‘avant maintenant’ ou ‘plus d’un’).
+
+D’autres exemples sont donnés dans les exercices. Les conjonctions de coordination seront étudiées dans le \chapfuturef{20} et les marqueurs de discours et les interjections dans le \chapfuturef{21}. Dans le \chapfuturef{17}, nous discuterons des parties du discours et nous verrons qu’il existe des langues avec une organisation différente des catégories et notamment des langues, comme le nahuatl, où les sémantèmes « nominaux » sont toujours prédicatif.
+
+\section{Lexique syntaxique}
+Un \terme{lexique} est une liste d’entrées lexicales associées à des informations. Pour les sémantèmes, on considère deux lexiques.
+
+\definition{\terme{lexique sémantique}, \terme{lexique syntaxique}}
+{Un \terme{lexique sémantique} associe à chaque lexie une description de son sens, tandis qu’un \terme{lexique syntaxique} associe à chaque lexie une description de sa combinatoire syntaxique.}
+
+Les dictionnaires monolingues traditionnelles, avec des définitions associées à chaque lexie, constituent des lexiques sémantiques. (Les définitions ne sont pas la seule façon de représenter le sens lexical, mais cela nous emmènerait trop loin de notre sujet de développer ce point.) Nous nous intéressons ici au lexique syntaxique. Chaque lexie y est associée à une description de la réalisation de ses arguments. Une telle description est traditionnellement appelée un \terme{tableau de régime}. 
+
+\definition{\terme{tableau de régime}}
+{Un \terme{tableau de régime} de la lexie L indique la correspondance entre les arguments sémantiques de L et leur réalisation en syntaxe de surface. Il indique pour chaque argument de la lexie L quelle relation syntaxique le lie à L, à quelle catégorie il peut appartenir et s’il est un actant quel régime L lui impose.}
+
+Le tableau de régime est Dans la grammaire générative, les tableaux de régime sont appelés des \terme{cadres de sous-catégorisation} (angl. \textit{sub-categorization frame}). (Le terme vient du fait que chaque régime définit une sous-catégorie, au sens où les verbes transitifs forment une sous-catégorie de la catégorie des verbes.)
+
+Nous donnons dans la figure \ref{fig:13-regime} quelques exemples de tableaux de régime. La ligne « 2. complément d’objet indirect : à N (obligatoire) » indique que le 2e actant est un complément d’objet indirect réalisé par \textit{à} N et que ce complément est obligatoire.
+
+FIGURE\label{fig:13-regime}
+\phraseme{tenir la jambe} : \textit{X \textit{tient la jambe à} Y
+1. sujet : N
+2. complément d’objet indirect : à N (obligatoire)
+\textsc{question} : \textit{question de} X \textit{à }Y \textit{sur/à propos de} Z
+1. complément : de N
+2. complément : à N
+3. complément : sur N, à propos de N
+\textsc{chez} : X \textit{est chez} Y
+1. gouverneur : V, N
+2. complément : N (obligatoire)
+\textsc{heureux} : X \textit{est heureux de} Y
+1. gouverneur : N
+2. complément : de V, que V_subj
+\caption{Tableaux de régime de \phraseme{tenir la jambe}, \textsc{question}, \textsc{chez}, \textsc{heureux}}
+
+Nous verrons dans le \chapfuturef{18} sur les \textit{Relations syntaxiques} que chaque relation syntaxique est associée à un faisceau de propriétés. Par exemple, la relation sujet en français suppose un accord du verbe, un placement particulier, l’absence de préposition, mais un marquage casuel des pronoms personnels (\textit{je}, \textit{tu}, \textit{il}, \textit{on}, etc.), ainsi que des propriétés de contrôle ou de redistribution que nous ne décrirons pas ici. On peut donc voir l’utilisation des relations syntaxiques dans le tableau de régime comme un moyen de décrire de façon synthétique une partie des propriétés syntaxiques d’un argument.
+
+
+
+
+
