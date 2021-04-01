@@ -13,8 +13,10 @@ Donnons un premier exemple de structure syntaxique profonde, en la contrastant a
 
 \ea\label{ex:jambe} \textit{Zoé a tenu la jambe à la prof pendant une heure.}\z
 
-FIGURE\label{fig:jambe} a. déclaration, Zoé, tenir la jambe, prof, défini, singulier, durer, heure, un, indéfini, avant maintenant
-b. Zoé, tenir la jambe_passé, prof sg, déf, pendant, heure, sg, indéf
+FIGURE 1
+\label{fig:jambe} 
+a. déclaration, Zoé, tenir la jambe, prof, défini, singulier, durer, heure, un, indéfini, avant maintenant
+b. Zoé, tenir la jambe_passé, prof sg, déf, pendant, heure, sg, indf
 c. Zoé, avoir ind prés 3 sg, tenir part_passé, le fém sg, jambe sg, à, le fém sg, prof sg, pendant, un fém sg, heure sg
 \caption{Structure sémantique, syntaxique profonde, syntaxique de surface de \ref{ex:jambe}}
 
@@ -64,7 +66,8 @@ Du côté sémantique, les lexies ont un signifié bien déterminé et sont donc
 
 \ea\label{ex:accompli} \textit{J’ai peur d’avoir répondu trop vite.}\z
 
-FIGURE\label{fig:accompli}  moi <-1- \phraseme{avoir peur}_prés -2-> répondre_accompli -MOD-> vite -MOD-> trop
+FIGURE 2
+\label{fig:accompli}  moi <-1- \phraseme{avoir peur}_prés -2-> répondre_accompli -MOD-> vite -MOD-> trop
 \caption{Structure syntaxique profonde de \REF{ex:accompli}}
 
 (Il existe une autre acception de \phraseme{avoir peur} qui est une collocation, où \textsc{peur} est modifiable et avoir commute avec \textsc{faire} : j’ai une peur bleue des araignées. Mais le sens figuré utilisé en \REF{ex:accompli} est bien un phrasème \phraseme{avoir peur}.)
@@ -85,7 +88,7 @@ FIGURE\label{fig:accompli}  moi <-1- \phraseme{avoir peur}_prés -2-> répondre_
 
 \ea\label{ex:peurbleue} \textit{Zoé m’a fait une peur bleue.}\z
 
-FIGURE \label{fig:peurbleue}
+FIGURE 3 \label{fig:peurbleue}
 a.	 ‘Zoé’ <-1- ‘causer’ -2-> ‘peur’ -1-> ‘moi’
 <-1- ‘intense’
 b. Zoé <-1- Caus_passé -2-> peur -MOD-> Magn
@@ -95,16 +98,18 @@ b. Zoé <-1- Caus_passé -2-> peur -MOD-> Magn
 \smallskip\noindent\textbf{Les translatifs purs.} Les \hi{translatifs} sont des syntaxèmes dont la fonction est de permettre à un lexème d’une catégorie donnée d’occuper une position syntaxique dont les éléments prototypiques appartiennent à une autre catégorie (voir le \chafuturef{18} sur les \textit{Catégories microsyntaxiques}). Ainsi dans l’exemple \REF{ex:content}a, la copule \textsc{être} permet à l’adjectif \textsc{content} de se comporter comme un prédicat verbal et d’occuper la position de complément du verbe \textsc{penser}. Une autre construction est possible, \REF{ex:content}b, sans copule. La synonymie entre les deux constructions montre l’absence de contribution sémantique de la copule. Un translatif sans réelle contribution sémantique est dit \hi{pur}.
 
 \ea\label{ex:content}
-\ea \textit{Ali pense que Zoé est contente.}\z
-\ex \textit{Ali pense Zoé contente.}\z\z
+\ea \textit{Ali trouve que Zoé est sympa.}\z
+\ex \textit{Ali trouve Zoé sympa.}\z\z
 
 Malgré l’absence de contribution sémantique des translatifs purs, nous décidons de les faire figurer dans la structure syntaxique profonde, car on peut considérer que le fait de ne pas utiliser, dans une position donnée, une lexie de la catégorie attendue est un choix du locuteur (souvent contraint par l’absence d’une possible réalisation dans la catégorie attendue du sens à lexicaliser) et que ce choix induit une lexicalisation particulière dans la position considérée. De plus, dans un cas comme celui de \textsc{content} dans \REF{ex:content}a, le fait que l’adjectif soit combiné avec un translatif en verbe entraîne la présence d’une grammie de temps, le présent dans cet exemple, dont le choix est en partie libre. 
-Il existe plusieurs possibilités pour modéliser la copule dans la structure syntaxique profonde de \REF{ex :content}a. Dans la figure \ref{fig:content}a, nous représentons la copule comme un opérateur V de verbalisation, tandis que, en b, nous lui attribuons une véritable position dans la structure (ce qui nous rapproche davantage de la structure syntaxique de surface). Dans ce deuxième cas, nous utilisons l’étiquette Pred, proposée par Mel’čuk. 
+Il existe plusieurs possibilités pour modéliser la copule dans la structure syntaxique profonde de \REF{ex :content}a. Dans la figure \ref{fig:content}a, nous représentons la copule comme un opérateur V de verbalisation, tandis que, en b, nous lui attribuons une véritable position dans la structure (ce qui nous rapproche davantage de la structure syntaxique de surface). Dans ce deuxième cas, nous utilisons l’étiquette Pred, proposée par Mel’čuk. La flèche hachée représente une dépendance sémantique qui n’est pas réalisée par une dépendance syntaxique entre les mêmes éléments. Nous y reviendrons dans la \sectref{sec:13-controle} sur le \textit{Contrôle}.
 
-FIGURE \label{fig:content} a. V(content) -> Zoé, b. Zoé <- Pred -> content
-\caption{Structure syntaxique profonde de \REF{ex:content}a et b}
+FIGURE 4\label{fig:content} 
+a. Ali <-1- trouver_prés -2-> V(content)_prés -> Zoé, 
+b. Ali <-1- trouver_prés -2-> Zoé <- Pred_prés -> content
+\caption{Structure syntaxique profonde de \REF{ex:content}a}
 
-Notons que la conjonction de subordination \textsc{que} est également un translatif de verbe en substantif. Nous aurions donc pu aussi l’introduire dans les représentations b et c de la figure \ref{fig:content}. Nous ne l’avons pas fait, car on considère que la conjonction de subordination \textsc{que} fait partie du régime de \textsc{penser}.
+Notons que la conjonction de subordination \textsc{que} est également un translatif de verbe en substantif. Nous aurions donc pu aussi l’introduire dans les représentations de la figure \ref{fig:content}. Nous ne l’avons pas fait, car on considère que la conjonction de subordination \textsc{que} fait partie du régime de \textsc{trouver}.
 
 Notons également que les translatifs peuvent en plus être des collocatifs : tel est le cas des verbes supports qui permettent à des noms prédicatifs d’occuper des positions verbales (\textit{\textbf{poser une question}}, (\textit{\textbf{faire une sieste}}, (\textit{\textbf{pousser un cri}}, etc.) (voir l’\encadref{sec:2.3.9} sur les \textit{Verbes supports et unités grammaticales}).
 
@@ -116,9 +121,9 @@ Nous avons déjà parlé du clivage dans la section 11.8 sur Les tests de consti
 \ea \textit{\textbf{C’est} Zoé \textbf{qui} viendra.}\z
 \ex \textit{\textbf{C’est} à Zoé \textbf{que} j’ai parlé.}\z\z
 
-Nous modélisons le clivage comme une lexie que nous appelons « clivage ». Dans la figure \ref{fig:13-clivage}, la flèche haché représente une dépendance sémantique qui n’est pas réalisée par une dépendance syntaxique entre les mêmes éléments. Nous y reviendrons dans la \sectref{sec:13-controle} sur le \textit{Contrôle}.
+Nous modélisons le clivage comme une lexie que nous appelons « clivage ». Les structures syntaxiques profondes de nos deux exemples sont données dans la figure \ref{fig:13-clivage} (voir la \sectref{sec:13-controle} sur le \textit{Contrôle} pour la flèche hachée).
 
-Figure\label{fig:13-clivage}
+Figure 5\label{fig:13-clivage}
  a. Zoé <-1- clivage -2-> venir_fut ..1..> Zoé
 b. Zoé <-1- clivage -2-> parler_passé ..2..> Zoé
 						-1-> moi
@@ -130,12 +135,12 @@ Le passif est l’exemple le plus connu de redistribution : il a pour effet de p
 \ea \textit{une fille poursuivie par un chien}\z
  \ex \textit{Zoé est poursuivie par un chien.}\z\z
 
-Figure\label{fig:13-passif}
+Figure 6\label{fig:13-passif}
 a.	fille_sg, indéf -MOD-> poursuivre_passif -∞-> chien_sg, indéf
 b.	Zoé <-1- V(poursuivre_passif)_prés -∞-> chien_sg, indéf`
 \caption{Structure syntaxique profonde de \REF{ex:13-passif}a et b}
 
-Notons que dans le cas du participe passif dépendant d’un nom, le passif, en plus d’opérer une redistribution, joue aussi le rôle de translatif de verbe en adjectif (figure \ref{fig:13-passif}a). Le passif en \textsc{être} peut alors être vu comme une double translation, du verbe en adjectif, puis d’adjectif en verbe par la copule. C’est ainsi que nous le modélisons (en français) (figure \ref{fig:13-passif}b).
+Notons que dans le cas du participe passif dépendant d’un nom, le passif, en plus d’opérer une redistribution, joue aussi le rôle de translatif de verbe en adjectif (figure \ref{fig:13-passif}a). Le passif en \textsc{être} peut alors être vu comme une double translation, du verbe en adjectif de la grammie du passif, puis d’adjectif en verbe par la copule. C’est ainsi que nous le modélisons (en français) (figure \ref{fig:13-passif}b).
 
 Nous n’indiquons pas quand le verbe est à l’actif, considérant qu’il s’agit de la construction de base du verbe et qu’il n’y a donc pas de redistribution en jeu.
 
@@ -145,7 +150,7 @@ Nous n’indiquons pas quand le verbe est à l’actif, considérant qu’il s�
 \ea Zoé pense qu’elle viendra.\z
 \ex Zoé pense venir.\z\z
 
-FIGURE
+FIGURE 7
 \label{fig:13-pronom-sem}: Zoé <-1- penser -2-> venir -1-> (Zoé)
 \caption{Structure sémantique commune à \REF{ex:13-pronom} a et b}
 
@@ -154,7 +159,7 @@ La représentation que nous proposons pour \REF{ex:13-pronom}a est d’indiquer 
 Figure\label{fig:13-pronom-pro}
 a.	Zoé <-1- penser_prés -2-> venir_futur -1-> PRO <….> (Zoé)
 b.	Zoé <-1- penser_ prés -2-> venir ..1..> (Zoé)
-\caption{Structure syntaxique profonde de \REF{ex:13-clivage}a et b}
+\caption{Structures syntaxiques profondes de \REF{ex:13-pronom}a et b}
 
 D’autres représentations plus proches de la sémantique ont été proposées : Mel’čuk propose une représentation commune pour les deux phrases de \REF{ex:13-pronom}, avec deux nœuds \textsc{Zoé} lié par un lien de coréférence. Une alternative à cette représentation est de garder un seul nœud \textsc{Zoé} et d’avoir deux gouverneurs syntaxique pour ce nœud, ce qui donne une structure de dag (directed acyclic graph, voir l’\encadref{sec:1.2.3}sur \textit{Graphe et arbre}).
 
@@ -170,7 +175,7 @@ Il existe des cas où l’infinitif possède réellement une contribution séman
 
 Nous donnons dans la figure \ref{fig:13-fumer} les représentations sémantique et syntaxique profonde de \REF\label{ex:13-fumer}. Nous représentons le sens générique par une étiquette « générique ». Ce sens est exprimé par grammie infinitif dans la structure syntaxique profonde. Notons que l’infinitif n’apparait pas dans la structure syntaxique profonde quand il ne s’agit pas d’un sémantème comme ici (voir l’analyse des exemples \REF{ex:13-venir} et \REF{ex:13-dormir}).
 
-\label{fig:13-fumer} 
+FIGURE 9\label{fig:13-fumer} 
 a. fumer_inf <-1- V(dangereux)_prés -2-> santé_def
 b. générique <-1- ‘fumer’ <-1- ‘dangereux’ -2-> ‘santé’
 \caption{Structures sémantique et syntaxique profonde pour \REF{ex:13-fumer}}
@@ -183,7 +188,7 @@ Le grammème de participe présent lui est utilisé dans deux emplois en frança
 \ea \textit{un chemin suivant la rivière}\z
 \ex \textit{Ali est allé à la poste en suivant la rivière.}\z\z
 
-Figure\label{fig:13-suivant} 
+Figure 10\label{fig:13-suivant} 
 a. chemin_sg, déf -MOD-> Adj(suivre) -2-> rivière_sg, déf
 b. Ali <-1- aller_passé -2-> poste_sg, déf
 			-MOD-> Adv(suivre) -2-> rivière_sg, déf
@@ -197,14 +202,15 @@ b. Ali <-1- aller_passé -2-> poste_sg, déf
 
 Nous indiquons cette valeur par un sémantème « approx », qui se combine avec le numéral (voir figure \ref{fig:13-approx}). Plus généralement, nous représentons les sémantèmes cachés comme des sémantèmes opérationnels s’appliquant à un autre sémantème.
 
-Figure\label{fig:13-approx} (quels sont les lemmes des formes en jeu ? Kim ?)
+Figure 11\label{fig:13-approx} (quels sont les lemmes des formes en jeu ? Kim ?)
 ja <-1- polučil_accompli -2-> rublej -MOD-> approx(desjat’)
 \caption{Structure syntaxique profonde de \REF{ex:13-approx}b}
 
 La \hi{dislocation} est également un cas de sémantème constructionnel. La dislocation n’a pas vraiment de marqueur lexical : elle met en jeu un pronom qui reprend l’élément disloqué, mais le pronom n’est pas en soi le signifiant d’une dislocation. Nous considérons donc qu’il s’agit d’un sémantème caché, que nous notons « disloc » (voir la figure \ref{fig:13-disloc}).
 
 \ea\label{ex:13-disloc} \textit{Zoé, j’ai l’intention de lui parler.}\z
-FIGURE\label{fig:13-disloc}
+
+FIGURE 12\label{fig:13-disloc}
 moi <-1- V(intention)_prés -2-> parler -2-> disloc(Zoé)
 					..1..> (moi)
 \caption{Structure syntaxique profonde de \REF{ex:13-disloc}}
@@ -215,7 +221,7 @@ Un dernier exemple de sémantème constructionnel est celui des conversions mass
 \ea \textit{Zoé a bu du vin.}\z
 \ex \textit{Zoé a gouté un bon vin.}\z\z
 
-Figure\label{fig:13-vin}
+Figure 13\label{fig:13-vin}
 a. Zoé <-1- boire_passé -2-> vin_indéf
 b. Zoé <-1- goûter_passé -2-> type(vin)_sg, indéf -MOD-> bon
 \caption{Structure syntaxiques profondes de \REF{ex:13-vin}a et b}
@@ -236,7 +242,7 @@ Nous avons fait le choix d’indiquer explicitement les constructions qui sont d
 \ea \textit{Excellent, ce café !}\z
 \ex \textit{Ce café est excellent.}\z\z
 
-Figure \label{fig:13-excellent}
+Figure 14 \label{fig:13-excellent}
 a. cet <-MOD- disloc(café) <-1- excellent
 b. cet <-MOD- café <-1- V(excellent)
 \caption{Structure syntaxiques profondes de \REF{ex:13-excellent}a et b}
@@ -259,40 +265,45 @@ Nous allons étudier la structure prédicative des différents sémantèmes en p
 
 \ea\label{ex:travailler} \textit{Je travaille à la bibliothèque.}\z
 
-\smallskip\noindent\textbf{Les noms.} Les noms posent un problème délicat. Un nom comme \textsc{sœur} est bivalent : il exprime la relation entre deux personnes et le sens de ‘sœur’ ne peut être définie sans faire intervenir ces deux personnes. Néanmoins son premier actant ne peut être exprimé que lorsque le nom est translaté en verbe comme en \REF{ex:13-soeur}a. Lorsque \textsc{sœur} occupe une position nominale, comme en  \REF{ex:13-soeur}b, seul son deuxième actant est exprimable. On dit, dans ce cas, que le nom \terme{intègre} son premier actant, le nom désigne le premier actant lui-même.
+\smallskip\noindent\textbf{Les noms.} Les noms posent un problème délicat. Un nom comme \textsc{sœur} est bivalent : il exprime la relation entre deux personnes et le sens de ‘sœur’ ne peut être défini sans faire intervenir ces deux personnes. Néanmoins son premier argument ne peut être exprimé que lorsque le nom est translaté en verbe comme en \REF{ex:13-soeur}a. Lorsque \textsc{sœur} occupe une position nominale, comme en  \REF{ex:13-soeur}b, seul son deuxième argument est exprimable. On dit, dans ce cas, que le nom \terme{intègre} son premier argument, le nom désigne le premier argument lui-même.
 
 \ea\label{ex:13-soeur}
 \ea \textit{Zoé est la sœur de Luce.}\z
 \ex \textit{La sœur de Luce dort.}\z\z
 
-Figure
+Le signifié de \textsc{sœur} lorsqu'il intègre sont premier argument est noté 'sœur'.1 (voir la figure \ref{fig:13-soeur-sem}b). Ce sens peut être paraphrasé par 'personne qui est la sœur'. Dans le représentation syntaxique profonde, nous indiquons explicitement le fait que \textsc{sœur} est translaté en V (voir la figure \ref{fig:13-soeur-synt}a). C'est seulement dans ce cas que le sémantème \textsc{sœur} peut réaliser son argument.
+
+
+Figure 15\label{fig:13-soeur-sem}
 a. ‘Zoé’ <-1- ‘sœur’ -2-> ‘Luce’
-b. ‘Luce’ <-2- ‘sœur’ <-1- ‘dormir’
+b. ‘Luce’ <-2- ‘sœur’.1 <-1- ‘dormir’
 \caption{Structures sémantiques de \REF{ex:13-soeur}a et b}
 
-Figure : 
+Figure 16 \label{fig:13-soeur-synt}
 a. Zoé <-1- V(sœur)_présent -2-> Luce
 b. Luce <-2- sœur_sg, déf <-1- dormir_présent
 \caption{Structures syntaxiques profondes de \REF{ex:13-soeur}a et b}
 
-On peut considérer, comme l’on fait les logiciens depuis au moins \cite{frege1892uber}, que tous les noms intègrent un premier actant, qui ne peut être réalisé que lorsque le nom est utilisé comme attribut du sujet. Cependant la plupart des noms ne sont quasiment jamais utilisés comme attribut du sujet. De plus, lorsque le nom est défini, il s’agit souvent d’une \terme{proposition équative}, où le verbe \textsc{être} indique l’identité de deux choses, comme en \REF{ex:Mars}.
+On peut considérer, comme l’on fait les logiciens depuis au moins \cite{frege1892uber}, que tous les noms intègrent un premier actant, qui ne peut être réalisé que lorsque le nom est utilisé comme attribut du sujet. Cependant la plupart des noms ne sont quasiment jamais utilisés comme attribut du sujet. De plus, lorsque le nom est défini, il s’agit souvent d’une \terme{proposition équative}, où le verbe \textsc{être} indique l’identité de deux choses, comme en \REF{ex:13-Mars}. Dans ce cas, nous considérons que le verbe \textsc{être} est un sémantème indiquant l'équation entre ses deux actants (voir la figure \label{fig:13-Mars}).
 
-\ea \textit{Mars est la troisième planète du système solaire.}\z
+\ea\label{ex:13-Mars} \textit{Mars est la troisième planète du système solaire.}\z
 
-Figure : ‘Mars’ <-1- ‘être’ -2-> ‘planète’ <-1- ‘appartenir’ -2-> ‘système’ <-1- ‘solaire’
-Mars <-1- être_présent -2-> planète_sg, déf -MOD-> de -2-> système -MOD-> solaire
+Figure 17\label{fig:13-Mars}
+a. ‘Mars’ <-1- ‘être’ -2-> ‘planète’ <-1- ‘appartenir’ -2-> ‘système’ <-1- ‘solaire’
+b. Mars <-1- être_présent -2-> planète_sg, déf -MOD-> de -2-> système -MOD-> solaire
 \caption{Structure syntaxique profonde de \REF{ex:Mars}}
 
-Il existe aussi des noms qui sont fondamentalement prédicatifs. Par exemple, un nom comme \textsc{question} est parallèle au verbe \textsc{questionner} : X \textit{questionne} Y \textit{à propos de} Z, \textit{la question de} X \textit{à}Y \textit{à propos de} Z. Il peut être utilisé dans des constructions à verbes support : X \textit{pose une question} Y, Y \textit{répond à la question} de X. Nous considérons donc que le nom \textsc{question} est un nom trivalent. On pourrait considérer qu’il intègre aussi un quatrième actant (pour les constructions attributives), mais par soucis de simplicité nous numéroterons les actants du nom \textsc{question} comme ceux du verbe \textsc{questionner}.
+Il existe aussi des noms qui sont fondamentalement prédicatifs. Par exemple, un nom comme \textsc{question} est parallèle au verbe \textsc{questionner} : X \textit{questionne} Y \textit{à propos de} Z, \textit{la question de} X \textit{à}Y \textit{à propos de} Z. Il peut être utilisé dans des constructions à verbes support : X \textit{pose une question} Y, Y \textit{répond à la question} de X. Nous considérons donc que le nom \textsc{question} est un nom trivalent et nous numérotons les actants du nom \textsc{question} comme ceux du verbe \textsc{questionner}.
 
-\smallskip\noindent\textbf{Les modifieurs.} Les adjectifs, les adverbes, les prépositions ou les conjonctions de subordination sont intrinsèquement des \terme{modifieurs}, c’est-à-dire des sémantèmes, qui dépendent syntaxiquement de leur premier argument. Des adjectifs comme \textsc{rouge} ou \textsc{beau} désigne des propriétés d’une entité et ne peuvent être définis sans faire intervenir cette entité. Des adverbes comme \textsc{vite} ou \textsc{facilement} désigne des propriétés d’un procès et ne peuvent être définis sans faire intervenir ce procès. Des prépositions comme \textsc{sur} ou \textsc{chez} exprime la relation entre deux éléments (quelque chose est sur quelque chose, quelque chose est chez quelqu’un) et sont donc bivalentes (voir la figure \ref{ex:chez}). Une préposition comme \textsc{avant} est même trivalente : \textit{son anniversaire est deux jours avant Noël}. Les prépositions peuvent intégrer leur premier actant comme les noms, lorsqu’elles sont l’actant d’un verbe de mouvement (voir la figure \ref{ex:chez}c).
+\smallskip\noindent\textbf{Les modifieurs.} Les adjectifs, les adverbes, les prépositions ou les conjonctions de subordination sont intrinsèquement des \terme{modifieurs}, c’est-à-dire des sémantèmes, qui dépendent syntaxiquement de leur premier argument. Des adjectifs comme \textsc{rouge} ou \textsc{beau} désigne des propriétés d’une entité et ne peuvent être définis sans faire intervenir cette entité. Des adverbes comme \textsc{vite} ou \textsc{facilement} désigne des propriétés d’un procès et ne peuvent être définis sans faire intervenir ce procès. Des prépositions comme \textsc{sur} ou \textsc{chez} exprime la relation entre deux éléments (quelque chose est sur quelque chose, quelque chose est chez quelqu’un) et sont donc bivalentes (voir la figure \ref{fig:chez}a et b). Une préposition comme \textsc{avant} est même trivalente : \textit{son anniversaire est deux jours avant Noël}. Les prépositions peuvent intégrer leur premier actant comme les noms, lorsqu’elles sont l’actant d’un verbe de mouvement (voir la figure \ref{fig:chez}c).
 
 \ea\label{ex:chez} 
 \ea Luce est chez Zoé.\z
 \ex Luce dort chez Zoé.\z
 \ex Luce va chez Zoé.\z\z
 
-Figure : a. Luce <-1- V(chez)_présent -2-> Zoé
+Figure 18\label{fig:chez}
+a. Luce <-1- V(chez)_présent -2-> Zoé
 b. Luce <-1- dormir_présent <-MOD- chez -2-> Zoé
 c. Luce <-1- aller_présent -2-> chez -2-> Zoé
 \caption{Structures syntaxiques profondes de \REF{ex:chez}a, b et c}
@@ -306,7 +317,7 @@ Les adjectifs ou les adverbes peuvent aussi occuper une position actancielle, co
 \ex \textit{une tomate française}\z
 \ex \textit{Luce s’est \textbf{mal} comportée.}\z\z
 
-Figure\label{fig:13-francais}
+Figure 19\label{fig:13-francais}
 a. production_sg, déf -1-> français
 					-2-> Adj(lait)
 b. tomate_sg, déf -MOD-> français
@@ -331,7 +342,7 @@ Le tableau de régime est Dans la grammaire générative, les tableaux de régim
 
 Nous donnons dans la figure \ref{fig:13-regime} quelques exemples de tableaux de régime. La ligne « 2. complément d’objet indirect : à N (obligatoire) » indique que le 2e actant est un complément d’objet indirect réalisé par \textit{à} N et que ce complément est obligatoire.
 
-FIGURE\label{fig:13-regime}
+FIGURE 20\label{fig:13-regime}
 \phraseme{tenir la jambe} : \textit{X \textit{tient la jambe à} Y
 1. sujet : N
 2. complément d’objet indirect : à N (obligatoire)
