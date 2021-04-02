@@ -32,7 +32,7 @@ L’idée d’une structure syntaxique profonde, appelée \terme{structure tecto
 L’opposition terminologique entre structure profonde (\textit{deep structure}) et structure de surface (\textit{surface structure}) a également été utilisée par Noam  \cite{chomsky1965aspects} dans le cadre de la grammaire générative-transformationnelle. L’usage est différent : la structure profonde n’est pas réellement un niveau de représentation différent de la structure de surface, mais une structure syntaxique sous-jacente à la structure de surface, la structure de surface étant obtenue par l’application (éventuelle) de transformations sur la structure profonde. Alors que la structure profonde de Mel’čuk est clairement une structure qui manipulent des sémantèmes et pas des syntaxèmes, la structure profonde de Chomsky manipulent les mêmes unités que sa structure de surface. De plus, chez Mel’čuk, la structure syntaxique profonde est un arbre de dépendance non ordonnée, l’ordre linéaire n’étant introduit qu’au moment de l’interface entre la syntaxe de surface et le texte, tandis que chez Chomsky, la structure profonde et la structure de surface sont des structures de constituants ordonnées. Il s’ensuit des discussions théoriques, qui nous semblent sans fondement, sur l’ordre de base des constructions syntaxiques, l’ordre de base étant l’ordre dans lequel les éléments se trouvent dans la structure profonde avant que des transformations les déplacent vers leur position en surface (voir l’\encadref{sec:3.5.8} \textit{Mouvement et ordre de base}).}
 
 \section{Actant et modifieur}
-Les \hi{relations syntaxiques de surface} comme les \hi{relations sémantiques} sont \hi{asymétriques} : les relations syntaxiques de surface lient un gouverneur à un dépendant, tandis que les relations sémantiques lient un prédicat à un argument. Cette \hi{double asymétrie} entraine qu’il existe deux grands types de \terme{relations syntaxiques profondes} (voir les figures \ref{fig:dep-actant} et \ref{fig:dep-mod} du \chapref{sec:1.2} \textit{Produire un énoncé}).
+Les \hi{relations syntaxiques de surface} comme les \hi{relations sémantiques} sont \hi{asymétriques} : les relations syntaxiques de surface lient un gouverneur à un dépendant, tandis que les relations sémantiques lient un prédicat à un argument. Cette \hi{double asymétrie} entraîne qu’il existe deux grands types de \terme{relations syntaxiques profondes} (voir les figures \ref{fig:dep-actant} et \ref{fig:dep-mod} du \chapref{sec:1.2} \textit{Produire un énoncé}).
 
 \definition{\terme{relation actancielle}, \terme{actant}}
 {La relation entre deux sémantèmes est dite \terme{actancielle} quand l’un des sémantèmes est \hi{à la fois le dépendant syntaxique et l’argument sémantique} de l’autre sémantème. Le sémantème dépendant est appelé un \terme{actant} du sémantème gouverneur.}
@@ -42,11 +42,11 @@ Les \hi{relations syntaxiques de surface} comme les \hi{relations sémantiques} 
 
 Le terme \textit{modifieur} est également utilisé pour désigner les sémantèmes qui ont la capacité de modifier un autre sémantème. Nous dirons ainsi que les adjectifs, les adverbes, les prépositions et les conjonctions de subordination sont des modifieurs.
 
-Les arguments d’un sémantème sont numérotés dans l’\terme{ordre d’oblicité} croissante. L’ordre d’oblicité et son inverse, l’\terme{ordre de saillance}, seront définis dans le \chapfuturef{18}. Disons juste que le sujet est la relation la plus saillante, suivie du complément d’objet indirect, puis du complément d’objet indirect. Le sujet est donc le premier argument des verbes et par conséquent le \hi{premier actant}. Pour les modifieurs, le gouverneur syntaxique est considéré comme le premier argument. Ceci est justifié par le fait que lorsqu’un modifieur est verbalisé, son gouverneur devient le sujet de la construction (\textit{une \underline{maison} \textbf{blanche}}, \textit{la \underline{maison} \textbf{est blanche}}). Le deuxième argument d’un modifieur est appelé le deuxième actant.
+Les arguments d’un sémantème sont numérotés dans l’\terme{ordre d’oblicité} croissante. L’ordre d’oblicité et son inverse, l’\terme{ordre de saillance}, seront définis dans le \chapfuturef{18}. Disons juste que le sujet est la relation la plus saillante, suivie du complément d’objet indirect, puis du complément d’objet indirect. Le sujet, lorsqu'il est un argument du verbe, est donc le premier argument et par conséquent le \hi{premier actant}. Pour les modifieurs, le gouverneur syntaxique est considéré comme le premier argument. Ceci est justifié par le fait que lorsqu’un modifieur est verbalisé, son gouverneur devient le sujet de la construction (\textit{une \underline{maison} \textbf{blanche}}, \textit{la \underline{maison} \textbf{est blanche}}). Le deuxième argument d’un modifieur est appelé le deuxième actant.
 
-Les relations modificatives sont étiquetées \textsc{mod} dans les structures syntaxiques profondes. Les relations actancielles sont numérotées dans l’ordre d’oblicité.
+Les relations modificatives sont étiquetées \textsc{mod} dans les structures syntaxiques profondes. Les relations actancielles sont numérotées dans l’ordre d’oblicité croissante, comme les arguments. Les actants portent les mêmes numéros que les arguments, sauf lorsqu'il y a une redistribution. C'est le cas avec le passif, où le deuxième argument devient le sujet et donc le premier actant (voir la figure \ref{fig:13-passif}).
 
-Nous verrons dans la \sectref{sec:13-distorsion} qu’il existe des cas où les relations syntaxiques de surface et les relations sémantiques ne se superposent pas, ce qui nous amènera à considérer deux autres types de relations syntaxiques profondes : les relations syntaxiques asémantiques et les relations sémantiques asyntaxiques.
+Nous verrons dans la suite (et notamment dans la \sectref{sec:13-controle} et les suivantes) qu’il existe des cas où les relations syntaxiques de surface et les relations sémantiques ne se superposent pas, ce qui nous amènera à considérer deux autres types de relations syntaxiques profondes : les \terme{relations syntaxiques asémantiques} et les \terme{relations sémantiques asyntaxiques}.
 
 Les structures syntaxiques profondes contiennent également des relations de coréférence et des relations d’ancrage, dont nous discuterons dans la \sectref{sec:13-unites} et l’\encadref{sec:13-ancrage}.
 
@@ -359,6 +359,271 @@ FIGURE 20\label{fig:13-regime}
 \caption{Tableaux de régime de \phraseme{tenir la jambe}, \textsc{question}, \textsc{chez}, \textsc{heureux}}
 
 Nous verrons dans le \chapfuturef{18} sur les \textit{Relations syntaxiques} que chaque relation syntaxique est associée à un faisceau de propriétés. Par exemple, la relation sujet en français suppose un accord du verbe, un placement particulier, l’absence de préposition, mais un marquage casuel des pronoms personnels (\textit{je}, \textit{tu}, \textit{il}, \textit{on}, etc.), ainsi que des propriétés de contrôle ou de redistribution que nous ne décrirons pas ici. On peut donc voir l’utilisation des relations syntaxiques dans le tableau de régime comme un moyen de décrire de façon synthétique une partie des propriétés syntaxiques d’un argument.
+
+\math[sec:13-derivation]{Lexique syntaxique et interface sémantique-syntaxe}
+{Avec un lexique syntaxique, il devient possible à partir d’une structure syntaxique profonde de reconstituer la structure syntaxique de surface. En fait, chaque tableau de régime constitue la description d’une structure élémentaire mettant en correspondance un fragment de structure sémantique avec un fragment de structure syntaxique de surface. En combinant ces fragments de structure, on peut construire en même temps la structure prédicative et la structure syntaxique de surface. (Pour obtenir une structure syntaxique de surface complète, il faudra aussi des règles de grammaires associées aux sémantèmes grammaticaux, notamment ceux qui opèrent des redistributions comme le passif.) On peut alors interpréter la structure syntaxique profonde comme le témoin de ces combinaisons, comme une structure indiquant quelle lexie s’est combiné avec quelle autre et dans quelle position argumentale.
+
+L’idée d’interpréter le témoin de la production ou de l’analyse d’un énoncé comme une structure linguistique remonte aux premières heures des grammaires formelles. Dans les grammaires catégorielles, le calcul associé à une suite de mots prouvant que cette suite est bien une phrase peut être interprété comme la structure syntaxique de cette phrase (voir l’encadré 4.5 \textit{Calcul symbolique et grammaires catégo¬rielles}). Une idée similaire a été exploitée par Chomsky dans ses premiers travaux : les grammaires de réécriture de Chomsky (1957) génèrent des suites de mots. Le processus qui permet de produire une phrase par l’application successive de règles de réécriture est appelé une \terme{dérivation}. Le témoin de cette dérivation est une structure hiérarchique qui décrit quelle règle doit s’appliquer après quelle règle et que Chomsky appelle l’\terme{arbre de dérivation} de la phrase et qu’il interprète comme la structure syntaxique de la phrase. Autrement dit, dans ces modèles, la structure syntaxique est le « témoin » du fait que la suite de mots est une phrase.
+
+L’idée de voir la construction d’une structure par la combinaison de structures élémentaires remonte aux grammaires d’arbres, déjà évoquée dans l’encadré 4.4 sur les \textit{Modèles génératif, équatif et transductif}, et à la plus célèbre d’entre elles, la \textit{Tree Adjoining Grammar} (Grammaire d’adjonction d’arbre), plus simplement appelée TAG, porté par les travaux du linguiste indo-américain Aravind Joshi, à partir de l’article de \citedate{joshi1975tree}. Chaque unité lexicale est associée à une structure élémentaire, un petit bout d’arbre, qui permet de décrire la combinatoire de l’unité lexicale. Une suite de mots est alors une phrase si les structures élémentaires associées aux unités lexicales (il peut s’agir de plusieurs mots, si l’unité lexicale est un phrasème, mais aussi si son régime comprend des mots) peuvent se combiner pour former une structure bien formée, qui est appelée la \terme{structure dérivée} et qui est interprétée comme la structure syntaxique.  Il existe deux opérations de combinaison des arbres élémentaires, la substitution et l’adjonction, qui correspondent aux relations actancielles et modifieurs de la structure syntaxique profonde. La \terme{structure de dérivation}, qui est le témoin de la dérivation et enregistre comment les structures élémentaires se sont combinées, peut alors être vue comme la structure syntaxique profonde. 
+
+On retrouve déjà la distinction entre structure dérivée et structure de dérivation dans un article du mathématicien Haskell Curry de 1961. Celui-ci nomme \hi{structure phénogrammaticale} la structure dérivée, celle qui est construite et que l’on peut observer, et \hi{structure tectogrammaticale} la structure sous-jacente, qui indique comment la construction a eu lieu. Les termes ont été repris par Petr Sgall dans le cadre du modèle pragois (voir l’\encadref{sec:13-historique} sur l’\textit{Historique de la notion de syntaxe profonde}).
+
+Les grammaires d’arbres ont également été utilisées en \terme{grammaire de dépendance} pour produire des arbres de dépendance. Nous présentons dans la figure \ref{fig:13-GD1} un fragment de grammaire pour l’interface sémantique-syntaxe permettant de produire la phrase \REF{ex:jambe}. Dans ce formalisme, initialement proposé par Alexis Nasr en 1995, puis développé dans les travaux de Sylvain Kahane, les sémantèmes sont associés à des structures élémentaires qui sont des fragments d’arbres syntaxiques de surface. Les positions syntaxiques de cet arbre sont associées à des polarités blanches ou noires : les polarités noires indiquent des positions instanciées par le sémantème, qu’il s’agisse des syntaxèmes qui composent le sémantème ou ceux qui font partie du régime qu’il impose à d’autres ; les polarités blanches indiquent des positions argumentales qui devront être instanciées par la combinaison avec la position noire d’une autre structure élémentaire. Les positions des lexèmes sont indiquées par des ronds et celles des grammèmes par des losanges. Le losange blanc de la structure élémentaire de \textsc{prof} indique qu’il doit recevoir un grammème de définitude qui lui sera donné par son déterminant. La figure \ref{fig:13-GD0} montre la combinaison de ces deux structures élémentaires. Le résultat est une structure saturée dont toutes les polarités sont noires. (La grammaire a été simplifiée, nous n’avons pas introduit les grammèmes de nombre.)
+
+Figure 20\label{fig:13-GD0}
+PROF + défini = PROF_def
+\caption{Combinaison des structures élémentaires d’une lexie et d’une grammie}
+
+La figure \ref{fig:13-GD1} donne l’ensemble des règles nécessaires à la production de l’arbre syntaxique de surface de la phrase \REF{ex:jambe}. Le losange blanc de la structure élémentaire de \phraseme{tenir la jambe} indique qu’il doit recevoir un grammème de mode-temps. Celui-ci sera instancié par la grammie de passé, qui comporte un auxiliaire. Un mécanisme que nous ne détaillerons pas assure la montée du sujet sur l’auxiliaire, qui sera donc un pur dépendant syntaxique de \textsc{avoir} tout en restant l’argument sémantique de \phraseme{tenir la jambe}. Les positions argumentales de chaque sémantème sont numérotées ; ainsi, l’arbre élémentaire de \textsc{pendant} comporte deux positions argumentales : le premier argument doit être un verbe qui est gouverneur syntaxique, tandis que le deuxième argument est un nom qui est complément, ce qu’indiquent les étiquettes [1:V] et [2:N]. Enfin, la règle « déclaration », qui initie le processus de dérivation, demande à ce que la racine de l’arbre syntaxique de surface soit un verbe à l’indicatif.
+
+Figure 21\label{fig:13-GD1}
+déclaration, passé, \phraseme{tenir la jambe}, Zoé, prof, défini, heure, indéfini, pendant
+\caption{Structures élémentaires pour une grammaire de dépendance}
+
+La structure dérivée qui résulte de la combinaison des 9 structures élémentaires de la figure \ref{fig:13-GD1} est donnée dans la figure \ref{fig:13-GD2}. On notera que toutes les polarités blanches ont été saturées par une polarité noire, ce qui indique que la dérivation peut s’arrêter.
+
+Figure 22\label{fig:13-GD2}
+Zoé <-1- \phraseme{tenir la jambe}_passé -2-> prof …
+\caption{Structure dérivée de \REF{ex:jambe} par la grammaire}
+
+Cette structure dérivée correspond à la structure syntaxique surface de \REF{ex:jambe}, que nous avons donné dans la figure \ref{fig:jambe}c. (Il manque les grammèmes de nombres que nous n'avons pas introduits pour simplifier. Notons aussi qu'il reste à appliquer des règles d'accord, qui concernent la bonne formation de la structure syntaxique de surface et pas directement l'interface sémantique-syntaxe.)
+La façon dont les structures élémentaires se sont combinées les unes avec les autres est décrit par la structure de dérivation de la figure \ref{fig:13-GD3}. Chaque structure élémentaire est représentée par le nom du sémantème auquel elle correspond.  Les flèches sont orientées du sémantème prédicat sémantique vers son argument, qui vient saturer une des positions blanches du prédicat. Les flèches vers le bas, où le prédicat gouverne syntaxiquement son argument, sont des relations actancielles, tandis que les flèches vers le haut, où le prédicat dépend de son argument, sont des relations modificatives. On retrouve donc bien la structure syntaxique profonde de \REF{ex:jambe}, donnée initialement dans la figure \ref{fig:jambe}b.
+
+Figure 23\label{fig:13-GD3}
+\caption{Structure de dérivation de \REF{ex:jambe} par la grammaire}
+}
+
+\loupe[sec:13-ancrage]{Ancrage et portée des quantifieurs}
+{Les quantifieurs posent un problème intéressant, auquel les logiciens se sont beaucoup intéressés, depuis les travaux fondateurs de Gottlob \cite{frege1892uber}. Le problème peut être illustré par la paire d’énoncés suivante.
+
+\ea\label{ex:13-portée}
+\ea \textit{Tous les étudiants ont résolu un exercice.}\z
+\ex \textit{Un exercice a été résolu par tous les étudiants.}\z\z
+
+Ces deux énoncés n’ont pas la même interprétation a priori. Dans le premier, l’interprétation privilégiée est que chaque étudiant a résolu un exercice, sans que ce soit a priori le même exercice, tandis que dans le deuxième, le même exercice a été résolu par l’ensemble des étudiants. Cette différence est généralement modélisée en termes de portée. On dit qu’un élément B est dans la \terme{portée} d’un élément A, lorsque l’interprétation de B est fonction de A. En \REF{ex:13-portée}a, on considère que ‘un’ est dans la portée de ‘tous’ lorsqu’on considère que l’exercice résolu est propre à chaque étudiant. Dans ce type de modélisation, les quantifieurs ‘tous’ et ‘un’ (appelés respectivement le quantifieur universel et le quantifieur existentiel) se voient associer deux arguments : un premier argument qui est le nom auquel ils sont combinés syntaxiquement et qu’on appelle leur \terme{restriction} et un deuxième argument qu’on appelle leur portée et qui comprend une prédication. On obtient alors les gloses suivantes pour les énoncés \REF{ex:13-portée}a et b.
+
+\ea
+\ea Pour tout étudiant $x$, il existe un exercice $y$ tel que $x$ a résolu $y$.\\
+tout($x$, étudiant($x$), un($y$, exercice($y$), résoudre($x,y$)))\z
+\ex Il existe un exercice $y$ tel que, pour tout étudiant $x$, $x$ a résolu $y$.\\
+un($y$, exercice($y$), tout($x$, étudiant($x$), résoudre($x,y$)))\z\z
+
+Bien que cette modélisation soit aujourd’hui largement dominante, elle nous semble à la fois inutilement compliquée et non totalement satisfaisante. Pour comprendre pourquoi la notion de portée ne fonctionne pas complètement, considérons l’exemple suivant.
+
+\ea\label{ex:13-pizza} \textit{Ali et Zoé ont acheté une pizza et bu une bière.}\z
+
+Cet énoncé montre à nouveau que les groupes indéfinis (ici \textit{une pizza} et \textit{une bière}) peuvent avoir plusieurs interprétations : une interprétation possible est que Ali et Zoé ont acheté en tout une pizza et deux bières, qu’ils ont partagé la pizza et bu chacun une bière. Cette double « interprétation » de l’article \textsc{un} peut difficilement être résolue en termes de portée dans ce cas, puisqu’il n’y a pas de quantifieur, mais simplement un groupe sujet coordonné et que les deux groupes indéfinis sont dans la même « portée ». On parle plutôt dans ce cas d’interprétation collective ou distributive du groupe coordonné \textit{Ali} et \textit{Zoé}. Mais comme on le voit ce groupe peut avoir en même temps une interprétation \terme{collective} vis-à-vis de la première prédication (\textit{acheter une pizza}) et \terme{distributive} vis-à-vis de la deuxième prédication (\textit{boire une bière}).
+
+Nous proposons une autre modélisation qui résout les différents problèmes. Cette modélisation est basée sur un \hi{concept inverse de la notion de portée}, que nous appelons l’\terme{ancrage}. Le problème est, selon nous, la question du calcul du référent des indéfinis. Les groupes substantifs indéfinis vont construire leur référent en s’ancrant dans un monde : il peut s’agir du monde construit par le discours précédent (qu’on appelle l’univers du discours) ou d’un monde ouvert par un autre élément de l’énoncé. Dans l’exemple \REF{ex:13-pizza}, les groupes indéfinis \textit{une pizza} et \textit{une bière} peuvent soit s’ancrer dans l’univers du discours et alors il y a un seul élément, soit s’ancrer sur \textit{Ali et Zoé} et alors il y a deux éléments. Dans le cas de \REF{ex:13-portée}a, \textit{un exercice} peut s’ancrer sur \textit{tous les étudiants} et alors un exercice pour chaque étudiant est considéré, ou bien \textit{un exercice} s’ancre sur l’univers du discours et il y a un seul exercice. Dans le cas de \REF{ex:13-portée}b, \textit{un exercice} occupe une position plus saillante que \textit{tous les étudiants} et peut donc moins facilement s’ancrer sur ce dernier. (Cela n’est pas impossible, comme le montre un exemple tel que \textit{Un garde du corps accompagnait chaque représentant.}) 
+
+L’ancrage ne fait pas à notre avis partie de la structure prédicative, mais de la structure référentielle, qui se superpose à la structure prédicative. Nous représentons dans la figure \ref{fig:13-portée} la structure référentielle des deux énoncés de \REF{ex:13-portée}. Nous indiquons le référent des groupes substantifs par des boîtes rectangulaires. Le référent d’un groupe pluriel, comme \textit{tous les étudiants} ou \textit{Ali et Zoé}, introduit une variable qui parcourt l’ensemble dénoté et sur lequel un indéfini peut s’ancrer. Nous indiquons l’ancrage par une flèche en pointillé. L’univers du discours est noté Ω.
+
+Figure 24\label{fig:13-portée} 
+a. tout <-MOD- étudiant_pl, déf <-1- résoudre_passé -2-> exercice_sg, indéf ..ancre..> (étudiants)
+b. tout <-MOD- étudiant_pl, déf <-2- résoudre_passif, passé -1-> exercice_sg, indéf ..ancre..> univers
+\caption{Structure référentielle avec ancrage	pour \REF{ex:13-portée}a et b}
+
+Le cas de la portée de la négation relève à notre avis d’un autre aspect de la représentation sémantique, qui est la structure communicative (voir l’\encadref{sec:13-packaging}). Dans un énoncé tel que \REF{ex:13-negation}a, plusieurs interprétations sont possibles selon que la négation « porte » sur \textit{donner}, \textit{Zoé}, \textit{ce livre}, \textit{à Luce} ou sur un empan plus large de texte. 
+
+\ea\label{ex:13-negation} 
+\ea \textit{Zoé ne veut pas donner ce livre à Luce.}\z
+\ex \textit{C’est Zoé qui ne veut pas donner ce livre à Luce.}\z
+\ex \textit{C’est ce livre que Zoé ne veut pas donner à Luce.}\z\z
+
+On peut forcer de telles interprétations en clivant l’élément en question comme le montre les exemples \REF{ex:13-negation}b et c. On voit alors que la négation porte sur le rhème, c’est-à-dire sur l’information qui est communiquée, notamment lorsqu’elle est extraite par un clivage. Le problème de l’ancrage est différent, puisque que ce soit \textit{une pizza} ou \textit{Ali et Zoé} qui est communiqué, les deux ancrages de \textit{une pizza} restent possibles, comme on peut le constater dans l’exemple suivant.
+
+\ea
+\ea \textit{C’est une pizza que Ali et Zoé ont acheté.}\z
+\ex \textit{C’est Ali et Zoé qui ont acheté une pizza.}\z\z}
+
+\section{Contrôle}
+\label{sec:13-contrôle}
+La notion de \terme{contrôle} est une notion assez générale : il y a contrôle dès qu’un élément de l’énoncé impose des contraintes à un autre élément. Les éléments qui sont connectés syntaxiquement se contrôlent l’un l’autre, puisque chacun restreint le paradigme de commutation de l’autre. Par exemple, dans \textit{maison blanche}, la forme adjectivale \textit{blanche} impose à son gouverneur d’être un nom féminin au singulier, tandis que la forme nominale \textit{maison} impose à son dépendant adjectival de s’accorder en genre et en nombre. Nous nous intéressons ici à une forme de contrôle particulière entre des éléments sans lien syntaxique de surface.
+
+\definition{\terme{construction à contrôle}, \terme{verbe à contrôle}}
+{On appelle \terme{construction à contrôle} une construction où un élément X est l’argument de deux éléments Y et Z en même temps, dont un avec lequel il n’a pas lien syntaxique. Lorsque Y est un verbe recteur qui subordonne un verbe infinitif Z, Y est appelé un \terme{verbe à contrôle} quand Y contrôle Z en lui imposant le contrôle d’un des actants X de Y.}
+
+Ce phénomène est illustré par les exemples classiques suivants.
+
+\ea\label{ex:13-venir}
+\ea\textit{Zoé promet à Ali de venir.}\z
+\ex\textit{Zoé permet à Ali de venir.}\z
+\ex\textit{Zoé propose à Ali de venir.}\z\z
+
+Dans chacun de ces exemples, le verbe \textsc{venir}, qui est à l’infinitif, ne peut pas réaliser son premier argument comme sujet. Il y a néanmoins un élément de la phrase qui réalise son premier argument et le choix de cet élément est contraint par le verbe régissant \textsc{venir} : \textsc{promettre} impose son sujet comme premier argument de \textsc{venir}  (il est promis que Zoé vienne), \textsc{permettre} impose son complément  (il est permis que Ali vienne), \textsc{proposer} impose une réalisation plus lâche par son sujet et/ou son complément  (il est proposé que Zoé ou Ali vienne, l’un ou l’autre, ou les deux). (Rappelons que, dans une forme passive, c’est le deuxième argument qui devient premier actant et qui sera donc contrôlé par le verbe recteur : \textit{Zoé permet à Ali d’être accompagné par un ami.})
+
+Nous représentons la relation syntaxique profonde entre le verbe infinitif et son premier actant par une flèche hachurée indiquant qu’il s’agit d’une \terme{relation sémantique pure}, qui n’a pas de contrepartie en syntaxe de surface (voir la figure \ref{fig:13-venir} où sont proposées les structures syntaxiques profondes des exemples \REF{ex:13-venir}a et b).
+
+FIGURE 25\label{fig:13-venir} 
+a) Zoé <-1- promettre_prés -2-> venir ..1..> (Zoé)	
+				-3-> Ali
+b) Zoé <-1- permettre_prés -2-> venir ..1..> (Ali)	
+				-3-> Ali
+\caption{Représentations syntaxiques profondes avec un verbe à contrôle pour \REF{ex:13-venir}a et b}
+
+Les constructions à contrôle arrivent quand la structure sémantique contient un cycle (non orienté). Ce cycle doit être réalisé en syntaxe de surface par un arbre, c’est-à-dire par une structure acyclique. Il faut donc couper le cycle quelque part.
+
+Reprenons l’exemple \REF{ex:13-pronom} :
+
+\ea\label{ex:13-cycle}
+\ea \textit{Zoé pense qu’elle viendra.}\z
+\ex \textit{Zoé pense venir.}\z\z
+
+La structure sémantique de ces paraphrases, qui a été donnée dans la figure \ref{fig:13-pronom-sem}, contient un cycle. Il y a deux façons de couper ce cycle. La première façon est de \hi{couper au niveau d’un nœud sémantique}, comme ‘Zoé’ : le nœud est alors dédoublé dans la structure syntaxique et on obtient un lien de coréférence entre les deux réalisations syntaxiques de ‘Zoé’ (voir la figure \ref{fig:13-pronom-pro}a). La deuxième façon est de couper une dépendance et c’est ce qui donne la construction à contrôle (voir la figure \ref{fig:13-pronom-sem}b). Nous illustrons ces deux solutions dans la figure \ref{fig:13-cycle}.
+
+FIGURE 26\label{fig:13-cycle}
+a. ‘Zoé’ <-1- ‘penser’ -2-> ‘venir’ -1-> (‘Zoé’) SCISSORS ON ‘Zoé’
+b. ‘Zoé’ <-1- ‘penser’ -2-> ‘venir’ -1-> (‘Zoé’) SCISSORS ON THE DEPENDENCY
+\caption{Deux façons de couper un cycle dans une représentation sémantique}
+
+Les \hi{constructions à verbes support} sont aussi des constructions à contrôle. Nous reprenons deux exemples donnés dans l’\encadref{sec:2.3.9} sur \textit{Verbes supports et unités grammaticales}.
+
+\ea\label{ex:13-gifle}
+\ea \textit{Marie se prend une gifle.}\z
+\ex \textit{Pierre donne une gifle à Marie.}\z\z
+
+Le nom \textsc{gifle} est un nom prédicatif qui possède trois arguments : \textit{la gifle de Pierre à Marie} (\textit{à propos de} Z). Dans une construction à verbe support, le nom prédicatif contrôle les actants du verbe support (dont la contribution sémantique est quasi nulle). On peut voir le verbe support comme un réification de la relation sémantique, c’est-à-dire un élément lexical qui réalise la relation sémantique et lui donne ainsi un poids sémantique plus important.
+
+Nous proposons dans la figure \ref{fig:13-gifle} la structure syntaxique profonde des exemples \REF{ex:13-gifle}. Le verbe support \phraseme{se prendre} est modélisé par une fonction lexicale Oper2, terme introduit par Igor Mel’cuk signifiant qu’il s’agit d’un opérateur qui \hi{réifie} le 2e argument du nom prédicatif. Le verbe support \textsc{donner} a deux actants contrôlés par le nom \textsc{gifle} : il est noté Oper12 car il réalise comme actants les arguments 1 et 2 du nom \textsc{gifle}.
+
+FIGURE 27\label{fig:13-gifle}
+a. Marie <-1- Oper2_prés -2> gifle
+                      (Marie) <..2..
+		(Pierre) <..1..
+b. Pierre <-1- Oper12 -2-> gifle ..1..> (Marie)
+			-3-> Marie
+\caption{Représentations syntaxiques profondes des constructions à verbe support \REF{ex:13-gifle}a et b}
+
+
+\section{Montée}
+\label{sec:13-montee}
+La montée est une construction qui ressemble au contrôle, mais s’en distingue. Cette différence est bien illustrée par la paire suivante.
+
+\ea\label{ex:13-dormir}
+\ea \textit{Zoé veut dormir.}\z
+\ex \textit{Zoé semble dormir.}\z\z
+
+Le deuxième énoncé se distingue sémantiquement du premier par le fait que le verbe \textsc{sembler} ne contrôle pas son propre sujet. Alors qu’on comprend que Zoé veut quelque chose en \REF{ex:13-dormir}a, on ne peut pas considérer que Zoé semble quelque chose. Cette différence sémantique s’illustre par plusieurs contrastes.
+
+\begin{enumerate}[label=(\arabic*)]
+\item	Le verbe à contrôle peut s’utiliser sans le verbe subordonné dans une réponse partielle, mais pas le verbe à montée :
+\ea\ea []\textit{Est-ce que Zoé dort ? Non, mais elle veut.}\z
+\ex [*]\textit{ Est-ce que Zoé dort ? Elle semble.}\z\z
+
+\item	Le clivage ou le pseudo-clivage du verbe subordonné est possible avec un verbe à contrôle, mais pas avec un verbe à montée :
+\ea\ea []\textit{Ce que Zoé veut, c’est dormir.}\z
+\ex [*]\textit{Ce que Zoé semble, c’est dormir.}\z\z
+
+\item	A l’inverse, le verbe à montée se combine à un verbe impersonnel, mais pas le verbe à contrôle :
+\ea\ea [*]\textit{Il veut pleuvoir.}\z
+\ex []\textit{Il semble pleuvoir.}\z\z
+
+\item	Le verbe à monter peut également se combiner avec un phrasème verbal qui inclut son sujet comme \phrasème{la moutarde monter au nez} (la moutarde me monte au nez signifie ‘la colère grandit en moi’) :
+\ea\ea [*]\textit{La moutarde veut lui monter au nez.}\z
+\ex []\textit{La moutarde semble lui monter au nez.}\z\z
+
+\end{enumerate}
+
+Il apparaît donc que le sujet du verbe à montée \textsc{sembler} n’est pas son argument sémantique. Ceci est confirmé par la paraphrase entre \REF{ex:13-dormir}b et les phrases suivantes :
+
+\ea\ea \textit{Il semble que Zoé dorme.}\z
+\ex \textit{Zoé dort, semble-t-il.}\z\z
+
+On considère alors que le verbe \textsc{sembler} possède un unique actant qui est son complément verbal et que son sujet est réalisé par la « montée » (angl. \textit{raising}) du premier actant de son complément. 
+
+\definition{\terme{construction à montée}, \terme{verbe à montée}}
+{On appelle \terme{construction à montée} une construction où un élément X n’est pas contrôlé par son gouverneur syntaxique Y, mais par un dépendant Z de Y. On dit alors que X est monté sur Y. Lorsque Y est verbe recteur qui subordonne un verbe infinitif Z, Y est appelé un \terme{verbe à montée}.}
+
+Il existe aussi des verbes qui permette la montée dans la position objet, comme le verbe \textsc{trouver}. La paraphrase entre les deux phrases de \REF{ex:13-trouver} (qui reprennent celle de \REF{ex:content}) montre que ce verbe possède deux arguments et qu’il y a bien montée en position de complément d’objet de \textsc{trouver} en \REF{ex:13-trouver}a. (La structure syntaxique de \REF{ex:13-trouver}b a été donnée dans la figure \fig{fig:content}.)
+
+ea\label{ex:13-trouver}
+\ea \textit{Ali trouve Zoé sympa.}\z
+\ex \textit{Ali trouve que Zoé est sympa.}\z\z
+
+La figure \ref{fig:13-monte} propose une représentation de la structure syntaxique profonde des exemples \REF{ex:13-dormir}b et \REF{ex:13-trouver}a. Le dépendant non contrôlé par le verbe est indiqué par une étiquette +.
+
+FIGURE 28\label{fig:13-monte}
+a.	Zoé <-+- sembler_prés -1-> dormir ..1..> (Zoé)
+b.	Ali <-1- trouver_prés -+-> Zoé
+-2-> sympa ..1..> (Zoé)
+\caption{Représentations syntaxiques profondes avec un verbe à montée pour \REF{ex:13-dormir}b et \REF{ex:13-trouver}a}
+
+Les constructions avec auxiliaires peuvent être vues comme des cas particuliers de constructions à montée : en effet, l’auxiliaire exprime lexicalement une grammie qui a le verbe auxilié comme actant, tandis que le sujet de l’auxiliaire résulte de la montée du premier actant du verbe. Ceci est illustré en \REF{ex:13-aux}a, où l’auxiliaire \textsc{avoir} du passé a pour sujet \textsc{Zoé} et pour unique actant le verbe \textsc{courir}, dont il spécifie le moment du procès.
+
+ea\label{ex:13-aux}
+\ea \textit{Zoé a couru.}\z
+\ex \textit{Zoé fait rire \textbf{Ali}.}\z
+\ex \textit{Zoé fait manger du tofu \textbf{à Ali}.}\z
+\ex \textit{Zoé \textbf{le} fait rire.}\z
+ ex \textit{Zoé le \textbf{lui} fait manger.}\z\z
+
+La construction causative en \REF{ex:13-aux}b et c illustre un cas possible de montée en position de complément. Nous préférons dire « cas possible », sans être plus affirmatif, car la très grande cohésion de la construction \textsc{faire} V\subscript{inf} ne permet pas de décider clairement de quel verbe, \textsc{faire} ou V, dépend le sujet rétrogradé de V. Comme le montre les exemples \REF{ex:13-aux}d et e, le sujet rétrogradé se cliticise sur \textsc{faire}, mais c’est aussi le cas du complément d’objet de \textsc{manger} en \REF{ex:13-aux}e. De plus, la fonction du sujet rétrogradé de V dépend de la valence de V : il s’agit d’un complément d’objet direct quand V n’a pas de complément, comme \textsc{rire}, et d’un complément d’objet indirect quand V a déjà un complément d’objet direct, comme \textsc{manger}. Pour ces raisons, nous considérons qu’il s’agit d’une construction avec auxiliaire : le causatif est traité en syntaxe profonde comme une grammie (voir la figure \ref{fig:13-causatif}), à l’instar d’autres redistributions comme le passif (voir la figure \ref\{fig:13-passif}). La relation syntaxique profonde du sujet retrogradé reçoit l’étiquette ∞ déjà introduite dans la discussion sur le passif de la section \label{sec:13-potentiel} sur \textit{Les unités potentielles de la syntaxe profonde}.
+
+FIGURE 29\label{fig:13-causatif}
+a. ‘Zoé’ <-1- ‘causer’ -2-> ‘rire’ -1-> ‘Ali’
+b. Zoé <-1- rire_caus, prés -∞-> Ali
+\caption{Représentations sémantique et syntaxique profonde de la construction causative \REF{ex:13-aux}b}
+
+\section{Un dernier cas de distorsion structurelle : l’insertion modificative}
+\label{sec:13-mismatch}
+On appelle \terme{distorsions sémantique-syntaxe} tous les cas où la structure sémantique et la structure syntaxique de surface ne se superposent pas. Il y a distorsion sémantique-syntaxe dès que les sémantèmes et les syntaxèmes ne se correspondent pas un à un : c’est le cas s’il y a des syntaxèmes vident qui marquent l’accord ou le régime ou s’il y a des sémantèmes complexes, composés de plusieurs syntaxèmes (voir la \sectref{sec:13-unites}). On distingue ces distorsions dues à la non-correspondance entre unités des \terme{distorsions structurelles} à proprement parler, lorsque \hi{les relations prédicatives et les dépendances syntaxiques de surface ne se superposent pas}. 
+
+Nous avons déjà vu deux cas de distorsions structurelles, que sont le contrôle et la montée. Nous allons en étudier un troisième, que nous appelons l’insertion modificative. Ce cas de distorsion est illustré par l’exemple \REF{ex:13-verre} dans l’\encadref{sec:3.3.19} sur les \textit{Distorsions sémantique-syntaxe}.
+
+ea\label{ex:13-verre} \textit{Félix boit un verre de vin.}\z
+
+Dans cet exemple, la tête sémantique et la tête syntaxique de l’unité \textit{un verre de vin} sont distinctes : \textsc{vin} est la tête sémantique, puisque ‘vin’ est l’argument sémantique de ‘boire’ (Félix boit du vin), tandis que \textsc{verre} est la tête syntaxique. En fait, ‘un verre’ indique la quantité de vin qui a été bu et prédique donc ‘vin’. Mais au lieu que \textsc{vin} soit réalisé comme un modifieur de \textsc{verre} et \textsc{verre} comme l’actant de \textsc{boire}, \textsc{verre} vient gouverner \textsc{vin} et s’insérer entre \textsc{boire} et \textsc{vin}.
+
+\definition{\terme{insertion modificative}, \terme{modifieur inséré}}
+{Nous appelons {\terme{insertion modificative} une construction où un élément X gouverne syntaxiquement Y mais Y est la tête sémantique de l’unité qu’ils forment ensemble. Autrement, si Z est le gouverneur syntaxique de cette unité, Z a X pour dépendant syntaxique, mais c’est Y qu’il contrôle. L’élément X est qui est venu s’insérer entre Z et Y est appelé un \terme{modifieur inséré}.}
+
+L’insertion modificative a été bien modélisée dans le cadre de TAG (voir l’\encadref{sec:13-derivation} sur \textit{Lexique syntaxique et interface sémantique-syntaxe}), où elle a été nommée l’\textit{adjonction prédicative} (contrastée avec l’adjonction modificative des modifieurs ordinaires). Nous ne retenons pas ce terme, car nous considérons que tout modifieur est un prédicat sémantique qui s’adjoint sur son argument. La particularité des modifieurs insérés est de \hi{gouverner syntaxiquement leur argument tout en fonctionnant sémantiquement comme des modifieurs}.
+
+Nous proposons pour l’insertion modificative la représentation de la figure \ref{fig:13-verre}b. La figure \ref{fig:13-verre}a montre le processus d’insertion.
+
+FIGURE 30\label{fig:13-verre}
+a. Félix <-1- boire_prés -2-> vin <-1- verre_sg, indéf
+b. Félix <-1- boire_prés ..2..> vin 
+               -+-> verre_sg, indéf -1-> (vin)
+\caption{Insertion modificative de \REF{ex:13-verre}}
+
+L’insertion modificative concerne aussi les déterminants et en tout premier lieu les dits « déterminants complexes » (voir l’\encadref{sec:3.3.22} sur les \textit{« Déterminants complexes »}). 
+
+ea\label{ex:13-insertion}
+\ea \textit{Félix a lu plus de la moitié du livre.}\z
+\ex \textit{Félix veut acheter ce livre.}\z\z
+
+L’exemple \REF{ex:13-insertion}a montre que les modifieurs insérés peuvent s’insérer de manière récursive, puisque dans cet exemple \textsc{moitié} vient s’insérer sur \textsc{livre}, puis l’adverbe \textsc{plus} s’insère sur \textsc{moitié}, comme on le voit dans la structure syntaxique profonde de la figure \ref{fig:13-insertion}a. Si l’on considère que les déterminant sont la tête du groupe substantif, comme nous l’avons défendu dans la \sectref{sec:3.3.26} \textit{Déterminant comme tête ?}, alors il faut également considérer que le déterminant \textsc{cet} s’est inséré dans l’exemple \REF{ex:13-insertion}b. Cette analyse est proposée dans la figure \ref{fig:13-insertion}b et est à contraster avec l’analyse de la figure \ref{ex:13-excellent}, où le nom est considéré comme la tête du groupe substantif et \textsc{cet} est traité comme un modifieur ordinaire.
+
+FIGURE 31\label{fig:13-insertion}
+a.	Félix <-1- lire_passé -+-> plus -1-> moitié -1-> livre_sg, déf <..2.. (lire)
+b.	Félix <-1- vouloir_prés -2-> acheter -+-> cet -1-> livre_sg
+(Félix) <..1..              ..2..> (livre)
+\caption{Structures syntaxiques profondes de déterminants insérés pour \REF{ex:13-insertion}a et b}
+
+\section{Les différents types de relations syntaxiques profondes}
+En termes de conclusion de ce chapitre, nous souhaitons les différents types de relations considérées au niveau syntaxiques. Nous avons au final 6 types de relations syntaxiques profondes à proprement parler :
+
+\begin{itemize}
+\item	les relations actancielles, où une relation sémantique et une relation syntaxique se superposent et sont orientées de la même façon ; elles sont étiquetées 1, 2, 3, etc. ou encore ∞ pour un actant rétrogradé ;
+\item	les relations modificatives, où une relation sémantique et une relation syntaxique se superposent, mais ont des orientations inverses ; elles sont étiquetées \textsc{mod} ;
+\item	les relations lexie-grammie, qui sont aussi des cas où une relation sémantique et une relation syntaxique se superposent, mais que nous annotons différemment en raison du statut particulier de la connexion syntaxique entre lexies et grammies ;
+\item	les relations entre un opérateur et son argument, que nous utilisons pour la translation syntaxique et pour les sémantèmes cachés ;
+\item	les relations syntaxiques pures, qui ne se superposent pas à une relation sémantique ; elles sont étiquetées + ;
+\item	les relations sémantiques pures qui ne se superposent pas une relation syntaxique ; elles sont représentées par des flèches hachurées et sont numérotées comme les relations actancielles.
+\end{itemize}
+
+On peut encore ajouter à cette liste deux relations qui appartiennent à la structure référentielles :
+
+\begin{itemize}
+\item	les relations de coréférence, qui indique la scission d’un nœud sémantique ; elles sont représentées par une double flèche en pointillés ;
+\item	les relations d’ancrage, qui indique l’encrage du référent d’un indéfini sur un autre élément de la structure ou sur l’univers du discours ; elles sont représentées par un flèche en pointillés.
+\end{itemize}
+
+D’autres exemples de structures syntaxiques profondes seront donnés dans le \chapfuturef{19} sur l’\textit{Extractions} et le \chapfuturef{20} sur les \textit{Listes paradigmatiques}.
+
+
 
 
 
