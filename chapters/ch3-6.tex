@@ -27,7 +27,7 @@ On peut aussi voir la structure syntaxique profonde, à l’inverse, comme une p
 
 {La distinction entre syntaxe profonde et syntaxe de surface telle que nous la concevons est due aux travaux d’Igor Mel’čuk dans le cadre de la théorie Sens-Texte. Pour Mel’čuk, la structure syntaxique profonde est une structure intermédiaire entre la structure sémantique et la structure syntaxique de surface. Dans son cadre théorique, le passage du sens au texte est modélisé par un premier ensemble de règles qui transforme la structure sémantique, qui comprend des relations prédicat-argument entre signifiants lexicaux, en une structure syntaxique profonde arborescente, qui est ensuite transformée en la structure syntaxique de surface. Plutôt qu’une structure intermédiaire, nous préférons voir la structure syntaxique profonde comme un témoin de la correspondance entre la structure sémantique et la structure syntaxique de surface (voir l’\encadref{sec:13-derivation} sur \textit{Lexique syntaxique et interface sémantique-syntaxe}). 
 
-L’idée d’une structure syntaxique profonde, appelée \terme{structure tectogrammaticale} (voir l’\encadref{sec:13-derivation} pour l’origine du terme), est également présente dans les travaux des Pragois réunis autour de Petr Sgall, qui est l’un des premiers, si ce n’est le premier linguiste (voir son article de \citeyear{sgall1967functional}), à défendre l’idée d’un modèle stratifié des langues, avec différents niveaux de représentation en correspondance les uns avec les autres. On retrouve également un niveau de représentation profond dans un des modèles post-générativistes, la \textit{Lexical Functional Grammar} (LFG) de Joan Bresnan et Ronald Kaplan (\citeyear{kaplan1981functional}) : ici une structure syntaxique en constituants, la c-structure, encode la syntaxe de surface et est opposée à une structure de dépendance dite \terme{structure fonctionnelle}, la f-structure, qui s’apparente à une structure syntaxique profonde.
+L’idée d’une structure syntaxique profonde, appelée \terme{structure tectogrammaticale} (voir l’\encadref{sec:13-derivation} pour l’origine du terme), est également présente dans les travaux des Pragois réunis autour de Petr Sgall, qui est l’un des premiers, si ce n’est le premier linguiste (voir son article de \citeyear{sgall1967functional}), à défendre l’idée d’un modèle stratifié des langues, avec différents niveaux de représentation en correspondance les uns avec les autres. On retrouve également un niveau de représentation profond dans un des modèles post-générativistes, la \textit{Lexical Functional Grammar} (LFG) de Joan Bresnan et Ronald Kaplan (\citeyear{kaplan1981functional}) : ici une structure syntaxique en constituants, la c\textit{-structure}, encode la syntaxe de surface et est opposée à une structure de dépendance dite \terme{structure fonctionnelle}, la f\textit{-structure}, qui s’apparente à une structure syntaxique profonde.
 
 L’opposition terminologique entre structure profonde (\textit{deep structure}) et structure de surface (\textit{surface structure}) a également été utilisée par Noam  \cite{chomsky1965aspects} dans le cadre de la grammaire générative-transformationnelle. L’usage est différent : la structure profonde n’est pas réellement un niveau de représentation différent de la structure de surface, mais une structure syntaxique sous-jacente à la structure de surface, la structure de surface étant obtenue par l’application (éventuelle) de transformations sur la structure profonde. Alors que la structure profonde de Mel’čuk est clairement une structure qui manipulent des sémantèmes et pas des syntaxèmes, la structure profonde de Chomsky manipulent les mêmes unités que sa structure de surface. De plus, chez Mel’čuk, la structure syntaxique profonde est un arbre de dépendance non ordonnée, l’ordre linéaire n’étant introduit qu’au moment de l’interface entre la syntaxe de surface et le texte, tandis que chez Chomsky, la structure profonde et la structure de surface sont des structures de constituants ordonnées. Il s’ensuit des discussions théoriques, qui nous semblent sans fondement, sur l’ordre de base des constructions syntaxiques, l’ordre de base étant l’ordre dans lequel les éléments se trouvent dans la structure profonde avant que des transformations les déplacent vers leur position en surface (voir l’\encadref{sec:3.5.8} \textit{Mouvement et ordre de base}).}
 
@@ -622,6 +622,146 @@ On peut encore ajouter à cette liste deux relations qui appartiennent à la str
 \end{itemize}
 
 D’autres exemples de structures syntaxiques profondes seront donnés dans le \chapfuturef{19} sur l’\textit{Extractions} et le \chapfuturef{20} sur les \textit{Listes paradigmatiques}.
+
+
+\exercices{
+    \exercice{1} (modifieurs vs actant) Pour les compléments de nom suivants, déterminer s’il s’agit d’un actant ou d’un modifieur.
+\begin{enumerate}[label=\alph*.]
+    \item \textit{la réponse de Zoé}\z
+\item \textit{le portrait de Zoé}\z
+\item \textit{la main de Zoé}\z
+\item \textit{la trousse de Zoé}\z
+\item \textit{le chat de Zoé}\z
+\item \textit{une huître de Bretagne}\z
+\item \textit{le phare du Cap Fréhel}
+\end{enumerate}
+
+
+\exercice{2} Reprenons notre exemple de base du \chapref{sec:3.3} :
+\begin{exe}
+    \exi{} \textit{Beaucoup de gens aimeraient passer Noël en Laponie.}
+\end{exe}
+Donner la structure sémantique et la structure syntaxique profonde de cet exemple.
+
+
+
+\exercice{3} Pour les exemples suivants, déterminez quels sont les sémantèmes, puis proposez une représentation syntaxique profonde. On notera que ces exemples contiennent un sémantème caché.
+\begin{enumerate}[label=\alph*.]
+    \item \textit{Zoé, faut qu’on y aille !}
+\item \textit{Il y a de l’œuf sur ma chemise.}
+\end{enumerate}
+
+\exercice{4} On considère la construction suivante :
+\begin{exe}
+    \exi{} \textit{Je ne comprends rien à ce problème.}
+\end{exe}
+
+\begin{enumerate}
+\item Montrer que les éléments qui peuvent commuter avec \textit{rien} forme un paradigme très réduit que vous décrirez et tenterez de caractériser
+\item Quel est la contribution sémantique de \textit{rien} dans cette construction ?
+\item Bien qu’il soit réalisé en position d’objet direct, pourquoi peut-on considérer qu’il s’agit d’un modifieur ?
+\end{enumerate}
+
+\exercice{5} (noms temporels) Quel problème posent les noms temporels pour la modélisation :
+\begin{enumerate}[label=\alph*.]
+\item\textit{Je viendrai la semaine prochaine.}
+\item\textit{Il a dormi deux heures.}
+\end{enumerate}
+
+\exercice{6} Nous nous intéressons à la construction suivante.
+\begin{exe}
+\exi{}\textit{Luc casse les œufs dans un bol.}
+\end{exe}
+\begin{enumerate}
+\item Montrer que le complément locatif \textit{dans un bol} n’est pas un modifieur indiquant les circonstance du procès.
+\item Comment modéliser cette construction ?
+\end{enumerate}
+
+\exercice{7} Nous nous intéressons à la construction suivante, appelée tough-\textit{movement} par les générativistes :
+\begin{enumerate}[label=\alph*.]
+\item \textit{un livre difficile à lire}
+\item\textit{Ce livre est difficile à lire.}
+\end{enumerate}
+\begin{enumerate}
+\item En utilisant la paraphrase avec « \textit{Lire ce livre est difficile} », montrer qu’il s’agit potentiellement d’une construction à montée.
+\item Donner la structure sémantique et la structure syntaxique profonde de ces exemples.
+\end{enumerate}
+
+\exercice{8} La synonymie entre les deux phrases suivantes est un peu étrange si on regarde les choses de près.
+\begin{enumerate}[label=\alph*.]
+\item \textit{On doit dire la vérité.}
+\item \textit{On ne doit pas mentir.}
+\end{enumerate}
+Montrer qu’il y a un apparent phénomène de montée de la négation en jeu.
+
+\lecturesadditionnelles{Comme nous l’avons dit, la notion de structure syntaxique profonde doit beaucoup aux travaux d’Igor Mel’čuk. Celui-ci a théorisé la notion et a aussi développé des lexiques sémantiques et syntaxiques pour le russe, puis pour le français lorsqu’il a émigré au Québec en 1977. On consultera tout particulièrement son ouvrage de sémantique en 3 volumes (\citeyear{melcuk2012semantics}) et les dictionnaires explicatifs et combinatoires du français (\citeyear{melcuk1999dictionnaire}). Sa modélisation repose de façon essentielle sur la notion d’actant, à laquelle il a consacré de nombreux articles : on retiendra tout particulièrement les deux articles de \citeyear{melcuk2004actants1}/\citeyear{melcuk2004actants2}.
+
+Le flambeau a été repris par son étudiant, Alain Polguère, dont nous recommandons encore une fois l’ouvrage de sémantique lexicale et lexicologie. Celui-ci développe également un lexique sémantique et syntaxique électronique sous forme de réseau lexical, consultable en ligne. Dans les travaux de Mel’čuk et Polguère, l’accent est particulièrement mis sur la combinatoire lexicale restreinte décrite à l’aide des fonctions lexicales, dont nous n’avons donné qu’un très faible aperçu dans ce chapitre.
+
+La formalisation de l’interface sémantique sous la forme d’une correspondance entre un graphe sémantique et un arbre de dépendance syntaxique de surface est développée dans le cadre de la Théorie Sens-Texte. La formalisation sous la forme d’une combinaison de structure élémentaire est développée dans les travaux de Sylvain Kahane, dont on pourra consulter le tutoriel sur la Théorie Sens-Texte et les grammaires formelle de \citeyear{kahane2001grammaires} et le mémoire d’habilitation de \citeyear{kahane2002grammaire} consacré à la formalisation de la Théorie Sens-Texte par une grammaire comme celle de l’\encadref{sec:13-derivation}. L’article de \citeyear{kahane2015trois} sur \textit{Les trois dimensions d'une modélisation formelle de la langue} présente une comparaison entre une telle grammaire et les grammaires TAG, avec notamment des exemples de distorsions sémantique-syntaxe.
+
+\FurtherReading{3-6}}
+
+\corrections{
+\correction{1} La plupart de ces complément de nom sont des actants : \textsc{réponse} est un nom prédicatif dont \textsc{Zoé} est le premier argument ; textsc{portrait} est un nom prédicatif à deux arguments (quelqu’un fait le portrait de quelqu’un) et \textsc{Zoé} peut être l’un ou l’autre des arguments \textsc{main} désigne une partie du corps de quelqu’un ;  \textsc{trousse} désigne un artefact, c’est-à-dire un objet fabriqué pour être utiliser et dont l’utilisateur est donc un argument ; \textsc{chat} désigne un animal domestique, qui à se titre possède un maître/utilisateur (un animal, lorsqu’il est domestiqué, peut être vu comme une sorte d’artefact). Il est également défendable de considérer \textit{de Zoé} comme un modifier dans ces deux derniers exemples. On traitera alors la préposition \textsc{de} comme la réalisation d’un sémantème « possesseur ». Dans les deux derniers exemples, les compléments locatifs \textit{de Bretagne} et \textit{du Cap Fréhel} peuvent être clairement considérés comme des modifieurs. Nous considérons que la préposition \textsc{de} est la réalisation d’un sémantème « provenance » dans le premier cas et « location » dans le deuxième.
+
+\correction{2} Cet exemple illustre plusieurs phénomènes intéressants. Deux cas de distorsion sémantique-syntaxe : un verbe à contrôle avec \textsc{aimer} et une insertion modificative avec \tetxsc{beaucoup}. Notons également que le complément locatif \textit{en Laponie} fait partie de valence de \text{passer} (quelqu’un passe du temps quelque part). Enfin le nom \textsc{gens} est un nom massif pluriel qui ne varie donc pas en nombre.
+
+FIGURE 32
+a. ‘beaucoup’ -1-> ‘gens’ <-1- aimer -2-> ‘passer’ -2-> ‘Noël’ 
+						<..1.. 	-3-> ‘Laponie’
+b. gens_indf <-1- beaucoup <-+- aimer_cond -2-> passer Noël Laponie 
+\caption{Structures sémantique et syntaxique profonde}
+
+\correction{3}
+\begin{enumerate}[label=\alph*.]
+    \item Le vocatif Zoé contient un sémantème caché. Il ne s’agit pas vraiment d’un dépendant de la construction verbale faut qu’on y aille, mais d’un élément qui se rattache directement à l’illocution et peut être paraphrasé par ‘je déclare à Zoé qu’il faut qu’on y aille’ (voir la figure \ref{fig:13-vocatif}a). Cet élément de sens n’étant pas lexicalisé, nous le traitons comme un sémantème caché « vocatif ». Par ailleurs, nous traitons \phraseme{y aller} comme un phrasème, car dans cette expression \textsc{y} n’est pas à priori un pronom anaphorique correspondant à une destination précise. Enfin, le subjonctif sur ce verbe est imposé par le verbe \textsc{falloir} et n’est donc pas un sémantème.
+    
+Figure 33 \label{fig:13-vocatif} 
+a.	‘Zoé’ <-2- déclaration -1-> ‘falloir’ -1-> ‘y aller’ -1-> ‘on’
+b.	vocatif(Zoé) <-MOD- falloir_présent -1-> \phraseme{y aller} -1-> on
+\caption{Structures sémantique et syntaxique profonde de a}
+
+\item Le nom \textsc{œuf} est un nom comptable. Il est employé ici comme un massif, avec le déterminant indéfini des massifs. Nous considérons donc qu’il est combiné avec un sémantème caché « massif », qui signifie ‘une matière formée de’. Ce sémantème joue le rôle inverse du sémantème « type », qui produit un nom comptable à partir d’un massif. Par ailleurs, nous traitons il y a comme la réalisation d’un phrasème \phraseme{il y avoir} qui « verbalise » la préposition \textsc{sur}.
+
+Figure 34
+massif(œuf)_indéf <-1- \phraseme{il y avoir}_présent -2-> sur -2-> chemise_déf -MOD-> possessif(moi)
+							(œuf) <..1..
+\caption{Structure syntaxique profonde de b}
+\end{enumerate}
+
+\correction{4} Nous avons déjà présenté cette unité lexicale étrange dans l’\encadref{sec:0.0.7} intitulé \textit{Le lexique : un cabinet de curiosités}. Le paradigme de commutation de \textit{rien} comprend uniquement \textit{pas grand-chose}, \textit{que dalle} et les formes interrogatives avec \textit{que} et {quelque chose}. Nous considérons donc que ce paradigme forme un phrasème avec le verbe \textsc{comprendre}, phrasème que nous proposons d’appeler \phraseme{comprendre quelque chose}. Ce phrasème doit obligatoirement se combiner avec une négation ou une interrogation et le complément \textit{rien}, qui est la négation de quelque chose porte donc juste la valeur négative : négation + \phraseme{comprendre quelque chose} =  \textit{ne rien comprendre}. Cette valeur négative fonctionne comme un modifieur. 
+
+
+\correction{5} Les noms temporels indiquent un moment (\textit{la semaine prochaine}) ou une durée (\textit{deux heures}). Dans les exemples donnés, ils sont utilisés comme des modifieurs de verbes. En même temps, ce sont de vrais noms, qui peuvent être utilisés, avec le même sens exactement, dans des positions où on attend un substantif : \textit{\textbf{deux heures} suffiront pour terminer}, \textit{la réunion de \textbf{la semaine prochaine}}. Nous considérons donc qu’il y a des sémantèmes cachés qui se combinent avec les noms temporels et permettent de les utiliser comme modifieurs. Nous nommons ces sémantèmes « moment » et « durée ». On notera que ces sémantèmes sont bi-valents : leur premier argument est le verbe et leur deuxième argument le nom temporel.
+
+FIGURE 35
+a. moi venir_futur moment(semaine_def) prochain
+b. lui dormir_passé durée(heure_indf) deux
+\caption{Structures syntaxiques profondes des noms temporels modifieurs}
+
+\correction{6} Lorsque Luc casse des œufs, le procès n’a pas lieu dans un bol : le bol est la destination des œufs. Le verbe \textsc{casser} a ici le sens habituel ‘casser’, mais la construction de \textsc{mettre} (Luc met les œufs dans un bol). On peut donc imaginer plusieurs modélisations possibles. Si l’on traite \textit{dans un bol} comme un modifieur, il y a nécessairement un sémantème caché indiquant qu’il s’agit d’une destination. Ce sémantème, que nous nommons « destination », est une façon d’indiquer que la construction est signifiante. On peut aussi considérer que ce complément est « entré » dans la valence du verbe \textsc{casser} et qu’on a une acception trivalente de ce verbe, un \textsc{casser_b}, équivalent au \textsc{casser_a} + destination. Cette construction, plus courante en anglais qu'en français, a été appelée la \hi{construction résultative}. On pourra notamment consulter le livre d'Adele \cite{goldberg1995constructions} qui y consacre un chapitre.
+
+FIGURE 36
+a.
+b.
+\caption{Deux structures syntaxiques syntaxiques possibles pour une construction résultative}
+
+\correction{7} Si l’on accepte la paraphrase entre « \textit{Ce livre est difficile à lire.} » et « \textit{Lire ce livre est difficile} », alors on peut considérer que \textsc{difficile} reste un prédicat à un argument et que c’est le deuxième argument de \textsc{lire} qui devient son « sujet » (voir la structure sémantique de la figure \ref{fig:13-tough}c). Comme il existe plusieurs adjectifs qui ont les deux constructions (\textsc{facile}, \textsc{impossible}, \textsc{utile} …), nous considérerons, à la suite des générativistes, qu’il s’agit d’une réorganisation de valence de l’adjectif (plutôt que de deux acceptions du même adjectif). Dans notre cadre, une telle réorganisation résulte de la combinaison avec un sémantème constructionnel, que nous appellerons « \textit{tough-movement} » (pour ne pas rompre avec la tradition). Il en résulte les structures syntaxiques profondes de la ref{fig:13-tough}a et b.
+
+FIGURE 37\label{fig:13-tough}
+a. livre_sg, indf -+-> tough-mvt(difficile) -1-> lire_inf
+b. V(tough-mvt(difficile))_prés …
+c. ‘difficile’ -1-> ‘lire’ -1-> ‘livre’
+
+\correction{8} « \textit{On ne doit pas mentir.} » n’est pas la négation sémantique de « \textit{On doit mentir.} ». Celle-ci serait plutôt exprimée par « \textit{On n’est pas obligé de mentir.} » ou « \textit{On peut ne pas mentir.} ». En fait, « \textit{On ne doit pas mentir.} » est synonyme de « \textit{On doit ne pas mentir.} ». Il y a donc bien un apparent phénomène de montée de la négation : la négation qui porte sémantiquement sur \textsc{mentir} se trouve attachée syntaxiquement au verbe recteur \textsc{devoir}. \cite{tesniere1959elements} notait déjà ce phénomène auquel il consacre son chapitre 89 intitulé \textit{Anticipation de la négation}. Plutôt qu’un phénomène syntaxique qui verrait véritablement une montée dans l’interface sémantique-syntaxe, on considère plutôt qu’il s’agit d’un phénomène de figement lexical associé au verbe recteur qui combiné à la négation prend un sens particulier (voir par exemple \cite{forest1994negation}). On retrouve ce phénomène dans de nombreuses langues. Cet exemple de l’italien montre un exemple intéressant de contraste avec le français :
+\begin{exe}
+\exi{} \textit{Il cafe non mi fa dormire.}//
+‘Le café m’empêche de dormir.’//
+lit. ‘Le café ne me fait pas dormir.’
+\end{exe}}
+}
+
 
 
 
