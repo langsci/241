@@ -1059,10 +1059,10 @@ Si l’on applique la déréfication à tous les nœuds intérieurs de l’arbre
   ]
 ]
 \begin{scope}[>={Triangle[]},overlay]
-\draw[<-] (!2.north) +(0,.25) to [bend right,in=270,out=270] (!1.north) to (!1.south);
+\draw[->] (!2.north) +(0,.25) to [bend right,in=270,out=270] (!1.north) to (!1.south);
 \draw[->] (!11.north)   to [bend left,out=90,in=90]   (!12.north) to (!12.south);
 \draw[->] (!121.north)  to [bend left,out=90,in=90]                  (!122.north);
-\draw[->] (!21.north)   to [bend left,out=90,in=90]                  (!22.north) to (!22.south);
+\draw[->] (!21.north)   to [bend left,out=90,in=90]   (!22.north) to (!22.south);
 \draw[->] (!221.south)  to [bend left,out=90,in=90]                  (!222.south);
 \draw[->] (!2211.north) to [bend left,out=90,in=90]                  (!2212.north);
 \draw[->] (!2221.north) to [bend left,out=90,in=90]                  (!2222.north);
@@ -1125,78 +1125,59 @@ Si l’on s’abstrait complètement de l’ordre linéaire et que l’on garde 
 
 \begin{figure}
 \caption{\label{fig:laponie-polygraphe-pur}Polygraphe orienté (non ordonné)}
-\begin{turn}{-45}
-	\begin{tikzpicture}\itshape
-		\node (passer)   at (4,5)  [rotate=45] {passer};
-		\node (b)   at (5,5)  [rotate=45] {};
-		\node (Noël)   at (6,5)  [rotate=45] {Noël};
-		%
-		\node (aimeraient)   at (1,4)  [rotate=45] {aimeraient};
-		\node (x)   at (3,4)  [rotate=45] {};
-		\node (y)   at (5,4)  [rotate=45] {};
-		%
-		\node (en)   at (4,3)  [rotate=45] {en};
-		\node (a)   at (5,3)  [rotate=45] {};
-		\node (Laponie)   at (6,3)  [rotate=45] {Laponie};
-		%
-		\node (de)   at (4,2)  [rotate=45] {de};
-		%
-		\node (beaucoup)   at (2,1)  [rotate=45] {beaucoup};
-		\node (z)   at (3,1)  [rotate=45] {};
-		\node (c)   at (4,1)  [rotate=45] {};
-		
-		%
-		\node (gens)   at (4,0)   [rotate=45]  {gens};
-		%
-		\draw[thick,shorten <=2mm, shorten >=3mm] (4,5) -- (6,5);
-		\draw[thick,shorten <=3mm, shorten >=1mm] (1,4) -- (5,4);
-		\draw[thick,shorten <=2mm, shorten >=3mm] (4,3) -- (6,3);
-		% 2
-		\draw[thick,shorten <=2mm, shorten >=2mm] (2,1) -- (4,1);
-		
-		%
-		% \draw[thick] (z) -- (x);
-		\draw[thick,shorten <=2mm, shorten >=2mm] (3,1) -- (3,4);
-		\draw[thick] (gens) -- (de);
-		\draw[thick] (a) -- (b);
-	\end{tikzpicture}
-\end{turn}
-\todo[inline]{Nice figure! Just suppress the space around the figure}
+% \begin{turn}{-45}
+% 	\begin{tikzpicture}\itshape
+% 		\node (passer)   at (4,5)  [rotate=45] {passer};
+% 		\node (b)   at (5,5)  [rotate=45] {};
+% 		\node (Noël)   at (6,5)  [rotate=45] {Noël};
+% 		%
+% 		\node (aimeraient)   at (1,4)  [rotate=45] {aimeraient};
+% 		\node (x)   at (3,4)  [rotate=45] {};
+% 		\node (y)   at (5,4)  [rotate=45] {};
+% 		%
+% 		\node (en)   at (4,3)  [rotate=45] {en};
+% 		\node (a)   at (5,3)  [rotate=45] {};
+% 		\node (Laponie)   at (6,3)  [rotate=45] {Laponie};
+% 		%
+% 		\node (de)   at (4,2)  [rotate=45] {de};
+% 		%
+% 		\node (beaucoup)   at (2,1)  [rotate=45] {beaucoup};
+% 		\node (z)   at (3,1)  [rotate=45] {};
+% 		\node (c)   at (4,1)  [rotate=45] {};
+% 		
+% 		%
+% 		\node (gens)   at (4,0)   [rotate=45]  {gens};
+% 		%
+% 		\draw[thick,shorten <=2mm, shorten >=3mm] (4,5) -- (6,5);
+% 		\draw[thick,shorten <=3mm, shorten >=1mm] (1,4) -- (5,4);
+% 		\draw[thick,shorten <=2mm, shorten >=3mm] (4,3) -- (6,3);
+% 		% 2
+% 		\draw[thick,shorten <=2mm, shorten >=2mm] (2,1) -- (4,1);
+% 		
+% 		%
+% 		% \draw[thick] (z) -- (x);
+% 		\draw[thick,shorten <=2mm, shorten >=2mm] (3,1) -- (3,4);
+% 		\draw[thick] (gens) -- (de);
+% 		\draw[thick] (a) -- (b);
+% 	\end{tikzpicture}
+% \end{turn}
+% \todo[inline]{Nice figure! Just suppress the space around the figure}
+\includegraphics[scale=0.9]{figures/polygraphs/poly-3.4.23-1.pdf}
 \end{figure}
 
 Bien que cela n’apparaisse pas au premier coup d’œil, cette structure est un extrait de la structure de la figure \ref{fig:laponie-polygraphe-ordre} : c’est le même \hi{polygraphe orienté} que précédemment, mais sans l’ordre des mots et avec une autre convention de représentation. Au lieu d’indiquer la hiérarchisation de la connexion par une flèche, celle-ci est indiquée en plaçant le gouverneur au-dessus du dépendant. Or ce polygraphe orienté, qui a donc été extrait automatiquement de l’arbre de constituants binaires en mettant en évidence les connexions, est très proche d’un arbre de dépendance. Pour obtenir l’arbre de dépendance, il suffit de \hi{faire glisser chaque dépendance} le long des dépendances sur lesquelles elle s’appuie, comme montré dans la figure \ref{fig:glissade}. Nous retombons ainsi sur l'arbre de dépendance de départ (voir figure \ref{fig:laponie-dep2}).
 
 \begin{figure}
 \begin{minipage}{.45\textwidth}\centering
-\begin{forest}
-nice empty nodes,for tree={font=\itshape}
-[aimeraient
-  [
-    [ [en] [Laponie] ]
-    [ [passer] [Noël] ]
-  ]
-]
-\draw[-{Triangle[]}] (!111.south) -- (!112.south);
-\draw[-{Triangle[]}] (!121.south) -- (!122.south);
-\draw[-{Triangle[]}] (!12.west) +(-.5,0) -- ($(!11.east) +(.5,0)$);
-\end{forest}
+\includegraphics[scale=0.9]{figures/polygraphs/poly-3.4.23-2.pdf}
 \end{minipage}\hfill%
 \begin{minipage}{.05\textwidth}\centering
-$\Rightarrow$
+\huge$\Rightarrow$
 \end{minipage}\hfill%
 \begin{minipage}{.45\textwidth}\centering
-\begin{forest}
-nice empty nodes,for tree={font=\itshape}
-[aimeraient
-  [passer
-    [Noël]
-    [en [Laponie] ]
-  ]
-]
-\end{forest}
+\includegraphics[scale=0.9]{figures/polygraphs/poly-3.4.23-3.pdf}
 \end{minipage}
 \caption{\label{fig:glissade}Passage du polygraphe orienté à un arbre de dépendance par «~glissade~»}
-\todo[inline]{The figure must be completely reshaped. See original. The left part is a subpart of the previous polygraph. The right part must be in the same style, with the same edges. The three arrows in the left part indicate a sliding movement. They must be different from the arrow used for the dependency or the conversion. The arrow in the middle is a conversion arrow (big \textbackslash Rightarrow).}
 \end{figure}
 
 
@@ -1234,16 +1215,15 @@ Nous appellerons \textstyleTermes{méthode par déréification }la méthode que 
     \hfill%
     \begin{minipage}[c]{.33\textwidth}\centering
     \begin{forest} for tree={font=\itshape}
-    [dort
-      [,nice empty nodes
-        [le] [chien [petit]]
-      ]
+    [dort,name=dort, s sep=2em, xshift=-4pt
+        [le, no edge, name=le] [chien, no edge, name=chien [petit]]
     ]
+    \draw (le) -- (chien);
+    \draw (dort) -- ++ (0,-2.5em);
     \end{forest}
     \end{minipage}\hfill
 \caption{\label{fig:lechien2}Conversion d'un arbre de constituants avec marquage partiel des têtes en une structure de dépendance par la méthode de déréification}
 \end{figure}
-\todo[inline]{the subfigure on the right is a polygraph with an horizontal line between le and chien, see figure \ref{fig:lechien}}
 
 \section{Comparaison des méthodes par décomposition}\label{sec:3.4.24}
 
@@ -1348,17 +1328,15 @@ Chaque flèche $\Rightarrow$ ou $\Leftrightarrow$ entre deux structures symbolis
     \begin{minipage}[c]{.1\linewidth}\centering\huge$\Rightarrow$\end{minipage}%
     \begin{minipage}[c]{.35\textwidth}\centering
     \begin{forest} for tree={font=\itshape}
-    [dorment
-      [,nice empty nodes
-        [Marie] [Pierre]
-      ] 
+    [dorment, s sep=2em, name=dorment
+        [Marie, no edge, name=Marie] [Pierre, no edge, name=Pierre]
     ]
-    \node at (.25,-1) {\itshape et};
+    \path[draw] (Marie) to node[midway, below, font=\itshape] {et} (Pierre);
+    \draw (dorment) -- ++(0,-2.5em);
     \end{forest}
     \end{minipage}
     \caption{\label{fig:polygraphe-coord}Branchement ternaire et correspondance par la méthode de déréification}
 \end{figure}
-\todo[inline]{The right figure is a polygraph. The word "et" is a label on the horizontal edge. See original}
 
     La structure de dépendance de droite peut être obtenue en appliquant la méthode de conversion par déréification à l’arbre de constituant à gauche. Le branchement ternaire donne une connexion ternaire, où \textit{Marie} et \textit{Pierre} occupent des positions symétriques (puisqu’ils sont co-têtes), tandis que la conjonction \textit{et} occupe une troisième position, comme «~dépendant~» des co-têtes. La convention de Tesnière rend bien compte de cela.
 
@@ -1539,41 +1517,48 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     on voit que l’interprétation est différente selon que \textit{coréennes} est dans la portée de \textit{chères} ou l’inverse (les voitures coréennes chères ne sont pas nécessairement des voitures chères dans l'absolu). Ces phénomènes de portée peuvent tout de même être encodés dans un arbre de dépendance, à condition d’ajouter un ordre de combinaison avec la tête (voir l'encodage d'un ordre de saillance dans la \sectref{sec:3.4.15} sur les \textit{Projections partielles et ordre de saillance}), ou par un polygraphe, en indiquant que le second adjectif se combine avec le résultat de la combinaison du premier adjectif avec le nom :
     
 \begin{figure}[H]
+   \begin{minipage}[c]{.45\linewidth}\centering
     \begin{forest} for tree = {font=\itshape}
       [voitures
         [coréennes,edge label={node [near end,above] {1}}] 
         [chères,edge label={node [near end,above] {2}}]
       ]
     \end{forest} 
-    \hspace{1cm}
-    \begin{forest} for tree = {font=\itshape}
-        [voitures
-            [,nice empty nodes
-              [coréennes,before typesetting nodes={yshift=\baselineskip}]
-              [chères]
-            ]
-        ]
-    \end{forest}
-
+    \end{minipage}\begin{minipage}[c]{.1\linewidth}\centering
+    \huge$\Rightarrow$%
+    \end{minipage}\begin{minipage}[c]{.45\linewidth}\centering
     \begin{forest} for tree = {font=\itshape}
       [voitures
         [coréennes,edge label={node [near end,above] {2}}] 
         [chères,edge label={node [near end,above] {1}}]
       ]
-    \end{forest} 
-    \hspace{1cm}
-    \begin{forest} for tree = {font=\itshape}
-        [voitures
-            [,nice empty nodes
-              [coréennes]
-              [chères,before typesetting nodes={yshift=\baselineskip}]
-            ]
-        ]
     \end{forest}
+    \end{minipage}\medskip\\
+    \begin{minipage}[c]{.45\linewidth}\centering
+    \begin{forest} for tree = {font=\itshape}
+     [voitures,name=voitures, s sep=2em
+       [coréennes,name=coreennes] [,phantom]
+      ]
+     \node[below right=.5\baselineskip and 3em of coreennes.base, font=\itshape] (cheres) {chères};
+     \draw ($ (voitures) !.5! (coreennes) $) +(.1,-.1) -- (cheres);
+    \end{forest}
+    \end{minipage}\begin{minipage}[c]{.1\linewidth}\centering
+    \huge$\Rightarrow$%
+    \end{minipage}\begin{minipage}[c]{.45\linewidth}\centering
+   \begin{forest} for tree = {font=\itshape}
+	[voitures,name=voitures, s sep=2em
+	  [,phantom] [chères,name=cheres] 
+	]
+	\node[below left=.5\baselineskip and 3em of cheres.base, font=\itshape] (coreennes) {coréennes};
+	\draw ($ (voitures) !.5! (cheres) $) +(-.1,-.1) -- (coreennes);
+    \end{forest}
+    \end{minipage}\medskip\\
+    \begin{minipage}[c]{.45\linewidth}\centering%
+    \itshape les voitures coréennes chères
+    \end{minipage}\hfill\begin{minipage}[c]{.45\linewidth}\centering%
+    \itshape les voitures chères coréennes
+    \end{minipage}
      \caption{\label{fig:coreennel}Structures de dépendance avec portée}
-
-\todo[inline]{The two structures on the left are polygraphs with two edges. See \ref{fig:laponie-polygraphe-pur}}
-\todo[inline]{Add a \textbackslash Rightleftarrow bewteen right and left diagrams in a and b}
 \end{figure}
 
     Les structures de constituants, qui encodent la portée de manière plus simple, semblent avoir un avantage. Reste à savoir si les phénomènes de portée relèvent de la syntaxe et doivent être encodés dans la structure syntaxique ou bien s’il s’agit uniquement de phénomènes sémantiques indépendants de la structure syntaxique. Par exemple, dans une phrase telle que \textit{Un numéro est attribué à chaque participant}, le sujet est dans la portée de l’objet, ce qui va contre l’analyse en constituants usuelle, puisque \textit{à chaque participant} devrait être combiné avec \textit{un numéro est attribué}.
@@ -1664,60 +1649,8 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     Nous proposons finalement la structure de dépendance de la figure \ref{fig:proust}. Nous laissons sous-spécifié la tête de la relation déterminant-nom, ainsi que la relation entre le pronom relatif et verbe principal des propositions relatives.
     
     \begin{figure}[H]
-%     \begin{forest} for tree = { }
-%     [tressaillis,calign=child,calign primary child=2
-%         [à
-%           [,nice empty nodes
-%             [l']
-%             [instant
-%               [même]
-%               [,nice empty nodes
-%                 [où]
-%                 [toucha
-%                   [,nice empty nodes
-%                     [la] 
-%                     [gorgée
-%                         [mêlée
-%                           [de
-%                             [,nice empty nodes
-%                               [les]
-%                               [miettes
-%                                 [de
-%                                   [,nice empty nodes
-%                                     [le] [gâteau]
-%                                   ]
-%                                 ]
-%                               ]
-%                             ]
-%                           ]
-%                         ]
-%                     ]
-%                   ]
-%                   [,nice empty nodes
-%                     [mon]
-%                     [palais]
-%                   ]
-%                 ]
-%               ]
-%             ]
-%           ]
-%         ] 
-%         [je,fit=band]
-%         [attentif
-%           [à [ce
-%             [,nice empty nodes
-%               [qui]
-%               [passait,calign=child,calign primary child=2
-%                 [se] [d' [extraordinaire]] [en [moi]]
-%               ]
-%             ]
-%           ]]
-%         ]        
-%     ]
-%     \end{forest}
-%     \caption{\label{fig:proust}}
-  \caption{Structure de dépendance polygraphique\label{fig:proust }}
-    \todo[inline]{It is a polygraph. See original.}
+    \includegraphics[scale=.9]{figures/polygraphs/poly-3.4.31.pdf}
+    \caption{Structure de dépendance polygraphique\label{fig:proust}}
     \end{figure}
     
     Pour construire un arbre de constituants binaire, il faut décider dans quel ordre combiner chaque mot avec ses dépendants. Notons que lorsqu’une connexion n’est pas hiérarchisée, cette combinaison a lieu après les autres. Par exemple, si nous prenons la portion \textit{à l’instant même où la gorgée mêlée des miettes du gâteau toucha mon palais}, on obtient~la structure (ii), où le déterminant est le dernier élément à se combiner avec le nom :
