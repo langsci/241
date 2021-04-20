@@ -59,11 +59,13 @@ L’objectif de la syntaxe profonde est d’étudier les combinaisons entre sém
 
 \subsection{Les unités de la syntaxe profonde}
 
-\smallskip\noindent\textbf{Les sémantèmes lexicaux.} Ce sont les \hi{unités lexicales} ou \hi{lexies}. Les lexies peuvent correspondre, du coté syntaxique, à un lexème ou à un phrasème composé de plusieurs lexèmes, comme \phraseme{tenir la jambe} dans l’exemple \ref{ex:jambe}. Elles peuvent éventuellement contenir des grammèmes, comme la lexie \textsc{travaux} (\textit{Il y a des \textbf{travaux} dans ma rue.}), qui contient un pluriel inhérent.
+\subsubsection{Les sémantèmes lexicaux} 
+Ce sont les \hi{unités lexicales} ou \hi{lexies}. Les lexies peuvent correspondre, du coté syntaxique, à un lexème ou à un phrasème composé de plusieurs lexèmes, comme \phraseme{tenir la jambe} dans l’exemple \ref{ex:jambe}. Elles peuvent éventuellement contenir des grammèmes, comme la lexie \textsc{travaux} (\textit{Il y a des \textbf{travaux} dans ma rue.}), qui contient un pluriel inhérent.
 
 Du côté sémantique, les lexies ont un signifié bien déterminé et sont donc des unités non ambigües, qui sont associées à des acceptions précises de lexèmes. (Dans nos représentations, nous n’indiquons pas quelle acception de chaque unité lexicale est considérée, car cela nécessite d’avoir un lexique de référence.)
 
-\smallskip\noindent\textbf{Les sémantèmes grammaticaux.} Ce sont les \hi{unités grammaticales} ou \hi{grammies}. Une grammie peut correspondre du coté syntaxique à un grammème, comme l’imparfait, ou à une combinaison de grammèmes et de lexèmes, l’un des grammèmes se combinant avec un lexème ne faisant pas partie de la grammie. Ce dernier cas peut être illustré par l’accompli, formé en français d’un auxiliaire, \textsc{avoir} ou \textsc{être}, et d’un grammème de participe passé (voir la figure \ref{fig:accompli}).
+\subsubsection{Les sémantèmes grammaticaux} 
+Ce sont les \hi{unités grammaticales} ou \hi{grammies}. Une grammie peut correspondre du coté syntaxique à un grammème, comme l’imparfait, ou à une combinaison de grammèmes et de lexèmes, l’un des grammèmes se combinant avec un lexème ne faisant pas partie de la grammie. Ce dernier cas peut être illustré par l’accompli, formé en français d’un auxiliaire, \textsc{avoir} ou \textsc{être}, et d’un grammème de participe passé (voir la figure \ref{fig:accompli}).
 
 \ea\label{ex:accompli} \textit{J’ai peur d’avoir répondu trop vite.}\z
 \begin{figure}
@@ -76,19 +78,22 @@ FIGURE 2
 
 \subsection{Les unités de la syntaxe de surface qui ne sont pas des unités de la syntaxe profonde}
 
-\begin{description}
-\item[Les lexèmes polysémiques.] Nous avons défini les syntaxèmes sur des critères purement syntaxiques. Un lexème, c’est-à-dire un syntaxème lexical, peut tout à fait être polysémique et correspondre à plusieurs sémantèmes. Dans ce cas, c’est une acception précise du lexème, correspondant à un sens particulier, qui figure dans la structure syntaxique profonde.
+\subsubsection{Les lexèmes polysémiques}
+Nous avons défini les syntaxèmes sur des critères purement syntaxiques. Un lexème, c’est-à-dire un syntaxème lexical, peut tout à fait être polysémique et correspondre à plusieurs sémantèmes. Dans ce cas, c’est une acception précise du lexème, correspondant à un sens particulier, qui figure dans la structure syntaxique profonde.
 
-\item[Les lexèmes qui font partie d’un phrasème.] Dans ce cas, le lexème n’apparait pas en tant que tel : c’est le phrasème qui sera une unité minimale de la structure syntaxique profonde.
+\subsubsection{Les lexèmes qui font partie d’un phrasème} 
+Dans ce cas, le lexème n’apparait pas en tant que tel : c’est le phrasème qui sera une unité minimale de la structure syntaxique profonde.
 
-\item[Les régimes.] Les syntaxèmes qui marquent la relation syntaxique entre deux sémantèmes n’apparaissent pas explicitement dans la structure syntaxique profonde. Ils ne correspondent pas à un choix séparé du locuteur, mais sont imposés par le régime du gouverneur. C’est le cas de la préposition \textsc{à} dans l’exemple \REF{ex:jambe}, qui est imposé par le régime de \phraseme{tenir la jambe}. C’est aussi le cas des syntaxèmes flexionnels de cas, comme le nominatif porté par les pronoms personnel sujet en français (cf. je = \textsc{moi}\_nominatif, dans l’exemple \REF{ex:accompli}).
+\subsubsection{Les régimes}
+Les syntaxèmes qui marquent la relation syntaxique entre deux sémantèmes n’apparaissent pas explicitement dans la structure syntaxique profonde. Ils ne correspondent pas à un choix séparé du locuteur, mais sont imposés par le régime du gouverneur. C’est le cas de la préposition \textsc{à} dans l’exemple \REF{ex:jambe}, qui est imposé par le régime de \phraseme{tenir la jambe}. C’est aussi le cas des syntaxèmes flexionnels de cas, comme le nominatif porté par les pronoms personnel sujet en français (cf. je = \textsc{moi}\_nominatif, dans l’exemple \REF{ex:accompli}).
 
-\item[Les syntaxèmes d’accord.] Les syntaxèmes flexionnels qui marquent l’accord, comme l’accord en genre des adjectifs du français (\textit{maison blanche}), n’ont pas de contribution sémantique. Ces syntaxèmes servent généralement à marquer des relations syntaxiques. Le cas de l’accord en nombre entre le nom et l’article (\textit{les chevaux}) est plus complexe, car il y a bien un sémantème de pluriel, qui correspond à deux syntaxèmes. Nous positionnons le sémantème sur le nom, puisque c’est sur le nom que porte sémantiquement le nombre (même si en français, le nombre est morphologiquement marqué avant tout sur l’article).
-\end{description}
+\subsubsection{Les syntaxèmes d’accord} 
+Les syntaxèmes flexionnels qui marquent l’accord, comme l’accord en genre des adjectifs du français (\textit{maison blanche}), n’ont pas de contribution sémantique. Ces syntaxèmes servent généralement à marquer des relations syntaxiques. Le cas de l’accord en nombre entre le nom et l’article (\textit{les chevaux}) est plus complexe, car il y a bien un sémantème de pluriel, qui correspond à deux syntaxèmes. Nous positionnons le sémantème sur le nom, puisque c’est sur le nom que porte sémantiquement le nombre (même si en français, le nombre est morphologiquement marqué avant tout sur l’article).
 
 \subsection{Les unités potentielles de la syntaxe profonde}\label{sec:13-potentiel}
 
-\smallskip\noindent\textbf{Les collocatifs.} Les collocatifs sont des sémantèmes, mais leur choix est contraint par la base de la collocation et leur sens dans le contexte de la collocation est généralement différent de leur sens habituel. Dans l’exemple \REF{ex:peurbleue}, \textsc{faire} et \textsc{bleu} sont des collocatifs de \textsc{peur}, qui expriment respectivement des sens de causation (‘Zoé cause que j’ai peur’) et d’intensification (‘Ma peur est intense’), que nous représentons dans la représentation sémantique de la phrase par les signifiés génériques ‘causer’ et ‘intense’. A partir de là deux choix sont possibles : on peut introduire des lexies \textsc{faire} et \textsc{bleu} particulières, utilisées avec les sens ‘causer’ et ‘intense’ dans le contexte de \textsc{peur}. Ou bien, comme le propose Igor Mel’čuk, considérer que \textsc{faire} et \textsc{bleu} sont des lexèmes qui réalisent en surface les valeurs d’un « sémantème » plus abstrait, qu’il appelle des \terme{fonctions lexicales} (voir l\encadref{sec:2.3.11} sur les \textit{Fonctions lexicales}) et que nous nommons Caus et Magn dans la figure \ref{fig:peurbleue}.
+\subsubsection{Les collocatifs}
+Les collocatifs sont des sémantèmes, mais leur choix est contraint par la base de la collocation et leur sens dans le contexte de la collocation est généralement différent de leur sens habituel. Dans l’exemple \REF{ex:peurbleue}, \textsc{faire} et \textsc{bleu} sont des collocatifs de \textsc{peur}, qui expriment respectivement des sens de causation (‘Zoé cause que j’ai peur’) et d’intensification (‘Ma peur est intense’), que nous représentons dans la représentation sémantique de la phrase par les signifiés génériques ‘causer’ et ‘intense’. A partir de là deux choix sont possibles : on peut introduire des lexies \textsc{faire} et \textsc{bleu} particulières, utilisées avec les sens ‘causer’ et ‘intense’ dans le contexte de \textsc{peur}. Ou bien, comme le propose Igor Mel’čuk, considérer que \textsc{faire} et \textsc{bleu} sont des lexèmes qui réalisent en surface les valeurs d’un « sémantème » plus abstrait, qu’il appelle des \terme{fonctions lexicales} (voir l\encadref{sec:2.3.11} sur les \textit{Fonctions lexicales}) et que nous nommons Caus et Magn dans la figure \ref{fig:peurbleue}.
 
 \ea\label{ex:peurbleue} \textit{Zoé m’a fait une peur bleue.}\z
 
@@ -101,7 +106,8 @@ b. Zoé <-1- Caus\_passé -2-> peur -MOD-> Magn
 \caption{Structures sémantique et syntaxique profonde de \REF{ex:peurbleue}}
 \end{figure}
 
-\smallskip\noindent\textbf{Les translatifs purs.} Les \hi{translatifs} sont des syntaxèmes dont la fonction est de permettre à un lexème d’une catégorie donnée d’occuper une position syntaxique dont les éléments prototypiques appartiennent à une autre catégorie (voir le \chapfuturef{18} sur les \textit{Catégories microsyntaxiques}). Ainsi dans l’exemple \REF{ex:content}a, la copule \textsc{être} permet à l’adjectif \textsc{content} de se comporter comme un prédicat verbal et d’occuper la position de complément du verbe \textsc{penser}. Une autre construction est possible, \REF{ex:content}b, sans copule. La synonymie entre les deux constructions montre l’absence de contribution sémantique de la copule. Un translatif sans réelle contribution sémantique est dit \hi{pur}.
+\subsubsection{Les translatifs purs} 
+Les \hi{translatifs} sont des syntaxèmes dont la fonction est de permettre à un lexème d’une catégorie donnée d’occuper une position syntaxique dont les éléments prototypiques appartiennent à une autre catégorie (voir le \chapfuturef{18} sur les \textit{Catégories microsyntaxiques}). Ainsi dans l’exemple \REF{ex:content}a, la copule \textsc{être} permet à l’adjectif \textsc{content} de se comporter comme un prédicat verbal et d’occuper la position de complément du verbe \textsc{penser}. Une autre construction est possible, \REF{ex:content}b, sans copule. La synonymie entre les deux constructions montre l’absence de contribution sémantique de la copule. Un translatif sans réelle contribution sémantique est dit \hi{pur}.
 
 \ea\label{ex:content}
     \ea \textit{Ali trouve que Zoé est sympa.}
@@ -121,7 +127,8 @@ Notons que la conjonction de subordination \textsc{que} est également un transl
 
 Notons également que les translatifs peuvent en plus être des collocatifs : tel est le cas des verbes supports qui permettent à des noms prédicatifs d’occuper des positions verbales (\textit{\textbf{poser une question}}, \textit{\textbf{faire une sieste}}, \textit{\textbf{pousser un cri}}, etc.) (voir l’\encadref{sec:2.3.9} sur les \textit{Verbes supports et unités grammaticales}).
 
-\smallskip\noindent\textbf{Les sémantèmes constructionnels.} Il existe des syntaxèmes qui n’expriment pas des sens proprement dits, mais qui ont à voir avec la structure communicative, la façon dont on présente l’information (voir l’\encadref{sec:13-packaging}). Nous considérons qu’il s’agit de sémantèmes d’un type particulier, que nous appelons les \terme{sémantèmes constructionnels}. Nous distinguons ceux comme le clivage, qui sont réalisés par des lexèmes et des grammèmes distincts de la forme verbale et que nous traitons comme des lexies, et ceux comme le passif, qui sont réalisés par un grammème sur le verbe et que nous traitons comme des grammies.
+\subsubsection{Les sémantèmes constructionnels} 
+Il existe des syntaxèmes qui n’expriment pas des sens proprement dits, mais qui ont à voir avec la structure communicative, la façon dont on présente l’information (voir l’\encadref{sec:13-packaging}). Nous considérons qu’il s’agit de sémantèmes d’un type particulier, que nous appelons les \terme{sémantèmes constructionnels}. Nous distinguons ceux comme le clivage, qui sont réalisés par des lexèmes et des grammèmes distincts de la forme verbale et que nous traitons comme des lexies, et ceux comme le passif, qui sont réalisés par un grammème sur le verbe et que nous traitons comme des grammies.
 
 Nous avons déjà parlé du clivage dans la section 11.8 sur Les tests de constituance et dont nous reparlerons dans le \chapfuturef{20}. Le clivage, réalisé par \textit{c’est} X \textit{qui/que} Y, s’applique à une proposition Y dont il promeut l’un des éléments X. Il possède donc deux actants : l’élément promu X est le premier actant et la proposition Y privée de cet élément est le deuxième actant.
 
@@ -156,7 +163,8 @@ Notons que dans le cas du participe passif dépendant d’un nom, le passif, en 
 
 Nous n’indiquons pas quand le verbe est à l’actif, considérant qu’il s’agit de la construction de base du verbe et qu’il n’y a donc pas de redistribution en jeu.
 
-\smallskip\noindent\textbf{Les pronoms.} Certains pronoms résultent du dédoublement d’un nœud sémantique, comme le pronom elle en \REF{ex:13-pronom}a. Le pronom n’est pas un sémantème standard, puisqu’il n’a pas de signifié distinct qui apparaisse dans la structure sémantique, comme on le voit dans la structure sémantique de la figure \ref{fig:13-pronom-sem} commune aux deux exemples en \REF{ex:13-pronom}.
+\subsubsection{Les pronoms}
+Certains pronoms résultent du dédoublement d’un nœud sémantique, comme le pronom elle en \REF{ex:13-pronom}a. Le pronom n’est pas un sémantème standard, puisqu’il n’a pas de signifié distinct qui apparaisse dans la structure sémantique, comme on le voit dans la structure sémantique de la figure \ref{fig:13-pronom-sem} commune aux deux exemples en \REF{ex:13-pronom}.
 
 \ea\label{ex:13-pronom}
 \ea Zoé pense qu’elle viendra.
@@ -179,7 +187,8 @@ b.	Zoé <-1- penser\_ prés -2-> venir ..1..> (Zoé)
 
 D’autres représentations plus proches de la sémantique ont été proposées : Mel’čuk propose une représentation commune pour les deux phrases de \REF{ex:13-pronom}, avec deux nœuds \textsc{Zoé} lié par un lien de coréférence. Une alternative à cette représentation est de garder un seul nœud \textsc{Zoé} et d’avoir deux gouverneurs syntaxique pour ce nœud, ce qui donne une structure de dag (directed acyclic graph, voir l’\encadref{sec:1.2.3}sur \textit{Graphe et arbre}).
 
-\smallskip\noindent\textbf{La finitude-mode.} On appelle finitude-mode la catégorie comprenant les grammèmes indicatif, subjonctif, impératif, infinitif, participe présent et participe passé. A l’exception de l’impératif, ces grammèmes n’ont généralement pas de contribution sémantique. Par exemple, l’indicatif ou l’infinitif sur le verbe \textsc{venir} dans les exemples \REF{ex:13-pronom} est imposé par le verbe \textsc{penser} qui le régit et nous le faisons donc pas figurer dans les structures syntaxiques profondes de ces exemples. Cette décision est tout de même discutable, car même si l’indicatif et l’infinitif n’ont pas ici de contribution sémantique, le choix de l’indicatif plutôt que l’infinitif a des conséquences sur la présence d’un sémantème de temps et sur la réalisation d’un pronom.
+\subsubsection{La finitude-mode} 
+On appelle finitude-mode la catégorie comprenant les grammèmes indicatif, subjonctif, impératif, infinitif, participe présent et participe passé. A l’exception de l’impératif, ces grammèmes n’ont généralement pas de contribution sémantique. Par exemple, l’indicatif ou l’infinitif sur le verbe \textsc{venir} dans les exemples \REF{ex:13-pronom} est imposé par le verbe \textsc{penser} qui le régit et nous le faisons donc pas figurer dans les structures syntaxiques profondes de ces exemples. Cette décision est tout de même discutable, car même si l’indicatif et l’infinitif n’ont pas ici de contribution sémantique, le choix de l’indicatif plutôt que l’infinitif a des conséquences sur la présence d’un sémantème de temps et sur la réalisation d’un pronom.
 
 La question se pose aussi pour l’indicatif sur le verbe principal. Nous considérons que que la réalisation d’un verbe à l’indicatif n’est pas réellement un choix du locuteur et ne correspond pas à l’expression d’un sens particulier. Ce n’est pas tout à fait vrai, puisque le choix de l’indicatif (\textit{Tu fais ce que tu veux.}) s’oppose à celui de l’impératif (\textit{Fais ce que tu veux !}) ou du subjonctif (\textit{Qu’il fasse ce qu’il veut !}) et indique qu’il s’agit d’une assertion ou d’une question et pas d’une injonction.
 
@@ -214,7 +223,8 @@ b. Ali <-1- aller\_passé -2-> poste\_sg, déf
 \caption{Structures syntaxiques profondes de \REF{ex:13-suivant}a et b}
 \end{figure}
 
-\smallskip\noindent\textbf{Les sémantèmes cachés.} Nous appelons \textsc{sémantèmes cachés} des sens qui naissent d’une configuration particulière sans être réellement réalisé par un syntaxème. Notre premier exemple est illustré par une construction particulière du russe relevée par \cite[141]{melcuk1988dependency}. En russe, le numéral se place normalement avant le nom. Il est néanmoins possible de placer le numéral après le nom, mais cela change le sens : le numéral est alors interprété comme une valeur approximative. C’est donc l’ordre des mots qui est signifiant. 
+\subsubsection{Les sémantèmes cachés} 
+Nous appelons \textsc{sémantèmes cachés} des sens qui naissent d’une configuration particulière sans être réellement réalisé par un syntaxème. Notre premier exemple est illustré par une construction particulière du russe relevée par \cite[141]{melcuk1988dependency}. En russe, le numéral se place normalement avant le nom. Il est néanmoins possible de placer le numéral après le nom, mais cela change le sens : le numéral est alors interprété comme une valeur approximative. C’est donc l’ordre des mots qui est signifiant. 
 
 \ea\label{ex:13-approx}  
 \ea \textit{Ja polučil desjat’ rublej.}\\ ‘J’ai reçu dix roubles.’
@@ -289,11 +299,13 @@ Les arguments peuvent aussi être caractérisés par des contraintes de réalisa
 
 Nous allons étudier la structure prédicative des différents sémantèmes en procédant par parties du discours en commençant par les verbes, les noms, puis les modifieurs.
 
-\smallskip\noindent\textbf{Les verbes.} La valence des verbes est la plus étudiée. Nous en avons déjà donné quelques exemples. Il existe des \hi{verbes avalents}, comme les verbes météorologiques \textsc{pleuvoir} ou \textsc{neiger}, des \hi{verbes monovalents} comme \textsc{dormir} ou \textsc{courir}, des \hi{verbes bivalents} comme \textsc{manger} ou \textsc{penser}. Parmi les compléments locatifs, on distingue les modifieurs qui indiquent le lieu et le moment du procès d’arguments qui indiquent une destination. Par exemple, \textsc{aller} est bivalent (quelqu’un va quelque part), \textsc{mettre} est trivalent (quelqu’un met quelque chose quelque part). Certains cas sont délicats à trancher : par exemple, le complément \textit{à la bibliothèque} est un modifieur s’il indique le lieu où je travaille aujourd’hui, mais il est un argument si \REF{ex:travailler} est utilisé pour dire ‘je suis un employé de la bibliothèque’.
+\subsection{Les verbes}
+La valence des verbes est la plus étudiée. Nous en avons déjà donné quelques exemples. Il existe des \hi{verbes avalents}, comme les verbes météorologiques \textsc{pleuvoir} ou \textsc{neiger}, des \hi{verbes monovalents} comme \textsc{dormir} ou \textsc{courir}, des \hi{verbes bivalents} comme \textsc{manger} ou \textsc{penser}. Parmi les compléments locatifs, on distingue les modifieurs qui indiquent le lieu et le moment du procès d’arguments qui indiquent une destination. Par exemple, \textsc{aller} est bivalent (quelqu’un va quelque part), \textsc{mettre} est trivalent (quelqu’un met quelque chose quelque part). Certains cas sont délicats à trancher : par exemple, le complément \textit{à la bibliothèque} est un modifieur s’il indique le lieu où je travaille aujourd’hui, mais il est un argument si \REF{ex:travailler} est utilisé pour dire ‘je suis un employé de la bibliothèque’.
 
 \ea\label{ex:travailler} \textit{Je travaille à la bibliothèque.}\z
 
-\smallskip\noindent\textbf{Les noms.} Les noms posent un problème délicat. Un nom comme \textsc{sœur} est bivalent : il exprime la relation entre deux personnes et le sens de ‘sœur’ ne peut être défini sans faire intervenir ces deux personnes. Néanmoins son premier argument ne peut être exprimé que lorsque le nom est translaté en verbe comme en \REF{ex:13-soeur}a. Lorsque \textsc{sœur} occupe une position nominale, comme en  \REF{ex:13-soeur}b, seul son deuxième argument est exprimable. On dit, dans ce cas, que le nom \terme{intègre} son premier argument, le nom désigne le premier argument lui-même.
+\subsection{Les noms} 
+Les noms posent un problème délicat. Un nom comme \textsc{sœur} est bivalent : il exprime la relation entre deux personnes et le sens de ‘sœur’ ne peut être défini sans faire intervenir ces deux personnes. Néanmoins son premier argument ne peut être exprimé que lorsque le nom est translaté en verbe comme en \REF{ex:13-soeur}a. Lorsque \textsc{sœur} occupe une position nominale, comme en  \REF{ex:13-soeur}b, seul son deuxième argument est exprimable. On dit, dans ce cas, que le nom \terme{intègre} son premier argument, le nom désigne le premier argument lui-même.
 
 \ea\label{ex:13-soeur}
 \ea \textit{Zoé est la sœur de Luce.}
@@ -328,7 +340,8 @@ b. Mars <-1- être\_présent -2-> planète\_sg, déf -MOD-> de -2-> système -MO
 
 Il existe aussi des noms qui sont fondamentalement prédicatifs. Par exemple, un nom comme \textsc{question} est parallèle au verbe \textsc{questionner} : X \textit{questionne} Y \textit{à propos de} Z, \textit{la question de} X \textit{à}Y \textit{à propos de} Z. Il peut être utilisé dans des constructions à verbes support : X \textit{pose une question} Y, Y \textit{répond à la question} de X. Nous considérons donc que le nom \textsc{question} est un nom trivalent et nous numérotons les actants du nom \textsc{question} comme ceux du verbe \textsc{questionner}.
 
-\smallskip\noindent\textbf{Les modifieurs.} Les adjectifs, les adverbes, les prépositions ou les conjonctions de subordination sont intrinsèquement des \terme{modifieurs}, c’est-à-dire des sémantèmes, qui dépendent syntaxiquement de leur premier argument. Des adjectifs comme \textsc{rouge} ou \textsc{beau} désigne des propriétés d’une entité et ne peuvent être définis sans faire intervenir cette entité. Des adverbes comme \textsc{vite} ou \textsc{facilement} désigne des propriétés d’un procès et ne peuvent être définis sans faire intervenir ce procès. Des prépositions comme \textsc{sur} ou \textsc{chez} exprime la relation entre deux éléments (quelque chose est sur quelque chose, quelque chose est chez quelqu’un) et sont donc bivalentes (voir la figure \ref{fig:chez}a et b). Une préposition comme \textsc{avant} est même trivalente : \textit{son anniversaire est deux jours avant Noël}. Les prépositions peuvent intégrer leur premier actant comme les noms, lorsqu’elles sont l’actant d’un verbe de mouvement (voir la figure \ref{fig:chez}c).
+\subsection{Les modifieurs} 
+Les adjectifs, les adverbes, les prépositions ou les conjonctions de subordination sont intrinsèquement des \terme{modifieurs}, c’est-à-dire des sémantèmes, qui dépendent syntaxiquement de leur premier argument. Des adjectifs comme \textsc{rouge} ou \textsc{beau} désigne des propriétés d’une entité et ne peuvent être définis sans faire intervenir cette entité. Des adverbes comme \textsc{vite} ou \textsc{facilement} désigne des propriétés d’un procès et ne peuvent être définis sans faire intervenir ce procès. Des prépositions comme \textsc{sur} ou \textsc{chez} exprime la relation entre deux éléments (quelque chose est sur quelque chose, quelque chose est chez quelqu’un) et sont donc bivalentes (voir la figure \ref{fig:chez}a et b). Une préposition comme \textsc{avant} est même trivalente : \textit{son anniversaire est deux jours avant Noël}. Les prépositions peuvent intégrer leur premier actant comme les noms, lorsqu’elles sont l’actant d’un verbe de mouvement (voir la figure \ref{fig:chez}c).
 
 \ea\label{ex:chez} 
 \ea Luce est chez Zoé.
@@ -360,7 +373,8 @@ b. tomate\_sg, déf -MOD-> français
 \caption{Structures syntaxiques profondes de \REF{ex:13-francais}a et b}
 \end{figure}
 
-\smallskip\noindent\textbf{Les sémantèmes grammaticaux.} Les grammies sont toujours des prédicats unaires, qui prennent une lexie comme unique argument. La grammie exprime une propriété associée à la lexie : par exemple, un temps passé exprime que le procès décrit par le verbe a lieu avant maintenant, un nombre pluriel exprime qu’il y a plus d’une entité dénotée par le nom. Dans la représentation sémantique, on peut d’ailleurs faire figurer aussi bien le terme associé à la grammie (passé ou pluriel) que la glose lexicale (‘avant maintenant’ ou ‘plus d’un’).
+\subsection{Les sémantèmes grammaticaux} 
+Les grammies sont toujours des prédicats unaires, qui prennent une lexie comme unique argument. La grammie exprime une propriété associée à la lexie : par exemple, un temps passé exprime que le procès décrit par le verbe a lieu avant maintenant, un nombre pluriel exprime qu’il y a plus d’une entité dénotée par le nom. Dans la représentation sémantique, on peut d’ailleurs faire figurer aussi bien le terme associé à la grammie (passé ou pluriel) que la glose lexicale (‘avant maintenant’ ou ‘plus d’un’).
 
 D’autres exemples sont donnés dans les exercices. Les conjonctions de coordination seront étudiées dans le \chapfuturef{20} et les marqueurs de discours et les interjections dans le \chapfuturef{21}. Dans le \chapfuturef{17}, nous discuterons des parties du discours et nous verrons qu’il existe des langues avec une organisation différente des catégories et notamment des langues, comme le nahuatl, où les sémantèmes « nominaux » sont toujours prédicatif.
 
