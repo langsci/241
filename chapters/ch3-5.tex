@@ -1075,26 +1075,8 @@ En d’autres termes, ce n’est pas parce qu’un complément est lourd qu’il
 
 \begin{figure}[H]
 \caption{Arbre de dépendance avec des dépendances élastiques\label{fig:elastic}}
-    \begin{tikzpicture}
-    \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip,
-                  level 1/.style={sibling distance=20mm},
-                  level 2/.style={sibling distance=10mm},
-                  level 3/.style={sibling distance=10mm}
-                  ]
-    \node (root) {} child {node {}} 
-                    child [missing]
-                    child {node[yshift=-4\baselineskip] {}} 
-                    child {node {}};
-    \end{scope}
-    \begin{scope}[every node/.style={align=center,font=\strut\itshape}]
-    \node [above=1pt of root] {propose};
-    \node [below=1pt of root-1] {aujourd’hui};
-    \node [below=1pt of root-3] {un exercice\\sur l’ordre\\des mots};
-    \node [below=1pt of root-4] {à ses élèves};
-    \end{scope}
-    \end{tikzpicture}
+    \includegraphics[scale=0.9]{figures/polygraphs/graph-3.5.22.pdf}
 \end{figure}
-\todo[inline]{à ses éleves must between the two other dependents. The length of dependencies is very relevant in this diagram. Please look again at the original.}
 
     La position finale d’un dépendant se trouve alors déterminée par la «~longueur~» initiale de la dépendance (déterminée par la fonction et la nature du dépendant comme dans le modèle avec gabarit), l’\hi{élasticité} de cette dépendance et différents paramètres comme le poids ou la saillance.
 }
