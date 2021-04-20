@@ -348,55 +348,14 @@ Notons pour conclure cette section que l’on utilise généralement une termino
     \begin{figure}[H]
     \caption{Interprétation polygraphique d'un stemma}
     \begin{subfigure}[b]{.5\textwidth}\centering
-% %     \includegraphics[width=4cm]{figures/StemmadeTesniere}
-         \begin{tikzpicture}
-           \node (dans) at (.5,3) {\textit{dans}};
-           \node (écrivez) at (1,4.3) {\textit{écrivez}};
-           \node (de) at (1.4,1.5) {\textit{de}};
-           \node (le livre) at (1.7,3) {\textit{le livre}};
-           \node (ami) at (2.2,1.5) {\textit{ami}};
-           \node (votre) at (2.2,0.5) {\textit{votre}};
-         
-           \draw[thick] (dans.north west) -- (le livre.north east);
-           \draw[thick] (de.north west) -- (ami.north east);
-           \draw[thick] (dans.north east) -- (dans.south east);
-           \draw[thick] (de.north east) -- (de.south east);
-         
-           \draw[thick] (dans.north west) -- +(-2mm, -2mm);
-           \draw[thick] (le livre.north east) -- +(2mm, 2mm);
-           \draw[thick] (de.north west) -- +(-2mm, -2mm);
-           \draw[thick] (ami.north east) -- +(2mm, 2mm);
-         
-         
-           \draw[thick] (de.south east) -- +(-2mm, -2mm);
-         
-           \draw[thick,shorten >=2mm] (écrivez) -- (1,3);
-           \draw[thick,shorten >=4mm] (le livre) -- (1.7,1.5);
-           \draw[thick] (ami) -- (votre);
-         \end{tikzpicture}
+    \includegraphics[scale=.9]{figures/polygraphs/poly-3.3.5-1.pdf}
     \caption{Stemma de \citet{tesniere1959elements}}
     \end{subfigure}%
     \begin{subfigure}[b]{.5\textwidth}\centering
-% %     \includegraphics[width=4cm]{figures/Stemma}
-        \begin{tikzpicture}
-          \node (dans) at (.5,3) {\textit{dans}};
-          \node (écrivez) at (1,4) {\textit{écrivez}};
-          \node (de) at (1.5,2) {\textit{de}};
-          \node (le livre) at (2,3) {\textit{le livre}};
-          \node (ami) at (2.5,2) {\textit{ami}};
-          \node (votre) at (2.5,1) {\textit{votre}};
-        
-          \draw[thick] (dans) -- (le livre);
-          \draw[thick] (de) -- (ami);
-          \draw[thick,shorten >=2mm] (écrivez) -- (1,3);
-          \draw[thick,shorten >=2mm] (le livre) -- (2,2);
-          \draw[thick] (ami) -- (votre);
-        \end{tikzpicture}
+    \includegraphics[scale=.9]{figures/polygraphs/poly-3.3.5-2.pdf}
     \caption{Interprétation polygraphique}
     \end{subfigure}
     \end{figure}
-\todo[inline]{figure (a): the T shape of "de ami" is ok. The T shape of "dans le livre" must be identical, including the small space on top.}
-\todo[inline]{figure (b): the line between "dans" and "le livre" must be longer and the vertical line must be centered on the horizontal line. Idem for "de" and "ami". .}
 }
 
 \section{Arbre et représentation planaire}\label{sec:3.3.6}
@@ -1150,14 +1109,16 @@ b. Déterminant tête\medskip\\
 \end{forest}
 \end{minipage}\hfill\begin{minipage}[t]{.3\linewidth}\centering
 c. Co-têtes\medskip\\
-\begin{forest} for tree={font=\itshape}
-[dort [,nice empty nodes [le] [chien [petit]] ]]
-\end{forest}
+    \begin{forest} for tree={font=\itshape}
+    [dort,name=dort, s sep=2em, xshift=-4pt
+        [le, no edge, name=le] [chien, no edge, name=chien [petit]]
+    ]
+    \draw (le) -- (chien);
+    \draw (dort) -- ++ (0,-2.5em);
+    \end{forest}
 \end{minipage}
 \caption{\label{fig:lechien}Trois représentations syntaxiques concurrentes pour \REF{ex:lechien}}
 \end{figure}
-\todo[inline]{subfigure c is a polygraph with an horizontal line between le and chien}
-
 
 L’option a est celle de la grammaire traditionnelle, qui utilise le terme \textit{groupe nominal}. Elle a été sérieusement remise en question dans les années 1980, notamment par Richard \citet{hudson1984word} et la thèse de Steven \citet{abney1987english} qui défendait l’hypothèse du groupe déterminatif (\textit{DP-hypothesis}) (option b), et par l’adoption ensuite du DP (\textit{Determiner Phrase}) par la syntaxe X-barre en lieu et place du NP (\textit{Noun Phrase}). L'option c est sérieusement envisagée par Lucien \citet{tesniere1959elements}, qui considère que les articles sont des indices qui marquent le rôle nominal du nom, et qui donc traite \textit{le chien} comme un nucléus translatif, lequel est représenté horizontalement, comme dans notre structure c de la figure \ref{fig:lechien} 
 (voir l’\encadref{sec:3.3.5} sur l’\textit{Historique des représentations syntaxiques par des diagrammes en dépendance}, ainsi que la \sectref{sec:3.3.14} \textit{Tête faible}).).
@@ -1804,7 +1765,6 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
      ]
     \end{forest}
     \end{figure}
-% %     \todo[inline]{It is one diagram where the two roots (un homme and a coutume) must be at the same level.}
 
 
     \corrigé{2} Du Marsais propose une analyse hybride entre dépendance et constituance immédiate. Il semble hésiter entre les deux approches et utilise notamment le même terme \textit{sujet} pour désigner la relation entre le groupe sujet et le groupe verbal (\textit{Celui} est le sujet de \textit{ne marche point dans les ténèbres}) et pour désigner un constituant de la proposition (\textit{Qui me suit}, ces trois mots font une proposition incidente […] \textit{Qui} est le sujet de cette proposition incidente).
