@@ -124,7 +124,7 @@ Ce sont les \hi{unités grammaticales} ou \hi{grammies}. Une grammie peut corres
 \ea\label{ex:accompli} \textit{J’ai peur d’avoir répondu trop vite.}\z
 \begin{figure}
 \begin{forest} for tree={font=\normalfont}
-	[$\ulcorner$\textsc{avoir peur}$\urcorner$\textsubscript{prés}
+	[$\ulcorner$\textsc{avoir peur}$\urcorner$\textsubscript{présent}
 		[\textsc{moi},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
 		[\textsc{répondre}\textsubscript{accompli},edge label={node[midway, above right=-0.5ex,font=\footnotesize]{2}}
 			[\textsc{vite},edge label={node[midway, right,font=\footnotesize\itshape]{\textsc{mod}}}
@@ -310,7 +310,7 @@ Certains pronoms résultent du dédoublement d’un nœud sémantique, comme le 
 	\draw[-{Triangle[]}] (venir) -- (zoe) node[font=\footnotesize,midway,above] {1};
 	
 \end{tikzpicture}
-\caption{Structure sémantique commune à \REF{ex:13-pronom}a et b \label{fig:13-pronom-sem}}
+\caption{Structure sémantique avec un cycle commune à \REF{ex:13-pronom}a et b \label{fig:13-pronom-sem}}
 \end{figure}
 
 La représentation que nous proposons pour \REF{ex:13-pronom}a est d’indiquer qu’il y a un sémantème « pro » coréférent avec \textsc{Zoé}. La coréférence est indiquée par une double flèche en pointillé (voir la figure \ref{fig:13-pronom-pro}a). Ce lien indique que le sémantème « pro » provient du dédoublement du sémantème ‘Zoé’ et il permet d’assurer l’accord de « pro » avec \textsc{Zoé} au niveau syntaxique de surface Dans le cas de \REF{ex:13-pronom}b, où il n’y a pas de pronom, nous indiquons que la dépendance entre le verbe subordonné et son premier argument est uniquement sémantique (par une flèche hachée) (figure \ref{fig:13-pronom-pro}b). Nous reviendrons sur cette construction dans la \sectref{sec:13-controle} sur le \textit{Contrôle}.
@@ -421,10 +421,10 @@ Nous indiquons cette valeur par un sémantème « approx », qui se combine avec
 	]
 	]
 \end{forest}
-\caption{Structure syntaxique profonde de \REF{ex:13-approx}b\label{fig:13-approx}}
+\caption{Structure syntaxique profonde pour le sémantème configurationnel de \REF{ex:13-approx}b\label{fig:13-approx}}
 \end{figure}
 
-La \hi{dislocation} est un cas de sémantème constructionnel, comme le clivage, qui, à la différence du clivage, n’a pas vraiment de marqueur lexical : la dislocation met en jeu un pronom qui reprend l’élément disloqué, mais le pronom n’est pas en soi le signifiant d’une dislocation. Nous considérons donc qu’il s’agit d’un sémantème caché, que nous notons « disloc » (voir la figure \ref{fig:13-disloc}).
+La \hi{dislocation} est un cas de sémantème constructionnel, comme le clivage, qui, à la différence du clivage, n’a pas vraiment de marqueur lexical : la dislocation met en jeu un pronom qui reprend l’élément disloqué, mais le pronom n’est pas en soi le signifiant d’une dislocation. Nous considérons donc qu’il s’agit d’un sémantème caché, que nous notons « dislocation » (voir la figure \ref{fig:13-disloc}).
 
 \ea\label{ex:13-disloc} \textit{Zoé, j’ai l’intention de lui parler.}\z
 
@@ -434,12 +434,12 @@ La \hi{dislocation} est un cas de sémantème constructionnel, comme le clivage,
 	[V(\textsc{intention})\textsubscript{prés}
 		[\textsc{moi},name=moi,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
 		[\textsc{parler},name=parler,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
-			[disloc(\textsc{Zoé}),edge label={node[midway,right,font=\footnotesize]{2}}]
+			[dislocation(\textsc{Zoé}),edge label={node[midway,right,font=\footnotesize]{2}}]
 		]
 	]
 	\draw[->,dashed] ($(parler)+(-0.125cm,-0.4cm)$) .. controls +(south:0.6cm) and +(south:1cm) .. (moi) node[pos=0.75,below left]{\footnotesize 1};
 \end{forest}
-\caption{Structure syntaxique profonde de \REF{ex:13-disloc}\label{fig:13-disloc}}
+\caption{Structure syntaxique profonde pour la dislocation de \REF{ex:13-disloc}\label{fig:13-disloc}}
 \end{figure}
 
 Un dernier exemple de sémantème caché est celui des conversions massif-comptable. Un nom comme \textsc{vin} ou \textsc{sable} est dit \terme{massif}, car on ne compte pas le vin ou le sable et que du vin séparé en deux donne toujours du vin. Dans l’exemple \REF{ex:13-vin}a, nous considérons que \textsc{vin} ne se combine pas avec une grammie de nombre, car le grammème de singulier ne résulte pas d’un choix et ne s’oppose pas à un grammème de pluriel (voir la figure \ref{fig:13-vin}a). Pour quantifier du vin ou du sable, on doit ajouter un « classifieur » : \textit{deux \textbf{bouteilles} de vin}, \textit{trois \textbf{kilos} de sable}. On peut néanmoins combiner les massifs directement avec des numéraux, mais alors le nom X est interprété comme dénotant un « type de X ». Nous considérons donc que dans l’exemple \REF{ex:13-vin}b se cache un sémantème opérationnel, « type » (figure \ref{fig:13-vin}b). On notera aussi, dans les exemples \REF{ex:13-vin}, le contraste entre l’indéfini réalisé par \textsc{du} pour les massifs et par \textsc{un} pour les comptables.
@@ -1112,7 +1112,7 @@ L’ancrage ne fait pas à notre avis partie de la structure prédicative, mais 
 	]
 	\draw[->,dashed] ($(t2)+(0,0.5)$) to[out=north,in=west] node[pos=1,right]{Ω} ($(root)+(3,0)$);
 \end{forest}
-\caption{Structure référentielle avec ancrage	pour \REF{ex:13-portée}a et b\label{fig:13-portée}}
+\caption{Structure référentielle avec ancrage pour \REF{ex:13-portée}a et b\label{fig:13-portée}}
 \end{figure}
 
 Le cas de la portée de la négation relève à notre avis d’un autre aspect de la représentation sémantique, qui est la structure communicative (voir l’\encadref{sec:13-packaging}). Dans un énoncé tel que \REF{ex:13-negation}a, plusieurs interprétations sont possibles selon que la négation « porte » sur \textit{donner}, \textit{Zoé}, \textit{ce livre}, \textit{à Luce} ou sur un empan plus large de texte. 
