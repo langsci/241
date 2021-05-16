@@ -1299,15 +1299,15 @@ Il existe aussi des verbes qui permette la montée dans la position objet, comme
 \ea \textit{Ali trouve Zoé sympa.}
 \ex \textit{Ali trouve que Zoé est sympa.}\z\z
 
-La figure \ref{fig:13-monte} propose une représentation de la structure syntaxique profonde des exemples \REF{ex:13-dormir}b et \REF{ex:13-trouver}a. Le dépendant non contrôlé par le verbe est indiqué par une étiquette +.
+La figure \ref{fig:13-monte} propose une représentation de la structure syntaxique profonde des exemples \REF{ex:13-dormir}b et \REF{ex:13-trouver}a. Le dépendant non contrôlé par le verbe est un \terme{quasi-actant}, qui se voit imposer un régime par le verbe, même s'il n'est pas un argument. Nous indiquons les quasi-actants par une étiquette actancielle à laquelle nous ajoutons un signe +.
 
 \begin{figure}
 %FIGURE 28
 %a.	Zoé <-+- sembler\_prés -1-> dormir ..1..> (Zoé)
 \begin{forest} for tree={font=\normalfont}
 	[\textsc{sembler}\textsubscript{prés}
-	[\textsc{Zoé},name=zoe,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{$+$}}]
-	[\textsc{dormir},name=dormir,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{1}}]
+	[\textsc{Zoé},name=zoe,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{+1}}]
+	[\textsc{dormir},name=dormir,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
 	]
 	\draw[->,dashed] (dormir) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (zoe);
 \end{forest}\hspace{0.5cm}%
@@ -1315,8 +1315,8 @@ La figure \ref{fig:13-monte} propose une représentation de la structure syntaxi
 \begin{forest} for tree={font=\normalfont}
 	[\textsc{trouver}, calign=child, calign primary child=2
 	[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{Ali},name=ali,edge label={node[midway,left,font=\footnotesize]{$+$}}]
-	[\textsc{sympa},name=sympa,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
+	[\textsc{Ali},name=ali,edge label={node[midway,left,font=\footnotesize]{+2}}]
+	[\textsc{sympa},name=sympa,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{3}}]
 	]
 	\draw[->,dashed] (sympa) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (ali);
 \end{forest}
@@ -1444,7 +1444,7 @@ En guise de conclusion de ce chapitre, nous souhaitons récapitule les différen
 \item	les relations modificatives, où une relation sémantique et une relation syntaxique se superposent, mais ont des orientations inverses ; elles sont étiquetées \textit{\textsc{mod}} ;
 \item	les relations lexie-grammie, qui sont aussi des cas où une relation sémantique et une relation syntaxique se superposent, mais que nous annotons différemment en raison du statut particulier de la connexion syntaxique entre lexies et grammies ;
 \item	les relations entre un opérateur et son argument, que nous utilisons pour la translation syntaxique et pour les sémantèmes cachés ;
-\item	les relations syntaxiques pures, qui ne se superposent pas à une relation sémantique ; elles sont étiquetées $+$ ou (1), (2), etc. ;
+\item	les relations syntaxiques pures, qui ne se superposent pas à une relation sémantique ; elles sont étiquetées +1, +2, etc. lorsqu'il s'agit de quasi-actants résultant d'une montée ou (1), (2), etc. lorsqu'il de positions actancielles où un modifieur s'est inséré ;
 \item	les relations sémantiques pures qui ne se superposent pas une relation syntaxique ; elles sont représentées par des flèches hachurées et sont numérotées comme les relations actancielles.
 \end{itemize}
 
@@ -1711,7 +1711,7 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 %a. livre\_sg, indf -+-> tough-mvt(difficile) -1-> lire\_inf
 \begin{forest} for tree={font=\normalfont}
 	[\textsc{livre}\textsubscript{sg,indéf},name=root
-	[tough-mvt(\textsc{difficile}),name=mvt,edge label={node[midway,right,font=\footnotesize]{$+$}}
+	[tough-mvt(\textsc{difficile}),name=mvt,edge label={node[midway,right,font=\footnotesize]{+2}}
 	[\textsc{lire}\textsubscript{inf},name=lire,edge label={node[midway,right,font=\footnotesize]{1}}]%
 	]
 	]
@@ -1720,7 +1720,7 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 %b. V(tough-mvt(difficile))\_prés …
 \begin{forest} for tree={font=\normalfont}
 	[V(tough-mvt(\textsc{difficile}))\textsubscript{prés}
-	[\textsc{livre}\textsubscript{sg},name=livre,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{$+$}}
+	[\textsc{livre}\textsubscript{sg},name=livre,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{+2}}
 	[\textsc{cet},edge label={node[midway,left,font=\footnotesize\itshape]{\textsc{mod}}}]
 	]
 	[\textsc{lire}\textsubscript{inf},name=lire,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{1}}]
@@ -1734,7 +1734,7 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 	every label/.style={reset shape}]
 	
 	\begin{scope}[nodes={CircleNode}]
-		\node (generique) [label=below:{`générique'}] {};
+		\node (generique) [label=below:{générique}] {};
 		\node (lire) [above right=of generique,label=above left:{`lire'}] {};
 		\node (difficile) [right=of lire,label=right:{`difficile'}] {};
 		\node (livre) [below right=of lire,label=below:{`livre'}] {};
