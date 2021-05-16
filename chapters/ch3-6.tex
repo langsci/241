@@ -722,24 +722,63 @@ Les dictionnaires monolingues traditionnelles, avec des définitions associées 
 
 Dans la grammaire générative, les tableaux de régime sont appelés des \terme{cadres de sous-catégorisation} (angl. \textit{sub-categorization frame}). (Le terme vient du fait que chaque régime définit une sous-catégorie, au sens où les verbes transitifs forment une sous-catégorie de la catégorie des verbes.)
 
-Nous donnons dans la figure \ref{fig:13-regime} quelques exemples de tableaux de régime. La ligne « 2. complément d’objet indirect : à N (obligatoire) » indique que le 2e actant est un complément d’objet indirect réalisé par \textit{à} N et que ce complément est obligatoire.
+Nous donnons dans la figure \ref{fig:13-regime} quelques exemples de tableaux de régime. Chaque colonne correspond à un actant pour lequel on indique sa fonction et son régime, à moins qu'il soit gouverneur. À chaque fonction correspond des propriétés par défaut : par exemple le sujet est obligatoire et les compléments sont facultatifs ; on indique donc explicitement lorsqu'un complément est obligatoire. Le cas du verbe à montée \textsc{sembler} est expliqué dans la \sectref{sec:13-montee} sur la \textit{Montée}.
+
 
 \begin{figure}
 
 \phraseme{tenir la jambe} : X \textit{tient la jambe à} Y
-1. sujet : N
-2. complément d’objet indirect : à N (obligatoire)
+nature : V
+X = 1
+fonction : sujet 
+régime : N
+Y = 2
+fonction : complément d’objet indirect 
+régime : \textit{à }N 
+obligatoire
+
+\textsc{sembler} : X \textit{semble} Y
+nature : V
+X = +1
+fonction : sujet 
+régime : N
+Y = 2
+fonction : complément 
+régime : V\textsubscript{inf}
+montée : premier actant de Y
+
 \textsc{question} : \textit{question de} X \textit{à }Y \textit{sur/à propos de} Z
-1. complément : de N
-2. complément : à N
-3. complément : sur N, à propos de N
-\textsc{chez} : X \textit{est chez} Y
-1. gouverneur : V, N
-2. complément : N (obligatoire)
-\textsc{heureux} : X \textit{est heureux de} Y
-1. gouverneur : N
-2. complément : de V, que V\textsubscript{subj}
-\caption{Tableaux de régime de \phraseme{tenir la jambe}, \textsc{question}, \textsc{chez}, \textsc{heureux}\label{fig:13-regime}}
+nature : N
+X = 1
+fonction : complément 
+régime : \textit{de} N
+Y = 2
+fonction : complément 
+régime : \textit{à} N
+Z = 3
+fonction : complément 
+régime : \textit{sur} N, \textit{à propos de} N
+
+\textsc{chez} : [X] \textit{chez} Y
+nature : Prép
+X = 1
+gouverneur
+nature : V, N
+Y = 2
+fonction : complément
+régime : N
+obligatoire
+
+\textsc{heureux} : [X] \textit{heureux de} Y
+nature : Adj, généralement postposé
+X = 1
+gouverneur
+nature : N
+Y = 2
+fonction : complément
+régime : \textit{de} V\textsubscript{inf}, \textit{que} V\textsubscript{subj}
+
+\caption{Tableaux de régime de \phraseme{tenir la jambe}, \textsc{sembler} ,\textsc{question}, \textsc{chez}, \textsc{heureux}\label{fig:13-regime}}
 \end{figure}
 
 Nous verrons dans le \chapfuturef{18} sur les \textit{Relations syntaxiques} que chaque relation syntaxique est associée à un faisceau de propriétés. Par exemple, la relation sujet en français suppose un accord du verbe, un placement particulier, l’absence de préposition, mais un marquage casuel des pronoms personnels (\textit{je}, \textit{tu}, \textit{il}, \textit{on}, etc.), ainsi que des propriétés de contrôle ou de redistribution que nous ne décrirons pas ici. On peut donc voir l’utilisation des relations syntaxiques dans le tableau de régime comme un moyen de décrire de façon synthétique une partie des propriétés syntaxiques d’un argument.
