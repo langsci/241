@@ -21,7 +21,7 @@ Dans l’exemple \REF{ex:jambe}, phraseme{tenir la jambe} est un phraseme (voir 
 	\begin{subfigure}[h]{0.5\textwidth}
 		\begin{tikzpicture}[>={Triangle[]},
 			label distance=0pt,
-			node distance=1cm and 1cm,
+			node distance=10mm,
 			every label/.style={reset shape}]
 			
 			\begin{scope}[nodes={CircleNode}]
@@ -36,11 +36,11 @@ Dans l’exemple \REF{ex:jambe}, phraseme{tenir la jambe} est un phraseme (voir 
 				\node (def) [below right=of prof,label=below:{défini}] {};
 			\end{scope}
 			
-			\draw[-{Triangle[]}] (tenirlajambe) -- (zoe) node[font=\footnotesize,midway,left] {1};
-			\draw[-{Triangle[]}] (durer) -- (tenirlajambe) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (tenirlajambe) -- (zoe) node[font=\footnotesize,midway,anchor=south east, inner sep=1pt] {1};
+			\draw[-{Triangle[]}] (durer) -- (tenirlajambe) node[font=\footnotesize,midway,anchor=base east] {1};
 			\draw[-{Triangle[]}] (durer) -- (heure) node[font=\footnotesize,midway,right] {2};
-			\draw[-{Triangle[]}] (tenirlajambe) -- (prof) node[font=\footnotesize,midway,right] {2};
-			\draw[-{Triangle[]}] (indef) -- (heure) node[font=\footnotesize,midway,right] {1};
+			\draw[-{Triangle[]}] (tenirlajambe) -- (prof) node[font=\footnotesize,midway,anchor=base west] {2};
+			\draw[-{Triangle[]}] (indef) -- (heure) node[font=\footnotesize,midway,anchor=base west] {1};
 			\draw[-{Triangle[]}] (singulier1) -- (prof) node[font=\footnotesize,midway,left] {1};
 			\draw[-{Triangle[]}] (def) -- (prof) node[font=\footnotesize,midway,right] {1};
 			\draw[-{Triangle[]}] (singulier0) -- (heure) node[font=\footnotesize,midway,left] {1};
