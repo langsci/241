@@ -17,63 +17,74 @@ Dans l’exemple \REF{ex:jambe}, phraseme{tenir la jambe} est un phraseme (voir 
 
 
 
-\begin{figure} 
-\begin{tikzpicture}[>={Triangle[]},
-	label distance=0pt,
-	node distance=1cm and 1cm,
-	every label/.style={reset shape}]
-	
-	\begin{scope}[nodes={CircleNode}]
-		\node (zoe) [label=below left:{`Zoé'}] {};
-		\node (tenirlajambe) [above right=of zoe,label=above left:{`tenir la jambe'}] {};
-		\node (durer) [above right=of tenirlajambe,label=above right:{`durer'}] {};
-		\node (heure) [below right=of durer,label=right:{`heure'}] {};
-		\node (singulier0) [above right=of heure,label=right:{singulier}] {};
-		\node (indef) [below right=of heure,label=below right:{indéfini}] {};
-		\node (prof) [below right=of tenirlajambe,label=right:{`prof'}] {};
-		\node (singulier1) [below left=of prop,label=below:{singulier}] {};
-		\node (def) [below right=of prop,label=below:{défini}] {};
-	\end{scope}
-	
-	\draw[-{Triangle[]}] (tenirlajambe) -- (zoe) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (durer) -- (tenirlajambe) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (durer) -- (heure) node[font=\footnotesize,midway,right] {2};
-	\draw[-{Triangle[]}] (tenirlajambe) -- (prop) node[font=\footnotesize,midway,right] {2};
-	\draw[-{Triangle[]}] (indef) -- (heure) node[font=\footnotesize,midway,right] {1};
-	\draw[-{Triangle[]}] (singulier1) -- (prop) {};
-	\draw[-{Triangle[]}] (def) -- (prof) {};
-	\draw[-{Triangle[]}] (singulier0) -- (heure) {};
-\end{tikzpicture}\vspace{0.5cm}
-\begin{forest} for tree={font=\normalfont}
-	[\phraseme{tenir le jambe}\textsubscript{passé},calign=child,calign primary child=2
-		[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-		[\textsc{prof}\textsubscript{sg,déf},edge label={node[midway,right,font=\footnotesize]{2}}]
-		[\textsc{pendant},edge label={node[midway, above right=-0.5ex,font=\footnotesize\itshape]{\textsc{mod}}}
-			[\textsc{heure}\textsubscript{sg,indéf},edge label={node[midway,right,font=\footnotesize]{2}}]
-		]
-	]
-\end{forest}\hspace{0.5cm}
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{avoir}\textsubscript{ind,prés,3,sg}
-		[\textsc{Zoé},edge label={node[midway,above left=-1ex,font=\footnotesize]{sujet}}]
-		[\textsc{tenir}\textsubscript{part,passé},edge label={node[midway,above right=-1ex,font=\footnotesize]{comp:aux}},calign=child,calign primary child=2
-			[\textsc{jambe}\textsubscript{sg},edge label={node[midway, above left=-1ex,font=\footnotesize]{comp:obj}}
-				[\textsc{le}\textsubscript{fém,sg},edge label={node[midway,left,font=\footnotesize]{dét}}]
-			]
-			[\textsc{à},edge label={node[pos=0.75,right=-0.875cm,font=\footnotesize]{comp:obj}}
-				[\textsc{prof}\textsubscript{sg},edge label={node[midway,right,font=\footnotesize]{comp}}
-					[\textsc{le}\textsubscript{fém,sg},edge label={node[midway,left,font=\footnotesize]{dét}}]
+\begin{figure}
+	\begin{subfigure}[h]{0.5\textwidth}
+		\begin{tikzpicture}[>={Triangle[]},
+			label distance=0pt,
+			node distance=1cm and 1cm,
+			every label/.style={reset shape}]
+			
+			\begin{scope}[nodes={CircleNode}]
+				\node (zoe) [label=below left:{`Zoé'}] {};
+				\node (tenirlajambe) [above right=of zoe,label=above left:{`tenir la jambe'}] {};
+				\node (durer) [above right=of tenirlajambe,label=above right:{`durer'}] {};
+				\node (heure) [below right=of durer,label=right:{`heure'}] {};
+				\node (singulier0) [above right=of heure,label=right:{singulier}] {};
+				\node (indef) [below right=of heure,label=below right:{indéfini}] {};
+				\node (prof) [below right=of tenirlajambe,label=right:{`prof'}] {};
+				\node (singulier1) [below left=of prof,label=below:{singulier}] {};
+				\node (def) [below right=of prof,label=below:{défini}] {};
+			\end{scope}
+			
+			\draw[-{Triangle[]}] (tenirlajambe) -- (zoe) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (durer) -- (tenirlajambe) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (durer) -- (heure) node[font=\footnotesize,midway,right] {2};
+			\draw[-{Triangle[]}] (tenirlajambe) -- (prof) node[font=\footnotesize,midway,right] {2};
+			\draw[-{Triangle[]}] (indef) -- (heure) node[font=\footnotesize,midway,right] {1};
+			\draw[-{Triangle[]}] (singulier1) -- (prof) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (def) -- (prof) node[font=\footnotesize,midway,right] {1};
+			\draw[-{Triangle[]}] (singulier0) -- (heure) node[font=\footnotesize,midway,left] {1};
+		\end{tikzpicture}
+		\caption{Structure sémantique}
+	\end{subfigure}%
+	\vfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\begin{forest} for tree={font=\normalfont}
+			[\phraseme{tenir le jambe}\textsubscript{passé},calign=child,calign primary child=2
+				[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+				[\textsc{prof}\textsubscript{sg,déf},edge label={node[midway,right,font=\footnotesize]{2}}]
+				[\textsc{pendant},edge label={node[midway, above right=-0.5ex,font=\footnotesize\itshape]{\textsc{mod}}}
+					[\textsc{heure}\textsubscript{sg,indéf},edge label={node[midway,right,font=\footnotesize]{2}}]
 				]
 			]
-			[\textsc{pendant},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{mod}}
-				[\textsc{heure}\textsubscript{sg},edge label={node[midway,right,font=\footnotesize]{comp}}
-					[\textsc{un}\textsubscript{fém,sg},edge label={node[midway,left,font=\footnotesize]{dét}}]
+		\end{forest}
+		\caption{Structure syntaxique profonde}
+	\end{subfigure}%
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{avoir}\textsubscript{ind,prés,3,sg}
+				[\textsc{Zoé},edge label={node[midway,above left=-1ex,font=\footnotesize]{sujet}}]
+				[\textsc{tenir}\textsubscript{part,passé},edge label={node[midway,above right=-1ex,font=\footnotesize]{comp{\NoAutoSpacing :}aux}},calign=child,calign primary child=2
+					[\textsc{jambe}\textsubscript{sg},edge label={node[midway, above left=-1ex,font=\footnotesize]{comp{\NoAutoSpacing :}obj}}
+						[\textsc{le}\textsubscript{fém,sg},edge label={node[midway,left,font=\footnotesize]{dét}}]
+					]
+					[\textsc{à},edge label={node[pos=0.75,right=-0.875cm,font=\footnotesize]{comp:obj}}
+						[\textsc{prof}\textsubscript{sg},edge label={node[midway,right,font=\footnotesize]{comp}}
+							[\textsc{le}\textsubscript{fém,sg},edge label={node[midway,left,font=\footnotesize]{dét}}]
+						]
+					]
+					[\textsc{pendant},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{mod}}
+						[\textsc{heure}\textsubscript{sg},edge label={node[midway,right,font=\footnotesize]{comp}}
+							[\textsc{un}\textsubscript{fém,sg},edge label={node[midway,left,font=\footnotesize]{dét}}]
+						]
+					]
 				]
 			]
-		]
-	]
-\end{forest}
-\caption{Structure sémantique, syntaxique profonde, syntaxique de surface de \ref{ex:jambe}\label{fig:jambe}}
+		\end{forest}
+		\caption{Structure syntaxique de surface}
+	\end{subfigure}
+\caption{Structures pour \REF{ex:jambe}\label{fig:jambe}}
 \end{figure}
 
 On peut voir la structure syntaxique profonde essentiellement comme une \hi{projection de la structure prédicative sur la structure syntaxique de surface} et donc comme une structure syntaxique de surface dont la granularité serait celle des sémantèmes. Néanmoins les relations syntaxiques profondes indiquent à la fois les connexions syntaxiques et les relations prédicat-argument, qui peuvent, dans certains cas, ne pas se superposer aux connexions syntaxiques.
@@ -160,36 +171,44 @@ Les collocatifs sont des sémantèmes, mais leur choix est contraint par la base
 \ea\label{ex:peurbleue} \textit{Zoé m’a fait une peur bleue.}\z
 
 \begin{figure}
-\begin{tikzpicture}[>={Triangle[]},
-	label distance=0pt,
-	node distance=1cm and 1cm,
-	every label/.style={reset shape}]
-	
-	\begin{scope}[nodes={CircleNode}]
-		\node (zoe) [label=below left:{`Zoé'}] {};
-		\node (causer) [above right=of zoe,label=above:{`causer'}] {};
-		\node (peur) [below right=of causer,label=below left:{`peur'}] {};
-		\node (intense) [above right=of peur,label=above:{`intense'}] {};
-		\node (moi) [below right=of peur,label=below right:{`moi'}] {};
-	\end{scope}
-	
-	\draw[-{Triangle[]}] (causer) -- (zoe) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (causer) -- (peur) node[font=\footnotesize,midway,right] {2};
-	\draw[-{Triangle[]}] (intense) -- (peur) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (peur) -- (moi) node[font=\footnotesize,midway,right] {1};
-	
-\end{tikzpicture}\linebreak%
-\begin{forest} for tree={font=\normalfont}
-	[Caus\textsubscript{passé}
-	[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{peur},name=peur,edge label={node[midway,right,font=\footnotesize]{2}}
-	[Magn,edge label={node[midway,left,font=\footnotesize\itshape]{\textsc{mod}}}]
-	]
-	[\textsc{moi},name=moi,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{3}}]
-	]
-	\draw[->,dashed] ($(peur)+(0.125cm,-0.4cm)$) .. controls +(south:0.6cm) and +(south:1cm) .. (moi) node[pos=0.5,below right]{\footnotesize 1};
-\end{forest}
-\caption{Structures sémantique et syntaxique profonde de \REF{ex:peurbleue}\label{fig:peurbleue}}
+	\begin{subfigure}[b]{0.5\textwidth}
+		\begin{tikzpicture}[>={Triangle[]},
+			label distance=0pt,
+			node distance=1cm and 1cm,
+			every label/.style={reset shape}]
+			
+			\begin{scope}[nodes={CircleNode}]
+				\node (zoe) [label=below left:{`Zoé'}] {};
+				\node (causer) [above right=of zoe,label=above:{`causer'}] {};
+				\node (peur) [below right=of causer,label=below left:{`peur'}] {};
+				\node (intense) [above right=of peur,label=above:{`intense'}] {};
+				\node (moi) [below right=of peur,label=below right:{`moi'}] {};
+			\end{scope}
+			
+			\draw[-{Triangle[]}] (causer) -- (zoe) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (causer) -- (peur) node[font=\footnotesize,midway,right] {2};
+			\draw[-{Triangle[]}] (intense) -- (peur) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (peur) -- (moi) node[font=\footnotesize,midway,right] {1};
+			
+		\end{tikzpicture}
+		\caption{Structure sémantique}
+	\end{subfigure}%
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[Caus\textsubscript{passé}
+			[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[\textsc{peur},name=peur,edge label={node[midway,right,font=\footnotesize]{2}}
+			[Magn,edge label={node[midway,left,font=\footnotesize\itshape]{\textsc{mod}}}]
+			]
+			[\textsc{moi},name=moi,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{3}}]
+			]
+			\draw[->,dashed] ($(peur)+(0.125cm,-0.4cm)$) .. controls +(south:0.6cm) and +(south:1cm) .. (moi) node[pos=0.5,below right]{\footnotesize 1};
+		\end{forest}
+		\caption{Structure syntaxique profonde}
+	\end{subfigure}
+\caption{Structures pour les fonctions lexicales de \REF{ex:peurbleue}\label{fig:peurbleue}}
 \end{figure}
 
 \subsubsection{Les translatifs purs} 
@@ -203,25 +222,34 @@ Malgré l’absence de contribution sémantique des translatifs purs, nous déci
 Il existe plusieurs possibilités pour modéliser la copule dans la structure syntaxique profonde de \REF{ex:content}a. Dans la figure \ref{fig:content}a, nous représentons la copule comme un opérateur V de verbalisation, tandis que, en b, nous lui attribuons une véritable position dans la structure (ce qui nous rapproche davantage de la structure syntaxique de surface). Dans ce deuxième cas, nous utilisons l’étiquette Pred, proposée par Mel’čuk. La flèche hachée représente une dépendance sémantique qui n’est pas réalisée par une dépendance syntaxique entre les mêmes éléments. Nous y reviendrons dans la \sectref{sec:13-controle} sur le \textit{Contrôle}.
 
 \begin{figure}
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{trouver}\textsubscript{prés}
-		[\textsc{Ali},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-		[V(\textsc{sympa})\textsubscript{prés},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
-			[\textsc{Zoé},edge label={node[midway,right,font=\footnotesize]{1}}]
-		]
-	]
-\end{forest}\hspace{0.5cm}%
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{trouver}\textsubscript{prés}
-		[\textsc{Ali},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-		[Pred\textsubscript{prés},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
-			[\textsc{Zoé},name=zoe,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-			[\textsc{sympa},name=sympa,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
-		]
-	]
-	\draw[->,dashed] (sympa) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (zoe);
-\end{forest}
-\caption{Structure syntaxique profonde de \REF{ex:content}a \label{fig:content}}
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{trouver}\textsubscript{prés}
+				[\textsc{Ali},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+				[V(\textsc{sympa})\textsubscript{prés},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
+					[\textsc{Zoé},edge label={node[midway,right,font=\footnotesize]{1}}]
+				]
+			]
+		\end{forest}
+		\caption{Avec la copule comme opérateur}
+	\end{subfigure}%
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{trouver}\textsubscript{prés}
+				[\textsc{Ali},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+				[Pred\textsubscript{prés},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
+					[\textsc{Zoé},name=zoe,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+					[\textsc{sympa},name=sympa,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
+				]
+			]
+			\draw[->,dashed] (sympa) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (zoe);
+		\end{forest}
+		\caption{Avec un nœud lexical pour la copule}
+	\end{subfigure}
+\caption{Deux représentations pour la structure syntaxique profonde de \REF{ex:content}a \label{fig:content}}
 \end{figure}
 
 Notons que la conjonction de subordination \textsc{que} est également un translatif (de verbe en substantif). Nous aurions donc pu aussi l’introduire dans les représentations de la figure \ref{fig:content}. Nous ne l’avons pas fait, car on considère que la conjonction de subordination \textsc{que} fait partie du régime de \textsc{trouver}.
@@ -240,23 +268,32 @@ Nous avons déjà parlé du clivage dans la section \sectref{sec:11.8} sur \text
 Nous modélisons le clivage comme une lexie que nous appelons « clivage ». Les structures syntaxiques profondes de nos deux exemples sont données dans la figure \ref{fig:13-clivage} (voir la \sectref{sec:13-controle} sur le \textit{Contrôle} pour la flèche hachée).
 
 \begin{figure}
-\begin{forest} for tree={font=\normalfont}
-	[clivage
-	[\textsc{Zoé},name=zoe,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{venir}\textsubscript{futur},name=venir,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
-	]
-	\draw[->,dashed] (venir) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (zoe);
-\end{forest}\hspace{0.5cm}%
-\begin{forest} for tree={font=\normalfont}
-	[clivage
-	[\textsc{Zoé},name=zoe,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{parler}\textsubscript{passé},name=parler,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
-	[\textsc{moi},edge label={node[midway,right,font=\footnotesize]{1}}]
-	]
-	]
-	\draw[->,dashed] ($(parler)+(-0.125cm,-0.4cm)$) .. controls +(south:0.6cm) and +(south:1cm) .. (zoe) node[pos=0.5,below]{\footnotesize 2};
-\end{forest}
-\caption{Structure syntaxique profonde de \REF{ex:13-clivage}a et b \label{fig:13-clivage}}
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[clivage
+			[\textsc{Zoé},name=zoe,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[\textsc{venir}\textsubscript{futur},name=venir,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
+			]
+			\draw[->,dashed] (venir) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (zoe);
+		\end{forest}
+		\caption{Structure de \REF{ex:13-clivage}a}
+	\end{subfigure}%
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[clivage
+			[\textsc{Zoé},name=zoe,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[\textsc{parler}\textsubscript{passé},name=parler,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
+			[\textsc{moi},edge label={node[midway,right,font=\footnotesize]{1}}]
+			]
+			]
+			\draw[->,dashed] ($(parler)+(-0.125cm,-0.4cm)$) .. controls +(south:0.6cm) and +(south:1cm) .. (zoe) node[pos=0.5,below]{\footnotesize 2};
+		\end{forest}
+		\caption{Structure de \REF{ex:13-clivage}b}
+	\end{subfigure}
+\caption{Structures syntaxiques profondes pour le clivage\label{fig:13-clivage}}
 \end{figure}
 
 Le passif est l’exemple le plus connu de redistribution : il a pour effet de promouvoir l’objet d’un verbe transitif dans la position sujet et d’effacer ou de rétrograder le sujet du verbe. En français, il est réalisé par un grammème de participe passé sur le verbe, généralement combiné avec la copule \textsc{être}. En conséquence de cette redistribution, le deuxième argument du verbe devient le premier actant, tandis que le premier argument est retrogradé dans un rôle que nous notons ∞. (Nous utilisons cet étiquette pour indiquer que le \terme{complément retrogradé}, appelé \terme{complément d’agent} par la grammaire traditionnelle, occupe toujours une position plus oblique que les autres actants. Voir la section suivante pour la numérotation des actants.)
@@ -266,20 +303,29 @@ Le passif est l’exemple le plus connu de redistribution : il a pour effet de p
 \ex \textit{Zoé est poursuivie par un chien.}\z\z
 
 \begin{figure}
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{fille}\textsubscript{sg,indéf}
-		[\textsc{poursuivre}\textsubscript{passif},edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}
-			[\textsc{chien}\textsubscript{sg,indéf},edge label={node[midway,right,font=\footnotesize]{$\infty$}}]
-		]
-	]
-\end{forest}\hspace{0.5cm}%
-\begin{forest} for tree={font=\normalfont}
-	[V(\textsc{poursuivre}\textsubscript{passif})\textsubscript{prés}
-		[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-		[\textsc{chien}\textsubscript{sg,indéf},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{$\infty$}}]
-	]
-\end{forest}
-\caption{Structure syntaxique profonde de \REF{ex:13-passif}a et b \label{fig:13-passif}}
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{fille}\textsubscript{sg,indéf}
+				[\textsc{poursuivre}\textsubscript{passif},edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}
+					[\textsc{chien}\textsubscript{sg,indéf},edge label={node[midway,right,font=\footnotesize]{$\infty$}}]
+				]
+			]
+		\end{forest}
+		\caption{Structure de \REF{ex:13-passif}a}
+	\end{subfigure}%
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[V(\textsc{poursuivre}\textsubscript{passif})\textsubscript{prés}
+				[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+				[\textsc{chien}\textsubscript{sg,indéf},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{$\infty$}}]
+			]
+		\end{forest}
+		\caption{Structure de \REF{ex:13-passif}b}
+	\end{subfigure}
+\caption{Structures syntaxiques profondes pour le passif\label{fig:13-passif}}
 \end{figure}
 
 Notons que dans le cas du participe passif dépendant d’un nom, le passif, en plus d’opérer une redistribution, joue aussi le rôle de translatif de verbe en adjectif (figure \ref{fig:13-passif}a) (nous n’indiquons pas cette translation, puisqu’elle est contenue dans la grammie du passif). Le passif en \textsc{être} peut alors être vu comme une double translation, du verbe en adjectif de la grammie du passif, puis d’adjectif en verbe par la copule. C’est ainsi que nous le modélisons (en français) (figure \ref{fig:13-passif}b).
@@ -316,23 +362,32 @@ Certains pronoms résultent du dédoublement d’un nœud sémantique, comme le 
 La représentation que nous proposons pour \REF{ex:13-pronom}a est d’indiquer qu’il y a un sémantème « pro » coréférent avec \textsc{Zoé}. La coréférence est indiquée par une double flèche en pointillé (voir la figure \ref{fig:13-pronom-pro}a). Ce lien indique que le sémantème « pro » provient du dédoublement du sémantème ‘Zoé’ et il permet d’assurer l’accord de « pro » avec \textsc{Zoé} au niveau syntaxique de surface Dans le cas de \REF{ex:13-pronom}b, où il n’y a pas de pronom, nous indiquons que la dépendance entre le verbe subordonné et son premier argument est uniquement sémantique (par une flèche hachée) (figure \ref{fig:13-pronom-pro}b). Nous reviendrons sur cette construction dans la \sectref{sec:13-controle} sur le \textit{Contrôle}.
 
 \begin{figure}
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{penser}\textsubscript{prés}
-	[\textsc{Zoé},name=zoe,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{venir}\textsubscript{futur},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
-	[pro,name=pro,edge label={node[midway,right,font=\footnotesize]{1}}]
-	]
-	]
-	\draw[<->,dashed] (zoe) to[out=south,in=west] node[pos=0.5,below]{} (pro);
-\end{forest}\hspace{0.5cm}%
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{penser}\textsubscript{prés}
-	[\textsc{Zoé},name=zoe,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{venir},name=venir,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
-	]
-	\draw[->,dashed] (venir) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (zoe);
-\end{forest}
-\caption{Structures syntaxiques profondes de \REF{ex:13-pronom}a et b \label{fig:13-pronom-pro}}
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{penser}\textsubscript{prés}
+			[\textsc{Zoé},name=zoe,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[\textsc{venir}\textsubscript{futur},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
+			[pro,name=pro,edge label={node[midway,right,font=\footnotesize]{1}}]
+			]
+			]
+			\draw[<->,dotted] (zoe) to[out=south,in=west] node[pos=0.5,below]{} (pro);
+		\end{forest}
+		\caption{Structure de \REF{ex:13-pronom}a}
+	\end{subfigure}%
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{penser}\textsubscript{prés}
+			[\textsc{Zoé},name=zoe,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[\textsc{venir},name=venir,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
+			]
+			\draw[->,dashed] (venir) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (zoe);
+		\end{forest}
+		\caption{Structure de \REF{ex:13-pronom}b}
+	\end{subfigure}
+\caption{Structures syntaxiques profondes dans le cas d’un cycle}
 \end{figure}
 
 D’autres représentations plus proches de la sémantique ont été proposées : Mel’čuk propose une représentation commune pour les deux phrases de \REF{ex:13-pronom}, avec deux nœuds \textsc{Zoé} lié par un lien de coréférence. Une alternative à cette représentation est de garder un seul nœud \textsc{Zoé} et d’avoir deux gouverneurs syntaxiques pour ce nœud, ce qui donne une structure de dag (\textit{directed acyclic graph}, voir l’\encadref{sec:1.2.3} sur \textit{Graphe et arbre}).
@@ -351,27 +406,36 @@ Il existe des cas où l’infinitif possède réellement une contribution séman
 Nous donnons dans la figure \ref{fig:13-fumer} les représentations sémantique et syntaxique profonde de \REF{ex:13-fumer}. Nous représentons le sens générique par une étiquette « générique ». Ce sens est exprimé par grammie infinitif dans la structure syntaxique profonde. Notons que l’infinitif n’apparaît pas dans la structure syntaxique profonde quand il ne s’agit pas d’un sémantème comme ici (voir l’analyse des exemples \REF{ex:13-venir} et \REF{ex:13-dormir}).
 
 \begin{figure}
-\begin{tikzpicture}[>={Triangle[]},
-	label distance=0pt,
-	node distance=1cm and 1cm,
-	every label/.style={reset shape}]
-	
-	\begin{scope}[nodes={CircleNode}]
-		\node (dangereux) [label=above:{`dangereux'}] {};
-		\node (fumer) [below right=of dangereux,label=below:{`fumer'}] {};
-		\node (generique) [above right=of fumer,label=above:{générique}] {};
-	\end{scope}
-	
-	\draw[-{Triangle[]}] (dangereux) -- (fumer) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (fumer) -- (generique) node[font=\footnotesize,midway,right] {1};
-	
-\end{tikzpicture}\linebreak%
-\begin{forest} for tree={font=\normalfont}
-	[V(\textsc{dangereux})\textsubscript{prés}
-	[\textsc{fumer}\textsubscript{inf},edge label={node[midway,right,font=\footnotesize]{1}}]
-	]
-\end{forest}
-\caption{Structures sémantique et syntaxique profonde pour \REF{ex:13-fumer}\label{fig:13-fumer} }
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{tikzpicture}[>={Triangle[]},
+			label distance=0pt,
+			node distance=1cm and 1cm,
+			every label/.style={reset shape}]
+			
+			\begin{scope}[nodes={CircleNode}]
+				\node (dangereux) [label=above:{`dangereux'}] {};
+				\node (fumer) [below right=of dangereux,label=below:{`fumer'}] {};
+				\node (generique) [above right=of fumer,label=above:{générique}] {};
+			\end{scope}
+			
+			\draw[-{Triangle[]}] (dangereux) -- (fumer) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (fumer) -- (generique) node[font=\footnotesize,midway,right] {1};
+			
+		\end{tikzpicture}
+		\caption{Structure sémantique}
+	\end{subfigure}%
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[V(\textsc{dangereux})\textsubscript{prés}
+			[\textsc{fumer}\textsubscript{inf},edge label={node[midway,right,font=\footnotesize]{1}}]
+			]
+		\end{forest}
+		\caption{Structure syntaxique profonde}
+	\end{subfigure}
+\caption{Structures pour \REF{ex:13-fumer}\label{fig:13-fumer}}
 \end{figure}
 
 Concernant le grammème de participe passé, nous avons déjà donné des exemples  et vu qu’il pouvait faire partie d’une grammie complexe exprimant le passé (\textsc{avoir}\textsubscript{présent} + V\textsubscript{part-passé}) ou l’accompli (\textsc{avoir} + V\textsubscript{part-passé}) ou qu’il pouvait réaliser la grammie du passif (voir l’analyse de \REF{ex:13-passif}).
@@ -383,23 +447,32 @@ Le grammème de participe présent, lui, est utilisé dans deux emplois en fran�
 \ex \textit{Ali est allé à la poste en suivant la rivière.}\z\z
 
 \begin{figure}
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{chemin}\textsubscript{sg,déf}
-	[Adj(\textsc{suivre}),edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}
-	[\textsc{rivière}\textsubscript{sg,déf},edge label={node[midway,right,font=\footnotesize]{2}}]
-	]
-	]
-\end{forest}\hspace{0.5cm}%
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{aller}\textsubscript{passé},calign=child,calign primary child=2
-		[\textsc{Ali},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-		[\textsc{poste}\textsubscript{sg,déf},edge label={node[midway,left,font=\footnotesize]{2}}]
-		[Adv(\textsc{suivre}),edge label={node[midway,above right=-0.5ex,font=\footnotesize\itshape]{\textsc{mod}}}
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{chemin}\textsubscript{sg,déf}
+			[Adj(\textsc{suivre}),edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}
 			[\textsc{rivière}\textsubscript{sg,déf},edge label={node[midway,right,font=\footnotesize]{2}}]
-		]
-	]
-\end{forest}
-\caption{Structures syntaxiques profondes de \REF{ex:13-suivant}a et b\label{fig:13-suivant} }
+			]
+			]
+		\end{forest}
+		\caption{Structure de \REF{ex:13-suivant}a}
+	\end{subfigure}%
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{aller}\textsubscript{passé},calign=child,calign primary child=2
+				[\textsc{Ali},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+				[\textsc{poste}\textsubscript{sg,déf},edge label={node[midway,left,font=\footnotesize]{2}}]
+				[Adv(\textsc{suivre}),edge label={node[midway,above right=-0.5ex,font=\footnotesize\itshape]{\textsc{mod}}}
+					[\textsc{rivière}\textsubscript{sg,déf},edge label={node[midway,right,font=\footnotesize]{2}}]
+				]
+			]
+		\end{forest}
+		\caption{Structure de \REF{ex:13-suivant}b}
+	\end{subfigure}
+\caption{Structures syntaxiques profondes pour le participe présent\label{fig:13-suivant}}
 \end{figure}
 
 \subsubsection{Les sémantèmes cachés} 
@@ -450,27 +523,38 @@ Un dernier exemple de sémantème caché est celui des conversions massif-compta
 
 \begin{figure}
 % Figure 13
-% a. Zoé <-1- boire\_passé -2-> vin\_indéf
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{boire}\textsubscript{passé}
-		[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-		[\textsc{vin}\textsubscript{indéf},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
-	]
-\end{forest}\hspace{0.5cm}%
-% b. Zoé <-1- goûter\_passé -2-> type(vin)\_sg, indéf -MOD-> bon
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{gouter}\textsubscript{passé}
-		[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-		[type(\textsc{vin})\textsubscript{sg,indéf},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
-			[\textsc{bon},edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}]
-		]
-	]
-\end{forest}
-\caption{Structure syntaxiques profondes de \REF{ex:13-vin}a et b \label{fig:13-vin}}
+	% a. Zoé <-1- boire\_passé -2-> vin\_indéf
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{boire}\textsubscript{passé}
+				[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+				[\textsc{vin}\textsubscript{indéf},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
+			]
+		\end{forest}
+		\caption{Structure de \REF{ex:13-vin}a}
+	\end{subfigure}%
+	\hfill
+	% b. Zoé <-1- goûter\_passé -2-> type(vin)\_sg, indéf -MOD-> bon
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{gouter}\textsubscript{passé}
+				[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+				[type(\textsc{vin})\textsubscript{sg,indéf},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
+					[\textsc{bon},edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}]
+				]
+			]
+		\end{forest}
+		\caption{Structure de \REF{ex:13-vin}b}
+	\end{subfigure}
+\caption{Structures syntaxiques profondes pour la conversion massif-comptable\label{fig:13-vin}}
 \end{figure}
 
-\loupe[sec:13-packaging]{Structure communicative et syntaxe profonde}
-{La \terme{structure communicative}, encore appelée \hi{information packaging} en anglais, est une composante de la représentation sémantique qui se superpose à la structure prédicative pour indiquer comment l’information doit être communiquée (voir l’\encadref{sec:1.2.4} sur \textit{Les composantes du sens}). La principale composante de la structure communicative est la partition thème-rhème : le \terme{rhème} est \hi{ce qu’on dit}, l’information qui est réellement communiquée, tandis que le \terme{thème} désigne \hi{ce dont on parle}, ce à propos de quoi le rhème communique une information.  
+%---REMOVED-ONLY-TEMPORARILY
+%\loupe[sec:13-packaging]{Structure communicative et syntaxe profonde}
+%{
+La \terme{structure communicative}, encore appelée \hi{information packaging} en anglais, est une composante de la représentation sémantique qui se superpose à la structure prédicative pour indiquer comment l’information doit être communiquée (voir l’\encadref{sec:1.2.4} sur \textit{Les composantes du sens}). La principale composante de la structure communicative est la partition thème-rhème : le \terme{rhème} est \hi{ce qu’on dit}, l’information qui est réellement communiquée, tandis que le \terme{thème} désigne \hi{ce dont on parle}, ce à propos de quoi le rhème communique une information.  
 
 Nous avons vu que, dans les langues dites à ordre libre, l’ordre des mots peut être utilisé pour encoder la structure communicative (avec le support de la prosodie). Par contre, dans les langues à ordre plus strict, comme le français, il existe des constructions dédiées pour exprimer la structure communicative. Nous en avons introduit deux dans la \sectref{sec:13-unites} sur \textit{Les unités (potentielles) de la syntaxe profonde} : le clivage et la dislocation. Le clivage est l’expression d’un \terme{rhème focalisé}, c’est-à-dire un rhème que l’on souhaite contraster avec les informations concurrentes. A l’inverse, la dislocation gauche marque un \terme{thème focalisé}, indiquant que c’est à propos de cet élément et pas d’un autre que l’information est communiquée.
 
@@ -486,26 +570,36 @@ Nous avons fait le choix d’indiquer explicitement les constructions qui sont d
 
 \begin{figure}
 % Figure 14
-% a. cet <-MOD- disloc(café) <-1- excellent
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{excellent}
-		[disloc(\textsc{café}\textsubscript{sg}),edge label={node[midway,left,font=\footnotesize]{1}}
-			[\textsc{cet},edge label={node[midway,left,font=\footnotesize\itshape]{\textsc{mod}}}]
-		]
-	]
-\end{forest}\hspace{0.5cm}%
-% b. cet <-MOD- café <-1- V(excellent)
-\begin{forest} for tree={font=\normalfont}
-	[V(\textsc{excellent})\textsubscript{prés}
-		[\textsc{café}\textsubscript{sg},edge label={node[midway,left,font=\footnotesize]{1}}
-			[\textsc{cet},edge label={node[midway,left,font=\footnotesize\itshape]{\textsc{mod}}}]
-		]
-	]
-\end{forest}
-\caption{Structure syntaxiques profondes de \REF{ex:13-excellent}a et b \label{fig:13-excellent}}
+	% a. cet <-MOD- disloc(café) <-1- excellent
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{excellent}
+				[disloc(\textsc{café}\textsubscript{sg}),edge label={node[midway,left,font=\footnotesize]{1}}
+					[\textsc{cet},edge label={node[midway,left,font=\footnotesize\itshape]{\textsc{mod}}}]
+				]
+			]
+		\end{forest}
+		\caption{Structure de \REF{ex:13-excellent}a}
+	\end{subfigure}%
+	\hfill
+	% b. cet <-MOD- café <-1- V(excellent)
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[V(\textsc{excellent})\textsubscript{prés}
+				[\textsc{café}\textsubscript{sg},edge label={node[midway,left,font=\footnotesize]{1}}
+					[\textsc{cet},edge label={node[midway,left,font=\footnotesize\itshape]{\textsc{mod}}}]
+				]
+			]
+		\end{forest}
+		\caption{Structure de \REF{ex:13-excellent}b}
+	\end{subfigure}
+\caption{Structures syntaxiques profondes avec et sans dislocation\label{fig:13-excellent}}
 \end{figure}
 
-A la différence du français, dans d’autres langues, comme les langues slaves, la structure communicative ne déclenche pas de modifications de la structure syntaxique proprement dite, mais va être réalisée par des variations dans l’ordre des mots (voir l’\encadref{sec:3.5.23} sur \textit{Les langues dites à ordre libre}). On peut considérer que, dans ce cas, la structure communicative n’est pas consommée par l’interface sémantique-syntaxe et qu’elle devra être prive en compte directement par le module topologique. On peut donc décider de ne pas la mentionner dans la structure syntaxique profonde. C’est ce qu’on fera dans un modèle distribué où les différents niveaux de représentation peuvent communiquer entre eux et où la grammaire topologique peut accéder à des informations de niveau sémantique. Dans un modèle stratifié, la structure communicative devra être recopiée aux différents niveaux de représentation jusqu’à ce qu’elle soit consommée et elle apparaîtra donc dans les représentations syntaxiques profonde et de surface.}
+A la différence du français, dans d’autres langues, comme les langues slaves, la structure communicative ne déclenche pas de modifications de la structure syntaxique proprement dite, mais va être réalisée par des variations dans l’ordre des mots (voir l’\encadref{sec:3.5.23} sur \textit{Les langues dites à ordre libre}). On peut considérer que, dans ce cas, la structure communicative n’est pas consommée par l’interface sémantique-syntaxe et qu’elle devra être prive en compte directement par le module topologique. On peut donc décider de ne pas la mentionner dans la structure syntaxique profonde. C’est ce qu’on fera dans un modèle distribué où les différents niveaux de représentation peuvent communiquer entre eux et où la grammaire topologique peut accéder à des informations de niveau sémantique. Dans un modèle stratifié, la structure communicative devra être recopiée aux différents niveaux de représentation jusqu’à ce qu’elle soit consommée et elle apparaîtra donc dans les représentations syntaxiques profonde et de surface.
+%}---REMOVED-ONLY-TEMPORARILY
 
 \section{Structure prédicative des sémantèmes}
 Les sens linguistiques fonctionnent comme des prédicats qui prennent d’autres sens comme arguments. Lorsque deux sémantèmes sont combinés, nous constatons que l’un des deux est l’argument de l’autre. Cette propriété, que nous ne pouvons pas démontrer, nous permet de postuler la structure prédicative des différents sémantèmes. 
@@ -537,59 +631,77 @@ Dans le représentation syntaxique profonde de \REF{ex:13-soeur}a, nous indiquon
 
 \begin{figure}
 %Figure 15
-%a. ‘Zoé’ <-1- ‘sœur’ -2-> ‘Luce’
-\begin{tikzpicture}[>={Triangle[]},
-	label distance=0pt,
-	node distance=1cm and 1cm,
-	every label/.style={reset shape}]
-	
-	\begin{scope}[nodes={CircleNode}]
-		\node (soeur) [label=above:{`sœur'}] {};
-		\node (zoe) [below left=of soeur,label=below:{`Zoé'}] {};
-		\node (luce) [below right=of soeur,label=below:{`Luce'}] {};
-	\end{scope}
-	
-	\draw[-{Triangle[]}] (soeur) -- (zoe) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (soeur) -- (luce) node[font=\footnotesize,midway,right] {2};
-	
-\end{tikzpicture}\hspace{0.5cm}%
-\begin{tikzpicture}[>={Triangle[]},
-	label distance=0pt,
-	node distance=1cm and 1cm,
-	every label/.style={reset shape}]
-	
-	\begin{scope}[nodes={CircleNode}]
-		\node (dormir) [label=above:{`dormir'}] {};
-		\node (soeur) [below right=of dangereux,label=below:{`sœur'}] {};
-		\node (luce) [above right=of fumer,label=above:{`Luce'}] {};
-	\end{scope}
-	
-	\draw[-{Triangle[]}] (dormir) -- (soeur) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (soeur) -- (luce) node[font=\footnotesize,midway,right] {2};
-	
-\end{tikzpicture}
-%b. ‘Luce’ <-2- ‘sœur’.1 <-1- ‘dormir’
-\caption{Structures sémantiques de \REF{ex:13-soeur}a et b \label{fig:13-soeur-sem}}
+	%a. ‘Zoé’ <-1- ‘sœur’ -2-> ‘Luce’
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{tikzpicture}[>={Triangle[]},
+			label distance=0pt,
+			node distance=1cm and 1cm,
+			every label/.style={reset shape}]
+			
+			\begin{scope}[nodes={CircleNode}]
+				\node (soeur) [label=above:{`sœur'}] {};
+				\node (zoe) [below left=of soeur,label=below:{`Zoé'}] {};
+				\node (luce) [below right=of soeur,label=below:{`Luce'}] {};
+			\end{scope}
+			
+			\draw[-{Triangle[]}] (soeur) -- (zoe) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (soeur) -- (luce) node[font=\footnotesize,midway,right] {2};
+			
+		\end{tikzpicture}
+		\caption{Structure de \REF{ex:13-soeur}a}
+	\end{subfigure}%
+	\hfill
+	%b. ‘Luce’ <-2- ‘sœur’.1 <-1- ‘dormir’
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{tikzpicture}[>={Triangle[]},
+			label distance=0pt,
+			node distance=1cm and 1cm,
+			every label/.style={reset shape}]
+			
+			\begin{scope}[nodes={CircleNode}]
+				\node (dormir) [label=above:{`dormir'}] {};
+				\node (soeur) [below right=of dangereux,label=below:{`sœur'}] {};
+				\node (luce) [above right=of fumer,label=above:{`Luce'}] {};
+			\end{scope}
+			
+			\draw[-{Triangle[]}] (dormir) -- (soeur) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (soeur) -- (luce) node[font=\footnotesize,midway,right] {2};
+			
+		\end{tikzpicture}
+		\caption{Structure de \REF{ex:13-soeur}b}
+	\end{subfigure}
+\caption{Structures sémantiques d’un nom intégrant son premier actant\label{fig:13-soeur-synt}}
 \end{figure}
 
 \begin{figure}
 %Figure 16 
-%a. Zoé <-1- V(sœur)\_présent -2-> Luce
-\begin{forest} for tree={font=\normalfont}
-	[V(\textsc{sœur})\textsubscript{prés}
-		[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-		[\textsc{luce},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
-	]
-\end{forest}\hspace{0.5cm}%
-%b. Luce <-2- sœur\_sg, déf <-1- dormir\_présent
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{dormir}\textsubscript{prés}
-	[\textsc{sœur}\textsubscript{sg,déf},edge label={node[midway,right,font=\footnotesize]{1}}
-	[\textsc{luce},edge label={node[midway,right,font=\footnotesize]{2}}]
-	]
-	]
-\end{forest}
-\caption{Structures syntaxiques profondes de \REF{ex:13-soeur}a et b \label{fig:13-soeur-synt}}
+	%a. Zoé <-1- V(sœur)\_présent -2-> Luce
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[V(\textsc{sœur})\textsubscript{prés}
+				[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+				[\textsc{luce},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
+			]
+		\end{forest}
+		\caption{Structure de \REF{ex:13-soeur}a}
+	\end{subfigure}%
+	\hfill
+	%b. Luce <-2- sœur\_sg, déf <-1- dormir\_présent
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{dormir}\textsubscript{prés}
+			[\textsc{sœur}\textsubscript{sg,déf},edge label={node[midway,right,font=\footnotesize]{1}}
+			[\textsc{luce},edge label={node[midway,right,font=\footnotesize]{2}}]
+			]
+			]
+		\end{forest}
+		\caption{Structure de \REF{ex:13-soeur}b}
+	\end{subfigure}
+\caption{Structures syntaxiques profondes d’un nom intégrant son premier actant\label{fig:13-soeur-synt}}
 \end{figure}
 
 On peut considérer, comme l’on fait les logiciens depuis au moins \citet{frege1892uber}, que tous les noms intègrent un premier actant, qui ne peut être réalisé que lorsque le nom est utilisé comme attribut du sujet. Cependant la plupart des noms ne sont quasiment jamais utilisés comme attribut du sujet. De plus, lorsque le nom est défini, il s’agit souvent d’une \terme{proposition équative}, où le verbe \textsc{être} indique l’identité de deux choses, comme en \REF{ex:13-Mars}. Dans ce cas, nous considérons que le verbe \textsc{être} est un sémantème indiquant l'équation entre ses deux actants (voir la figure \ref{fig:13-Mars}; on notera que DE est traité comme un sémantème exprimant le sens ‘appartenir’.).
@@ -598,45 +710,54 @@ On peut considérer, comme l’on fait les logiciens depuis au moins \citet{freg
 
 \begin{figure}
 %Figure 17
-%a. ‘Mars’ <-1- ‘être’ -2-> ‘planète’ <-1- ‘appartenir’ -2-> ‘système’ <-1- ‘solaire’
-\begin{tikzpicture}[>={Triangle[]},
-	label distance=0pt,
-	node distance=1cm and 1cm,
-	every label/.style={reset shape}]
-	
-	\begin{scope}[nodes={CircleNode}]
-		\node (mars) [label=below left:{`Mars'}] {};
-		\node (etre) [above right=of mars, label=above:{`être'}] {};
-		\node (planete) [below right=of etre,label=below left:{`planète'}] {};
-		\node (troisieme) [below right=of planete,label=below right:{`troisième'}] {};
-		\node (appartenir) [above right=of planete,label=above:{`appartenir'}] {};
-		\node (systeme) [below right=of appartenir,label=below:{`système'}] {};
-		\node (solaire) [above right=of systeme,label=above right:{`solaire'}] {};
-	\end{scope}
-	
-	\draw[-{Triangle[]}] (etre) -- (mars) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (etre) -- (planete) node[font=\footnotesize,midway,right] {2};
-	\draw[-{Triangle[]}] (troisieme) -- (planete) node[font=\footnotesize,midway,right] {1};
-	\draw[-{Triangle[]}] (appartenir) -- (planete) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (appartenir) -- (systeme) node[font=\footnotesize,midway,right] {2};
-	\draw[-{Triangle[]}] (solaire) -- (systeme) node[font=\footnotesize,midway,left] {1};
-	
-\end{tikzpicture}\linebreak
-%b. Mars <-1- être\_présent -2-> planète\_sg, déf -MOD-> de -2-> système -MOD-> solaire
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{être}\textsubscript{prés}
-		[\textsc{mars},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-		[\textsc{planète}\textsubscript{sg,déf},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
-			[\textsc{troisième},edge label={node[midway,above left=-0.5ex,font=\footnotesize\itshape]{\textsc{mod}}}]
-			[\textsc{de},edge label={node[midway,above right=-0.5ex,font=\footnotesize\itshape]{\textsc{mod}}}
-				[\textsc{système}\textsubscript{sg,déf},edge label={node[midway,right,font=\footnotesize]{2}}
-					[\textsc{solaire},edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}]
+	%a. ‘Mars’ <-1- ‘être’ -2-> ‘planète’ <-1- ‘appartenir’ -2-> ‘système’ <-1- ‘solaire’
+	\begin{subfigure}[h]{\textwidth}
+		\centering
+		\begin{tikzpicture}[>={Triangle[]},
+			label distance=0pt,
+			node distance=1cm and 1cm,
+			every label/.style={reset shape}]
+			
+			\begin{scope}[nodes={CircleNode}]
+				\node (mars) [label=below left:{`Mars'}] {};
+				\node (etre) [above right=of mars, label=above:{`être'}] {};
+				\node (planete) [below right=of etre,label=below left:{`planète'}] {};
+				\node (troisieme) [below right=of planete,label=below right:{`troisième'}] {};
+				\node (appartenir) [above right=of planete,label=above:{`appartenir'}] {};
+				\node (systeme) [below right=of appartenir,label=below:{`système'}] {};
+				\node (solaire) [above right=of systeme,label=above right:{`solaire'}] {};
+			\end{scope}
+			
+			\draw[-{Triangle[]}] (etre) -- (mars) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (etre) -- (planete) node[font=\footnotesize,midway,right] {2};
+			\draw[-{Triangle[]}] (troisieme) -- (planete) node[font=\footnotesize,midway,right] {1};
+			\draw[-{Triangle[]}] (appartenir) -- (planete) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (appartenir) -- (systeme) node[font=\footnotesize,midway,right] {2};
+			\draw[-{Triangle[]}] (solaire) -- (systeme) node[font=\footnotesize,midway,left] {1};
+			
+		\end{tikzpicture}
+		\caption{Structure sémantique}
+	\end{subfigure}%
+	\vfill
+	%b. Mars <-1- être\_présent -2-> planète\_sg, déf -MOD-> de -2-> système -MOD-> solaire
+	\begin{subfigure}[h]{\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{être}\textsubscript{prés}
+				[\textsc{mars},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+				[\textsc{planète}\textsubscript{sg,déf},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
+					[\textsc{troisième},edge label={node[midway,above left=-0.5ex,font=\footnotesize\itshape]{\textsc{mod}}}]
+					[\textsc{de},edge label={node[midway,above right=-0.5ex,font=\footnotesize\itshape]{\textsc{mod}}}
+						[\textsc{système}\textsubscript{sg,déf},edge label={node[midway,right,font=\footnotesize]{2}}
+							[\textsc{solaire},edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}]
+						]
+					]
 				]
 			]
-		]
-	]
-\end{forest}
-\caption{Structure syntaxique profonde de \REF{ex:13-Mars}\label{fig:13-Mars}}
+		\end{forest}
+		\caption{Structure syntaxique profonde}
+	\end{subfigure}
+\caption{Structures pour \REF{ex:13-Mars}\label{fig:13-Mars}}
 \end{figure}
 
 Il existe aussi des noms qui sont fondamentalement prédicatifs. Par exemple, un nom comme \textsc{question} est parallèle au verbe \textsc{questionner} : X \textit{questionne} Y \textit{à propos de} Z, \textit{la question de} X \textit{à} Y \textit{à propos de} Z. Il peut être utilisé dans des constructions à verbes support : X \textit{\textbf{pose} une question} Y, Y \textit{\textbf{répond} à la question} de X. Nous considérons donc que le nom \textsc{question} est un nom trivalent et nous numérotons les actants du nom \textsc{question} comme ceux du verbe \textsc{questionner}.
@@ -651,32 +772,46 @@ Les adjectifs, les adverbes, les prépositions ou les conjonctions de subordinat
 
 \begin{figure}
 %Figure 18
-%a. Luce <-1- V(chez)\_présent -2-> Zoé
-\begin{forest} for tree={font=\normalfont}
-	[V(\textsc{chez})\textsubscript{prés}
-	[\textsc{luce},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{Zoé},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
-	]
-\end{forest}\hspace{0.5cm}%
-%b. Luce <-1- dormir\_présent <-MOD- chez -2-> Zoé
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{dormir}\textsubscript{prés}
-	[\textsc{luce},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{chez},edge label={node[midway,above right=-0.5ex,font=\footnotesize\itshape]{\textsc{mod}}}
-	[\textsc{Zoé},edge label={node[midway,right,font=\footnotesize]{2}}]
-	]
-	]
-\end{forest}\hspace{0.5cm}%
-%c. Luce <-1- aller\_présent -2-> chez -2-> Zoé
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{aller}\textsubscript{prés}
-	[\textsc{luce},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{chez},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
-	[\textsc{Zoé},edge label={node[midway,right,font=\footnotesize]{2}}]
-	]
-	]
-\end{forest}
-\caption{Structures syntaxiques profondes de \REF{ex:chez}a, b et c \label{fig:chez}}
+	%a. Luce <-1- V(chez)\_présent -2-> Zoé
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[V(\textsc{chez})\textsubscript{prés}
+			[\textsc{luce},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[\textsc{Zoé},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
+			]
+		\end{forest}
+		\caption{Structure de \REF{ex:chez}a}
+	\end{subfigure}%
+	\hfill
+	%b. Luce <-1- dormir\_présent <-MOD- chez -2-> Zoé
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{dormir}\textsubscript{prés}
+			[\textsc{luce},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[\textsc{chez},edge label={node[midway,above right=-0.5ex,font=\footnotesize\itshape]{\textsc{mod}}}
+			[\textsc{Zoé},edge label={node[midway,right,font=\footnotesize]{2}}]
+			]
+			]
+		\end{forest}
+		\caption{Structure de \REF{ex:chez}b}
+	\end{subfigure}%
+	\hfill
+	%c. Luce <-1- aller\_présent -2-> chez -2-> Zoé
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{aller}\textsubscript{prés}
+			[\textsc{luce},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[\textsc{chez},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
+			[\textsc{Zoé},edge label={node[midway,right,font=\footnotesize]{2}}]
+			]
+			]
+		\end{forest}
+		\caption{Structure de \REF{ex:chez}c}
+	\end{subfigure}
+\caption{Structures syntaxiques profondes pour la préposition \textsc{chez}\label{fig:chez}}
 \end{figure}
 
 Les adjectifs ou les adverbes peuvent aussi occuper une position actancielle, comme dans \REF{ex:13-francais}a et c. Ils intègrent alors leur premier argument : on comparera les deux emplois de \textsc{français} dans la figure \ref{fig:13-francais}.
@@ -688,20 +823,29 @@ Les adjectifs ou les adverbes peuvent aussi occuper une position actancielle, co
 
 \begin{figure}
 %Figure 19
-%a. production\_sg, déf -1-> français -2-> Adj(lait)
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{production}\textsubscript{sg,déf}
-	[\textsc{français},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[Adj(\textsc{lait}),edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
-	]
-\end{forest}\hspace{0.5cm}%
-%b. tomate\_sg, déf -MOD-> français
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{tomate}\textsubscript{sg,indéf}
-	[\textsc{français},edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}]
-	]
-\end{forest}
-\caption{Structures syntaxiques profondes de \REF{ex:13-francais}a et b \label{fig:13-francais}}
+	%a. production\_sg, déf -1-> français -2-> Adj(lait)
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{production}\textsubscript{sg,déf}
+			[\textsc{français},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[Adj(\textsc{lait}),edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
+			]
+		\end{forest}
+		\caption{Structure de \REF{ex:13-francais}a}
+	\end{subfigure}%
+	\hfill
+	%b. tomate\_sg, déf -MOD-> français
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{tomate}\textsubscript{sg,indéf}
+			[\textsc{français},edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}]
+			]
+		\end{forest}
+		\caption{Structure de \REF{ex:13-francais}b}
+	\end{subfigure}
+\caption{Structures syntaxiques profondes pour un adjectif\label{fig:13-francais}}
 \end{figure}
 
 \subsection{Les sémantèmes grammaticaux} 
@@ -726,59 +870,95 @@ Nous donnons dans la figure \ref{fig:13-regime} quelques exemples de tableaux de
 
 
 \begin{figure}
+	\begin{flushleft}
+		\phraseme{tenir la jambe} : X \textit{tient la jambe à} Y \\
+		\textbullet~ nature : V
+	\end{flushleft}
+	\begin{subfigure}[h]{\textwidth}
+		\centering
+		\vspace*{-\baselineskip+5pt}
+		\begin{tabularx}{\textwidth}{|X|l|}
+			\hline
+			\multicolumn{1}{|c|}{X = 1 } & \multicolumn{1}{c|}{Y = 2} \\
+			\hline
+			\textbullet~fonction : sujet & \textbullet~fonction : complément d’objet indirect \\
+			\textbullet~régime : N & \textbullet~régime : \textit{à }N, Pro\textsubscript{datif}\\
+			& \textbullet~obligatoire \\
+			\hline
+		\end{tabularx}	
+	\end{subfigure}%
+	\vfill
+	\begin{flushleft}
+		\textsc{sembler} : X \textit{semble} Y \\
+		\textbullet~ nature : V
+	\end{flushleft}
+	\begin{subfigure}[h]{\textwidth}
+		\centering
+		\vspace*{-\baselineskip+5pt}
+		\begin{tabularx}{\textwidth}{|X|X|}
+			\hline
+			\multicolumn{1}{|c|}{X = +1 } & \multicolumn{1}{c|}{Y = 2} \\
+			\hline
+			\textbullet~fonction : sujet & \textbullet~fonction : complément \\
+			\textbullet~régime : N & \textbullet~régime : V\textsubscript{inf} \\
+			\textbullet~montée : 1\textsuperscript{er} actant de Y & \textbullet~obligatoire \\
+			\hline
+		\end{tabularx}
+	\end{subfigure}%
+	\vfill
+	\begin{flushleft}
+		\textsc{question} : question de X \textit{à} Y sur Z \\
+		\textbullet~ nature : N
+	\end{flushleft}
+	\begin{subfigure}[h]{\textwidth}
+		\centering
+		\vspace*{-\baselineskip+5pt}
+		\begin{tabularx}{\textwidth}{|X|X|X|}
+			\hline
+			\multicolumn{1}{|c|}{X = 1 } & \multicolumn{1}{c|}{Y = 2} & \multicolumn{1}{c|}{Z = 3}\\
+			\hline
+			\textbullet~fonction : complément  & \textbullet~fonction : complément  & \textbullet~fonction : complément \\
+			\textbullet~régime : \textit{de} N, Pro\textsubscript{poss} & \textbullet~régime : \textit{à} N & \textbullet~régime : \textit{sur} N, \textit{à propos de} N \\
+			\hline
+		\end{tabularx}
+	\end{subfigure}%
+	\vfill
+	\begin{flushleft}
+		\textsc{chez} : [X] \textit{chez} Y \\
+		nature : Prép
+	\end{flushleft}
+	\begin{subfigure}[h]{\textwidth}
+		\centering
+		\vspace*{-\baselineskip+5pt}
+		\begin{tabularx}{\textwidth}{|X|X|}
+			\hline
+			\multicolumn{1}{|c|}{X = 1 } & \multicolumn{1}{c|}{Y = 2} \\
+			\hline
+			\textbullet~gouverneur & \textbullet~fonction : complément \\
+			\textbullet~nature : V, N & \textbullet~régime : N \\
+			& \textbullet~obligatoire \\
+			\hline
+		\end{tabularx}
+	\end{subfigure}%
+	\vfill
+	\begin{flushleft}
+		\textsc{heureux} : [X] \textit{heureux de} Y \\
+		nature : Adj, généralement postposé
+	\end{flushleft}
+	\begin{subfigure}[h]{\textwidth}
+		\centering
+		\vspace*{-\baselineskip+5pt}
+		\begin{tabularx}{\textwidth}{|X|X|}
+			\hline
+			\multicolumn{1}{|c|}{X = 1 } & \multicolumn{1}{c|}{Y = 2} \\
+			\hline
+			\textbullet~gouverneur & \textbullet~fonction : complément \\
+			\textbullet~nature : N & \textbullet~régime : \textit{de} V\textsubscript{inf}, \textit{que} V\textsubscript{subj} \\
+			\hline
+		\end{tabularx}
+	\end{subfigure}
 
-\phraseme{tenir la jambe} : X \textit{tient la jambe à} Y
-nature : V
-X = 1
-fonction : sujet 
-régime : N
-Y = 2
-fonction : complément d’objet indirect 
-régime : \textit{à }N 
-obligatoire
-
-\textsc{sembler} : X \textit{semble} Y
-nature : V
-X = +1
-fonction : sujet 
-régime : N
-Y = 2
-fonction : complément 
-régime : V\textsubscript{inf}
-montée : premier actant de Y
-
-\textsc{question} : \textit{question de} X \textit{à }Y \textit{sur/à propos de} Z
-nature : N
-X = 1
-fonction : complément 
-régime : \textit{de} N
-Y = 2
-fonction : complément 
-régime : \textit{à} N
-Z = 3
-fonction : complément 
-régime : \textit{sur} N, \textit{à propos de} N
-
-\textsc{chez} : [X] \textit{chez} Y
-nature : Prép
-X = 1
-gouverneur
-nature : V, N
-Y = 2
-fonction : complément
-régime : N
-obligatoire
-
-\textsc{heureux} : [X] \textit{heureux de} Y
-nature : Adj, généralement postposé
-X = 1
-gouverneur
-nature : N
-Y = 2
-fonction : complément
-régime : \textit{de} V\textsubscript{inf}, \textit{que} V\textsubscript{subj}
-
-\caption{Tableaux de régime de \phraseme{tenir la jambe}, \textsc{sembler} ,\textsc{question}, \textsc{chez}, \textsc{heureux}\label{fig:13-regime}}
+\caption{Tableaux de régime de \phraseme{tenir la jambe}, \textsc{sembler}, \textsc{question}, \textsc{chez}, \textsc{heureux}\label{fig:13-regime}}
 \end{figure}
 
 Nous verrons dans le \chapfuturef{18} sur les \textit{Relations syntaxiques} que chaque relation syntaxique est associée à un faisceau de propriétés. Par exemple, la relation sujet en français suppose un accord du verbe, un placement particulier, l’absence de préposition, mais un marquage casuel des pronoms personnels (\textit{je}, \textit{tu}, \textit{il}, \textit{on}, etc.), ainsi que des propriétés de contrôle ou de redistribution que nous ne décrirons pas ici. On peut donc voir l’utilisation des relations syntaxiques dans le tableau de régime comme un moyen de décrire de façon synthétique une partie des propriétés syntaxiques d’un argument.
@@ -807,7 +987,7 @@ Les grammaires d’arbres ont également été utilisées en \terme{grammaire de
 		\end{scope}
 		
 		\begin{scope}[nodes={DiamondNode},node distance=0.1cm and 0.1cm]
-			\node (nil) [below right=of prof, label=right:{[définitude]}] {};
+			\node (nil) [below right=of prof, label=right:{\footnotesize [définitude]}] {};
 		\end{scope}
 		
 		\gkcaption{\textsc{prof}}
@@ -820,12 +1000,12 @@ Les grammaires d’arbres ont également été utilisées en \terme{grammaire de
 		every label/.style={reset shape}]
 		
 		\begin{scope}[nodes={CircleNode}]
-			\node (A) [label=above:{[1:N]}] {};
+			\node (A) [label=above:{[1{\NoAutoSpacing :}N]}] {};
 			\node (le) [fill,below=of A,label=below:{\textsc{le}}]{};
 		\end{scope}
 		
 		\begin{scope}[nodes={DiamondNode},node distance=0.1cm and 0.1cm]
-			\node (def) [fill,below right=of A,label=right:{déf}] {};
+			\node (def) [fill,below right=of A,label=right:{\footnotesize déf}] {};
 		\end{scope}
 		
 		\draw (A) -- (le) node[font=\footnotesize,midway,left] {dét};
@@ -845,7 +1025,7 @@ Les grammaires d’arbres ont également été utilisées en \terme{grammaire de
 		\end{scope}
 		
 		\begin{scope}[nodes={DiamondNode},node distance=0.1cm and 0.1cm]
-			\node (def) [fill,below right=of A,label=right:{déf}] {};
+			\node (def) [fill,below right=of A,label=right:{\footnotesize déf}] {};
 		\end{scope}
 		
 		\draw (A) -- (le) node[font=\footnotesize,midway,left] {dét};
@@ -856,7 +1036,7 @@ Les grammaires d’arbres ont également été utilisées en \terme{grammaire de
 \caption{Combinaison des structures élémentaires d’une lexie et d’une grammie\label{fig:13-GD0}}
 \end{figure}
 
-La figure \ref{fig:13-GD1} donne l’ensemble des règles nécessaires à la production de l’arbre syntaxique de surface de la phrase \REF{ex:jambe}. Le losange blanc de la structure élémentaire de \phraseme{tenir la jambe} indique qu’il doit recevoir un grammème de mode-temps. Celui-ci sera instancié par la grammie de passé, qui comporte un auxiliaire. Un mécanisme que nous ne détaillerons pas assure la montée du sujet sur l’auxiliaire, qui sera donc un pur dépendant syntaxique de \textsc{avoir} tout en restant l’argument sémantique de \phraseme{tenir la jambe}. Les positions argumentales de chaque sémantème sont numérotées ; ainsi, l’arbre élémentaire de \textsc{pendant} comporte deux positions argumentales : le premier argument doit être un verbe qui est gouverneur syntaxique, tandis que le deuxième argument est un nom qui est complément, ce qu’indiquent les étiquettes [1:V] et [2:N]. Enfin, la règle « déclaration », qui initie le processus de dérivation, demande à ce que la racine de l’arbre syntaxique de surface soit un verbe à l’indicatif.
+La figure \ref{fig:13-GD1} donne l’ensemble des règles nécessaires à la production de l’arbre syntaxique de surface de la phrase \REF{ex:jambe}. Le losange blanc de la structure élémentaire de \phraseme{tenir la jambe} indique qu’il doit recevoir un grammème de mode-temps. Celui-ci sera instancié par la grammie de passé, qui comporte un auxiliaire. Un mécanisme que nous ne détaillerons pas assure la montée du sujet sur l’auxiliaire, qui sera donc un pur dépendant syntaxique de \textsc{avoir} tout en restant l’argument sémantique de \phraseme{tenir la jambe}. Les positions argumentales de chaque sémantème sont numérotées ; ainsi, l’arbre élémentaire de \textsc{pendant} comporte deux positions argumentales : le premier argument doit être un verbe qui est gouverneur syntaxique, tandis que le deuxième argument est un nom qui est complément, ce qu’indiquent les étiquettes [1{\NoAutoSpacing :}V] et [2{\NoAutoSpacing :}N]. Enfin, la règle « déclaration », qui initie le processus de dérivation, demande à ce que la racine de l’arbre syntaxique de surface soit un verbe à l’indicatif.
 
 \begin{figure}[H]
 %Figure 21
@@ -869,7 +1049,7 @@ La figure \ref{fig:13-GD1} donne l’ensemble des règles nécessaires à la pro
 	\node (nil) {};
 	
 	\begin{scope}[nodes={CircleNode}]
-		\node (A) [below of=nil,label=above right:{[1:V]}] {};
+		\node (A) [below of=nil,label=above right:{[1{\NoAutoSpacing :}V]}] {};
 	\end{scope}
 	
 	\begin{scope}[nodes={DiamondNode},node distance=0.1cm and 0.1cm]
@@ -889,7 +1069,7 @@ La figure \ref{fig:13-GD1} donne l’ensemble des règles nécessaires à la pro
 	\begin{scope}[nodes={CircleNode}]
 		\node (A) {};
 		\node (avoir) [fill,above right=of A,label=above:{\textsc{avoir}}] {};
-		\node (B) [below right=of avoir,label=above right:{[1:V]}] {};
+		\node (B) [below right=of avoir,label=above right:{[1{\NoAutoSpacing :}V]}] {};
 	\end{scope}
 	
 	\begin{scope}[nodes={DiamondNode},node distance=0.1cm and 0.1cm]
@@ -910,11 +1090,11 @@ node distance=1.50cm and 1.75cm,
 every label/.style={reset shape}]
 
 \begin{scope}[nodes={CircleNode}]
-\node (A) [label=below:{[1:V]}] {};
+\node (A) [label=below:{[1{\NoAutoSpacing :}V]}] {};
 \node (tenir) [fill,above right=of A,label=above:{\textsc{tenir}}] {};
 \node (a) [fill,below right=of tenir,label=above right:{\textsc{à}}] {};
 \node (jambe) [fill,below=of tenir,label=above right:{\textsc{jambe}}] {};
-\node (B) [below=of a,label=below:{[2:N]}] {};
+\node (B) [below=of a,label=below:{[2{\NoAutoSpacing :}N]}] {};
 \node (le) [fill,below=of jambe,label=below:{\textsc{le}}] {};
 \end{scope}
 
@@ -966,7 +1146,7 @@ every label/.style={reset shape}]
 	every label/.style={reset shape}]
 	
 	\begin{scope}[nodes={CircleNode}]
-		\node (A) [label=above:{[1:N]}] {};
+		\node (A) [label=above:{[1{\NoAutoSpacing :}N]}] {};
 		\node (le) [fill,below=of A,label=below:{\textsc{le}}]{};
 	\end{scope}
 	
@@ -1001,7 +1181,7 @@ every label/.style={reset shape}]
 	every label/.style={reset shape}]
 	
 	\begin{scope}[nodes={CircleNode}]
-		\node (A) [label=above:{[1:N]}] {};
+		\node (A) [label=above:{[1{\NoAutoSpacing :}N]}] {};
 		\node (un) [fill,below=of A,label=below:{\textsc{un}}]{};
 	\end{scope}
 	
@@ -1020,9 +1200,9 @@ every label/.style={reset shape}]
 	every label/.style={reset shape}]
 	
 	\begin{scope}[nodes={CircleNode}]
-		\node (A) [label=above:{[1:V]}] {};
+		\node (A) [label=above:{[1{\NoAutoSpacing :}V]}] {};
 		\node (pendant) [fill,below=of A,label=right:{\textsc{pendant}}] {};
-		\node (B) [below=of pendant,label=below:{[2:N]}] {};
+		\node (B) [below=of pendant,label=below:{[2{\NoAutoSpacing :}N]}] {};
 	\end{scope}
 	
 	\begin{scope}[nodes={DiamondNode},node distance=0.1cm and 0.1cm]
@@ -1131,27 +1311,36 @@ L’ancrage ne fait pas à notre avis partie de la structure prédicative, mais 
 
 \begin{figure}[H]
 %Figure 24 
-%a. tout <-MOD- étudiant\_pl, déf <-1- résoudre\_passé -2-> exercice\_sg, indéf ..ancre..> (étudiants)
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{résoudre}\textsubscript{passé}
-		[\textsc{étudiant}\textsubscript{pl,déf},tikz={\node [draw,fit to=tree,inner sep=0pt] {};},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}
-			[\textsc{tout},name=t1,edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}]
-		]
-		[\textsc{exercice}\textsubscript{sg,indéf},name=t2,tikz={\node [draw,fit to=tree,inner sep=0pt] {};},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
-	]
-	\draw[->,dashed] ($(t2)+(0,-0.5)$) to[out=south,in=east] node[pos=0.5,below]{} ($(t1)+(1.65,0)$);
-\end{forest}\\~\\~\\
-%b. tout <-MOD- étudiant\_pl, déf <-2- résoudre\_passif, passé -1-> exercice\_sg, indéf ..ancre..> univers
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{résoudre}\textsubscript{passé},name=root
-		[\textsc{étudiant}\textsubscript{pl,déf},tikz={\node [draw,fit to=tree,inner sep=0pt] {};},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}
-			[\textsc{tout},name=t1,edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}]
-		]
-		[\textsc{exercice}\textsubscript{sg,indéf},name=t2,tikz={\node [draw,fit to=tree,inner sep=0pt] {};},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
-	]
-	\draw[->,dashed] ($(t2)+(0,0.5)$) to[out=north,in=west] node[pos=1,right]{Ω} ($(root)+(3,0)$);
-\end{forest}
-\caption{Structure référentielle avec ancrage pour \REF{ex:13-portée}a et b\label{fig:13-portée}}
+	%a. tout <-MOD- étudiant\_pl, déf <-1- résoudre\_passé -2-> exercice\_sg, indéf ..ancre..> (étudiants)
+	\begin{subfigure}[h]{\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{résoudre}\textsubscript{passé}
+				[\textsc{étudiant}\textsubscript{pl,déf},tikz={\node [draw,fit to=tree,inner sep=0pt] {};},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}
+					[\textsc{tout},name=t1,edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}]
+				]
+				[\textsc{exercice}\textsubscript{sg,indéf},name=t2,tikz={\node [draw,fit to=tree,inner sep=0pt] {};},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
+			]
+			\draw[->,dotted] ($(t2)+(0,-0.5)$) to[out=south,in=east] node[pos=0.5,below]{} ($(t1)+(1.65,0)$);
+		\end{forest}
+		\caption{Structure de \REF{ex:13-portée}a}
+	\end{subfigure}%
+	\vfill
+	%b. tout <-MOD- étudiant\_pl, déf <-2- résoudre\_passif, passé -1-> exercice\_sg, indéf ..ancre..> univers
+	\begin{subfigure}[h]{\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{résoudre}\textsubscript{passé},name=root
+				[\textsc{étudiant}\textsubscript{pl,déf},tikz={\node [draw,fit to=tree,inner sep=0pt] {};},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}
+					[\textsc{tout},name=t1,edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}]
+				]
+				[\textsc{exercice}\textsubscript{sg,indéf},name=t2,tikz={\node [draw,fit to=tree,inner sep=0pt] {};},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
+			]
+			\draw[->,dotted] ($(t2)+(0,0.5)$) to[out=north,in=west] node[pos=1,right]{Ω} ($(root)+(3,0)$);
+		\end{forest}
+		\caption{Structure de \REF{ex:13-portée}b}
+	\end{subfigure}
+\caption{Structure référentielle avec ancrage \label{fig:13-portée}}
 \end{figure}
 
 Le cas de la portée de la négation relève à notre avis d’un autre aspect de la représentation sémantique, qui est la structure communicative (voir l’\encadref{sec:13-packaging}). Dans un énoncé tel que \REF{ex:13-negation}a, plusieurs interprétations sont possibles selon que la négation « porte » sur \textit{donner}, \textit{Zoé}, \textit{ce livre}, \textit{à Luce} ou sur un empan plus large de texte. 
@@ -1187,25 +1376,34 @@ Nous représentons la relation syntaxique profonde entre le verbe infinitif et s
 
 \begin{figure}
 %FIGURE 25 
-%a) Zoé <-1- promettre\_prés -2-> venir ..1..> (Zoé) -3-> Ali
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{promettre}\textsubscript{prés}, calign=child, calign primary child=2
-	[\textsc{Zoé},name=zoe,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{venir},name=venir,edge label={node[midway,left,font=\footnotesize]{2}}]
-	[\textsc{Ali},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{3}}]
-	]
-	\draw[->,dashed] (venir) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (zoe);
-\end{forest}\hspace{0.5cm}
-%b) Zoé <-1- permettre\_prés -2-> venir ..1..> (Ali) -3-> Ali
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{permettre}\textsubscript{prés}, calign=child, calign primary child=2
-	[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{venir},name=venir,edge label={node[midway,left,font=\footnotesize]{2}}]
-	[\textsc{Ali},name=ali,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{3}}]
-	]
-	\draw[->,dashed] (venir) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (ali);
-\end{forest}
-\caption{Représentations syntaxiques profondes avec un verbe à contrôle pour \REF{ex:13-venir}a et b \label{fig:13-venir}}
+	%a) Zoé <-1- promettre\_prés -2-> venir ..1..> (Zoé) -3-> Ali
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{promettre}\textsubscript{prés}, calign=child, calign primary child=2
+			[\textsc{Zoé},name=zoe,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[\textsc{venir},name=venir,edge label={node[midway,left,font=\footnotesize]{2}}]
+			[\textsc{Ali},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{3}}]
+			]
+			\draw[->,dashed] (venir) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (zoe);
+		\end{forest}
+		\caption{Structure de \REF{ex:13-venir}a}
+	\end{subfigure}%
+	\hfill
+	%b) Zoé <-1- permettre\_prés -2-> venir ..1..> (Ali) -3-> Ali
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{permettre}\textsubscript{prés}, calign=child, calign primary child=2
+			[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[\textsc{venir},name=venir,edge label={node[midway,left,font=\footnotesize]{2}}]
+			[\textsc{Ali},name=ali,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{3}}]
+			]
+			\draw[->,dashed] (venir) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (ali);
+		\end{forest}
+		\caption{Structure de \REF{ex:13-venir}b}
+	\end{subfigure}
+\caption{Structures syntaxiques profondes avec un verbe à contrôle}
 \end{figure}
 
 Les constructions à contrôle se produisent quand la structure sémantique contient un cycle (non orienté). Ce cycle doit être réalisé en syntaxe de surface par un arbre, c’est-à-dire par une structure acyclique. Il faut donc couper le cycle quelque part.
@@ -1220,42 +1418,51 @@ La structure sémantique de ces paraphrases, qui a été donnée dans la figure 
 
 \begin{figure}
 %FIGURE 26
-%a. ‘Zoé’ <-1- ‘penser’ -2-> ‘venir’ -1-> (‘Zoé’) SCISSORS ON ‘Zoé’
-\begin{tikzpicture}[>={Triangle[]},
-	label distance=0pt,
-	node distance=1cm and 1cm,
-	every label/.style={reset shape}]
-	
-	\begin{scope}[nodes={CircleNode}]
-		\node (zoe) [label=above left:{`Zoé'}] {};
-		\node (penser) [above right=of zoe,label=above:{`penser'}] {};
-		\node (venir) [below right=of penser,label=below right:{`venir'}] {};
-	\end{scope}
-	
-	\draw[-{Triangle[]}] (penser) -- (zoe) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (penser) -- (venir) node[font=\footnotesize,midway,right] {2};
-	\draw[-{Triangle[]}] (venir) -- (zoe) node[font=\footnotesize,midway,above] {1};
-	\draw[dashed] ($(zoe)+(-1cm,-0.4cm)$) -- ($(zoe)+(0.8cm,0.325cm)$) node[pos=0,rotate=30] {\ScissorHollowRight};
-	
-\end{tikzpicture}\hspace{0.5cm}%
-%b. ‘Zoé’ <-1- ‘penser’ -2-> ‘venir’ -1-> (‘Zoé’) SCISSORS ON THE DEPENDENCY
-\begin{tikzpicture}[>={Triangle[]},
-	label distance=0pt,
-	node distance=1cm and 1cm,
-	every label/.style={reset shape}]
-	
-	\begin{scope}[nodes={CircleNode}]
-		\node (zoe) [label=below left:{`Zoé'}] {};
-		\node (penser) [above right=of zoe,label=above:{`penser'}] {};
-		\node (venir) [below right=of penser,label=below right:{`venir'}] {};
-	\end{scope}
-	
-	\draw[-{Triangle[]}] (penser) -- (zoe) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (penser) -- (venir) node[font=\footnotesize,midway,right] {2};
-	\draw[-{Triangle[]}] (venir) -- (zoe) node[font=\footnotesize,pos=0.25,above] {1};
-	\draw[dashed] ($(penser)+(0cm,-2cm)$) -- ($(penser)+(0cm,-0.5cm)$) node[pos=0,rotate=90] {\ScissorHollowRight};
-	
-\end{tikzpicture}
+	%a. ‘Zoé’ <-1- ‘penser’ -2-> ‘venir’ -1-> (‘Zoé’) SCISSORS ON ‘Zoé’
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{tikzpicture}[>={Triangle[]},
+			label distance=0pt,
+			node distance=1cm and 1cm,
+			every label/.style={reset shape}]
+			
+			\begin{scope}[nodes={CircleNode}]
+				\node (zoe) [label=above left:{`Zoé'}] {};
+				\node (penser) [above right=of zoe,label=above:{`penser'}] {};
+				\node (venir) [below right=of penser,label=below right:{`venir'}] {};
+			\end{scope}
+			
+			\draw[-{Triangle[]}] (penser) -- (zoe) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (penser) -- (venir) node[font=\footnotesize,midway,right] {2};
+			\draw[-{Triangle[]}] (venir) -- (zoe) node[font=\footnotesize,midway,above] {1};
+			\draw[dashed] ($(zoe)+(-1cm,-0.4cm)$) -- ($(zoe)+(0.8cm,0.325cm)$) node[pos=0,rotate=30] {\ScissorHollowRight};
+			
+		\end{tikzpicture}
+		\caption{Au niveau d'un nœud}
+	\end{subfigure}%
+	\hfill
+	%b. ‘Zoé’ <-1- ‘penser’ -2-> ‘venir’ -1-> (‘Zoé’) SCISSORS ON THE DEPENDENCY
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{tikzpicture}[>={Triangle[]},
+			label distance=0pt,
+			node distance=1cm and 1cm,
+			every label/.style={reset shape}]
+			
+			\begin{scope}[nodes={CircleNode}]
+				\node (zoe) [label=below left:{`Zoé'}] {};
+				\node (penser) [above right=of zoe,label=above:{`penser'}] {};
+				\node (venir) [below right=of penser,label=below right:{`venir'}] {};
+			\end{scope}
+			
+			\draw[-{Triangle[]}] (penser) -- (zoe) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (penser) -- (venir) node[font=\footnotesize,midway,right] {2};
+			\draw[-{Triangle[]}] (venir) -- (zoe) node[font=\footnotesize,pos=0.25,above] {1};
+			\draw[dashed] ($(penser)+(0cm,-2cm)$) -- ($(penser)+(0cm,-0.5cm)$) node[pos=0,rotate=90] {\ScissorHollowRight};
+			
+		\end{tikzpicture}
+		\caption{Au niveau d’une dépendance}
+	\end{subfigure}
 \caption{Deux façons de couper un cycle dans une représentation sémantique\label{fig:13-cycle}}
 \end{figure}
 
@@ -1271,25 +1478,34 @@ Nous proposons dans la figure \ref{fig:13-gifle} la structure syntaxique profond
 
 \begin{figure}
 %FIGURE 27
-%a. Marie <-1- Oper2\_prés -2> gifle (Marie) <..2.. (Pierre) <..1..
-\begin{forest} for tree={font=\normalfont}
-	[Oper\textsubscript{2,prés}
-	[\textsc{Marie},name=marie,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{gifle},name=gifle,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
-	]
-	\draw[->,dashed] (gifle) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 2} (marie);
-\end{forest}\hspace{0.5cm}%
-%b. Pierre <-1- Oper12 -2-> gifle ..1..> (Marie) -3-> Marie
-\begin{forest} for tree={font=\normalfont}
-	[Oper\textsubscript{12,prés}, calign=child, calign primary child=2
-	[\textsc{Pierre},name=pierre,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{gifle},name=gifle,edge label={node[midway,left,font=\footnotesize]{2}}]
-	[\textsc{Marie},name=marie,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{3}}]
-	]
-	\draw[->,dashed] (gifle) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (pierre);
-	\draw[->,dashed] (gifle) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 2} (marie);
-\end{forest}
-\caption{Représentations syntaxiques profondes des constructions à verbe support \REF{ex:13-gifle}a et b \label{fig:13-gifle}}
+	%a. Marie <-1- Oper2\_prés -2> gifle (Marie) <..2.. (Pierre) <..1..
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[Oper\textsubscript{2,prés}
+			[\textsc{Marie},name=marie,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[\textsc{gifle},name=gifle,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
+			]
+			\draw[->,dashed] (gifle) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 2} (marie);
+		\end{forest}
+		\caption{Structure de \REF{ex:13-gifle}a}
+	\end{subfigure}%
+	\hfill
+	%b. Pierre <-1- Oper12 -2-> gifle ..1..> (Marie) -3-> Marie
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[Oper\textsubscript{12,prés}, calign=child, calign primary child=2
+			[\textsc{Pierre},name=pierre,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[\textsc{gifle},name=gifle,edge label={node[midway,left,font=\footnotesize]{2}}]
+			[\textsc{Marie},name=marie,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{3}}]
+			]
+			\draw[->,dashed] (gifle) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (pierre);
+			\draw[->,dashed] (gifle) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 2} (marie);
+		\end{forest}
+		\caption{Structure de \REF{ex:13-gifle}b}
+	\end{subfigure}
+\caption{Structures syntaxiques profondes de constructions à verbe support}
 \end{figure}
 
 
@@ -1342,24 +1558,33 @@ La figure \ref{fig:13-monte} propose une représentation de la structure syntaxi
 
 \begin{figure}
 %FIGURE 28
-%a.	Zoé <-+- sembler\_prés -1-> dormir ..1..> (Zoé)
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{sembler}\textsubscript{prés}
-	[\textsc{Zoé},name=zoe,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{+1}}]
-	[\textsc{dormir},name=dormir,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
-	]
-	\draw[->,dashed] (dormir) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (zoe);
-\end{forest}\hspace{0.5cm}%
-%b.	Ali <-1- trouver\_prés -+-> Zoé -2-> sympa ..1..> (Zoé)
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{trouver}, calign=child, calign primary child=2
-	[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{Ali},name=ali,edge label={node[midway,left,font=\footnotesize]{+2}}]
-	[\textsc{sympa},name=sympa,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{3}}]
-	]
-	\draw[->,dashed] (sympa) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (ali);
-\end{forest}
-\caption{Représentations syntaxiques profondes avec un verbe à montée pour \REF{ex:13-dormir}b et \REF{ex:13-trouver}a \label{fig:13-monte}}
+	%a.	Zoé <-+- sembler\_prés -1-> dormir ..1..> (Zoé)
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{sembler}\textsubscript{prés}
+			[\textsc{Zoé},name=zoe,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{+1}}]
+			[\textsc{dormir},name=dormir,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
+			]
+			\draw[->,dashed] (dormir) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (zoe);
+		\end{forest}
+		\caption{Structure de\REF{ex:13-dormir}b}
+	\end{subfigure}%
+	\hfill
+	%b.	Ali <-1- trouver\_prés -+-> Zoé -2-> sympa ..1..> (Zoé)
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{trouver}, calign=child, calign primary child=2
+			[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[\textsc{Ali},name=ali,edge label={node[midway,left,font=\footnotesize]{+2}}]
+			[\textsc{sympa},name=sympa,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{3}}]
+			]
+			\draw[->,dashed] (sympa) to[out=south,in=south] node[pos=0.5,below]{\footnotesize 1} (ali);
+		\end{forest}
+		\caption{Structure de \REF{ex:13-trouver}a}
+	\end{subfigure}
+\caption{Structures syntaxiques profondes de constructions avec un verbe à montée \label{fig:13-monte}}
 \end{figure}
 
 Les constructions avec auxiliaires peuvent être vues comme des cas particuliers de constructions à montée : en effet, l’auxiliaire exprime lexicalement une grammie qui a le verbe auxilié comme actant, tandis que le sujet de l’auxiliaire résulte de la montée du premier actant du verbe. Ceci est illustré en \REF{ex:13-aux}a, où l’auxiliaire \textsc{avoir} du passé a pour sujet \textsc{Zoé} et pour unique actant le verbe \textsc{courir}, dont il spécifie le moment du procès.
@@ -1375,32 +1600,41 @@ La construction causative en \REF{ex:13-aux}b et c illustre un cas possible de m
 
 \begin{figure}
 %FIGURE 29
-%a. ‘Zoé’ <-1- ‘causer’ -2-> ‘rire’ -1-> ‘Ali’
-\begin{tikzpicture}[>={Triangle[]},
-	label distance=0pt,
-	node distance=1cm and 1cm,
-	every label/.style={reset shape}]
-	
-	\begin{scope}[nodes={CircleNode}]
-		\node (zoe) [label=below left:{`Zoé'}] {};
-		\node (causer) [above right=of zoe,label=above:{`causer'}] {};
-		\node (rire) [below right=of causer,label=below:{`rire'}] {};
-		\node (ali) [above right=of rire,label=above:{`Ali'}] {};
-	\end{scope}
-	
-	\draw[-{Triangle[]}] (causer) -- (zoe) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (causer) -- (rire) node[font=\footnotesize,midway,right] {2};
-	\draw[-{Triangle[]}] (rire) -- (ali) node[font=\footnotesize,midway,right] {1};
-	
-\end{tikzpicture}\linebreak%
-%b. Zoé <-1- rire\_caus, prés -∞-> Ali
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{rire}\textsubscript{caus,prés}
-	[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{Ali},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{$\infty$}}]
-	]
-\end{forest}
-\caption{Représentations sémantique et syntaxique profonde de la construction causative \REF{ex:13-aux}b \label{fig:13-causatif}}
+	%a. ‘Zoé’ <-1- ‘causer’ -2-> ‘rire’ -1-> ‘Ali’
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{tikzpicture}[>={Triangle[]},
+			label distance=0pt,
+			node distance=1cm and 1cm,
+			every label/.style={reset shape}]
+			
+			\begin{scope}[nodes={CircleNode}]
+				\node (zoe) [label=below left:{`Zoé'}] {};
+				\node (causer) [above right=of zoe,label=above:{`causer'}] {};
+				\node (rire) [below right=of causer,label=below:{`rire'}] {};
+				\node (ali) [above right=of rire,label=above:{`Ali'}] {};
+			\end{scope}
+			
+			\draw[-{Triangle[]}] (causer) -- (zoe) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (causer) -- (rire) node[font=\footnotesize,midway,right] {2};
+			\draw[-{Triangle[]}] (rire) -- (ali) node[font=\footnotesize,midway,right] {1};
+			
+		\end{tikzpicture}
+		\caption{Structure sémantique}
+	\end{subfigure}%
+	\hfill
+	%b. Zoé <-1- rire\_caus, prés -∞-> Ali
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{rire}\textsubscript{caus,prés}
+			[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[\textsc{Ali},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{$\infty$}}]
+			]
+		\end{forest}
+		\caption{Structure syntaxique profonde}
+	\end{subfigure}
+\caption{Structures pour la construction causative \REF{ex:13-aux}b \label{fig:13-causatif}}
 \end{figure}
 
 \section{Un dernier cas de distorsion structurelle : l’insertion modificative}
@@ -1446,33 +1680,42 @@ L’exemple \REF{ex:13-insertion}a montre de plus que les modifieurs insérés p
 
 \begin{figure}
 %FIGURE 31
-%a.	Félix <-1- lire\_passé -+-> plus -1-> moitié -1-> livre\_sg, déf <..2.. (lire)
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{lire}\textsubscript{passé},name=root
-	[\textsc{Félix},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{plus},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{(2)}}
-	[\textsc{moitié},edge label={node[midway,right,font=\footnotesize]{1}}
-	[\textsc{livre}\textsubscript{sg,déf},name=livre,edge label={node[midway,right,font=\footnotesize]{1}}]
-	]
-	]
-	]
-	\draw[->,dashed] (root) to[out=south,in=north west] node[pos=0.5,left]{\footnotesize 2} (livre);
-\end{forest}\hspace{0.5cm}%
-%b.	Félix <-1- vouloir\_prés -2-> acheter -+-> cet -1-> livre\_sg
-% (Félix) <..1..              ..2..> (livre)
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{vouloir}\textsubscript{prés}
-	[\textsc{Félix},name=felix,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{acheter},name=acheter,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
-	[\textsc{cet},edge label={node[midway,right,font=\footnotesize]{(2)}}
-	[\textsc{livre}\textsubscript{sg},name=livre,edge label={node[midway,right,font=\footnotesize]{1}}]
-	]
-	]
-	]
-	\draw[->,dashed] ($(acheter)+(-0.4cm,-0.4cm)$) .. controls +(south:0.6cm) and +(south:1cm) .. (felix) node[pos=0.5,below]{\footnotesize 1};
-	\draw[->,dashed] (acheter) to[out=south east,in=north east] node[pos=0.5,right]{\footnotesize 2} (livre);
-\end{forest}
-\caption{Structures syntaxiques profondes de déterminants insérés pour \REF{ex:13-insertion}a et b \label{fig:13-insertion}}
+	%a.	Félix <-1- lire\_passé -+-> plus -1-> moitié -1-> livre\_sg, déf <..2.. (lire)
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{lire}\textsubscript{passé},name=root
+			[\textsc{Félix},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[\textsc{plus},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{(2)}}
+			[\textsc{moitié},edge label={node[midway,right,font=\footnotesize]{1}}
+			[\textsc{livre}\textsubscript{sg,déf},name=livre,edge label={node[midway,right,font=\footnotesize]{1}}]
+			]
+			]
+			]
+			\draw[->,dashed] (root) to[out=south,in=north west] node[pos=0.5,left]{\footnotesize 2} (livre);
+		\end{forest}
+		\caption{Structure de \REF{ex:13-insertion}a}
+	\end{subfigure}%
+	\hfill
+	%b.	Félix <-1- vouloir\_prés -2-> acheter -+-> cet -1-> livre\_sg
+	% (Félix) <..1..              ..2..> (livre)
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{vouloir}\textsubscript{prés}
+			[\textsc{Félix},name=felix,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[\textsc{acheter},name=acheter,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
+			[\textsc{cet},edge label={node[midway,right,font=\footnotesize]{(2)}}
+			[\textsc{livre}\textsubscript{sg},name=livre,edge label={node[midway,right,font=\footnotesize]{1}}]
+			]
+			]
+			]
+			\draw[->,dashed] ($(acheter)+(-0.4cm,-0.4cm)$) .. controls +(south:0.6cm) and +(south:1cm) .. (felix) node[pos=0.5,below]{\footnotesize 1};
+			\draw[->,dashed] (acheter) to[out=south east,in=north east] node[pos=0.5,right]{\footnotesize 2} (livre);
+		\end{forest}
+		\caption{Structure de \REF{ex:13-insertion}b}
+	\end{subfigure}
+\caption{Structures syntaxiques profondes de déterminants insérés}
 \end{figure}
 
 \section{Les différents types de relations syntaxiques profondes}
@@ -1584,47 +1827,56 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 
 \begin{figure}[H]
 %FIGURE 32
-%a. ‘beaucoup’ -1-> ‘gens’ <-1- aimer -2-> ‘passer’ -2-> ‘Noël’ 
-%						<..1.. 	-3-> ‘Laponie’
-\begin{tikzpicture}[>={Triangle[]},
-	label distance=0pt,
-	node distance=1cm and 1cm,
-	every label/.style={reset shape}]
-	
-	\begin{scope}[nodes={CircleNode}]
-		\node (beaucoup) [label=above left:{`beaucoup'}] {};
-		\node (gens) [below right=of beaucoup,label=below left:{`gens'}] {};
-		\node (aimer) [above right=of gens,label=above left:{`aimer'}] {};
-		\node (conditionnel) [above right=of aimer,label=above right:{conditionnel}] {};
-		\node (passer) [below right=of aimer,label=below left:{`passer'}] {};
-		\node (noel) [above right=of passer,label=above right:{`Noël'}] {};
-		\node (laponie) [below right=of passer,label=below right:{`Laponie'}] {};
-	\end{scope}
-	
-	\draw[-{Triangle[]}] (beaucoup) -- (gens) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (aimer) -- (gens) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (conditionnel) -- (aimer) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (aimer) -- (passer) node[font=\footnotesize,midway,right] {2};
-	\draw[-{Triangle[]}] (passer) -- (gens) node[font=\footnotesize,midway,above] {1};
-	\draw[-{Triangle[]}] (passer) -- (noel) node[font=\footnotesize,midway,right] {2};
-	\draw[-{Triangle[]}] (passer) -- (laponie) node[font=\footnotesize,midway,below] {3};
-	
-\end{tikzpicture}
-%b. gens\_indf <-1- beaucoup <-+- aimer\_cond -2-> passer Noël Laponie
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{aimer}\textsubscript{cond},name=root
-	[\textsc{beaucoup},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{(1)}}
-	[\textsc{gens}\textsubscript{déf},name=gens,edge label={node[midway,left,font=\footnotesize]{1}}]
-	]
-	[\textsc{passer},name=passer,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
-	[\textsc{Noël},edge label={node[midway,below right,font=\footnotesize]{2}}]
-	[\textsc{Laponie},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{3}}]
-	]
-	]
-	\draw[->,dashed] (root) to[out=south,in=north east] node[pos=0.5,right]{\footnotesize 1} (gens);
-	\draw[->,dashed] (passer) to[out=south west,in=north east] node[pos=0.25,above]{\footnotesize 1} ($(gens)+(0.75,0.25)$);
-\end{forest}
-\caption{Structures sémantique et syntaxique profonde}
+	%a. ‘beaucoup’ -1-> ‘gens’ <-1- aimer -2-> ‘passer’ -2-> ‘Noël’ 
+	%						<..1.. 	-3-> ‘Laponie’
+	\begin{subfigure}[h]{\textwidth}
+		\centering
+		\begin{tikzpicture}[>={Triangle[]},
+			label distance=0pt,
+			node distance=1cm and 1cm,
+			every label/.style={reset shape}]
+			
+			\begin{scope}[nodes={CircleNode}]
+				\node (beaucoup) [label=above left:{`beaucoup'}] {};
+				\node (gens) [below right=of beaucoup,label=below left:{`gens'}] {};
+				\node (aimer) [above right=of gens,label=above left:{`aimer'}] {};
+				\node (conditionnel) [above right=of aimer,label=above right:{conditionnel}] {};
+				\node (passer) [below right=of aimer,label=below left:{`passer'}] {};
+				\node (noel) [above right=of passer,label=above right:{`Noël'}] {};
+				\node (laponie) [below right=of passer,label=below right:{`Laponie'}] {};
+			\end{scope}
+			
+			\draw[-{Triangle[]}] (beaucoup) -- (gens) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (aimer) -- (gens) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (conditionnel) -- (aimer) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (aimer) -- (passer) node[font=\footnotesize,midway,right] {2};
+			\draw[-{Triangle[]}] (passer) -- (gens) node[font=\footnotesize,midway,above] {1};
+			\draw[-{Triangle[]}] (passer) -- (noel) node[font=\footnotesize,midway,right] {2};
+			\draw[-{Triangle[]}] (passer) -- (laponie) node[font=\footnotesize,midway,below] {3};
+			
+		\end{tikzpicture}
+		\caption{Structure sémantique}
+	\end{subfigure}%
+	\vfill
+	%b. gens\_indf <-1- beaucoup <-+- aimer\_cond -2-> passer Noël Laponie
+	\begin{subfigure}[h]{\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{aimer}\textsubscript{cond},name=root
+			[\textsc{beaucoup},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{(1)}}
+			[\textsc{gens}\textsubscript{déf},name=gens,edge label={node[midway,left,font=\footnotesize]{1}}]
+			]
+			[\textsc{passer},name=passer,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
+			[\textsc{Noël},edge label={node[midway,below right,font=\footnotesize]{2}}]
+			[\textsc{Laponie},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{3}}]
+			]
+			]
+			\draw[->,dashed] (root) to[out=south,in=north east] node[pos=0.5,right]{\footnotesize 1} (gens);
+			\draw[->,dashed] (passer) to[out=south west,in=north east] node[pos=0.25,above]{\footnotesize 1} ($(gens)+(0.75,0.25)$);
+		\end{forest}
+		\caption{Structure syntaxique profonde}
+	\end{subfigure}
+\caption{Structures pour notre phrase préférée}
 \end{figure}
 
 \corrigé{3}
@@ -1633,38 +1885,47 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
     
 \begin{figure}[H]
 %Figure 33 
-%a.	‘Zoé’ <-2- déclaration -1-> ‘falloir’ -1-> ‘y aller’ -1-> ‘on’
-\begin{tikzpicture}[>={Triangle[]},
-	label distance=0pt,
-	node distance=1cm and 1cm,
-	every label/.style={reset shape}]
-	
-	\begin{scope}[nodes={CircleNode}]
-		\node (moi) [label=below:{`moi'}] {};
-		\node (declarer) [above right=of moi,label=above:{`déclarer'}] {};
-		\node (zoe) [below=of declarer,label=below:{`Zoé'}] {};
-		\node (falloir) [below right=of declarer,label=below:{`falloir'}] {};
-		\node (yaller) [above right=of falloir,label=above:{`y aller'}] {};
-		\node (on) [below right=of yaller,label=below:{`on'}] {};
-	\end{scope}
-	
-	\draw[-{Triangle[]}] (declarer) -- (moi) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (declarer) -- (zoe) node[font=\footnotesize,midway,right] {3};
-	\draw[-{Triangle[]}] (declarer) -- (falloir) node[font=\footnotesize,midway,right] {2};
-	\draw[-{Triangle[]}] (falloir) -- (yaller) node[font=\footnotesize,midway,right] {1};
-	\draw[-{Triangle[]}] (yaller) -- (on) node[font=\footnotesize,midway,right] {1};
-	
-\end{tikzpicture}\\~\\
-%b.	vocatif(Zoé) <-MOD- falloir\_présent -1-> \phraseme{y aller} -1-> on
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{falloir}\textsubscript{présent}
-	[vocatif(\textsc{Zoé}),edge label={node[midway,above left=-0.5ex,font=\footnotesize\itshape]{\textsc{mod}}}]
-	[$\ulcorner$\textsc{y aller}$\urcorner$,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{1}}
-	[\textsc{on},edge label={node[midway,right,font=\footnotesize]{1}}]
-	]
-	]
-\end{forest}
-\caption{Structures sémantique et syntaxique profonde de a \label{fig:13-vocatif} }
+	%a.	‘Zoé’ <-2- déclaration -1-> ‘falloir’ -1-> ‘y aller’ -1-> ‘on’
+	\begin{subfigure}[h]{\textwidth}
+		\centering
+		\begin{tikzpicture}[>={Triangle[]},
+			label distance=0pt,
+			node distance=1cm and 1cm,
+			every label/.style={reset shape}]
+			
+			\begin{scope}[nodes={CircleNode}]
+				\node (moi) [label=below:{`moi'}] {};
+				\node (declarer) [above right=of moi,label=above:{`déclarer'}] {};
+				\node (zoe) [below=of declarer,label=below:{`Zoé'}] {};
+				\node (falloir) [below right=of declarer,label=below:{`falloir'}] {};
+				\node (yaller) [above right=of falloir,label=above:{`y aller'}] {};
+				\node (on) [below right=of yaller,label=below:{`on'}] {};
+			\end{scope}
+			
+			\draw[-{Triangle[]}] (declarer) -- (moi) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (declarer) -- (zoe) node[font=\footnotesize,midway,right] {3};
+			\draw[-{Triangle[]}] (declarer) -- (falloir) node[font=\footnotesize,midway,right] {2};
+			\draw[-{Triangle[]}] (falloir) -- (yaller) node[font=\footnotesize,midway,right] {1};
+			\draw[-{Triangle[]}] (yaller) -- (on) node[font=\footnotesize,midway,right] {1};
+			
+		\end{tikzpicture}
+		\caption{Structure sémantique}
+	\end{subfigure}%
+	\vfill
+	%b.	vocatif(Zoé) <-MOD- falloir\_présent -1-> \phraseme{y aller} -1-> on
+	\begin{subfigure}[h]{\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{falloir}\textsubscript{présent}
+			[vocatif(\textsc{Zoé}),edge label={node[midway,above left=-0.5ex,font=\footnotesize\itshape]{\textsc{mod}}}]
+			[$\ulcorner$\textsc{y aller}$\urcorner$,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{1}}
+			[\textsc{on},edge label={node[midway,right,font=\footnotesize]{1}}]
+			]
+			]
+		\end{forest}
+		\caption{Structure syntaxique profonde}
+	\end{subfigure}
+\caption{Structures pour un vocatif}
 \end{figure}
 
 \item Le nom \textsc{œuf} est un nom comptable. Il est employé ici comme un massif, avec le déterminant indéfini des massifs. Nous considérons donc qu’il est combiné avec un sémantème caché « massif », qui signifie ‘une matière formée de’. Ce sémantème joue le rôle inverse du sémantème « type », qui produit un nom comptable à partir d’un massif. Par ailleurs, nous traitons \textit{il y a} comme la réalisation d’un phrasème \phraseme{il y avoir} qui « verbalise » la préposition \textsc{sur}. Enfin, nous traitons le possesif \textit{ma} comme un modifieur avec un sémantème «~possesseur~» (voir le corrigé de l’exercice 1).
@@ -1695,51 +1956,69 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 
 \begin{figure}[H]
 %FIGURE 35
-%a. moi venir\_futur moment(semaine\_def) prochain
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{venir}\textsubscript{futur}
-	[\textsc{moi},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[moment(\textsc{semaine}\textsubscript{sg,def}),edge label={node[midway,above right=-0.5ex,font=\footnotesize\itshape]{\textsc{mod}}}
-	[\textsc{prochain},edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}]
-	]
-	]
-\end{forest}\hspace{0.5cm}%
-%b. lui dormir\_passé durée(heure\_indf) deux
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{dormir}\textsubscript{passé}
-	[\textsc{lui},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[durée(\textsc{heure}\textsubscript{pl,indéf}),edge label={node[midway,above right=-0.5ex,font=\footnotesize\itshape]{\textsc{mod}}}
-	[\textsc{deux},edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}]
-	]
-	]
-\end{forest}
-\caption{Structures syntaxiques profondes des noms temporels modifieurs}
+	%a. moi venir\_futur moment(semaine\_def) prochain
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{venir}\textsubscript{futur}
+			[\textsc{moi},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[moment(\textsc{semaine}\textsubscript{sg,def}),edge label={node[midway,above right=-0.5ex,font=\footnotesize\itshape]{\textsc{mod}}}
+			[\textsc{prochain},edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}]
+			]
+			]
+		\end{forest}
+		\caption{Structure pour un moment}
+	\end{subfigure}%
+	\hfill
+	%b. lui dormir\_passé durée(heure\_indf) deux
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{dormir}\textsubscript{passé}
+			[\textsc{lui},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
+			[durée(\textsc{heure}\textsubscript{pl,indéf}),edge label={node[midway,above right=-0.5ex,font=\footnotesize\itshape]{\textsc{mod}}}
+			[\textsc{deux},edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}]
+			]
+			]
+		\end{forest}
+		\caption{Structure pour une durée}
+	\end{subfigure}
+\caption{Structures syntaxiques profondes de noms temporels modifieurs}
 \end{figure}
 
 \corrigé{6} Lorsque Luc casse des œufs, le procès n’a pas lieu dans un bol : le bol est la destination des œufs. Le verbe \textsc{casser} a ici le sens habituel ‘casser’, mais la construction de \textsc{mettre} (\textit{Luc met les œufs dans un bol}). On peut donc imaginer plusieurs modélisations possibles. Si l’on traite \textit{dans un bol} comme un modifieur, il y a nécessairement un sémantème caché indiquant qu’il s’agit d’une destination. Ce sémantème, que nous nommons « destination », est une façon d’indiquer que la construction est signifiante. On peut aussi considérer que ce complément est « entré » dans la valence du verbe \textsc{casser} et qu’on a une acception trivalente de ce verbe, un \textsc{casser}\textsubscript{b}, équivalent au \textsc{casser}\textsubscript{a} + destination. Cette construction, plus courante en anglais qu'en français, a été appelée la \hi{construction résultative}. On pourra notamment consulter le livre d'Adele \citet{goldberg1995constructions} qui y consacre un chapitre.
 
 \begin{figure}[H]
 %FIGURE 36
-%a.
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{casser}\textsubscript{prés}, calign=child, calign primary child=2
-	[\textsc{Zoé},edge label={node[midway,above left,font=\footnotesize]{1}}]
-	[\textsc{œuf}\textsubscript{pl,déf},edge label={node[midway,right,font=\footnotesize]{2}}]
-	[destination(\textsc{dans}),edge label={node[midway,above right,font=\footnotesize\itshape]{\textsc{mod}}}
-	[\textsc{Bol}\textsubscript{sg,déf},edge label={node[midway,right,font=\footnotesize]{2}}]
-	]
-	]
-\end{forest}\hspace{0.5cm}%
-%b.
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{casser}\textsubscript{prés}, calign=child, calign primary child=2
-	[\textsc{Zoé},edge label={node[midway,above left,font=\footnotesize]{1}}]
-	[\textsc{œuf}\textsubscript{pl,déf},edge label={node[midway,right,font=\footnotesize]{2}}]
-	[\textsc{dans},edge label={node[midway,above right,font=\footnotesize]{3}}
-	[\textsc{Bol}\textsubscript{sg,déf},edge label={node[midway,right,font=\footnotesize]{2}}]
-	]
-	]
-\end{forest}
+	%a.
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{casser}\textsubscript{prés}, calign=child, calign primary child=2
+			[\textsc{Zoé},edge label={node[midway,above left,font=\footnotesize]{1}}]
+			[\textsc{œuf}\textsubscript{pl,déf},edge label={node[midway,right,font=\footnotesize]{2}}]
+			[destination(\textsc{dans}),edge label={node[midway,above right,font=\footnotesize\itshape]{\textsc{mod}}}
+			[\textsc{bol}\textsubscript{sg,déf},edge label={node[midway,right,font=\footnotesize]{2}}]
+			]
+			]
+		\end{forest}
+		\caption{Traitement comme modifieur}
+	\end{subfigure}%
+	\hfill
+	%b.
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{casser}\textsubscript{prés}, calign=child, calign primary child=2
+			[\textsc{Zoé},edge label={node[midway,above left,font=\footnotesize]{1}}]
+			[\textsc{œuf}\textsubscript{pl,déf},edge label={node[midway,right,font=\footnotesize]{2}}]
+			[\textsc{dans},edge label={node[midway,above right,font=\footnotesize]{3}}
+			[\textsc{bol}\textsubscript{sg,déf},edge label={node[midway,right,font=\footnotesize]{2}}]
+			]
+			]
+		\end{forest}
+		\caption{Traitement comme actant}
+	\end{subfigure}
 \caption{Deux structures syntaxiques syntaxiques possibles pour une construction résultative}
 \end{figure}
 
@@ -1747,44 +2026,58 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 
 \begin{figure}[H]
 %FIGURE 37\label{fig:13-tough}
-%a. livre\_sg, indf -+-> tough-mvt(difficile) -1-> lire\_inf
-\begin{forest} for tree={font=\normalfont}
-	[\textsc{livre}\textsubscript{sg,indéf},name=root
-	[tough-mvt(\textsc{difficile}),name=mvt,edge label={node[midway,right,font=\footnotesize]{+2}}
-	[\textsc{lire}\textsubscript{inf},name=lire,edge label={node[midway,right,font=\footnotesize]{1}}]%
-	]
-	]
-	\draw[->,dashed] (lire) .. controls +(west:3cm) and +(west:3cm) .. (root) node[pos=0.5, left]{\footnotesize 2};
-\end{forest}\hspace{0.5cm}%
-%b. V(tough-mvt(difficile))\_prés …
-\begin{forest} for tree={font=\normalfont}
-	[V(tough-mvt(\textsc{difficile}))\textsubscript{prés}
-	[\textsc{livre}\textsubscript{sg},name=livre,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{+2}}
-	[\textsc{cet},edge label={node[midway,left,font=\footnotesize\itshape]{\textsc{mod}}}]
-	]
-	[\textsc{lire}\textsubscript{inf},name=lire,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{1}}]
-	]
-	\draw[->,dashed] ($(lire)+(-0.125cm,-0.4cm)$) .. controls +(south:0.6cm) and +(south:0.8cm) .. ($(livre)+(0.25cm,-0.4cm)$) node[pos=0.5,below]{\footnotesize 2};
-\end{forest}\\~\\
-%c. ‘difficile’ -1-> ‘lire’ -1-> ‘livre’
-\begin{tikzpicture}[>={Triangle[]},
-	label distance=0pt,
-	node distance=1cm and 1cm,
-	every label/.style={reset shape}]
-	
-	\begin{scope}[nodes={CircleNode}]
-		\node (generique) [label=below:{générique}] {};
-		\node (lire) [above right=of generique,label=above left:{`lire'}] {};
-		\node (difficile) [right=of lire,label=right:{`difficile'}] {};
-		\node (livre) [below right=of lire,label=below:{`livre'}] {};
-	\end{scope}
-	
-	\draw[-{Triangle[]}] (lire) -- (generique) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (lire) -- (livre) node[font=\footnotesize,midway,right] {2};
-	\draw[-{Triangle[]}] (difficile) -- (lire) node[font=\footnotesize,midway,above] {1};
-	
-\end{tikzpicture}
-\caption{\label{fig:13-tough}}
+	%a. livre\_sg, indf -+-> tough-mvt(difficile) -1-> lire\_inf
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[\textsc{livre}\textsubscript{sg,indéf},name=root
+			[tough-mvt(\textsc{difficile}),name=mvt,edge label={node[midway,right,font=\footnotesize]{+2}}
+			[\textsc{lire}\textsubscript{inf},name=lire,edge label={node[midway,right,font=\footnotesize]{1}}]%
+			]
+			]
+			\draw[->,dashed] (lire) .. controls +(west:3cm) and +(west:3cm) .. (root) node[pos=0.5, left]{\footnotesize 2};
+		\end{forest}
+		\caption{Structure syntaxique profonde de a}
+	\end{subfigure}%
+	\hfill
+	%b. V(tough-mvt(difficile))\_prés …
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{forest} for tree={font=\normalfont}
+			[V(tough-mvt(\textsc{difficile}))\textsubscript{prés}
+			[\textsc{livre}\textsubscript{sg},name=livre,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{+2}}
+			[\textsc{cet},edge label={node[midway,left,font=\footnotesize\itshape]{\textsc{mod}}}]
+			]
+			[\textsc{lire}\textsubscript{inf},name=lire,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{1}}]
+			]
+			\draw[->,dashed] ($(lire)+(-0.125cm,-0.4cm)$) .. controls +(south:0.6cm) and +(south:0.8cm) .. ($(livre)+(0.25cm,-0.4cm)$) node[pos=0.5,below]{\footnotesize 2};
+		\end{forest}
+		\caption{Structure syntaxique profonde de b}
+	\end{subfigure}%
+	\vfill
+	%c. ‘difficile’ -1-> ‘lire’ -1-> ‘livre’
+	\begin{subfigure}[h]{\textwidth}
+		\centering
+		\begin{tikzpicture}[>={Triangle[]},
+			label distance=0pt,
+			node distance=1cm and 1cm,
+			every label/.style={reset shape}]
+			
+			\begin{scope}[nodes={CircleNode}]
+				\node (generique) [label=below:{générique}] {};
+				\node (lire) [above right=of generique,label=above left:{`lire'}] {};
+				\node (difficile) [right=of lire,label=right:{`difficile'}] {};
+				\node (livre) [below right=of lire,label=below:{`livre'}] {};
+			\end{scope}
+			
+			\draw[-{Triangle[]}] (lire) -- (generique) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (lire) -- (livre) node[font=\footnotesize,midway,right] {2};
+			\draw[-{Triangle[]}] (difficile) -- (lire) node[font=\footnotesize,midway,above] {1};
+			
+		\end{tikzpicture}
+		\caption{Structure sémantique commune}
+	\end{subfigure}
+\caption{Structures pour le tough-movement\label{fig:13-tough}}
 \end{figure}
 
 \corrigé{8} « \textit{On ne doit pas mentir.} » n’est pas la négation sémantique de « \textit{On doit mentir.} ». Celle-ci serait plutôt exprimée par « \textit{On n’est pas obligé de mentir.} » ou « \textit{On peut ne pas mentir.} ». En fait, « \textit{On ne doit pas mentir.} » est synonyme de « \textit{On doit ne pas mentir.} ». Il y a donc bien un apparent phénomène de montée de la négation : la négation qui porte sémantiquement sur \textsc{mentir} se trouve attachée syntaxiquement au verbe recteur \textsc{devoir}. \citet{tesniere1959elements} notait déjà ce phénomène auquel il consacre son chapitre 89 intitulé \textit{Anticipation de la négation}. Plutôt qu’un phénomène syntaxique qui verrait véritablement une montée dans l’interface sémantique-syntaxe, on considère plutôt qu’il s’agit d’un phénomène de figement lexical associé au verbe recteur qui combiné à la négation prend un sens particulier (voir par exemple \cite{forest1994negation}). On retrouve ce phénomène dans de nombreuses langues. Cet exemple de l’italien montre un exemple intéressant de contraste avec le français :
