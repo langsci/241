@@ -551,9 +551,7 @@ Un dernier exemple de sémantème caché est celui des conversions massif-compta
 \caption{Structures syntaxiques profondes pour la conversion massif-comptable\label{fig:13-vin}}
 \end{figure}
 
-%---REMOVED-ONLY-TEMPORARILY
-%\loupe[sec:13-packaging]{Structure communicative et syntaxe profonde}
-%{
+\loupe[sec:13-packaging]{Structure communicative et syntaxe profonde}{%
 La \terme{structure communicative}, encore appelée \hi{information packaging} en anglais, est une composante de la représentation sémantique qui se superpose à la structure prédicative pour indiquer comment l’information doit être communiquée (voir l’\encadref{sec:1.2.4} sur \textit{Les composantes du sens}). La principale composante de la structure communicative est la partition thème-rhème : le \terme{rhème} est \hi{ce qu’on dit}, l’information qui est réellement communiquée, tandis que le \terme{thème} désigne \hi{ce dont on parle}, ce à propos de quoi le rhème communique une information.  
 
 Nous avons vu que, dans les langues dites à ordre libre, l’ordre des mots peut être utilisé pour encoder la structure communicative (avec le support de la prosodie). Par contre, dans les langues à ordre plus strict, comme le français, il existe des constructions dédiées pour exprimer la structure communicative. Nous en avons introduit deux dans la \sectref{sec:13-unites} sur \textit{Les unités (potentielles) de la syntaxe profonde} : le clivage et la dislocation. Le clivage est l’expression d’un \terme{rhème focalisé}, c’est-à-dire un rhème que l’on souhaite contraster avec les informations concurrentes. A l’inverse, la dislocation gauche marque un \terme{thème focalisé}, indiquant que c’est à propos de cet élément et pas d’un autre que l’information est communiquée.
@@ -568,7 +566,7 @@ Nous avons fait le choix d’indiquer explicitement les constructions qui sont d
 \ea \textit{Excellent, ce café !}
 \ex \textit{Ce café est excellent.}\z\z
 
-\begin{figure}
+\begin{figure}[H]
 % Figure 14
 	% a. cet <-MOD- disloc(café) <-1- excellent
 	\begin{subfigure}[b]{0.5\textwidth}
@@ -598,8 +596,7 @@ Nous avons fait le choix d’indiquer explicitement les constructions qui sont d
 \caption{Structures syntaxiques profondes avec et sans dislocation\label{fig:13-excellent}}
 \end{figure}
 
-A la différence du français, dans d’autres langues, comme les langues slaves, la structure communicative ne déclenche pas de modifications de la structure syntaxique proprement dite, mais va être réalisée par des variations dans l’ordre des mots (voir l’\encadref{sec:3.5.23} sur \textit{Les langues dites à ordre libre}). On peut considérer que, dans ce cas, la structure communicative n’est pas consommée par l’interface sémantique-syntaxe et qu’elle devra être prive en compte directement par le module topologique. On peut donc décider de ne pas la mentionner dans la structure syntaxique profonde. C’est ce qu’on fera dans un modèle distribué où les différents niveaux de représentation peuvent communiquer entre eux et où la grammaire topologique peut accéder à des informations de niveau sémantique. Dans un modèle stratifié, la structure communicative devra être recopiée aux différents niveaux de représentation jusqu’à ce qu’elle soit consommée et elle apparaîtra donc dans les représentations syntaxiques profonde et de surface.
-%}---REMOVED-ONLY-TEMPORARILY
+A la différence du français, dans d’autres langues, comme les langues slaves, la structure communicative ne déclenche pas de modifications de la structure syntaxique proprement dite, mais va être réalisée par des variations dans l’ordre des mots (voir l’\encadref{sec:3.5.23} sur \textit{Les langues dites à ordre libre}). On peut considérer que, dans ce cas, la structure communicative n’est pas consommée par l’interface sémantique-syntaxe et qu’elle devra être prive en compte directement par le module topologique. On peut donc décider de ne pas la mentionner dans la structure syntaxique profonde. C’est ce qu’on fera dans un modèle distribué où les différents niveaux de représentation peuvent communiquer entre eux et où la grammaire topologique peut accéder à des informations de niveau sémantique. Dans un modèle stratifié, la structure communicative devra être recopiée aux différents niveaux de représentation jusqu’à ce qu’elle soit consommée et elle apparaîtra donc dans les représentations syntaxiques profonde et de surface.}
 
 \section{Structure prédicative des sémantèmes}
 Les sens linguistiques fonctionnent comme des prédicats qui prennent d’autres sens comme arguments. Lorsque deux sémantèmes sont combinés, nous constatons que l’un des deux est l’argument de l’autre. Cette propriété, que nous ne pouvons pas démontrer, nous permet de postuler la structure prédicative des différents sémantèmes. 
