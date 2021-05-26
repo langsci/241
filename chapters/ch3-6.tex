@@ -38,18 +38,18 @@ Dans l’exemple \REF{ex:jambe}, phraseme{tenir la jambe} est un phraseme (voir 
 			
 			\draw[-{Triangle[]}] (tenirlajambe) -- (zoe) node[font=\footnotesize,midway,anchor=south east, inner sep=1pt] {1};
 			\draw[-{Triangle[]}] (durer) -- (tenirlajambe) node[font=\footnotesize,midway,anchor=base east] {1};
-			\draw[-{Triangle[]}] (durer) -- (heure) node[font=\footnotesize,midway,right] {2};
+			\draw[-{Triangle[]}] (durer) -- (heure) node[font=\footnotesize,midway,anchor=base west] {2};
 			\draw[-{Triangle[]}] (tenirlajambe) -- (prof) node[font=\footnotesize,midway,anchor=base west] {2};
 			\draw[-{Triangle[]}] (indef) -- (heure) node[font=\footnotesize,midway,anchor=base west] {1};
 			\draw[-{Triangle[]}] (singulier1) -- (prof) node[font=\footnotesize,midway,left] {1};
 			\draw[-{Triangle[]}] (def) -- (prof) node[font=\footnotesize,midway,right] {1};
-			\draw[-{Triangle[]}] (singulier0) -- (heure) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (singulier0) -- (heure) node[font=\footnotesize,midway,anchor=base east] {1};
 		\end{tikzpicture}
 		\caption{Structure sémantique}
 	\end{subfigure}%
 	\vfill
 	\begin{subfigure}[b]{0.5\textwidth}
-		\begin{forest} for tree={font=\normalfont}
+		\begin{forest} for tree={font=\normalfont, l sep=6.5mm}
 			[\phraseme{tenir le jambe}\textsubscript{passé},calign=child,calign primary child=2
 				[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
 				[\textsc{prof}\textsubscript{sg,déf},edge label={node[midway,right,font=\footnotesize]{2}}]
@@ -62,7 +62,7 @@ Dans l’exemple \REF{ex:jambe}, phraseme{tenir la jambe} est un phraseme (voir 
 	\end{subfigure}%
 	\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
-		\begin{forest} for tree={font=\normalfont}
+		\begin{forest} for tree={font=\normalfont, l sep=6.5mm}
 			[\textsc{avoir}\textsubscript{ind,prés,3,sg}
 				[\textsc{Zoé},edge label={node[midway,above left=-1ex,font=\footnotesize]{sujet}}]
 				[\textsc{tenir}\textsubscript{part,passé},edge label={node[midway,above right=-1ex,font=\footnotesize]{comp{\NoAutoSpacing :}aux}},calign=child,calign primary child=2
@@ -135,7 +135,7 @@ Ce sont les \hi{unités grammaticales} ou \hi{grammies}. Une grammie peut corres
 \ea\label{ex:accompli} \textit{J’ai peur d’avoir répondu trop vite.}\z
 \begin{figure}
 \begin{forest} for tree={font=\normalfont}
-	[$\ulcorner$\textsc{avoir peur}$\urcorner$\textsubscript{présent}
+	[\phraseme{avoir peur}¸\textsubscript{présent}
 		[\textsc{moi},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
 		[\textsc{répondre}\textsubscript{accompli},edge label={node[midway, above right=-0.5ex,font=\footnotesize]{2}}
 			[\textsc{vite},edge label={node[midway, right,font=\footnotesize\itshape]{\textsc{mod}}}
@@ -174,7 +174,7 @@ Les collocatifs sont des sémantèmes, mais leur choix est contraint par la base
 	\begin{subfigure}[b]{0.5\textwidth}
 		\begin{tikzpicture}[>={Triangle[]},
 			label distance=0pt,
-			node distance=1cm and 1cm,
+			node distance=10mm,
 			every label/.style={reset shape}]
 			
 			\begin{scope}[nodes={CircleNode}]
@@ -342,7 +342,7 @@ Certains pronoms résultent du dédoublement d’un nœud sémantique, comme le 
 \begin{figure}
 \begin{tikzpicture}[>={Triangle[]},
 	label distance=0pt,
-	node distance=1cm and 1cm,
+	node distance=10mm,
 	every label/.style={reset shape}]
 	
 	\begin{scope}[nodes={CircleNode}]
@@ -410,7 +410,7 @@ Nous donnons dans la figure \ref{fig:13-fumer} les représentations sémantique 
 		\centering
 		\begin{tikzpicture}[>={Triangle[]},
 			label distance=0pt,
-			node distance=1cm and 1cm,
+			node distance=10mm,
 			every label/.style={reset shape}]
 			
 			\begin{scope}[nodes={CircleNode}]
@@ -479,17 +479,19 @@ Le grammème de participe présent, lui, est utilisé dans deux emplois en fran�
 Nous appelons \textsc{sémantèmes cachés} des sens qui naissent d’une configuration particulière sans être réellement réalisés par un syntaxème. Notre premier exemple est illustré par une construction particulière du russe relevée par \cite[141]{melcuk1988dependency}. En russe, le numéral se place normalement avant le nom. Il est néanmoins possible de placer le numéral après le nom, mais cela change le sens : le numéral est alors interprété comme une valeur approximative. C’est donc l’ordre des mots qui est signifiant. 
 
 \ea\label{ex:13-approx}  
-\ea \textit{Ja polučil desjat’ rublej.}\\ ‘J’ai reçu dix roubles.’
-\ex \textit{Ja polučil rublej desjat’.}\\ ‘J’ai reçu environ dix roubles.’\z\z
+\ea \textit{Ja polučil desjat’ rublej.}\\ 
+\glt ‘J’ai reçu dix roubles.’
+\ex \textit{Ja polučil rublej desjat’.}\\ 
+\glt ‘J’ai reçu environ dix roubles.’\z\z
 
 Nous indiquons cette valeur par un sémantème « approx », qui se combine avec le numéral (voir figure \ref{fig:13-approx}). Plus généralement, nous représentons les sémantèmes cachés comme des sémantèmes opérationnels s’appliquant à un autre sémantème.
 
 \begin{figure}
 % FIGURE 11
 \begin{forest} for tree={font=\normalfont}
-	[\textsc{polučil}\textsubscript{accompli}
+	[\textsc{polučit'}\textsubscript{accompli,passé}
 	[\textsc{ja},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-	[\textsc{rublej}\textsubscript{pl},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
+	[\textsc{rubl'}\textsubscript{pl},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
 	[approx(\textsc{desjat'}),edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}]
 	]
 	]
@@ -633,7 +635,7 @@ Dans le représentation syntaxique profonde de \REF{ex:13-soeur}a, nous indiquon
 		\centering
 		\begin{tikzpicture}[>={Triangle[]},
 			label distance=0pt,
-			node distance=1cm and 1cm,
+			node distance=10mm,
 			every label/.style={reset shape}]
 			
 			\begin{scope}[nodes={CircleNode}]
@@ -654,7 +656,7 @@ Dans le représentation syntaxique profonde de \REF{ex:13-soeur}a, nous indiquon
 		\centering
 		\begin{tikzpicture}[>={Triangle[]},
 			label distance=0pt,
-			node distance=1cm and 1cm,
+			node distance=10mm,
 			every label/.style={reset shape}]
 			
 			\begin{scope}[nodes={CircleNode}]
@@ -712,7 +714,7 @@ On peut considérer, comme l’on fait les logiciens depuis au moins \citet{freg
 		\centering
 		\begin{tikzpicture}[>={Triangle[]},
 			label distance=0pt,
-			node distance=1cm and 1cm,
+			node distance=10mm,
 			every label/.style={reset shape}]
 			
 			\begin{scope}[nodes={CircleNode}]
@@ -1050,7 +1052,7 @@ La figure \ref{fig:13-GD1} donne l’ensemble des règles nécessaires à la pro
 	\end{scope}
 	
 	\begin{scope}[nodes={DiamondNode},node distance=0.1cm and 0.1cm]
-		\node (ind) [below right=of A,label=right:{ind}] {};
+		\node (ind) [below right=of A,label=right:{\footnotesize ind}] {};
 	\end{scope}
 	
 	\draw [->] (nil) -- (A) node[font=\footnotesize,midway,left] {root};
@@ -1070,8 +1072,8 @@ La figure \ref{fig:13-GD1} donne l’ensemble des règles nécessaires à la pro
 	\end{scope}
 	
 	\begin{scope}[nodes={DiamondNode},node distance=0.1cm and 0.1cm]
-		\node (indpres) [fill,right=of avoir,label=right:{ind.prés}] {};
-		\node (partpasse) [fill,below right=of B,label=right:{part-passé}] {};
+		\node (indpres) [fill,right=of avoir,label=right:{\footnotesize ind.prés}] {};
+		\node (partpasse) [fill,below right=of B,label=right:{\footnotesize part-passé}] {};
 	\end{scope}
 	
 	\draw (avoir) -- (A) node[font=\footnotesize,midway,left] {suj};
@@ -1096,8 +1098,8 @@ every label/.style={reset shape}]
 \end{scope}
 
 \begin{scope}[nodes={DiamondNode},node distance=0.1cm and 0.1cm]
-\node (def) [fill,below right=of jambe,label=right:{déf}] {};
-\node (nil) [ right=of tenir, label=right:{[mode]]}] {};
+\node (def) [fill,below right=of jambe,label=right:{\footnotesize déf}] {};
+\node (nil) [ right=of tenir, label=right:{\footnotesize [mode]}] {};
 \end{scope}
 
 \draw (tenir) -- (A) node[font=\footnotesize,midway,left] {suj};
@@ -1106,7 +1108,7 @@ every label/.style={reset shape}]
 \draw (tenir) -- (a) node[font=\footnotesize,midway,right] {coi};
 \draw (a) -- (B) node[font=\footnotesize,midway,right] {comp};
 
-\gkcaption{$\ulcorner$\textsc{tenir la jambe}$\urcorner$}
+\gkcaption{\phraseme{tenir la jambe}}
 
 \end{tikzpicture}
 \begin{tikzpicture}[framed,
@@ -1131,7 +1133,7 @@ every label/.style={reset shape}]
 	\end{scope}
 	
 	\begin{scope}[nodes={DiamondNode},node distance=0.1cm and 0.1cm]
-		\node (nil) [below right=of prof, label=right:{[déf]]}] {};
+		\node (nil) [below right=of prof, label=right:{\footnotesize [déf]}] {};
 	\end{scope}
 	
 	\gkcaption{\textsc{prof}}
@@ -1148,7 +1150,7 @@ every label/.style={reset shape}]
 	\end{scope}
 	
 	\begin{scope}[nodes={DiamondNode},node distance=0.1cm and 0.1cm]
-		\node (def) [fill,below right=of A,label=right:{déf}] {};
+		\node (def) [fill,below right=of A,label=right:{\footnotesize déf}] {};
 	\end{scope}
 	
 	\draw (A) -- (le) node[font=\footnotesize,midway,left] {dét};
@@ -1166,7 +1168,7 @@ every label/.style={reset shape}]
 	\end{scope}
 	
 	\begin{scope}[nodes={DiamondNode},node distance=0.1cm and 0.1cm]
-		\node (nil) [below right=of heure, label=right:{[déf]]}] {};
+		\node (nil) [below right=of heure, label=right:{\footnotesize [déf]}] {};
 	\end{scope}
 	
 	\gkcaption{\textsc{heure}}
@@ -1183,7 +1185,7 @@ every label/.style={reset shape}]
 	\end{scope}
 	
 	\begin{scope}[nodes={DiamondNode},node distance=0.1cm and 0.1cm]
-		\node (indef) [fill,below right=of A,label=right:{indéf}] {};
+		\node (indef) [fill,below right=of A,label=right:{\footnotesize indéf}] {};
 	\end{scope}
 	
 	\draw (A) -- (un) node[font=\footnotesize,midway,left] {dét};
@@ -1240,11 +1242,11 @@ La structure dérivée qui résulte de la combinaison des 9 structures élément
 	\end{scope}
 	
 	\begin{scope}[nodes={DiamondNode},node distance=0.1cm and 0.1cm]
-		\node (indpres) [fill,right=of avoir,label=right:{ind.prés}] {};
-		\node (partpasse) [fill,right=of tenir,label=right:{part-passé}] {};
-		\node (def0) [fill,below right=of jambe,label=right:{déf}] {};
-		\node (def1) [fill,below right=of prof,label=right:{déf}] {};
-		\node (indef) [fill,below right=of heure,label=right:{indéf}] {};
+		\node (indpres) [fill,right=of avoir,label=right:{\footnotesize ind.prés}] {};
+		\node (partpasse) [fill,right=of tenir,label=right:{\footnotesize part-passé}] {};
+		\node (def0) [fill,below right=of jambe,label=right:{\footnotesize déf}] {};
+		\node (def1) [fill,below right=of prof,label=right:{\footnotesize déf}] {};
+		\node (indef) [fill,below right=of heure,label=right:{\footnotesize indéf}] {};
 	\end{scope}
 	
 	\draw (avoir) -- (zoe) node[font=\footnotesize,midway,left] {suj};
@@ -1269,10 +1271,10 @@ La façon dont les structures élémentaires se sont combinées les unes avec le
 \begin{figure}[H]
 %Figure 23
 \begin{forest} for tree={font=\normalfont}
-	[$\ulcorner$\textsc{tenir la jambe}$\urcorner$\textsubscript{passé},calign=child,calign primary child=2
+	[\phraseme{tenir la jambe}\textsubscript{passé},calign=child,calign primary child=2
 	[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}},edge+={->}]
 	[\textsc{prof}\textsubscript{def},edge label={node[midway,left,font=\footnotesize]{2}},edge+={->}]
-	[\textsc{pendant},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{1}},edge+={<-}
+	[\textsc{pendant},edge path={\noexpand\path[\forestoption{edge}]($(!u.parent anchor)+(2pt,0pt)$)--(.child anchor)\forestoption{edge label};},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{1}},edge+={<-}
 	[\textsc{heure}\textsubscript{indéf},edge label={node[midway,right,font=\footnotesize]{2}},edge+={->}]
 	]
 	]
@@ -1292,9 +1294,9 @@ Ces deux énoncés n’ont pas la même interprétation a priori. Dans le premie
 
 \ea\label{ex:13-scope}
 \ea Pour tout étudiant $x$, il existe un exercice $y$ tel que $x$ a résolu $y$.\\
-tout($x$, étudiant($x$), un($y$, exercice($y$), résoudre($x,y$)))
+\exi{a'.} tout($x$, étudiant($x$), un($y$, exercice($y$), résoudre($x,y$)))
 \ex Il existe un exercice $y$ tel que, pour tout étudiant $x$, $x$ a résolu $y$.\\
-un($y$, exercice($y$), tout($x$, étudiant($x$), résoudre($x,y$)))\z\z
+\exi{b'.}un($y$, exercice($y$), tout($x$, étudiant($x$), résoudre($x,y$)))\z\z
 
 Bien que cette modélisation soit aujourd’hui largement dominante, elle nous semble à la fois inutilement compliquée et non totalement satisfaisante. Pour comprendre pourquoi la notion de portée ne fonctionne pas complètement, considérons l’exemple suivant.
 
@@ -1420,7 +1422,7 @@ La structure sémantique de ces paraphrases, qui a été donnée dans la figure 
 		\centering
 		\begin{tikzpicture}[>={Triangle[]},
 			label distance=0pt,
-			node distance=1cm and 1cm,
+			node distance=10mm,
 			every label/.style={reset shape}]
 			
 			\begin{scope}[nodes={CircleNode}]
@@ -1443,7 +1445,7 @@ La structure sémantique de ces paraphrases, qui a été donnée dans la figure 
 		\centering
 		\begin{tikzpicture}[>={Triangle[]},
 			label distance=0pt,
-			node distance=1cm and 1cm,
+			node distance=10mm,
 			every label/.style={reset shape}]
 			
 			\begin{scope}[nodes={CircleNode}]
@@ -1602,7 +1604,7 @@ La construction causative en \REF{ex:13-aux}b et c illustre un cas possible de m
 		\centering
 		\begin{tikzpicture}[>={Triangle[]},
 			label distance=0pt,
-			node distance=1cm and 1cm,
+			node distance=10mm,
 			every label/.style={reset shape}]
 			
 			\begin{scope}[nodes={CircleNode}]
@@ -1887,7 +1889,7 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 		\centering
 		\begin{tikzpicture}[>={Triangle[]},
 			label distance=0pt,
-			node distance=1cm and 1cm,
+			node distance=10mm,
 			every label/.style={reset shape}]
 			
 			\begin{scope}[nodes={CircleNode}]
@@ -1915,7 +1917,7 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 		\begin{forest} for tree={font=\normalfont}
 			[\textsc{falloir}\textsubscript{présent}
 			[vocatif(\textsc{Zoé}),edge label={node[midway,above left=-0.5ex,font=\footnotesize\itshape]{\textsc{mod}}}]
-			[$\ulcorner$\textsc{y aller}$\urcorner$,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{1}}
+			[\phraseme{y aller},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{1}}
 			[\textsc{on},edge label={node[midway,right,font=\footnotesize]{1}}]
 			]
 			]
@@ -1932,7 +1934,7 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 %massif(œuf)\_indéf <-1- \phraseme{il y avoir}\_présent -2-> sur -2-> chemise\_déf -MOD-> possessif(moi)
 %							(œuf) <..1..
 \begin{forest} for tree={font=\normalfont}
-	[$\ulcorner$\textsc{il y avoir}$\urcorner$\textsubscript{prés}
+	[\phraseme{il y avoir}\textsubscript{prés}
 	[massif(\textsc{œuf})\textsubscript{indéf},name=oeuf,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
 	[\textsc{sur}, name=sur,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
 	[\textsc{chemise},edge label={node[midway,right,font=\footnotesize]{2}}
@@ -2057,7 +2059,7 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 		\centering
 		\begin{tikzpicture}[>={Triangle[]},
 			label distance=0pt,
-			node distance=1cm and 1cm,
+			node distance=10mm,
 			every label/.style={reset shape}]
 			
 			\begin{scope}[nodes={CircleNode}]
