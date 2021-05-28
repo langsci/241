@@ -1885,34 +1885,31 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 \begin{figure}[H]
 %Figure 33 
 	%a.	‘Zoé’ <-2- déclaration -1-> ‘falloir’ -1-> ‘y aller’ -1-> ‘on’
-	\begin{subfigure}[h]{\textwidth}
-		\centering
+	\begin{subfigure}[b]{.5\linewidth}%
+		\centering%
 		\begin{tikzpicture}[>={Triangle[]},
 			label distance=0pt,
-			node distance=10mm,
-			every label/.style={reset shape}]
+			node distance=10mm and 10mm,
+			every label/.style={reset shape,font=\strut}]
 			
 			\begin{scope}[nodes={CircleNode}]
 				\node (moi) [label=below:{`moi'}] {};
 				\node (declarer) [above right=of moi,label=above:{`déclarer'}] {};
-				\node (zoe) [below=of declarer,label=below:{`Zoé'}] {};
+				\node (zoe) [below=9.333mm of declarer,label=below:{`Zoé'}] {};
 				\node (falloir) [below right=of declarer,label=below:{`falloir'}] {};
 				\node (yaller) [above right=of falloir,label=above:{`y aller'}] {};
 				\node (on) [below right=of yaller,label=below:{`on'}] {};
 			\end{scope}
-			
 			\draw[-{Triangle[]}] (declarer) -- (moi) node[font=\footnotesize,midway,left] {1};
 			\draw[-{Triangle[]}] (declarer) -- (zoe) node[font=\footnotesize,midway,right] {3};
 			\draw[-{Triangle[]}] (declarer) -- (falloir) node[font=\footnotesize,midway,right] {2};
 			\draw[-{Triangle[]}] (falloir) -- (yaller) node[font=\footnotesize,midway,right] {1};
 			\draw[-{Triangle[]}] (yaller) -- (on) node[font=\footnotesize,midway,right] {1};
-			
 		\end{tikzpicture}
 		\caption{Structure sémantique}
 	\end{subfigure}%
-	\vfill
 	%b.	vocatif(Zoé) <-MOD- falloir\_présent -1-> \phraseme{y aller} -1-> on
-	\begin{subfigure}[h]{\textwidth}
+	\begin{subfigure}[b]{.5\linewidth}
 		\centering
 		\begin{forest} for tree={font=\normalfont}
 			[\textsc{falloir}\textsubscript{présent}
@@ -1923,7 +1920,7 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 			]
 		\end{forest}
 		\caption{Structure syntaxique profonde}
-	\end{subfigure}
+	\end{subfigure}%
 \caption{Structures pour un vocatif}
 \end{figure}
 
