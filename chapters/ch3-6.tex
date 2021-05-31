@@ -1292,8 +1292,8 @@ La façon dont les structures élémentaires se sont combinées les unes avec le
 
 Ces deux énoncés n’ont pas la même interprétation a priori. Dans le premier, l’interprétation privilégiée est que chaque étudiant a résolu un exercice, sans que ce soit a priori le même exercice, tandis que dans le deuxième, le même exercice a été résolu par l’ensemble des étudiants. Cette différence est généralement modélisée en termes de portée. On dit qu’un élément B est dans la \terme{portée} d’un élément A, lorsque l’interprétation de B est fonction de A. En \REF{ex:13-portée}a, on considère que ‘un’ est dans la portée de ‘tous’ lorsqu’on considère que l’exercice résolu est propre à chaque étudiant. Dans ce type de modélisation, les quantifieurs ‘tous’ et ‘un’ (appelés respectivement le quantifieur universel et le quantifieur existentiel) se voient associer deux arguments : un premier argument qui est le nom auquel ils sont combinés syntaxiquement et qu’on appelle leur \terme{restriction} et un deuxième argument qu’on appelle leur portée et qui comprend une prédication. On obtient alors les description sémantique suivantes pour les énoncés \REF{ex:13-portée}a et b, données sous forme textuelle en \REF{ex:13-scope}a et b, puis sous la forme d’une formule où chaque prédicat est suivi de la liste de ses arguments en \REF{ex:13-portée}a’et b’.
 
-\iffalse % left out as it throws an error (even though the syntax is canonical)
 \begin{exe}
+    \sn
 	\begin{xlist}[b'.]
 		\exi{a.} Pour tout étudiant $x$, il existe un exercice $y$ tel que $x$ a résolu $y$.
 		\exi{a'.} tout($x$, étudiant($x$), un($y$, exercice($y$), résoudre($x,y$)))
@@ -1301,7 +1301,6 @@ Ces deux énoncés n’ont pas la même interprétation a priori. Dans le premie
 		\exi{b'.} un($y$, exercice($y$), tout($x$, étudiant($x$), résoudre($x,y$)))
 	\end{xlist}	
 \end{exe}
-\fi
 
 Bien que cette modélisation soit aujourd’hui largement dominante, elle nous semble à la fois inutilement compliquée et non totalement satisfaisante. Pour comprendre pourquoi la notion de portée ne fonctionne pas complètement, considérons l’exemple suivant.
 
