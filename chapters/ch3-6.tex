@@ -47,7 +47,7 @@ Dans l’exemple \REF{ex:jambe}, phraseme{tenir la jambe} est un phraseme (voir 
 		\end{tikzpicture}
 		\caption{Structure sémantique}
 	\end{subfigure}%
-	\vfill
+	\bigskip\\%
 	\begin{subfigure}[b]{0.5\textwidth}
 		\begin{forest} for tree={font=\normalfont, l sep=6.5mm}
 			[\phraseme{tenir le jambe}\textsubscript{passé},calign=child,calign primary child=2
@@ -185,10 +185,10 @@ Les collocatifs sont des sémantèmes, mais leur choix est contraint par la base
 				\node (moi) [below right=of peur,label=below right:{`moi'}] {};
 			\end{scope}
 			
-			\draw[-{Triangle[]}] (causer) -- (zoe) node[font=\footnotesize,midway,left] {1};
-			\draw[-{Triangle[]}] (causer) -- (peur) node[font=\footnotesize,midway,right] {2};
-			\draw[-{Triangle[]}] (intense) -- (peur) node[font=\footnotesize,midway,left] {1};
-			\draw[-{Triangle[]}] (peur) -- (moi) node[font=\footnotesize,midway,right] {1};
+			\draw[-{Triangle[]}] (causer) -- (zoe) node[font=\footnotesize,midway,anchor=base east] {1};
+			\draw[-{Triangle[]}] (causer) -- (peur) node[font=\footnotesize,midway,anchor=base west] {2};
+			\draw[-{Triangle[]}] (intense) -- (peur) node[font=\footnotesize,midway,anchor=base east] {1};
+			\draw[-{Triangle[]}] (peur) -- (moi) node[font=\footnotesize,midway,anchor=base west] {1};
 			
 		\end{tikzpicture}
 		\caption{Structure sémantique}
@@ -351,8 +351,8 @@ Certains pronoms résultent du dédoublement d’un nœud sémantique, comme le 
 		\node (venir) [below right=of penser, label=below right:{`venir'}] {};
 	\end{scope}
 	
-	\draw[-{Triangle[]}] (penser) -- (zoe) node[font=\footnotesize,midway,left] {1};
-	\draw[-{Triangle[]}] (penser) -- (venir) node[font=\footnotesize,midway,right] {2};
+	\draw[-{Triangle[]}] (penser) -- (zoe) node[font=\footnotesize,midway,,anchor=base east] {1};
+	\draw[-{Triangle[]}] (penser) -- (venir) node[font=\footnotesize,midway,,anchor=base west] {2};
 	\draw[-{Triangle[]}] (venir) -- (zoe) node[font=\footnotesize,midway,above] {1};
 	
 \end{tikzpicture}
@@ -461,7 +461,7 @@ Le grammème de participe présent, lui, est utilisé dans deux emplois en fran�
 	\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
 		\centering
-		\begin{forest} for tree={font=\normalfont}
+		\begin{forest} for tree={font=\normalfont, l sep=6.5mm}
 			[\textsc{aller}\textsubscript{passé},calign=child,calign primary child=2
 				[\textsc{Ali},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
 				[\textsc{poste}\textsubscript{sg,déf},edge label={node[midway,left,font=\footnotesize]{2}}]
@@ -644,8 +644,8 @@ Dans le représentation syntaxique profonde de \REF{ex:13-soeur}a, nous indiquon
 				\node (luce) [below right=of soeur,label=below:{`Luce'}] {};
 			\end{scope}
 			
-			\draw[-{Triangle[]}] (soeur) -- (zoe) node[font=\footnotesize,midway,left] {1};
-			\draw[-{Triangle[]}] (soeur) -- (luce) node[font=\footnotesize,midway,right] {2};
+			\draw[-{Triangle[]}] (soeur) -- (zoe) node[font=\footnotesize,midway,,anchor=base east] {1};
+			\draw[-{Triangle[]}] (soeur) -- (luce) node[font=\footnotesize,midway,,anchor=base west] {2};
 			
 		\end{tikzpicture}
 		\caption{Structure de \REF{ex:13-soeur}a}
@@ -727,17 +727,17 @@ On peut considérer, comme l’on fait les logiciens depuis au moins \citet{freg
 				\node (solaire) [above right=of systeme,label=above right:{`solaire'}] {};
 			\end{scope}
 			
-			\draw[-{Triangle[]}] (etre) -- (mars) node[font=\footnotesize,midway,left] {1};
-			\draw[-{Triangle[]}] (etre) -- (planete) node[font=\footnotesize,midway,right] {2};
-			\draw[-{Triangle[]}] (troisieme) -- (planete) node[font=\footnotesize,midway,right] {1};
-			\draw[-{Triangle[]}] (appartenir) -- (planete) node[font=\footnotesize,midway,left] {1};
-			\draw[-{Triangle[]}] (appartenir) -- (systeme) node[font=\footnotesize,midway,right] {2};
-			\draw[-{Triangle[]}] (solaire) -- (systeme) node[font=\footnotesize,midway,left] {1};
+			\draw[-{Triangle[]}] (etre) -- (mars) node[font=\footnotesize,midway,anchor=base east] {1};
+			\draw[-{Triangle[]}] (etre) -- (planete) node[font=\footnotesize,midway,anchor=base west] {2};
+			\draw[-{Triangle[]}] (troisieme) -- (planete) node[font=\footnotesize,midway,anchor=base west] {1};
+			\draw[-{Triangle[]}] (appartenir) -- (planete) node[font=\footnotesize,midway,anchor=base east] {1};
+			\draw[-{Triangle[]}] (appartenir) -- (systeme) node[font=\footnotesize,midway,anchor=base west] {2};
+			\draw[-{Triangle[]}] (solaire) -- (systeme) node[font=\footnotesize,midway,anchor=base east] {1};
 			
 		\end{tikzpicture}
 		\caption{Structure sémantique}
 	\end{subfigure}%
-	\vfill
+	\bigskip\\%
 	%b. Mars <-1- être\_présent -2-> planète\_sg, déf -MOD-> de -2-> système -MOD-> solaire
 	\begin{subfigure}[h]{\textwidth}
 		\centering
@@ -1270,7 +1270,7 @@ La façon dont les structures élémentaires se sont combinées les unes avec le
 
 \begin{figure}[H]
 %Figure 23
-\begin{forest} for tree={font=\normalfont}
+\begin{forest} for tree={font=\normalfont, l sep=6.5mm}
 	[\phraseme{tenir la jambe}\textsubscript{passé},calign=child,calign primary child=2
 	[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}},edge+={->}]
 	[\textsc{prof}\textsubscript{def},edge label={node[midway,left,font=\footnotesize]{2}},edge+={->}]
@@ -1292,11 +1292,16 @@ La façon dont les structures élémentaires se sont combinées les unes avec le
 
 Ces deux énoncés n’ont pas la même interprétation a priori. Dans le premier, l’interprétation privilégiée est que chaque étudiant a résolu un exercice, sans que ce soit a priori le même exercice, tandis que dans le deuxième, le même exercice a été résolu par l’ensemble des étudiants. Cette différence est généralement modélisée en termes de portée. On dit qu’un élément B est dans la \terme{portée} d’un élément A, lorsque l’interprétation de B est fonction de A. En \REF{ex:13-portée}a, on considère que ‘un’ est dans la portée de ‘tous’ lorsqu’on considère que l’exercice résolu est propre à chaque étudiant. Dans ce type de modélisation, les quantifieurs ‘tous’ et ‘un’ (appelés respectivement le quantifieur universel et le quantifieur existentiel) se voient associer deux arguments : un premier argument qui est le nom auquel ils sont combinés syntaxiquement et qu’on appelle leur \terme{restriction} et un deuxième argument qu’on appelle leur portée et qui comprend une prédication. On obtient alors les description sémantique suivantes pour les énoncés \REF{ex:13-portée}a et b, données sous forme textuelle en \REF{ex:13-scope}a et b, puis sous la forme d’une formule où chaque prédicat est suivi de la liste de ses arguments en \REF{ex:13-portée}a’et b’.
 
-\ea\label{ex:13-scope}
-\ea Pour tout étudiant $x$, il existe un exercice $y$ tel que $x$ a résolu $y$.\\
-\exi{a'.} tout($x$, étudiant($x$), un($y$, exercice($y$), résoudre($x,y$)))
-\ex Il existe un exercice $y$ tel que, pour tout étudiant $x$, $x$ a résolu $y$.\\
-\exi{b'.}un($y$, exercice($y$), tout($x$, étudiant($x$), résoudre($x,y$)))\z\z
+\iffalse % left out as it throws an error (even though the syntax is canonical)
+\begin{exe}
+	\begin{xlist}[b'.]
+		\exi{a.} Pour tout étudiant $x$, il existe un exercice $y$ tel que $x$ a résolu $y$.
+		\exi{a'.} tout($x$, étudiant($x$), un($y$, exercice($y$), résoudre($x,y$)))
+		\exi{b.} Il existe un exercice $y$ tel que, pour tout étudiant $x$, $x$ a résolu $y$.
+		\exi{b'.} un($y$, exercice($y$), tout($x$, étudiant($x$), résoudre($x,y$)))
+	\end{xlist}	
+\end{exe}
+\fi
 
 Bien que cette modélisation soit aujourd’hui largement dominante, elle nous semble à la fois inutilement compliquée et non totalement satisfaisante. Pour comprendre pourquoi la notion de portée ne fonctionne pas complètement, considérons l’exemple suivant.
 
@@ -1324,7 +1329,7 @@ L’ancrage ne fait pas à notre avis partie de la structure prédicative, mais 
 		\end{forest}
 		\caption{Structure de \REF{ex:13-portée}a}
 	\end{subfigure}%
-	\vfill
+	\bigskip\\%
 	%b. tout <-MOD- étudiant\_pl, déf <-2- résoudre\_passif, passé -1-> exercice\_sg, indéf ..ancre..> univers
 	\begin{subfigure}[h]{\textwidth}
 		\centering
@@ -1431,9 +1436,9 @@ La structure sémantique de ces paraphrases, qui a été donnée dans la figure 
 				\node (venir) [below right=of penser,label=below right:{`venir'}] {};
 			\end{scope}
 			
-			\draw[-{Triangle[]}] (penser) -- (zoe) node[font=\footnotesize,midway,left] {1};
-			\draw[-{Triangle[]}] (penser) -- (venir) node[font=\footnotesize,midway,right] {2};
-			\draw[-{Triangle[]}] (venir) -- (zoe) node[font=\footnotesize,midway,above] {1};
+			\draw[-{Triangle[]}] (penser) -- (zoe) node[font=\footnotesize,midway,,anchor=base east] {1};
+			\draw[-{Triangle[]}] (penser) -- (venir) node[font=\footnotesize,midway,,anchor=base west] {2};
+			\draw[-{Triangle[]}] (venir) -- (zoe) node[font=\footnotesize,pos=0.45,above] {1};
 			\draw[dashed] ($(zoe)+(-1cm,-0.4cm)$) -- ($(zoe)+(0.8cm,0.325cm)$) node[pos=0,rotate=30] {\ScissorHollowRight};
 			
 		\end{tikzpicture}
@@ -1454,9 +1459,9 @@ La structure sémantique de ces paraphrases, qui a été donnée dans la figure 
 				\node (venir) [below right=of penser,label=below right:{`venir'}] {};
 			\end{scope}
 			
-			\draw[-{Triangle[]}] (penser) -- (zoe) node[font=\footnotesize,midway,left] {1};
-			\draw[-{Triangle[]}] (penser) -- (venir) node[font=\footnotesize,midway,right] {2};
-			\draw[-{Triangle[]}] (venir) -- (zoe) node[font=\footnotesize,pos=0.25,above] {1};
+			\draw[-{Triangle[]}] (penser) -- (zoe) node[font=\footnotesize,midway,,anchor=base east] {1};
+			\draw[-{Triangle[]}] (penser) -- (venir) node[font=\footnotesize,midway,,anchor=base west] {2};
+			\draw[-{Triangle[]}] (venir) -- (zoe) node[font=\footnotesize,pos=0.3,above] {1};
 			\draw[dashed] ($(penser)+(0cm,-2cm)$) -- ($(penser)+(0cm,-0.5cm)$) node[pos=0,rotate=90] {\ScissorHollowRight};
 			
 		\end{tikzpicture}
@@ -1493,7 +1498,7 @@ Nous proposons dans la figure \ref{fig:13-gifle} la structure syntaxique profond
 	%b. Pierre <-1- Oper12 -2-> gifle ..1..> (Marie) -3-> Marie
 	\begin{subfigure}[b]{0.5\textwidth}
 		\centering
-		\begin{forest} for tree={font=\normalfont}
+		\begin{forest} for tree={font=\normalfont, l sep=6.5mm}
 			[Oper\textsubscript{12,prés}, calign=child, calign primary child=2
 			[\textsc{Pierre},name=pierre,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
 			[\textsc{gifle},name=gifle,edge label={node[midway,left,font=\footnotesize]{2}}]
@@ -1614,9 +1619,9 @@ La construction causative en \REF{ex:13-aux}b et c illustre un cas possible de m
 				\node (ali) [above right=of rire,label=above:{`Ali'}] {};
 			\end{scope}
 			
-			\draw[-{Triangle[]}] (causer) -- (zoe) node[font=\footnotesize,midway,left] {1};
-			\draw[-{Triangle[]}] (causer) -- (rire) node[font=\footnotesize,midway,right] {2};
-			\draw[-{Triangle[]}] (rire) -- (ali) node[font=\footnotesize,midway,right] {1};
+			\draw[-{Triangle[]}] (causer) -- (zoe) node[font=\footnotesize,midway,anchor=base east] {1};
+			\draw[-{Triangle[]}] (causer) -- (rire) node[font=\footnotesize,midway,anchor=base west] {2};
+			\draw[-{Triangle[]}] (rire) -- (ali) node[font=\footnotesize,midway,anchor=base east] {1};
 			
 		\end{tikzpicture}
 		\caption{Structure sémantique}
@@ -1832,7 +1837,7 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 		\centering
 		\begin{tikzpicture}[>={Triangle[]},
 			label distance=0pt,
-			node distance=1cm and 1cm,
+			node distance=10mm,
 			every label/.style={reset shape}]
 			
 			\begin{scope}[nodes={CircleNode}]
@@ -1845,18 +1850,18 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 				\node (laponie) [below right=of passer,label=below right:{`Laponie'}] {};
 			\end{scope}
 			
-			\draw[-{Triangle[]}] (beaucoup) -- (gens) node[font=\footnotesize,midway,left] {1};
-			\draw[-{Triangle[]}] (aimer) -- (gens) node[font=\footnotesize,midway,left] {1};
-			\draw[-{Triangle[]}] (conditionnel) -- (aimer) node[font=\footnotesize,midway,left] {1};
-			\draw[-{Triangle[]}] (aimer) -- (passer) node[font=\footnotesize,midway,right] {2};
+			\draw[-{Triangle[]}] (beaucoup) -- (gens) node[font=\footnotesize,midway,anchor=base west] {1};
+			\draw[-{Triangle[]}] (aimer) -- (gens) node[font=\footnotesize,midway,anchor=base east] {1};
+			\draw[-{Triangle[]}] (conditionnel) -- (aimer) node[font=\footnotesize,midway,anchor=base east] {1};
+			\draw[-{Triangle[]}] (aimer) -- (passer) node[font=\footnotesize,midway,anchor=base west] {2};
 			\draw[-{Triangle[]}] (passer) -- (gens) node[font=\footnotesize,midway,above] {1};
-			\draw[-{Triangle[]}] (passer) -- (noel) node[font=\footnotesize,midway,right] {2};
-			\draw[-{Triangle[]}] (passer) -- (laponie) node[font=\footnotesize,midway,below] {3};
+			\draw[-{Triangle[]}] (passer) -- (noel) node[font=\footnotesize,midway,anchor=base east] {2};
+			\draw[-{Triangle[]}] (passer) -- (laponie) node[font=\footnotesize,midway,anchor=base west] {3};
 			
 		\end{tikzpicture}
 		\caption{Structure sémantique}
 	\end{subfigure}%
-	\vfill
+	\bigskip\\%
 	%b. gens\_indf <-1- beaucoup <-+- aimer\_cond -2-> passer Noël Laponie
 	\begin{subfigure}[h]{\textwidth}
 		\centering
@@ -2050,7 +2055,7 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 		\end{forest}
 		\caption{Structure syntaxique profonde de b}
 	\end{subfigure}%
-	\vfill
+	\bigskip\\%
 	%c. ‘difficile’ -1-> ‘lire’ -1-> ‘livre’
 	\begin{subfigure}[h]{\textwidth}
 		\centering
@@ -2066,8 +2071,8 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 				\node (livre) [below right=of lire,label=below:{`livre'}] {};
 			\end{scope}
 			
-			\draw[-{Triangle[]}] (lire) -- (generique) node[font=\footnotesize,midway,left] {1};
-			\draw[-{Triangle[]}] (lire) -- (livre) node[font=\footnotesize,midway,right] {2};
+			\draw[-{Triangle[]}] (lire) -- (generique) node[font=\footnotesize,midway,anchor=base east] {1};
+			\draw[-{Triangle[]}] (lire) -- (livre) node[font=\footnotesize,midway,anchor=base west] {2};
 			\draw[-{Triangle[]}] (difficile) -- (lire) node[font=\footnotesize,midway,above] {1};
 			
 		\end{tikzpicture}
