@@ -778,14 +778,14 @@ Montrons l’équivalence des trois propriétés.
     La figure \ref{fig:noel-flux} montre les flux inter-mot pour notre exemple favori. Dans cette figure, le flux en un point de la phrase est l’ensemble des dépendances qui coupent le trait vertical en ce point. Le flux entre deux phrases est vide (à moins que l’on considère aussi des dépendances entre phrases). En toute position inter-mot de la phrase, le flux contient au moins une dépendance. Le flux entre \textit{de} et \textit{gens} ou entre \textit{passer} et \textit{Noël} contient deux dépendances.
 
     \begin{figure}[H]
-    \begin{tikzpicture}
+    \resizebox{\textwidth}{!}{\begin{tikzpicture}
         \begin{scope}[every node/.style={CircleNode},grow=right,local bounding box=graph]
             \node (root) {} child { node {} child { node{} child { node{} child { node{}  
                     child { node{} child { node{} child { node{} } } } } } } }; 
         \end{scope}
         \foreach \pos/\text in {/beaucoup, -1/de, -1-1/gens, -1-1-1/aimeraient, -1-1-1-1/passer,
                                 -1-1-1-1-1/Noël, -1-1-1-1-1-1/en, -1-1-1-1-1-1-1/Laponie} 
-            {\node [font={\itshape\strut}, below=1pt of root\pos] {\text};}
+            {\node [font={\footnotesize\itshape\strut}, below=1pt of root\pos] {\text};}
       
         \path (root) edge[bend left,-{Triangle[]}] (root-1)
             (root-1) edge[bend left,-{Triangle[]}] (root-1-1)
@@ -804,12 +804,8 @@ Montrons l’équivalence des trois propriétés.
                                     -- ++ (0,-3cm) ; }
          \draw [thick] (root.west) ++(-5mm,0) -- ++ (0,2cm) -- ++ (0,-3cm);
          \draw [thick] (root-1-1-1-1-1-1-1.east) ++(5mm,0) -- ++ (0,2cm) -- ++ (0,-3cm);
-                  
-    \end{tikzpicture}
+    \end{tikzpicture}}
     \caption{Flux inter-mot\label{fig:noel-flux}}
-    \todo[inline]{The figure is not centerd. Maybe we just need to suppress the indentation. This is true for most of the figures, but here the figure is out of the border}
-    \todo[inline]{Maybe we could reduce a few the font size to avoid some words to touch the vertical lines }
-\todo[inline]{The subtitles are not centered on the subfigures}
      \end{figure}
    
 
@@ -1270,7 +1266,6 @@ Chaque mot va ensuite ouvrir dans la position qu’il occupe un constituant topo
   \end{tabular}}\\
 \hline
 \end{tabular}}\z
-\todo[inline]{Add a similar vspace above and below subboxes}
 
 On notera qu’en plus de l’ordre linéaire, nous avons obtenu une structure avec des constituants emboîtés.
 
@@ -1475,7 +1470,7 @@ Notons qu'il est possible de combiner les deux représentations et d'expliciter 
         \end{subfigure}\begin{subfigure}[c]{.5\linewidth}\centering
         \begin{tikzpicture} 
        \node at (0,0) (GN) [CircleNode] {};
-       \node at (1,-1) (empty) [CircleNode] {};
+       \node at (1,-.75) (empty) [CircleNode] {};
        \node at (2,0) (GV) [CircleNode] {};
 %        \node [below=1pt of 1] {P};
 %        \node [below left = 2pt of GN] {GN};
@@ -1487,7 +1482,6 @@ Notons qu'il est possible de combiner les deux représentations et d'expliciter 
        \caption{Représentation en cellules}
     \end{subfigure}
  \end{figure}
-\todo[inline]{The bottom of the cell must be flatter, see original.}
 
     Avec les règles proposées en \REF{ex:regles}, et en les considérant comme des structures élémentaires qu'on assemble, on peut générer l’arbre de constituants de la phrase \textit{Un chat poursuit le chien} donné dans l’encadré qui précède. Chaque portion élémentaire de l’arbre, composée d’un nœud et de ses fils, correspond exactement à une règle de réécriture. Ainsi le sommet de l’arbre avec le nœud P et ses deux fils GN et GV est validé par la règle P \textrm{→} GN GV.
 
