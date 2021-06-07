@@ -808,7 +808,7 @@ Alors qu’un arbre de dépendance correspond naturellement à un arbre de const
     Il semble que les contemporains de Barnard n’aient pas vraiment vu la portée de ces diagrammes et il faut attendre plus d’un siècle pour que, en \citeyear{nida1943morphology}, dix ans après la publication de \textit{Langage} de Bloomfield, Eugene Nida propose à nouveau des structures de constituants, dans une thèse intitulée \textit{A Synopsis of English Syntax}. Les structures proposées par Nida sont en fait des polygraphes (voir l’\encadref{sec:3.2.23} sur \textit{Graphe à bulles et polygraphe}) où chaque lien représente une connexion binaire et où les liens peuvent avoir pour sommet d’autres liens. Nida va ensuite enrichir son système, dans la republication de sa thèse en \citeyear{nida1966synopsys}, en ajoutant des symboles sur les liens (voir la figure \ref{fig:nida}) : les liens marquées d’une croix ($\times$) représentent une construction exocentrique, tandis que les liens marqués d’une flèche (~$\langle$ ou $\rangle$~) représentent une construction endocentrique, la flèche pointant vers la tête. Dans le diagramme ci-dessous, \textit{the} et \textit{men} sont connectés par un lien $\rangle$ indiquant que \textit{the} dépend de \textit{men}, puis \textit{by} est lié à ce lien par un lien $\times$ indiquant que la construction n’a pas de tête. Une telle représentation est équivalente à un arbre de constituants binaire (voir la \sectref{sec:3.4.21} sur \textit{Arbre de constituants binaires et polygraphe}).
 
     \begin{figure}[H]
-        \includegraphics{figures/vol1syntaxe2-img023.png}
+        \includegraphics[width=8cm]{figures/vol1syntaxe2-img023.png}
         \caption{Représentation syntaxique de \citet{nida1966synopsys}}
         \label{fig:nida}
         \small\textit{The robber was chased by the men.} ‘Le voleur a été poursuivi par les hommes.’
@@ -1433,16 +1433,16 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
 \loupe{Constituance ou dépendance ?}{%{\label{sec:3.4.29}
     Nous avons montré dans ce chapitre que les arbres de dépendance et les arbres de constituants avec têtes étaient deux modes de représentation de la structure syntaxique plus ou moins équivalents : les deux types de structures rendent compte de la façon dont les unités se combinent ou se décomposent (les connexions) et du fait que ces combinaisons sont généralement asymétriques et forment une structure hiérarchique (les têtes et les dépendances). Malgré cette équivalence formelle, les deux types de structures ont des implications théoriques différentes. Nous allons discuter ici des conséquences de cette différence en voyant les avantages et inconvénients des deux types de structures.
 
-  \smallskip\noindent\textbf{Têtes syntaxiques.} 
+  \tcbsubtitle{Têtes syntaxiques} 
   Nous avons déjà souligné (voir la \sectref{sec:3.4.15} sur \textit{Projections partielles et ordre de saillance}) que les arbres de dépendance mettent en avant la notion de tête, qui est encodée configurationnellement par les dépendances, alors que les arbres de constituants avec têtes mettent en avant l’ordre de saillance (dans leur version binaire, c’est-à-dire stratifiée). Etant donné l’importance de la notion de tête, nous pensons que c’est là un avantage fort pour les arbres de dépendances.
 
- \smallskip\noindent\textbf{Constructions exocentriques.}
+ \tcbsubtitle{Constructions exocentriques}
     La possibilité de ne pas encoder de tête ou de considérer des co-têtes est généralement considérée comme un avantage des arbres de constituants. Nous avons vu au chapitre précédent et à nouveau ici qu’il est tout a fait possible de considérer des connexions non hiérarchisées, à côté de dépendances (c’est-à-dire de connexions hiérarchisées), dans une structure de dépendance. Cela suppose néanmoins de travailler avec des polygraphes, c’est-à-dire des «~graphes~» où des arêtes peuvent relier d’autres arêtes, tandis que cela peut être encodé dans un arbre de constituants sans perdre la structure d’arbre. C’est la contrepartie du fait que la notion de tête n’est pas encodée configurationnellement dans les arbres de constituants.
 
-    \smallskip\noindent\textbf{Unités syntaxiques.}
+    \tcbsubtitle{Unités syntaxiques}
     Les arbres de constituants mettent en avant certaines unités syntaxiques, à savoir les projections maximales, ainsi que des projections partielles lorsque l’arbre est stratifié. Les arbres de dépendance considèrent également les projections maximales (qui correspondent aux sous-arbres de l’arbre de dépendance). Les arbres de dépendance permettent par ailleurs de considérer toutes sortes d’autres unités syntaxiques : en fait, \hi{toute portion connexe} de l’arbre de dépendance est une \hi{unité syntaxique potentielle} (voir la \sectref{sec:3.2.19} sur \textit{Structure de connexion et unités}́). Il ne semble pas de ce point de vue que les constituants intermédiaires des grammaires de constituants soient des unités plus intéressantes que les autres, comme le montre le fait qu’elles ne vérifient en général aucun des tests de constituance. Par contre, d’autres unités, comme les amas ou les nucléus (voir le \chapfuturef{20} sur l’\textit{Extraction}), jouent un rôle important dans la grammaire. Or les nucléus, qui sont des chaînes immédiatement visibles dans l’arbre de dépendance, sont beaucoup plus cachés dans un arbre de constituants.
 
-     \smallskip\noindent\textbf{Connexions.}
+     \tcbsubtitle{Connexions}
     Les connexions sont présentes dans les deux structures, mais les arbres de dépendance combinent des mots ou des syntaxèmes, tandis que les arbres de constituants combinent des constituants. Autrement dit, les instances des connexions sont plus fines dans un arbre de dépendance que dans un arbre de constituants. Ceci est pour nous un avantage majeur des arbres de dépendance.
 
     Notons par ailleurs que si le dépendant d’une connexion peut en général être interprété comme la projection maximale, c’est-à-dire un constituant majeur, il y a des cas pù cela est plus discutable. Comparons :
@@ -1456,13 +1456,13 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     Si dans le premier exemple, le sujet du verbe doit être compris comme le constituant \textit{les linguistes qui étaient fatigués}, dans le deuxième exemple, \textit{qui étaient fatigués,} bien qu’étant toujours dépendant de \textit{les linguistes} ne fait plus vraiment partie du sujet du verbe \textit{ont quitté}. Il y a deux prédications indépendantes sur \textit{les linguistes~}: d’une part, \textit{les linguistes ont quitté la conférence}, et d’autre part, \textit{les linguistes étaient fatigués}, qui est au second plan et sert de justification à la prédication principale.
     Il n'en reste pas moins que, dans les deux cas, la proposition relative \textit{qui étaient fatigués} dépend de \textit{les linguistes} et forme un constituant majeur son gouverneur.
 
-     \smallskip\noindent\textbf{Ordre des mots.}
+     \tcbsubtitle{Ordre des mots}
     L’ordre des mots est plus facilement lisible dans un arbre de constituants, à tel point qu’il est même difficile d’envisager l’arbre de constituants indépendamment de l’ordre linéaire. Nous adoptons nous-mêmes un arbre de constituants pour représenter la structure topologique (voir chapitre suivant). Nous pensons par contre que les combinaisons syntaxiques doivent être clairement distinguées des relations de contiguïtés (voir la \sectref{sec:3.2.6} sur \textit{Structures syntaxiques et structures topologiques}) et que ne pas le faire conduit immanquablement à introduire la notion de mouvement (voir l'\encadref{sec:3.2.7} \textit{De la non-séparation des ordres au mouvement}). En d’autres termes, les arbres de constituants peinent à rendre compte simplement des \hi{structures non projectives}, sauf à introduire la notion de \hi{constituant discontinu}, qui fait alors perdre tous les avantages de l’arbre de constituants du point de vue de l’ordre des mots. Le \chapref{sec:3.5} sera entièrement consacré à ces questions et à la définition d’une structure de constituants topologique distincte de la structure syntaxique.
 
-    \smallskip\noindent\textbf{Interface sémantique-syntaxe.}
+    \tcbsubtitle{Interface sémantique-syntaxe}
     Nous avons vu aux chapitres \ref{sec:1.2} et \ref{sec:2.3} qu’une partie de la sémantique des énoncés pouvait être saisie par un graphe de relations prédicat-argument, lequel graphe s’apparente à une structure de connexion, c’est-à-dire à un arbre de dépendance dont on aurait retiré la hiérarchie. Ceci est très net quand on regarde des paraphrases comme \textit{Pierre a été malade pendant deux semaines} vs. \textit{La maladie de Pierre a duré deux semaines} (\chapref{sec:1.2}). De ce point de vue, la structure sémantique est beaucoup plus proche d’un arbre de dépendance que d’un arbre de constituant.
 
-    \smallskip\noindent\textbf{Portée.}
+    \tcbsubtitle{Portée}
     Lorsqu’on considère un exemple tel que \textit{la première voiture rouge que j’ai vue}, on remarque que l’adjectif \textit{première} qui modifie \textit{voiture} \textbf{porte} sur \textit{voiture rouge que j’ai vue} et pas seulement sur \textit{voiture}, dans le sens que la voiture dont on parle n’est pas première parmi toutes les voitures, mais seulement parmi les voitures rouges que j’ai vues. De tels phénomènes sont appelés des \textstyleTermesapprof{phénomènes de portée}. Les phénomènes de portée montrent que certaines combinaisons se font avec des groupes. On peut représenter cela par le parenthésage suivant :
     \ea{}
     [ \textit{la} [ \textit{première} [ [ \textit{voiture rouge} ] \textit{que j’ai vue} ] ] ] ]
@@ -1523,7 +1523,7 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
 
     Les structures de constituants, qui encodent la portée de manière plus simple, semblent avoir un avantage. Reste à savoir si les phénomènes de portée relèvent de la syntaxe et doivent être encodés dans la structure syntaxique ou bien s’il s’agit uniquement de phénomènes sémantiques indépendants de la structure syntaxique. Par exemple, dans une phrase telle que \textit{Un numéro est attribué à chaque participant}, le sujet est dans la portée de l’objet, ce qui va contre l’analyse en constituants usuelle, puisque \textit{à chaque participant} devrait être combiné avec \textit{un numéro est attribué}.
 
-    \smallskip\noindent\textbf{Traitement cognitif.}
+    \tcbsubtitle{Traitement cognitif}
     Nous avons déjà discuté du traitement cognitif des connexions au chapitre précédent (voir l'\encadref{sec:3.2.26} sur le \textit{Traitement cognitif des connexions}). Revenons rapidement sur ce point avec l’exemple suivant :
 
     \ea

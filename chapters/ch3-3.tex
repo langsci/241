@@ -662,9 +662,9 @@ Le même raisonnement est applicable à \textit{Marie dormait}. Ici encore, \tex
     La conjonction \textit{that} est bien effaçable, ce qui pourrait conduire à considérer que \textit{thinks} est directement connecté à \textit{slept} et donne la structure de connexion de la figure \ref{fig:that1}. Mais en même temps, on ne peut pas considérer que \textit{that} dépend de \textit{slept}, car \textit{that Peter slept} n’a pas la même valence supérieure que \textit{Peter slept} : si les deux peuvent dépendre de \textit{Mary thinks}, seul \textit{Peter slept} peut former un énoncé déclaratif ou bien se combiner avec une conjonction comme \textit{if} ‘si’ ou \textit{whether} ‘si (oui ou non)’. Comme un dépendant ne peut modifier la valence supérieure de son gouverneur, il est donc clair que \textit{that} n’est pas un dépendant du verbe \textit{slept}, d'où l'arbre de dépendance de la figure \ref{fig:that2}. (Voir l’\encadref{sec:3.3.28} sur la \textit{Co-occupation} pour une autre analyse de \textit{that}.)
 
     \begin{figure}[H]
-    \begin{floatrow}
-    \captionsetup{margin=.05\linewidth}
-    \ffigbox[.5\linewidth]
+    \captionsetup{margin=.05\textwidth}%
+    \begin{floatrow}%
+    \ffigbox[.5\textwidth]
             {\begin{tikzpicture}[every node/.style={font=\itshape\strut,inner sep=1pt}]
             \node at (0,0) (Marie) {Marie};
             \node at (1,1) (thinks) {thinks};
@@ -676,14 +676,14 @@ Le même raisonnement est applicable à \textit{Marie dormait}. Ici encore, \tex
             \draw (midpoint.east)-- (that);
             \draw (Peter) -- (slept);
             \end{tikzpicture}}
-            {\caption{Structure de connexion\label{fig:that1}}}
-    \ffigbox[.5\linewidth]
+            {\caption{Structure de connexion\label{fig:that1}}}%
+    \ffigbox[.4\textwidth]
             {\begin{forest} for tree = {font=\itshape}
             [thinks
               [Mary]
               [that [slept [Peter]]]
             ]
-            \end{forest}}
+            \end{forest}}%
             {\caption{Arbre de dépendance\label{fig:that2}}}
     \end{floatrow}
     \end{figure}
@@ -761,15 +761,13 @@ Si on veut obtenir une structure d'arbre, on privilégiera la position de tête 
     \node (A) at (0,0) {téléphone};
     \node (B) at (-1,-1.5) {Pierre};
     \node (C) at (.5,-1.5) {à};
-    \node (C2) at (2,-1.5) {Marie};
+    \node (C2) at (3,-1.5) {Marie};
     \node [fit = (C) (C2),inner sep=0pt] (CCC) {};
     \draw[->] (C) -- (C2);
     \draw[->] (A) -- (B);
     \draw[->] (A) -- (CCC);
   \end{tikzpicture}
 \end{figure}
-\todo[inline]{Lengthen the horizontal arrow. The oblique arrow must point the center of the horizontal arrow.}
-
 
 \begin{figure}[H]
   \begin{tikzpicture}[
@@ -927,24 +925,21 @@ On peut encore appliquer le critère au cas des formes verbales comme \textit{ch
         ]
       ]
     \end{forest}\end{minipage}\begin{minipage}[c]{.5\linewidth}
-    \begin{tikzpicture}[>={Triangle[]},label distance=-5pt]
-        \matrix (matrix) [nodes={CircleNode},
+    \begin{tikzpicture}[>={Triangle[]},baseline=0pt]
+        \matrix (matrix) [nodes={anchor=base},
                           ampersand replacement=\&,
                           row sep=1cm,
                           column sep=-10pt] 
-          {
-            \& \node [label=above:{‘acheter’}, CircleNode] (acheter) {}; 
-            \& \& \node [label=above:{‘verre’}, CircleNode] (verre) {};\\
-            \node [label=below:{\strut‘Félix’}, CircleNode] (Felix) {}; 
-            \& \& \node [label=below:{\strut\vphantom{F}‘vin’}, CircleNode] (vin) {}; 
-            \& \& \node [label=below:{\strut\vphantom{F}‘un’}, CircleNode] (un) {};\\
+          { \& \node {‘acheter’}; \& \& \node {‘verre’};\\[-1cm]
+            \& \node [CircleNode] (acheter) {}; \& \& \node [CircleNode] (verre) {};\\
+            \node [CircleNode] (Felix) {}; \& \& \node [CircleNode] (vin) {}; \& \& \node [CircleNode] (un) {};\\[-1cm]
+            \node {‘Félix’}; \& \& \node{‘vin’}; \& \& \node{‘un’};\\
           };
           \draw[-{Triangle[]}] (acheter) -- (Felix) node[left,midway,font=\small] {1};
           \draw[-{Triangle[]}] (verre) -- (vin)     node[left,midway,font=\small] {1};
           \draw[-{Triangle[]}] (acheter) -- (vin)   node[right,midway,font=\small] {2};
           \draw[-{Triangle[]}] (un) -- (verre)      node[right,midway,font=\small] {1};
     \end{tikzpicture}\end{minipage}
-    \todo[inline]{baseline problems}
     \z
 
     Un autre cas de distorsion est illustré par l’exemple suivant :
@@ -960,7 +955,7 @@ On peut encore appliquer le critère au cas des formes verbales comme \textit{ch
     {\cjkfont 議長は事情に通じていた\textbf{そうだ}。}\\
     \gll {Gichō-wa}  {jijō-ni}  {tsūjite-ita-\textbf{sōda}}.\\
     président-\textsc{top} circonstances-\textsc{dat} saisir-en\_train-être.\textsc{passé}-\textbf{paraît}.\\
-    ‘Il \textbf{paraît} que président était au courant.’
+    \glt ‘Il \textbf{paraît} que président était au courant.’
     \z
 
     Donnons un dernier exemple qui montre que le choix de la tête syntaxique dépend parfois davantage de la façon dont le lexique de la langue est organisé que d’un choix conscient du locuteur. Voici un exemple classique de distorsion lors d’une traduction :
@@ -1061,7 +1056,7 @@ Il existe néanmoins un certain nombre de cas problématiques qui sont au centre
         [mangé [trop [de [chocolat]]]
         ]
       ]
-    \end{forest}\end{minipage}
+    \end{forest}\end{minipage}%
     \begin{minipage}[t]{.5\linewidth}\centering
     \begin{forest}
       for tree={font=\itshape}
@@ -1133,7 +1128,7 @@ Nous allons discuter les arguments pour les différentes options.
 
 Le choix du nom comme tête du groupe substantival (option a de la section précédente) prend comme argument principal que, en l’absence de critères syntaxiques décisifs, c’est la tête sémantique qui doit primer, laquelle est le nom. De plus, des restrictions de sélection s’exercent sur le nom, puisque certains verbes par exemple ne peuvent prendre que des noms humains comme argument :
 
-\ea
+\ea\judgewidth{\textsuperscript{??}}
 \ea[]{\textit{Personne ne pense ça.}}
 \ex[\textsuperscript{??}]{\textit{Rien ne pense ça.}}
 \z
