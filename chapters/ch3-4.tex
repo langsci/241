@@ -52,7 +52,7 @@ Cette ambivalence du dépendant trouve sa première interprétation graphique av
 \begin{figure}
 \begin{tikzpicture}[
                      every node/.style={font=\itshape\strut, inner sep=5pt}, 
-                     edge from parent/.style={draw,-{Triangle[sep=1.5pt]}},
+                     edge from parent/.style={draw,-{Triangle[sep=1.5pt]},shorten >=5pt},
                      level 1/.style={sibling distance=30mm},
                      level 2/.style={sibling distance=15mm},
                      level 3/.style={sibling distance=7mm}
@@ -60,26 +60,24 @@ Cette ambivalence du dépendant trouve sa première interprétation graphique av
   \node (root) {aimeraient}
     child { node {beaucoup}
             child { node {de} 
-                child { node [draw,rounded corners=2pt] {gens} } 
+                child { node [draw,rounded corners=2pt,inner sep=2pt, outer sep=3pt] {gens} } 
                   }
           }
     child { node { passer }
-             child { node [draw,rounded corners=2pt] { Noël } }
+             child { node [draw,rounded corners=2pt,inner sep=4pt, outer sep=0pt] { Noël } }
              child { node { en }
-                     child { node [draw,rounded corners=2pt] { Laponie } } }
+                     child { node [draw,rounded corners=2pt,inner sep=2pt, outer sep=3pt] { Laponie } } }
            };
 \begin{scope}[every node/.style={draw, inner sep=1pt, rounded corners=2pt}]
-\node [fit = (root-2-2) (root-2-2-1)] (enLaponie) {};
-\node [fit = (root-1-1) (root-1-1-1)] (degens) {};
-\node [fit = (root-1) (degens)] (beaucoupdegens) {};
-\node [fit = (root-2) (root-2-1) (enLaponie)] (passerNoelenLaponie) {};
+\node [fit = (root-2-2) (root-2-2-1),inner sep=0pt, outer sep=2pt] (enLaponie) {};
+\node [fit = (root-1-1) (root-1-1-1),inner sep=0pt, outer sep=2pt] (degens) {};
+\node [fit = (root-1) (degens),inner sep=2pt] (beaucoupdegens) {};
+\node [fit = (root-2) (root-2-1) (enLaponie),inner sep=2pt] (passerNoelenLaponie) {};
+\node [fit = (root) (beaucoupdegens) (enLaponie), inner sep=6pt] (CompleteTree) {};
 \end{scope}
 \end{tikzpicture}
 \caption{\label{fig:laponie-gladkij}Arbre de Beauzée-Gladkij}
 \end{figure}
-\todo[inline]{In this figure, boxes are really part of the structure, they are nodes in the "tree". In other words, the space below the edges must be widened. }
-\todo[inline]{A box around the whole structure is missing.}
-\todo[inline]{The space between the boxes could be widened, as in the next figure, which is nice. In some sense, the next figure is the same figure without the edges.}
 
 Cette représentation, que nous appellerons désormais un \textstyleTermes{arbre de Beauzée-Gladkij}, n’est pas un arbre au sens mathématique du terme, mais un arbre à bulles (voir l’\encadref{sec:3.2.23} \textit{Graphe à bulles et polygraphe}) : les dépendants ne sont plus des nœuds élémentaires, mais des ensembles de nœuds, représentés par des bulles. Si l’on compare l’arbre de Beauzée-Gladkij avec l’arbre de dépendance, on voit que chaque nœud a été remplacé par sa \hi{projection maximale}. Laquelle projection est elle-même analysée, avec un nœud tête dont dépendent des projections, et ainsi de suite.
 
@@ -860,7 +858,19 @@ Alors qu’un arbre de dépendance correspond naturellement à un arbre de const
     On attribue généralement l’introduction des arbres de constituants à Noam Chomsky. On en trouve dans son article de \citeyear{chomsky1955three} et un dans \textit{Syntactic Structures} de \citeyear{chomsky1957syntactic}, que nous reproduisons dans la figure \ref{fig:chomsky57}a. De manière assez surprenante, cet arbre a été remplacé, dans la réédition de 2002, par le diagramme de la figure \ref{fig:chomsky57}b. Ce diagramme, donné dans la figure \ref{fig:chomsky57}b, n’est pas stricto sensu un arbre. Il apparaît dans le chapitre 4 intitulé \textit{Phrase structure} ‘Structure syntagmatique’, où Chomsky introduit les règles de réécriture, comme \textit{Sentence → NP + VP}. Dans ce diagramme, il n’y a pas, comme dans les arbres de constituants ordinaires, de relations partie-tout entre le nœud \textit{Sentence} et les constituants immédiats \textit{NP} et \textit{VP}. Au lieu de cela, il y a un lien entre \textit{NP} et \textit{VP} correspondant au symbole + de la règle et que l’on peut interpréter comme un lien de connexion, ainsi qu’un lien entre le nœud \textit{Sentence} et le lien de connexion correspondant à l’opération de réécriture représentée par le symbole \textit{→} dans la règle. Le diagramme est donc un polygraphe.
 
 \begin{figure}[H]
-%     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img026.png}
+    \small
+    \begin{forest} for tree = {font=\itshape}
+    [Sentence
+      [NP [T [the]]
+          [N [man]]
+      ]
+      [VP [Verb [hit]]
+          [NP [T [the]]
+              [N [ball]]
+          ]
+      ]
+    ]    
+    \end{forest}\hfill
     \begin{forest} forked edges, for tree = {font=\itshape}
     [Sentence
       [NP [T [the]]
@@ -873,9 +883,8 @@ Alors qu’un arbre de dépendance correspond naturellement à un arbre de const
       ]
     ]    
     \end{forest}
-    \caption{Arbre de constituant \citet{chomsky1957syntactic} et diagramme polygraphique de l'édition de 2002}
     \small\textit{The man hit the ball.} ‘L'homme frappa le ballon.’\label{fig:chomsky57}
-    \todo[inline]{Add the tree of 1957}
+    \caption{Arbre de constituant \citet{chomsky1957syntactic} et diagramme polygraphique de l'édition de 2002}
 \end{figure}
 
 Alors que la version 2002 de l'arbre de 1957 est fondamentalement binaire, la binarité n’est plus exigée dans les arbres de \textit{Aspects of the Theory of Syntax}, publié en \citeyear{chomsky1965aspects} (voir un exemple dans la figure \ref{fig:chomsky65}). Elle réapparaîtra dans les travaux suivants et notamment la syntaxe X-barre.
@@ -911,8 +920,10 @@ Alors que la version 2002 de l'arbre de 1957 est fondamentalement binaire, la bi
     \end{minipage}
     \begin{minipage}[c]{.3\linewidth}\centering
       \begin{forest}
-       forked edges, for tree = {font=\normalfont}
+       for tree = {font=\normalfont, no edge}
        [S [NP] [VP]]
+       \draw (!1) |- ++(10pt,1.15\baselineskip) -| (!2);
+       \draw () -- ++(0,-1.25\baselineskip);
       \end{forest}
     \end{minipage}
     \begin{minipage}[c]{.3\linewidth}\centering
@@ -920,9 +931,8 @@ Alors que la version 2002 de l'arbre de 1957 est fondamentalement binaire, la bi
         [S [NP] [VP]]
       \end{forest}
     \end{minipage}    
-    \caption{\label{fig:subjectale} Trois représentations de la construction subjectale}
+    \caption{\label{fig:subjectale}Trois représentations de la construction subjectale}
  \end{figure}
-    \todo[inline]{the second figure is not a forked edge. It is a vertical edge and a horizontal edge-brace separated by a small space (see figure \ref{fig:chomsky57})}
 
     Le premier diagramme de la figure \ref{fig:subjectale} dit qu’il y a une unité dont la tête est un nom (N) qui dépend d’un verbe (V) par une relation \textit{sujet}, le deuxième diagramme \citep{chomsky1957syntactic} dit qu’il y a un groupe nominal (NP, \textit{noun phrase}) et un groupe verbal (VP, \textit{verbal phrase}) qui se connecte pour former ensemble une phrase (S, \textit{sentence}), tandis que le troisième diagramme dit que la phrase S possède deux composantes, un NP et un VP. Même si cela n’apparaît pas au premier regard, il s’agit de trois représentations de la même construction. Qui plus est, ces trois descriptions sont moins éloignées qu’il n’y paraît à première vue : comme on l’a déjà vu dans le \chapref{sec:3.2} sur la \textit{Connexion} et comme on le verra à nouveau dans la \sectref{sec:3.4.21} sur \textit{Arbre de constituants binaires et polygraphes}, on passe de l’une à l’autre en réifiant ou déréifiant les relations partie-tout de la relation \textit{sujet}.
 
@@ -1078,22 +1088,25 @@ Si l’on applique la déréfication à tous les nœuds intérieurs de l’arbre
     \z
  Il y a là ce qu’on appelle un verbe transitif, \textit{frappe}, qui exprime une action d’un élément (\textit{Marie}) sur un autre (\textit{Pierre}). On dira encore que \textit{Marie} est l’\hi{agent} de l’action et \textit{Pierre} le \hi{patient}. Il y a alors plusieurs façons de représenter graphiquement le «~sens~» de cette phrase. Nous en proposons trois dans la figure \ref{fig:frappe-reif}.
 
-% \begin{figure}[H]
-   \ea
-    \ea\attop{%
+\begin{figure}[H]
+    \begin{subfigure}[t]{.5\textwidth}\centering
       \begin{tikzpicture}
         \node at (0,0) [ConcSet] (Marie) {Marie};
         \node [right=1mm of Marie, draw, signal, signal to=east, font=\itshape] (frappe) {frappe}; 
         \node [right=1mm of frappe, ConcSet] (Pierre) {Pierre};
-      \end{tikzpicture}}\medskip\\
-      \ex\attop{\begin{tikzpicture}
+      \end{tikzpicture}
+      \caption{\color{red}Please provide a caption}
+      \end{subfigure}\begin{subfigure}[t]{.5\textwidth}\centering
+      \begin{tikzpicture}
         \node at (0,0) [ConcSet] (frappe) {frappe};
         \node at (-2,-2) [ConcSet] (Marie) {Marie};
         \node at (2,-2) [ConcSet] (Pierre) {Pierre};
         \draw[-{Triangle[]}] (frappe) -- (Marie)  node [midway,left] {agent};
         \draw[-{Triangle[]}] (frappe) -- (Pierre) node [midway,right] {patient};
-      \end{tikzpicture}}\medskip\\
-      \ex\attop{\begin{tikzpicture}
+      \end{tikzpicture}
+      \caption{\color{red}Please provide a caption}
+      \end{subfigure}\medskip\\\begin{subfigure}[t]{.5\textwidth}\centering
+      \begin{tikzpicture}
         \node at (0,0) [ConcSet] (frappe) {frappe};
         \node at (-2,-4) [ConcSet] (Marie) {Marie};
         \node at (2,-4) [ConcSet] (Pierre) {Pierre};
@@ -1103,12 +1116,11 @@ Si l’on applique la déréfication à tous les nœuds intérieurs de l’arbre
                                      edge node[midway,left] {1} (Marie);
         \draw[-{Triangle[]}] (patient) edge node[midway,right] {2} (frappe)
                                      edge node[midway,right] {1} (Pierre);
-      \end{tikzpicture}}
-  \z
-\z
-\todo[inline]{Make a figure and maintain a,b,c, please}
-%   \caption{\label{fig:frappe-reif}Trois niveaux de réification pour la représentation du sens de \REF{ex:frappe}}
-% \end{figure}
+      \end{tikzpicture}
+      \caption{\color{red}Please provide a caption}
+      \end{subfigure}
+  \caption{\label{fig:frappe-reif}Trois niveaux de réification pour la représentation du sens de \REF{ex:frappe}}
+\end{figure}
 
     Dans la représentation a, \textit{frappe} est directement modélisé comme une action de Marie sur Pierre : \textit{frappe} (\textit{Marie}, \textit{Pierre}). Dans la représentation b, les relations qui lient \textit{frappe} à \textit{Marie} et \textit{Pierre} sont explicitées et nommées \textit{agent} et \textit{patient}. Dans la représentation c, les relations agent et patient sont vues comme des objets à part entière reliant les mots de la phrase : agent~(\textit{Marie}, \textit{frappe}) + patient~(\textit{Pierre}, \textit{frappe}). On l’aura deviné, les trois représentations sont des réifications successives des relations d’une même structure.
 

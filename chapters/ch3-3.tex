@@ -1775,36 +1775,32 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
         [
           ampersand replacement=\&, 
           nodes={font=\strut},
-          row 1/.style={nodes={font=\itshape}},
-          row 3/.style={nodes={font=\itshape}},
-          column sep=1em,
+          row 2/.style={nodes={font=\itshape}},
+          row 4/.style={nodes={font=\itshape}},
+          column sep=2em,
         ] 
       {
-        \node (Matrix-1-1) {sujet}; \& \node (Matrix-1-2) {attribut}; \& \node (Matrix-1-3) {attribut}; \& \node (Matrix-1-4) {sujet};\\
+        \node (Matrix-1-1) {\phantom{sujet}}; \& \node (Matrix-1-2) {attribut}; \& \node (Matrix-1-3) {attribut}; \& \node (Matrix-1-4) {sujet};\\
         \node (Matrix-2-1) [draw] {celui}; \& \node (marche) {marche}
                             child { node  { ne point } edge from parent[->] } 
-                            child { node {dans} child { node { les ténèbres } edge from parent[->] node[right,font=\itshape\footnotesize] (complement) {complément} } edge from parent[->] node[right,font=\itshape\footnotesize] {modification} };%  
+                            child { node {dans} child { node { les ténèbres } edge from parent[->] node[right,font=\normalfont\footnotesize] (complement) {complément} } edge from parent[->] node[right,font=\normalfont\footnotesize] {modification} };%  
 %                                        %
                       \& \node (Matrix-2-3) [draw] {dit}; \&  \node (Matrix-2-4) [draw] {Jésus-Christ}; \\[2cm]
         \node (Matrix-3-1) {sujet}; \& \node (Matrix-3-2) {attribut}; \\
         \node (Matrix-4-1) [draw] {qui};   \& \node (Matrix-4-2) {suit} child { node (Matrix-4-2-1) { me } edge from parent[->] };\\
       };
     \node [fit=(Matrix-3-1) (Matrix-3-2) (Matrix-4-2) (Matrix-4-2-1), draw,
-           label=above:{\itshape proposition incidente ≈ adjectif}] (Matrix-Lowergroup) {};
+           label=75:{\normalfont proposition incidente ≈ adjectif}] (Matrix-Lowergroup) {};
     \node [fit=(Matrix-4-2) (Matrix-4-2-1), draw, inner sep=1pt] {};
     \node [fit=(marche) (marche-1) (marche-2-1) (complement), draw, inner sep=1pt] (Matrix-Tree) {};
     \node [fit=(Matrix-1-3) (Matrix-1-4) (Matrix-2-3) (Matrix-2-4), draw, 
-           label=above:{\itshape proposition en incise ou adjoint}] {};
+           label=above:{\normalfont proposition en incise ou adjoint}] {};
     \node [fit=(Matrix-1-1) (Matrix-Tree),draw,
-           label=above:{\itshape proposition principale}] {}; 
-    \draw[->] (Matrix-Tree.north west) to [bend right] (Matrix-2-1.north east);
-    \draw[->,overlay] (Matrix-2-1) to [bend right] node [above,rotate=180,sloped,pos=0.55,font=\itshape\footnotesize] {déterminant} (Matrix-Lowergroup.west);
+           label=above:{\normalfont proposition principale}] {}; 
+    \draw[->] (Matrix-Tree.north west) to [bend right] node [above,font=\footnotesize] {sujet} (Matrix-2-1.north east);
+    \draw[->,overlay] (Matrix-2-1) to node [sloped,above,pos=.4,font=\normalfont\footnotesize] {déterminant} ++(0,-5.1cm);
     \end{tikzpicture}
     \end{figure}
-    \todo[inline]{Invert italics and roman (sorry it is my fault): word = node label must be in italics, arrow and box label must be in roman. }
-    \todo[inline]{The "déterminant" arrow must point on the top of the box. }
-    \todo[inline]{The horizontal arrow must be longer. Add a a "sujet" label on this arrow with \footnotesize }
-    \todo[inline]{Move away from each other the two boxes on top}
 
     \corrigé{3} Le fait que les infinitifs commutent avec des groupes substantifs est déjà souligné par \citet[59]{buffier1709grammaire} : 
     \begin{quote}
