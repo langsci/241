@@ -35,9 +35,9 @@ Certains sens lexicaux fonctionnent comme des \textstyleTermes{prédicats} et po
 \Definition{\textstyleTermes{structure prédicative}, \textstyleTermes{contenu informationnel}}
 {L'ensemble des sens lexicaux (et grammaticaux) avec leur structure argumentale constituent la \textstyleTermes{structure prédicative} d'un énoncé. La structure prédicative exprime le \textstyleTermes{contenu informationnel} de l’énoncé.}
 
-Nous nous contenterons de cette définition sommaire de la structure prédicative (voir compléments dans l’\encadref{sec:1.2.4} sur \textit{Les composantes du sens}). Une définition plus précise sera donnée au \chapfuturefici{13} sur \textit{La structure syntaxique profonde}.
+Nous nous contenterons de cette définition sommaire de la structure prédicative (voir compléments dans l’\encadref{sec:1.2.4} sur \textit{Les composantes du sens}). Une définition plus précise sera donnée au \chapref{sec:13} sur \textit{La structure syntaxique profonde}.
 
-Nous avons présenté la structure prédicative par une \textstyleTermes{formule}, mais on peut aussi la représenter par un \textstyleTermes{graphe} (voir l’\encadref{sec:2.1.3} qui suit) que nous appelons le \textstyleTermes{graphe sémantique}. Le graphe sémantique correspondant à la formule de la figure \ref{fig:sens-maladie} est donné dans la figure \ref{fig:graphe-maladie}. Les nœuds du graphe sémantique sont les sens lexicaux ‘Ali’, ‘malade’, ‘durer’, ‘semaine’ et ‘deux’ et les arêtes représentent les \textstyleTermes{relations prédicat-argument}. Les arêtes sont matérialisées par des flèches. Les arêtes sont étiquetées par des chiffres permettant de distinguer les différents arguments d’un prédicat : 1 pour le premier argument, 2 pour le deuxième, etc. L’ordre dans lequel les arguments sont numérotés est l’\textstyleTermes{ordre de saillance}, dont nous reparlerons au \chapfuturef{18} sur \textit{Les relations syntaxiques}.
+Nous avons présenté la structure prédicative par une \textstyleTermes{formule}, mais on peut aussi la représenter par un \textstyleTermes{graphe} (voir l’\encadref{sec:1.2.3} qui suit) que nous appelons le \textstyleTermes{graphe sémantique}. Le graphe sémantique correspondant à la formule de la figure \ref{fig:sens-maladie} est donné dans la figure \ref{fig:graphe-maladie}. Les nœuds du graphe sémantique sont les sens lexicaux ‘Ali’, ‘malade’, ‘durer’, ‘semaine’ et ‘deux’ et les arêtes représentent les \textstyleTermes{relations prédicat-argument}. Les arêtes sont matérialisées par des flèches. Les arêtes sont étiquetées par des chiffres permettant de distinguer les différents arguments d’un prédicat : 1 pour le premier argument, 2 pour le deuxième, etc. L’ordre dans lequel les arguments sont numérotés est l’\textstyleTermes{ordre de saillance}, dont nous reparlerons au \chapfuturef{18} sur \textit{Les relations syntaxiques}.
 
 \begin{figure}
 \begin{tikzpicture}[>={Triangle[]},label distance=0pt]
@@ -192,7 +192,7 @@ Comment se font les \textstyleTermes{choix lexicaux~}? Les choix lexicaux dépen
 
 À peu près n’importe quel énoncé en français possède un verbe principal et ce verbe est conjugué. Cela signifie que l’un des sens de notre message devra être lexicalisé par un verbe, par exemple ‘durer’ par \textsc{durer}. L’autre possibilité est de lexicaliser ‘malade’ par un verbe, mais comme il n’existe pas de verbe *\textsc{malader} en français, nous lexicalisons ‘malade’ par un adjectif et nous en faisons une tournure verbale \textsc{être} \textsc{malade} grâce au verbe \textsc{être}. Le verbe \textsc{être} n’a donc aucune contribution sémantique ici ; il a juste un rôle grammatical, qui est d’assurer que l’élément principal de la phrase est bien un verbe et donc de faire d’un adjectif l’équivalent d’un verbe. Ce rôle très particulier du verbe \textsc{être} lui vaut le nom de \textstyleTermes{copule}.
 
-Une fois choisi l’élément principal de la phrase, les éléments lexicaux choisis ensuite se voient imposer un certain nombre de choses, à commencer par leur \textstyleTermes{partie du discours} (les principales parties du discours du français sont nom, verbe, adjectif et adverbe). L’élément principal de la phrase est un verbe conjugué comme on vient de le dire (ceci sera justifié dans le chapitre consacré à la tête dans la Partie 3). Les éléments qui vont dépendre de ce verbe devront ensuite être soit des noms, soit des adverbes selon la relation qu’ils entretiennent avec ce verbe.
+Une fois choisi l’élément principal de la phrase, les éléments lexicaux choisis ensuite se voient imposer un certain nombre de choses, à commencer par leur \textstyleTermes{partie du discours} (les principales parties du discours du français sont nom, verbe, adjectif et adverbe). L’élément principal de la phrase est un verbe conjugué comme on vient de le dire (ceci sera justifié dans le chapitre consacré à la tête dans la partie 3). Les éléments qui vont dépendre de ce verbe devront ensuite être soit des noms, soit des adverbes selon la relation qu’ils entretiennent avec ce verbe.
 
 Commençons par le cas de la phrase \REF{ex:maladie}a (\textit{La maladie d’Ali a duré deux semaines}) dont le verbe principal est \textsc{durer} \textsc{:} le sens ‘malade’, qui est le premier argument du sens ‘durer’ devra être réalisé comme le sujet de \textsc{durer} et devra être un nom. La lexicalisation de ‘malade’ par un nom donne ainsi \textsc{maladie}. Le sens ‘semaine’ sera également réalisé par un nom, qui sera un complément direct du verbe. Nous discuterons dans le chapitre sur les fonctions syntaxiques de la Partie 6 de ces compléments de mesure qui ressemblent à des compléments d’objet directs mais n’en possède pas toutes les bonnes propriétés.
 
@@ -212,7 +212,6 @@ Le cas de la phrase \REF{ex:maladie}b (\textit{Ali a été malade pendant deux s
 \section{Structure hiérarchique}\label{sec:1.2.9}
 
 Lors du passage du sens au texte, tout se passe comme si on suspendait le graphe sémantique par l’un de ses nœuds dont on décide de faire le verbe principal de l’énoncé et qu’on parcourait le graphe à partir de ce nœud pour les autres lexicalisations. Nous pouvons illustrer cela par les schémas des figures \ref{fig:hierarchie-durer} et \ref{fig:hierarchie-malade} : à gauche nous représentons le graphe sémantique suspendu par un de ses nœuds (visé ici par une grosse flèche blanche)
-\todo[inline]{The text describe the arrow pointing on the roots in the two next figures. We must choose the appropriate arrow and adapt the text.}
 et à droite nous avons la structure hiérarchique correspondante où les sens lexicaux ont été lexicalisés. La double flèche entre le graphe sémantique et l'arbre syntaxique indique qu'ils se correspondent.
 
 \begin{figure}
@@ -241,7 +240,7 @@ et à droite nous avons la structure hiérarchique correspondante où les sens l
 \begin{forest} for tree={font=\normalfont}
 [\textsc{durer}
   [\textsc{maladie}\textsubscript{sg,déf},edge label={node[midway,above,font=\footnotesize]{1}}
-    [Adj\textsubscript{0}(\textsc{Ali}),edge label={node[midway,left,font=\footnotesize]{1}}]
+    [Adj(\textsc{Ali}),edge label={node[midway,left,font=\footnotesize]{1}}]
   ]
   [\textsc{semaine}\textsubscript{pl,indéf},edge label={node[midway,above,font=\footnotesize]{2}}
     [\textsc{deux},edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}]
@@ -276,7 +275,7 @@ et à droite nous avons la structure hiérarchique correspondante où les sens l
 \begin{minipage}[c]{.1\textwidth}\centering\huge$\Leftrightarrow$\end{minipage}%
 \begin{minipage}[c]{.45\textwidth}\centering
 \begin{forest} for tree={font=\normalfont}
-[V\textsubscript{0}(\textsc{malade})\textsubscript{passé}
+[V(\textsc{malade})\textsubscript{passé}
   [\textsc{Ali},edge label={node[near start,left,xshift=-5pt,font=\footnotesize]{1}}]
   [\textsc{pendant},edge label={node[near start,right,xshift=5pt,font=\footnotesize\itshape]{\textsc{mod}}}
     [\textsc{semaine}\textsubscript{pl,indéf},edge label={node[midway,right,font=\footnotesize]{2}}
@@ -288,7 +287,7 @@ et à droite nous avons la structure hiérarchique correspondante où les sens l
 \caption{\label{fig:hierarchie-malade}Hiérarchisation à partir de ‘malade’}
 \end{figure}
 
-La structure que nous obtenons s’appelle un \textstyleTermes{arbre de dépendance syntaxique profond} (voir le \chapfuturefici{13} entièrement consacré à \textit{La syntaxe profonde}). Chaque nœud de l’arbre est occupé par une unité lexicale correspondant à un sens. D’autres sens (non considéré ici) donne des éléments grammaticaux qui vont se combiner aux unités lexicales : temps pour les verbes (présent, passé, etc.), nombre (singulier, pluriel) et définitude (défini, indéfini) pour les noms. Le nœud au sommet est appelé la \textstyleTermes{racine} de l’arbre (voir l’\encadref{sec:1.2.3} sur \textit{Graphe et arbre}). Tous les nœuds à l’exception de la racine dépendent d’un autre nœud appelé leur \textstyleTermes{gouverneur} (syntaxique profond). À l’inverse, les nœuds qui dépendent d’un autre nœud en sont appelés les \textstyleTermes{dépendants} (syntaxiques profonds). Le lien entre deux nœuds est appelé une \textstyleTermes{dépendance} (syntaxique profonde).
+La structure que nous obtenons s’appelle un \textstyleTermes{arbre de dépendance syntaxi\-que profond} (voir le \chapref{sec:13} entièrement consacré à \textit{La syntaxe profonde}). Chaque nœud de l’arbre est occupé par une unité lexicale correspondant à un sens. D’autres sens (non considéré ici) donne des éléments grammaticaux qui vont se combiner aux unités lexicales : temps pour les verbes (présent, passé, etc.), nombre (singulier, pluriel) et définitude (défini, indéfini) pour les noms. Le nœud au sommet est appelé la \textstyleTermes{racine} de l’arbre (voir l’\encadref{sec:1.2.3} sur \textit{Graphe et arbre}). Tous les nœuds à l’exception de la racine dépendent d’un autre nœud appelé leur \textstyleTermes{gouverneur} (syntaxique profond). À l’inverse, les nœuds qui dépendent d’un autre nœud en sont appelés les \textstyleTermes{dépendants} (syntaxiques profonds). Le lien entre deux nœuds est appelé une \textstyleTermes{dépendance} (syntaxique profonde).
 
 Chaque dépendance est étiquetée en fonction de son parcours : les relations sémantiques qui ont été parcourues dans le sens de la flèche (du prédicat vers l’argument) donne une \textstyleTermes{dépendance syntaxique actancielle} (que nous numérotons comme la dépendance sémantique correspondante) (figure \ref{fig:dep-actant}), tandis que les relations sémantiques qui ont été parcourues à contre-courant donne une \textstyleTermes{dépendance syntaxique modificative} (étiquetée \textit{\textsc{mod}}) (figure \ref{fig:dep-mod}).
 
@@ -349,15 +348,15 @@ Chaque dépendance est étiquetée en fonction de son parcours : les relations s
 \caption{Dépendance modificative}\label{fig:dep-mod}
 \end{figure}
 
-Comme nous l’avons expliqué dans la section précédente, chaque unité lexicale se voit imposer sa partie du discours par son gouverneur, la racine étant un verbe conjugué. Ainsi dans la phrase \REF{ex:maladie}a, \textsc{Ali}, qui dépend du nom \textsc{maladie}, devrait être réalisé par un adjectif, ce que nous indiquons par la notation Adj\textsubscript{0}(\textsc{Ali}). C’est la préposition DE qui assurera cette \textstyleTermes{translation} (\textit{la maladie} \textbf{\textit{d}}\textit{’Ali}) et permettra à \textsc{Ali} d’être complément du nom (voir la section du \chapfuturef{17} sur \textit{La translation}). De la même façon, la notation V\textsubscript{0}(\textsc{malade}) indique que \textsc{malade} occupe une position où un verbe est attendu et c’est la copule \textsc{être} qui assurera la translation d’adjectif en verbe.
+Comme nous l’avons expliqué dans la section précédente, chaque unité lexicale se voit imposer sa partie du discours par son gouverneur, la racine étant un verbe conjugué. Ainsi dans la phrase \REF{ex:maladie}a, \textsc{Ali}, qui dépend du nom \textsc{maladie}, devrait être réalisé par un adjectif, ce que nous indiquons par la notation Adj(\textsc{Ali}). C’est la préposition DE qui assurera cette \textstyleTermes{translation} (\textit{la maladie} \textbf{\textit{d}}\textit{’Ali}) et permettra à \textsc{Ali} d’être complément du nom (voir la section du \chapfuturef{17} sur \textit{La translation}). De la même façon, la notation V(\textsc{malade}) indique que \textsc{malade} occupe une position où un verbe est attendu et c’est la copule \textsc{être} qui assurera la translation d’adjectif en verbe.
 
 \loupe[sec:1.2.10]{Du sens au texte : de 3D à 1D}{%
 
     Nous avons mentionné dans la \sectref{sec:1.1.2} \textit{Sons et textes} le caractère unidimensionnel de la chaîne parlée. Le sens lui est localisé dans notre cerveau : un certain nombre de zones de notre cerveau s’activent simultanément (ou les unes après les autres) et se mettent en réseau : le sens est donc fondamentalement un objet au moins tridimensionnel (quadridimensionnel si l’on prend en compte la dimension temporelle et le caractère dynamique de la construction du sens). Le passage du sens au texte s’accompagne donc d’une réduction de dimensionnalité, un passage de la dimension 3 à la dimension 1, une suite ordonnée d’unités élémentaires. Il semble que la langue effectue ce changement de dimension en deux étapes :
 
     \begin{itemize}
-    \item le passage de la dimension 3 à la dimension 2 est une hiérarchisation du sens, le passage d’un graphe à un arbre ;
-    \item le passage de la dimension 2 à la dimension 1 est la linéarisation de ce graphe.
+    \item le passage de la dimension 3 à la dimension 2 est une \terme{hiérarchisation} du sens, le passage d’un graphe à un arbre ;
+    \item le passage de la dimension 2 à la dimension 1 est la \terme{linéarisation} de cet arbre.
     \end{itemize}
 
     La phase de hiérarchisation s’accompagne d’une phase de «~lexicalisation~», c’est-à-dire de choix de signes linguistiques élémentaires, des unités lexicales et des unités grammaticales, qui se contraignent les unes les autres. La phase de linéarisation s’accompagne d’une «~morphologisation~» des signes, c’est-à-dire de combinaison des signifiants selon des règles morpho-phonologiques propres à chaque langue. Une telle architecture est à la base de la  Théorie Sens-Texte, que nous évoquerons dans l’\encadref{sec:1.3.9} éponyme.
@@ -454,7 +453,7 @@ L’expression même des contraintes grammaticales repose sur les «~connexions~
 
     La linguistique ne s’intéresse pas à ces jugements esthétiques. Les règles linguistiques sont toujours descriptives et jamais prescriptives.
 
-   \tcbsubtitle{Quand les grammairiens ont gagné}
+   \tcbsubtitle{Quand les grammairiens ont gagné}\todo[inline]{no page skip after a \tcbsubtitle}
 
     La grammaire normative peut avoir une influence sur le comportement linguistique des locuteurs d’une langue. En effet, une prescription peut être acceptée par la langue et donc entrer dans les régularités de la langue. Dans ce cas-là, la linguistique s’intéresse bien entendu à cette régularité.
 
