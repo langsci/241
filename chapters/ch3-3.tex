@@ -164,8 +164,7 @@ Concluons cette section en soulignant une propriété fondamentale que nous expl
     Les \textstyleTermesapprof{dépendances sémantiques} sont les \hi{relations prédicat-argument} qui existent entre les signifiés des sémantèmes (voir chapitres \ref{sec:1.2} et \ref{sec:2.3}). Par exemple, un verbe à l’infinitif n’a jamais de sujet, mais il possède toujours un argument sémantique qui peut être restitué par une paraphrase où le verbe est à une forme finie. Par exemple, si on compare \textit{Marie promet à Pierre de venir} et \textit{Marie permet à Pierre de venir}, dans le premier cas ‘Marie’ est l’argument de ‘venir’ (\textit{Marie promet qu’elle viendra}) et dans le deuxième cas ‘Pierre’ est l’argument de ‘venir’ (\textit{Marie permet que Pierre vienne}) (voir figure \ref{fig:promet}). Dans les deux cas, la dépendance sémantique ne correspond pas à une dépendance syntaxique, car ni \textit{Marie de venir,} ni \textit{à Pierre de venir} ne sont des unités syntaxiques. Les dépendances sémantiques seront à nouveau considérées dans le \chapfuturefici{13} sur la \textit{Syntaxe profonde}, ainsi que dans le \chapfuturef{19} où nous étudierons les distorsions entre structures syntaxique et sémantique dans les phénomènes d’extraction.
     
     \begin{figure}[H]
-        \begin{minipage}{.5\textwidth}\centering
-        a. {\itshape Marie promet à Pierre de venir}\\
+        \begin{subfigure}{.5\textwidth}\centering
         \begin{tikzpicture}[>={Triangle[]}]
         \graph [empty nodes, nodes={CircleNode},clockwise,n=4] 
           {
@@ -177,9 +176,9 @@ Concluons cette section en soulignant une propriété fondamentale que nous expl
             {[edge node={node[midway,right,font=\small] {2}}]a->c},
             {[edge node={node[EdgeLabel] {3}}]a->b}
           };
-        \end{tikzpicture}\end{minipage}%
-        \begin{minipage}{.5\textwidth}\centering
-        b. {\itshape Marie permet à Pierre de venir}\\
+        \end{tikzpicture}
+        \caption{\itshape Marie promet à Pierre de venir}\end{subfigure}%
+        \begin{subfigure}{.5\textwidth}\centering
         \begin{tikzpicture}[>={Triangle[]}]
         \graph [empty nodes, nodes={CircleNode},clockwise,n=4] 
           {
@@ -192,7 +191,8 @@ Concluons cette section en soulignant une propriété fondamentale que nous expl
             {[edge node={node[EdgeLabel] {3}}]a->b}
           };
         \end{tikzpicture}
-        \end{minipage}
+        \caption{\itshape Marie permet à Pierre de venir}
+        \end{subfigure}
         \caption{Représentations sémantiques}\label{fig:promet}
     \end{figure}
 

@@ -882,7 +882,7 @@ Alors qu’un arbre de dépendance correspond naturellement à un arbre de const
           ]
       ]
     ]    
-    \end{forest}
+    \end{forest}\\
     \small\textit{The man hit the ball.} ‘L'homme frappa le ballon.’\label{fig:chomsky57}
     \caption{Arbre de constituant \citet{chomsky1957syntactic} et diagramme polygraphique de l'édition de 2002}
 \end{figure}
@@ -1060,25 +1060,23 @@ Si l’on applique la déréfication à tous les nœuds intérieurs de l’arbre
 [
  [ [beaucoup] [ [de] [gens] ] ]
  [ [aimeraient]
-        [ 
+        [,before drawing tree={y-=2.5mm}
           [ [passer] [Noël] ] 
           [ [en] [Laponie] ] 
         ] 
   ]
 ]
 \begin{scope}[>={Triangle[]},overlay]
-\draw[->] (!2.north) +(0,.25) to [bend right,in=270,out=270] (!1.north) to (!1.south);
-\draw[->] (!11.north)   to [bend left,out=90,in=90]   (!12.north) to (!12.south);
-\draw[->] (!121.north)  to [bend left,out=90,in=90]                  (!122.north);
-\draw[->] (!21.north)   to [bend left,out=90,in=90]   (!22.north) to (!22.south);
-\draw[->] (!221.south)  to [bend left,out=90,in=90]                  (!222.south);
-\draw[->] (!2211.north) to [bend left,out=90,in=90]                  (!2212.north);
-\draw[->] (!2221.north) to [bend left,out=90,in=90]                  (!2222.north);
+\draw[->] (!2.north)    to [bend right=60] (!1.south);
+\draw[->] (!11.north)   to [bend left=60]  (!12.south);
+\draw[->] (!121.north)  to [bend left=60]  (!122.north);
+\draw[->] (!21.north)   to [bend left=60]  (!22.south);
+\draw[->] (!221.south)  to [bend left=60]  (!222.south);
+\draw[->] (!2211.north) to [bend left=60]  (!2212.north);
+\draw[->] (!2221.north) to [bend left=60]  (!2222.north);
 \end{scope}
 \end{forest}
 \end{figure}
-\todo[inline]{some arcs are different. It would be nicer if all the arcs were identical (with different sizes). The spaces between the head of the arrows and the dependent is irregular too.}
-
 
 \maths[sec:3.4.22]{Réification et transitivité}{%
     Nous appelons \textstyleTermes{réification}, du latin \textit{res} ‘chose’, l'opération qui consiste à rendre concret un élément virtuel d'une structure, comme un point de contact entre deux objets. Pour mieux comprendre ce qu'est la réification, donnons un autre exemple, emprunté à la représentation sémantique des constructions transitives. Considérons une phrase élémentaire telle que :
