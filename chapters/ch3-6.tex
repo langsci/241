@@ -13,7 +13,7 @@ Donnons un premier exemple de structure syntaxique profonde, en la contrastant a
 
 \ea\label{ex:jambe} \textit{Zoé a tenu la jambe à la prof pendant une heure.}\z
 
-Dans l’exemple \REF{ex:jambe}, phraseme{tenir la jambe} est un phraseme (voir la \sectref{sec:2.3.7} sur le \textit{Phrasème}), c’est-à-dire un sémantème complexe, qui forme dont un seul nœud dans la structure syntaxique profonde, mais correspond à plusieurs syntaxèmes et donc plusieurs nœuds dans la structure syntaxique de surface. Les conventions utilisées dans la structure syntaxique profonde seront explicitées dans la suite. On notera tout de suite que les articles, qui sont des lexèmes très grammaticalisés, sont considérés comme la réalisation par défaut d’un sémantème de définitude. Rappelons que les signifiés des sémantèmes lexicaux ou lexies sont indiqués entre guillemets simples (‘prof’, ‘tenir la jambe’, …). Les signifiés des sémantèmes grammaticaux ou grammies peuvent être désignés par des termes (singulier, passé, …) ou par des paraphrases (‘un’, ‘avant maintenant’, …). 
+Dans l’exemple \REF{ex:jambe}, \phraseme{tenir la jambe} est un phraseme (voir la \sectref{sec:2.3.7} sur le \textit{Phrasème}), c’est-à-dire un sémantème complexe, qui forme dont un seul nœud dans la structure syntaxique profonde, mais correspond à plusieurs syntaxèmes et donc plusieurs nœuds dans la structure syntaxique de surface. Les conventions utilisées dans la structure syntaxique profonde seront explicitées dans la suite. On notera tout de suite que les articles, qui sont des lexèmes très grammaticalisés, sont considérés comme la réalisation par défaut d’un sémantème de définitude. Rappelons que les signifiés des sémantèmes lexicaux ou lexies sont indiqués entre guillemets simples (‘prof’, ‘tenir la jambe’, …). Les signifiés des sémantèmes grammaticaux ou grammies peuvent être désignés par des termes (singulier, passé, …) ou par des paraphrases (‘un’, ‘avant maintenant’, …). 
 
 
 
@@ -45,7 +45,7 @@ Dans l’exemple \REF{ex:jambe}, phraseme{tenir la jambe} est un phraseme (voir 
 			\draw[-{Triangle[]}] (def) -- (prof) node[font=\footnotesize,midway,right] {1};
 			\draw[-{Triangle[]}] (singulier0) -- (heure) node[font=\footnotesize,midway,anchor=base east] {1};
 		\end{tikzpicture}
-		\caption{Structure sémantique}
+		\caption{Structure sémantique}\todo[inline]{put figure a on the left (its caption to close from figure c)}
 	\end{subfigure}%
 	\bigskip\\%
 	\begin{subfigure}[b]{0.5\textwidth}
@@ -259,7 +259,7 @@ Notons également que les translatifs peuvent en plus être des collocatifs : te
 \subsubsection{Les sémantèmes constructionnels} 
 Il existe des syntaxèmes qui n’expriment pas des sens proprement dits, mais qui ont à voir avec la structure communicative, la façon dont on présente l’information (voir l’\encadref{sec:13-packaging}). Nous considérons qu’il s’agit de sémantèmes d’un type particulier, que nous appelons les \terme{sémantèmes constructionnels}. Nous distinguons ceux comme le clivage, qui sont réalisés par des lexèmes et des grammèmes distincts de la forme verbale et que nous traitons comme des lexies, et ceux comme le passif, qui sont réalisés par un grammème sur le verbe et que nous traitons comme des grammies.
 
-Nous avons déjà parlé du clivage dans la section \sectref{sec:11.8} sur \textit{Les tests de constituance} et dont nous reparlerons dans le \chapfuturef{20}. Le clivage, réalisé par \textit{c’est} X \textit{qui/que} Y, s’applique à une proposition Y dont il promeut l’un des éléments X. Il possède donc deux actants : l’élément promu X est le premier actant et la proposition Y privée de cet élément est le deuxième actant.
+Nous avons déjà parlé du clivage dans la \sectref{sec:11.8} sur \textit{Les tests de constituance} et dont nous reparlerons dans le \chapfuturef{20}. Le clivage, réalisé par \textit{c’est} X \textit{qui/que} Y, s’applique à une proposition Y dont il promeut l’un des éléments X. Il possède donc deux actants : l’élément promu X est le premier actant et la proposition Y privée de cet élément est le deuxième actant.
 
 \ea\label{ex:13-clivage}
 \ea \textit{\textbf{C’est} Zoé \textbf{qui} viendra.}
@@ -333,7 +333,7 @@ Notons que dans le cas du participe passif dépendant d’un nom, le passif, en 
 Nous n’indiquons pas quand le verbe est à l’actif, considérant qu’il s’agit de la construction de base du verbe et qu’il n’y a donc pas de redistribution en jeu.
 
 \subsubsection{Les pronoms}
-Certains pronoms résultent du dédoublement d’un nœud sémantique, comme le pronom \textit{elle} en \REF{ex:13-pronom}a. Le pronom n’est pas un sémantème standard, puisqu’il n’a pas de signifié distinct qui apparaisse dans la structure sémantique, comme on le voit dans la structure sémantique de la figure \ref{fig:13-pronom-sem} commune aux deux exemples en \REF{ex:13-pronom}.
+Certains pronoms résultent du dédoublement d’un nœud sémantique, comme le pronom \textit{elle} en \REF{ex:13-pronom}a. Le pronom n’est donc pas un sémantème standard, puisqu’il n’a pas de signifié distinct qui apparaisse dans la structure sémantique, comme on le voit dans la structure sémantique de la figure \ref{fig:13-pronom-sem} commune aux deux exemples en \REF{ex:13-pronom}.
 
 \ea\label{ex:13-pronom}
 \ea \textit{Zoé pense qu’elle viendra}.
@@ -356,12 +356,12 @@ Certains pronoms résultent du dédoublement d’un nœud sémantique, comme le 
 	\draw[-{Triangle[]}] (venir) -- (zoe) node[font=\footnotesize,midway,above] {1};
 	
 \end{tikzpicture}
-\caption{Structure sémantique avec un cycle commune à \REF{ex:13-pronom}a et b \label{fig:13-pronom-sem}}
+\caption{Structure sémantique avec un cycle commune à \REF{ex:13-pronom}a et b\label{fig:13-pronom-sem}}
 \end{figure}
 
-La représentation que nous proposons pour \REF{ex:13-pronom}a est d’indiquer qu’il y a un sémantème « pro » coréférent avec \textsc{Zoé}. La coréférence est indiquée par une double flèche en pointillé (voir la figure \ref{fig:13-pronom-pro}a). Ce lien indique que le sémantème « pro » provient du dédoublement du sémantème ‘Zoé’ et il permet d’assurer l’accord de « pro » avec \textsc{Zoé} au niveau syntaxique de surface Dans le cas de \REF{ex:13-pronom}b, où il n’y a pas de pronom, nous indiquons que la dépendance entre le verbe subordonné et son premier argument est uniquement sémantique (par une flèche hachée) (figure \ref{fig:13-pronom-pro}b). Nous reviendrons sur cette construction dans la \sectref{sec:13-controle} sur le \textit{Contrôle}.
+La représentation que nous proposons pour \REF{ex:13-pronom}a est d’indiquer qu’il y a un sémantème « pro » coréférent avec \textsc{Zoé}. La coréférence est indiquée par une flèche bidirectionnelle en pointillé (voir la figure \ref{fig:13-pronom-pro}a). Ce lien indique que le sémantème « pro » provient du dédoublement du sémantème ‘Zoé’ et il permet d’assurer l’accord de « pro » avec \textsc{Zoé} au niveau syntaxique de surface Dans le cas de \REF{ex:13-pronom}b, où il n’y a pas de pronom, nous indiquons que la dépendance entre le verbe subordonné et son premier argument est uniquement sémantique (par une flèche hachée) (figure \ref{fig:13-pronom-pro}b). Nous reviendrons sur cette construction dans la \sectref{sec:13-controle} sur le \textit{Contrôle}.
 
-\begin{figure}
+\begin{figure}\label{fig:13-pronom-pro}
 	\begin{subfigure}[b]{0.5\textwidth}
 		\centering
 		\begin{forest} for tree={font=\normalfont}
@@ -414,9 +414,9 @@ Nous donnons dans la figure \ref{fig:13-fumer} les représentations sémantique 
 			every label/.style={reset shape}]
 			
 			\begin{scope}[nodes={CircleNode}]
-				\node (dangereux) [label=above:{`dangereux'}] {};
+				\node (dangereux) [label=above:{`dangereux'\ }] {};
 				\node (fumer) [below right=of dangereux,label=below:{`fumer'}] {};
-				\node (generique) [above right=of fumer,label=above:{générique}] {};
+				\node (generique) [above right=of fumer,label=above:{\ générique}] {};
 			\end{scope}
 			
 			\draw[-{Triangle[]}] (dangereux) -- (fumer) node[font=\footnotesize,midway,left] {1};
@@ -476,7 +476,7 @@ Le grammème de participe présent, lui, est utilisé dans deux emplois en fran�
 \end{figure}
 
 \subsubsection{Les sémantèmes cachés} 
-Nous appelons \textsc{sémantèmes cachés} des sens qui naissent d’une configuration particulière sans être réellement réalisés par un syntaxème. Notre premier exemple est illustré par une construction particulière du russe relevée par \cite[141]{melcuk1988dependency}. En russe, le numéral se place normalement avant le nom. Il est néanmoins possible de placer le numéral après le nom, mais cela change le sens : le numéral est alors interprété comme une valeur approximative. C’est donc l’ordre des mots qui est signifiant. 
+Nous appelons \textsc{sémantèmes cachés} des sens qui naissent d’une configuration particulière sans être réellement réalisés par un syntaxème. Notre premier exemple est illustré par une construction particulière du russe relevée par \citet[141]{melcuk1988dependency}. En russe, le numéral se place normalement avant le nom. Il est néanmoins possible de placer le numéral après le nom, mais cela change le sens : le numéral est alors interprété comme une valeur approximative. C’est donc l’ordre des mots qui est signifiant. 
 
 \ea\label{ex:13-approx}  
 \ea \textit{Ja polučil desjat’ rublej.}\\ 
@@ -509,7 +509,7 @@ La \hi{dislocation} est un cas de sémantème constructionnel, comme le clivage,
 	[V(\textsc{intention})\textsubscript{prés}
 		[\textsc{moi},name=moi,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
 		[\textsc{parler},name=parler,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
-			[dislocation(\textsc{Zoé}),edge label={node[midway,right,font=\footnotesize]{2}}]
+			[\ \ dislocation(\textsc{Zoé}),edge label={node[midway,right,font=\footnotesize]{2}}]
 		]
 	]
 	\draw[->,dashed] ($(parler)+(-0.125cm,-0.4cm)$) .. controls +(south:0.6cm) and +(south:1cm) .. (moi) node[pos=0.75,below left]{\footnotesize 1};
@@ -531,7 +531,7 @@ Un dernier exemple de sémantème caché est celui des conversions massif-compta
 		\begin{forest} for tree={font=\normalfont}
 			[\textsc{boire}\textsubscript{passé}
 				[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-				[\textsc{vin}\textsubscript{indéf},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
+				[\ \textsc{vin}\textsubscript{indéf},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
 			]
 		\end{forest}
 		\caption{Structure de \REF{ex:13-vin}a}
@@ -543,7 +543,7 @@ Un dernier exemple de sémantème caché est celui des conversions massif-compta
 		\begin{forest} for tree={font=\normalfont}
 			[\textsc{gouter}\textsubscript{passé}
 				[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
-				[type(\textsc{vin})\textsubscript{sg,indéf},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
+				[\ \ type(\textsc{vin})\textsubscript{sg,indéf},edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}
 					[\textsc{bon},edge label={node[midway,right,font=\footnotesize\itshape]{\textsc{mod}}}]
 				]
 			]
@@ -575,7 +575,7 @@ Nous avons fait le choix d’indiquer explicitement les constructions qui sont d
 		\centering
 		\begin{forest} for tree={font=\normalfont}
 			[\textsc{excellent}
-				[disloc(\textsc{café}\textsubscript{sg}),edge label={node[midway,left,font=\footnotesize]{1}}
+				[dislocation(\textsc{café}\textsubscript{sg}),edge label={node[midway,left,font=\footnotesize]{1}}
 					[\textsc{cet},edge label={node[midway,left,font=\footnotesize\itshape]{\textsc{mod}}}]
 				]
 			]
@@ -615,7 +615,7 @@ Nous allons étudier la structure prédicative des différents sémantèmes en p
 \subsection{Les verbes}
 La valence des verbes est la plus étudiée. Nous en avons déjà donné quelques exemples. Il existe des \hi{verbes avalents}, comme les verbes météorologiques \textsc{pleuvoir} ou \textsc{neiger}, des \hi{verbes monovalents} comme \textsc{dormir} ou \textsc{courir}, des \hi{verbes bivalents} comme \textsc{manger} ou \textsc{penser}. (Evidemment, tous ces verbes sont polysémiques et quand nous disons que tel verbe a telle valence, nous faisons référence à l’acception la plus courante de ce verbe. Le verbe \textsc{courir}, par exemple, est monovalent dans \textit{courir pour rester en forme}, mais bivalent dans \textit{courir les filles} ou \textit{courir après son bus}.) 
 
-Parmi les compléments locatifs, on distingue les modifieurs qui indiquent le lieu et le moment du procès d’arguments qui indiquent une destination. Par exemple, \textsc{aller} est bivalent (quelqu’un va quelque part), \textsc{mettre} est trivalent (quelqu’un met quelque chose quelque part). Certains cas sont délicats à trancher : par exemple, le complément \textit{à la bibliothèque} est un modifieur s’il indique le lieu où je travaille aujourd’hui, mais il est un argument si \REF{ex:travailler} est utilisé pour dire ‘je suis un employé de la bibliothèque’.
+Parmi les compléments locatifs, on distingue les modifieurs qui indiquent le lieu et le moment du procès d’arguments qui indiquent une destination. Par exemple, \textsc{aller} est bivalent (quelqu’un va quelque part), \textsc{mettre} est trivalent (quelqu’un met quelque chose quelque part). Certains cas sont délicats à trancher : par exemple, le complément \textit{à la bibliothèque} est un modifieur s’il indique le lieu où je travaille aujourd’hui, mais il est un argument si \REF{ex:travailler} est utilisé pour dire ‘je suis un employé de la bibliothèque’. (On notera aussi qu'il s'agit de deux acceptions différentes du lexème \textsc{travailler}.)
 
 \ea\label{ex:travailler} \textit{Je travaille à la bibliothèque.}\z
 
@@ -1477,9 +1477,9 @@ Les \hi{constructions à verbes support} sont aussi des constructions à contrô
 
 Le nom \textsc{gifle} est un nom prédicatif qui possède trois arguments : \textit{la gifle de Pierre à Marie} (\textit{à propos de} Z). Dans une construction à verbe support, le nom prédicatif contrôle les actants du verbe support (dont la contribution sémantique est quasi nulle). On peut voir le verbe support comme un réification de la relation sémantique, c’est-à-dire un élément lexical qui réalise la relation sémantique et lui donne ainsi un poids sémantique plus important.
 
-Nous proposons dans la figure \ref{fig:13-gifle} la structure syntaxique profonde des exemples \REF{ex:13-gifle}. Le verbe support \phraseme{se prendre} est modélisé par une fonction lexicale Oper2, terme introduit par Igor Mel’cuk signifiant qu’il s’agit d’un opérateur qui \hi{réifie} le 2\textsuperscript{e} argument du nom prédicatif. Le verbe support \textsc{donner} a deux actants contrôlés par le nom \textsc{gifle} : il est noté Oper\textsubscript{12} car il réalise comme actants les arguments 1 et 2 du nom \textsc{gifle}.
+Nous proposons dans la figure \ref{fig:13-gifle} la structure syntaxique profonde des exemples \REF{ex:13-gifle}. Le verbe support \phraseme{se prendre} est modélisé par une fonction lexicale Oper2, terme introduit par Igor Mel’\v cuk signifiant qu’il s’agit d’un opérateur qui \hi{réifie} le 2\textsuperscript{e} argument du nom prédicatif. Le verbe support \textsc{donner} a deux actants contrôlés par le nom \textsc{gifle} : il est noté Oper\textsubscript{12} car il réalise comme actants les arguments 1 et 2 du nom \textsc{gifle}.
 
-\begin{figure}
+\begin{figure}\label{fig:13-gifle}
 %FIGURE 27
 	%a. Marie <-1- Oper2\_prés -2> gifle (Marie) <..2.. (Pierre) <..1..
 	\begin{subfigure}[b]{0.5\textwidth}
@@ -1590,7 +1590,7 @@ La figure \ref{fig:13-monte} propose une représentation de la structure syntaxi
 \caption{Structures syntaxiques profondes de constructions avec un verbe à montée \label{fig:13-monte}}
 \end{figure}
 
-Les constructions avec auxiliaires peuvent être vues comme des cas particuliers de constructions à montée : en effet, l’auxiliaire exprime lexicalement une grammie qui a le verbe auxilié comme actant, tandis que le sujet de l’auxiliaire résulte de la montée du premier actant du verbe. Ceci est illustré en \REF{ex:13-aux}a, où l’auxiliaire \textsc{avoir} du passé a pour sujet \textsc{Zoé} et pour unique actant le verbe \textsc{courir}, dont il spécifie le moment du procès.
+Les constructions avec auxiliaires peuvent être vues comme des cas particuliers de constructions à montée : en effet, l’auxiliaire exprime lexicalement une grammie qui a le verbe auxilié comme argument, tandis que le sujet de l’auxiliaire résulte de la montée du premier actant du verbe. Ceci est illustré en \REF{ex:13-aux}a, où l’auxiliaire \textsc{avoir} du passé a pour sujet \textsc{Zoé} et pour unique actant le verbe \textsc{courir}, dont il spécifie le moment du procès.
 
 \ea\label{ex:13-aux}
 \ea \textit{Zoé a couru.}
@@ -1681,7 +1681,7 @@ L’insertion modificative concerne aussi les déterminants et en tout premier l
 
 L’exemple \REF{ex:13-insertion}a montre de plus que les modifieurs insérés peuvent s’insérer de manière récursive, puisque dans cet exemple \textsc{moitié} vient s’insérer sur \textsc{livre}, puis l’adverbe \textsc{plus} s’insère sur \textsc{moitié}, comme on le voit dans la structure syntaxique profonde de la figure \ref{fig:13-insertion}a. Si l’on considère que les déterminant sont la tête du groupe substantif, comme nous l’avons défendu dans la \sectref{sec:3.3.26} \textit{Déterminant comme tête ?}, alors il faut également considérer que le déterminant \textsc{cet} s’est inséré dans l’exemple \REF{ex:13-insertion}b. Cette analyse est proposée dans la figure \ref{fig:13-insertion}b et est à contraster avec l’analyse de la figure \ref{fig:13-excellent}, où le nom est considéré comme la tête du groupe substantif et \textsc{cet} est traité comme un modifieur ordinaire.
 
-\begin{figure}
+\begin{figure}\label{fig:13-insertion}
 %FIGURE 31
 	%a.	Félix <-1- lire\_passé -+-> plus -1-> moitié -1-> livre\_sg, déf <..2.. (lire)
 	\begin{subfigure}[b]{0.5\textwidth}
@@ -1729,7 +1729,7 @@ En guise de conclusion de ce chapitre, nous souhaitons récapitule les différen
 \item	les relations modificatives, où une relation sémantique et une relation syntaxique se superposent, mais ont des orientations inverses ; elles sont étiquetées \textit{\textsc{mod}} ;
 \item	les relations lexie-grammie, qui sont aussi des cas où une relation sémantique et une relation syntaxique se superposent, mais que nous annotons différemment en raison du statut particulier de la connexion syntaxique entre lexies et grammies ;
 \item	les relations entre un opérateur et son argument, que nous utilisons pour la translation syntaxique et pour les sémantèmes cachés ;
-\item	les relations syntaxiques pures, qui ne se superposent pas à une relation sémantique ; elles sont étiquetées +1, +2, etc. lorsqu'il s'agit de quasi-actants résultant d'une montée ou (1), (2), etc. lorsqu'il de positions actancielles où un modifieur s'est inséré ;
+\item	les relations syntaxiques pures, qui ne se superposent pas à une relation sémantique ; elles sont étiquetées +1, +2, etc. lorsqu'il s'agit de quasi-actants résultant d'une montée ou (1), (2), etc. lorsqu'il s'agit de positions actancielles où un modifieur s'est inséré ;
 \item	les relations sémantiques pures qui ne se superposent pas une relation syntaxique ; elles sont représentées par des flèches hachurées et sont numérotées comme les relations actancielles.
 \end{itemize}
 
@@ -1858,7 +1858,7 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 			\draw[-{Triangle[]}] (passer) -- (laponie) node[font=\footnotesize,midway,anchor=base west] {3};
 			
 		\end{tikzpicture}
-		\caption{Structure sémantique}
+		\caption{Structure sémantique}\todo[inline]{the caption of subfigure a is closer to subfig b that subfig a. This a general problem of subfigures  below each other, increased here by the asymetry of subfig a and the space above the caption}
 	\end{subfigure}%
 	\bigskip\\%
 	%b. gens\_indf <-1- beaucoup <-+- aimer\_cond -2-> passer Noël Laponie
@@ -2083,7 +2083,7 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 \corrigé{8} « \textit{On ne doit pas mentir.} » n’est pas la négation sémantique de « \textit{On doit mentir.} ». Celle-ci serait plutôt exprimée par « \textit{On n’est pas obligé de mentir.} » ou « \textit{On peut ne pas mentir.} ». En fait, « \textit{On ne doit pas mentir.} » est synonyme de « \textit{On doit ne pas mentir.} ». Il y a donc bien un apparent phénomène de montée de la négation : la négation qui porte sémantiquement sur \textsc{mentir} se trouve attachée syntaxiquement au verbe recteur \textsc{devoir}. \citet{tesniere1959elements} notait déjà ce phénomène auquel il consacre son chapitre 89 intitulé \textit{Anticipation de la négation}. Plutôt qu’un phénomène syntaxique qui verrait véritablement une montée dans l’interface sémantique-syntaxe, on considère plutôt qu’il s’agit d’un phénomène de figement lexical associé au verbe recteur qui combiné à la négation prend un sens particulier (voir par exemple \cite{forest1994negation}). On retrouve ce phénomène dans de nombreuses langues. Cet exemple de l’italien montre un exemple intéressant de contraste avec le français :
 
 \begin{exe}
-\exi{} \textit{Il cafe non mi fa dormire.}\\
+\exi{} \textit{Il caffe non mi fa dormire.}\\
 ‘Le café m’empêche de dormir.’\\
 lit. ‘Le café ne me fait pas dormir.’
 \end{exe}}
