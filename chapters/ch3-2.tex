@@ -191,7 +191,7 @@ Cet énoncé contient quatre segments de deux mots qui commutent avec un mot :
 
 \ea\label{ex:3:2:9:star}\relax
 {\let\eachwordone\normalfont
-\gll \uline{\textit{Cet étudiant}}  \uline{\textit{veut acheter}}  \uline{u\textit{n livre}}  \uline{\textit{de syntaxe}}\\
+\gll \uline{\textit{Cet étudiant}}  \uline{\textit{veut acheter}}  \uline{\textit{un livre}}  \uline{\textit{de syntaxe}}\\
      \textit{Il}  \textit{achète}  \textit{celui}  \textit{neuf}\\}
 \z
 
@@ -245,7 +245,7 @@ Nous avons défini ce que nous entendions par unité syntaxique. Il y a connexio
 
 Supposons que A et B soient deux unités syntaxiques qui se combinent, comme par exemple, A = \textit{cet étudiant veut acheter} et B = \textit{un livre de syntaxe}. Nous proposons deux façons de représenter la \hi{combinaison} A ${\oplus}$ B entre A et B. À gauche de la figure \ref{fig:combiAB}, la combinaison est représentée par une \hi{bulle} qui entoure les deux éléments qui se combinent. À droite, la combinaison est représentée par un \hi{trait} qui lie les deux éléments qui se combinent. C’est équivalent, il s’agit juste de conventions de représentation différentes. Néanmoins, les deux conventions sont utilisés par des théories différentes et conduisent généralement à des analyses différentes, comme nous allons le voir.
 
-\begin{figure}\label{fig:combiAB}
+\begin{figure}
 \begin{tikzpicture}
 \node at (0,0) [AbsEllipse] (A) {A};
 \node at (2,0) [AbsEllipse] (B) {B};
@@ -255,7 +255,7 @@ Supposons que A et B soient deux unités syntaxiques qui se combinent, comme par
 \node at (9,0) [AbsEllipse] (B2) {B};
 \path (A2) edge [bend left] (B2);
 \end{tikzpicture}
-\caption{\label{fig:}Deux façons de représenter la combinaison A $\oplus$ B}
+\caption{\label{fig:combiAB}Deux façons de représenter la combinaison A $\oplus$ B}
 \end{figure}
 
 \begin{figure}
@@ -502,7 +502,7 @@ Le test d’insertion est un cas particulier de la propriété de projectivité 
 Les deux tests que nous venons d’énoncer, le test de déplacement et le test d’insertion, sont des tests qui s’appliquent seulement à certaines connexions et qui dépendent de propriétés générales de la langue et de propriétés particulières de certaines constructions. Par exemple, si le test d’insertion s’applique bien à la connexion entre un nom et un complément de nom en français, il n’en sera pas de même dans des langues qui acceptent plus facilement des configurations non projectives ou pour d’autres constructions du français (voir la \encadref{sec:3.5.33} \textit{Non-projectivité} \textit{en français}).
 
 \loupe[sec:3.2.17]{Connexion ternaire}{%
-    Notre définition de la connexion présuppose que toute \hi{connexion} est \hi{binaire}, c’est-à-dire que les unités syntaxiques se combinent deux par deux. Ceci revient à supposer qu’on peut décomposer toute unité en deux morceaux. Nous n'avons pas vraiment d'exemples où une unité ne peut pas être décomposée en deux et nous n'introduirons donc pas, dans cet ouvrage, de \textstyleTermes{connexion ternaire}, c'est-à-dire de connexion liant trois éléments. Nous néanmoins aimerions souligner qu'il est possible de considérer des connexions ternaires et que cela a déjà été fait par différents auteurs.
+    Notre définition de la connexion présuppose que toute \hi{connexion} est \hi{binaire}, c’est-à-dire que les unités syntaxiques se combinent deux par deux. Ceci revient à supposer qu’on peut décomposer toute unité en deux morceaux. Nous n'avons pas vraiment d'exemples où une unité ne peut pas être décomposée en deux et nous n'introduirons donc pas, dans cet ouvrage, de \textstyleTermes{connexion ternaire}, c'est-à-dire de connexion liant trois éléments. Nous aimerions néanmoins souligner qu'il est possible de considérer des connexions ternaires et que cela a déjà été fait par différents auteurs.
     
     Les connexions ternaires sont introduites pour modéliser le fait qu'un élément grammatical marque la connexion entre deux éléments lexicaux. Par exemple, dans \textit{Ali parle à Zoé}, la préposition \textsc{à} marque la combinaison entre le verbe \textsc{parler} et le substantif \textsc{Zoé}. On peut donc adopter la représentation de la figure \ref{fig:ternaire}, où \textit{à} est placé sur le lien entre \textit{parle}  et \textit{Zoé}. Il s'agit bien d'une connexion ternaire liant directement \textit{parle}, \textit{à} et \textit{Zoé}.
     
@@ -510,13 +510,13 @@ Les deux tests que nous venons d’énoncer, le test de déplacement et le test 
 		\begin{forest}for tree={font=\itshape}
 			[parle
                 [Ali]
-                [Zoé, edge label={node[pos=0.25,right]{\textit{à}}}]
+                [Zoé, edge label={node[pos=0.25,right]{\textit{\ à}}}]
 			]
 		\end{forest}
     \caption{Arbre de dépendance avec une connexion ternaire\label{fig:ternaire}}
     \end{figure}
 
-Le fait d'utiliser un lien ternaire ne permet pas d'indiquer si parmi la combinaison des trois éléments, il y a des combinaisons deux à deux possibles et, par exemple, si \textit{parle à} ou \textit{à Zoé} sont des combinaisons acceptables. L'objectif de ce type de représentation est généralement plus sémantique que syntaxique, en montrant qu'il y a une relation sémantique entre \textsc{parler} et \textsc{Zoé} qui est marquée syntaxiquement par la préposition sémantiquement vide \textsc{à}. 
+Le fait d'utiliser un lien ternaire ne permet pas d'indiquer si parmi la combinaison des trois éléments, il y a des combinaisons deux à deux possibles et, par exemple, si \textit{parle à} ou \textit{à Zoé} sont des combinaisons acceptables. L'objectif de ce type de représentation est généralement plus sémantique que syntaxique, en montrant qu'il y a une relation sémantique entre \textsc{parler} et \textsc{Zoé} qui est marquée syntaxiquement par la préposition sémantiquement vide \textsc{à}. On peut aussi voir ce genre de représentation comme une superposition d'une structure syntaxique de surface et d'une structure syntaxique profonde (voir le traitement de la préposition \textsc{à} dans le premier exemple du \chapref{sec:13} sur la \textit{Syntaxe profonde}). 
 
 Nous verrons, dans l'\encadref{sec:3.3.5} 
 \textit{Historique des représentations syntaxiques par des diagrammes en dépendance},
@@ -565,7 +565,7 @@ Nous donnons dans les figures \ref{fig:regardait1} et \ref{fig:regardait2}
                      -- (matrix-2-3)
                      -- (matrix-1-4);
 \end{tikzpicture}
-\caption{Structure de connexion avec critère distributionnelpour \REF{ex:regardait}}
+\caption{Structure de connexion avec critère distributionnel pour \REF{ex:regardait}}
 \label{fig:regardait2}
 \end{figure}
 
@@ -579,7 +579,7 @@ Dans la figure de droite de la section précédente, nous avons utilisé un crit
 
 
 \loupe[sec:3.2.20]{Les limites de la dualité}{%
-    Timothy \citet{osborne2019dependency} propose d’appeler \textstyleTermesapprof{catena} (‘chaîne’ en latin) toute portion connexe d’un arbre de dépendance. (Le terme est un peu trompeur, puisque les catenae peuvent brancher et ne pas être stricto sensu des chaînes.) Les catenae sont toutes les unités obtenues lorsqu’on découpe l’arbre de dépendance en morceaux en coupant des dépendances. Les catenae comprennent la quasi-totalité des unités qui jouent un rôle dans la langue : non seulement tous les constituants considérés par les grammaires de constituants, y compris les projections intermédiaires (voir la \sectref{sec:3.4.14} \textit{Arbre de constituants binaire}), mais aussi les formes verbales complexes (\textit{a mangé}), les collocations (\textit{avoir besoin}), les locutions (\textit{sur le point} (\textit{de} Vinf)) ou encore les nucléus verbaux dont nous montrerons le rôle dans l’extraction (\textit{le livre que tu} \textbf{\textit{veux}} \textbf{\textit{que}} \textit{je} \textbf{\textit{lise}}) et d’autres phénomènes au \chapfuturef{19}. Osborne tire argument du fait que ces unités peuvent ainsi être facilement déduites d’un arbre de dépendance pour justifier le fait qu’un arbre de dépendance encode la structure syntaxique de manière plus satisfaisante qu’un arbre de constituants (voir la \sectref{sec:3.2.25} sur l’\textit{Analyse en constituants immédiats}).
+    Timothy \citet{osborne2019dependency} propose d’appeler \textstyleTermesapprof{catena} (‘chaîne’ en latin) toute \textit{portion connexe} d’un arbre de dépendance. (Le terme est un peu trompeur, puisque les catenae peuvent brancher et ne pas être stricto sensu des chaînes.) Les catenae sont toutes les unités obtenues lorsqu’on découpe l’arbre de dépendance en morceaux en coupant des dépendances. Les catenae comprennent la quasi-totalité des unités qui jouent un rôle dans la langue : non seulement tous les constituants considérés par les grammaires de constituants, y compris les projections intermédiaires (voir la \sectref{sec:3.4.14} \textit{Arbre de constituants binaire}), mais aussi les formes verbales complexes (\textit{a mangé}), les collocations (\textit{avoir besoin}), les locutions (\textit{sur le point} (\textit{de} Vinf)) ou encore les nucléus verbaux dont nous montrerons le rôle dans l’extraction (\textit{le livre que tu} \textbf{\textit{veux}} \textbf{\textit{que}} \textit{je} \textbf{\textit{lise}}) et d’autres phénomènes au \chapfuturef{20}. Osborne tire argument du fait que ces unités peuvent ainsi être facilement déduites d’un arbre de dépendance pour justifier le fait qu’un arbre de dépendance encode la structure syntaxique de manière plus satisfaisante qu’un arbre de constituants (voir la \sectref{sec:3.2.25} sur l’\textit{Analyse en constituants immédiats}).
 
     Nous pensons néanmoins qu’il y a un problème méthodologique à vouloir partir d’un arbre de dépendance pour en déduire les unités de la langue. D’une part, la définition d’un arbre de dépendance est basée sur une structure de connexion qui est une façon de représenter de manière structurée et condensée l’ensemble des unités syntaxiques et il semble difficile de définir cette structure sans avoir défini au préalable ce qu’est une unité syntaxique ; ce n’est donc pas les unités qui se déduisent de l’arbre de dépendance, c’est l’arbre de dépendance qui se déduit de l’ensemble des unités considérées.~D’autre part, la définition d’un arbre de dépendance est \hi{plus complexe} que l’identification des unités syntaxiques et fait appel à de nombreux critères (les critères utilisés pour l’identification des unités syntaxiques, mais aussi le critère distributionnel, déjà évoqué à la \sectref{sec:3.2.18}, et d’autres encore que nous introduirons au \chapref{sec:3.3}). Ces critères permettent en particulier de mettre en évidence une hiérarchie qui n’est pas nécessaire pour définir les unités syntaxiques. Par ailleurs, en raison de la prise en compte de critères supplémentaires, les catenae, c’est-à-dire les portions connexes de l’arbre de dépendance, ne sont pas toutes des unités syntaxiques et il n’y a donc plus de dualité parfaite entre l’ensemble des unités syntaxique et la structure de dépendance. Certaines des propriétés utilisées pour définir l’arbre de dépendance (comme le critère distributionnel) ne sont pas aisément transférables en des propriétés des unités et certaines des catenae de l’arbre de dépendance n’ont pas d’intérêt théorique a priori. Par exemple, pour une phrase comme \textit{Le chien dort}, il faudra connecter \textit{dort} à \textit{chien} ou à \textit{le} pour obtenir un arbre de dépendance, mais ni \textit{le dort} ni \textit{chien dort} n’est une unité intéressante. (Voir le \chapref{sec:3.3} pour une discussion approfondie des critères qui permettent de construire un arbre de dépendance.)
 }
@@ -704,6 +704,7 @@ Enfin, les structures de connexion ont généralement la propriété de binarit�
 % % %     \draw (intersection3) -- (matrix-1-8);
 % % % \end{tikzpicture}         
 \caption{\label{fig:}Polygraphe représentant une structure de connexion}
+\todo[inline]{Detail: is it possible to have the oblique line more parallel? The link between un and livre is particularly unsightly}
 \end{figure}
 }
 
@@ -781,7 +782,7 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
 
     La \hi{prosodie} joue certainement un grand rôle : elle permet, nous pensons, de segmenter une production et d’indiquer pour chacun des segments obtenus qu’il peut être traité indépendamment de la suite et recevoir une structure connexe. La prosodie sert donc (en plus de ses autres fonctions liées à l’expressivité ou au marquage de l’illocution) à guider le traitement de la chaîne parlée par l’interlocuteur.
 
-    Prenons un exemple : \textit{L’autre jour, j’ai rencontré quelqu’un que j’avais pas revu depuis l’école primaire}. Même si \textit{l’autre jour} est détaché et que le reste de l’énoncé forme une unité plus cohésive (un noyau, nous verrons), on n’attend pas d’avoir la totalité du noyau pour connecter \textit{l’autre jour} à la construction verbale. Le complément d’objet direct de \textsc{rencontrer} est un groupe substantival assez long : \textit{quelqu’un que j’avais pas revu depuis l’école primaire}. Même s’il faut avoir traité l’ensemble de ce groupe pour savoir ‘ce que j’ai rencontré’, on n’a pas besoin d’attendre d’avoir traité la relative pour connecter \textit{quelqu’un} à \textit{j’ai rencontré}. Il est d’ailleurs assez probable que l’énoncé soit segmenté prosodiquement de la façon suivante : \textit{l’autre jour {\textbar} j’ai rencontré quelqu’un {\textbar} que j’avais pas revu {\textbar} depuis l’école primaire}, puisque les groupes accentuels tendent à faire autour de 6 syllabes, et qu’il faut que, à chaque frontière de groupe accentuel (marquées ici par {\textbar} ), l’ensemble de ce qui précède reçoive une analyse syntaxique complète. Chacun des quatre groupes prosodiques peut recevoir une analyse complète indépendamment des autres groupes, puis être connecté aux autres, ce qui donne la structure de la figure \ref{fig:rencontre}/
+    Prenons un exemple : \textit{L’autre jour, j’ai rencontré quelqu’un que j’avais pas revu depuis l’école primaire}. Même si \textit{l’autre jour} est détaché et que le reste de l’énoncé forme une unité plus cohésive (un noyau, nous verrons), on n’attend pas d’avoir la totalité du noyau pour connecter \textit{l’autre jour} à la construction verbale. Le complément d’objet direct de \textsc{rencontrer} est un groupe substantival assez long : \textit{quelqu’un que j’avais pas revu depuis l’école primaire}. Même s’il faut avoir traité l’ensemble de ce groupe pour savoir ‘ce que j’ai rencontré’, on n’a pas besoin d’attendre d’avoir traité la relative pour connecter \textit{quelqu’un} à \textit{j’ai rencontré}. Il est d’ailleurs assez probable que l’énoncé soit segmenté prosodiquement de la façon suivante : \textit{l’autre jour {\textbar} j’ai rencontré quelqu’un {\textbar} que j’avais pas revu {\textbar} depuis l’école primaire}, puisque les groupes accentuels tendent à faire autour de 6 syllabes, et qu’il faut que, à chaque frontière de groupe accentuel (marquées ici par des «~\textit{{\textbar}}~»), l’ensemble de ce qui précède reçoive une analyse syntaxique complète. Chacun des quatre groupes prosodiques peut recevoir une analyse complète indépendamment des autres groupes, puis être connecté aux autres, ce qui donne la structure de la figure \ref{fig:rencontre}.
 
     \begin{figure}[H]
     \begin{tikzpicture}
