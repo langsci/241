@@ -45,7 +45,7 @@ Dans notre exemple, \textit{aimeraient} a pour dépendant \textit{beaucoup} et \
 \caption{\label{fig:laponie-groupe}Lien entre le mot \textit{aimeraient} et les projections de ses dépendants}
 \end{figure}
 
-Cette \hi{double interprétation du dépendant}, \hi{comme mot et comme groupe}, est déjà bien dégagée par Nicolas Beauzée dans l’article \textit{Régime} de l’Encyclopédie de \citeyear{Beauzée1765} (voir l’\encadref{sec:3.3.2} sur l’\textit{Historique des notions de dépendance et de tête}). Elle est aussi sous-jacente chez Lucien Tesnière, qui considère la dépendance comme une relation entre mots («~dans la phrase \textit{mon ami parle}, \textit{mon} dépend de \textit{ami}, qui dépend à son tour de \textit{parle}~» ; 1959 : chapitre 2), instancie les nœuds par des mots dans ses stemmas, mais définit pourtant le nœud «~comme l’ensemble constitué par le régissant et par tous les subordonnés qui, à un degré quelconque directement ou indirectement, dépendent de lui et qu’il noue ainsi en quelque sorte en un seul faisceau~» \citep[chapitre 3]{tesniere1959elements}.
+Cette \hi{double interprétation du dépendant}, \hi{comme mot et comme groupe}, est déjà bien dégagée par Nicolas Beauzée dans l’article \textit{Régime} de l’Encyclopédie de \citeyear{Beauzée1765} (voir l’\encadref{sec:3.3.2} sur l’\textit{Historique des notions de dépendance et de tête}). Elle est aussi sous-jacente chez Lucien Tesnière, qui considère la dépendance comme une relation entre mots («~dans la phrase \textit{mon ami parle}, \textit{mon} dépend de \textit{ami}, qui dépend à son tour de \textit{parle}~» ; \citeyear{tesniere1959elements} : chapitre 2), instancie les nœuds par des mots dans ses stemmas, mais définit pourtant le nœud «~comme l’ensemble constitué par le régissant et par tous les subordonnés qui, à un degré quelconque directement ou indirectement, dépendent de lui et qu’il noue ainsi en quelque sorte en un seul faisceau~» \citep[chapitre 3]{tesniere1959elements}.
  
 Cette ambivalence du dépendant trouve sa première interprétation graphique avec la représentation proposée par Aleksej Gladkij en \citeyear{gladkij1968describing}, où les projections sont explicites (voir figure \ref{fig:laponie-gladkij}).
 
@@ -148,8 +148,8 @@ Notre structure de constituants peut encore être représentée d’une autre fa
 
 C’est le mathématicien Yves Lecerf, qui a le premier construit un tel arbre, en \citeyear{lecerf1960programme}, immédiatement après la publication de l’ouvrage de Tesnière en \citeyear{tesniere1959elements}, et qui a établi l’équivalence entre les arbres de dépendance et cette sous-famille d’arbres de constituants. Il est facile de voir que l’arbre de constituants plat est équivalent à l’arbre de Beauzée-Gladkij : chaque nœud étiqueté d’un {\Boite} représente une boîte, dont les constituants sont les fils dans l’arbre. Les branches de cet arbre sont donc à lire comme des \textstyleTermes{relations partie-tout} et non plus comme des relations de dépendance.
 
-\chevalier[sec:3.4.3]{Le terme 	extit{constituant}}{%
-    Le terme \textit{constituant} a été introduit par Leonard Bloomfield en 1933 dans son ouvrage \textit{Language}. Bloomfield s’intéresse à la décomposition des unités et il utilise le terme pour désigner les \textstyleTermes{constituants immédiats}  d’une unité (voir la \sectref{sec:3.2.25} \textit{Analyse en constituants immédiats}). Au départ, le terme est donc prédicatif : un constituant est toujours \hi{le constituant immédiat d’une} \hi{autre unité} (il \hi{constitue} une partie de cette unité). Ensuite, le terme a été utilisé pour désigner l’ensemble des unités obtenues par l’analyse en constituants immédiats. Le terme n’est plus prédicatif : \hi{un constituant est devenu un type d’unité}. C’est dans ce dernier emploi que nous utilisons le terme constituant. Nous considérons plusieurs types de constituants : les constituants majeurs, qui sont les projections maximales (voir \sectref{sec:3.4.2}), auxquels s’ajoutent des constituants intermédiaires obtenus par l’analyse en constituants immédiats (voir \sectref{sec:3.4.14} \textit{Arbre de constituants binaire}).
+\chevalier[sec:3.4.3]{Le terme \textit{constituant}}{%
+    Le terme \textit{constituant} a été introduit par Leonard Bloomfield en \citeyear{bloomfield1933language} dans son ouvrage \textit{Language}. Bloomfield s’intéresse à la décomposition des unités et il utilise le terme pour désigner les \textstyleTermes{constituants immédiats}  d’une unité (voir la \sectref{sec:3.2.25} \textit{Analyse en constituants immédiats}). Au départ, le terme est donc prédicatif : un constituant est toujours \hi{le constituant immédiat d’une} \hi{autre unité} (il \hi{constitue} une partie de cette unité). Ensuite, le terme a été utilisé pour désigner l’ensemble des unités obtenues par l’analyse en constituants immédiats. Le terme n’est plus prédicatif : \hi{un constituant est devenu un type d’unité}. C’est dans ce dernier emploi que nous utilisons le terme constituant. Nous considérons plusieurs types de constituants : les constituants majeurs, qui sont les projections maximales (voir \sectref{sec:3.4.2}), auxquels s’ajoutent des constituants intermédiaires obtenus par l’analyse en constituants immédiats (voir \sectref{sec:3.4.14} \textit{Arbre de constituants binaire}).
 
     La conséquence de ce choix terminologique est que, pour désigner les unités qui résultent de la décomposition d’un constituant C, on parle aujourd'hui de \textstyleTermes{sous-constituants} de C (et non plus de constituants immédiats de C).
 }
@@ -159,7 +159,7 @@ Un arbre de constituants plat possède une propriété particulière : chaque n�
 
 Il est d’usage dans les arbres de constituants avec têtes (plats ou pas) d’expliciter laquelle des relations partie-tout entre ce constituant et ses sous-constituants est la relation avec la tête. Cela est indiqué par un T dans l'arbre de la figure \ref{fig:laponie-Tplat}. Un arbre de constituant avec têtes est dit \textstyleTermes{plat} lorsque la tête de chaque constituant est un nœud terminal. Nous contrasterons ce type d’arbre avec les arbres X-barre et les arbres de l’analyse en constituants immédiats, qui peuvent être enrichis de têtes, mais sont binaires et non pas plats (voir la \sectref{sec:3.4.14} sur l’\textit{Arbre de constituants binaire}). Nous présentons à cette occasion une autre convention pour l’encodage de la tête dans l’\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}.
 
-\begin{figure} \label{fig:laponie-Tplat}
+\begin{figure} 
 \begin{tikzpicture}[every node/.style={font=\strut}]
 \begin{scope}[
     every node/.style={CircleFillNode},
@@ -197,7 +197,7 @@ Il est d’usage dans les arbres de constituants avec têtes (plats ou pas) d’
 \end{scope}
 \end{tikzpicture}
 
-\caption{\label{fig:}Arbre de constituants plat avec explicitation des têtes}
+\caption{Arbre de constituants plat avec explicitation des têtes\label{fig:laponie-Tplat}}
 \end{figure}
 
 \section{Equivalence par la méthode de Lecerf}\label{sec:3.4.5}
@@ -287,7 +287,7 @@ Une autre méthode consiste à construire d’abord un arbre de constituants. Ce
 
 A chaque étape, on a une unité U à décomposer. À la première étape, il s’agit de la phrase que l’on veut analyser. Pour décomposer U, on doit d’abord \hi{repérer la tête} de U (les critères restent les mêmes que ceux que nous avons présentés dans le \chapref{sec:3.3}). On enlève alors cette tête et on regarde ce que sont les morceaux qui restent. Autrement dit, on repère les \hi{sous-unités} \hi{maximales de} U \hi{privé de sa tête~}: ces unités sont les \textstyleTermes{constituants majeurs} de U. On recommence la même procédure avec les unités obtenues. Ainsi de suite, jusqu’à ce qu’on arrive à des unités indécomposables. (Pour plus de détails sur ce type de méthodes, voir le principe d’une \textit{Décomposition récursive} dans l’\encadref{sec:3.4.7} qui suit).
 
-Illustrons le procédé avec l’exemple \REF{ex:laponie2}
+Illustrons le procédé avec l’exemple \REF{ex:laponie2}.
 
 On repère la tête de cette phrase par les critères exposés au chapitre précédent et notamment dans la \sectref{sec:3.3.8} : il s’agit de l’unique forme verbale finie, \textit{aimeraient}. Les deux plus grandes unités syntaxiques une fois ce verbe retiré sont alors \textit{beaucoup de gens} et \textit{passer Noël en Laponie}. Ces unités syntaxiques peuvent être repérées grâce aux critères d’autonomisabilité illocutoire (\sectref{sec:3.2.11} \textit{Unité syntaxique autonomisable}) : elles forment des unités illocutoirement autonomisables dont le signifié est équivalent à celui qu’elles ont dans la phrase. Nous verrons dans les sections suivantes de nouveaux critères permettant d’identifier les constituants majeurs.
 
@@ -369,7 +369,7 @@ Les deux familles de méthodes conduisent à la même analyse structurelle, bien
         [a [Léa] [invité [Théo] ] ]
       \end{forest}
     \end{minipage}
-    \caption{\label{fig:theo1} Arbre de constituants binaire avec têtes et arbre de dépendance correspondant}
+    \caption{\label{fig:theo1} Un arbre de constituants binaire avec têtes pour \REF{ex:theo} et l'arbre de dépendance correspondant}
     \end{figure}
 
     Notons au passage que la méthode de Lecerf, qui nous permet de construire l’arbre de dépendance à partir de l’arbre de constituants avec têtes, ne s’applique pas qu’à des arbres de constituants plat. Ici, l’auxiliaire \textit{a} est la tête d’un nœud qui est lui-même la tête de la racine de l’arbre : il faudra donc agréger les trois nœuds de cette branche pour obtenir l’arbre de dépendance, l’auxiliaire \textit{a} héritant ainsi de deux dépendants, le sujet \textit{Léa} et le participe passé \textit{invité}.
@@ -408,7 +408,7 @@ Les deux familles de méthodes conduisent à la même analyse structurelle, bien
         [a, calign=child, calign child=2 [Léa] [invité] [Théo] ]
       \end{forest}
     \end{minipage}
-    \caption{\label{fig:theo2} Une autre fragmentation et l'arbre de dépendance correspondant}
+    \caption{\label{fig:theo2} Une autre fragmentation pour \REF{ex:theo} et l'arbre de dépendance correspondant}
     \end{figure}  
 
     En partant de cet arbre de constituants avec têtes (il s’agit bien formellement d’une structure d’arbre de constituants avec têtes), il est impossible d’attribuer comme précédemment le sujet \textit{Léa} à l’auxiliaire et l’objet \textit{Théo} au verbe lexical \textit{invité}, et ceci quels que soient les choix de tête que nous ferons ; nécessairement, l’élément du syntagme \textit{a invité} qui sera choisi comme tête héritera de tous les dépendants.
@@ -565,6 +565,7 @@ Nous obtenons le parenthésage suivant :
         \textrm{→}  \textsuperscript{?}{*}\textit{\textbf{{C’est}}  {que son neveu l’invitera} \textbf{{que}}  {Fred espère.}}
         \textrm{→} \textit{\textbf{{Ce que}}  {Fred espère,} \textbf{{c’est}} {que son neveu l’invitera.}}\\
     \z
+    \todo[inline]{There is an empty line before this example and I don't know where it comes from}
 
     Le test de clivage ne fonctionne pas non plus très bien pour les indéfinis, le test en «\textit{il y a} X \textit{qui/que} Y~» pouvant le remplacer :
 
@@ -725,7 +726,7 @@ Pour obtenir un arbre de constituants binaire à partir d’un arbre de dépenda
 
 On peut poser une relation d’ordre sur les dépendances que nous appelons l’\textstyleTermes{ordre de saillance} (\hi{l’élément le plus saillant} est celui qui \hi{rejoint son gouverneur en premier}). La relation d’ordre converse est appelée l’\textstyleTermes{ordre d’oblicité} (\hi{l’élément le plus oblique} est celui qui \hi{rejoint son gouverneur en dernier}).
 
-Alors qu’un arbre de dépendance correspond naturellement à un arbre de constituants plat, la donnée d’un ordre de saillance permet de \hi{stratifier} cet arbre : la donnée d’un \hi{arbre de dépendance} avec en \hi{plus} un \hi{ordre de saillance} est équivalente à la donnée d’un \hi{arbre de constituants binaire avec têtes}. La figure \ref{fig:laponie-saillance} reprend notre arbre de dépendance préféré en y ajoutant l’indication de l’ordre de saillance. Cet \textstyleTermes{arbre de dépendance avec ordre de saillance} permet de regrouper chaque nœud avec ses dépendants dans un certain et de privilégier certaines projections partielles, comme le montre le diagramme de la figure \ref{fig:laponie-proj}. L'emboîtement d'unités syntaxiques ainsi obtenue n’est autre que l’arbre de constituants binaire avec têtes de la figure \ref{fig:laponie-T2}.
+Alors qu’un arbre de dépendance correspond naturellement à un arbre de constituants plat, la donnée d’un ordre de saillance permet de \hi{stratifier} cet arbre : la donnée d’un \hi{arbre de dépendance} avec en \hi{plus} un \hi{ordre de saillance} est équivalente à la donnée d’un \hi{arbre de constituants binaire avec têtes}. La figure \ref{fig:laponie-saillance} reprend notre arbre de dépendance préféré en y ajoutant l’indication de l’ordre de saillance. 
 
 \begin{figure}
 \begin{forest} for tree={font=\itshape}
@@ -746,7 +747,7 @@ Alors qu’un arbre de dépendance correspond naturellement à un arbre de const
 \caption{\label{fig:laponie-saillance}Arbre de dépendance avec ordre de saillance}
 \end{figure}
 
-
+Cet \textstyleTermes{arbre de dépendance avec ordre de saillance} permet de regrouper chaque nœud avec ses dépendants dans un certain ordre et de privilégier certaines projections partielles, comme le montre le diagramme de la figure \ref{fig:laponie-proj}. L'emboîtement d'unités syntaxiques ainsi obtenue n’est autre que l’arbre de constituants binaire avec têtes de la figure \ref{fig:laponie-T2}.
 
 \begin{figure}
 \begin{forest} for tree={font=\itshape, s sep= 2cm}
@@ -779,6 +780,8 @@ Alors qu’un arbre de dépendance correspond naturellement à un arbre de const
 \caption{\label{fig:laponie-proj}Arbre de dépendance avec projections (maximales et partielles) équivalent à un arbre de constituants avec têtes binaire}
 \end{figure}
 
+L'ordre de saillance que nous avons introduit dans la figure \ref{fig:laponie-saillance} est celui qui permet de récupérer les arbres de constituants standard. Dans le cadre des grammaires de constituants, le sujet est toujours considéré comme le plus oblique des actants du verbe. Nous verrons dans le \chapfuturef{18} un autre ordre de saillance basé sur les propriétés des relations syntaxiques. Le sujet est justement l'actant qui possède le plus de «~bonnes~» propriétés et donc l'actant le plus saillant pour cet ordre. Les deux résultats ne se contredisent pas nécessairement si l'on considère que le sujet se trouve «~aspiré~» par la flexion à la différence des compléments.
+
 
 \loupe[sec:3.4.16]{Dépendance et constituance se complètent}{%
     On dit parfois qu’un arbre de dépendance contient moins d’information qu’un arbre de constituants car il ne contient pas de projections partielles. Mais, comme on le voit, on peut facilement ajouter cette information par un étiquetage des dépendances. À l’inverse, \hi{un arbre de constituants ne contient structurellement pas d’information} \hi{sur la tête} : cette information doit aussi être ajoutée, soit par un étiquetage des relations partie-tout (notre T), soit par un étiquetage des nœuds (les X, X’ et XP de la syntaxe X-barre, voir l’\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}). Dépendance et constituance se complètent donc.
@@ -801,7 +804,8 @@ Alors qu’un arbre de dépendance correspond naturellement à un arbre de const
     ‘L’homme qui est doux de caractère n’échoue jamais à se faire de très nombreux amis.’
 \end{figure}
 
-    De la même façon, la relative \textit{who is mild in disposition} ‘qui est doux de caractère’ se comporte comme un adjectif (cf. le symbole \includegraphics[height=1.25ex]{figures/vol1syntaxe2-img020.png} également associé à \textit{mild} ‘doux’ et \textit{many} ‘nombreux’) et sa combinaison avec \textit{the man} ‘l’homme’ se comporte comme un nom (\includegraphics[height=1.25ex]{figures/vol1syntaxe2-img021.png}) ; de même, \textit{to make very many friends} ‘à se faire vraiment beaucoup d’amis’ se comporte comme un adverbe et sa combinaison avec \textit{never fails} ‘n’échoue jamais’ comme un verbe (\includegraphics[height=1.25ex]{figures/vol1syntaxe2-img022.png}). Par contre Barnard ne considère pas la proposition comme équivalente au verbe et reste avec une structure sujet-prédicat pour la proposition que l’on retrouve de la grammaire de Port-Royal à la grammaire générative (voir l’encadré sur \textit{Fonctions syntaxiques et prédicat} du \chapfuturef{18}). Le diagramme qu’il propose peut néanmoins être considéré comme un premier exemple d’arbre de constituants et même d’arbre de constituants avec tête, puisque les étiquettes indiquent la catégorie de la tête comme en syntaxe X-barre (voir l’\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}).
+    De la même façon, la relative \textit{who is mild in disposition} ‘qui est doux de caractère’ se comporte comme un adjectif (cf. le symbole \includegraphics[height=1.25ex]{figures/vol1syntaxe2-img021.png} également associé à \textit{mild} ‘doux’ et \textit{many} ‘nombreux’) et sa combinaison avec \textit{the man} ‘l’homme’ se comporte comme un nom (\includegraphics[height=1.25ex]{figures/vol1syntaxe2-img022.png}) ; de même, \textit{to make very many friends} ‘à se faire vraiment beaucoup d’amis’ se comporte comme un adverbe et sa combinaison avec \textit{never fails} ‘n’échoue jamais’ comme un verbe (\includegraphics[height=1.25ex]{figures/vol1syntaxe2-img020.png}). Par contre Barnard ne considère pas la proposition comme équivalente au verbe et reste avec une structure sujet-prédicat pour la proposition que l’on retrouve de la grammaire de Port-Royal à la grammaire générative (voir l’encadré sur \textit{Fonctions syntaxiques et prédicat} du \chapfuturef{18}). Le diagramme qu’il propose peut néanmoins être considéré comme un premier exemple d’arbre de constituants et même d’arbre de constituants avec tête, puisque les étiquettes indiquent la catégorie de la tête comme en syntaxe X-barre (voir l’\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}).
+    \todo[inline]{Can you make bigger two of the 4 symbols: vol1syntaxe2-img021.png and vol1syntaxe2-img020.png}
 
     Il semble que les contemporains de Barnard n’aient pas vraiment vu la portée de ces diagrammes et il faut attendre plus d’un siècle pour que, en \citeyear{nida1943morphology}, dix ans après la publication de \textit{Langage} de Bloomfield, Eugene Nida propose à nouveau des structures de constituants, dans une thèse intitulée \textit{A Synopsis of English Syntax}. Les structures proposées par Nida sont en fait des polygraphes (voir l’\encadref{sec:3.2.23} sur \textit{Graphe à bulles et polygraphe}) où chaque lien représente une connexion binaire et où les liens peuvent avoir pour sommet d’autres liens. Nida va ensuite enrichir son système, dans la republication de sa thèse en \citeyear{nida1966synopsys}, en ajoutant des symboles sur les liens (voir la figure \ref{fig:nida}) : les liens marquées d’une croix ($\times$) représentent une construction exocentrique, tandis que les liens marqués d’une flèche (~$\langle$ ou $\rangle$~) représentent une construction endocentrique, la flèche pointant vers la tête. Dans le diagramme ci-dessous, \textit{the} et \textit{men} sont connectés par un lien $\rangle$ indiquant que \textit{the} dépend de \textit{men}, puis \textit{by} est lié à ce lien par un lien $\times$ indiquant que la construction n’a pas de tête. Une telle représentation est équivalente à un arbre de constituants binaire (voir la \sectref{sec:3.4.21} sur \textit{Arbre de constituants binaires et polygraphe}).
 
@@ -812,22 +816,23 @@ Alors qu’un arbre de dépendance correspond naturellement à un arbre de const
         \small\textit{The robber was chased by the men.} ‘Le voleur a été poursuivi par les hommes.’
     \end{figure}
      
-    Une représentation similaire a été proposée dans les années 1950 par Charles Hockett (voir son ouvrage \textit{A course in modern linguistics} de \citeyear{hockett1958course}). Cette représentation, connue aujourd’hui sous le nom de \textstyleTermesapprof{boîtes de Hockett} n’est pas un arbre (au sens où les branches ne sont pas explicites), mais plutôt un emboîtement de constituants, assez proche de l’arbre de dépendance avec projections intermédiaires de la figure \ref{fig:laponie-proj}. Dans le diagremme de la figure \ref{fig:hockett1}, les unités de bases sont les syntaxèmes (on notera la décomposition de la forme verbale \textit{wants} en \textit{want}{}-\,\textrm{${\oplus}$}{}\,-\textit{s}) et les intonèmes (les «~signes~» prosodiques) sont discrétisés (c’est-à-dire représentés par des symboles, ici 2, 3, 1 et ↓) et également intégrés à la décomposition. Il s’agit en fait d’une décomposition assez proche de la structure syntaxique X-barre qui ré-émergera 20 ans plus tard (voir l’\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}), si ce n’est que Hockett considère encore que la combinaison \textit{sujet-verbe} est endocentrique. Le diagramme peut être enrichi de symboles \tikz [baseline=(node.base)] \node[draw,circle,inner sep=0pt] (node) {<}; ou \tikz [baseline=(node.base)] \node[draw,circle,inner sep=0pt] (node) {>}; indiquant, comme chez Nida, la dépendance (voir figure \ref{fig:hockett2}).
+    Une représentation similaire a été proposée dans les années 1950 par Charles Hockett (voir son ouvrage \textit{A course in modern linguistics} de \citeyear{hockett1958course}). Cette représentation, connue aujourd’hui sous le nom de \textstyleTermesapprof{boîtes de Hockett} n’est pas un arbre (au sens où les branches ne sont pas explicites), mais plutôt un emboîtement de constituants, assez proche de l’arbre de dépendance avec projections intermédiaires de la figure \ref{fig:laponie-proj}. Dans le diagramme de la figure \ref{fig:hockett1}, les unités de bases sont les syntaxèmes (on notera la décomposition de la forme verbale \textit{wants} en \textit{want}{}-\,\textrm{${\oplus}$}{}\,-\textit{s}) et les intonèmes (les «~signes~» prosodiques) sont discrétisés (c’est-à-dire représentés par des symboles, ici 2, 3, 1 et ↓) et également intégrés à la décomposition. Il s’agit en fait d’une décomposition assez proche de la structure syntaxique X-barre qui ré-émergera 20 ans plus tard (voir l’\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}), si ce n’est que Hockett considère encore que la combinaison \textit{sujet-verbe} est endocentrique. Le diagramme peut être enrichi de symboles \tikz [baseline=(node.base)] \node[draw,circle,inner sep=0pt] (node) {<}; ou \tikz [baseline=(node.base)] \node[draw,circle,inner sep=0pt] (node) {>}; indiquant, comme chez Nida, la dépendance (voir figure \ref{fig:hockett2}).
 
     \begin{figure}[H]
         \includegraphics[width=7cm]{figures/vol1syntaxe2-img024.png}
-        \caption{Boîtes de \citealt{hockett1958course}\label{fig:hockett1}}
+        \caption{Boîtes de \citet[169]{hockett1958course}\label{fig:hockett1}}
         \textit{She wants a new hat.} ‘Elle veut un nouveau chapeau.’
     \end{figure}
         
     \begin{figure}[H]
         \includegraphics[width=10cm]{figures/vol1syntaxe2-img025.png}
-        \caption{Boîtes de \citealt{hockett1958course} avec marquage des dépendances\label{fig:hockett2}}
+        \caption{Boîtes de \cites [188]{hockett1958course} avec marquage des dépendances\label{fig:hockett2}}
         \textit{all this fresh milk on the table} ‘tout ce lait frais sur la table’
+        \todo[inline]{Reduce this figure in order to have the same size of fonts as the previous diagram }
     \end{figure}
 
  
-    Dans les représentations de Hockett, chaque module de trois cases (voir figure \ref{fig:hockett3}) est à lire comme une \hi{construction}, comme le remarque \citet{hockett1958course} (dans le chapitre \textit{Form classes and constructions}). Une telle analyse est contemporaine des grammaires de réécriture de Chomsky (voir l’\encadref{sec:3.5.30} sur la \textit{Grammaire de réécriture}) et son objectif est absolument similaire. On notera néanmoins que la représentation de Hockett met autant en avant la combinaison de A et B que la relation partie-tout de A ou de B avec le tout C qu’ils forment.
+    Dans les représentations de Hockett, chaque module de trois cases (voir figure \ref{fig:hockett3}) est à lire comme une \hi{construction}, comme le remarque \citet[161]{hockett1958course} (dans le chapitre \textit{Form classes and constructions}). Une telle analyse est contemporaine des grammaires de réécriture de Chomsky (voir l’\encadref{sec:3.5.30} sur la \textit{Grammaire de réécriture}) et son objectif est absolument similaire. On notera néanmoins que la représentation de Hockett met autant en avant la combinaison de A et B que la relation partie-tout de A ou de B avec le tout C qu’ils forment.
 
     \begin{figure}[H]
     \begin{subfigure}[t]{.5\textwidth}\centering
@@ -852,10 +857,10 @@ Alors qu’un arbre de dépendance correspond naturellement à un arbre de const
         \end{tikzpicture}
         \caption{Construction dans un arbre de constituants avec tête}
     \end{subfigure}
-    \caption{{\color{red}Please provide a caption for the parent Figure.}\label{fig:hockett3}}
+    \caption{{Deux représentations de la même construction}\label{fig:hockett3}}
     \end{figure}   
 
-    On attribue généralement l’introduction des arbres de constituants à Noam Chomsky. On en trouve dans son article de \citeyear{chomsky1955three} et un dans \textit{Syntactic Structures} de \citeyear{chomsky1957syntactic}, que nous reproduisons dans la figure \ref{fig:chomsky57}a. De manière assez surprenante, cet arbre a été remplacé, dans la réédition de 2002, par le diagramme de la figure \ref{fig:chomsky57}b. Ce diagramme, donné dans la figure \ref{fig:chomsky57}b, n’est pas stricto sensu un arbre. Il apparaît dans le chapitre 4 intitulé \textit{Phrase structure} ‘Structure syntagmatique’, où Chomsky introduit les règles de réécriture, comme \textit{Sentence → NP + VP}. Dans ce diagramme, il n’y a pas, comme dans les arbres de constituants ordinaires, de relations partie-tout entre le nœud \textit{Sentence} et les constituants immédiats \textit{NP} et \textit{VP}. Au lieu de cela, il y a un lien entre \textit{NP} et \textit{VP} correspondant au symbole + de la règle et que l’on peut interpréter comme un lien de connexion, ainsi qu’un lien entre le nœud \textit{Sentence} et le lien de connexion correspondant à l’opération de réécriture représentée par le symbole \textit{→} dans la règle. Le diagramme est donc un polygraphe.
+    On attribue généralement l’introduction des arbres de constituants à Noam Chomsky. On en trouve quelques uns dans son article de \citeyear{chomsky1955three} et un dans \textit{Syntactic Structures} de \citeyear{chomsky1957syntactic}, que nous reproduisons dans la figure \ref{fig:chomsky57}a. De manière assez surprenante, cet arbre a été remplacé, dans la réédition de 2002, par le diagramme de la figure \ref{fig:chomsky57}b. Ce nouveau diagramme n’est pas stricto sensu un arbre. Il apparaît dans le chapitre 4 intitulé \textit{Phrase structure} ‘Structure syntagmatique’, où Chomsky introduit les règles de réécriture, comme \textit{Sentence → NP + VP}. Dans ce diagramme, il n’y a pas, comme dans les arbres de constituants ordinaires, de relations partie-tout entre le nœud \textit{Sentence} et les constituants immédiats \textit{NP} et \textit{VP}. Au lieu de cela, il y a un lien entre \textit{NP} et \textit{VP}, correspondant au symbole + de la règle et que l’on peut interpréter comme un lien de connexion, ainsi qu’un lien entre le nœud \textit{Sentence} et le lien de connexion, correspondant à l’opération de réécriture représentée par le symbole \textit{→} dans la règle. Le diagramme est donc un polygraphe.
 
 \begin{figure}[H]
     \small
@@ -883,11 +888,12 @@ Alors qu’un arbre de dépendance correspond naturellement à un arbre de const
       ]
     ]    
     \end{forest}\\
-    \small\textit{The man hit the ball.} ‘L'homme frappa le ballon.’\label{fig:chomsky57}
-    \caption{Arbre de constituant \citet{chomsky1957syntactic} et diagramme polygraphique de l'édition de 2002}
+    \small\textit{The man hit the ball.} ‘L'homme frappa le ballon.’
+    \caption{Arbre de constituant \citet{chomsky1957syntactic} et diagramme polygraphique de l'édition de 2002\label{fig:chomsky57}}
+    \todo[inline]{Sorry, but in second figure, the small vertical lines must be detached from the horizontal braces. It looks like a detail, but in fact it is very different. In one case we have on object (the forked edge), in the other case we have two objects and we discuss this in the text. Moreover it is a reproduction of an original diagram by Chomsky and there are two objects in the original diagram. See fig \ref{fig:subjectale} where it is perfectly done.}
 \end{figure}
 
-Alors que la version 2002 de l'arbre de 1957 est fondamentalement binaire, la binarité n’est plus exigée dans les arbres de \textit{Aspects of the Theory of Syntax}, publié en \citeyear{chomsky1965aspects} (voir un exemple dans la figure \ref{fig:chomsky65}). Elle réapparaîtra dans les travaux suivants et notamment la syntaxe X-barre.
+Alors que la version 2002 de l'arbre de 1957 est fondamentalement binaire, la binarité n’est plus exigée dans les arbres de \textit{Aspects of the Theory of Syntax}, publié en \citeyear{chomsky1965aspects} (voir un exemple dans la figure \ref{fig:chomsky65} avec des branchements unaires, binaires et ternaires). Elle réapparaîtra dans les travaux suivants et notamment la syntaxe X-barre.
 
 
 \begin{figure}[H]
@@ -992,7 +998,7 @@ Alors que la version 2002 de l'arbre de 1957 est fondamentalement binaire, la bi
 \z
 \z
 
-    Dans l’approche que nous développons ici, ces deux énoncés auront la même «~structure~» syntaxique (c’est-à-dire le même squelette structurel), mais les groupes substantivaux \textit{le pain} et \textit{la nuit} auront des fonctions totalement différentes (voir \chapfuturef{18} sur les \textit{Relations syntaxiques}).
+    Dans l’approche que nous développons ici, ces deux énoncés auront la même «~structure~» syntaxique (c’est-à-dire le même squelette structurel), mais les groupes substantivaux \textit{le pain} et \textit{la nuit} auront des fonctions totalement différentes (voir le \chapfuturef{18} sur les \textit{Relations syntaxiques}).
 
     On peut s’étonner du fait que la syntaxe X-barre, dont l’objectif est de rendre compte des propriétés syntaxiques par des configurations géométriques, n’ait pas cherché à encoder structurellement une notion aussi fondamentale que la notion de \textit{tête}, ce que font pourtant assez simplement les structures de dépendance !
 }
@@ -1029,7 +1035,7 @@ Alors que la version 2002 de l'arbre de 1957 est fondamentalement binaire, la bi
 
 Nous avons vu deux usages possibles de la représentation de la structure syntaxique par un arbre de constituants avec têtes : l’\hi{arbre de constituants plat} et l’\hi{arbre de constituants binaire}. (Nous confirmerons qu’il s’agit bien de deux usages différents du même formalisme dans l’\encadref{sec:3.4.25} sur \textit{Deux types d’arbres de constituants}, où nous montrons l’interprétation différente du branchement ternaire dans les deux conventions de représentation).
 
-Nous avons vu que l’arbre de constituants plat pouvait être déduit trivialement (c’est-à-dire par un procédé de conversion automatique pure, sans ajout d’aucune information) d’un arbre de dépendance, ce qui n’est pas le cas de l’arbre de constituants binaire, qui nécessite d’ajouter un ordre de saillance sur les dépendances. Cela pourrait laisser penser que l’arbre de constituants plat est plus proche de l’arbre de dépendance : c’est vrai si on se place du point de vue formel, mais ça ne l’est pas si on se place du point de vue théorique. Comme on l’a vu dans l'\encadref{sec:3.4.15}, il y a derrière l’\hi{exigence de binarité}, le souci de dégager les différentes constructions syntaxiques, de les isoler les unes des autres. Et ce souci est commun avec les grammaires de dépendances. Nous allons montrer cela maintenant en repartant de l'exemple \ref{ex:laponie2} et de son arbre binaire le plus standard, donné dans la figure \ref{fig:laponie-T2}.
+Nous avons vu que l’arbre de constituants plat pouvait être déduit trivialement (c’est-à-dire par un procédé de conversion automatique pure, sans ajout d’aucune information) d’un arbre de dépendance, ce qui n’est pas le cas de l’arbre de constituants binaire, qui nécessite d’ajouter un ordre de saillance sur les dépendances. Cela pourrait laisser penser que l’arbre de constituants plat est plus proche de l’arbre de dépendance : c’est vrai si on se place du point de vue formel, mais ça ne l’est pas si on se place du point de vue théorique. Comme on l’a vu dans l'\encadref{sec:3.4.15}, il y a derrière l’\hi{exigence de binarité}, le souci de dégager les différentes constructions syntaxiques, de les isoler les unes des autres. Et ce souci est commun avec les grammaires de dépendances. Nous allons montrer cela maintenant en repartant de l'exemple \REF{ex:laponie2} et de son arbre binaire le plus standard, donné dans la figure \ref{fig:laponie-T2}.
 
 On peut interpréter chaque branchement binaire comme une connexion entre deux unités. Comme nous l’avons vu à la \sectref{sec:3.2.12} \textit{Représenter les combinaisons}, on peut représenter la combinaison A ${\oplus}$ B aussi bien par un lien entre A et B que par une bulle entourant A et B. Passer à un branchement binaire revient à \hi{réifier} les relations partie-tout entre A et B et l’unité qu’ils forment ensemble (voir l’\encadref{sec:3.4.22} qui suit pour des compléments sur la notion de réification). Ici nous proposons de faire l’inverse, c’est-à-dire de \hi{déréifier} les relations partie-tout qui constituent les branches d’un arbre de constituants. Comme, en plus, chaque branchement binaire indique une tête (la branche T), la déréification permet de récupérer une connexion orientée, c’est-à-dire une dépendance. Ceci est illustré dans la figure \ref{fig:dereification}.
 
@@ -1093,7 +1099,7 @@ Si l’on applique la déréfication à tous les nœuds intérieurs de l’arbre
         \node [right=1mm of Marie, draw, signal, signal to=east, font=\itshape] (frappe) {frappe}; 
         \node [right=1mm of frappe, ConcSet] (Pierre) {Pierre};
       \end{tikzpicture}
-      \caption{\color{red}Please provide a caption}
+      \caption{Sans réification des relations}
       \end{subfigure}\begin{subfigure}[t]{.5\textwidth}\centering
       \begin{tikzpicture}
         \node at (0,0) [ConcSet] (frappe) {frappe};
@@ -1102,7 +1108,7 @@ Si l’on applique la déréfication à tous les nœuds intérieurs de l’arbre
         \draw[-{Triangle[]}] (frappe) -- (Marie)  node [midway,left] {agent};
         \draw[-{Triangle[]}] (frappe) -- (Pierre) node [midway,right] {patient};
       \end{tikzpicture}
-      \caption{\color{red}Please provide a caption}
+      \caption{Avec réification des relations}
       \end{subfigure}\medskip\\\begin{subfigure}[t]{.5\textwidth}\centering
       \begin{tikzpicture}
         \node at (0,0) [ConcSet] (frappe) {frappe};
@@ -1115,7 +1121,7 @@ Si l’on applique la déréfication à tous les nœuds intérieurs de l’arbre
         \draw[-{Triangle[]}] (patient) edge node[midway,right] {2} (frappe)
                                      edge node[midway,right] {1} (Pierre);
       \end{tikzpicture}
-      \caption{\color{red}Please provide a caption}
+      \caption{Avec réification des liens entre relations et sens lexicaux}
       \end{subfigure}
   \caption{\label{fig:frappe-reif}Trois niveaux de réification pour la représentation du sens de \REF{ex:frappe}}
 \end{figure}
@@ -1135,7 +1141,7 @@ Si l’on s’abstrait complètement de l’ordre linéaire et que l’on garde 
 \includegraphics[scale=0.9]{figures/polygraphs/poly-3.4.23-1.pdf}
 \end{figure}
 
-Bien que cela n’apparaisse pas au premier coup d’œil, cette structure est un extrait de la structure de la figure \ref{fig:laponie-polygraphe-ordre} : c’est le même \hi{polygraphe orienté} que précédemment, mais sans l’ordre des mots et avec une autre convention de représentation. Au lieu d’indiquer la hiérarchisation de la connexion par une flèche, celle-ci est indiquée en plaçant le gouverneur au-dessus du dépendant. Or ce polygraphe orienté, qui a donc été extrait automatiquement de l’arbre de constituants binaires en mettant en évidence les connexions, est très proche d’un arbre de dépendance. Pour obtenir l’arbre de dépendance, il suffit de \hi{faire glisser chaque dépendance} le long des dépendances sur lesquelles elle s’appuie, comme montré dans la figure \ref{fig:glissade}. Nous retombons ainsi sur l'arbre de dépendance de départ (voir figure \ref{fig:laponie-dep2}).
+Bien que cela n’apparaisse pas au premier coup d’œil, cette structure est un extrait de la structure de la figure \ref{fig:polygraphe-ordre} : c’est le même \hi{polygraphe orienté} que précédemment, mais sans l’ordre des mots et avec une autre convention de représentation. Au lieu d’indiquer la hiérarchisation de la connexion par une flèche, celle-ci est indiquée en plaçant le gouverneur au-dessus du dépendant. Or ce polygraphe orienté, qui a donc été extrait automatiquement de l’arbre de constituants binaires en mettant en évidence les connexions, est très proche d’un arbre de dépendance. Pour obtenir l’arbre de dépendance, il suffit de \hi{faire glisser chaque dépendance} le long des dépendances sur lesquelles elle s’appuie, comme montré dans la figure \ref{fig:glissade}. Nous retombons ainsi sur l'arbre de dépendance de départ (voir figure \ref{fig:laponie-dep2}).
 
 \begin{figure}
 \begin{minipage}{.45\textwidth}\centering
@@ -1310,7 +1316,7 @@ Chaque flèche $\Rightarrow$ ou $\Leftrightarrow$ entre deux structures symbolis
 
     La structure de dépendance de droite peut être obtenue en appliquant la méthode de conversion par déréification à l’arbre de constituant à gauche. Le branchement ternaire donne une connexion ternaire, où \textit{Marie} et \textit{Pierre} occupent des positions symétriques (puisqu’ils sont co-têtes), tandis que la conjonction \textit{et} occupe une troisième position, comme «~dépendant~» des co-têtes. La convention de Tesnière rend bien compte de cela.
 
-    En conclusion, on note que \hi{le formalisme des arbres de constituants est ambigu~}: il ne permet pas de distinguer une analyse plate (on ne souhaite pas considérer de constituants intermédiaires) et une connexion ternaire (on souhaite indiquer que les éléments ne se combinent pas toujours deux à deux, mais parfois par trois). Celui des structures de dépendance le permet, à condition de considérer des structures qui ne sont plus entièrement hiérarchisées et qui contiennent des connexions ternaires.
+    En conclusion, on note que \hi{le formalisme des arbres de constituants est ambigu~}: il ne permet pas de distinguer une analyse plate (on ne souhaite pas considérer de constituants intermédiaires) et une connexion ternaire (on souhaite indiquer que les éléments ne se combinent pas toujours par deux, mais parfois par trois). Celui des structures de dépendance le permet, à condition de considérer des structures qui ne sont plus entièrement hiérarchisées et qui contiennent des connexions ternaires.
 }
 \section{Combiner les méthodes ascendante et descendante}\label{sec:3.4.27}
 
@@ -1436,11 +1442,11 @@ Les enseignements traditionnels en syntaxe de dépendance, eux, proposent de tra
 
 Nous proposons pour notre part de combiner tous les moyens. \hi{Toute unité syntaxique est bonne à repérer}. Il n’est pas nécessaire de se limiter aux mots, comme en syntaxe de dépendance ou aux projections comme en syntaxe de constituants. Certaines séquences du type (Prép) (Dét) (Adj)* N (Adj)* (préposition-déterminant-nom, avec éventuellement des adjectifs avant ou après le nom) sont très facilement repérables (voir la discussion sur les \textstyleTermes{amas} dans l'\encadref{sec:3.5.35} sur les \textit{Constituants topologiques intermédiaires}). On pourra donc commencer par entourer les séquences de ce type. C’est ce que nous avons fait lorsque nous avons analysé \textit{la faible déclivité de la vallée de la Seine en Ile-de-France} dans la \sectref{sec:3.3.18} sur les \textit{Tests pour la connexion}. Si l’on prend l'exemple \REF{ex:beaudelaire}, il est difficile pour un novice de repérer immédiatement le groupe substantival \textit{les esclaves nus, tout imprégnés d’odeurs, qui me rafraîchissaient le front avec des palmes, et dont l’unique soin était d’approfondir le secret douloureux qui me faisait languir}, alors qu’on repèrera beaucoup plus facilement les différents amas qui constituent ce groupe : [~\textit{les esclaves nus~}], [~\textit{tout imprégnés d’odeurs} ], etc. C’est seulement à la fin de l’analyse, quand toutes les unités auront été connectées, que le groupe substantival en entier émergera.
 
-Nous pensons que le moyen le plus élégant pour représenter la structure finale est d’utiliser une structure de dépendance (et nous espérons en avoir convaincu le lecteur ; voir aussi l’\encadref{sec:3.4.29}). Il n’y a néanmoins aucune raison de proscrire les méthodes de l’analyse en constituants, bien au contraire. Il est tout à fait possible de combiner les deux méthodes et de gagner ainsi en simplicité. L’arbre de Beauzée-Gladkij est notamment une représentation que les novices en syntaxe formelle comprennent bien et qui est moins abstraite pour eux qu’un pur arbre de constituants ou un pur arbre de dépendance. Cette représentation a en plus l’avantage de présenter simultanément les constituants et les dépendances et d’être ainsi le support idéal pour une discussion sur la distinction entre catégories et relations syntaxiques (voir le \chapfuturef{17} et le \chapfuturef{18}).
+Nous pensons que le moyen le plus élégant pour représenter la structure finale est d’utiliser une structure de dépendance (et nous espérons en avoir convaincu le lecteur ; voir aussi l’\encadref{sec:3.4.29}). Il n’y a néanmoins aucune raison de proscrire les méthodes de l’analyse en constituants, bien au contraire. Il est tout à fait possible de combiner les deux méthodes et de gagner ainsi en simplicité. L’arbre de Beauzée-Gladkij est notamment une représentation que les novices en syntaxe formelle comprennent bien et qui est moins abstraite pour eux qu’un pur arbre de constituants ou un pur arbre de dépendance. Cette représentation a en plus l’avantage de présenter simultanément les constituants et les dépendances et d’être ainsi le support idéal pour une discussion sur la distinction entre catégories et relations syntaxiques (voir le chapitre 17 et le \chapfuturef{18}).
 
 Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une méthode unique pour découvrir la structure syntaxique d’un énoncé. On peut procéder aussi bien de \hi{manière descendante} (\hi{décomposer une unité}, notamment en repérant sa tête) comme de \hi{manière ascendante} (\hi{connecter deux unités} pour former une unité plus grande).
 
-\loupe{Constituance ou dépendance ?}{%{\label{sec:3.4.29}
+\loupe[sec:3.4.29]{Constituance ou dépendance ?}{%{\label{sec:3.4.29}
     Nous avons montré dans ce chapitre que les arbres de dépendance et les arbres de constituants avec têtes étaient deux modes de représentation de la structure syntaxique plus ou moins équivalents : les deux types de structures rendent compte de la façon dont les unités se combinent ou se décomposent (les connexions) et du fait que ces combinaisons sont généralement asymétriques et forment une structure hiérarchique (les têtes et les dépendances). Malgré cette équivalence formelle, les deux types de structures ont des implications théoriques différentes. Nous allons discuter ici des conséquences de cette différence en voyant les avantages et inconvénients des deux types de structures.
 
   \tcbsubtitle{Têtes syntaxiques} 
@@ -1470,7 +1476,7 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     L’ordre des mots est plus facilement lisible dans un arbre de constituants, à tel point qu’il est même difficile d’envisager l’arbre de constituants indépendamment de l’ordre linéaire. Nous adoptons nous-mêmes un arbre de constituants pour représenter la structure topologique (voir chapitre suivant). Nous pensons par contre que les combinaisons syntaxiques doivent être clairement distinguées des relations de contiguïtés (voir la \sectref{sec:3.2.6} sur \textit{Structures syntaxiques et structures topologiques}) et que ne pas le faire conduit immanquablement à introduire la notion de mouvement (voir l'\encadref{sec:3.2.7} \textit{De la non-séparation des ordres au mouvement}). En d’autres termes, les arbres de constituants peinent à rendre compte simplement des \hi{structures non projectives}, sauf à introduire la notion de \hi{constituant discontinu}, qui fait alors perdre tous les avantages de l’arbre de constituants du point de vue de l’ordre des mots. Le \chapref{sec:3.5} sera entièrement consacré à ces questions et à la définition d’une structure de constituants topologique distincte de la structure syntaxique.
 
     \tcbsubtitle{Interface sémantique-syntaxe}
-    Nous avons vu aux chapitres \ref{sec:1.2} et \ref{sec:2.3} qu’une partie de la sémantique des énoncés pouvait être saisie par un graphe de relations prédicat-argument, lequel graphe s’apparente à une structure de connexion, c’est-à-dire à un arbre de dépendance dont on aurait retiré la hiérarchie. Ceci est très net quand on regarde des paraphrases comme \textit{Pierre a été malade pendant deux semaines} vs. \textit{La maladie de Pierre a duré deux semaines} (\chapref{sec:1.2}). De ce point de vue, la structure sémantique est beaucoup plus proche d’un arbre de dépendance que d’un arbre de constituant.
+    Nous avons vu aux chapitres \ref{sec:1.2} et \ref{sec:2.3} qu’une partie de la sémantique des énoncés pouvait être saisie par un graphe de relations prédicat-argument, lequel graphe s’apparente à une structure de connexion, c’est-à-dire à un arbre de dépendance dont on aurait retiré la hiérarchie. Ceci est très net quand on regarde des paraphrases comme \textit{Pierre a été malade pendant deux semaines} vs. \textit{La maladie de Pierre a duré deux semaines} (\chapref{sec:1.2}). De ce point de vue, la structure sémantique est beaucoup plus proche d’un arbre de dépendance que d’un arbre de constituant. L'interface sémantique-syntaxe sera évoquée plus en détail dans le \chapref{sec:13} sur la \textit{Syntaxe profonde}.
 
     \tcbsubtitle{Portée}
     Lorsqu’on considère un exemple tel que \textit{la première voiture rouge que j’ai vue}, on remarque que l’adjectif \textit{première} qui modifie \textit{voiture} \textbf{porte} sur \textit{voiture rouge que j’ai vue} et pas seulement sur \textit{voiture}, dans le sens que la voiture dont on parle n’est pas première parmi toutes les voitures, mais seulement parmi les voitures rouges que j’ai vues. De tels phénomènes sont appelés des \textstyleTermesapprof{phénomènes de portée}. Les phénomènes de portée montrent que certaines combinaisons se font avec des groupes. On peut représenter cela par le parenthésage suivant :
@@ -1616,11 +1622,12 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     [ [ [\textit{je}] — [\textit{tressaillis}] ] [ [\textit{attentif}] — [ [\textit{à ce qui}] — [\textit{se passait}] — [\textit{d'extraordinaire}] [\textit{en moi}] ]
     \end{exe}
 
-    Nous proposons finalement la structure de dépendance de la figure \ref{fig:proust}. Nous laissons sous-spécifié la tête de la relation déterminant-nom, ainsi que la relation entre le pronom relatif et verbe principal des propositions relatives.
+    Nous proposons finalement la structure de dépendance de la figure \ref{fig:proust}. Nous laissons sous-spécifiée la tête de la relation déterminant-nom, ainsi que la relation entre le pronom relatif et verbe principal des propositions relatives.
     
     \begin{figure}[H]
     \includegraphics[scale=.9]{figures/polygraphs/poly-3.4.31.pdf}
     \caption{Structure de dépendance polygraphique\label{fig:proust}}
+    \todo[inline]{Can you use the usual font \textit for the words?}
     \end{figure}
     
     Pour construire un arbre de constituants binaire, il faut décider dans quel ordre combiner chaque mot avec ses dépendants. Notons que lorsqu’une connexion n’est pas hiérarchisée, cette combinaison a lieu après les autres. Par exemple, si nous prenons la portion \textit{à l’instant même où la gorgée mêlée des miettes du gâteau toucha mon palais}, on obtient~la structure (ii), où le déterminant est le dernier élément à se combiner avec le nom :
