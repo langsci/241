@@ -45,7 +45,7 @@ Dans l’exemple \REF{ex:jambe}, \phraseme{tenir la jambe} est un phraseme (voir
 			\draw[-{Triangle[]}] (def) -- (prof) node[font=\footnotesize,midway,right] {1};
 			\draw[-{Triangle[]}] (singulier0) -- (heure) node[font=\footnotesize,midway,anchor=base east] {1};
 		\end{tikzpicture}
-		\caption{Structure sémantique}\todo[inline]{put figure a on the left (its caption to close from figure c)}
+		\caption{Structure sémantique}\todo[inline]{put figure a on the left (its caption is to close from figure c)}
 	\end{subfigure}%
 	\bigskip\\%
 	\begin{subfigure}[b]{0.5\textwidth}
@@ -208,7 +208,7 @@ Les collocatifs sont des sémantèmes, mais leur choix est contraint par la base
 		\end{forest}
 		\caption{Structure syntaxique profonde}
 	\end{subfigure}
-\caption{Structures pour les fonctions lexicales de \REF{ex:peurbleue}\label{fig:peurbleue}}
+\caption{Structures avec fonctions lexicales de \REF{ex:peurbleue}\label{fig:peurbleue}}
 \end{figure}
 
 \subsubsection{Les translatifs purs} 
@@ -249,7 +249,7 @@ Il existe plusieurs possibilités pour modéliser la copule dans la structure sy
 		\end{forest}
 		\caption{Avec un nœud lexical pour la copule}
 	\end{subfigure}
-\caption{Deux représentations pour la structure syntaxique profonde de \REF{ex:content}a \label{fig:content}}
+\caption{Deux représentations pour la structure syntaxique profonde de \REF{ex:content}a \label{fig:content} avec une copule}
 \end{figure}
 
 Notons que la conjonction de subordination \textsc{que} est également un translatif (de verbe en substantif). Nous aurions donc pu aussi l’introduire dans les représentations de la figure \ref{fig:content}. Nous ne l’avons pas fait, car on considère que la conjonction de subordination \textsc{que} fait partie du régime de \textsc{trouver}.
@@ -259,7 +259,7 @@ Notons également que les translatifs peuvent en plus être des collocatifs : te
 \subsubsection{Les sémantèmes constructionnels} 
 Il existe des syntaxèmes qui n’expriment pas des sens proprement dits, mais qui ont à voir avec la structure communicative, la façon dont on présente l’information (voir l’\encadref{sec:13-packaging}). Nous considérons qu’il s’agit de sémantèmes d’un type particulier, que nous appelons les \terme{sémantèmes constructionnels}. Nous distinguons ceux comme le clivage, qui sont réalisés par des lexèmes et des grammèmes distincts de la forme verbale et que nous traitons comme des lexies, et ceux comme le passif, qui sont réalisés par un grammème sur le verbe et que nous traitons comme des grammies.
 
-Nous avons déjà parlé du clivage dans la \sectref{sec:11.8} sur \textit{Les tests de constituance} et dont nous reparlerons dans le \chapfuturef{20}. Le clivage, réalisé par \textit{c’est} X \textit{qui/que} Y, s’applique à une proposition Y dont il promeut l’un des éléments X. Il possède donc deux actants : l’élément promu X est le premier actant et la proposition Y privée de cet élément est le deuxième actant.
+Nous avons déjà parlé du clivage dans la \sectref{sec:3.4.10} sur \textit{Les tests de constituance} et dont nous reparlerons dans le \chapfuturef{20}. Le clivage, réalisé par \textit{c’est} X \textit{qui/que} Y, s’applique à une proposition Y dont il promeut l’un des éléments X. Il possède donc deux actants : l’élément promu X est le premier actant et la proposition Y privée de cet élément est le deuxième actant.
 
 \ea\label{ex:13-clivage}
 \ea \textit{\textbf{C’est} Zoé \textbf{qui} viendra.}
@@ -361,7 +361,7 @@ Certains pronoms résultent du dédoublement d’un nœud sémantique, comme le 
 
 La représentation que nous proposons pour \REF{ex:13-pronom}a est d’indiquer qu’il y a un sémantème « pro » coréférent avec \textsc{Zoé}. La coréférence est indiquée par une flèche bidirectionnelle en pointillé (voir la figure \ref{fig:13-pronom-pro}a). Ce lien indique que le sémantème « pro » provient du dédoublement du sémantème ‘Zoé’ et il permet d’assurer l’accord de « pro » avec \textsc{Zoé} au niveau syntaxique de surface Dans le cas de \REF{ex:13-pronom}b, où il n’y a pas de pronom, nous indiquons que la dépendance entre le verbe subordonné et son premier argument est uniquement sémantique (par une flèche hachée) (figure \ref{fig:13-pronom-pro}b). Nous reviendrons sur cette construction dans la \sectref{sec:13-controle} sur le \textit{Contrôle}.
 
-\begin{figure}\label{fig:13-pronom-pro}
+\begin{figure}
 	\begin{subfigure}[b]{0.5\textwidth}
 		\centering
 		\begin{forest} for tree={font=\normalfont}
@@ -387,7 +387,7 @@ La représentation que nous proposons pour \REF{ex:13-pronom}a est d’indiquer 
 		\end{forest}
 		\caption{Structure de \REF{ex:13-pronom}b}
 	\end{subfigure}
-\caption{Structures syntaxiques profondes dans le cas d’un cycle}
+\caption{Structures syntaxiques profondes dans le cas d’un cycle\label{fig:13-pronom-pro}}
 \end{figure}
 
 D’autres représentations plus proches de la sémantique ont été proposées : Mel’čuk propose une représentation commune pour les deux phrases de \REF{ex:13-pronom}, avec deux nœuds \textsc{Zoé} lié par un lien de coréférence. Une alternative à cette représentation est de garder un seul nœud \textsc{Zoé} et d’avoir deux gouverneurs syntaxiques pour ce nœud, ce qui donne une structure de dag (\textit{directed acyclic graph}, voir l’\encadref{sec:1.2.3} sur \textit{Graphe et arbre}).
@@ -906,7 +906,7 @@ Nous donnons dans la figure \ref{fig:13-regime} quelques exemples de tableaux de
 	\end{subfigure}%
 	\vfill
 	\begin{flushleft}
-		\textsc{question} : question de X \textit{à} Y sur Z \\
+		\textsc{question} : \textit{question de} X \textit{à} Y \textit{sur} Z \\
 		\textbullet~ nature : N
 	\end{flushleft}
 	\begin{subfigure}[h]{\textwidth}
@@ -924,7 +924,7 @@ Nous donnons dans la figure \ref{fig:13-regime} quelques exemples de tableaux de
 	\vfill
 	\begin{flushleft}
 		\textsc{chez} : [X] \textit{chez} Y \\
-		nature : Prép
+		\textbullet~ nature : Prép
 	\end{flushleft}
 	\begin{subfigure}[h]{\textwidth}
 		\centering
@@ -942,7 +942,7 @@ Nous donnons dans la figure \ref{fig:13-regime} quelques exemples de tableaux de
 	\vfill
 	\begin{flushleft}
 		\textsc{heureux} : [X] \textit{heureux de} Y \\
-		nature : Adj, généralement postposé
+		\textbullet~ nature : Adj, généralement postposé
 	\end{flushleft}
 	\begin{subfigure}[h]{\textwidth}
 		\centering
@@ -1032,6 +1032,7 @@ Les grammaires d’arbres ont également été utilisées en \terme{grammaire de
 		\gkcaption{\textsc{prof}\textsubscript{déf}}
 		
 \end{tikzpicture}}
+\todo[inline]{If possible, align the nodes of the three diagrams and align the top of the boxes as weel as the bottom of two boxes on right}
 \caption{Combinaison des structures élémentaires d’une lexie et d’une grammie\label{fig:13-GD0}}
 \end{figure}
 
@@ -1107,8 +1108,9 @@ every label/.style={reset shape}]
 \draw (jambe) -- (le) node[font=\footnotesize,midway,left] {dét};
 \draw (tenir) -- (a) node[font=\footnotesize,midway,right] {coi};
 \draw (a) -- (B) node[font=\footnotesize,midway,right] {comp};
-
+\todo[inline]{Is it possible to maintain the same length for the dependencies in this tree than in other trees? Moreover the leaves of the tree are not aligned}
 \gkcaption{\phraseme{tenir la jambe}}
+
 
 \end{tikzpicture}
 \begin{tikzpicture}[framed,
@@ -1260,7 +1262,7 @@ La structure dérivée qui résulte de la combinaison des 9 structures élément
 	\draw (pendant) -- (heure) node[font=\footnotesize,midway,right] {comp};
 	\draw (heure) -- (un) node[font=\footnotesize,midway,left] {dét};
 	\draw [->,dashed] ($(tenir)+(-0.1cm,0.015cm)$) .. controls +(south west:1cm) and +(south east:1cm) .. node[pos=0.5,below]{\footnotesize suj} (zoe);
-	
+\todo[inline]{Same problem as previously: nodes of the same level are not aligned and the vertical distance between levels is bigger than in other trees}	
 \end{tikzpicture}
 \caption{Structure dérivée de \REF{ex:jambe} par la grammaire\label{fig:13-GD2}}
 \end{figure}
@@ -1279,6 +1281,7 @@ La façon dont les structures élémentaires se sont combinées les unes avec le
 	]
 	]
 \end{forest}
+\todo[inline]{If possible, add a small space between the arrow from pendant to “tenir la jambe” and the two other arrows}
 \caption{Structure de dérivation de \REF{ex:jambe} par la grammaire\label{fig:13-GD3}}
 \end{figure}
 }
@@ -1292,7 +1295,8 @@ La façon dont les structures élémentaires se sont combinées les unes avec le
 
 Ces deux énoncés n’ont pas la même interprétation a priori. Dans le premier, l’interprétation privilégiée est que chaque étudiant a résolu un exercice, sans que ce soit a priori le même exercice, tandis que dans le deuxième, le même exercice a été résolu par l’ensemble des étudiants. Cette différence est généralement modélisée en termes de portée. On dit qu’un élément B est dans la \terme{portée} d’un élément A, lorsque l’interprétation de B est fonction de A. En \REF{ex:13-portée}a, on considère que ‘un’ est dans la portée de ‘tous’ lorsqu’on considère que l’exercice résolu est propre à chaque étudiant. Dans ce type de modélisation, les quantifieurs ‘tous’ et ‘un’ (appelés respectivement le quantifieur universel et le quantifieur existentiel) se voient associer deux arguments : un premier argument qui est le nom auquel ils sont combinés syntaxiquement et qu’on appelle leur \terme{restriction} et un deuxième argument qu’on appelle leur portée et qui comprend une prédication. On obtient alors les description sémantique suivantes pour les énoncés \REF{ex:13-portée}a et b, données sous forme textuelle en \REF{ex:13-scope}a et b, puis sous la forme d’une formule où chaque prédicat est suivi de la liste de ses arguments en \REF{ex:13-portée}a’et b’.
 
-\begin{exe}
+
+\begin{exe}\label{ex:13-scope}
     \sn
 	\begin{xlist}[b'.]
 		\exi{a.} Pour tout étudiant $x$, il existe un exercice $y$ tel que $x$ a résolu $y$.
@@ -1301,6 +1305,7 @@ Ces deux énoncés n’ont pas la même interprétation a priori. Dans le premie
 		\exi{b'.} un($y$, exercice($y$), tout($x$, étudiant($x$), résoudre($x,y$)))
 	\end{xlist}	
 \end{exe}
+\todo[inline]{must be an \ea }
 
 Bien que cette modélisation soit aujourd’hui largement dominante, elle nous semble à la fois inutilement compliquée et non totalement satisfaisante. Pour comprendre pourquoi la notion de portée ne fonctionne pas complètement, considérons l’exemple suivant.
 
@@ -1406,7 +1411,7 @@ Nous représentons la relation syntaxique profonde entre le verbe infinitif et s
 		\end{forest}
 		\caption{Structure de \REF{ex:13-venir}b}
 	\end{subfigure}
-\caption{Structures syntaxiques profondes avec un verbe à contrôle}
+\caption{Structures syntaxiques profondes avec un verbe à contrôle\label{fig:13-venir}}
 \end{figure}
 
 Les constructions à contrôle se produisent quand la structure sémantique contient un cycle (non orienté). Ce cycle doit être réalisé en syntaxe de surface par un arbre, c’est-à-dire par une structure acyclique. Il faut donc couper le cycle quelque part.
@@ -1479,7 +1484,7 @@ Le nom \textsc{gifle} est un nom prédicatif qui possède trois arguments : \tex
 
 Nous proposons dans la figure \ref{fig:13-gifle} la structure syntaxique profonde des exemples \REF{ex:13-gifle}. Le verbe support \phraseme{se prendre} est modélisé par une fonction lexicale Oper2, terme introduit par Igor Mel’\v cuk signifiant qu’il s’agit d’un opérateur qui \hi{réifie} le 2\textsuperscript{e} argument du nom prédicatif. Le verbe support \textsc{donner} a deux actants contrôlés par le nom \textsc{gifle} : il est noté Oper\textsubscript{12} car il réalise comme actants les arguments 1 et 2 du nom \textsc{gifle}.
 
-\begin{figure}\label{fig:13-gifle}
+\begin{figure}
 %FIGURE 27
 	%a. Marie <-1- Oper2\_prés -2> gifle (Marie) <..2.. (Pierre) <..1..
 	\begin{subfigure}[b]{0.5\textwidth}
@@ -1508,7 +1513,7 @@ Nous proposons dans la figure \ref{fig:13-gifle} la structure syntaxique profond
 		\end{forest}
 		\caption{Structure de \REF{ex:13-gifle}b}
 	\end{subfigure}
-\caption{Structures syntaxiques profondes de constructions à verbe support}
+\caption{Structures syntaxiques profondes de constructions à verbe support\label{fig:13-gifle}}
 \end{figure}
 
 
@@ -1599,7 +1604,7 @@ Les constructions avec auxiliaires peuvent être vues comme des cas particuliers
 \ex \textit{Zoé \textbf{le} fait rire.}
 \ex \textit{Zoé le \textbf{lui} fait manger.}\z\z
 
-La construction causative en \REF{ex:13-aux}b et c illustre un cas possible de montée en position de complément. Nous préférons dire « cas possible », sans être plus affirmatif, car la très grande cohésion de la construction \textsc{faire} V\textsubscript{inf} ne permet pas de décider clairement de quel verbe, \textsc{faire} ou V, dépend le sujet rétrogradé de V. Comme le montre les exemples \REF{ex:13-aux}d et e, le sujet rétrogradé se cliticise sur \textsc{faire}, mais c’est aussi le cas du complément d’objet de \textsc{manger} en \REF{ex:13-aux}e. De plus, la fonction du sujet rétrogradé de V dépend de la valence de V : il s’agit d’un complément d’objet direct quand V n’a pas de complément, comme \textsc{rire}, et d’un complément d’objet indirect quand V a déjà un complément d’objet direct, comme \textsc{manger}. Pour ces raisons, nous considérons qu’il s’agit d’une construction avec auxiliaire : le causatif est traité en syntaxe profonde comme une grammie (voir la figure \ref{fig:13-causatif}), à l’instar d’autres redistributions comme le passif (voir la figure \ref{fig:13-passif}). La relation syntaxique profonde du sujet retrogradé reçoit l’étiquette ∞ déjà introduite dans la discussion sur le passif de la section \ref{sec:13-potentiel} sur \textit{Les unités potentielles de la syntaxe profonde}.
+La construction causative en \REF{ex:13-aux}b et c illustre un cas possible de montée en position de complément. Nous préférons dire « cas possible », sans être plus affirmatif, car la très grande cohésion de la construction \textsc{faire} V\textsubscript{inf} ne permet pas de décider clairement de quel verbe, \textsc{faire} ou V, dépend le sujet rétrogradé de V. Comme le montre les exemples \REF{ex:13-aux}d et e, le sujet rétrogradé se cliticise sur \textsc{faire}, mais c’est aussi le cas du complément d’objet de \textsc{manger} en \REF{ex:13-aux}e. De plus, la fonction du sujet rétrogradé de V dépend de la valence de V : il s’agit d’un complément d’objet direct quand V n’a pas de complément, comme \textsc{rire}, et d’un complément d’objet indirect quand V a déjà un complément d’objet direct, comme \textsc{manger}. Pour ces raisons, nous considérons qu’il s’agit d’une construction avec auxiliaire : le causatif est traité en syntaxe profonde comme une grammie (voir la figure \ref{fig:13-causatif}), à l’instar d’autres redistributions comme le passif (voir la figure \ref{fig:13-passif}). La relation syntaxique profonde du sujet retrogradé reçoit l’étiquette ∞ déjà introduite dans la discussion sur le passif de la \sectref{sec:13-potentiel} sur \textit{Les unités potentielles de la syntaxe profonde}.
 
 \begin{figure}
 %FIGURE 29
@@ -1858,7 +1863,7 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 			\draw[-{Triangle[]}] (passer) -- (laponie) node[font=\footnotesize,midway,anchor=base west] {3};
 			
 		\end{tikzpicture}
-		\caption{Structure sémantique}\todo[inline]{the caption of subfigure a is closer to subfig b that subfig a. This a general problem of subfigures  below each other, increased here by the asymetry of subfig a and the space above the caption}
+		\caption{Structure sémantique}\todo[inline]{the caption of subfigure a is closer to subfig b than subfig a. This a general problem of subfigures  below each other, increased here by the asymetry of subfig a and the space above the caption}
 	\end{subfigure}%
 	\bigskip\\%
 	%b. gens\_indf <-1- beaucoup <-+- aimer\_cond -2-> passer Noël Laponie
@@ -1925,7 +1930,7 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 		\end{forest}
 		\caption{Structure syntaxique profonde}
 	\end{subfigure}%
-\caption{Structures pour un vocatif}
+\caption{Structures pour un vocatif\label{fig:13-vocatif}}
 \end{figure}
 
 \item Le nom \textsc{œuf} est un nom comptable. Il est employé ici comme un massif, avec le déterminant indéfini des massifs. Nous considérons donc qu’il est combiné avec un sémantème caché « massif », qui signifie ‘une matière formée de’. Ce sémantème joue le rôle inverse du sémantème « type », qui produit un nom comptable à partir d’un massif. Par ailleurs, nous traitons \textit{il y a} comme la réalisation d’un phrasème \phraseme{il y avoir} qui « verbalise » la préposition \textsc{sur}. Enfin, nous traitons le possesif \textit{ma} comme un modifieur avec un sémantème «~possesseur~» (voir le corrigé de l’exercice 1).
