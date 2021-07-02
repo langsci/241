@@ -1366,20 +1366,7 @@ L’ancrage ne fait pas à notre avis partie de la structure prédicative, mais 
 		\caption{Structure de \REF{ex:13-portée}b}
 	\end{subfigure}
 \caption{Structure référentielle avec ancrage \label{fig:13-portée}}
-\end{figure}
-
-Le cas de la portée de la négation relève à notre avis d’un autre aspect de la représentation sémantique, qui est la structure communicative (voir l’\encadref{sec:13-packaging}). Dans un énoncé tel que \REF{ex:13-negation}a, plusieurs interprétations sont possibles selon que la négation « porte » sur \textit{donner}, \textit{Zoé}, \textit{ce livre}, \textit{à Luce} ou sur un empan plus large de texte. 
-
-\ea\label{ex:13-negation} 
-\ea \textit{Zoé ne veut pas donner ce livre à Luce.}
-\ex \textit{C’est Zoé qui ne veut pas donner ce livre à Luce.}
-\ex \textit{C’est ce livre que Zoé ne veut pas donner à Luce.}\z\z
-
-On peut forcer de telles interprétations en clivant l’élément en question comme le montre les exemples \REF{ex:13-negation}b et c. On voit alors que la négation porte sur le rhème, c’est-à-dire sur l’information qui est communiquée, notamment lorsqu’elle est extraite par un clivage. Le problème de l’ancrage est différent, puisque que ce soit \textit{une pizza} ou \textit{Ali et Zoé} qui est communiqué, les deux ancrages de \textit{une pizza} restent possibles, comme on peut le constater dans l’exemple suivant.
-
-\ea
-\ea \textit{C’est une pizza que Ali et Zoé ont acheté.}
-\ex \textit{C’est Ali et Zoé qui ont acheté une pizza.}\z\z}
+\end{figure}}
 
 \section{Contrôle}
 \label{sec:13-controle}
@@ -2047,7 +2034,7 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 \caption{Deux structures syntaxiques syntaxiques possibles pour une construction résultative}
 \end{figure}
 
-\corrigé{7} Si l’on accepte la paraphrase entre « \textit{Ce livre est difficile à lire.}~» et « \textit{Lire ce livre est difficile} », alors on peut considérer que \textsc{difficile} reste un prédicat à un argument et que c’est le deuxième argument de \textsc{lire} qui devient son « sujet » (voir la structure prédicative de la figure \ref{fig:13-tough}c). Comme il existe plusieurs adjectifs qui ont les deux constructions (\textsc{facile}, \textsc{impossible}, \textsc{utile} …), nous considérerons, à la suite des générativistes, qu’il s’agit d’une réorganisation de la valence de l’adjectif (plutôt que de deux acceptions du même adjectif). Dans notre cadre, une telle réorganisation résulte de la combinaison avec un sémantème constructionnel, que nous appellerons « \textit{tough-movement} » (pour ne pas rompre avec la tradition). Il en résulte les structures syntaxiques profondes des figures \ref{fig:13-tough}a et b.
+\corrigé{7} Si l’on accepte la paraphrase entre « \textit{Ce livre est difficile à lire.}~» et « \textit{Lire ce livre est difficile} », alors on peut considérer que \textsc{difficile} reste un prédicat à un argument dans la construction dite du «~tough-movement~» (voir la structure prédicative de la figure \ref{fig:13-tough}c). Dans cette construction, l'adjectif a néanmoins deux actants en raison de la montée du deuxième argument de \textsc{lire} en position de premier actant de \textsc{difficile}, tandis que son premier argument est rétrogradé en position de deuxième actant. Comme il existe plusieurs adjectifs qui ont les deux constructions (\textsc{facile}, \textsc{impossible}, \textsc{utile} …), nous considérerons, à la suite des générativistes, qu’il s’agit d’une réorganisation de la valence de l’adjectif (plutôt que de deux acceptions du même adjectif). Dans notre cadre, une telle réorganisation résulte de la combinaison avec un sémantème constructionnel, que nous appellerons «~{tough-movement}~» (pour ne pas rompre avec la tradition). Il en résulte les structures syntaxiques profondes des figures \ref{fig:13-tough}a et b.
 
 \begin{figure}[H]
 %FIGURE 37\label{fig:13-tough}
@@ -2056,8 +2043,8 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 		\centering
 		\begin{forest} for tree={font=\normalfont}
 			[\textsc{livre}\textsubscript{sg,indéf},name=root
-			[tough-mvt(\textsc{difficile}),name=mvt,edge label={node[midway,right,font=\footnotesize]{+2}}
-			[\textsc{lire}\textsubscript{inf},name=lire,edge label={node[midway,right,font=\footnotesize]{1}}]%
+			[tough-mvt(\textsc{difficile}),name=mvt,edge label={node[midway,right,font=\footnotesize]{+\textsc{mod}}}
+			[\textsc{lire}\textsubscript{inf},name=lire,edge label={node[midway,right,font=\footnotesize]{2}}]%
 			]
 			]
 			\draw[->,dashed] (lire) .. controls +(west:3cm) and +(west:3cm) .. (root) node[pos=0.5, left]{\footnotesize 2};
@@ -2070,10 +2057,10 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 		\centering
 		\begin{forest} for tree={font=\normalfont}
 			[V(tough-mvt(\textsc{difficile}))\textsubscript{prés}
-			[\textsc{livre}\textsubscript{sg},name=livre,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{+2}}
+			[\textsc{livre}\textsubscript{sg},name=livre,edge label={node[midway,above left=-0.5ex,font=\footnotesize]{+1}}
 			[\textsc{cet},edge label={node[midway,left,font=\footnotesize\itshape]{\textsc{mod}}}]
 			]
-			[\textsc{lire}\textsubscript{inf},name=lire,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{1}}]
+			[\textsc{lire}\textsubscript{inf},name=lire,edge label={node[midway,above right=-0.5ex,font=\footnotesize]{2}}]
 			]
 			\draw[->,dashed] ($(lire)+(-0.125cm,-0.4cm)$) .. controls +(south:0.6cm) and +(south:0.8cm) .. ($(livre)+(0.25cm,-0.4cm)$) node[pos=0.5,below]{\footnotesize 2};
 		\end{forest}
