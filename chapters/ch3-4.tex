@@ -560,12 +560,12 @@ Nous obtenons le parenthésage suivant :
     \ea     \textit{{C’est} \textbf{{à sa sœur}} {que Fred a l’intention d’essayer de} \textbf{{parler} en premier.}}     \z
 
     Mais surtout, le clivage ne s’applique pas à tous les types de constituants majeurs. Pour les complétives, le semi-clivage est mieux adapté :
+    
     \ea
         \textit{{Fred espère} \textbf{{que son neveu l’invitera}}.}\\  
         \textrm{→}  \textsuperscript{?}{*}\textit{\textbf{{C’est}}  {que son neveu l’invitera} \textbf{{que}}  {Fred espère.}}
         \textrm{→} \textit{\textbf{{Ce que}}  {Fred espère,} \textbf{{c’est}} {que son neveu l’invitera.}}\\
     \z
-    \todo[inline]{There is an empty line before this example and I don't know where it comes from}
 
     Le test de clivage ne fonctionne pas non plus très bien pour les indéfinis, le test en «\textit{il y a} X \textit{qui/que} Y~» pouvant le remplacer :
 
@@ -876,21 +876,50 @@ L'ordre de saillance que nous avons introduit dans la figure \ref{fig:laponie-sa
       ]
     ]    
     \end{forest}\hfill
-    \begin{forest} forked edges, for tree = {font=\itshape}
-    [Sentence
-      [NP [T [the]]
-          [N [man]]
-      ]
-      [VP [Verb [hit]]
-          [NP [T [the]]
-              [N [ball]]
-          ]
-      ]
-    ]    
-    \end{forest}\\
+    \begin{forest}
+				for tree={
+					font=\itshape,
+					edge path'={}
+				}
+				[Sentence,name=sentence
+					[NP,name=np0
+						[T,name=t0
+							[the,name=the0]
+						]
+						[N,name=n0
+							[man,name=man]
+						]
+					]
+					[VP,name=vp
+						[Verb,name=verb
+							[hit,name=hit]
+						]
+						[NP,name=np1
+							[T,name=t1
+								[the,name=the1]
+							]
+							[N,name=n1
+								[ball,name=ball]
+							]
+						]
+					]
+				]
+				\draw[thick] (np0.north) |- ($(np0.north)!0.5!(vp.north)+(0,9pt)$) -| (vp.north);
+				\draw[thick] (t0.north) |- ($(t0.north)!0.5!(n0.north)+(0,9pt)$) -| (n0.north);
+				\draw[thick] (verb.north) |- ($(verb.north)!0.5!(np1.north)+(0,9pt)$) -| (np1.north);
+				\draw[thick] (t1.north) |- ($(t1.north)!0.5!(n1.north)+(0,9pt)$) -| (n1.north);
+				\draw[thick] ($(sentence.south)+(0,2pt)$) -- ($(np0.north)!0.5!(vp.north)+(0,11pt)$);
+				\draw[thick] ($(np0.south)+(0,2pt)$) -- ($(t0.north)!0.5!(n0.north)+(0,11pt)$);
+				\draw[thick] ($(vp.south)+(0,2pt)$) -- ($(verb.north)!0.5!(np1.north)+(0,11pt)$);
+				\draw[thick] ($(np1.south)+(0,2pt)$) -- ($(t1.north)!0.5!(n1.north)+(0,11pt)$);
+				\draw[thick] ($(t0.south)+(0,2pt)$) -- ($(the0.north)$);
+				\draw[thick] ($(n0.south)+(0,2pt)$) -- ($(man.north)$);
+				\draw[thick] ($(verb.south)+(0,2pt)$) -- ($(hit.north)$);
+				\draw[thick] ($(t1.south)+(0,2pt)$) -- ($(the1.north)$);
+				\draw[thick] ($(n1.south)+(0,2pt)$) -- ($(ball.north)$);
+			\end{forest}\\
     \small\textit{The man hit the ball.} ‘L'homme frappa le ballon.’
     \caption{Arbre de constituant \citet{chomsky1957syntactic} et diagramme polygraphique de l'édition de 2002\label{fig:chomsky57}}
-    \todo[inline]{Sorry, but in second figure, the small vertical lines must be detached from the horizontal braces. It looks like a detail, but in fact it is very different. In one case we have on object (the forked edge), in the other case we have two objects and we discuss this in the text. Moreover it is a reproduction of an original diagram by Chomsky and there are two objects in the original diagram. See fig \ref{fig:subjectale} where it is perfectly done.}
 \end{figure}
 
 Alors que la version 2002 de l'arbre de 1957 est fondamentalement binaire, la binarité n’est plus exigée dans les arbres de \textit{Aspects of the Theory of Syntax}, publié en \citeyear{chomsky1965aspects} (voir un exemple dans la figure \ref{fig:chomsky65} avec des branchements unaires, binaires et ternaires). Elle réapparaîtra dans les travaux suivants et notamment la syntaxe X-barre.
@@ -1627,7 +1656,7 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     \begin{figure}[H]
     \includegraphics[scale=.9]{figures/polygraphs/poly-3.4.31.pdf}
     \caption{Structure de dépendance polygraphique\label{fig:proust}}
-    \todo[inline]{Can you use the usual font \textit for the words?}
+    \todo[inline]{Can you use the usual font for the words?}
     \end{figure}
     
     Pour construire un arbre de constituants binaire, il faut décider dans quel ordre combiner chaque mot avec ses dépendants. Notons que lorsqu’une connexion n’est pas hiérarchisée, cette combinaison a lieu après les autres. Par exemple, si nous prenons la portion \textit{à l’instant même où la gorgée mêlée des miettes du gâteau toucha mon palais}, on obtient~la structure (ii), où le déterminant est le dernier élément à se combiner avec le nom :

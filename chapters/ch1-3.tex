@@ -166,8 +166,8 @@ Le diagramme est à lire en partant du haut. On associe une catégorie à chaque
     \centering
      \caption{Arbre de constituants correspondant au calcul \REF{ex:Bar-Hillel}}
     \label{fig:Bar-Hillel}
-    \begin{forest}
-    [\textrm{P}
+    \begin{forest} for tree={font=\normalfont}
+    [P
         [GN[\textit{Pierre}]
         ]
         [GN{\textbackslash}P
@@ -181,7 +181,7 @@ Le diagramme est à lire en partant du haut. On associe une catégorie à chaque
             ]
         ]
     ]
-    \end{forest}\todo[inline]{Why the root symbol P is slanted?}
+    \end{forest}
  \end{figure}
 
     Joachim Lambek a montré en 1958 que la règle de combinaison des catégories pouvait être interprétée comme une inférence logique. On peut en effet voir GN{\textbackslash}P comme une implication GN → P à interpréter comme «~si on me donne un GN à gauche, je formerai un P~». La règle de combinaison devient alors : «~de GN et de GN → P, je déduis P~», ce qui n’est autre que le \textit{modus ponens}, la règle de déduction de base de la logique («~de \textit{p} et de \textit{p}~→~\textit{q}, je déduis \textit{q}~»). L’analyse d’une phrase devient maintenant un \textstyleTermes{calcul logique}. Le calcul devient une \textit{preuve} que la suite de mots considérée au départ est bien une phrase. Il est intéressant de remarquer que la logique ainsi construite diffère de la logique classique, puisqu’elle est \hi{sensible aux ressources} (donner deux GN n’est pas équivalent à en donner un seul) \hi{et à l’ordre} (GN → P et P ← GN ne se comportent pas pareil, l’un attend un GN avant et l’autre après). Une telle logique, appelée \textstyleTermes{logique linéaire}, a des applications dans des domaines très éloignés de la linguistique et notamment en robotique où les actions doivent être effectuées dans un ordre bien précis.
