@@ -117,7 +117,7 @@ Nous n'avons pas encore donné de définition de ce qu'est un argument d'un sém
 
 En français, un verbe transitif possède deux diathèses principales : la \terme{diathèse active}, où l'agent est réalisé comme sujet, comme en \REF{ex:13-diathese}a,  et la diathèse passive où c'est le patient, comme en \REF{ex:13-diathese}b.
 
-ea\label{ex:13-diathese}
+\ea\label{ex:13-diathese}
 \ea \textit{Un chien poursuit Zoé.}
 \ex \textit{Zoé est poursuivie par un chien.}\z\z
 
@@ -142,7 +142,7 @@ L’objectif de la syntaxe profonde est d’étudier les combinaisons entre sém
 \subsection{Les unités de la syntaxe profonde}
 
 \subsubsection{Les sémantèmes lexicaux} 
-Ce sont les \hi{unités lexicales} ou \hi{lexies}. Les lexies peuvent correspondre, du coté syntaxique, à un lexème ou à un phrasème composé de plusieurs lexèmes, comme \phraseme{tenir la jambe} dans l’exemple \REF{ex:jambe}. Elles peuvent éventuellement contenir des grammèmes, comme la lexie \textsc{travaux} (\textit{Il y a des \textbf{travaux} dans ma rue.}), qui contient un pluriel inhérent (ce sens de \textsc{travaux} n'existe pas au singulier; il serait inapproprié de dire \textsuperscript{#}\textit{Il y a un travail dans ma rue.}).
+Ce sont les \hi{unités lexicales} ou \hi{lexies}. Les lexies peuvent correspondre, du coté syntaxique, à un lexème ou à un phrasème composé de plusieurs lexèmes, comme \phraseme{tenir la jambe} dans l’exemple \REF{ex:jambe}. Elles peuvent éventuellement contenir des grammèmes, comme la lexie \textsc{travaux} (\textit{Il y a des \textbf{travaux} dans ma rue.}), qui contient un pluriel inhérent (ce sens de \textsc{travaux} n'existe pas au singulier; il serait inapproprié de dire \textsuperscript{\#}\textit{Il y a un travail dans ma rue.}).
 
 Du côté sémantique, les lexies ont un signifié bien déterminé et sont donc des unités non ambigües, qui sont associées à des acceptions précises de lexèmes. (Dans nos représentations, nous n’indiquons pas quelle acception de chaque unité lexicale est considérée, car cela nécessite d’avoir un lexique de référence qui attribue un numéro à chaque acceptation.)
 
@@ -1050,7 +1050,7 @@ Les grammaires d’arbres ont également été utilisées en \terme{grammaire de
 		\gkcaption{\textsc{prof}\textsubscript{déf}}
 		
 \end{tikzpicture}}
-\todo[inline]{If possible, align the nodes of the three diagrams and align the top of the boxes as weel as the bottom of two boxes on right}
+% % \todo[inline]{If possible, align the nodes of the three diagrams and align the top of the boxes as weel as the bottom of two boxes on right}
 \caption{Combinaison des structures élémentaires d’une lexie et d’une grammie\label{fig:13-GD0}}
 \end{figure}
 
@@ -1126,7 +1126,6 @@ every label/.style={reset shape}]
 \draw (jambe) -- (le) node[font=\footnotesize,midway,left] {dét};
 \draw (tenir) -- (a) node[font=\footnotesize,midway,right] {coi};
 \draw (a) -- (B) node[font=\footnotesize,midway,right] {comp};
-\todo[inline]{Is it possible to maintain the same length for the dependencies in this tree than in other trees? Moreover the leaves of the tree are not aligned}
 \gkcaption{\phraseme{tenir la jambe}}
 
 
@@ -1280,10 +1279,10 @@ La structure dérivée qui résulte de la combinaison des 9 structures élément
 	\draw (pendant) -- (heure) node[font=\footnotesize,midway,right] {comp};
 	\draw (heure) -- (un) node[font=\footnotesize,midway,left] {dét};
 	\draw [->,dashed] ($(tenir)+(-0.1cm,0.015cm)$) .. controls +(south west:1cm) and +(south east:1cm) .. node[pos=0.5,below]{\footnotesize suj} (zoe);
-\todo[inline]{Same problem as previously: nodes of the same level are not aligned and the vertical distance between levels is bigger than in other trees}	
 \end{tikzpicture}
 \caption{Structure dérivée de \REF{ex:jambe} par la grammaire\label{fig:13-GD2}}
 \end{figure}
+% % \todo[inline]{Same problem as previously: nodes of the same level are not aligned and the vertical distance between levels is bigger than in other trees}	
 
 Cette structure dérivée correspond à la structure syntaxique surface de \REF{ex:jambe}, que nous avons donné dans la figure \ref{fig:jambe}c. (Il manque les grammèmes de nombres que nous n'avons pas introduits pour simplifier. Notons aussi qu'il reste à appliquer des règles d'accord, qui concernent la bonne formation de la structure syntaxique de surface et pas directement l'interface sémantique-syntaxe.)
 La façon dont les structures élémentaires se sont combinées les unes avec les autres est décrit par la structure de dérivation de la figure \ref{fig:13-GD3}. Chaque structure élémentaire est représentée par le nom du sémantème auquel elle correspond.  Les flèches sont orientées du sémantème prédicat vers son argument, qui vient saturer une des positions blanches du prédicat. Les flèches vers le bas, où le prédicat gouverne syntaxiquement son argument, sont des relations actancielles, tandis que les flèches vers le haut, où le prédicat dépend de son argument, sont des relations modificatives. On retrouve donc bien la structure syntaxique profonde de \REF{ex:jambe}, donnée initialement dans la figure \ref{fig:jambe}b.
@@ -1299,10 +1298,10 @@ La façon dont les structures élémentaires se sont combinées les unes avec le
 	]
 	]
 \end{forest}
-\todo[inline]{If possible, add a small space between the arrow from pendant to “tenir la jambe” and the two other arrows}
 \caption{Structure de dérivation de \REF{ex:jambe} par la grammaire\label{fig:13-GD3}}
 \end{figure}
 }
+% % \todo[inline]{If possible, add a small space between the arrow from pendant to “tenir la jambe” and the two other arrows}
 
 \loupe[sec:13-ancrage]{Ancrage et portée des quantifieurs}
 {Les quantifieurs posent un problème intéressant, auquel les logiciens se sont beaucoup intéressés, depuis les travaux fondateurs de Gottlob \citet{frege1892uber}. Le problème peut être illustré par la paire d’énoncés suivante.
@@ -1315,7 +1314,7 @@ Ces deux énoncés n’ont pas la même interprétation a priori. Dans le premie
 
 
 \begin{exe}\label{ex:13-scope}
-    \sn
+    \ex
 	\begin{xlist}[b'.]
 		\exi{a.} Pour tout étudiant $x$, il existe un exercice $y$ tel que $x$ a résolu $y$.
 		\exi{a'.} tout($x$, étudiant($x$), un($y$, exercice($y$), résoudre($x,y$)))
@@ -1323,7 +1322,6 @@ Ces deux énoncés n’ont pas la même interprétation a priori. Dans le premie
 		\exi{b'.} un($y$, exercice($y$), tout($x$, étudiant($x$), résoudre($x,y$)))
 	\end{xlist}	
 \end{exe}
-\todo[inline]{must be an \ea }
 
 Bien que cette modélisation soit aujourd’hui largement dominante, elle nous semble à la fois inutilement compliquée et non totalement satisfaisante. Pour comprendre pourquoi la notion de portée ne fonctionne pas complètement, considérons l’exemple suivant.
 
@@ -1338,7 +1336,7 @@ L’ancrage ne fait pas à notre avis partie de la structure prédicative, mais 
 \begin{figure}[H]
 %Figure 24 
 	%a. tout <-MOD- étudiant\_pl, déf <-1- résoudre\_passé -2-> exercice\_sg, indéf ..ancre..> (étudiants)
-	\begin{subfigure}[h]{\textwidth}
+	\begin{subfigure}{\textwidth}
 		\centering
 		\begin{forest} for tree={font=\normalfont}
 			[\textsc{résoudre}\textsubscript{passé}
@@ -1353,7 +1351,7 @@ L’ancrage ne fait pas à notre avis partie de la structure prédicative, mais 
 	\end{subfigure}%
 	\bigskip\\%
 	%b. tout <-MOD- étudiant\_pl, déf <-2- résoudre\_passif, passé -1-> exercice\_sg, indéf ..ancre..> univers
-	\begin{subfigure}[h]{\textwidth}
+	\begin{subfigure}{\textwidth}
 		\centering
 		\begin{forest} for tree={font=\normalfont}
 			[\textsc{résoudre}\textsubscript{passé},name=root
