@@ -138,6 +138,7 @@ Nous montrerons dans cet ouvrage les différents problèmes que pose l’identif
     \end{itemize}
 
     Nous pouvons maintenant calculer la valeur associée à \textit{Pierre dort~}:
+    
     \ea
     \gll {Pierre}  {\hspace{1em}} {dort}\\
          GN   ·   $\frac{\text{P}}{\text{GN}}$\ \  =\ \    P\\
@@ -218,13 +219,44 @@ Dans la suite de cet ouvrage, nous montrerons qu’il existe plusieurs types d�
 
 Le développement «~à la main~» d’un modèle linguistique est un travail considérable. Un dictionnaire de français courant possède 60\,000 mots et l’on évalue à près d’un million le nombre d’unités lexicales si l’on y inclut les expressions figées et que l’on compte les différentes acceptions de chaque lexème. Le lexique des constructions grammaticales est encore mal connu et certainement sous-évalué. La combinatoire de n’importe quelle description sérieuse d’un phénomène grammatical est tellement importante qu’il est difficile de voir la description dans son ensemble. L’ordinateur est alors le seul moyen pour combler cette difficulté. Les ordinateurs possèdent aujourd’hui des capacités de calcul suffisantes pour tester la plupart des modèles imaginables (et théoriquement raisonnables).
 
-Aujourd’hui les modèles capables d’effectuer des correspondances entre sens et textes sont très fragmentaires. On trouve par exemple des modèles de ce type assez performants, mais limités à la production de bulletins météo et manipulant donc un vocabulaire restreint. Les modèles informatiques couvrants se limitent à la correspondance entre textes et représentations syntaxiques de surface et ils font aujourd’hui pour cette tâche d’analyse superficielle près d’une erreur par phrase en moyenne.
+Aujourd’hui les modèles capables d’effectuer des correspondances entre sens et textes sont très fragmentaires. On trouve par exemple des modèles de ce type assez performants, mais limités à la production de bulletins météo et manipulant donc un vocabulaire restreint. Les modèles informatiques couvrants se limitent à la correspondance entre textes et représentations syntaxiques de surface. Un tel système est appelé un parseur. 
+et ils font aujourd’hui pour cette tâche d’analyse superficielle près d’une erreur par phrase en moyenne.
+
+modèle - tal
+distributionalisme
+
+le tal qui est utile au parsing (fin en soi, une des application du tal, ce n'est plus une composante)
+ce n'est plus le tal qui améliore le parsing.
+réseaux de neurones ont appris qqch qui leur permet de faire le parsing.
+on essaie de montrer si on fait une analyse distributionnelle, on met en évidence la structure.
+grandes familles = cluster
+
+transformer : la machine a compris qqch sur le lien entre mots
+Bert a tellement de connaissances 
+un treebank d'un million de mots = 100h de parole = humain en 15 jours.
+encodeur décodeur
+
+
+
+comme toutes les sciences, la linguistique subit l'impact des modèles d'apprentissage statistique. 
+- avant justification pour la science : compréhension = maîtrise des données = avantage économique
+- aujourd'hui : grandes masses de données, modèles similaires partout donnent de meilleurs résultats que ce que les humains peuvent gérer
+- séparation entre science et ingénierie.
+- continu, quantitatif
+- pédagogique
+- parsing aussi meilleur grâce aux plongements, reproductibilité est une validation d'une analyse syntaxique.
+- TA humain meilleur. 
 
 La validation des théories linguistiques n’est pas le seul intérêt de l’implémentation des modèles : le développement de modèles informatiques possède un réel intérêt économique, puisque la langue est au centre de toutes les activités sociales humaines. Le développement de modèles informatiques et de ressources formelles tels que lexiques, grammaires ou corpus annotés s’appelle la \textstyleTermes{linguistique computationnelle}. La linguistique computationnelle est incluse dans le domaine plus vaste du \textstyleTermes{traitement automatique des langues} ou \textstyleTermes{TAL}, qui s’intéresse également à toutes les applications que l’on peut développer à partir de tels modèles. Les applications industrielles du TAL constituent l’\textstyleTermes{ingénierie linguistique}.
 
 Le TAL ne nécessite pas toujours de grandes connaissances en linguistique et certaines méthodes de traitement du langage n’ont pas grand-chose à voir avec la modélisation des langues. Par exemple, pour décider en quelle langue est une page sur la Toile le moyen le plus simple et le plus performant est de faire une statistique des séquences de trois lettres et de comparer avec les statistiques pour les langues que l’on souhaite reconnaître. Nul besoin de lexique et encore moins de connaissances en grammaire. De la même manière, il est imaginable de faire une étude statistique sur les marées des cent dernières années et en déduire de bonnes prédictions sur les marées à venir. Par contre, il semble clair qu’une telle «~modélisation~» ne nous avance pas dans la compréhension du phénomène des marées et du rôle de la gravitation (voir la \sectref{sec:1.3.2} sur \textit{Modélisation et théorie}).
 
 Aujourd’hui, beaucoup de modèles en TAL se basent avant tout sur des \textstyleTermes{données} \textstyleTermes{statistiques} apprises sur de grand corpus, car les résultats sont souvent meilleurs et moins coûteux qu’avec des données entièrement développées à la main qui s’avèrent généralement incomplètes. La très grande capacité de mémoire de l’ordinateur fait qu’il est souvent plus facile de travailler avec une énorme liste de données (par exemple toutes les constructions possibles pour tous les verbes d’une langue) que de dégager et d’implémenter les régularités derrière (avec leurs exceptions qui existent toujours). Il est possible que les modèles les plus efficaces pour les applications informatiques ne soient pas les modèles les plus satisfaisants du point de vue de leur «~explicativité~». À l’heure actuelle, les traducteurs automatiques les plus performants sont ceux qui interrogent de grands corpus bilingues pour rechercher tous les fragments du texte pour lesquels on a déjà une traduction et qui choisissent la plus fréquente (\hi{modèle de traduction}). Ainsi les traductions sont combinées et lissées à l’aide de corpus unilingues encore plus grands (\hi{modèle de langue}). De tels systèmes de traduction statistiques obtiennent de meilleurs résultats que les systèmes qui cherchent à simuler un traducteur humain, c’est-à-dire qui cherchent à calculer une représentation sémantique du texte à traduire pour générer à partir de celle-ci un texte dans une autre langue.
+
+- ajouter distribution dans les modèles récents
+
+- pédagogie + besoins explicatifs -> linguistique formelle reste intéressante
+
 
 \exercices{
     \exercice{1} Notre approche de la modélisation de la langue est volontairement réductrice. En envisageant notre objet d’étude, la langue, comme une correspondance entre sens et textes, qu’est-ce que nous négligeons et ne modéliserons pas ?
