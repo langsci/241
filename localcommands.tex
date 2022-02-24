@@ -11,15 +11,15 @@
 
 \newcommand{\appref}[1]{Appendix \ref{#1}}
 \newcommand{\fnref}[1]{Footnote \ref{#1}}
-\renewcommand{\sectref}[1]{section \ref{#1}}
+\renewcommand{\sectref}[1]{section~\ref{#1}}
 
 \newcommand*{\Boite}{\bgroup\normalfont\ttfamily\char"25A2\egroup}
 \setkomafont{descriptionlabel}{\normalfont}
 
 \tcbuselibrary{theorems}
 
-\newcommand{\chapfuturef}[1]{chapitre #1 du vol.\ 2}
-\renewcommand{\chapref}[1]{chapitre \ref{#1}}
+\newcommand{\chapfuturef}[1]{chapitre~#1 du vol.~2}
+\renewcommand{\chapref}[1]{chapitre~\ref{#1}}
 \newcommand{\hi}[1]{\textit{#1}}
 
 \RedeclareSectionCommand[font={\sffamily},beforeskip=\baselineskip]{paragraph}
@@ -86,7 +86,7 @@
             inner sep = 1mm,
             line width = 0.8mm
           ] at (frame.north west) 
-          {{\color{black!12}\includegraphics[width=10mm]{tbls-#3.pdf}}};
+          {{\color{black!12}\includegraphics[height=10mm]{tbls-#3.pdf}}};
       },
     subtitle style = 
       {

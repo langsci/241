@@ -955,7 +955,7 @@ L’ordre dépendant-gouverneur n’est pas suffisant pour contraindre correctem
 On peut envisager deux façons d’exprimer les règles d’ordre entre co-dépen\-dants.
 Une première méthode consiste à considérer des règles d’\hi{ordre des co-dépendants} \hi{deux à deux} (ce serait à nouveau des \hi{règles de précédence linéaire}). Par exemple, pour obtenir l’ordre \textit{le petit garçon} et bannir *\textit{petit le garçon}, on indiquera que~le déterminant se place devant les adjectifs qui dépendent du même nom. 
 
-Si l’on regarde maintenant, l’ordre des dépendants à gauche du verbe \textit{prêtera}, on indiquera que le sujet se place avant les clitiques et que le clitique \textit{ne} précède toujours les clitiques datifs (comme \textit{lui}). Si on regarde plus précisément l’ordre des clitiques préverbaux du français, on voit qu’on a toujours \textit{je} < \textit{ne} < \textit{me} < \textit{le} < \textit{lui} < \textit{y} < \textit{en} < verbe : \textit{il me le donne, je le lui donne, il n’y en a pas,} etc. Comme l’ordre entre les clitiques est total, il est plus économique de donner directement l’ordre complet comme nous l’avons fait, que de donner les ordres des co-dépendants deux à deux (étant donné qu’il y a 8 éléments à ordonner, cela nous fait 7${\times}$8/2, soit 28 couples à ordonner).
+Si l’on regarde maintenant, l’ordre des dépendants à gauche du verbe \textit{prêtera}, on indiquera que le sujet se place avant les clitiques et que le clitique \textit{ne} précède toujours les clitiques datifs (comme \textit{lui}). Si on regarde plus précisément l’ordre des clitiques préverbaux du français, on voit qu’on a toujours \textit{je} < \textit{ne} < \textit{me} < \textit{le} < \textit{lui} < \textit{y} < \textit{en} < verbe : \textit{il me le donne, je le lui donne, il n’y en a pas,} etc. Comme l’ordre entre les clitiques est total, il est plus économique de donner directement l’ordre complet comme nous l’avons fait, que de donner les ordres des co-dépendants deux à deux (étant donné qu’il y a 8 éléments à ordonner, cela nous fait $7\times \nicefrac{8}{2}$, soit 28 couples à ordonner).
 
 La deuxième méthode pour ordonner les co-dépendants consiste donc à donner d’un coup l’ensemble des règles d’ordre concernant un nœud et ses dépendants. Cela peut être fait en considérant que chaque nœud de l’arbre de dépendance ouvre une \hi{boîte ordonnée} avec des positions prévues pour les différents dépendants selon leur nature et leur fonction. Nous appellerons une telle boîte un \textstyleTermes{gabarit topologique} et chacune des cases de la boîte un \textstyleTermes{champ topologique}.
 
@@ -2025,6 +2025,7 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     
     \begin{exe}
     \exi{(i)}
+    \judgewidth{\textsuperscript{??}}
     \begin{xlista}
     \ex[]{\textit{Mary often calls Peter.}     ‘Marie appelle souvent Pierre.’}
     \ex[\textsuperscript{??}]{\textit{Mary calls often Peter.}}
@@ -2032,7 +2033,6 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     \ex[\textsuperscript{??}]{\textit{Mary often would call Peter.}}
     \end{xlista}
     \end{exe}
-    \todo[inline]{There is an extra space after ??}
     Deuxièmement, dans les interrogatives, le sujet se place entre le modal et le verbe, et en cas d’absence de modal, \textsc{do} est introduit :
     
     \begin{exe}
