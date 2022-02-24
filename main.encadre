@@ -1,8 +1,242 @@
 \defcounter {refsection}{0}\relax 
-\contentsline {tcolorbox}{\numberline {1.1} Historique de la notion de syntaxe profonde}{9}{tcb@cnt@encadre.1.1}%
+\contentsline {tcolorbox}{\numberline {1.1} Arbre de dépendance}{3}{tcb@cnt@encadre.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {tcolorbox}{\numberline {1.2} Structure communicative et syntaxe profonde}{23}{tcb@cnt@encadre.1.2}%
+\contentsline {tcolorbox}{\numberline {1.2} La syntaxe et les autres domaines de la linguistique}{7}{tcb@cnt@encadre.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {tcolorbox}{\numberline {1.3} Lexique syntaxique et interface sémantique-syntaxe}{31}{tcb@cnt@encadre.1.3}%
+\contentsline {tcolorbox}{\numberline {1.3} Notations}{11}{tcb@cnt@encadre.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {tcolorbox}{\numberline {1.4} Ancrage et portée des quantifieurs}{38}{tcb@cnt@encadre.1.4}%
+\contentsline {tcolorbox}{\numberline {1.4} Le lexique : un cabinet de curiosités}{11}{tcb@cnt@encadre.1.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {1.5} Les termes \textit {grammaire}, \textit {syntaxe} et \textit {topologie}}{16}{tcb@cnt@encadre.1.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {1.6} Notions, termes, concepts et définitions}{19}{tcb@cnt@encadre.1.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {2.1} La langue comme correspondance sens-texte}{34}{tcb@cnt@encadre.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {2.2} Langue et variations}{38}{tcb@cnt@encadre.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {2.3} Mots et pensée}{41}{tcb@cnt@encadre.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {2.4} Sens lexicaux et traduction}{42}{tcb@cnt@encadre.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {2.5} Langue et parole, compétence et performance}{44}{tcb@cnt@encadre.2.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {3.1} Les observables : textes et sens}{59}{tcb@cnt@encadre.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {3.2} Graphe et arbre}{62}{tcb@cnt@encadre.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {3.3} Les composantes du sens}{64}{tcb@cnt@encadre.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {3.4} Les quatre moyens d’expression du langage}{67}{tcb@cnt@encadre.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {3.5} Règles et exceptions}{69}{tcb@cnt@encadre.3.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {3.6} Du sens au texte : de 3D à 1D}{72}{tcb@cnt@encadre.3.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {3.7} Les sens grammaticaux}{74}{tcb@cnt@encadre.3.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {3.8} D’où viennent les règles de la grammaire ?}{77}{tcb@cnt@encadre.3.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {4.1} Modèle d’une langue ou modèle de la langue}{86}{tcb@cnt@encadre.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {4.2} Propriétés universelles et spécificités du français}{88}{tcb@cnt@encadre.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {4.3} Un exemple — l’accord — de la description à l’explication}{91}{tcb@cnt@encadre.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {4.4} Modèles génératif, équatif et transductif}{94}{tcb@cnt@encadre.4.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {4.5} Calcul symbolique et grammaires catégorielles}{97}{tcb@cnt@encadre.4.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {4.6} La Théorie Sens-Texte}{100}{tcb@cnt@encadre.4.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {4.7} Les vecteurs de mots}{104}{tcb@cnt@encadre.4.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {5.1} Découverte de la double articulation}{119}{tcb@cnt@encadre.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {5.2} Le signe linguistique}{122}{tcb@cnt@encadre.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {5.3} Signifié ou exprimende}{123}{tcb@cnt@encadre.5.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {5.4} Structuralisme et distributionnalisme}{126}{tcb@cnt@encadre.5.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {6.1} La quatrième proportionnelle}{137}{tcb@cnt@encadre.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {6.2} Liberté de combinaison et opposition parole-langue}{143}{tcb@cnt@encadre.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {6.3} Théorie des ensembles}{144}{tcb@cnt@encadre.6.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {6.4} Dualité}{146}{tcb@cnt@encadre.6.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {6.5} Racine et signème}{150}{tcb@cnt@encadre.6.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {6.6} Les termes \textit {morphème} et autres \textit {X-èmes}}{152}{tcb@cnt@encadre.6.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {6.7} «~Syntaxe~» des morphèmes sous-lexicaux}{157}{tcb@cnt@encadre.6.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {6.8} Sémantique des morphèmes sous-lexicaux}{158}{tcb@cnt@encadre.6.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {6.9} À la limite entre morphème sous-lexical et syntaxème flexionnel}{159}{tcb@cnt@encadre.6.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {6.10} Alternance vocalique en français : allomorphie ou alternance phonologique ? }{163}{tcb@cnt@encadre.6.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {6.11} Flexions irrégulières}{165}{tcb@cnt@encadre.6.11}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {6.12} Syntaxème zéro et troncation en français}{168}{tcb@cnt@encadre.6.12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {7.1} Constructions verbales et accords : signes vides ?}{186}{tcb@cnt@encadre.7.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {7.2} Pronoms}{189}{tcb@cnt@encadre.7.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {7.3} Verbes supports et unités grammaticales}{193}{tcb@cnt@encadre.7.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {7.4} Fonctions lexicales}{197}{tcb@cnt@encadre.7.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {7.5} Collocations morphologiques}{198}{tcb@cnt@encadre.7.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {7.6} L’axe paradigmatique}{201}{tcb@cnt@encadre.7.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {7.7} Extensions paradigmatique et syntagmatique}{203}{tcb@cnt@encadre.7.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {7.8} Signèmes et signes : unités de la langue et unités de la parole}{208}{tcb@cnt@encadre.7.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {8.1} Le collimateur et la sellette}{223}{tcb@cnt@encadre.8.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {8.2} À chacun son syntagme}{225}{tcb@cnt@encadre.8.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {8.3} Historique de la notion de syntaxe}{230}{tcb@cnt@encadre.8.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {8.4} Constructions N \textit {de} N : syntaxèmes ou syntagmes}{232}{tcb@cnt@encadre.8.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {8.5} Constructions N N : syntaxèmes ou syntagmes ?}{234}{tcb@cnt@encadre.8.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {8.6} Syntaxèmes discontinus}{238}{tcb@cnt@encadre.8.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {8.7} Syntaxèmes séparables ?}{240}{tcb@cnt@encadre.8.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {9.1} Faut-il définir la structure syntaxique ?}{249}{tcb@cnt@encadre.9.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {9.2} Calculer la structure syntaxique d’un énoncé}{252}{tcb@cnt@encadre.9.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {9.3} De la non-séparation des ordres au mouvement}{255}{tcb@cnt@encadre.9.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {9.4} Définition formelle de la connexion}{269}{tcb@cnt@encadre.9.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {9.5} Connexion ternaire}{273}{tcb@cnt@encadre.9.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {9.6} Les limites de la dualité}{278}{tcb@cnt@encadre.9.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {9.7} Graphe à bulles et polygraphe}{281}{tcb@cnt@encadre.9.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {9.8} Cycle de connexions}{282}{tcb@cnt@encadre.9.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {9.9} Traitement cognitif des connexions}{286}{tcb@cnt@encadre.9.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {10.1} Historique des notions de dépendance et de tête}{298}{tcb@cnt@encadre.10.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {10.2} Dépendances morphologique, syntaxique et sémantique}{309}{tcb@cnt@encadre.10.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {10.3} Historique des représentations syntaxiques par des diagrammes en dépendance}{313}{tcb@cnt@encadre.10.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {10.4} Tête d’un énoncé dans une langue inconnue}{327}{tcb@cnt@encadre.10.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {10.5} Tête effaçable}{333}{tcb@cnt@encadre.10.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {10.6} Quelle structure pour quels critères ?}{338}{tcb@cnt@encadre.10.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {10.7} Distorsions sémantique-syntaxe}{344}{tcb@cnt@encadre.10.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {10.8} «~Déterminants complexes~»}{349}{tcb@cnt@encadre.10.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {10.9} Quand le dépendant contrôle son gouverneur}{355}{tcb@cnt@encadre.10.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {10.10} Co-occupation}{360}{tcb@cnt@encadre.10.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {10.11} Les grammèmes comme tête}{363}{tcb@cnt@encadre.10.11}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {10.12} Dépendance, dominance et transitivité}{367}{tcb@cnt@encadre.10.12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {11.1} Le terme \textit {constituant}}{395}{tcb@cnt@encadre.11.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {11.2} Décomposition récursive}{399}{tcb@cnt@encadre.11.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {11.3} Les limites des méthodes par décomposition}{401}{tcb@cnt@encadre.11.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {11.4} Les limites des tests de pronominalisation}{406}{tcb@cnt@encadre.11.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {11.5} Le statut des tests de constituance}{408}{tcb@cnt@encadre.11.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {11.6} Pas de structure de constituants sans la notion de tête ?}{411}{tcb@cnt@encadre.11.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {11.7} Dépendance et constituance se complètent}{416}{tcb@cnt@encadre.11.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {11.8} Historique des représentations syntaxiques par des diagrammes en constituants}{417}{tcb@cnt@encadre.11.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {11.9} Binarité, construction et connexion}{424}{tcb@cnt@encadre.11.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {11.10} Syntaxe X-barre}{426}{tcb@cnt@encadre.11.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {11.11} Le groupe verbal}{428}{tcb@cnt@encadre.11.11}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {11.12} Réification et transitivité}{432}{tcb@cnt@encadre.11.12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {11.13} Deux types d’arbres de constituants}{436}{tcb@cnt@encadre.11.13}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {11.14} Constituance ou dépendance ?}{444}{tcb@cnt@encadre.11.14}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.1} Les exceptions à la segmentabilité}{458}{tcb@cnt@encadre.12.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.2} Le cas des langues V2}{463}{tcb@cnt@encadre.12.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.3} Une représentation syntaxique non ordonnée ?}{466}{tcb@cnt@encadre.12.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.4} Mouvement et ordre de base}{468}{tcb@cnt@encadre.12.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.5} Format tabulaire et treebanks}{472}{tcb@cnt@encadre.12.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.6} Notation polonaise inverse}{474}{tcb@cnt@encadre.12.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.7} Langues à têtes finales et langues à têtes initiales}{477}{tcb@cnt@encadre.12.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.8} Classification des langues selon l’ordre entre V, S et O}{479}{tcb@cnt@encadre.12.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.9} Projectivité et planarité}{484}{tcb@cnt@encadre.12.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.10} Équivalence des définitions de la projectivité}{486}{tcb@cnt@encadre.12.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.11} Flux de dépendances}{487}{tcb@cnt@encadre.12.11}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.12} Un cas d’exclusion étrange}{494}{tcb@cnt@encadre.12.12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.13} Contraintes de poids}{498}{tcb@cnt@encadre.12.13}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.14} Les langues dites à ordre libre}{499}{tcb@cnt@encadre.12.14}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.15} Ordre communicativement dirigé}{503}{tcb@cnt@encadre.12.15}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.16} Les autres usages de l’ordre linéaire}{505}{tcb@cnt@encadre.12.16}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.17} Topologie du groupe substantival en français}{508}{tcb@cnt@encadre.12.17}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.18} Arbre de constituants ordonné}{510}{tcb@cnt@encadre.12.18}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.19} Grammaires de réécriture}{513}{tcb@cnt@encadre.12.19}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.20} Émancipation projective}{521}{tcb@cnt@encadre.12.20}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.21} Grammaire topologique formelle}{522}{tcb@cnt@encadre.12.21}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.22} Topologie et prosodie}{527}{tcb@cnt@encadre.12.22}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.23} La structure topologique de l’allemand}{528}{tcb@cnt@encadre.12.23}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.24} L’anglais comme langue de référence}{531}{tcb@cnt@encadre.12.24}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {12.25} Historique de la description topologique}{532}{tcb@cnt@encadre.12.25}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {13.1} Historique de la notion de syntaxe profonde}{545}{tcb@cnt@encadre.13.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {13.2} Structure communicative et syntaxe profonde}{560}{tcb@cnt@encadre.13.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {13.3} Lexique syntaxique et interface sémantique-syntaxe}{570}{tcb@cnt@encadre.13.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {tcolorbox}{\numberline {13.4} Ancrage et portée des quantifieurs}{575}{tcb@cnt@encadre.13.4}%
