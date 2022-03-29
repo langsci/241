@@ -1,53 +1,54 @@
 %PDF-1.4
 %�쏢
-%%Invocation: path/gs -P- -dSAFER -dCompatibilityLevel=1.4 -dDEVICEWIDTHPOINTS=14 -dDEVICEHEIGHTPOINTS=14 -dFIXEDMEDIA -dCompressPages=false -q -P- -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sstdout=? -sOutputFile=? -P- -dSAFER -dCompatibilityLevel=1.4
-%%+ -dDEVICEWIDTHPOINTS=14 -dDEVICEHEIGHTPOINTS=14 -dFIXEDMEDIA -dCompressPages=false ?
+%%Invocation: path/gs -P- -dSAFER -dCompatibilityLevel=1.4 -dEPSCrop -dCompressPages=false -q -P- -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sstdout=? -sOutputFile=? -P- -dSAFER -dCompatibilityLevel=1.4 -dEPSCrop -dCompressPages=false ?
 5 0 obj
 <</Length 6 0 R>>
 stream
 q 0.1 0 0 0.1 0 0 cm
 q
-10 30 120 80 re W n
+10 50 160 80 re W n
 % g
-33.7891 32.5 m
-37.6211 32.5 41.1289 34.6914 42.7695 38.0508 c
-53.4414 59.3398 l
-54.4883 61.4492 55 63.7109 55 66.0195 c
-55 100 l
-55 104.141 51.6406 107.5 47.5 107.5 c
-17.5 107.5 l
-13.3594 107.5 10 104.141 10 100 c
-10 70 l
-10 65.8594 13.3594 62.5 17.5 62.5 c
-32.5 62.5 l
-24.7695 47.0313 l
-21.4102 40.3906 26.2891 32.5 33.7891 32.5 c
+60.2695 60.8203 m
+30.9414 90.1602 l
+60.2695 119.488 l
+51.3711 128.441 l
+13.0898 90.1602 l
+51.3711 51.8789 l
 h
-108.789 32.5 m
-112.621 32.5 116.129 34.6914 117.77 38.0508 c
-128.441 59.3398 l
-129.488 61.4492 130 63.7109 130 66.0195 c
-130 100 l
-130 104.141 126.641 107.5 122.5 107.5 c
-92.5 107.5 l
-88.3594 107.5 85 104.141 85 100 c
-85 70 l
-85 65.8594 88.3594 62.5 92.5 62.5 c
-107.5 62.5 l
-99.7695 47.0313 l
-96.4102 40.3906 101.289 32.5 108.789 32.5 c
+93.4805 60.8203 m
+122.809 90.1602 l
+93.4805 119.488 l
+102.379 128.441 l
+140.66 90.1602 l
+102.379 51.8789 l
 h
-108.789 32.5 m
+93.4805 60.8203 m
+f
+86.5195 60.5117 m
+57.1914 89.8398 l
+86.5195 119.18 l
+77.6211 128.121 l
+39.3398 89.8398 l
+77.6211 51.5586 l
+h
+119.73 60.5117 m
+149.059 89.8398 l
+119.73 119.18 l
+128.629 128.121 l
+166.91 89.8398 l
+128.629 51.5586 l
+h
+119.73 60.5117 m
 f
 Q
 Q
 endstream
 endobj
 6 0 obj
-741
+524
 endobj
 4 0 obj
-<</Type/Page/MediaBox [0 0 14 14]
+<</Type/Page/MediaBox [0 0 18 18]
 /Parent 3 0 R
 /Resources<</ProcSet[/PDF]
 >>
@@ -67,16 +68,16 @@ endobj
 endobj
 7 0 obj
 <</Type/Metadata
-/Subtype/XML/Length 1202>>stream
+/Subtype/XML/Length 1204>>stream
 <?xpacket begin='﻿' id='W5M0MpCehiHzreSzNTczkc9d'?>
 <?adobe-xap-filters esc="CRLF"?>
 <x:xmpmeta xmlns:x='adobe:ns:meta/' x:xmptk='XMP toolkit 2.9.1-13, framework 1.6'>
 <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:iX='http://ns.adobe.com/iX/1.0/'>
-<rdf:Description rdf:about="" xmlns:pdf='http://ns.adobe.com/pdf/1.3/' pdf:Producer='GPL Ghostscript 9.52'/>
-<rdf:Description rdf:about="" xmlns:xmp='http://ns.adobe.com/xap/1.0/'><xmp:ModifyDate>2020-09-09T16:09:36+02:00</xmp:ModifyDate>
-<xmp:CreateDate>2020-09-09T16:09:36+02:00</xmp:CreateDate>
-<xmp:CreatorTool>cairo 1.16.0 (https://cairographics.org)</xmp:CreatorTool></rdf:Description>
-<rdf:Description rdf:about="" xmlns:xapMM='http://ns.adobe.com/xap/1.0/mm/' xapMM:DocumentID='uuid:a43966bd-2ac2-11f6-0000-064cd2d63338'/>
+<rdf:Description rdf:about="" xmlns:pdf='http://ns.adobe.com/pdf/1.3/' pdf:Producer='GPL Ghostscript 9.55.0'/>
+<rdf:Description rdf:about="" xmlns:xmp='http://ns.adobe.com/xap/1.0/'><xmp:ModifyDate>2022-03-29T15:34:53+02:00</xmp:ModifyDate>
+<xmp:CreateDate>2022-03-29T15:34:53+02:00</xmp:CreateDate>
+<xmp:CreatorTool>cairo 1.17.4 (https://cairographics.org)</xmp:CreatorTool></rdf:Description>
+<rdf:Description rdf:about="" xmlns:xapMM='http://ns.adobe.com/xap/1.0/mm/' xapMM:DocumentID='uuid:907ec968-e781-11f7-0000-5a0496635091'/>
 <rdf:Description rdf:about="" xmlns:dc='http://purl.org/dc/elements/1.1/' dc:format='application/pdf'><dc:title><rdf:Alt><rdf:li xml:lang='x-default'>Untitled</rdf:li></rdf:Alt></dc:title></rdf:Description>
 </rdf:RDF>
 </x:xmpmeta>
@@ -86,24 +87,24 @@ endobj
 endstream
 endobj
 2 0 obj
-<</Producer(GPL Ghostscript 9.52)
-/CreationDate(D:20200909160936+02'00')
-/ModDate(D:20200909160936+02'00')
-/Creator(cairo 1.16.0 \(https://cairographics.org\))>>endobj
+<</Producer(GPL Ghostscript 9.55.0)
+/CreationDate(D:20220329153453+02'00')
+/ModDate(D:20220329153453+02'00')
+/Creator(cairo 1.17.4 \(https://cairographics.org\))>>endobj
 xref
 0 8
 0000000000 65535 f 
-0000001331 00000 n 
-0000002673 00000 n 
-0000001272 00000 n 
-0000001160 00000 n 
-0000000350 00000 n 
-0000001141 00000 n 
-0000001395 00000 n 
+0000001010 00000 n 
+0000002354 00000 n 
+0000000951 00000 n 
+0000000839 00000 n 
+0000000246 00000 n 
+0000000820 00000 n 
+0000001074 00000 n 
 trailer
 << /Size 8 /Root 1 0 R /Info 2 0 R
-/ID [<F629AE2EFDCDAB259B4B19843C94C2EF><F629AE2EFDCDAB259B4B19843C94C2EF>]
+/ID [<68320A8E6C89CED68B0020E2BCE70317><68320A8E6C89CED68B0020E2BCE70317>]
 >>
 startxref
-2849
+2532
 %%EOF
