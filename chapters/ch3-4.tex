@@ -658,7 +658,7 @@ Nous obtenons le parenthésage suivant :
 
 Nous avons donné une première définition d’un arbre de constituants basée sur les projections maximales. Nous avons appelé cet arbre l’arbre de constituants plat (voir \sectref{sec:3.4.4}). Cet arbre est \hi{plat} dans le sens où chaque nœud terminal (correspondant à un mot) est directement la tête de sa projection maximale et qu’il n’y a donc \hi{pas de constituants intermédiaires} entre un mot et le constituant majeur dont il est la tête. Il s’agit du plus simple arbre de constituants avec têtes équivalent à un arbre de dépendance donné : les seuls constituants sont les projections maximales et les têtes (les mots dans nos exemples).
 
-Un tel arbre a des avantages (la simplicité), mais il a aussi un inconvénient : il ne représente pas de manière explicite les connexions et le fait que les \hi{connexions} des unités se font \hi{deux à deux}. Cela a amené de nombreux linguistes utilisant les arbres de constituants comme mode de représentation syntaxique à préconiser d’avoir des \textstyleTermes{arbres de constituants binaires} (voir l'\encadref{sec:3.4.17} sur l’\textit{Historique des représentations syntaxiques par des diagrammes en constituants} et l'\encadref{sec:3.4.18} sur \textit{Binarité, construction et connexion}). Un arbre est \textstyleTermes{binaire} si chaque nœud intérieur a exactement deux fils. L’arbre de constituants binaire le plus standard correspondant à l'exemple \REF{ex:laponie2} est donné dans la figure \ref{fig:laponie-T2}
+Un tel arbre a des avantages (la simplicité), mais il a aussi un inconvénient : il ne représente pas de manière explicite les connexions et le fait que les \hi{connexions} des unités se font \hi{deux à deux}. Cela a amené de nombreux linguistes utilisant les arbres de constituants comme mode de représentation syntaxique à préconiser d’avoir des \textstyleTermes{arbres de constituants binaires} (voir l'\encadref{sec:3.4.17} sur l’\textit{Historique des représentations syntaxiques par des diagrammes en constituants} et l'\encadref{sec:3.4.18} sur \textit{Binarité, construction et connexion}). Un arbre est \textstyleTermes{binaire} si chaque nœud intérieur a exactement deux fils. L’arbre de constituants binaire le plus standard correspondant à l'exemple \REF{ex:laponie2} est donné dans la figure \ref{fig:laponie-T2}.
 
 \begin{figure}
 \caption{\label{fig:laponie-T2}Arbre de constituants binaire avec têtes}
@@ -699,7 +699,7 @@ Un tel arbre a des avantages (la simplicité), mais il a aussi un inconvénient 
 \end{figure}
 
 
-Dans un tel arbre, chaque décomposition correspond à une connexion, comme nous le montrerons plus en détail dans les sections \ref{sec:3.4.21} sur \textit{Arbre de constituants binaire et polygraphe} et \ref{sec:3.4.23} sur \textit{Polygraphe orienté et arbre de dépendance}. Voici le parenthésage correspondant à l’arbre de la figure \ref{fig:laponie-T2} avec les connexions indiquées en plus :
+Dans un tel arbre, chaque décomposition correspond à une connexion, comme nous le montrerons plus en détail dans les sections \ref{sec:3.4.21} sur \textit{Arbre de constituants binaire et polygraphe} et \ref{sec:3.4.23} sur \textit{Polygraphe orienté et arbre de dépendance}. Voici le parenthésage correspondant à l’arbre de la figure \ref{fig:laponie-T2} avec les connexions indiquées en plus.
 
 \begin{figure}
 (\textit{beaucoup} ${\oplus}$ (\textit{de} ${\oplus}$ \textit{gens})) ${\oplus}$ (\textit{aimeraient} ${\oplus}$ ((\textit{passer} ${\oplus}$ \textit{Noël}) ${\oplus}$ (\textit{en} ${\oplus}$ \textit{Laponie})))
@@ -881,9 +881,7 @@ L'ordre de saillance que nous avons introduit dans la figure \ref{fig:laponie-sa
     ]    
     \end{forest}
     \caption{Arbre de constituant de \citeyear{chomsky1957syntactic}}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.5\textwidth}
+    \end{subfigure}\begin{subfigure}[b]{0.5\textwidth}
 		\centering
     \begin{forest}
 				for tree={
@@ -1540,8 +1538,8 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
    \begin{minipage}[c]{.45\linewidth}\centering
     \begin{forest} for tree = {font=\itshape}
       [voitures
-        [coréennes,edge label={node [near end,above] {1}}] 
-        [chères,edge label={node [near end,above] {2}}]
+        [coréennes,edge label={node [near end,above,font=\footnotesize] {1}}] 
+        [chères,edge label={node [near end,above,font=\footnotesize] {2}}]
       ]
     \end{forest} 
     \end{minipage}\begin{minipage}[c]{.1\linewidth}\centering
@@ -1549,8 +1547,8 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     \end{minipage}\begin{minipage}[c]{.45\linewidth}\centering
     \begin{forest} for tree = {font=\itshape}
       [voitures
-        [coréennes,edge label={node [near end,above] {2}}] 
-        [chères,edge label={node [near end,above] {1}}]
+        [coréennes,edge label={node [near end,above,font=\footnotesize] {2}}] 
+        [chères,edge label={node [near end,above,font=\footnotesize] {1}}]
       ]
     \end{forest}
     \end{minipage}\medskip\\
@@ -1667,7 +1665,7 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     [ [ [\textit{je}] — [\textit{tressaillis}] ] [ [\textit{attentif}] — [ [\textit{à ce qui}] — [\textit{se passait}] — [\textit{d'extraordinaire}] [\textit{en moi}] ]
     \end{exe}
 
-    Nous proposons finalement la structure de dépendance de la figure \ref{fig:proust}. Nous laissons sous-spécifiée la tête de la relation déterminant-nom, ainsi que la relation entre le pronom relatif et verbe principal des propositions relatives.
+    Nous proposons finalement la structure de dépendance de la figure~\ref{fig:proust}. Nous laissons sous-spécifiée la tête de la relation déterminant-nom, ainsi que la relation entre le pronom relatif et verbe principal des propositions relatives.
     
     \begin{figure}[H]
     \includegraphics[scale=.9]{figures/polygraphs/poly-3.4.31.pdf}
