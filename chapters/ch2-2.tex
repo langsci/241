@@ -261,7 +261,7 @@ Voir le \chapref{sec:3.1} pour une définition plus précise de l'unité syntaxi
        \filldraw [even odd rule, pattern=north east lines]
           (1,0) circle [draw,radius=48pt] 
           (2,0) circle [draw,clip,radius=18pt];
-       \node at (0,0) [inner sep=1pt] (A) {A};
+       \node at (0,0) [inner sep=0pt,fill=black!12,circle] (A) {A};
        \node at (1,-2) {$\complement$\textsubscript{A}B}; 
       \end{tikzpicture}}
       {\caption{Complémentaire}}
@@ -288,8 +288,8 @@ Voir le \chapref{sec:3.1} pour une définition plus précise de l'unité syntaxi
        \filldraw[pattern=north east lines]
           (0,0) circle [draw,radius=18pt] 
           (1,0) circle [draw,radius=18pt];
-       \node at (0,0) [fill=white, circle, inner sep=0pt] (A) {A};
-       \node at (1,0) [fill=white, circle, inner sep=0pt] (B) {B};
+       \node at (0,0) [fill=black!12, circle, inner sep=0pt] (A) {A};
+       \node at (1,0) [fill=black!12, circle, inner sep=0pt] (B) {B};
        \node at (0.5,-1) {A $\cup$ B};
       \end{tikzpicture}}
     {\caption{Union}}                                                                   
