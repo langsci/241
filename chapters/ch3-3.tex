@@ -45,7 +45,7 @@ Une dépendance est représentée par une \hi{flèche} qui va \hi{du gouverneur 
     };
 \draw[-{Triangle[]}] (parle) to [bend right] (Marie);
 \end{tikzpicture}
-\caption{\label{fig:}Deux représentations d’une dépendance}
+\caption{Deux représentations d’une dépendance}
 \end{figure}
 
 Le sens de la flèche, du gouverneur vers le dépendant, est une convention. Comme toute convention, elle est en partie arbitraire. Il aurait été tout à fait possible d’orienter les flèches dans l’autre sens, comme certains auteurs l’ont fait. Nous adoptons ici la convention qui est la plus largement répandue.
@@ -74,7 +74,7 @@ On aura noté que pour une unité syntaxique U donnée, \hi{la tête de} U \hi{e
 \draw (valise) -- (jolie) -- (tres);
 \node [fit=(tres) (jolie), draw, ellipse, inner sep=0pt,pin=west:U] {};
 \end{tikzpicture}
-  \caption{\label{fig:}Gouverneur vs. tête}
+  \caption{Gouverneur vs. tête}
 \end{figure}
 
 Les grammaires de dépendance traditionnelles font l’hypothèse que toute unité possède un unique mot tête. Nous considérons pour notre part que la nature de la tête dépend de la granularité de l’analyse et qu’on peut considérer, selon les finalités de l’analyse, une unité plus fine que le mot (un syntaxème) comme une unité plus large. Par ailleurs, il peut arriver que plusieurs éléments possèdent des propriétés de tête : on parle alors de \textstyleTermes{co-têtes} (voir la \sectref{sec:3.3.27} sur \textit{Nom et déterminant comme co-têtes}).
@@ -264,7 +264,7 @@ L’acyclicité n’exclut pas les cycles non orientés de connexions comme on l
 \end{tikzpicture}
 \caption{\textit{la montée du nationalisme en Catalogne}}
 \end{subfigure}
-\caption{Cycles non orientés\label{fig:}}
+\caption{Cycles non orientés}
 \end{figure}
 
 La présence de cycles non orientés dans une structure de dépendance entraîne que certains nœuds ont deux gouverneurs. (On parle alors de \hi{dag}, \textit{directed acyclic graph}). Dans cet ouvrage, nous ne considérerons quasiment que des structures sans cycle et pour lesquelles \hi{tout nœud} \hi{possède au plus un gouverneur}. Plus précisément, lorsque tout nœud a exactement un gouverneur (à l’exception d’un nœud qu’on appelle la racine), la structure est un arbre : l’\textstyleTermes{arbre de dépendance} (voir l'\encadref{sec:0.0.1} sur l'\textit{Arbre de dépendance}).
@@ -297,7 +297,7 @@ redécouvert au 21\textsuperscript{e} siècle et systématisé pour l'encodage d
     Stephen W. Clark est le premier grammairien à réellement exploiter des diagrammes dépendentiels dans sa grammaire de l’anglais de \citeyear{Clark1847} intitulé \textit{The science of the English grammar: A practical grammar in which words, phrases, and sentences are classified to their offices, and their relation to each other, illustrated by a complete system of diagrams} ‘La science de la grammaire anglaise : une grammaire pratique dans laquelle les mots, les syntagmes et les phrases sont classés selon leurs fonctions et leurs relations les uns aux autres par un système complet de diagrammes’. Dans les représentations de Clark, les connexions ne sont pas représentées en tant que telles : un mot qui en «~qualifie~» un autre (pour reprendre les termes de Clark) est placé dans une bulle sous la bulle de son gouverneur. Les prépositions comme \textit{by} ‘par’ ou \textit{of} ‘de’ dans la figure ci-dessous reçoivent une forme particulière indiquant qu’elles servent à «~connecter~» deux mots. Le sujet, le verbe et l’objet direct sont placés au même niveau, comme ici \textit{ressources} and \textit{are developed}. Les groupes prépositionnels sont entourés par des bulles en pointillés.
 
     \begin{figure}[H]
-    \caption{\label{fig:}Diagramme de \citet[17]{Clark1847}}
+    \caption{Diagramme de \citet[17]{Clark1847}}
     \includegraphics[width=.75\textwidth]{figures/Clark1847.png}\smallskip\\    
     \noindent\parbox{.75\textwidth}{\small\textit{Our national resources are developed by an earnest culture of the arts of peace.}\\
     ‘Nos ressources nationales sont développées grâce à une sérieuse culture des arts de la paix.’}
@@ -467,7 +467,7 @@ On a donc X = \textit{part,} A = \textit{demain} et B = \textit{matin}. Une fois
 \draw [-{Triangle[]}] (X2) -- (A2);
 \draw [-{Triangle[]}] (A2) -- (B2);
 \end{tikzpicture}
-\caption{\label{fig:}Application du critère d’effacement simple}
+\caption{Application du critère d’effacement simple}
 \end{figure}
 
 Attention : la présence d’un gouverneur est essentielle dans la formulation du  critère d’effacement simple. On trouve souvent la \textbf{mauvaise formulation} suivante : le dépendant d’une connexion est l’élément qui peut le plus facilement être effacé. Cette propriété n’est valable qu’en présence d’un gouverneur. Si AB est un énoncé autonome ou plus généralement si AB n’est pas gouverné on peut très bien effacer la tête de AB. Par exemple, dans \textit{Zoé chantait} (A = \textit{chantait}, B = \textit{Zoé}), on peut effacer A et pas B (\textit{Zoé} peut former un énoncé autonome, mais pas \textit{chantait}), alors que c’est A qui est la tête !
@@ -728,8 +728,8 @@ Si l’on applique ce critère à une unité U = A ${\oplus}$ B dont on veut dé
 On regardera ainsi laquelle des deux commutations, celle sur A ou celle sur B, a le plus d’impact sur la valence supérieure de U. Si les A ${\oplus}$ B’ ont la même valence supérieure que A ${\oplus}$ B, mais pas les A’ ${\oplus}$ B, on en déduira que A gouverne B, c’est-à-dire que A est la tête de la combinaison U = A ${\oplus}$ B.
 
 \begin{figure}
-\caption{\label{fig:}Application du critère distributionnel sans effacement}
-\begin{minipage}{.32\textwidth}\centering
+\caption{Application du critère distributionnel sans effacement}
+\begin{minipage}{.33\textwidth}\centering
   \begin{tikzpicture}[every node/.style={draw,ellipse,inner xsep=6pt}]
     \node at (0,0) (X) {X};
     \node[minimum width=3em, align=center] at (-.75,-2) (A) {A'};
@@ -737,7 +737,7 @@ On regardera ainsi laquelle des deux commutations, celle sur A ou celle sur B, a
     \node [fit = (A) (B), inner sep=0pt,pin=south east:U'] (U) {};
     \draw (X) -- (U) node[midway,right,reset shape] {?};
   \end{tikzpicture}
-\end{minipage}\begin{minipage}{.32\textwidth}\centering
+\end{minipage}\begin{minipage}{.33\textwidth}\centering
   \begin{tikzpicture}[every node/.style={draw,ellipse,inner xsep=6pt}]
     \node at (0,0) (X) {X};
     \node[minimum width=3em, align=center] at (-.75,-2) (A) {A};
@@ -745,14 +745,14 @@ On regardera ainsi laquelle des deux commutations, celle sur A ou celle sur B, a
     \node [fit = (A) (B), inner sep=0pt,pin=south east:U] (U) {};
     \draw (X) -- (U);
   \end{tikzpicture}
-\end{minipage}\begin{minipage}{.32\textwidth}\centering
+\end{minipage}\begin{minipage}{.33\textwidth}\centering
   \begin{tikzpicture}[every node/.style={draw,ellipse,inner xsep=6pt}]
     \node at (0,0) (X) {X};
     \node[minimum width=3em, align=center] at (-.75,-2) (A) {A};
     \node[minimum width=3em, align=center] at (.75,-2) (B) {B'};
     \node [fit = (A) (B), inner sep=0pt,pin=south east:{U”}] (U) {};
     \draw (X) -- (U) node[midway,right,reset shape] {?};
-  \end{tikzpicture}
+  \end{tikzpicture}%
 \end{minipage}
 \end{figure}
 
@@ -899,14 +899,14 @@ En effet, ici clairement, \textit{les autres} renvoie aux autres livres et pas a
 La tête sémantique d’une unité syntaxique n’est pas toujours sa tête syntaxique : la notion de tête sémantique privilégie les sémantèmes lexicaux vis-à-vis des éléments grammaticaux. Ainsi la tête sémantique de \textit{Zoé a invité ses copains à son anniversaire} reste le verbe lexical \textsc{inviter} et n’est pas l’auxiliaire \textsc{avoir} qui marque le passé. De la même façon, la tête sémantique d’un groupe substantival comme \textit{le chien de Marie} privilégie le nom tête \textsc{chien} au détriment du déterminant \textsc{le}. (Voir aussi le cas des \textit{« Déterminants complexes »}
 dans l'\encadref{sec:3.3.22}.)
 
-La notion de tête sémantique est donc une notion distincte de celle de tête syntaxique (voir la section sur les \textit{Distorsions sémantique-syntaxe} dans le \chapref{13}). Néanmoins lorsque les critères pour déterminer la tête syntaxique sont insuffisants, on peut, si l’on souhaite à tout prix choisir une tête, utiliser les critères sémantiques.
+La notion de tête sémantique est donc une notion distincte de celle de tête syntaxique (voir la section sur les \textit{Distorsions sémantique-syntaxe} dans le \chapref{sec:13}). Néanmoins lorsque les critères pour déterminer la tête syntaxique sont insuffisants, on peut, si l’on souhaite à tout prix choisir une tête, utiliser les critères sémantiques.
 
 \section{Critère sémantique de non-effacement}\label{sec:3.3.18}
 
 On ne confondra pas la notion de tête sémantique avec celle de \textstyleTermes{gouverneur sémantique} (voir l’\encadref{sec:3.3.3} sur les \textit{Dépendances morphologique, syntaxique et sémantique}). 
 Ainsi dans \textit{livre rouge}, dans la relation sémantique entre ‘livre’ et ‘rouge’, c’est bien ‘rouge’ qui fonctionne comme prédicat et prend ‘livre’ comme argument (‘rouge’ désigne une propriété qui comme toute propriété est la propriété de quelque chose, alors que ‘livre’ désigne un objet dont la couleur n’est pas définitoire). On dira donc que \textit{livre} est la tête sémantique de \textit{livre rouge}, tandis que ‘rouge’ est le gouverneur sémantique de ‘livre’, qui est son argument ou dépendant sémantique.
 
-Un élément X comme \textit{rouge} qui prend son gouverneur syntaxique comme argument sémantique, c’est-à-dire qui est à la fois dépendant syntaxique et gouverneur sémantique d’un élément Y est appelé \textstyleTermes{modifieur} de Y (voir le \chapfuturef{13} sur la \textit{Structure syntaxique profonde}). Les modifieurs sont toujours effaçables a priori car ils ne sont pas indispensables à leur gouverneur syntaxique. Ceci nous donne un nouveau critère sémantique qui est le pendant du critère d’effacement simple (il s’applique quand le critère d’effacement simple ne s’applique pas) et que nous appelons donc le critère sémantique de non-effacement.
+Un élément X comme \textit{rouge} qui prend son gouverneur syntaxique comme argument sémantique, c’est-à-dire qui est à la fois dépendant syntaxique et gouverneur sémantique d’un élément Y est appelé \textstyleTermes{modifieur} de Y (voir le \chapref{sec:13} sur la \textit{Structure syntaxique profonde}). Les modifieurs sont toujours effaçables a priori car ils ne sont pas indispensables à leur gouverneur syntaxique. Ceci nous donne un nouveau critère sémantique qui est le pendant du critère d’effacement simple (il s’applique quand le critère d’effacement simple ne s’applique pas) et que nous appelons donc le critère sémantique de non-effacement.
 
 \Definition{\textstyleTermes{critère sémantique de non-effacement}}
 {\textstyleTermes{critère sémantique de non-effacement~}: si l’unité U = AB est gouvernée syntaxiquement par X, que A est \hi{non effaçable} dans ce contexte (c'est-à-dire qu'on n'a pas XB)
