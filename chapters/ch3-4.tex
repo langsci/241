@@ -155,7 +155,7 @@ C’est le mathématicien Yves Lecerf, qui a le premier construit un tel arbre, 
 }
 \section{Arbre de constituants avec têtes}\label{sec:3.4.4}
 
-Un arbre de constituants plat possède une propriété particulière : chaque nœud intérieur (correspondant donc à une boîte) possède parmi ses fils un \hi{unique nœud} \hi{terminal} — une feuille de l’arbre. (Dans notre exemple, les nœuds terminaux sont occupés par des mots, car nous avons décidé de ne pas poursuivre la décomposition au-delà. Ce choix est indépendant de la discussion présente qui reste valable quelle que soit la granularité de notre analyse.) Cette propriété d’unicité permet d’interpréter ce \hi{nœud} \hi{terminal} comme la \hi{tête du constituant}. L’arbre de constituants plat est donc implicitement un \textstyleTermes{arbre de constituants avec têtes}.
+Un arbre de constituants plat possède une propriété particulière : chaque nœud intérieur (correspondant donc à une boîte) possède parmi ses fils un \hi{unique nœud} \hi{terminal} – une feuille de l’arbre. (Dans notre exemple, les nœuds terminaux sont occupés par des mots, car nous avons décidé de ne pas poursuivre la décomposition au-delà. Ce choix est indépendant de la discussion présente qui reste valable quelle que soit la granularité de notre analyse.) Cette propriété d’unicité permet d’interpréter ce \hi{nœud} \hi{terminal} comme la \hi{tête du constituant}. L’arbre de constituants plat est donc implicitement un \textstyleTermes{arbre de constituants avec têtes}.
 
 Il est d’usage dans les arbres de constituants avec têtes (plats ou pas) d’expliciter laquelle des relations partie-tout entre ce constituant et ses sous-constituants est la relation avec la tête. Cela est indiqué par un T dans l'arbre de la figure \ref{fig:laponie-Tplat}. Un arbre de constituants avec têtes est dit \textstyleTermes{plat} lorsque la tête de chaque constituant est un nœud terminal. Nous contrasterons ce type d’arbre avec les arbres X-barre et les arbres de l’analyse en constituants immédiats, qui peuvent être enrichis de têtes, mais sont binaires et non pas plats en général (voir la \sectref{sec:3.4.14} sur l’\textit{Arbre de constituants binaire}). Nous présentons à cette occasion une autre convention pour l’encodage de la tête dans l’\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}.
 
@@ -1406,15 +1406,15 @@ Notre exemple est finalement assez simple, puisque chacune des unités que nous 
 \ea{}
 [ \textit{c’est là que j’ai vécu dans les voluptés calmes} ]
 
-—[ [ \textit{au milieu de l’azur} ]—[ \textit{des vagues} ]—[ \textit{des splendeurs} ] ]
+–[ [ \textit{au milieu de l’azur} ]–[ \textit{des vagues} ]–[ \textit{des splendeurs} ] ]
 
-—[ [ \textit{et des esclaves nus} ]—[ \textit{tout imprégnés d’odeurs} ] ]
+–[ [ \textit{et des esclaves nus} ]–[ \textit{tout imprégnés d’odeurs} ] ]
 
-—[ \textit{qui me rafraîchissaient le front avec des palmes} ]
+–[ \textit{qui me rafraîchissaient le front avec des palmes} ]
 
-—[ \textit{et dont l’unique soin était d’approfondir} ]
+–[ \textit{et dont l’unique soin était d’approfondir} ]
 
-—[ \textit{le secret douloureux qui me faisait languir} ]
+–[ \textit{le secret douloureux qui me faisait languir} ]
 \z
 
 Pour vérifier que deux unités se connectent bien, il suffit de vérifier que leur combinaison donne un segment autonomisable.
@@ -1429,9 +1429,9 @@ Pour d’autres unités, sans être forcément triviale, la question peut être 
 \ea{}
 [ \textit{c’\uline{est} là que j’ai vécu dans les voluptés calmes} ]
 
-—[ [ \textit{à le milieu de l’azur} ]—[ \textit{\uline{de} les vagues} ]—[ \textit{\uline{de} les splendeurs} ] ]
+–[ [ \textit{à le milieu de l’azur} ]–[ \textit{\uline{de} les vagues} ]–[ \textit{\uline{de} les splendeurs} ] ]
 
-—[ [ \textit{et de les esclaves nus} ]—[ \textit{tout \uline{imprégnés} d’odeurs} ] ]
+–[ [ \textit{et de les esclaves nus} ]–[ \textit{tout \uline{imprégnés} d’odeurs} ] ]
 \z
 
 On aura noté que certaines formes qui étaient des amalgames ont été décomposées. On vérifie en particulier que \textit{des} contient bien la préposition \textsc{de} par la commutation avec \textit{de ces}.
@@ -1661,8 +1661,8 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
 
     \begin{exe}
     \exi{(i)}\relax
-    [ [\textit{à l'instant même}] — [ [\textit{où}] [ [\textit{la gorgée}] — [\textit{mêlée des miettes du gâteau}] ] — [\textit{toucha}] — [ \textit{mon palais} ] ]\\\relax
-    [ [ [\textit{je}] — [\textit{tressaillis}] ] [ [\textit{attentif}] — [ [\textit{à ce qui}] — [\textit{se passait}] — [\textit{d'extraordinaire}] [\textit{en moi}] ]
+    [ [\textit{à l'instant même}] – [ [\textit{où}] [ [\textit{la gorgée}] – [\textit{mêlée des miettes du gâteau}] ] – [\textit{toucha}] – [ \textit{mon palais} ] ]\\\relax
+    [ [ [\textit{je}] – [\textit{tressaillis}] ] [ [\textit{attentif}] – [ [\textit{à ce qui}] – [\textit{se passait}] – [\textit{d'extraordinaire}] [\textit{en moi}] ]
     \end{exe}
 
     Nous proposons finalement la structure de dépendance de la figure~\ref{fig:proust}. Nous laissons sous-spécifiée la tête de la relation déterminant-nom, ainsi que la relation entre le pronom relatif et verbe principal des propositions relatives.
