@@ -38,7 +38,7 @@ Ces trois syntagmes expriment les mêmes sens avec les mêmes relations sémanti
     \node [below=1pt of root-1] {`la France'};
     \node [below=1pt of root-2] {`lait'};
 \end{tikzpicture}
-\caption{\label{fig:}Représentation sémantique de \REF{ex:lait}}
+\caption{Représentation sémantique de \REF{ex:lait}}
 \end{figure}
 
 Le sens ‘la France’ est réalisé par un groupe substantival sujet quand ‘produire’ est réalisé par un verbe (\textbf{\textit{la France}} \textit{produit}). (Nous appelons \textit{groupe substantival} ce que l’on nomme traditionnellement un groupe nominal. La distinction que nous faisons entre substantif et nom sera justifiée dans la section sur \textit{Substantifs et noms} du \chapfuturef{16}.). Quand ‘produire’ est réalisé par un nom, alors les choses se passent différemment : ‘la France’ peut être réalisé par un adjectif (\textit{la production} \textbf{\textit{française}}) et s’il est réalisé par un groupe substantival, il doit être précédé de la préposition \textsc{de} (\textit{la production} \textbf{\textit{de}} \textit{la France}). C’est cela que nous entendons par des contraintes syntaxiques : les catégories des éléments lexicaux (verbe, nom, adjectif, …) qui se combinent sont corrélées, les choix lexicaux d’éléments liés entre eux se contraignent les uns les autres.
@@ -271,7 +271,7 @@ Supposons que A et B soient deux unités syntaxiques qui se combinent, comme par
 \node [right=1em of A] (B) {un livre de syntaxe};
 \path (A.north east) edge [bend left] (B.north west);
 \end{tikzpicture}
-\caption{\label{fig:}Deux représentations pour \textit{cet étudiant veut acheter} $\oplus$ \textit{un livre de syntaxe}}
+\caption{Deux représentations pour \textit{cet étudiant veut acheter} $\oplus$ \textit{un livre de syntaxe}}
 \end{figure}
 
 
@@ -328,7 +328,7 @@ Si l’on raisonne en termes de décomposition, on partira du tout U que forment
 \node [draw, ellipse, inner sep=3pt, fit = (A) (B) (C)] {};
 \node [draw, ellipse, inner sep=0pt, fit = (B) (C)] {};
 \end{tikzpicture}
-\caption{\label{fig:}Les trois seules façons de décomposer A $\oplus$ B $\oplus$ C}
+\caption{Les trois seules façons de décomposer A $\oplus$ B $\oplus$ C}
 \end{figure}
 
 Aucune des trois décompositions n’est équivalente à l’ensemble de connexions que nous voulons considérer. Décomposer en trois ne permet pas d’indiquer que c’est bien B qui se combine avec A et C, mais que A et C ne se combinent pas directement. Décomposer en deux, par exemple en A ${\oplus}$ BC,~ne permet pas d’indiquer que c’est avant tout B qui se combine avec A. Décomposer en deux suppose en fait d’ordonner les deux connexions, A ${\oplus}$ B et B ${\oplus}$ C : par exemple, on combine d’abord B avec C, puis le tout avec A. C’est ce qu’on appelle la \textstyleTermes{stratification} (nous y reviendrons dans la \sectref{sec:3.4.14} sur l’\textit{Arbre de constituants binaire}). Si la décomposition binaire a au moins l’avantage de montrer qu’il y a bien deux combinaisons binaires et pas une combinaison ternaire, elle ne permet pas de rendre compte que ces deux combinaisons sont indépendantes et qu’il n’y a pas emboîtement de l’une dans l’autre. Raisonner en termes de décomposition oblige à stratifier, c’est-à-dire à ordonner les connexions. C’est une information supplémentaire dont l’utilité est discutable. À l’inverse, on perd de l’information, puisque si on a toujours deux connexions, les combinaisons qui leur correspondent sont moins fines.
@@ -362,7 +362,7 @@ On peut décomposer notre phrase en \textit{cet étudiant veut acheter} ${\oplus
 \node [draw, ellipse, inner sep=-1pt, fit=(matrix-1-5)] {};
 \node [draw, ellipse, inner xsep=-1pt, inner ysep=2pt, fit=(matrix-1-5) (matrix-1-6)] {};
 \end{tikzpicture}
-\caption{\label{fig:}Combinaisons équivalentes}
+\caption{Combinaisons équivalentes}
 \end{figure}
 
 \Definition{\textstyleTermes{connexion}}
@@ -443,7 +443,7 @@ La permutation est possible dans le premier cas, donc \textit{à la boulangerie}
 \path (A) edge [bend left] (B)
       (B) edge [bend left] (C);
 \end{tikzpicture}
-\caption{\label{fig:}Structures syntaxiques pour \REF{ex:boulangerie} et \REF{ex:fraise}}
+\caption{Structures syntaxiques pour \REF{ex:boulangerie} et \REF{ex:fraise}}
 \end{figure}
 
 Le test de déplacement est particulièrement utile pour déterminer les dépendances au sein du groupe substantival (où les tests de pronominalisation ou de clivage ne peuvent pas être utilisés ; voir \chapref{sec:3.4} pour la présentation de ces tests). Considérons l’exemple suivant (extrait de l’article \textit{Seine} de la wikipédia) :
@@ -472,7 +472,7 @@ La non-déplaçabilité du segment \textit{de la Seine} indique qu’il est bien
       (B)    edge [bend left] (C)
       (A.60) edge [bend left] (D);
 \end{tikzpicture}}
-\caption{\label{fig:}Rattachement des segments prépositionnels de \REF{ex:Seine}}
+\caption{Rattachement des segments prépositionnels de \REF{ex:Seine}}
 \end{figure}
 
 Le test d’insertion peut être appliqué à notre premier exemple. Prenons un circonstanciel comme \textit{l’autre jour}, qui dépend du verbe, mais ne se connecte pas avec les unités A et B que nous considérons. On a :
@@ -500,7 +500,7 @@ Le test d’insertion est un cas particulier de la propriété de projectivité 
 \path (A) edge [bend left] (C)
       (B) edge [bend left] (D);
 \end{tikzpicture}
-\caption{\label{fig:}Configuration rejetée par le test d’insertion}
+\caption{Configuration rejetée par le test d’insertion}
 \end{figure}
 
 Les deux tests que nous venons d’énoncer, le test de déplacement et le test d’insertion, sont des tests qui s’appliquent seulement à certaines connexions et qui dépendent de propriétés générales de la langue et de propriétés particulières de certaines constructions. Par exemple, si le test d’insertion s’applique bien à la connexion entre un nom et un complément de nom en français, il n’en sera pas de même dans des langues qui acceptent plus facilement des configurations non projectives ou pour d’autres constructions du français (voir la \encadref{sec:3.5.33} \textit{Non-projectivité} \textit{en français}).
@@ -641,7 +641,7 @@ On peut représenter une fragmentation par une structure arborescente, appelée 
     \node[below=1pt of root-2-2-1] {de};
     \node[below=1pt of root-2-2-2] {syntaxe};
 \end{tikzpicture}
-\caption{\label{fig:}L’arbre pour la fragmentation \REF{ex:fragmentation:1}}
+\caption{L’arbre pour la fragmentation \REF{ex:fragmentation:1}}
 \end{figure}
 
 \section{De la fragmentation à la connexion}\label{sec:3.2.22}
@@ -707,7 +707,7 @@ Enfin, les structures de connexion ont généralement la propriété de binarit�
 % % %     \draw (intersection3) -- (matrix-2-7);
 % % %     \draw (intersection3) -- (matrix-1-8);
 % % % \end{tikzpicture}         
-\caption{\label{fig:}Polygraphe représentant une structure de connexion}
+\caption{Polygraphe représentant une structure de connexion}
 \todo[inline]{Detail: is it possible to have the oblique line more parallel? The link between un and livre is particularly unsightly}
 \end{figure}
 }
