@@ -144,10 +144,14 @@ L’objectif de la syntaxe profonde est d’étudier les combinaisons entre sém
 \subsubsection{Les sémantèmes lexicaux} 
 Ce sont les \hi{unités lexicales} ou \hi{lexies}. Les lexies peuvent correspondre, du coté syntaxique, à un lexème ou à un phrasème composé de plusieurs lexèmes, comme \phraseme{tenir la jambe} dans l’exemple \REF{ex:jambe}. Elles peuvent éventuellement contenir des grammèmes, comme la lexie \textsc{travaux} (\textit{Il y a des \textbf{travaux} dans ma rue.}), qui contient un pluriel inhérent (ce sens de \textsc{travaux} n'existe pas au singulier; il serait inapproprié de dire \textsuperscript{\#}\textit{Il y a un travail dans ma rue.}).
 
+\begin{sloppypar}
 Du côté sémantique, les lexies ont un signifié bien déterminé et sont donc des unités non ambiguës, qui sont associées à des acceptions précises de lexèmes. (Dans nos représentations, nous n’indiquons pas quelle acception de chaque unité lexicale est considérée, car cela nécessite d’avoir un lexique de référence qui attribue un numéro à chaque acceptation.)
+\end{sloppypar}
 
 \subsubsection{Les sémantèmes grammaticaux} 
+\begin{sloppypar}
 Ce sont les \hi{unités grammaticales} ou \hi{grammies}. Une grammie peut correspondre du coté syntaxique à un grammème, comme l’imparfait, ou à une combinaison de grammèmes et de lexèmes, l’un des grammèmes se combinant avec un lexème ne faisant pas partie de la grammie. Ce dernier cas peut être illustré par l’accompli, formé en français d’un auxiliaire, \textsc{avoir} ou \textsc{être}, et d’un grammème de participe passé (voir la figure \ref{fig:accompli}).
+\end{sloppypar}
 
 \ea\label{ex:accompli} \textit{J’ai peur d’avoir répondu trop vite.}\z
 \begin{figure}
@@ -421,7 +425,9 @@ Il existe des cas où l’infinitif possède réellement une contribution séman
 \ea \textit{Fumer est dangereux pour la santé.}
 \ex \textit{Quand on fume, on met sa santé en danger.}\z\z
 
+\begin{sloppypar}
 Nous donnons dans la figure \ref{fig:13-fumer} les représentations sémantique et syntaxique profonde de \REF{ex:13-fumer}. Nous représentons le sens générique par une étiquette « générique ». Ce sens est exprimé par grammie infinitif dans la structure syntaxique profonde. Notons que l’infinitif n’apparaît pas dans la structure syntaxique profonde quand il ne s’agit pas d’un sémantème comme ici (voir l’analyse des exemples \REF{ex:13-venir} et \REF{ex:13-dormir}).
+\end{sloppypar}
 
 \begin{figure}
 	\begin{subfigure}[b]{0.5\textwidth}
@@ -456,7 +462,9 @@ Nous donnons dans la figure \ref{fig:13-fumer} les représentations sémantique 
 \caption{Structures pour \REF{ex:13-fumer}\label{fig:13-fumer}}
 \end{figure}
 
+\begin{sloppypar}
 Concernant le grammème de participe passé, nous avons déjà donné des exemples  et vu qu’il pouvait faire partie d’une grammie complexe exprimant le passé (\textsc{avoir}\textsubscript{présent} + V\textsubscript{part-passé}) ou l’accompli (\textsc{avoir} + V\textsubscript{part-passé}) ou qu’il pouvait réaliser la grammie du passif (voir l’analyse de \REF{ex:13-passif}).
+\end{sloppypar}
 
 Le grammème de participe présent, lui, est utilisé dans deux emplois en français :  comme un translatif pur de verbe en adjectif, comme en (\ref{ex:13-suivant}a), ou comme un translatif de verbe en adverbe dans la grammie complexe \textsc{en} + V\textsubscript{part-présent}, comme en (\ref{ex:13-suivant}b). Comme expliqué dans la \sectref{sec:13-potentiel}, nous traitons les translatifs comme des opérateurs figurant la structure syntaxique profonde : le participe présent est ainsi représenté par les opérateurs Adj et Adv dans la figure \ref{fig:13-suivant}).
 
@@ -1843,7 +1851,7 @@ Donner la structure prédicative sémantique et la structure syntaxique profonde
 \end{enumerate}
 Montrer qu’il y a un apparent phénomène de montée de la négation en jeu.}
 
-\lecturesadditionnelles{Comme nous l’avons dit, la notion de structure syntaxique profonde doit beaucoup aux travaux d’Igor Mel’čuk. Celui-ci a théorisé la notion et a aussi développé des lexiques sémantiques et syntaxiques pour le russe, puis pour le français lorsqu’il a émigré au Québec en 1977. On consultera tout particulièrement son ouvrage de sémantique en 3 volumes (\citeyear{melcuk2012semantics}) et les dictionnaires explicatifs et combinatoires du français (\citeyear{melcuk1999dictionnaire}). Sa modélisation repose de façon essentielle sur la notion d’actant, à laquelle il a consacré de nombreux articles : on retiendra tout particulièrement les deux articles de 2004 (\cite{melcuk2004actants1}; \citeyear{melcuk2004actants2}).
+\lecturesadditionnelles{Comme nous l’avons dit, la notion de structure syntaxique profonde doit beaucoup aux travaux d’Igor Mel’čuk. Celui-ci a théorisé la notion et a aussi développé des lexiques sémantiques et syntaxiques pour le russe, puis pour le français lorsqu’il a émigré au Québec en 1977. On consultera tout particulièrement son ouvrage de sémantique en 3 volumes (\citeyear{melcuk2012semantics}) et les dictionnaires explicatifs et combinatoires du français (\citeyear{melcuk1999dictionnaire}). Sa modélisation repose de façon essentielle sur la notion d’actant, à laquelle il a consacré de nombreux articles : on retiendra tout particulièrement les deux articles de 2004 \citep{melcuk2004actants1,melcuk2004actants2}.
 
 Le flambeau a été repris par son étudiant, Alain Polguère, dont nous recommandons encore une fois l’ouvrage de sémantique lexicale et lexicologie. Celui-ci développe également un lexique sémantique et syntaxique électronique sous forme de réseau lexical, consultable en ligne sur \href{https://lexical-systems.atilf.fr/spiderlex/}. Dans les travaux de Mel’čuk et Polguère, l’accent est particulièrement mis sur la combinatoire lexicale restreinte décrite à l’aide des fonctions lexicales, dont nous n’avons donné qu’un très faible aperçu dans ce chapitre.
 
@@ -2108,7 +2116,7 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 \caption{Structures pour le tough-movement\label{fig:13-tough}}
 \end{figure}
 
-\corrigé{8} « \textit{On ne doit pas mentir.} » n’est pas la négation sémantique de « \textit{On doit mentir.} ». Celle-ci serait plutôt exprimée par « \textit{On n’est pas obligé de mentir.} » ou « \textit{On peut ne pas mentir.} ». En fait, « \textit{On ne doit pas mentir.} » est synonyme de « \textit{On doit ne pas mentir.} ». Il y a donc bien un apparent phénomène de montée de la négation : la négation qui porte sémantiquement sur \textsc{mentir} se trouve attachée syntaxiquement au verbe recteur \textsc{devoir}. \citet{tesniere1959elements} notait déjà ce phénomène auquel il consacre son chapitre 89 intitulé \textit{Anticipation de la négation}. Plutôt qu’un phénomène syntaxique qui verrait véritablement une montée dans l’interface sémantique-syntaxe, il s’agit plus sûrement d’un phénomène de figement lexical associé au verbe recteur qui combiné à la négation prend un sens particulier (voir par exemple \cite{forest1994negation}). On retrouve ce phénomène dans de nombreuses langues. Cet exemple de l’italien montre un contraste intéressant avec le français :
+\corrigé{8} « \textit{On ne doit pas mentir.} » n’est pas la négation sémantique de « \textit{On doit mentir.} ». Celle-ci serait plutôt exprimée par « \textit{On n’est pas obligé de mentir.} » ou « \textit{On peut ne pas mentir.} ». En fait, « \textit{On ne doit pas mentir.} » est synonyme de « \textit{On doit ne pas mentir.} ». Il y a donc bien un apparent phénomène de montée de la négation : la négation qui porte sémantiquement sur \textsc{mentir} se trouve attachée syntaxiquement au verbe recteur \textsc{devoir}. \citet{tesniere1959elements} notait déjà ce phénomène auquel il consacre son chapitre 89 intitulé \textit{Anticipation de la négation}. Plutôt qu’un phénomène syntaxique qui verrait véritablement une montée dans l’interface sémantique-syntaxe, il s’agit plus sûrement d’un phénomène de figement lexical associé au verbe recteur qui combiné à la négation prend un sens particulier (voir par exemple \citealt{forest1994negation}). On retrouve ce phénomène dans de nombreuses langues. Cet exemple de l’italien montre un contraste intéressant avec le français :
 
 \begin{exe}
 \exi{} \textit{Il caffè non mi fa dormire.}\\

@@ -1,8 +1,9 @@
 \chapter{\gkchapter{Tête et dépendance}{Hiérarchiser la structure syntaxique}}\label{sec:3.3}
 
 \section{Hiérarchie}\label{sec:3.3.0}
-
+\begin{sloppypar}
 Les syntaxèmes, mots et autres unités syntaxiques ne sont pas seulement connectés les uns aux autres : certains dominent les autres et leur imposent leurs propriétés syntaxiques (catégorie, forme, fonction, place). Nous avons largement argumenté l’existence d’une structure syntaxique hiérarchique lorsque nous avons étudié les exemples \textit{Pierre a été malade pendant deux semaines} et \textit{La maladie de Pierre a duré deux semaines} dans le \chapref{sec:1.2}. Nous renvoyons le lecteur à cette discussion. De nouveaux éléments seront donnés dans la suite de ce chapitre. En particulier :
+\end{sloppypar}
 
 \begin{itemize}
 \item les contraintes distributionnelles ;
@@ -57,7 +58,9 @@ Nous allons introduire un autre terme à ne pas confondre avec \textit{gouverneu
 \Definition{\textstyleTermes{tête d'une unité syntaxique}}
 {On appelle \textstyleTermes{tête} d’une unité syntaxique U toute sous-unité de U qui n’est gouvernée par aucune autre sous-unité de U.}
 
+\begin{sloppypar}
 Les notions de tête et de gouverneur renvoient au même concept, mais adoptent des points de vue différents.
+\end{sloppypar}
 
 \Definition{\textstyleTermes{dépendant}, \textstyleTermes{gouverneur}}
 {Si A et B forment à eux deux une unité syntaxique dont A est la \hi{tête}, alors A est le \textstyleTermes{gouverneur} B. Inversement, si A est le \textstyleTermes{gouverneur} B, alors A et B forment une unité syntaxique ensemble et A en est la \hi{tête}. Enfin, B est le \textstyleTermes{dépendant} de A si et seulement si A est le \textstyleTermes{gouverneur} B.}
@@ -77,7 +80,9 @@ On aura noté que pour une unité syntaxique U donnée, \hi{la tête de} U \hi{e
   \caption{Gouverneur vs. tête}
 \end{figure}
 
+\begin{sloppypar}
 Les grammaires de dépendance traditionnelles font l’hypothèse que toute unité possède un unique mot tête. Nous considérons pour notre part que la nature de la tête dépend de la granularité de l’analyse et qu’on peut considérer, selon les finalités de l’analyse, une unité plus fine que le mot (un syntaxème) comme une unité plus large. Par ailleurs, il peut arriver que plusieurs éléments possèdent des propriétés de tête : on parle alors de \textstyleTermes{co-têtes} (voir la \sectref{sec:3.3.27} sur \textit{Nom et déterminant comme co-têtes}).
+\end{sloppypar}
 
 Concluons cette section en soulignant une propriété fondamentale que nous exploiterons pour identifier la tête d’une unité : le \hi{gouverneur} d’une unité U est \hi{connecté à la tête} de U.
 
@@ -145,7 +150,7 @@ Concluons cette section en soulignant une propriété fondamentale que nous expl
     On notera que la construction \textit{sujet-verbe} (appelée par Bloomfield \textit{actor-action}) est considérée comme exocentrique, une analyse qui s’est perpétuée depuis la \textit{Grammaire de Port Royal} (\citealt{ArnauldLancelot1660}) et qui va se maintenir dans les grammaires de constituants jusqu’à l’avènement de la syntaxe X-barre à la fin des années 1970 (voir \encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}).
 
     La «~\textstyleTermesapprof{centralité du verbe}~» et le fait que la relation sujet-verbe est exocentrique est, elle, défendue par le linguiste hongrois \hi{Sámuel Brassai} dès 1863 : 
-    \begin{quote}«~Assis au début, au milieu ou à la fin de la phrase, quel que soit l’endroit où il lui plaît d’être, se trouve le verbe, relié par des liens sémantiques à ses vassaux, les dépendants. […] L’autorité du verbe n’est pas dictatoriale et ses vassaux ne sont pas des esclaves, mais ont des relations légiférées avec leur seigneur et les uns avec les autres ; ils possèdent chacun un certain degré d’autonomie et un certain rang, avec un féodalisme dont le slogan, comme aux temps historiques, est \textit{nulle terre sans seigneur} [en français dans le texte].» (d’après une traduction en anglais du hongrois dans l’article \textit{Constituency or dependency? Notes on Sámuel Brassai’s syntactic model of Hungarian} d’András \cite{imrenyi2013constituency}). \end{quote}
+    \begin{quote}«~Assis au début, au milieu ou à la fin de la phrase, quel que soit l’endroit où il lui plaît d’être, se trouve le verbe, relié par des liens sémantiques à ses vassaux, les dépendants. […] L’autorité du verbe n’est pas dictatoriale et ses vassaux ne sont pas des esclaves, mais ont des relations légiférées avec leur seigneur et les uns avec les autres ; ils possèdent chacun un certain degré d’autonomie et un certain rang, avec un féodalisme dont le slogan, comme aux temps historiques, est \textit{nulle terre sans seigneur} [en français dans le texte].» (d’après une traduction en anglais du hongrois dans l’article \textit{Constituency or dependency? Notes on Sámuel Brassai’s syntactic model of Hungarian} d’András \citealt{imrenyi2013constituency}). \end{quote}
 
     \hi{Lucien Tesnière}, dès son article de \citeyear{tesniere1934comment}, défend avec véhémence la centralité du verbe : 
     \begin{quote}«~Une phrase se présente comme un système solaire. Au centre, un verbe qui commande tout l’organisme de même que le soleil est au centre du système solaire.~»\end{quote}
@@ -272,7 +277,7 @@ La présence de cycles non orientés dans une structure de dépendance entraîne
 Notons pour conclure cette section que l’on utilise généralement une terminologie différente lorsqu’on parle d’une unité syntaxique U et de la structure S de dépendance qui lui est associée. Ainsi appelle-t-on \textstyleTermes{racine} de S le nœud de S qui correspond à la \hi{tête} de U.
 
 \chevalier[sec:3.3.5]{Historique des représentations syntaxiques  par des diagrammes en dépendance}{%
-    Si les analyses en dépendance sont déjà bien développées au 18\textsuperscript{e} siècle (voir la \sectref{sec:3.3.2} sur l'\textit{Historique des notions de dépendance et de tête}), les représentations des analyses syntaxiques par des diagrammes n'apparaissent qu'au 19\textsuperscript{e} siècle. Le premier auteur à utiliser extensivement des diagrammes pour l'enseignement de la grammaire est l'abbé LouiS Gaultier (1746-1818), dont l'\textit{Atlas de grammaire} publié en \citeyear{gaultier1817atlas} contient une grande variété de diagrammes à visée pédagogique et tout particulièrement un diagramme tabulaire encodant  des fragments d'analyse en dépendance (\cite[11]{gaultier1817atlas}). Nous présentons dans la figure \ref{fig:Gaultier1829} un diagramme similaire, extrait de l'introduction des \textit{Élémens de grammaire} publié en \citeyear{gaultier1829elemens} par ses élèves et précédé de la description suivante : 
+    Si les analyses en dépendance sont déjà bien développées au 18\textsuperscript{e} siècle (voir la \sectref{sec:3.3.2} sur l'\textit{Historique des notions de dépendance et de tête}), les représentations des analyses syntaxiques par des diagrammes n'apparaissent qu'au 19\textsuperscript{e} siècle. Le premier auteur à utiliser extensivement des diagrammes pour l'enseignement de la grammaire est l'abbé LouiS Gaultier (1746-1818), dont l'\textit{Atlas de grammaire} publié en \citeyear{gaultier1817atlas} contient une grande variété de diagrammes à visée pédagogique et tout particulièrement un diagramme tabulaire encodant  des fragments d'analyse en dépendance \citep[11]{gaultier1817atlas}. Nous présentons dans la figure \ref{fig:Gaultier1829} un diagramme similaire, extrait de l'introduction des \textit{Élémens de grammaire} publié en \citeyear{gaultier1829elemens} par ses élèves et précédé de la description suivante : 
    \begin{quote}
     «~Pour faire l’analyse grammaticale, il faut avoir une feuille de papier, une ardoise ou un tableau noir partagé en dix colonnes. Dans une marge à gauche, on écrira les mots de la phrase à analyser les uns au-dessous des autres. Dans la première colonne, on indiquera à laquelle des trois parties primitives du discours, et dans la seconde à laquelle des dix parties secondaires du discours chaque mot appartient ; dans la troisième, la quatrième et la cinquième, on marquera le genre, le nombre et le cas des noms ; dans la sixième, la septième, la huitième et la neuvième, on indiquera le nombre, la personne, le temps en général et le mode du verbe personnel. Dans la dixième, on indiquera toutes les divisions et les subdivisions des dix parties du discours.~»
     \end{quote}
@@ -487,13 +492,15 @@ Deuxièmement, il est assez courant que deux éléments qui se combinent soient 
 
 Troisièmement, le critère d’effacement simple est inopérant si B est un dépendant obligatoire de A. C’est le cas pour une combinaison comme \textit{à Marie}, où A = \textit{à} ne peut pas s’employer sans son complément B et ne peut donc jamais former une unité XA avec le gouverneur X de AB. C’est encore le cas pour les formes verbales finies de langues comme le français : en effet, pour \textit{Marie dormait}, il n’est pas possible de vérifier si A = \textit{dormait} peut former une unité avec un éventuel gouverneur X, puisque A ne s’emploie jamais sans un sujet B. Ceci a d’ailleurs amené Leonard Bloomfield (qui fut le premier, dans son ouvrage \textit{Language} de \citeyear{bloomfield1933language}, à proposer des critères pour définir la tête) à considérer que ces constructions sont \textstyleTermes{exocentriques,} c’est-à-dire sans tête (voir la \encadref{sec:3.3.2} \textit{Historique des notions de dépendance et de tête}.)
 
+\begin{sloppypar}
 Les limites du critère d’effacement simple et du critère prosodique nous amènent à introduire d’autres critères plus puissants. Dans les critères que nous venons de considérer, le gouverneur X de l’unité AB que l’on étudie est fixé. On regarde seulement ce qui se passe dans une phrase donnée, sans faire varier X, A ou B. Cela confère à ces critères une grande simplicité d’utilisation, mais c’est aussi une limite. L’analyse distributionnelle va nous permettre de donner une version plus riche et plus fiable du critère d’effacement : le \textstyleTermes{critère distributionnel avec effacement positif}, présenté dans la \sectref{sec:3.3.11} sur les \textit{Critères distributionnels avec effacement}.
+\end{sloppypar}
 
 \section{Tête d’un énoncé}\label{sec:3.3.8}
 
 Comme nous l’avons vu à la section précédente, nous avons des critères pour identifier la tête d’une unité dès qu’on connaît son gouverneur, mais ces critères ne peuvent pas s’appliquer pour caractériser la tête d’un énoncé. Or, tant qu’on n’a pas identifié celle-ci et qu’on n’a pas un premier gouverneur, on ne peut pas appliquer le critère d’effacement simple ou le critère prosodique.
 
-L’identification de la tête d’un énoncé repose sur les propriétés de l’énoncé en tant que tel, à savoir le fait qu’il fait l’objet d’une énonciation dirigée vers un interlocuteur et qu’il possède donc une \textstyleTermes{fonction illocutoire}. Cette notion repose sur le constat que produire un énoncé est une véritable action de la part du locuteur (on parle d’\textstyleTermes{actes de langage}, à la suite des travaux d'Alan \citealt{gardiner1932speech}, John \citealt{austin1962how} et John \citealt{searle1969speech}), qui attend généralement en retour une action du ou des destinataire(s) (voir également la contribution de \citet{bloomfield1933language} dans la \sectref{sec:1.1.4} \textit{Sens et intention communicative}).
+L’identification de la tête d’un énoncé repose sur les propriétés de l’énoncé en tant que tel, à savoir le fait qu’il fait l’objet d’une énonciation dirigée vers un interlocuteur et qu’il possède donc une \textstyleTermes{fonction illocutoire}. Cette notion repose sur le constat que produire un énoncé est une véritable action de la part du locuteur (on parle d’\textstyleTermes{actes de langage}, à la suite des travaux d'Alan \citet{gardiner1932speech}, John \citet{austin1962how} et John \citet{searle1969speech}), qui attend généralement en retour une action du ou des destinataire(s) (voir également la contribution de \citet{bloomfield1933language} dans la \sectref{sec:1.1.4} \textit{Sens et intention communicative}).
 
 Ceci nous amène à considérer quatre types d’énoncés : \textstyleTermes{assertion}, \textstyleTermes{question}, \textstyleTermes{injonction} et \textstyleTermes{exclamation}.
 
@@ -669,7 +676,9 @@ Illustrons le critère par l’exemple de U = \textit{demain matin} avec A = \te
 \Definition{\textstyleTermes{critère distributionnel avec effacement négatif}}
 {\textstyleTermes{Critère distributionnel avec effacement négatif}. Si U = A ${\oplus}$ B et A est autonomisable (et donc B est effaçable),  plus la \hi{valence supérieure} de A est différente de celle de U, plus B est susceptible d'être la \hi{tête} de U.}
 
+\begin{sloppypar}
 Le critère distributionnel avec effacement négatif est particulièrement utile dans les cas où le critère d’effacement simple ne s’applique pas. Reprenons l’exemple de U = \textit{à Marie}. Ici \textit{Marie} n’est pas effaçable, puisque \textit{à} n’est pas autonomisable. Par contre, \textit{à} est effaçable, on peut donc comparer les valences supérieures de \textit{Marie} et \textit{à Marie}. Ces deux unités ont des valences supérieures complètement différentes. Par exemple, \textit{Marie} peut être sujet (\textit{Marie dort}) ou complément d’objet (\textit{J’ai vu Marie}) et la commutation avec \textit{à Marie} est impossible (*\textit{A Marie dort} ; *\textit{J’ai vu à Marie}). On en déduit que \textit{à} est la tête de \textit{à Marie}.
+\end{sloppypar}
 
 Le même raisonnement est applicable à \textit{Marie dormait}. Ici encore, \textit{Marie} n’est pas effaçable, mais \textit{dormait} l’est. Comme \textit{Marie} et \textit{Marie dormait} n’ont absolument pas la même valence supérieure, on en déduit que \textit{dormait} est bien la tête de la proposition \textit{Marie dormait}.
 
@@ -878,13 +887,14 @@ En plus, la particule \textit{la} autorise la réalisation d’un sujet lexical 
 Notons pour terminer que lorsque les critères pour identifier la tête interne et la tête externe se contredisent, ce sont les critères distributionnels (avec et sans effacement) et la tête externe que nous privilégions.
 
 \section{Critère de la tête sémantique}\label{sec:3.3.17}
-
+\begin{sloppypar}
 La tête syntaxique d’une unité syntaxique n’est en général pas seulement saillante du point de vue distributionnel : elle est aussi saillante du point de vue sémantique et constitue alors ce qu’on appelle la tête sémantique de l’unité.
+\end{sloppypar}
 
 \Definition{\textstyleTermes{tête sémantique}}
 {La \textstyleTermes{tête sémantique} d’une unité U est l’élément de U qui résume à lui seul le sens de U, qui en détermine la catégorie ontologique.}
 
-Par exemple, la tête sémantique de \textit{poisson-chat} est \textit{poisson}, car un poisson-chat est un type de poisson et pas un type de chat. À l’inverse, \textit{enseignant-chercheur} apparaît comme exocentrique, car un enseignant-chercheur est autant un enseignant qu’un chercheur. (Voir l’\encadref{sec:3.1.12} sur les \textit{Constructions N N}.)
+Par exemple, la tête sémantique de \textit{poisson-chat} est \textit{poisson}, car un poisson-chat est un type de poisson et pas un type de chat. À l’inverse, \textit{en\-sei\-gnant-cher\-cheur} apparaît comme exocentrique, car un en\-sei\-gnant-cher\-cheur est autant un enseignant qu’un chercheur. (Voir l’\encadref{sec:3.1.12} sur les \textit{Constructions N N}.)
 
 La tête sémantique d’une proposition est le verbe. Ainsi la proposition \textit{Zoé invite ses copains à son anniversaire} décrit-elle avant tout une invitation dont Zoé, ses copains et l’anniversaire sont des participants.
 
@@ -896,8 +906,10 @@ Un autre exemple : \textit{un livre rouge} a pour tête sémantique \textit{livr
 
 En effet, ici clairement, \textit{les autres} renvoie aux autres livres et pas aux autres objets rouges. (On notera au passage que cette asymétrie disqualifie les formalisations logiques symétriques qui voient \textit{un livre rouge} comme un \textit{x} tel que \textit{x} est un livre \textbf{et} \textit{x} est rouge. Voir \citealt{higginbotham1985semantics} pour une discussion.) 
 
+\begin{sloppypar}
 La tête sémantique d’une unité syntaxique n’est pas toujours sa tête syntaxique : la notion de tête sémantique privilégie les sémantèmes lexicaux vis-à-vis des éléments grammaticaux. Ainsi la tête sémantique de \textit{Zoé a invité ses copains à son anniversaire} reste le verbe lexical \textsc{inviter} et n’est pas l’auxiliaire \textsc{avoir} qui marque le passé. De la même façon, la tête sémantique d’un groupe substantival comme \textit{le chien de Marie} privilégie le nom tête \textsc{chien} au détriment du déterminant \textsc{le}. (Voir aussi le cas des \textit{« Déterminants complexes »}
 dans l'\encadref{sec:3.3.22}.)
+\end{sloppypar}
 
 La notion de tête sémantique est donc une notion distincte de celle de tête syntaxique (voir la section sur les \textit{Distorsions sémantique-syntaxe} dans le \chapref{sec:13}). Néanmoins lorsque les critères pour déterminer la tête syntaxique sont insuffisants, on peut, si l’on souhaite à tout prix choisir une tête, utiliser les critères sémantiques.
 
@@ -1017,7 +1029,7 @@ Les cinq autres critères concernent les relations avec les autres niveaux d’a
 \item le \hi{critère sémantique de non-effacement} : un élément non effaçable qui gouverne sémantiquement les autres composantes de U est une tête syntaxique (\sectref{sec:3.3.18})
 \item le \hi{critère de recouvrement} (ou \hi{critère topologique}) : la tête syntaxique de U n’est généralement pas recouverte par une connexion entre deux éléments de U (\sectref{sec:3.3.32}) ;
 \item le \hi{critère prosodique} : la tête syntaxique de U est l’élément qui peut le plus facilement former une unité prosodique avec le gouverneur de U (\sectref{sec:3.3.7}) ;
-\item le \hi{critère morphologique} : la tête syntaxique de U tend à contrôler les marques morphologiques du gouverneur de U (\encadref{sec:3.3.22}) ; la réciproque – le fait que le gouverneur de U contrôle les marques morphologiques de la tête de U – est déjà exprimé dans le critère distributionnel sans effacement ;
+\item\sloppy le \hi{critère morphologique} : la tête syntaxique de U tend à contrôler les marques morphologiques du gouverneur de U (\encadref{sec:3.3.22}) ; la réciproque – le fait que le gouverneur de U contrôle les marques morphologiques de la tête de U – est déjà exprimé dans le critère distributionnel sans effacement ;
 \item le \hi{critère de la tête sémantique} : la tête syntaxique de U est généralement l’élément de U qui résume à lui seul le sens de U (\sectref{sec:3.3.17}).
 \end{itemize}
 
@@ -1552,7 +1564,9 @@ qui est aussi appelée le \hi{critère topologique pour l'identification de la t
 \caption{\label{fig:recouvrement}Configuration rejetée par le critère de recouvrement}
 \end{figure}
 
+\begin{sloppypar}
 Illustrons cela avec la relation sujet-verbe et considérons les données suivantes :
+\end{sloppypar}
 
 \ea
   \ea[]{\textit{Le chien blanc dort.}}
@@ -1580,7 +1594,9 @@ L’\hi{objectif pratique} amène aussi à rechercher la simplicité. Inutile d�
 
 Si l’on peut donc associer différentes structures à un même énoncé, il faut aussi comprendre que, à l’inverse, \hi{une même structure peut avoir différentes interprétations}. La «~sémantique~» associée à une dépendance n’est en rien univoque : elle dépend complètement des critères qui servent à définir la tête. Quand nous postulons une dépendance entre \textit{une foule} et \textit{de gens} dans \textit{une foule de gens applaudissent} (voir l’\encadref{sec:3.3.22} sur les \textit{Déterminants complexes}) que voulons-nous dire ? Que \textit{une foule} contrôle la valence supérieure de \textit{une foule de gens} ? Que \textit{une foule} régit \textit{de gens} ? Il n’est même pas toujours sûr qu’une dépendance donnée vérifie bien les critères qu’on a retenus : elle peut résulter de compromis généraux, par exemple sur la nécessité d’avoir une structure arborescente pour nos calculs.
 
+\begin{sloppypar}
 Cela ne doit pas donner l’impression que les structures que nous proposons sont arbitraires. Il existe clairement de mauvaises analyses des phénomènes syntaxiques : par exemple, des analyses qui oublieraient des connexions qui répondent clairement aux critères que nous nous sommes fixés ou qui en ajouteraient qui n’y répondent pas. Par ailleurs, même s’il existe des cas problématiques dont l’analyse peut varier en fonction des critères retenus, la plupart des connexions sont indiscutables et clairement hiérarchisées. Et lorsque plusieurs solutions sem\-blent possibles, on peut souvent montrer que certaines structures sont plus simples, moins redondantes que d’autres tout en ayant le même contenu informationnel et donc faire des choix bien argumentés.
+\end{sloppypar}
 
 Dans les chapitres suivants, il nous arrivera de faire varier la représentation choisie en fonction de la nature des phénomènes étudiés et de nos exigences pédagogiques.
 
@@ -1608,7 +1624,7 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
 
     \textit{Qui} est le sujet de cette proposition incidente ; \textit{me suit} est l’attribut ; \textit{suit} est le verbe ; \textit{me} est le dé​​terminant ou terme de l’action de \textit{suit} : […]
 
-    3°. \textit{Dit Jésus-Christ}, c’est une troisième proposition qui fait une incise ou sens détaché ; c’est un adjoint : en ces occasions la construction usuelle met le sujet de la proposition après le verbe : \textit{Jésus-Christ} est le sujet et \textit{dit} est l’attribut.~» (\cite{Dumarsais1754}, article «~Construction~», \textit{Encyclopédie})
+    3°. \textit{Dit Jésus-Christ}, c’est une troisième proposition qui fait une incise ou sens détaché ; c’est un adjoint : en ces occasions la construction usuelle met le sujet de la proposition après le verbe : \textit{Jésus-Christ} est le sujet et \textit{dit} est l’attribut.~» (\citealt{Dumarsais1754}, article «~Construction~», \textit{Encyclopédie})
     \end{quote}
 
     \exercice{3} ({Analyse distributionnelle.}) Montrer que les formes verbales infinitives ont une valence supérieure proche de celle des groupes substantifs. Montrer qu’il existe néanmoins des différences (on pourra regarder les contextes proposés par des verbes comme \textsc{pouvoir}, \textsc{vouloir}  ou \textsc{tenter).}
@@ -1725,7 +1741,7 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
 
     Il existe de nombreux écrits sur le choix entre nom ou déterminant comme tête du groupe substantival, parmi lesquels \citet{hudson1984word}, \citet{abney1987english}, \citet{langendonck1994determiners}, \citet{hudson2006language} ou encore \citet{osborne2021nps}.
 
-    Ceux qui s’intéressent aux écrits anciens pourront trouver les ouvrages de Buffier, Girard ou Beauzée sur le [href{https://gallica.bnf.fr}{site de la Bibliothèque Nationale de France} ou sur Google Books. L’\textit{Encyclopédie} de Diderot et D’Alembert, avec les articles de Dumarsais et Beauzée, est également disponible sur le \href{http://enccre.academie-sciences.fr/encyclopedie/}{site de l'Académie des Sciences}. Il existe diverses ressources en ligne concernant les diagrammes de Reed \& Kellogg et la grammaire de Reed \& Kellogg est régulièrement rééditée ! \citet{kouloughli1999y} discute de la notion de dépendance dans les grammaires arabes et montre qu’il s’agit davantage de rection morphologique que syntaxique, ce qui rejoint le point de vue de \citet{chevalier1968histoire} qui date la version contemporaine de la notion de complément des travaux de Beauzée. Les anedoctes concernant Ibn Mada et Sibawayh sont extraites de \citet[chapitre 11]{versteegh2013landmarks}.
+    Ceux qui s’intéressent aux écrits anciens pourront trouver les ouvrages de Buffier, Girard ou Beauzée sur le \href{https://gallica.bnf.fr}{site de la Bibliothèque Nationale de France} ou sur Google Books. L’\textit{Encyclopédie} de Diderot et D’Alembert, avec les articles de Dumarsais et Beauzée, est également disponible sur le \href{http://enccre.academie-sciences.fr/encyclopedie/}{site de l'Académie des Sciences}. Il existe diverses ressources en ligne concernant les diagrammes de Reed \& Kellogg et la grammaire de Reed \& Kellogg est régulièrement rééditée ! \citet{kouloughli1999y} discute de la notion de dépendance dans les grammaires arabes et montre qu’il s’agit davantage de rection morphologique que syntaxique, ce qui rejoint le point de vue de \citet{chevalier1968histoire} qui date la version contemporaine de la notion de complément des travaux de Beauzée. Les anedoctes concernant Ibn Mada et Sibawayh sont extraites de \citet[chapitre 11]{versteegh2013landmarks}.
 
     Les actes de langage et la fonction illocutoire sont introduits dans les ouvrages de \citet{gardiner1932speech}, \citet{bloomfield1933language}, \citet{austin1962how} et \citet{searle1969speech}.
 
