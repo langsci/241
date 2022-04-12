@@ -692,35 +692,9 @@ Les structures de connexion ne sont pas n’importe quel graphe à bulles. D’u
 Enfin, les structures de connexion ont généralement la propriété de binarité suivante : chaque bulle se décompose en deux bulles connectées entre elles. Il est alors possible d’utiliser un autre mode de représentation, où les bulles ne sont pas représentées : un lien dont le sommet est une bulle composée de deux sous-bulles connectées entre elles sera attribué au lien entre les deux sous-bulles. On obtient une nouvelle structure, que nous appelons un \textstyleTermesapprof{polygraphe}, où une arête peut avoir pour sommet un nœud ou une arête. Nous donnons ci-dessous une version polygraphique de la structure connexion de la section précédente.
 
 \begin{figure}[H]
-\includegraphics[scale=.75]{figures/ceetudiantveutacheterunlivredesyntaxe.pdf}
-% % % \begin{tikzpicture}
-% % %   \matrix [matrix of nodes,
-% % %            nodes={ConcSet,font=\footnotesize},
-% % %            row sep=1em,
-% % %            column sep=.333em,
-% % %            ampersand replacement=\&] (matrix)
-% % %     {
-% % %       \& étudiant \& \& acheter \& \& livre \& \& syntaxe\\
-% % %       cet \& \& veut \& \& un \& \& de \& \\
-% % %     };
-% % %     \coordinate (intersection1) at ($ (matrix-1-2) !.5! (matrix-2-1) $);
-% % %     \coordinate (intersection2) at ($ (matrix-1-6) !.5! (matrix-2-5) $);
-% % %     \coordinate (intersection3) at ($ (matrix-1-8) !.5! (matrix-2-7) $);
-% % %     \draw (intersection1) -- (matrix-2-1);
-% % %     \draw (intersection1) -- (matrix-1-2);
-% % %     \draw (intersection1) -- (matrix-2-3);
-% % %     \draw (matrix-2-3)    -- (matrix-1-4);
-% % %     \draw (intersection2) -- (matrix-1-4);
-% % %     \draw (intersection2) -- (matrix-2-5);
-% % %     \draw (intersection2) -- (matrix-1-6);
-% % %     \draw (intersection3) -- (matrix-1-6);
-% % %     \draw (intersection3) -- (matrix-2-7);
-% % %     \draw (intersection3) -- (matrix-1-8);
-% % % \end{tikzpicture}         
+\includegraphics[scale=.75]{figures/ceetudiantveutacheterunlivredesyntaxe.pdf}        
 \caption{Polygraphe représentant une structure de connexion}
-% % \todo[inline]{Detail: is it possible to have the oblique line more parallel? The link between un and livre is particularly unsightly}
-\end{figure}
-}
+\end{figure}}
 
 
 \loupe[sec:3.2.24]{Cycle de connexions}{%
