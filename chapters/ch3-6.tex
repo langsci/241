@@ -108,7 +108,7 @@ Les \hi{relations syntaxiques de surface} comme les \hi{relations sémantiques} 
 
 Le terme \textit{modifieur} est également utilisé pour désigner les sémantèmes qui ont la capacité de modifier un autre sémantème. Nous dirons ainsi que les adjectifs, les adverbes, les prépositions et les conjonctions de subordination sont des modifieurs.
 
-Les relations modificatives sont étiquetées \textsc{mod} dans les structures syntaxiques profondes. Les relations actancielles sont numérotées dans l’\terme{ordre d’oblicité} croissante. L’ordre d’oblicité et son inverse, l’\terme{ordre de saillance}, seront définis dans le \chapfuturef{17}. Disons ici que plus une relation a de «~bonnes~» propriétés, plus elle est saillante : le sujet est la relation la plus saillante, suivie du complément d’objet direct, puis du complément d’objet indirect et des compléments obliques. Le sujet est donc le premier actant du verbe. Pour les modifieurs, le gouverneur syntaxique est considéré comme le premier «~actant~» : ce n'est pas à proprement parler un actant (puisque ce n'est pas un dépendant syntaxique), mais nous nous permettons cet abus de langage car, lorsqu’un modifieur est «~verbalisé~», son gouverneur devient le sujet de la construction (\textit{une \underline{maison} \textbf{verte}}, \textit{la \underline{maison} \textbf{est verte}}). L'actant le plus saillant d'un modifieur (comme \textit{(une personne) heureuse \textbf{de sa réussite}}) est donc appelé son deuxième actant.
+Les relations modificatives sont étiquetées \textsc{mod} dans les structures syntaxiques profondes. Les relations actancielles sont numérotées dans l’\terme{ordre d’oblicité} croissante. L’ordre d’oblicité et son inverse, l’\terme{ordre de saillance}, seront définis dans le \chapfuturef{17}. Disons ici que plus une relation a de «~bonnes~» propriétés, plus elle est saillante : le sujet est la relation la plus saillante, suivie du complément d’objet direct, puis du complément d’objet indirect et des compléments obliques. Le sujet est donc le premier actant du verbe. Pour les modifieurs, le gouverneur syntaxique est considéré comme le premier «~actant~» : ce n'est pas à proprement parler un actant (puisque ce n'est pas un dépendant syntaxique), mais nous nous permettons cet abus de langage car, lorsqu’un modifieur est «~verbalisé~», son gouverneur devient le sujet de la construction (\textit{une \underline{maison} \textbf{verte}}, \textit{la \underline{maison} \textbf{est verte}}). L'actant le plus saillant d'un modifieur (comme \textit{(une personne) heureuse \textbf{de sa réussite}}) est donc appelé son deuxième actant.\largerpage
 
 Nous n'avons pas encore donné de définition de ce qu'est un argument d'un sémantème. Nous tenterons de le faire dans la \sectref{sec:13-argument} sur la \textit{Structure prédicative des sémantèmes}. Nous allons nous intéresser ici un peu plus à la relation entre arguments et actants. Les arguments d'un sémantème sont numérotés en fonction de sa diathèse de base.
 
@@ -502,7 +502,9 @@ Le grammème de participe présent, lui, est utilisé dans deux emplois en fran�
 \end{figure}
 
 \subsubsection{Les sémantèmes cachés}\label{sec:13-cache}
+\begin{sloppypar}
 Nous appelons \textsc{sémantèmes cachés} des sens qui naissent d’une configuration particulière sans être réellement réalisés par un syntaxème. Notre premier exemple est illustré par une construction particulière du russe relevée par \citet[141]{melcuk1988dependency}. En russe, le numéral se place normalement avant le nom. Il est néanmoins possible de placer le numéral après le nom, mais cela change le sens : le numéral est alors interprété comme une valeur approximative. C’est donc l’ordre des mots qui est signifiant. 
+\end{sloppypar}
 
 \ea\label{ex:13-approx}  
 \ea \textit{Ja polučil desjat’ rublej.}\\ 
@@ -736,7 +738,7 @@ On peut considérer, comme l’on fait les logiciens depuis au moins \citet{freg
 \begin{figure}
 %Figure 17
 	%a. ‘Mars’ <-1- ‘être’ -2-> ‘planète’ <-1- ‘appartenir’ -2-> ‘système’ <-1- ‘solaire’
-	\begin{subfigure}[h]{\textwidth}
+	\begin{subfigure}[b]{.6\textwidth}
 		\centering
 		\begin{tikzpicture}[>={Triangle[]},
 			label distance=0pt,
@@ -763,9 +765,9 @@ On peut considérer, comme l’on fait les logiciens depuis au moins \citet{freg
 		\end{tikzpicture}
 		\caption{Structure prédicative sémantique}
 	\end{subfigure}%
-	\bigskip\\%
+% 	\bigskip\\%
 	%b. Mars <-1- être\_présent -2-> planète\_sg, déf -MOD-> de -2-> système -MOD-> solaire
-	\begin{subfigure}[h]{\textwidth}
+	\begin{subfigure}[b]{.4\textwidth}
 		\centering
 		\begin{forest} for tree={font=\normalfont}
 			[\textsc{être}\textsubscript{prés}
@@ -781,7 +783,7 @@ On peut considérer, comme l’on fait les logiciens depuis au moins \citet{freg
 			]
 		\end{forest}
 		\caption{Structure syntaxique profonde}
-	\end{subfigure}
+	\end{subfigure}%
 \caption{Structures pour \REF{ex:13-Mars}\label{fig:13-Mars}}
 \end{figure}
 
@@ -873,7 +875,7 @@ Les adjectifs ou les adverbes peuvent aussi occuper une position actancielle, co
 \caption{Structures syntaxiques profondes pour un adjectif\label{fig:13-francais}}
 \end{figure}
 
-\subsection{Les sémantèmes grammaticaux} 
+\subsection{Les sémantèmes grammaticaux}\largerpage
 Les grammies sont toujours des prédicats unaires, qui prennent une lexie com\-me unique argument. La grammie exprime une propriété associée à la lexie : par exemple, un temps passé exprime que le procès décrit par le verbe a lieu avant maintenant, un nombre pluriel exprime qu’il y a plus d’une entité dénotée par le nom. Dans la représentation sémantique, on peut d’ailleurs faire figurer aussi bien le terme associé à la grammie (passé ou pluriel) que la glose lexicale (‘avant maintenant’ ou ‘plus d’un’).
 
 D’autres exemples sont donnés dans les exercices. Les conjonctions de coordination seront étudiées dans le \chapfuturef{18} et les marqueurs de discours et les interjections dans le \chapfuturef{20}. Dans le \chapfuturef{16}, nous discuterons des parties du discours et nous verrons qu’il existe des langues avec une organisation différente des catégories et notamment des langues, comme le nahuatl, où les sémantèmes « nominaux » sont toujours prédicatifs.
@@ -884,7 +886,7 @@ Un \terme{lexique} est une liste d’entrées lexicales associées à des inform
 \Definition{\terme{lexique sémantique}, \terme{lexique syntaxique}}
 {Un \terme{lexique sémantique} associe à chaque lexie une description de son sens, tandis qu’un \terme{lexique syntaxique} associe à chaque lexie une description de son syntactique, c'est-à-dire de sa combinatoire syntaxique.}
 
-Les dictionnaires monolingues traditionnels, avec des définitions associées à chaque lexie, constituent des lexiques sémantiques. (Les définitions ne sont pas la seule façon de représenter le sens lexical, mais cela nous emmènerait trop loin de notre sujet de développer ce point.) Nous nous intéressons ici au lexique syntaxique. Chaque lexie y est associée à une description de la réalisation de ses arguments. Une telle description est traditionnellement appelée un \terme{tableau de régime}. 
+Les dictionnaires monolingues traditionnels, avec des définitions associées à chaque lexie, constituent des lexiques sémantiques. (Les définitions ne sont pas la seule façon de représenter le sens lexical, mais cela nous emmènerait trop loin de notre sujet de développer ce point.) Nous nous intéressons ici au lexique syntaxique. Chaque lexie y est associée à une description de la réalisation de ses arguments. Une telle description est traditionnellement appelée un \terme{tableau de régime}.\largerpage
 
 \Definition{\terme{tableau de régime}}
 {Un \terme{tableau de régime} de la lexie L indique la correspondance entre les arguments sémantiques de L et leur réalisation en syntaxe de surface. Il indique pour chaque argument de la lexie L quelle relation syntaxique le lie à L, à quelle catégorie il peut appartenir et quel régime L lui impose.}
@@ -986,7 +988,7 @@ Nous donnons dans la figure \ref{fig:13-regime} quelques exemples de tableaux de
 \caption{Tableaux de régime de \phraseme{tenir la jambe}, \textsc{sembler}, \textsc{question}, \textsc{chez}, \textsc{heureux}\label{fig:13-regime}}
 \end{figure}
 
-Nous verrons dans le \chapfuturef{17} sur les \textit{Relations syntaxiques} que chaque relation syntaxique est associée à un faisceau de propriétés. Par exemple, la relation sujet en français suppose un accord du verbe, un placement particulier, l’absence de préposition, mais un marquage casuel des pronoms personnels (\textit{je}, \textit{tu}, \textit{il}, \textit{on}, etc.), ainsi que des propriétés de contrôle ou de redistribution que nous ne décrirons pas ici. On peut donc voir l’utilisation des relations syntaxiques dans le tableau de régime comme un moyen de décrire de façon synthétique une partie des propriétés syntaxiques d’un argument.
+Nous verrons dans le \chapfuturef{17} sur les \textit{Relations syntaxiques} que chaque relation syntaxique est associée à un faisceau de propriétés. Par exemple, la relation sujet en français suppose un accord du verbe, un placement particulier, l’absence de préposition, mais un marquage casuel des pronoms personnels (\textit{je}, \textit{tu}, \textit{il}, \textit{on}, etc.), ainsi que des propriétés de contrôle ou de redistribution que nous ne décrirons pas ici. On peut donc voir l’utilisation des relations syntaxiques dans le tableau de régime comme un moyen de décrire de façon synthétique une partie des propriétés syntaxiques d’un argument.\largerpage
 
 \maths[sec:13-derivation]{Lexique syntaxique et interface sémantique-syntaxe}{%
 Avec un lexique syntaxique, il devient possible à partir d’une structure syntaxique profonde de reconstituer la structure syntaxique de surface. En fait, chaque tableau de régime constitue la description d’une structure élémentaire mettant en correspondance un fragment de structure prédicative avec un fragment de structure syntaxique de surface. En combinant ces fragments de structure, on peut construire en même temps la structure prédicative et la structure syntaxique de surface. (Pour obtenir une structure syntaxique de surface complète, il faudra aussi des règles de grammaires associées aux sémantèmes grammaticaux, notamment ceux qui opèrent des redistributions comme le passif.) On peut alors interpréter la structure syntaxique profonde comme le témoin de ces combinaisons, comme une structure indiquant quelle lexie s’est combinée avec quelle autre et dans quelle position argumentale.
@@ -1062,6 +1064,11 @@ Les grammaires d’arbres ont également été utilisées en \terme{grammaire de
 \end{figure}
 
 La figure \ref{fig:13-GD1} donne l’ensemble des règles nécessaires à la production de l’arbre syntaxique de surface de la phrase \REF{ex:jambe}. Le losange blanc de la structure élémentaire de \phraseme{tenir la jambe} indique qu’il doit recevoir un grammème de mode-temps. Celui-ci sera instancié par la grammie de passé, qui comporte un auxiliaire. Un mécanisme que nous ne détaillerons pas assure la montée du sujet sur l’auxiliaire, qui sera donc un pur dépendant syntaxique de \textsc{avoir} tout en restant l’argument sémantique de \phraseme{tenir la jambe}. Les positions argumentales de chaque sémantème sont numérotées ; ainsi, l’arbre élémentaire de \textsc{pendant} comporte deux positions argumentales : le premier argument doit être un verbe qui est gouverneur syntaxique, tandis que le deuxième argument est un nom qui est complément, ce qu’indiquent les étiquettes [1{\NoAutoSpacing :}V] et [2{\NoAutoSpacing :}N]. Enfin, la règle « déclaration », qui initie le processus de dérivation, demande à ce que la racine de l’arbre syntaxique de surface soit un verbe à l’indicatif.
+
+La structure dérivée qui résulte de la combinaison des 9 structures élémentaires de la figure \ref{fig:13-GD1} est donnée dans la figure \ref{fig:13-GD2}. On notera que toutes les polarités blanches ont été saturées par une polarité noire, ce qui indique que la dérivation peut s’arrêter.
+
+Cette structure dérivée correspond à la structure syntaxique surface de \REF{ex:jambe}, que nous avons donné dans la figure \ref{fig:jambe}c. (Il manque les grammèmes de nombres que nous n'avons pas introduits pour simplifier. Notons aussi qu'il reste à appliquer des règles d'accord, qui concernent la bonne formation de la structure syntaxique de surface et pas directement l'interface sémantique-syntaxe.) La façon dont les structures élémentaires se sont combinées les unes avec les autres est décrit par la structure de dérivation de la figure \ref{fig:13-GD3}. Chaque structure élémentaire est représentée par le nom du sémantème auquel elle correspond.  Les flèches sont orientées du sémantème prédicat vers son argument, qui vient saturer une des positions blanches du prédicat. Les flèches vers le bas, où le prédicat gouverne syntaxiquement son argument, sont des relations actancielles, tandis que les flèches vers le haut, où le prédicat dépend de son argument, sont des relations modificatives. On retrouve donc bien la structure syntaxique profonde de \REF{ex:jambe}, donnée initialement dans la figure \ref{fig:jambe}b.
+
 
 \begin{figure}[H]
 %Figure 21
@@ -1244,8 +1251,6 @@ every label/.style={reset shape}]
 \caption{Structures élémentaires pour une grammaire de dépendance\label{fig:13-GD1}}
 \end{figure}
 
-La structure dérivée qui résulte de la combinaison des 9 structures élémentaires de la figure \ref{fig:13-GD1} est donnée dans la figure \ref{fig:13-GD2}. On notera que toutes les polarités blanches ont été saturées par une polarité noire, ce qui indique que la dérivation peut s’arrêter.
-
 \begin{figure}[H]
 %Figure 22
 %Zoé <-1- \phraseme{tenir la jambe}\_passé -2-> prof …
@@ -1289,9 +1294,6 @@ La structure dérivée qui résulte de la combinaison des 9 structures élément
 \end{tikzpicture}
 \caption{Structure dérivée de \REF{ex:jambe} par la grammaire\label{fig:13-GD2}}
 \end{figure}
-
-Cette structure dérivée correspond à la structure syntaxique surface de \REF{ex:jambe}, que nous avons donné dans la figure \ref{fig:jambe}c. (Il manque les grammèmes de nombres que nous n'avons pas introduits pour simplifier. Notons aussi qu'il reste à appliquer des règles d'accord, qui concernent la bonne formation de la structure syntaxique de surface et pas directement l'interface sémantique-syntaxe.)
-La façon dont les structures élémentaires se sont combinées les unes avec les autres est décrit par la structure de dérivation de la figure \ref{fig:13-GD3}. Chaque structure élémentaire est représentée par le nom du sémantème auquel elle correspond.  Les flèches sont orientées du sémantème prédicat vers son argument, qui vient saturer une des positions blanches du prédicat. Les flèches vers le bas, où le prédicat gouverne syntaxiquement son argument, sont des relations actancielles, tandis que les flèches vers le haut, où le prédicat dépend de son argument, sont des relations modificatives. On retrouve donc bien la structure syntaxique profonde de \REF{ex:jambe}, donnée initialement dans la figure \ref{fig:jambe}b.
 
 \begin{figure}[H]
 %Figure 23
@@ -1776,10 +1778,7 @@ On peut encore ajouter à cette liste deux relations qui appartiennent à la str
 
 D’autres exemples de structures syntaxiques profondes seront donnés dans le \chapfuturef{18} sur les \textit{Listes paradigmatiques} et le \chapfuturef{19} sur l’\textit{Extraction}.
 
-\ 
-
-Le volume 1  de \textit{Syntaxe théorique et formelle} se termine ici. Le volume 2 rentrera plus en détail dans la structure syntaxique de surface (sans oublier les structures topologique et syntaxique profonde) en s’intéressant d’abord à la \textit{nanosyntaxe} et à la notion de mot et de catégorie flexionnelle, puis à la \textit{microsyntaxique} et aux catégories lexicales ou parties du discours, aux relation syntaxiques et à deux phénomènes complexes, l’extraction et la coordination, et enfin à la \textit{macrosyntaxe} et à la notion controversée de phrase.
-
+Le volume 1  de \textit{Syntaxe théorique et formelle} se termine ici. Le volume 2 rentrera plus en détail dans la structure syntaxique de surface (sans oublier les structures topologique et syntaxique profonde) en s’intéressant d’abord à la \textit{nanosyntaxe} et à la notion de mot et de catégorie flexionnelle, puis à la \textit{microsyntaxique} et aux catégories lexicales ou parties du discours, aux relation syntaxiques et à deux phénomènes complexes, l’extraction et la coordination, et enfin à la \textit{macrosyntaxe} et à la notion controversée de phrase.\largerpage
 
 \exercices{%
 \exercice{1}~(modifieurs \textit{vs} actants)\ \ Pour les compléments de nom suivants, déterminer s’il s’agit d’un actant ou d’un modifieur.
@@ -1985,7 +1984,7 @@ La formalisation de l’interface sémantique sous la forme d’une correspondan
 \end{figure}
 \end{enumerate}
 
-\corrigé{4} Nous avons déjà présenté cette unité lexicale étrange dans l’\encadref{sec:0.0.7} intitulé \textit{Le lexique : un cabinet de curiosités}. Le paradigme de commutation de \textit{rien} comprend uniquement \textit{quelque chose}, \textit{pas grand-chose}, \textit{que dalle} et les formes interrogatives \textit{que/quoi} et \textit{qu'est-ce que}. Nous considérons donc que ce paradigme forme un phrasème avec le verbe \textsc{comprendre}, phrasème que nous proposons d’appeler \phraseme{comprendre quelque chose}. Ce phrasème doit obligatoirement se combiner avec une négation ou une interrogation et le complément \textsc{rien}, qui est la négation de \textsc{quelque chose}, porte donc juste la valeur négative : négation + \phraseme{comprendre quelque chose} =  \textit{ne rien comprendre}. Cette valeur négative fonctionne comme un modifieur. 
+\pagebreak\corrigé{4} Nous avons déjà présenté cette unité lexicale étrange dans l’\encadref{sec:0.0.7} intitulé \textit{Le lexique : un cabinet de curiosités}. Le paradigme de commutation de \textit{rien} comprend uniquement \textit{quelque chose}, \textit{pas grand-chose}, \textit{que dalle} et les formes interrogatives \textit{que/quoi} et \textit{qu'est-ce que}. Nous considérons donc que ce paradigme forme un phrasème avec le verbe \textsc{comprendre}, phrasème que nous proposons d’appeler \phraseme{comprendre quelque chose}. Ce phrasème doit obligatoirement se combiner avec une négation ou une interrogation et le complément \textsc{rien}, qui est la négation de \textsc{quelque chose}, porte donc juste la valeur négative : négation + \phraseme{comprendre quelque chose} =  \textit{ne rien comprendre}. Cette valeur négative fonctionne comme un modifieur. 
 
 
 \corrigé{5} Les noms temporels indiquent un moment (\textit{la semaine prochaine}) ou une durée (\textit{deux heures}). Dans les exemples donnés, ils sont utilisés comme des modifieurs de verbes. En même temps, ce sont de vrais noms, qui peuvent être utilisés, avec le même sens exactement, dans des positions où on attend un substantif : \textit{\textbf{deux heures} suffiront pour terminer}, \textit{la réunion de \textbf{la semaine prochaine}}. Nous considérons donc qu’il y a des sémantèmes cachés qui se combinent avec les noms temporels et permettent de les utiliser comme modifieurs. Nous nommons ces sémantèmes « moment » et « durée ». On notera que ces sémantèmes sont bi-valents : leur premier argument est le verbe et leur deuxième argument le nom temporel.

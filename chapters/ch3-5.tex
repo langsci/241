@@ -338,7 +338,7 @@ Une représentation de la structure produit que forment ensemble l’ordre liné
     \begin{figure}[H]
     \small
     \caption{Arbre de dépendance ordonné étiqueté\label{fig:noel-conll}}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=0.925]
         \begin{scope}[every node/.style={CircleNode},grow=right]
         \node (root) {} child { node {} child { node{} child { node{} child { node{}  
                             child { node{} child { node{} child { node{} } } } } } } }; 
@@ -454,6 +454,9 @@ Une représentation de la structure produit que forment ensemble l’ordre liné
 \z
     
     Le coréen est une langue à têtes finales : la traduction de (\ref{ex:motives}a) en coréen donne la phrase (\ref{ex:motives}b) où tous les gouverneurs se trouvent à droite de leurs dépendants, comme on peut le voir dans la figure \ref{fig:motives-coreen}. La même phrase traduite en arabe standard possède une structure inversée : comme on peut le voir dans la figure \ref{fig:motives-coreen}, tous les gouverneurs se trouvent devant leurs dépendants, y compris le verbe qui se trouve au tout début de la phrase. L’arabe standard est une langue à têtes initiales, même si, notamment sous l'influence des arabes dialectaux, eux-mêmes influencés par le français et l'anglais, il y a beaucoup exceptions à la règle du placement de la tête en premier. Les notions de «~têtes initiales~» et «~têtes finales~» doivent être vue comme des tendances, plutôt que des règles absolues.
+    
+    Le français est une langue intermédiaire. L’arbre de dépendance linéarisé de la phrase 1 possède des dépendances dans les deux directions, comme le montre la  figure \ref{fig:motives-francais}.
+
 
    
 \begin{figure}[H]
@@ -490,7 +493,6 @@ Une représentation de la structure produit que forment ensemble l’ordre liné
     \end{dependency}
 \end{figure}
 
-    Le français est une langue intermédiaire. L’arbre de dépendance linéarisé de la phrase 1 possède des dépendances dans les deux directions, comme le montre la  figure \ref{fig:motives-francais}.
     
     \begin{figure}[H]
     \caption{Arbre de dépendance de la phrase (\ref{ex:motives}a)}
@@ -509,7 +511,7 @@ Une représentation de la structure produit que forment ensemble l’ordre liné
     \end{dependency}    
 \label{fig:motives-francais}
 \end{figure}
-}
+}\largerpage
 \globe[sec:3.5.13]{Classification des langues selon l’ordre entre V, S et O}{%
     Depuis les travaux de Greenberg, il est d’usage de classer les langues selon l’ordre dominant entre le verbe (V), son sujet (S) et son objet (O). On considère qu’il y a un \textstyleTermesapprof{ordre dominant} lorsqu’un des six ordres possibles entre V, S et O domine significativement les autres. C’est le cas du français où l’ordre SVO domine largement. La place des S et O pronominaux n’est pas prise en compte, car celle-ci diffère parfois de l’ordre dominant, comme en français où la cliticisation de l’objet (\textit{il} \textbf{\textit{la}} \textit{regarde}) entraine un ordre SOV.
 
@@ -533,10 +535,10 @@ Une représentation de la structure produit que forment ensemble l’ordre liné
 
 Nous avons déjà évoquée la projectivité à deux reprises au travers du \hi{test d’insertion} (\sectref{sec:3.2.16} \textit{Tests pour la connexion}) et du \hi{test de recouvrement} (\sectref{sec:3.3.32} éponyme).
 
-La \textstyleTermes{projectivité} est une propriété qui contraint la linéarisation, c’est-à-dire la correspondance entre un arbre de dépendance et un ordre linéaire. Ce n’est ni une propriété de la structure de dépendance, ni une propriété de la structure d’ordre : c’est une \hi{propriété} de la structure produit (voir la \sectref{sec:3.5.9} sur l'\textit{Arbre de dépendance ordonné}), c’est-à-dire de l'\hi{arbre de dépendance ordonné}.
+La \textstyleTermes{projectivité} est une propriété qui contraint la linéarisation, c’est-à-dire la correspondance entre un arbre de dépendance et un ordre linéaire. Ce n’est ni une propriété de la structure de dépendance, ni une propriété de la structure d’ordre : c’est une \hi{propriété} de la structure produit (voir la \sectref{sec:3.5.9} sur l'\textit{Arbre de dépendance ordonné}), c’est-à-dire de l'\hi{arbre de dépendance ordonné}.\pagebreak
 
 
-Intuitivement, un arbre de dépendance dont tous les mots se placent autour de leur gouverneur est dit projectif. Donnons une première définition formelle de la projectivité :
+Intuitivement, un arbre de dépendance dont tous les mots se placent autour de leur gouverneur est dit projectif. Donnons une première définition formelle de la projectivité :\largerpage
 
 \Definition{\textstyleTermes{projectivité (1)}}
 {Un arbre de dépendance ordonné est dit \textstyleTermes{projectif} si chacune de ses \hi{projections maximales} est \hi{continue}, c’est-à-dire forme une portion continue de la chaîne linéaire.}
@@ -570,7 +572,7 @@ L’arbre de dépendance ordonné de la figure \ref{fig:noel-proj}, déjà prés
 
 
 
-La projectivité entraîne une certaine asymétrie entre les deux extrémités d'une dépendance. En effet, si A gouverne B, alors la projection de B sera entièrement d’un des deux côtés de A, tandis que la projection de A pourra très bien avoir des parties à gauche et à droite de B, comme le montre la figure \ref{fig:ABproj}. C’est sur cette asymétrie qu’est basé le test de recouvrement (\sectref{sec:3.3.32} éponyme) : un dépendant de A peut-être au-delà de B, mais l'inverse est plus rare.
+La projectivité entraîne une certaine asymétrie entre les deux extrémités d'une dépendance. En effet, si A gouverne B, alors la projection de B sera entièrement d’un des deux côtés de A, tandis que la projection de A pourra très bien avoir des parties à gauche et à droite de B, comme le montre la figure \ref{fig:ABproj}. C’est sur cette asymétrie qu’est basé le test de recouvrement (\sectref{sec:3.3.32} éponyme) : un dépendant de A peut-être au-delà de B, mais l'inverse est plus rare.\largerpage
 
 
 \begin{figure}
@@ -661,11 +663,13 @@ Comme on le voit sur la figure, la dépendance qui relie \textit{une belle} à l
 La projectivité est en partie énoncée par Nicolas Beauzée dans l’article «~Régime~» de l’\textit{Encyclopédie} publié en \citeyear{Beauzée1765} (voir la discussion dans l’\encadref{sec:3.3.2} \textit{Historique des notions de dépendance et de tête}) : «~Il ne faut jamais rompre l’unité d’un complément total, pour jeter entre ses parties un autre complément du même mot.~», ce qui reviendrait effectivement à ce que le premier complément soit discontinu. Beauzée note également que les langues à ordre libre, qu'il appelle les langues transpositives, peuvent violer la projectivité : «~je crois qu’il est bon de remarquer, que les règles que je viens d’assigner sur l’arrangement de divers compléments, ne peuvent concerner que l’ordre analytique qu’il faut suivre quand on fait la construction d’une phrase, ou l’ordre usuel des langues analogues comme la nôtre. Car pour les langues transpositives, où la terminaison des mots sert à caractériser l’espèce de rapport auquel ils sont employés, la nécessité de marquer ce rapport par la place des mots n’existe plus au même degré.~» La notion de \textit{langue analogue} renvoie ici aux langues ayant un ordre fixe similaire au français et supposé analogue à la pensée (voir l’\encadref{sec:3.5.8} \textit{Mouvement et ordre de base}).
 
 
-\maths[sec:3.5.15]{Projectivité et planarité}{%
+\pagebreak\largerpage\maths[sec:3.5.15]{Projectivité et planarité}{%
     La deuxième définition de la projectivité que nous avons donnée (en termes de coupure) est un cas particulier d’une propriété plus générale des graphes que l’on appelle la \textstyleTermesapprof{planarité}. (Pour la notion de graphe voir l’\encadref{sec:1.2.3} sur \textit{Graphe et arbre.})
    {Un graphe est dit \textstyleTermesapprof{planaire} s’il peut être \hi{dessiné dans un plan} sans qu’\hi{aucunes de ses arêtes ne se coupent}.}
    
     Dans le cas de la projectivité d’un arbre ordonné, on s’intéresse à une propriété qui concerne la relation entre la structure d’arbre et l’ordre linéaire sur les nœuds de l’arbre. Le graphe qui nous intéresse doit donc contenir ces deux structures. Au graphe que forme l’arbre, nous allons ajouter l’ordre linéaire sous la forme d’arêtes entre deux nœuds successifs, ce qui revient à placer les nœuds du graphe sur une ligne dans l’ordre linéaire. Pour prendre totalement en compte la structure hiérarchique de l’arbre, il faut encoder le fait que l’arbre possède un nœud, la racine, qui domine tous les autres. Pour cela, on attache l’arbre par sa racine à un nœud spécial qu’on appelle le nœud à l’infini (noté \textrm{${\infty}$}). Cela revient à placer les nœuds de l’arbre sur un cercle dans l’ordre linéaire avec le nœud à l’infini entre le premier et le dernier nœud. Nous appelons ce graphe le \textstyleTermesapprof{graphe circulaire} pour un arbre linéairement ordonné (voir la figure \ref{fig:noel-circulaire}).
+    
+    Le graphe circulaire d’un arbre projectif a une propriété un peu plus forte que la planarité : il est planaire extérieur. Un graphe est dit \textstyleTermesapprof{planaire extérieur} s’il peut être dessiné avec tous ses nœuds accessibles de l’extérieur et sans qu’aucunes de ses arêtes ne se coupent. On peut montrer que pour qu’un graphe soit planaire extérieur, il faut et il suffit qu’il ne puisse pas être réduit à un graphe particulier qu’on appelle K\textsubscript{4}. La \textstyleTermesapprof{réduction} d’un graphe consiste à \hi{agréger ensemble des nœuds qui sont liés}. C’est une opération importante de notre point de vue, car elle consiste à diminuer la granularité de l'analyse en regardant la structure avec un grain plus grossier (voir la \sectref{sec:3.2.20} sur la \textit{Granularité}). Le graphe K\textsubscript{4} est le graphe complet à 4 nœuds, c’est-à-dire le graphe à 4 nœuds où tous les nœuds sont liés deux à deux. Les deux configurations rejetées par la projectivité sont exactement des sous-graphes K\textsubscript{4} du graphe circulaire, comme le montre la figure \ref{fig:nonproj-K4}.
 
 \begin{figure}[H]
     \caption{Graphe circulaire pour un arbre de dépendance ordonné\label{fig:noel-circulaire}}
@@ -703,11 +707,6 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
           (8) edge[->, bend left] (9);
     \end{tikzpicture}
  \end{figure}
-
-
-    Le graphe circulaire d’un arbre projectif a une propriété un peu plus forte que la planarité : il est planaire extérieur.
-     {Un graphe est dit \textstyleTermesapprof{planaire extérieur} s’il peut être dessiné avec tous ses nœuds accessibles de l’extérieur et sans qu’aucunes de ses arêtes ne se coupent.}
-   On peut montrer que pour qu’un graphe soit planaire extérieur, il faut et il suffit qu’il ne puisse pas être réduit à un graphe particulier qu’on appelle K\textsubscript{4}. La \textstyleTermesapprof{réduction} d’un graphe consiste à \hi{agréger ensemble des nœuds qui sont liés}. C’est une opération importante de notre point de vue, car elle consiste à diminuer la granularité de l'analyse en regardant la structure avec un grain plus grossier (voir la \sectref{sec:3.2.20} sur la \textit{Granularité}). Le graphe K\textsubscript{4} est le graphe complet à 4 nœuds, c’est-à-dire le graphe à 4 nœuds où tous les nœuds sont liés deux à deux. Les deux configurations rejetées par la projectivité sont exactement des sous-graphes K\textsubscript{4} du graphe circulaire, comme le montre la figure \ref{fig:nonproj-K4}.
    
 \begin{figure}[H]
     \captionsetup[sub]{width=.95\linewidth,justification=raggedright}
@@ -755,7 +754,7 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
     \end{subfigure}
   \caption{Équivalence entre K\textsubscript{4} et les configurations non projectives\label{fig:nonproj-K4}}
 \end{figure}
-}
+}\largerpage[3]
 \loupe[sec:3.5.16]{Équivalence des définitions de la projectivité}{%
     On peut donner encore une autre caractérisation de la non-projectivité :
      {un arbre de dépendance ordonné est \textstyleTermesapprof{non projectif} si et seulement s’il contient une dépendance non projective.} {Une \hi{dépendance ordonnée} est \textstyleTermesapprof{non projective} si elle couvre un élément qui n’appartient pas à la projection de la tête de cette dépendance.}
@@ -959,7 +958,7 @@ Une première méthode consiste à considérer des règles d’\hi{ordre des co-
 
 Si l’on regarde maintenant, l’ordre des dépendants à gauche du verbe \textit{prêtera}, on indiquera que le sujet se place avant les clitiques et que le clitique \textit{ne} précède toujours les clitiques datifs (comme \textit{lui}). Si on regarde plus précisément l’ordre des clitiques préverbaux du français, on voit qu’on a toujours \textit{je} < \textit{ne} < \textit{me} < \textit{le} < \textit{lui} < \textit{y} < \textit{en} < verbe : \textit{il me le donne, je le lui donne, il n’y en a pas,} etc. Comme l’ordre entre les clitiques est total, il est plus économique de donner directement l’ordre complet comme nous l’avons fait, que de donner les ordres des co-dépendants deux à deux (étant donné qu’il y a 8 éléments à ordonner, cela nous fait $7\times \nicefrac{8}{2}$, soit 28 couples à ordonner).
 
-La deuxième méthode pour ordonner les co-dépendants consiste donc à donner d’un coup l’ensemble des règles d’ordre concernant un nœud et ses dépendants. Cela peut être fait en considérant que chaque nœud de l’arbre de dépendance ouvre une \hi{boîte ordonnée} avec des positions prévues pour les différents dépendants selon leur nature et leur fonction. Nous appellerons une telle boîte un \textstyleTermes{gabarit topologique} et chacune des cases de la boîte un \textstyleTermes{champ topologique}.
+La deuxième méthode pour ordonner les co-dépendants consiste donc à donner d’un coup l’ensemble des règles d’ordre concernant un nœud et ses dépendants. Cela peut être fait en considérant que chaque nœud de l’arbre de dépendance ouvre une \hi{boîte ordonnée} avec des positions prévues pour les différents dépendants selon leur nature et leur fonction. Nous appellerons une telle boîte un \textstyleTermes{gabarit topologique} et chacune des cases de la boîte un \textstyleTermes{champ topologique}.\largerpage
 
 Le gabarit qu’ouvre un verbe à l’indicatif en français est donné dans la figure \ref{fig:domaine-verbal}. Ce gabarit contient 7 champs préverbaux pour des clitiques (les champs ch-cl-X), un champ initial dont nous avons parlé au début de ce chapitre et qui accueille en général le sujet, un champ final qui accueille les compléments du verbe, un champ pour un verbe subordonné (notamment pour le participe des formes verbales complexes comme \textit{a dormi}) précédé d’un champ adverbial (pour la négation \textit{pas} entre autres) et des champs pré-noyau et post-noyau qui accueillent les éléments détachés à gauche et à droite (voir la partie 6 sur la \textit{Macrosyntaxe}). Les éléments qui viennent se placer dans le gabarit ouvert par le verbe vont former avec lui un constituant topologique, que nous appelons le \textstyleTermes{domaine verbal}.
 
@@ -979,7 +978,7 @@ Le gabarit qu’ouvre un verbe à l’indicatif en français est donné dans la 
 \begin{sloppypar} Les champs possèdent des \textstyleTermes{contraintes d’occupation} diverses. Certains champs ne peuvent recevoir qu’un seul élément, comme les champs clitiques ou le champ initial. D’autres peuvent recevoir plusieurs éléments comme le champ final où les champs pré- et post-noyau. Certains champs sont liés comme le champ initial et le champ clitique sujet qui ne peuvent être remplis tous les deux. (Voir aussi l’\encadref{sec:3.5.20} qui suit).
 \end{sloppypar}
 
-La méthode avec gabarit a l’avantage que les règles d’ordre restent finalement essentiellement des règles d’ordre d’un nœud par rapport à son gouverneur. Mais au lieu d’indiquer simplement si le dépendant va à gauche ou à droite de son dépendant (< ou >), \hi{une règle d’ordre} \hi{indique dans quel champ du gabarit ouvert par son gouverneur va chaque dépendant}. Par exemple :
+La méthode avec gabarit a l’avantage que les règles d’ordre restent finalement essentiellement des règles d’ordre d’un nœud par rapport à son gouverneur. Mais au lieu d’indiquer simplement si le dépendant va à gauche ou à droite de son dépendant (< ou >), \hi{une règle d’ordre} \hi{indique dans quel champ du gabarit ouvert par son gouverneur va chaque dépendant}. Par exemple :\largerpage
 
 \begin{itemize}
 \item Le sujet non clitique peut aller dans le champ initial ; les sujets clitiques ne vont pas dans le champ initial, car à la différence des sujets non-clitiques, ils ne peuvent pas être séparés du verbe par une \hi{insertion} : \textit{Félix, je pense, prêtera son ballon} vs. *\textit{Il, je pense, prêtera son ballon}. En plus, les sujets clitiques déclenchent une \hi{liaison obligatoire} (\textit{elles aiment} [ɛl\textbf{z}ɛm], *[ɛlɛm]), alors qu'un sujet non-clitique n'autorise pas la liaison (\textit{les filles aiment} [lefijɛm], *[lefijzɛm]).
@@ -1357,6 +1356,8 @@ La structure topologique de l'exemple \REF{ex:ballon} est donnée sous la forme 
     \z
     
     Du point de vue du modèle topologique, cela signifie que l’adjectif \textit{haut} n’ouvre pas un domaine adjectival complet lorsqu’il est antéposé, mais un \textstyleTermes{domaine réduit} où ne figure pas le champ final qui accueille normalement les compléments de l’adjectif. Voir la figure \ref{fig:domaine-adj} : le domaine adjectival complet est utilisé à droite du verbe comme en (\ref{ex:mur}d), tandis que le domaine réduit sera utilisé à gauche du verbe comme en (\ref{ex:mur}a) et b et bloque c, puisqu'il n'y aura pas de place pour le complément prépositionnel de l'adjectif.
+    
+    Quant à l’ordre relatif des adjectifs antéposés, évoqué à la \sectref{sec:3.5.26}, il semble aller des \hi{éléments à valeur référentielle} à des \hi{adjectifs qualificatifs}. Ces derniers qualifient le référent, en précisent la nature, tandis que les premiers précisent la nature de la référence elle-même : l’article indique si le référent est connu ou pas, le numéral donne le nombre de référents, des adjectifs comme \textit{seul} ou \textit{autre} permettent de positionner le référent dans l’ensemble des référents potentiels.
 
 \begin{figure}[H]
     \caption{Gabarits pour les domaines adjectivaux}
@@ -1382,8 +1383,6 @@ La structure topologique de l'exemple \REF{ex:ballon} est donnée sous la forme 
     \end{tabular}
     \end{center}
 \end{figure}
-
-    Quant à l’ordre relatif des adjectifs antéposés, évoqué à la \sectref{sec:3.5.26}, il semble aller des \hi{éléments à valeur référentielle} à des \hi{adjectifs qualificatifs}. Ces derniers qualifient le référent, en précisent la nature, tandis que les premiers précisent la nature de la référence elle-même : l’article indique si le référent est connu ou pas, le numéral donne le nombre de référents, des adjectifs comme \textit{seul} ou \textit{autre} permettent de positionner le référent dans l’ensemble des référents potentiels.
 }
 \maths[sec:3.5.28]{Arbre de constituants ordonné}{%
 En définissant la structure topologique dans la \sectref{sec:3.5.26} sur le {\textit{Modèle topologique}}, nous avons introduit rapidement la notion d'arbre de constituants ordonné. Nous allons préciser la nature de cette structure et les modes de représentation associés.
@@ -1407,6 +1406,8 @@ la \hi{représentation traditionnelle} d'un arbre de constituants ordonné, où
 la \hi{structure d'arbre} est \hi{explicite} et
 l'\hi{ordre} est \hi{implicite}, c’est-à-dire qu’il est représenté par la \hi{position relative des nœuds sur l’axe horizontal}, mais n’est pas explicitement encodé par des relations de précédence entre nœuds.
 
+Dans la deuxième représentation, donnée dans la figure \ref{fig:arbre-cellule},  l’\hi{ordre} est \hi{explicite} et la \hi{structure d'arbre} est \hi{implicite} et peut se déduire de la \hi{position relative des constituants sur l’axe vertical}. Les nœuds du graphe représentent les \hi{positions inter-mot} et les constituants sont représentés par des arcs qui relient leur début à leur fin.  Bien que cette représentation soit beaucoup moins usuelle, elle est tout aussi simple et légitime que la représentation traditionnelle.  Cette représentation, où chaque décomposition d'un constituant (chaque connexion vue du point de vue dépendentiel) forme une «~cellule~», sera nommée la \hi{représentation en cellules} d'un arbre de constituants ordonné ou plus simplement un \textstyleTermes{arbre de constituants en cellules}.
+
 \begin{figure}[H]
     \caption{Représentation traditionnelle d'un arbre de constituants ordonné (hiérarchie explicite, ordre implicite)\label{fig:arbre-tradi}}
     \begin{forest}
@@ -1416,11 +1417,6 @@ l'\hi{ordre} est \hi{implicite}, c’est-à-dire qu’il est représenté par la
     ]
     \end{forest}
  \end{figure}
-
-Dans la deuxième représentation, donnée dans la figure \ref{fig:arbre-cellule},
- l’\hi{ordre} est \hi{explicite} et la \hi{structure d'arbre} est \hi{implicite} et peut se déduire de la \hi{position relative des constituants sur l’axe vertical}. Les nœuds du graphe représentent les \hi{positions inter-mot} et les constituants sont représentés par des arcs qui relient leur début à leur fin.
- Bien que cette représentation soit beaucoup moins usuelle, elle est tout aussi simple et légitime que la représentation traditionnelle.
- Cette représentation, où chaque décomposition d'un constituant (chaque connexion vue du point de vue dépendentiel) forme une «~cellule~», sera nommée la \hi{représentation en cellules} d'un arbre de constituants ordonné ou plus simplement un \textstyleTermes{arbre de constituants en cellules}.
 
 \begin{figure}[H]
     \caption{Représentation en cellules d'un arbre de constituants ordonné (hiérarchie implicite, ordre explicite)\label{fig:arbre-cellule}}
@@ -1506,7 +1502,7 @@ Notons qu'il est possible de combiner les deux représentations et d'expliciter 
 
     La troisième critique permet de saisir une différence essentielle entre les \hi{grammaires} dites \hi{syntagmatiques} (\textit{Phrase Structure Grammars} ou PSG) et les grammaires topologiques. Les règles de précédence linéaire des PSG sont des règles de précédence entre constituants, comme par exemple GN < GV. Or le sujet du verbe n’est pas nécessairement un groupe nominal (\textbf{\textit{Qu’il} \textit{vienne}} \textit{me surprendrait ;} \textbf{\textit{Partir maintenant}} \textit{serait plus judicieux)}. Il faut donc distinguer la catégorie et la fonction. On peut remplacer cette règle par Sujet < V. C’est déjà mieux, mais les grammaires topologiques vont encore plus loin. Comme nous l’avons déjà souligné, en français, le sujet n’est pas toujours devant le verbe, mais pour qu’il n’en soit pas ainsi il faut qu’un autre élément vienne occuper sa place. Il ne faut donc pas seulement \hi{déconnecter} la catégorie de la fonction, mais aussi déconnecter la \hi{fonction} de la position linéaire (c'est-à-dire du \hi{champ} dans notre modélisation). Une grammaire topologique décompose la règle Sujet < V en deux règles : 1) il existe un champ préverbal qui doit être rempli par un et un seul élément et 2) le sujet peut occuper le champ préverbal. (Le fait que le sujet occupe occupe généralement le champ préverbal n'est pas dit dans la règle : cela découle du fait que les règles qui placent le sujet dans un autre champ sont très contraintes et donc rarement déclenchées.)
 }
-\section{Projection topologique et émancipation}\label{sec:3.5.30}
+\section{Projection topologique et émancipation}\label{sec:3.5.30}\largerpage
 
 Comme nous venons de le voir, le modèle topologique, en plus d’assurer la linéarisation de l’arbre de dépendance, lui associe un arbre de constituants ordonné, la structure topologique. En cas de \hi{linéarisation projective}, cet arbre est en fait l’\hi{arbre de constituants syntaxiques plat} obtenu à partir des projections maximales des nœuds de l’arbre de dépendance (voir la \sectref{sec:3.4.4} sur \textit{Arbre de constituants plat}).
 
@@ -1558,7 +1554,7 @@ Nous donnons, dans la figure \ref{fig:induit-topo}, l'arbre topologique à parti
 \caption{\label{fig:induit-topo}Arbre de dépendance ordonné et arbre de constituants topologiques induit}
 \end{figure}
 
-Un arbre de dépendance ordonné induit donc deux arbres de constituants avec têtes : un arbre de constituants syntaxiques et un arbre de constituants topologiques. Nous donnons, dans la figure \ref{fig:induit-synt}, l'arbre de constituants syntaxiques de notre exemple.
+Un arbre de dépendance ordonné induit donc deux arbres de constituants avec têtes : un arbre de constituants syntaxiques et un arbre de constituants topologiques. Nous donnons, dans la figure \ref{fig:induit-synt}, l'arbre de constituants syntaxiques de notre exemple.\largerpage
 
 
 \begin{figure}
@@ -1694,13 +1690,13 @@ Donnons quelques exemples de phénomènes dit d'\hi{extraction} :
 \z
 Dans ces exemples, un complément est placé en tête de la proposition principale : un tel complément est dit extrait. La non-projectivité de ces exemples vient du fait que le gouverneur du complément extrait n'est pas le verbe principal, mais un verbe subordonné (\textit{habiter/habitera}).
 
-Nous consacrerons l’entièreté du \chapfuturef{19}  à l’étude des phénomènes d'extraction, notamment lorsqu’ils mettent en jeu des pronoms interrogatifs ou relatifs. L'exemple (\ref{ex:extraction1}a), qui illustre la \textstyleTermes{topicalisation} d’un complément circonstanciel, peut déjà être modélisé avec les outils introduits dans ce chapitre : il s’agit d’une émancipation du complément \textit{l'année prochaine} qui vient se placer dans le champ pré-noyau ouvert par un verbe à l’indicatif. 
+Nous consacrerons l’entièreté du \chapfuturef{19}  à l’étude des phénomènes d'extraction, notamment lorsqu’ils mettent en jeu des pronoms interrogatifs ou relatifs. L'exemple (\ref{ex:extraction1}a), qui illustre la \textstyleTermes{topicalisation} d’un complément circonstanciel, peut déjà être modélisé avec les outils introduits dans ce chapitre : il s’agit d’une émancipation du complément \textit{l'année prochaine} qui vient se placer dans le champ pré-noyau ouvert par un verbe à l’indicatif.\largerpage
 
 \loupe{Émancipation projective}
 {\label{sec:3.5.A}
 Il existe certains cas où, bien que la structure soit projective, on est amené à supposer une émancipation. Nous appelons de tels cas une \textstyleTermes{émancipation projective}. L'émancipation projective est illustrée par des exemples comme (\ref{ex:en}b) ou d, où le complément de nom \textit{de ce film} a été pronominalisé par le pronom relatif \textit{dont} ou le pronom personnel \textit{en}.
 
-\ea\label{ex:en}
+\pagebreak\ea\label{ex:en}
 \ea \textit{La fin \textbf{de ce film} est particulièrement triste.}
 \ex \textit{un film \textbf{dont} la fin est particulièrement triste}
 \ex \textit{un film \textbf{dont} il parait que la fin est particulièrement triste}
@@ -1738,7 +1734,7 @@ Un autre cas d'émancipation projective est illustré par notre analyse de l'ord
 
     La principale différence avec les règles de réécriture est qu’un constituant n’est pas réécrit en une liste de constituants, mais en une liste de champs, auxquels sont assignés des constituants par d’autres règles.
 
-    \tcbsubtitle{Description des champs}
+    \pagebreak\tcbsubtitle{Description des champs}
     Certains champs peuvent ne recevoir qu’un élément (le champ initial du français ou de l’allemand ou les champs clitiques), tandis que d’autres peuvent recevoir un nombre quelconque d’éléments. Certains champs peuvent rester vide, tandis que d’autres ne le peuvent pas.
 
     \tcbsubtitle{Règle de correspondance} Ce sont les règles qui assurent réellement la linéarisation, en indiquant, pour une dépendance donnée \textit{x} \textrm{→} \textit{y}, dans quel champ $f$ peut aller le dépendant \textit{y}. La règle dépend des catégories syntaxiques C\textsubscript{1} et C\textsubscript{2} de \textit{x} et \textit{y} et de la relation syntaxique \textit{r} entre \textit{x} et \textit{y} (c’est-à-dire l’étiquette de la dépendance \textit{x} \textrm{→} \textit{y}). Par défaut, le nœud $y$ se place par rapport à son gouverneur \textit{x} et le champ $f$ est donc l’un des champs du constituant ouvert par \textit{x}.
@@ -1819,7 +1815,7 @@ Un premier niveau de cohésion est le \textstyleTermes{mot} : les syntaxèmes à
 \ea\label{ex:ratp}
 {\itshape
  ah oui non là \hi{{l’itinéraire}  {que je vous indique}}  {hein vous en avez pour cinquante minutes}} (oral, service de renseignement téléphonique)
-\z
+\z\pagebreak
 
 
 
