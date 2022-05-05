@@ -344,16 +344,15 @@ La figure~\ref{fig:vis} récapitule cela en montrant les différences entre morp
                     & \textit{vis} &      &     \\
                     & \textit{viss}&      &  \textit{age}\\
                     & \textit{viss}&(er)  &     \\
-                \textit{dé}~~& \textit{viss}&\textit{(er)1} &     \\
-                \textit{dé}~~& \textit{viss}&\textit{(er)2} &     \\
+       \textit{dé}~~& \textit{viss}&\textit{(er)1} &     \\
+       \textit{dé}~~& \textit{viss}&\textit{(er)2} &     \\
                     & \textit{viss}&      &\textit{é}  \\
      };
    \node [draw, dashed, fit = (vis-1-2) (vis-6-3) (vis-7-2), inner sep=3pt] {};
    \node [draw, inner sep=1pt, fit = (vis-1-2) (vis-2-2)] {};
    \node [draw, inner sep=1pt, fit = (vis-3-2) (vis-3-4)] {};
    \node [draw, inner sep=1pt, fit = (vis-4-2) (vis-4-3)] {};
-   \node [draw, inner sep=1pt, fit = (vis-5-1) (vis-5-2) (vis-5-3)] {};
-   \node [draw, inner sep=1pt, fit = (vis-6-1) (vis-6-2) (vis-6-3)] {};
+   \node [draw, inner sep=1pt, fit = (vis-5-1) (vis-5-2) (vis-5-3) (vis-6-1) (vis-6-2) (vis-6-3)] {};
    \node [draw, inner sep=1pt, fit = (vis-7-2) (vis-7-4)] {};
    \draw [-{Triangle[]}] (vis.south west) -- (vis.south east) node [midway,below] {axe syntagmatique};
    \draw [-{Triangle[]}] (vis.south west) -- (vis.north west) node [very near end,left=2ex,rotate=90] {axe paradigmatique};
@@ -366,7 +365,6 @@ La figure~\ref{fig:vis} récapitule cela en montrant les différences entre morp
      };
 \end{tikzpicture}
 \caption{\label{fig:vis}Découpage paradigmatique du morphème \textit{vis-}}
-\todo[online]{déviss(er)1 and déviss(er)2 must be in the same box}
 \end{figure}
 
 \maths[sec:2.3.16]{Extensions paradigmatique et syntagmatique}{%
@@ -407,27 +405,27 @@ Prenons l’exemple du verbe \textsc{aller} qui est à la fois \hi{polymorphique
 \begin{tikzpicture}
  \graph [grow down, branch right sep=2cm] 
    {
-     {‘se déplacer’, ‘se sentir’, futur/‘\textsc{futur}’}
+     {‘se déplacer’, ‘se sentir’, futur/‘\textsc{futur}’ …}
      -- {ALLER/\textsc{aller} [black,xshift=4cm]}
      -- {al/\textit{/al/-}, v/\textit{/v/-}, i/\textit{/i/-}, aj/\textit{\strut/aj/-}
      };
-     {[grow right] futur -!- dots/{\strut …}};
+%      {[grow right] futur -!- dots/{\strut …}};
    };
 \end{tikzpicture}
 \caption{Signème\label{fig:2.3-signeme}}
 \end{figure}
-\todo[online]{In the 6 figures, the "…" should be closer to 'FUTUR' and the figure centered in the page on ALLER if possible}
+\todo[inline]{In the 6 figures, the "…" should be closer to 'FUTUR' and the figure centered in the page on ALLER if possible}
 
 \begin{figure}
 \begin{tikzpicture}
  \graph [grow down, branch right sep=2cm,edges=black!20,nodes=black!20] 
    {
-     {‘se déplacer’ [black], ‘se sentir’, futur/‘\textsc{futur}’}
+     {‘se déplacer’ [black], ‘se sentir’, futur/‘\textsc{futur}’ …}
      -- {ALLER/\textsc{aller} [black,xshift=4cm]}
      -- {al/\textit{/al/-}, v/\textit{/v/-}, i/\textit{/i/-} [black], aj/\textit{\strut/aj/-}
      };
      {[edges=black]‘se déplacer’ -- ALLER -- i};
-     {[grow right] futur -!- dots/{\strut …}};
+%      {[grow right] futur -!- dots/{\strut …}};
    };
 \end{tikzpicture}
 \caption{Signe\label{fig:2.3-signe}}
@@ -442,12 +440,12 @@ On peut découper le signème selon les formes ou selons les sens. Le choix d'un
 \begin{tikzpicture}
  \graph [grow down, branch right sep=2cm,edges=black!20,nodes=black!20] 
    {
-     {‘se déplacer’ [black], ‘se sentir’ [black], futur/‘\textsc{futur}’ [black]}
+     {‘se déplacer’ [black], ‘se sentir’ [black], futur/‘\textsc{futur}’ …[black]}
      -- {ALLER/\textsc{aller} [black,xshift=4cm]}
      -- {al/\textit{/al/-}, v/\textit{/v/-} [black], i/\textit{/i/-} , aj/\textit{\strut/aj/-}
      };
      {[edges=black] {‘se déplacer’, ‘se sentir’, futur} -- ALLER -- v};
-     {[grow right] futur -!- dots/{\strut …} [black]};
+%      {[grow right] futur -!- dots/{\strut …} [black]};
    };
 \end{tikzpicture}
     \caption{(Allo)morphe\label{fig:2.3-allomorphe}}             
@@ -457,12 +455,12 @@ On peut découper le signème selon les formes ou selons les sens. Le choix d'un
 \begin{tikzpicture}
  \graph [grow down, branch right sep=2cm,edges=black!20,nodes=black!20] 
    {
-     {‘se déplacer’, ‘se sentir’ [black], futur/‘\textsc{futur}’}
+     {‘se déplacer’, ‘se sentir’ [black], futur/‘\textsc{futur}’ …}
      -- {ALLER/\textsc{aller} [black,xshift=4cm]}
      -- {[nodes=black] al/\textit{/al/-}, v/\textit{/v/-}, i/\textit{/i/-} , aj/\textit{\strut/aj/-}
      };
      {[edges=black] {‘se sentir’} -- ALLER -- {al, v, i , aj}};
-     {[grow right] futur -!- dots/{\strut …}};
+%      {[grow right] futur -!- dots/{\strut …}};
    };
 \end{tikzpicture}
     \caption{Acception\label{fig:2.3-acception}}
@@ -474,11 +472,11 @@ Il devient alors possible de voir le syntaxème comme un niveau d’articulation
 \begin{tikzpicture}
  \graph [grow down, branch right sep=2cm,edges=black!20,nodes=black!20] 
    {
-     {‘se déplacer’, ‘se sentir’, futur/‘\textsc{futur}’}
+     {‘se déplacer’, ‘se sentir’, futur/‘\textsc{futur}’ …}
      -- {ALLER/\textsc{aller} [black,xshift=4cm]}
      -- {al/\textit{/al/-} [black], v/\textit{/v/-} [black], i/\textit{/i/-} [black], aj/\textit{\strut/aj/-} [black]};
      {[edges=black] ALLER -- {al/\textit{/al/-} [black], v/\textit{/v/-} [black], i/\textit{/i/-} [black], aj/\textit{\strut/aj/-} [black]}};
-     {[grow right] futur -!- dots/{\strut …}};
+%      {[grow right] futur -!- dots/{\strut …}};
    };
 \end{tikzpicture}
 \caption{Morphème\label{fig:2.3-morpheme}}
@@ -488,11 +486,11 @@ Il devient alors possible de voir le syntaxème comme un niveau d’articulation
 \begin{tikzpicture}
  \graph [grow down, branch right sep=2cm,edges=black!20,nodes=black!20] 
    {
-     {‘se déplacer’, ‘se sentir’ [black], futur/‘\textsc{futur}’}
+     {‘se déplacer’, ‘se sentir’ [black], futur/‘\textsc{futur}’ …}
      -- {ALLER/\textsc{aller} [black,xshift=4cm]}
      -- {al/\textit{/al/-}, v/\textit{/v/-}, i/\textit{/i/-}, aj/\textit{\strut/aj/-}};
      {[edges=black] ALLER -- {‘se sentir’ [black]}};
-     {[grow right] futur -!- dots/{\strut …}};
+%      {[grow right] futur -!- dots/{\strut …}};
    };
 \end{tikzpicture}
 \caption{Sémantème\label{fig:2.3-semanteme}}    
