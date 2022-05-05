@@ -2,9 +2,10 @@
   [output=book,
    booklanguage=french, 
    multiauthors,
-   colorlinks,
-   citecolor=brown,
-   drafmode,
+   tblseight
+%    colorlinks,
+%    citecolor=brown,
+%    draftmode,
 %  showindex,
   ]{langscibook}
 
@@ -27,7 +28,10 @@
 
 % % \listoftodos
 \maketitle
-\frontmatter
+\frontmatter\cleardoublepage
+     \thispagestyle{empty}\vspace*{\fill}
+     \includegraphics[width=\textwidth]{figures/graphs-collection.pdf}
+     \vspace*{\fill}\clearpage
 \tableofcontents
 \newpage\tcblistof[\chapter*]{encadre}{Table des encadrés}
 \mainmatter
@@ -37,20 +41,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \include{chapters/introduction}
-
+% 
 \part{Modéliser la langue}
 \include{chapters/ch1-0}
 \include{chapters/ch1-1}
 \include{chapters/ch1-2}
 \include{chapters/ch1-3}
 
-\part{Les unités de la langue~:\\Les trois composantes\\du signe linguistique}\label{sec:2}
+\part[Les unités de la langue~: Les trois composantes du signe linguistique]
+     {Les unités de la langue~:\\Les trois composantes\\du signe linguistique}\label{sec:2}
 \include{chapters/ch2-0}
 \include{chapters/ch2-1}
 \include{chapters/ch2-2}
 \include{chapters/ch2-3}
 
-\part{Structures syntaxiques et topologique~:\\Comment les unités se combinent}\label{sec:3}
+\part[Structures syntaxiques et topologique~: Comment les unités se combinent]
+     {Structures syntaxiques et topologique~:\\Comment les unités se combinent}\label{sec:3}
 \include{chapters/ch3-0}
 \include{chapters/ch3-1}
 \include{chapters/ch3-2}
