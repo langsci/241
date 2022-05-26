@@ -4,11 +4,11 @@
 
 Les arbres de dépendance sont rejetés par certains linguistes sous prétexte qu’ils lient des mots, alors que les relations mettent aussi en jeu des groupes. C’est là une interprétation très réductrice des arbres de dépendances. Nous avons déjà répété à plusieurs reprises que chaque connexion ou dépendance couvre en fait un \hi{ensemble de combinaisons équivalentes} (voir la \sectref{sec:3.2.14} \textit{La connexion et ses instances}). Nous allons montrer dans ce chapitre que les arbres de dépendance induisent naturellement des structures de constituants et qu’inversement, une structure de constituants peut permettre de récupérer une structure de dépendance. Les deux approches sont à notre avis complémentaires et l’analyse d’une phrase complexe nécessite généralement d’\hi{identifier des unités} et de les décomposer (approche de type constituance) autant que de chercher à \hi{lier entre elles des unités} déjà identifiées (approche de type dépendance).
 
-Notons encore que nous introduisons, dans ce chapitre, \hi{deux types d’arbres} \hi{de constituants}, qu’il est parfois difficile de distinguer, car ils utilisent exactement le même formalisme de représentation. Ces deux arbres, l’\textstyleTermes{arbre de constituants plat} (\sectref{sec:3.4.4}) et l’\textstyleTermes{arbre de constituants binaire} (\sectref{sec:3.4.14}), sont définis selon des principes différents et la correspondance avec les structures de dépendance permet de mieux comprendre ce qui les distingue. D’autres structures, équivalentes à l’un ou l’autre de ces arbres de constituants, sont également introduites.
+Notons encore que nous introduisons, dans ce chapitre, \hi{deux types d’arbres} \hi{de constituants}, qu’il est parfois difficile de distinguer, car ils utilisent exactement le même formalisme de représentation. Ces deux types d'arbres, l’\textstyleTermes{arbre de constituants plat} (\sectref{sec:3.4.4}) et l’\textstyleTermes{arbre de constituants binaire} (\sectref{sec:3.4.14}), sont définis selon des principes différents et la correspondance avec les structures de dépendance permet de mieux comprendre ce qui les distingue. D’autres structures, équivalentes à l’un ou l’autre de ces arbres de constituants, sont également introduites dans ce chapitre.
 
 \section{ Arbre à la Beauzée-Gladkij}\label{sec:3.4.1}
 
-Reprenons l’exemple introduit à la \sectref{sec:3.3.30} \textit{Dominance et projections maximales} :
+Reprenons l’exemple introduit à la \sectref{sec:3.3.30} sur \textit{Dominance et projections maximales} :
 
 \ea\label{ex:laponie2} \textit{Beaucoup de gens aimeraient passer Noël en Laponie.} \z
 
@@ -29,9 +29,9 @@ Nous donnons à nouveau son arbre de dépendance dans la figure \ref{fig:laponie
 
 \end{figure}
 
-Dans un arbre de dépendance, les dépendances sont représentées par des \hi{liens entre des mots}. Ces liens, qui suggèrent la combinaison entre  le mot gouverneur et le mot dépendant, \hi{ne sont qu'une des instances de la dépendance}, qui en tant que connexion hiérarchisée représente un ensemble de combinaisons (voir la \sectref{sec:3.2.14} sur \textit{La connexion et ses instances}). Parmi les instances de la dépendance, il y en a une autre qui est importante, la \hi{combinaison entre le mot gouverneur et la projection maximale du mot dépendant} (voir la \sectref{sec:3.3.30} sur \textit{Dominance et projections maximales} pour la définition de la projection, ainsi que l’\encadref{sec:3.3.31}).
+Dans un arbre de dépendance, les dépendances sont représentées par des \hi{liens entre des mots}. Ces liens, qui suggèrent la combinaison entre  le mot gouverneur et le mot dépendant, \hi{ne sont qu'une des instances de la dépendance}, qui en tant que connexion hiérarchisée représente un ensemble de combinaisons (voir la \sectref{sec:3.2.14} sur \textit{La connexion et ses instances}). Parmi les instances de la dépendance, il y en a une autre qui est importante, la \hi{combinaison entre le mot gouverneur et la projection maximale du mot dépendant} (voir la \sectref{sec:3.3.30} sur \textit{Dominance et projections maximales} pour la définition de la projection, ainsi que l’\encadref{sec:3.3.31} sur \textit{Dépendance, dominance et transitivité}).
 
-Dans notre exemple, \textit{aimeraient} a pour dépendant \textit{beaucoup} et \textit{passer}. Mais qui \textit{aimeraient passer Noël en Laponie} ? \textit{Beaucoup de gens.} Et ce que \textit{beaucoup de gens aimeraient}, ce n’est pas juste \textit{passer}, mais bien \textit{passer Noël en Laponie}. Ainsi les deux dépendances qui partent de \textit{aimeraient} doivent-elles être vues avant tout comme des dépendances vers les groupes \textit{beaucoup de gens} et \textit{passer Noël en Laponie}, comme illustré par la figure \ref{fig:laponie-groupe}.
+Dans notre exemple, \textit{aimeraient} a pour dépendant \textit{beaucoup} et \textit{passer}. Mais \textit{qui} {aimeraient passer Noël en Laponie} ? \textit{Beaucoup de gens.} Et \textit{ce que} {beaucoup de gens aimeraient}, ce n’est pas juste \textit{passer}, mais bien \textit{passer Noël en Laponie}. Ainsi les deux dépendances qui partent de \textit{aimeraient} doivent-elles être vues avant tout comme des dépendances vers les groupes \textit{beaucoup de gens} et \textit{passer Noël en Laponie}, comme illustré par la figure \ref{fig:laponie-groupe}.
 
 \begin{figure}
 \begin{tikzpicture}[>={Triangle[]}]
@@ -47,7 +47,7 @@ Dans notre exemple, \textit{aimeraient} a pour dépendant \textit{beaucoup} et \
 
 Cette \hi{double interprétation du dépendant}, \hi{comme mot et comme groupe}, est déjà bien dégagée par Nicolas Beauzée dans l’article \textit{Régime} de l’Encyclopédie de \citeyear{Beauzée1765} (voir l’\encadref{sec:3.3.2} sur l’\textit{Historique des notions de dépendance et de tête}). Elle est aussi sous-jacente chez Lucien Tesnière, qui considère le «~nœud~» tantôt comme un mot, tantôt comme un groupe. Dans les stemmas, il instancie les nœuds par des mots et définit la dépendance comme une relation entre mots («~dans la phrase \textit{mon ami parle}, \textit{mon} dépend de \textit{ami}, qui dépend à son tour de \textit{parle}~» \citep[chapitre 2]{tesniere1959elements}. Mais il définit pourtant le nœud «~comme l’ensemble constitué par le régissant et par tous les subordonnés qui, à un degré quelconque directement ou indirectement, dépendent de lui et qu’il noue ainsi en quelque sorte en un seul faisceau~» \citep[chapitre 3]{tesniere1959elements}.
  
-Cette ambivalence du dépendant trouve sa première interprétation graphique avec la représentation proposée par Aleksej Gladkij en \citeyear{gladkij1968describing}, où les projections sont explicites (voir figure \ref{fig:laponie-gladkij}).
+Cette ambivalence du dépendant trouve sa première interprétation graphique avec la représentation proposée par Aleksej Gladkij en \citeyear{gladkij1968describing}, où les projections sont explicites (voir la figure \ref{fig:laponie-gladkij}).
 
 \begin{figure}
 \begin{tikzpicture}[
@@ -108,12 +108,12 @@ L’arbre de Gladkij induit lui-même une nouvelle structure. Oublions les dépe
 \caption{\label{fig:laponie-box}Emboîtement (de constituants majeurs)}
 \end{figure}
 
-Il est d’usage d’appeler les unités dans une telle structure les constituants (voir l’\encadref{sec:3.4.3} sur \textit{Le terme} constituant).
+Il est d’usage d’appeler les unités dans une telle structure les constituants (voir l’\encadref{sec:3.4.3} sur \textit{Le terme constituant}).
 
 \Definition{\textstyleTermes{structure de constituants}, \textstyleTermes{constituant}, \textstyleTermes{constituant majeur}}
 {Une structure représentant un emboîtement d'unités syntaxiques est appelée une \textstyleTermes{structure de constituants}. Les unités considérées dans une telle structure sont appelées les \textstyleTermes{constituants}. Les constituants qui correspondent aux \hi{projections maximales} sont appelés les \textstyleTermes{constituants majeurs}.}
 
-L'emboîtement de la figure \ref{fig:laponie-box} peut être représenté sous la forme d’un \hi{parenthésage}.
+L'emboîtement de la figure \ref{fig:laponie-box} peut être représenté sous la forme d’un \hi{parenthésage}. Voir la figure \ref{fig:laponie-parenthese}, où nous alternons deux types de parenthèses pour des raisons de lisibilité.
 
 \begin{figure}
      ( [ \textit{beaucoup} ( \textit{de} [ \textit{gens} ] ) ] \textit{aimeraient} [ \textit{passer} ( \textit{Noël} ) ( \textit{en} [ \textit{Laponie} ] ) ] )
@@ -123,7 +123,7 @@ L'emboîtement de la figure \ref{fig:laponie-box} peut être représenté sous l
 
 Notons néanmoins que le parenthésage ne peut être défini que sur une suite ordonnée d’éléments. Bien que nous ayons représenté l’emboîtement ci-dessus en remettant les mots dans l’ordre de la phrase, nous ne nous intéressons pas à l’ordre linéaire pour l’instant et un emboîtement de constituants peut être considéré indépendamment de l’ordre des mots.
 
-Notre structure de constituants peut encore être représentée d’une autre façon : sous la forme d’un \hi{arbre} (voir l'\encadref{sec:1.2.3} \textit{Graphe et arbre}), que nous appellerons l’\textstyleTermes{arbre de constituants plat}, car il ne contient que les constituants majeurs et il est donc \hi{le plus plat des arbres de constituants que l’on peut considérer}. Nous les représentons selon l’usage avec les mots dans l’ordre linéaire, mais \hi{nous ne nous intéressons} pour l’instant \hi{qu’à} \hi{la structure d’arbre}, c’est-à-dire la structure hiérarchique définie par l’arbre (l’ordre sera considéré au chapitre suivant, voir notamment l’\encadref{sec:3.5.28} sur l'\textit{Arbre de constituants ordonné}).
+Notre structure de constituants peut encore être représentée d’une autre façon : sous la forme d’un \hi{arbre} (voir l'\encadref{sec:1.2.3} \textit{Graphe et arbre}), que nous appellerons l’\textstyleTermes{arbre de constituants plat}, car il ne contient que les constituants majeurs et il est donc \hi{le plus plat des arbres de constituants que l’on peut considérer}. Nous les représentons selon l’usage avec les mots dans l’ordre linéaire, mais \hi{nous ne nous intéressons} pour l’instant \hi{qu’à} \hi{la structure d’arbre}, c’est-à-dire la structure hiérarchique définie par l’arbre (l’ordre linéaire sera considéré au chapitre suivant, voir notamment l’\encadref{sec:3.5.28} sur l'\textit{Arbre de constituants ordonné}). Dans la figure \ref{fig:laponie-plat-box}, chaque constituant, qui était représenté par une boîte dans la figure \ref{fig:laponie-box}, est ici représenté par le symbole {\Boite}. Les liens entre ces boîtes et les nœuds qui en dépendent représentent les relations d'emboîtement, encore appelée \terme{relations partie-tout}.
 
 \begin{figure}
 \begin{forest} for tree={font=\itshape,fit=band}
@@ -143,13 +143,13 @@ Notre structure de constituants peut encore être représentée d’une autre fa
     ]
  ]
 \end{forest}
-\caption{Arbre de constituants plat}
+\caption{Arbre de constituants plat\label{fig:laponie-plat-box}}
 \end{figure}
 
-C’est le mathématicien Yves Lecerf, qui a le premier construit un tel arbre, en \citeyear{lecerf1960programme}, immédiatement après la publication de l’ouvrage de Tesnière en \citeyear{tesniere1959elements}, et qui a établi l’équivalence entre les arbres de dépendance et cette sous-famille d’arbres de constituants. Il est facile de voir que l’arbre de constituants plat est équivalent à l’arbre de Beauzée-Gladkij : chaque nœud étiqueté d’un {\Boite} représente une boîte, dont les constituants sont les fils dans l’arbre. Les branches de cet arbre sont donc à lire comme des \textstyleTermes{relations partie-tout} et non plus comme des relations de dépendance.
+C’est le mathématicien Yves Lecerf, qui a le premier construit un tel arbre, en \citeyear{lecerf1960programme}, immédiatement après la publication de l’ouvrage de Tesnière en \citeyear{tesniere1959elements}, et qui a établi l’équivalence entre les arbres de dépendance et cette sous-famille d’arbres de constituants. Il est facile de voir que l’arbre de constituants plat est équivalent à l’arbre de Beauzée-Gladkij.
 
 \chevalier[sec:3.4.3]{Le terme \textit{constituant}}{%
-    Le terme \textit{constituant} a été introduit par Leonard Bloomfield en \citeyear{bloomfield1933language} dans son ouvrage \textit{Language}. Bloomfield s’intéresse à la décomposition des unités et il utilise le terme pour désigner les \textstyleTermes{constituants immédiats}  d’une unité (voir la \sectref{sec:3.2.25} \textit{Analyse en constituants immédiats}). Au départ, le terme est donc prédicatif : un constituant est toujours \hi{le constituant immédiat d’une} \hi{autre unité} (il \hi{constitue} une partie de cette unité). Ensuite, le terme a été utilisé pour désigner l’ensemble des unités obtenues par l’analyse en constituants immédiats. Le terme n’est plus prédicatif : \hi{un constituant est devenu un type d’unité}. C’est dans ce dernier emploi que nous utilisons le terme constituant. Nous considérons plusieurs types de constituants : les constituants majeurs, qui sont les projections maximales (voir la \sectref{sec:3.4.2}), auxquels s’ajoutent des constituants intermédiaires obtenus par l’analyse en constituants immédiats (voir la \sectref{sec:3.4.14} \textit{Arbre de constituants binaire}).
+    Le terme \textit{constituant} a été introduit par Leonard Bloomfield en \citeyear{bloomfield1933language} dans son ouvrage \textit{Language}. Bloomfield s’intéresse à la décomposition des unités et il utilise le terme pour désigner les \textstyleTermes{constituants immédiats}  d’une unité (voir la \sectref{sec:3.2.25} \textit{Analyse en constituants immédiats}). Au départ, le terme est donc prédicatif : un constituant est toujours \hi{le constituant immédiat d’une} \hi{autre unité} (il \hi{constitue} une partie de cette unité). Ensuite, le terme a été utilisé pour désigner l’ensemble des unités obtenues par l’analyse en constituants immédiats. Le terme n’est alors plus prédicatif : \hi{un constituant est un type d’unité}. C’est dans ce dernier emploi que nous utilisons le terme \textit{constituant}. Nous considérons plusieurs types de constituants : les constituants majeurs, qui sont les projections maximales (voir la \sectref{sec:3.4.2}), auxquels s’ajoutent des constituants intermédiaires obtenus par l’analyse en constituants immédiats (voir la \sectref{sec:3.4.14} sur l'\textit{Arbre de constituants binaire}).
 
     La conséquence de ce choix terminologique est que, pour désigner les unités qui résultent de la décomposition d’un constituant C, on parle aujourd'hui de \textstyleTermes{sous-constituants} de C (et non plus de constituants immédiats de C).
 }
@@ -289,21 +289,21 @@ A chaque étape, on a une unité U à décomposer. À la première étape, il s�
 
 Illustrons le procédé avec l’exemple \REF{ex:laponie2} de la \sectref{sec:3.4.1} utilisé tout au long de ce chapitre.
 
-On repère la tête de cette phrase par les critères exposés au chapitre précédent et notamment dans la \sectref{sec:3.3.8} : il s’agit de l’unique forme verbale finie, \textit{aimeraient}. Les deux plus grandes unités syntaxiques, une fois ce verbe retiré, sont alors \textit{beaucoup de gens} et \textit{passer Noël en Laponie}. Ces unités syntaxiques peuvent être repérées grâce aux critères d’autonomisabilité illocutoire (\sectref{sec:3.2.11} \textit{Unité syntaxique autonomisable}) : elles forment des unités illocutoirement autonomisables dont le signifié est équivalent à celui qu’elles ont dans la phrase. Nous verrons dans les sections suivantes de nouveaux critères permettant d’identifier les constituants majeurs.
+On repère la tête de cette phrase par les critères exposés au chapitre précédent et notamment dans la \sectref{sec:3.3.8} : il s’agit de l’unique forme verbale finie, \textit{aimeraient}. Les deux plus grandes unités syntaxiques, une fois ce verbe retiré, sont alors \textit{beaucoup de gens} et \textit{passer Noël en Laponie}. Ces unités syntaxiques peuvent être repérées grâce aux critères d’autonomisabilité illocutoire (voir la \sectref{sec:3.2.11} sur l'\textit{Unité syntaxique autonomisable}) : elles forment des unités illocutoirement autonomisables dont le signifié est équivalent à celui qu’elles ont dans la phrase. Nous verrons dans les sections suivantes de nouveaux critères permettant d’identifier les constituants majeurs.
 
 Cette première étape nous donne la décomposition suivante :
 
 \ea
-   ( [ \textit{beaucoup de gens} [ \textit{aimeraient} [ \textit{passer Noël en Laponie} ] )
+   ( [ \textit{beaucoup de gens} ] \textit{aimeraient} [ \textit{passer Noël en Laponie} ] )
 \z
 
-On peut ensuite décomposer chacune des deux unités obtenues de la même façon. La tête de \textit{passer Noël en Laponie} est la forme verbale \textit{passer}. On voit que \textit{Nöel} et \textit{en Laponie} forment deux unités, notamment en appliquant le critère de déplacement (\sectref{sec:3.2.16} \textit{Tests pour la connexion}) : \textit{passer en Laponie Noël} est possible (et encore meilleur si on alourdit le deuxième constituant : \textit{passer en Laponie un agréable Noël}). La tête de \textit{beaucoup de gens} est \textit{beaucoup} (critère rectionnel). On a donc la décomposition suivante :
+On peut ensuite décomposer chacune des deux unités obtenues de la même façon. La tête de \textit{passer Noël en Laponie} est la forme verbale \textit{passer}. On voit que \textit{Nöel} et \textit{en Laponie} forment deux unités, notamment en appliquant le critère de déplacement (voir la \sectref{sec:3.2.16} sur les \textit{Tests pour la connexion}) : \textit{passer en Laponie Noël} est possible (et encore meilleur si on alourdit le deuxième constituant : \textit{passer en Laponie un agréable Noël}). La tête de \textit{beaucoup de gens} est \textit{beaucoup} (Critère rectionnel). On a donc la décomposition suivante :
 
 \ea
       ( [ \textit{beaucoup}  ( \textit{de gens} ) ]  \textit{aimeraient}  [ \textit{passer}  ( \textit{Noël} ) ( \textit{en Laponie} ) ] )
 \z
 
-Encore une étape et nous aurons obtenu le parenthésage en constituants majeurs complet (voir figure \ref{fig:laponie-parenthese}) et donc l’arbre de constituants plat, à partir duquel nous savons construire l’arbre de dépendance, comme nous l’avons montré à la section précédente.
+Encore une étape et nous aurons obtenu le parenthésage complet en constituants majeurs  de figure \ref{fig:laponie-parenthese} et donc l’arbre de constituants plat, à partir duquel nous savons construire l’arbre de dépendance, comme nous l’avons montré à la section précédente.
 
 \maths[sec:3.4.7]{Décomposition récursive}{%
     Le procédé de décomposition que nous venons de présenter est dit \textstyleTermesapprof{récursif}. Le terme a un sens similaire à celui que peut avoir \textit{recours} dans \textit{faire un recours}, c’est-à-dire ‘demander à ce que la procédure recommence’). La particularité d’un \textstyleTermesapprof{processus récursif} est que, à la fin de chaque \textstyleTermesapprof{étape}, on se trouve avec une ou des situations similaires à celle qu’on avait au début de l’étape. Dans notre cas, chaque étape commence par un constituant à décomposer et se termine avec de nouveaux constituants à décomposer.
@@ -312,7 +312,7 @@ Encore une étape et nous aurons obtenu le parenthésage en constituants majeurs
 
     Cela est très net dans des langues comme l’anglais ou le français où la structure d’une proposition subordonnée est exactement la même que celle de la phrase complète. Cela est un peu moins vrai dans d’autres langues comme le coréen, où le verbe principal porte des marques spécifiques (voir la \sectref{sec:3.3.9} sur la \textit{Tête d’un énoncé dans une langue inconnue}), ou comme l’allemand, où l’ordre des mots dans une subordonnée est différent de celui de la principale (voir la \sectref{sec:3.5.37} sur la \textit{Structure topologique de l’allemand}). Néanmoins, même dans ces langues, la structure d’un groupe substantif reste exactement la même qu’il dépende du verbe principal ou du verbe d’une relative se trouvant elle-même dans une groupe substantif.
 
-    Il a été avancé que certaines langues pourraient ne pas avoir de récursivité, comme le pirahã, parlé dans la forêt amazonienne. Cette langue n’aurait pas de subordination et il ne pourrait y avoir une structure enchâssée dans une structure identique (voir les \textit{Lectures additionnelles} en fin de chapitre).
+    Il a été avancé que certaines langues pourraient ne pas avoir de récursivité, comme le pirahã, parlé dans la forêt amazonienne. Cette langue n’aurait pas de subordination et il pourrait ne pas y avoir une structure enchâssée dans une structure identique (voir les \textit{Lectures additionnelles} en fin de chapitre).
 }
 \section{Combinaison \textit{vs} décomposition}\label{sec:3.4.8}
 
@@ -325,7 +325,7 @@ La deuxième famille de méthodes comprend des \hi{méthodes descendantes}, com\
 Les deux familles de méthodes conduisent à la même analyse structurelle, bien qu’elles suggèrent des modes de représentations différents. Nous allons continuer à étudier cette question en détail. Nous verrons que les méthodes descendantes permettent d’introduire de nouveaux critères pour le calcul de la structure syntaxique, qu’on appelle traditionnellement les \textstyleTermes{tests de constituance}, puisqu’ils sont supposés caractériser les constituants. Nous proposerons à la fin de ce chapitre de combiner les deux approches pour tirer le meilleur de chacune.\largerpage
 
 \loupe[sec:3.4.9]{Les limites des méthodes par décomposition}{%
-    Nous avons vu dans la \sectref{sec:3.2.22} \textit{De la fragmentation à la connexion} qu’on pouvait construire la structure de connexion \hi{à partir de n’importe} \hi{quelle fragmentation} de l’énoncé en raffinant ensuite les connexions en s’appuyant sur d’autres fragmentations. Rappelons qu’une fragmentation est une décomposition récursive de l’énoncé, laquelle s’apparente à une analyse en constituants immédiats (ACI), si ce n’est que les fragments ne sont pas nécessairement les constituants considérés l'ACI traditionnelle.
+    Nous avons vu, dans la \sectref{sec:3.2.22} \textit{De la fragmentation à la connexion}, qu’on pouvait construire la structure de connexion \hi{à partir de n’importe} \hi{quelle fragmentation} de l’énoncé en raffinant ensuite les connexions en s’appuyant sur d’autres fragmentations. Rappelons qu’une fragmentation est une décomposition récursive de l’énoncé, laquelle s’apparente à une analyse en constituants immédiats (ACI), si ce n’est que les fragments ne sont pas nécessairement les constituants considérés par l'ACI traditionnelle.
 
     Dans la méthode de Lecerf, nous sommes partis d'une décomposition particulière guidée par la notion de tête, puisque, à chaque étape, nous identifions la tête avant de décomposer une unité. Nous souhaitons montrer ici que le calcul de l'arbre de dépendance par agrégation des constituants avec leur tête ne fonctionne pas pour n'importe quelle décomposition.
     
@@ -411,7 +411,7 @@ Les deux familles de méthodes conduisent à la même analyse structurelle, bien
     \caption{\label{fig:theo2} Une autre fragmentation pour \REF{ex:theo} et l'arbre de dépendance correspondant}
     \end{figure}\pagebreak
 
-    En partant de cet arbre de constituants avec têtes (il s’agit bien formellement d’une structure d’arbre de constituants avec têtes), il est impossible d’attribuer comme précédemment le sujet \textit{Léa} à l’auxiliaire et l’objet \textit{Théo} au verbe lexical \textit{invité}, et ceci quels que soient les choix de tête que nous ferons ; nécessairement, l’élément du syntagme \textit{a invité} qui sera choisi comme tête héritera de tous les dépendants.
+    En partant de cet arbre de constituants avec têtes (il s’agit bien formellement d’une structure d’arbre de constituants avec têtes), il est impossible d’attribuer comme précédemment le sujet \textit{Léa} à l’auxiliaire et l’objet \textit{Théo} au verbe lexical \textit{invité}, et ceci quels que soient les choix de tête que nous fassions ; nécessairement, l’élément du syntagme \textit{a invité} qui sera choisi comme tête héritera de tous les dépendants.
 
     Cet exemple montre que la méthode de Lecerf aboutit à l’analyse en dépendance souhaitée uniquement si l’on part de certaines fragmentations. Or la deuxième fragmentation que nous avons considérée est également une fragmentation compatible avec notre premier arbre de dépendance, où \textit{a} et \textit{invité} sont également connectés et forment donc un syntagme. Ne pas considérer cette deuxième fragmentation suppose d’avoir des critères pour privilégier la décomposition \textit{a invité Théo} en \textit{a} \textrm{${\oplus}$} \textit{invité Théo} plutôt qu’en \textit{a invité} \textrm{${\oplus}$} \textit{Théo}. Nous ne pensons pas que cela soit possible sans un raisonnement complexe qui passe nécessairement par la prise en compte de la notion de tête. Nous y reviendrons dans l’\encadref{sec:3.4.13} directement consacré à la question «~\textit{Pas de structure de constituants sans la notion de tête} ?~». Rappelons que nous avons une autre méthode par décomposition qui consiste à raffiner l’arbre de fragmentation et qui aboutit au bon arbre de dépendance quelle que soit la fragmentation dont on part (voir la \sectref{sec:3.2.22} \textit{De la fragmentation à la connexion}).
 }
@@ -421,7 +421,7 @@ Nous allons présenter un certain nombre de tests qui permettent de \hi{caracté
 
 Rappelons que les \hi{constituants majeurs} sont les \hi{projections maximales}. Ce qui distingue l’approche «~constituant~» de l’approche «~projection~» est la façon de construire les unités. La construction des projections maximales suppose que l’on a identifié la structure de dépendance au préalable, alors que la construction des constituants majeurs ne présuppose pas que l’on connaisse la structure interne, ni même la tête d’un constituant pour l’identifier. Il peut y avoir des avantages à déterminer certains constituants majeurs avant de construire leur structure interne.\pagebreak
 
-Les constituants majeurs qui dépendent d’un verbe peuvent généralement être clivés ou semi-clivés, donnant ainsi un premier test de constituance appelé le \textstyleTermes{test de clivage} (le clivage en tant que tel sera étudié dans le \chapfuturef{19} ; les limites du test de clivage sont discutées dans la \sectref{sec:3.4.12} sur \textit{Le statut des tests de constituance}). Formellement, le clivage d'une proposition consiste à promouvoir une unité syntaxique X et rétrograder le reste Y de la proposition pour obtenir une proposition de la forme «~\textit{c'est} X \textit{qui/que}
+Les constituants majeurs qui dépendent d’un verbe peuvent généralement être clivés ou semi-clivés, donnant ainsi un premier test de constituance appelé le \textstyleTermes{Test de clivage} (le clivage en tant que tel sera étudié dans le \chapfuturef{19} ; les limites du Test de clivage sont discutées dans la \sectref{sec:3.4.12} sur \textit{Le statut des tests de constituance}). Formellement, le clivage d'une proposition consiste à promouvoir une unité syntaxique X et rétrograder le reste Y de la proposition pour obtenir une proposition de la forme «~\textit{c'est} X \textit{qui/que}
 Y~».
 Voici ce que donne le clivage des trois constituants dépendant du verbe \textit{va} dans l’exemple suivant :
 
@@ -440,6 +440,7 @@ Ce test caractérise \hi{exactement les constituants majeurs}. En particulier, i
 \textit{{Fred va} \textbf{{chez son neveu}} \textbf{{pour les vacances}}.}
 →  *\textit{\textbf{{C’est}}  {chez son neveu pour les vacances} \textbf{{que}}} \textit{Fred va.}
 \z
+
 Les constituants majeurs présentent aussi de bonnes propriétés vis-à-vis de la pronominalisation, notamment les groupes substantifs et certains groupes prépositionnels qui peuvent être pronominalisés par des pronoms personnels ou des pronoms interrogatifs (voir l’\encadref{sec:3.4.11} qui suit à propos des \textit{Limites des tests de pronominalisation}). Certains pronoms ne prennent pas de dépendants : c’est le cas des pronoms personnels, comme \textit{il/elle}, \textit{on} ou \textit{ça}. La substitution d’une unité syntaxique par un tel pronom ne sera donc possible que si celle-ci n’a pas de dépendant :
 
 \ea\ea
@@ -448,17 +449,19 @@ Les constituants majeurs présentent aussi de bonnes propriétés vis-à-vis de 
     \textit{{Louis lit} \textbf{{son livre de syntaxe}}.}  →   \textit{{Louis} \textbf{{le}}  {lit.}}
 \z\z
 
-On en déduit qu’une unité substituable par un tel pronom est nécessairement une projection maximale. Dans ce cas, le \textstyleTermes{test de pronominalisation} (voir la \sectref{sec:3.2.10} sur le \textit{Test de commutation}) devient donc un test de constituance.
+On en déduit qu’une unité substituable par un tel pronom est nécessairement une projection maximale. On obtient ainsi un test, le \textstyleTermes{Test de pronominalisation}, qui est un test de constituance. Ce test est un cas particulier du 
+ \textit{Test de commutation} (voir la \sectref{sec:3.2.10}), qui permet de vérifier qu'un segment du texte est une unité syntaxique. la commutation avec un élément qui ne peut pas avoir de dépendant permet de s'assurer que l'unité n'a pas de dépendant et est donc un constituant majeur.
 
 Voyons sur l'exemple \REF{ex:laponie2} comment fonctionnent les tests de constituance dont nous venons de parler. Une première salve de tests permet d’identifier \textit{beaucoup de gens} comme un constituant, puisque celui-ci est substituable par un pronom personnel et par un pronom interrogatif et qu’il est clivable :
 
 \ea
 \ea Pronom personnel : \textbf{\textit{Ils}} \textit{aimeraient passer Noël} \textit{en Laponie.}
-\ex Pronom interrogatif : \textbf{\textit{Qui}} \textit{aimerait passer Noël} \textit{en Laponie} ? \textit{Beaucoup de}                   \textit{gens.}
+\ex Pronom interrogatif : \textbf{\textit{Qui}} \textit{aimerait passer Noël} \textit{en Laponie} ? \textit{Beaucoup de} \textit{gens.}
 \ex Clivage : \textbf{\textit{Il y a}} \textit{beaucoup de gens} \textbf{\textit{qui}} \textit{aimeraient passer Noël} \textit{en Laponie}.
 \z\z
+POur le clivage, nous avons utilisé la construction «~\textit{il y a} X \textit{qui} Y~», qui la seule possible avec un sujet indéfini (voir les limites du Test de clivage dans l'\encadref{sec:3.4.12} sur le \textit{Le statut des tests de constituance}).
 
-Il en va de même pour \textit{passer Noël} \textit{en Laponie,} qui est pronomisable et semi-clivable. Le semi-clivage est une variante du clivage, préférable lorsque X est une proposition subordonnée et qui donne une proposition de la forme «~\textit{ce que}
+Passons maintenant au complément \textit{passer Noël en Laponie} du verbe \textit{aimeraient} : celui-ci est pronomisable et semi-clivable. Le semi-clivage est une variante du clivage, préférable lorsque X est une proposition subordonnée et qui donne une proposition de la forme «~\textit{ce que}
 Y, \textit{c'est} X~».
 
 \ea
@@ -486,7 +489,7 @@ De même pour \textit{beaucoup de gens}, on identifie \textit{beaucoup} comme la
 Pronom personnel : \textit{Il y} \textbf{\textit{en}} \textit{a} \textbf{\textit{beaucoup}} \textit{qui aimeraient passer Noël en Laponie.}    
 \z
 
-Nous obtenons le parenthésage suivant :
+Nous obtenons bien au final le parenthésage attendu :
 
 \ea
       ( ( \textit{beaucoup}  ( \textit{de gens} ) )  \textit{aimeraient}  ( \textit{passer}  ( \textit{Noël} ) ( \textit{en Laponie} ) )
@@ -495,7 +498,7 @@ Nous obtenons le parenthésage suivant :
 \loupe[sec:3.4.11]{Les limites des tests de pronominalisation}{%
     Plusieurs remarques s’imposent concernant les tests de pronominalisation.
 
-    Première remarque : Si le test de pronominalisation appliqué avec des \hi{pronoms personnels} ne reconnaît que des constituants majeurs, ce n’est pas le cas avec tous les pronoms ou proformes : à chaque fois, la substitution reconnaît une unité syntaxique (voir la \sectref{sec:3.2.10} sur le \textit{Test de commutation}), mais pas nécessairement un constituant. Tel est le cas de la substitution par \textit{celui} :
+    Première remarque : Si le Test de pronominalisation appliqué avec des \hi{pronoms personnels} ne reconnaît que des constituants majeurs, ce n’est pas le cas avec tous les pronoms ou proformes : à chaque fois, la substitution reconnaît une unité syntaxique (voir la \sectref{sec:3.2.10} sur le \textit{Test de commutation}), mais pas nécessairement un constituant. Tel est le cas de la substitution par \textit{celui} :
 
     \ea
     \textit{{Louis lit} \textbf{{son livre}}  {de syntaxe.}}  \textrm{→}   \textit{{Louis lit} \textbf{{celui}}  {de syntaxe.}}
@@ -510,14 +513,13 @@ Nous obtenons le parenthésage suivant :
 
     Notons que \textit{one} s’utilise toujours avec un déterminant, ce qui pour le coup en fait véritablement un pro-nom et pas un pro-substantif. (En fait, ce qu’on appelle traditionnellement un pronom, comme \textit{il}, est le substitut d’un substantif et pas d’un nom. Les véritables pro-noms, qui peuvent remplacer un nom, sont rares dans les langues où le nom se caractérise par la combinaison obligatoire avec un déterminant.)
 
-    On applique souvent le test de pronominalisation avec des pronoms interrogatifs, mais il faut savoir que les pronoms interrogatifs prennent parfois des dépendants :
+    On applique souvent le Test de pronominalisation avec des pronoms interrogatifs, mais il faut savoir que les pronoms interrogatifs prennent parfois des dépendants :
     
     \ea
     \ea     \textit{\textbf{{Qu’}}{as tu vu d’intéressant} ?}    \textrm{←}   \textit{{Tu as vu} \textbf{{quelque chose}}  {d’inté\-ressant.}}
     \ex     \textit{\textbf{{Qui}}  {vient que je connais} ?}    \textrm{←}  \textit{\textbf{{Une personne}}  {que je connais vient.}}
     \z
-    \z
-    
+    \z  
     En conséquence, la substitution par un pronom interrogatif n’assure pas que l’unité syntaxique reconnue soit une projection maximale.
 
     Deuxième remarque : ce test ne peut pas être appliqué à tous les constituants majeurs. Il fonctionne très bien pour les groupes substantivaux. Il fonctionne pour certains groupes prépositionnels, mais pas tous :
@@ -527,7 +529,6 @@ Nous obtenons le parenthésage suivant :
     \ex     \textit{{Fred va chez son neveu} \textbf{{pour les vacances}}.}     \textrm{→}  ??
     \z
     \z
-
     Il fonctionne pour certaines infinitives (celles qui commutent avec un groupe substantival), mais pas toutes :
 
     \ea
@@ -535,14 +536,13 @@ Nous obtenons le parenthésage suivant :
     \ex     \textit{{Lise recommence} \textbf{{à jouer du piano}}  {depuis hier.}}     \textrm{→}  ??
     \z
     \z
-
     Le test ne fonctionnera pas bien pour des groupes adjectivaux, qui n’ont une proforme que dans la position prédicative, utilisée seulement marginalement :
 
     \ea
-    \textit{{Cette représentation est} \textbf{{équivalente à un arbre}}.}     \textrm{→}  \textsuperscript{?}\textit{{Cette représentation} \textbf{{l’}}{est.}}
+    \textit{{Cette représentation est} \textbf{{équivalente à un arbre}}.}\\    \textrm{→}  \textsuperscript{?}\textit{{Cette représentation} \textbf{{l’}}{est.}}
     \z
 
-    Conclusion : le test de pronominalisation n’est \hi{pas un test de constituance a priori}. Il le devient a posteriori, une fois qu’on a identifié les pronoms qui ne peuvent pas avoir de dépendants. Il ne permet pas de décider quels types d’unités sont ou non des constituants majeurs avant d’avoir introduit des notions préalables comme la dépendance. Ce n’est qu’après avoir décidé quels types d’unités on veut considérer comme des constituants, que l’on peut tester chaque pronom pour voir s’il se substitue ou non à ces unités et constitue donc un test (avec des surprises comme dans le cas des pronoms interrogatifs). Ce test a néanmoins une réelle valeur pratique et pédagogique, une fois inventorié ce avec quoi se substitue chaque pronom. Mais, disons-le encore, il n’a \hi{aucune valeur théorique} pour caractériser les constituants.
+    Conclusion : le Test de pronominalisation n’est \hi{pas un test de constituance a priori}. Il le devient a posteriori, une fois qu’on a identifié les pronoms qui ne peuvent pas avoir de dépendants. Il ne permet pas de décider quels types d’unités sont ou non des constituants majeurs avant d’avoir introduit des notions préalables comme la dépendance. Ce n’est qu’après avoir décidé quels types d’unités on veut considérer comme des constituants, que l’on peut tester chaque pronom pour voir s’il se substitue ou non à ces unités et constitue donc un test (avec des surprises comme dans le cas des pronoms interrogatifs). Ce test a néanmoins une réelle valeur pratique et pédagogique, une fois inventorié ce avec quoi se substitue chaque pronom. Mais, disons-le encore, il n’a \hi{aucune valeur théorique} pour caractériser les constituants.
 
     Prenons un dernier exemple. À la différence du français, l’anglais possède une proforme pour les verbes, à savoir le verbe \textsc{do} ‘faire’ :
     
@@ -558,9 +558,9 @@ Nous obtenons le parenthésage suivant :
 
     La question qu’on peut alors se poser est : est-il possible de construire un arbre de constituants sans faire référence à la notion de tête et sans utiliser les critères qui permettent d’identifier la tête d’une unité ? En d’autres termes, a-t-on des tests suffisamment fiables pour identifier les constituants directement ?
 
-    Un certain nombre de tests, dits \hi{tests de constituance}, ont bien été proposés. Comme nous l’avons vu dans l’encadré précédent, certains \hi{tests de pronominalisation} permettent de repérer certains types d’unités syntaxiques, notamment les groupes substantivaux, mais ils ne permettent pas, loin s’en faut, de caractériser tous les constituants. Nous avons également vu le \hi{test d’effacement} et le \hi{test prosodique}, qui nous ont permis de construire la structure de connexion (voir la \sectref{sec:3.2.11} sur l'\textit{Unité syntaxique autonomisable}) ; ces tests caractérisent toutes les unités syntaxiques autonomisables et pas seulement les constituants. Les \hi{tests de déplacement et d’insertion} peuvent également être utilisés pour caractériser certaines unités (voir la \sectref{sec:3.2.16} sur les \textit{Tests pour la connexion}), mais leur utilisation reste marginale.
+    Un certain nombre de tests, appelés les \hi{tests de constituance}, ont bien été proposés. Comme nous l’avons vu dans l’encadré précédent, le {Test de pronominalisation} permet de repérer certains types d’unités syntaxiques, notamment les groupes substantivaux, à condition d'être utilisé avec les bons pronoms. Et en plus, il ne permet pas, loin s’en faut, de caractériser tous les constituants. Nous avons également vu le {Critère d'autonomisabilité illocutoire} et le {Critère d'autonomisabilité prosodique}, qui nous ont permis de construire la structure de connexion (voir la \sectref{sec:3.2.11} sur l'\textit{Unité syntaxique autonomisable}) ; ces tests caractérisent toutes les unités syntaxiques autonomisables et pas seulement les constituants. Le {Test de déplacement} et le {Test d’insertion} peuvent également être utilisés pour caractériser certaines unités (voir la \sectref{sec:3.2.16} sur les \textit{Tests pour la connexion}), mais leur utilisation reste marginale.
 
-    Étudions plus en détail le cas du \hi{test de clivage} (présenté à la \sectref{sec:3.4.10}), qui est l’un des tests de constituance les plus puissants qui soit. Ce test est censé caractériser les constituants majeurs qui dépendent d’un verbe. En fait, ce test s’applique aussi à des constituants qui ne dépendent pas directement du verbe principal (voir le \chapfuturef{19} pour plus de détails), comme ici \textit{à sa sœur} qui dépend de \textit{parler}, alors que le verbe principal est \textit{a} :
+    Étudions plus en détail le cas du {Test de clivage} (présenté à la \sectref{sec:3.4.10}), qui est l’un des tests de constituance les plus puissants qui soit. Ce test est censé caractériser les constituants majeurs qui dépendent d’un verbe. En fait, ce test s’applique aussi à des constituants qui ne dépendent pas directement du verbe principal (voir le \chapfuturef{19} pour plus de détails sur les positions accessibles au clivage), comme ici \textit{à sa sœur} qui dépend de \textit{parler}, lui même dépendant de \textit{a l'intention d'essayer de} :
 
     \ea     \textit{{C’est} \textbf{{à sa sœur}} {que Fred a l’intention d’essayer de} \textbf{{parler} en premier.}}     \z
 
@@ -568,29 +568,26 @@ Nous obtenons le parenthésage suivant :
     
     \ea
         \textit{{Fred espère} \textbf{{que son neveu l’invitera}}.}\\  
-        \textrm{→}  \textsuperscript{?}{*}\textit{\textbf{{C’est}}  {que son neveu l’invitera} \textbf{{que}}  {Fred espère.}}
-        \textrm{→} \textit{\textbf{{Ce que}}  {Fred espère,} \textbf{{c’est}} {que son neveu l’invitera.}}\\
+        \textrm{→}  \textsuperscript{?}{*}\textit{\textbf{{C’est}}  {que son neveu l’invitera} \textbf{{que}}  {Fred espère.}}\\
+        \textrm{→} \textit{\textbf{{Ce que}}  {Fred espère,} \textbf{{c’est}} {que son neveu l’invitera.}}
     \z
-
-    Le test de clivage ne fonctionne pas non plus très bien pour les indéfinis, le test en «\textit{il y a} X \textit{qui/que} Y~» pouvant le remplacer :
+    Le Test de clivage ne fonctionne pas non plus très bien pour les indéfinis, le test en «\textit{il y a} X \textit{qui/que} Y~» pouvant le remplacer :
 
     \ea
         \textit{\textbf{{Beaucoup de gens}}  {aimeraient venir.}}\\     
-        \textrm{→}    \textsuperscript{??}\textit{\textbf{{C’est}}  {beaucoup de gens} \textbf{{qui}}  {aimeraient venir.}}
-        \textrm{→}    \textit{\textbf{{Il y a}}  {beaucoup de gens} \textbf{{qui}}  {aimeraient venir.}}\\
+        \textrm{→}    \textsuperscript{??}\textit{\textbf{{C’est}}  {beaucoup de gens} \textbf{{qui}}  {aimeraient venir.}}\\
+        \textrm{→}    \textit{\textbf{{Il y a}}  {beaucoup de gens} \textbf{{qui}}  {aimeraient venir.}}
     \z
-
-    Enfin, le test de clivage ne permet pas de dégager d’unités syntaxiques en cas de négation :
+    Enfin, le Test de clivage ne permet pas de dégager d’unités syntaxiques en cas de négation :
 
     \ea
-    \ea         \textit{{Raoul n’a}  {jamais} \textbf{{d’argent}} {sur lui.}} \textrm{→}  *\textit{\textbf{{C’est}} {d’argent} \textbf{{que}}  {Raoul n’a} {jamais sur lui.}}
-    \ex         \textit{{Raoul n’a} \textbf{{jamais d’argent}}  {sur lui.}} \textrm{→}  *\textit{\textbf{{C’est}} {jamais d’argent} \textbf{{que}}  {Raoul a sur lui.}}
+    \ea         \textit{{Raoul n’a}  {jamais} \textbf{{d’argent}} {sur lui.}}\\ \textrm{→}  *\textit{\textbf{{C’est}} {d’argent} \textbf{{que}}  {Raoul n’a} {jamais sur lui.}}
+    \ex         \textit{{Raoul n’a} \textbf{{jamais d’argent}}  {sur lui.}}\\ \textrm{→}  *\textit{\textbf{{C’est}} {jamais d’argent} \textbf{{que}}  {Raoul a sur lui.}}
     \z
     \z
+    En conclusion, ce test, même s’il est l’un des plus précis, reste partiel. Il ne caractérise pas tous les constituants majeurs et il ne caractérise pas que des constituants majeurs dépendant du verbe principal. Comme pour le Test de pronominalisation, ce test n’a \hi{pas de valeur théorique} pour déterminer quels types d’unités syntaxiques sont des constituants. C’est encore une fois dans l’autre sens que les choses se font : c’est parce que nous avons déjà défini la structure syntaxique et que nous savons quelles unités syntaxiques sont des projections maximales que nous pouvons savoir quelles sont les contraintes sur le clivage et comment l’utiliser comme test.
 
-    En conclusion, ce test, même s’il est l’un des plus précis, reste partiel. Il ne caractérise pas tous les constituants majeurs et il ne caractérise pas que des constituants majeurs dépendant du verbe principal. Comme pour le test de pronominalisation, ce test n’a \hi{pas de valeur théorique} pour déterminer quels types d’unités syntaxiques sont des constituants. C’est encore une fois dans l’autre sens que les choses se font : c’est parce que nous avons déjà défini la structure syntaxique et que nous savons quelles unités syntaxiques sont des projections maximales que nous pouvons savoir quelles sont les contraintes sur le clivage et comment l’utiliser comme test.
-
-    Il n’y a donc \hi{pas de tests} (ou de combinaisons de tests) qui permettent de \hi{reconnaître exactement les constituants}, quelle que soit la définition qu’on en donne. Il n’y a certainement pas de tests qui permettent de reconnaître tous les constituants de la Syntaxe X-barre (voir l'\encadref{sec:3.4.18} \textit{Binarité, construction et connexion}) et seulement ceux-là. Il n’y a pas non plus de tests qui permettent de reconnaître toutes les projections maximales et seulement les projections maximales. Tous les tests de constituance ont leurs limites et ne s’appliquent que partiellement.
+    Il n’y a donc \hi{pas de tests} (ou de combinaisons de tests) qui permettent de \hi{reconnaître exactement les constituants}, quelle que soit la définition qu’on en donne. Il n’y a certainement pas de tests qui permettent de reconnaître tous les constituants de la Syntaxe X-barre (voir l'\encadref{sec:3.4.18} sur \textit{Binarité, construction et connexion}) et seulement ceux-là. Il n’y a pas non plus de tests qui permettent de reconnaître toutes les projections maximales et seulement les projections maximales. Tous les tests de constituance ont leurs limites et ne s’appliquent que partiellement.
 
     Si nous mettons sérieusement en doute les tests de constituance comme outils théoriques (permettant de montrer que la constituance est une notion primitive), nous ne mettons pas en doute leur intérêt pratique et pédagogique. Ces tests peuvent et doivent être utilisés pour élaborer la structure syntaxique. À défaut de caractériser «~les constituants~», ils caractérisent certaines unités syntaxiques qu’il est toujours utile de pouvoir repérer (voir la \sectref{sec:3.4.27} \textit{Combiner les méthodes ascendante et descendante}). Il est aussi intéressant de noter qu’ils sont finalement davantage en adéquation avec une analyse en dépendance qu’avec des analyses en constituance du type Syntaxe X-barre, et ceci pour deux raisons. Premièrement, comme on l’a vu, certains tests caractérisent d’autres unités syntaxiques que les constituants traditionnels (par exemple la pronominalisation, avec des pronoms comme \textit{celui} ou même les pronoms interrogatifs dans certains cas). Deuxièmement, certains types de constituants, et notamment les constituants intermédiaires de la Syntaxe X-barre, ne vérifient quasiment aucun des tests et sont impossibles à caractériser de cette façon (ce qui met d’ailleurs en doute l’intérêt de les introduire dans la structure).
 }
@@ -599,9 +596,9 @@ Nous obtenons le parenthésage suivant :
 
     La domination des modèles basés sur la syntaxe de constituants dans la deuxième moitié du 20\textsuperscript{e} siècle a pu donner l’impression que la notion de constituant était une notion primitive, d’autant qu’il était clairement affirmé dès le départ que des notions autrefois considérées comme primitives, comme la notion de \textit{sujet syntaxique}, pouvaient être ramenées à une configuration dans la structure de constituants (voir l'\encadref{sec:3.4.18} sur \textit{Binarité, construction et connexion} et l'\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}).
 
-    Nous avons déjà évoqué que les analyses en constituants traditionnelles privilégiaient la décomposition de \textit{a invité Théo} en \textit{a} \textrm{${\oplus}$} \textit{invité Théo} sur la décomposition \textit{a invité} \textrm{${\oplus}$} \textit{Théo}, et que cela ne nous semblait pas possible sans considérer dès le départ la notion de tête et la structure de dépendance qui en découle. Effectivement, aucun des tests de constituance présentés plus haut ne permet de privilégier une décomposition \textit{a} \textrm{${\oplus}$} \textit{invité Théo}. Ce sont des critères tels que la rection ou le contrôle de la valence supérieure qui permettent seulement de préférer ce découpage (voir la \sectref{sec:3.3.17} \textit{Tête interne et rection}).
+    Nous avons déjà évoqué que les analyses en constituants traditionnelles privilégiaient la décomposition de \textit{a invité Théo} en \textit{a} \textrm{${\oplus}$} \textit{invité Théo} sur la décomposition \textit{a invité} \textrm{${\oplus}$} \textit{Théo}, et que cela ne nous semblait pas possible sans considérer dès le départ la notion de tête et la structure de dépendance qui en découle (voir l'\encadref{sec:3.4.9} sur \textit{Les limites des méthodes par décomposition}). Effectivement, aucun des tests de constituance présentés plus haut ne permet de privilégier une décomposition \textit{a} \textrm{${\oplus}$} \textit{invité Théo}. Ce sont des critères tels que la rection ou le contrôle de la valence supérieure qui permettent seulement de préférer ce découpage (voir la \sectref{sec:3.3.17} sur \textit{Tête interne et rection}).
 
-    Cela devient encore plus net si on prend une forme verbale simple plutôt qu’une forme complexe et qu’on pousse la décomposition jusqu’aux syntaxèmes. Considérons à nouveau l'exemple \REF{ex:theo}. Dans la structure de la figure \ref{fig:theo-Xbarre} défendue par la Syntaxe X-barre (voir l'\encadref{sec:3.4.20} sur  \textit{Le groupe verbal}), le sujet dépend de la flexion, tandis que l’objet dépend du lexème verbal (IP désigne un groupe flexionnel, angl. \textit{inflection phrase}).
+    Le fait que les constituants majeurs ne sont pas des primitives devient encore plus net si on prend une forme verbale simple plutôt qu’une forme complexe et qu’on pousse la décomposition jusqu’aux syntaxèmes. Considérons à nouveau l'exemple \REF{ex:theo}. Dans la structure de la figure \ref{fig:theo-Xbarre} ci-dessous (qui est la structure défendue par la Syntaxe X-barre, voir l'\encadref{sec:3.4.20} sur  \textit{Le groupe verbal}), le sujet dépend de la flexion, tandis que l’objet dépend du lexème verbal (IP désigne un groupe flexionnel, angl. \textit{inflection phrase}).
     
 \begin{figure}[H]
     \begin{minipage}[c]{.45\linewidth}\centering
@@ -651,9 +648,9 @@ Nous obtenons le parenthésage suivant :
 \caption{\label{fig:theo-Xbarre}Un arbre X-barre et l’arbre de dépendance correspondant}    
 \end{figure}
 
-    La structure de constituants de la figure \ref{fig:theo-Xbarre} et l’arbre de dépendance correspondant ne peuvent donc être obtenus qu’à condition de décomposer le syntagme \textit{invitera Théo} en \textit{{}-era} \textrm{${\oplus}$} \textit{invit- Théo} (c’est-à-dire «~flexion \textrm{${\oplus}$} \textsc{inviter Théo}~», avec d’autres notations) à la place de la bien plus naturelle décomposition en \textit{invitera} \textrm{${\oplus}$} \textit{Théo} (qui amènerait à avoir l’objet qui dépend de la flexion et non du lexème verbal ; voir l’\encadref{sec:3.4.9} sur \textit{Les limites des méthodes par décomposition}).
+    La structure de constituants de la figure \ref{fig:theo-Xbarre} et l’arbre de dépendance correspondant ne peuvent donc être obtenus qu’à condition de décomposer le syntagme \textit{invitera Théo} en \textit{{}-era} \textrm{${\oplus}$} \textit{invit- Théo} (c’est-à-dire «~flexion \textrm{${\oplus}$} \textsc{inviter Théo}~», avec d’autres notations) à la place de la bien plus naturelle décomposition en \textit{invitera} \textrm{${\oplus}$} \textit{Théo} (qui amènerait à avoir l’objet qui dépend de la flexion et non du lexème verbal ; voir à nouveau l’\encadref{sec:3.4.9} sur \textit{Les limites des méthodes par décomposition}).
 
-    Notre propos n’est pas de rejeter l’analyse faite par la Syntaxe X-barre, mais simplement de souligner que cette analyse ne peut être faite sans considérer la notion de tête comme une notion primitive nécessaire à la définition des constituants. Pour notre part, nous définissons les constituants comme des projections et considérons la notion de tête comme primitive par rapport à la notion de constituant. Notre définition des constituants repose crucialement sur la notion de tête, puisque, à chaque étape, nous devons d’abord identifier la tête pour pouvoir ensuite identifier les constituants majeurs.
+    Notre propos n’est pas de rejeter l’analyse faite par la Syntaxe X-barre, mais simplement de souligner que cette analyse ne peut être faite sans considérer la notion de tête comme une notion primitive nécessaire à la définition des constituants. Pour notre part, nous définissons les constituants comme des projections et notre définition des constituants repose crucialement sur la notion de tête, puisque, à chaque étape, nous devons d’abord identifier la tête pour pouvoir ensuite identifier les constituants majeurs.
 }
 \section{Arbre de constituants binaire}\label{sec:3.4.14}
 
@@ -725,9 +722,9 @@ On peut définir, à partir d'un nœud d'un arbre de dépendance, différentes u
 \Definition{\textstyleTermes{projection partielle}}
 {Nous appelons \textstyleTermes{projection partielle} d’un nœud A d'un arbre de dépendance toute unité syntaxique obtenue en prenant A et les nœuds dominés par \hi{une partie des dépendants} de A.}
 
-Autrement dit, une projection partielle de A est obtenue en \hi{coupant} éventuellement \hi{certaines des dépendance}s qui partent de A et en gardant tout ce qui resté dominé par A. Par exemple, si l'on prend l'exemple de l'arbre de dépendance de la figure \ref{fig:laponie-dep2}, les projections partielles de \textit{passer} sont \textit{passer Noël} (on a coupé la dépendance vers \textit{en}), \textit{passer en Laponie} (on a coupé la dépendance vers \textit{Noël}) et \textit{passer} (on a coupé les deux dépendances).
+Autrement dit, une projection partielle de A est obtenue en \hi{coupant} éventuellement \hi{certaines des dépendance}s qui partent de A et en gardant tout ce qui reste dominé par A. Par exemple, si l'on prend l'exemple de l'arbre de dépendance de la figure \ref{fig:laponie-dep2}, les projections partielles de \textit{passer} sont \textit{passer Noël} (on a coupé la dépendance vers \textit{en}), \textit{passer en Laponie} (on a coupé la dépendance vers \textit{Noël}) et \textit{passer} (on a coupé les deux dépendances).
 
-Les constituants intermédiaires sont toujours des projections partielles. Mais toutes les projections partielles ne sont pas  considérées comme des constituants (intermédiaires) par les analyses en constituants. Il est très généralement considéré que la projection partielle du verbe sans son sujet (\textit{aimeraient passer Noël en Laponie} dans l'exemple \REF{ex:laponie2}) forme un constituant (le groupe verbal), mais pas la projection partielle du verbe sans son objet (\textit{beaucoup de gens aimeraient}).
+Les constituants intermédiaires sont toujours des projections partielles. Mais toutes les projections partielles ne sont pas  considérées comme des constituants (intermédiaires) par les analyses en constituants. Il est très généralement considéré que la projection partielle du verbe sans son sujet (\textit{aimeraient passer Noël en Laponie} dans l'exemple \REF{ex:laponie2}) forme un constituant (appelé le groupe verbal), mais pas la projection partielle du verbe sans son objet (\textit{beaucoup de gens aimeraient}).
 
 Pour obtenir un arbre de constituants binaire à partir d’un arbre de dépendance, il faut décider dans quel ordre les dépendants seront regroupés avec leur gouverneur. Ainsi pour obtenir l’arbre de constituants binaire plus haut, il faut regrouper \textit{aimeraient} d’abord avec son objet (\textit{passer Noël en Laponie}), puis avec son sujet (\textit{beaucoup de gens}). De même, on regroupera \textit{passer} avec un premier dépendant (le plus proche, \textit{Noël}), puis avec un deuxième (\textit{en Laponie}).
 
@@ -791,16 +788,16 @@ L'ordre de saillance que nous avons introduit dans la figure \ref{fig:laponie-sa
 
 
 \loupe[sec:3.4.16]{Dépendance et constituance se complètent}{%
-    On dit parfois qu’un arbre de dépendance contient moins d’information qu’un arbre de constituants car il ne contient pas de projections partielles. Mais, comme on le voit, on peut facilement ajouter cette information par un étiquetage des dépendances. À l’inverse, \hi{un arbre de constituants ne contient structurellement pas d’information} \hi{sur la tête} : cette information doit aussi être ajoutée, soit par un étiquetage des relations partie-tout (notre T), soit par un étiquetage des nœuds (les X, X’ et XP de la Syntaxe X-barre, voir l’\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}). Dépendance et constituance se complètent donc.
+    On dit parfois qu’un arbre de dépendance contient moins d’information qu’un arbre de constituants car il ne contient pas de projections partielles. Mais, comme on le voit, on peut facilement ajouter cette information par l'ajout d'un ordre de saillance et un étiquetage des dépendances comme dans la structure de la figure \ref{fig:laponie-saillance}. À l’inverse, \hi{un arbre de constituants ne contient structurellement pas d’information} \hi{sur la tête} : cette information doit aussi être ajoutée, soit par un étiquetage des relations partie-tout (notre T), soit par un étiquetage des nœuds (les X, X’ et XP de la Syntaxe X-barre, voir l’\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}). Dépendance et constituance se complètent donc.
 
     Si les arbres de dépendance enrichis d’un ordre de saillance sont équivalents aux arbres de constituants (binaires ou non) enrichis de la notion de tête, il n’en reste pas moins qu’\hi{arbres de dépendance et arbres de constituants ne sont pas équivalents} et que le choix repose donc sur leur différence : de l’ordre de saillance ou de la notion de tête, \hi{quelle notion voulons-nous} \hi{encoder structurellement} ? La réponse ne fait aucun doute pour nous : \hi{la notion de tête}, et c’est ce qui détermine notre forte préférence pour les structures de dépendance.
 
-    S’il est clair que la notion de tête est fondamentale, il n’est pas certain que l’ordre de saillance soit utile à la modélisation syntaxique et encore moins qu’il doive être encodé structurellement par une stratification de la structure. Nous pensons même que l’ordre de saillance induit par la stratification des arbres de constituants traditionnels n’est pas pertinent et que construire une structure comme celle de la \sectref{sec:3.4.14}, où le sujet se combine obligatoirement en dernier avec le verbe, est contre-productif (voir notre discussion dans l’\encadref{sec:3.2.26} sur le \textit{Traitement cognitif des connexions}). Il existe au contraire de nombreux arguments pour considérer que le sujet est le plus saillant des dépendants du verbe, puisque c’est le dépendant du verbe qui a le plus de «~bonnes~» propriétés (voir le \chapfuturef{17} sur les \textit{Relations syntaxiques}).
+    S’il est clair que la notion de tête est fondamentale, il n’est pas certain que l’ordre de saillance soit utile à la modélisation syntaxique et encore moins qu’il doive être encodé structurellement par une stratification de la structure. Nous pensons même que l’ordre de saillance induit par la stratification des arbres de constituants traditionnels n’est pas pertinent et que construire une structure comme celle de la \sectref{sec:3.4.14}, où le sujet se combine obligatoirement en dernier avec le verbe, est difficilement justifiable (voir notre discussion dans l’\encadref{sec:3.2.26} sur le \textit{Traitement cognitif des connexions}). Il existe au contraire de nombreux arguments pour considérer que le sujet est le plus saillant des dépendants du verbe, puisque c’est le dépendant du verbe qui a le plus de «~bonnes~» propriétés (voir le \chapfuturef{17} sur les \textit{Relations syntaxiques}).
 }
 \largerpage
 \chevalier[sec:3.4.17]{Historique des représentations syntaxiques par des diagrammes en constituants}{%
 %     \ohead{Historique des représentations syntaxiques en constituants}
-    Si l’on excepte l’unique diagramme de Billroth de \citeyear{Billroth1832}, les premiers diagrammes présentant des analyses syntaxiques apparaissent à notre connaissance dans l’ouvrage de Frederick A. P. Barnard de \citeyear{barnard1836analytic}, \textit{Analytic Grammar with Symbolic Illustrations}. Dans cette grammaire de l’anglais, le savant américain, alors âgé de 27 ans, professeur dans un asile pour sourds et muets et lui-même atteint de problèmes de surdité, propose un certain nombre de signes graphiques pour représenter les parties du discours. Mais ce qui nous intéresse surtout ici est qu’il utilise ces symboles pour décrire la structure complète d’une phrase. Barnard remarque qu’un syntagme peut se comporter de la même façon qu’un mot : par exemple, dans l’exemple qui suit, \textit{in disposition} litt. ‘en caractère’ se comporte comme un adverbe. Ceci est indiqué dans le diagramme par une accolade horizontale qui regroupe \textit{in} et \textit{disposition} et par le symbole \includegraphics[height=1.25ex]{figures/vol1syntaxe2-img018.png} associé à ce groupe, qui est le même que celui associé aux mots \textit{very} et \textit{never} et désigne donc un adverbe.
+    Si l’on excepte l’unique diagramme en dépendance de Billroth de \citeyear{Billroth1832} (voir l'\encadref{sec:3.3.5} sur l'\textit{Historique des représentations syntaxiques par des diagrammes en dépendance}), les premiers diagrammes présentant des analyses syntaxiques apparaissent à notre connaissance dans l’ouvrage de Frederick A. P. Barnard de \citeyear{barnard1836analytic}, \textit{Analytic Grammar with Symbolic Illustrations}. Dans cette grammaire de l’anglais, le savant américain, alors âgé de 27 ans, professeur dans un asile pour sourds et muets et lui-même atteint de problèmes de surdité, propose un certain nombre de signes graphiques pour représenter les parties du discours. Mais ce qui nous intéresse surtout ici est qu’il utilise ces symboles pour décrire la structure complète d’une phrase. Barnard remarque qu’un syntagme peut se comporter de la même façon qu’un mot : par exemple, dans l’exemple qui suit, \textit{in disposition}, litt. ‘en caractère’, se comporte comme un adverbe. Ceci est indiqué dans le diagramme par une accolade horizontale qui regroupe \textit{in} et \textit{disposition} et par le symbole \includegraphics[height=1.25ex]{figures/vol1syntaxe2-img018.png} associé à ce groupe, qui est le même que celui associé aux mots \textit{never} ‘jamais’ et \textit{very} ‘très’ et désigne donc un adverbe.
 
     %\includegraphics[width=\textwidth]{figures/vol1syntaxe2-img018.png}
 
@@ -811,7 +808,7 @@ L'ordre de saillance que nous avons introduit dans la figure \ref{fig:laponie-sa
     ‘L’homme qui est doux de caractère n’échoue jamais à se faire de très nombreux amis.’
 \end{figure}
 
-    De la même façon, la relative \textit{who is mild in disposition} ‘qui est doux de caractère’ se comporte comme un adjectif (cf. le symbole \includegraphics[height=1.4ex]{figures/vol1syntaxe2-img021.png} également associé à \textit{mild} ‘doux’ et \textit{many} ‘nombreux’) et sa combinaison avec \textit{the man} ‘l’homme’ se comporte comme un nom (\includegraphics[height=1.25ex]{figures/vol1syntaxe2-img022.png}) ; de même, \textit{to make very many friends} ‘à se faire vraiment beaucoup d’amis’ se comporte comme un adverbe et sa combinaison avec \textit{never fails} ‘n’échoue jamais’ comme un verbe (\includegraphics[height=1.5ex]{figures/vol1syntaxe2-img020.png}). Par contre Barnard ne considère pas la proposition comme équivalente au verbe et reste avec une structure sujet-prédicat pour la proposition que l’on retrouve de la grammaire de Port-Royal à la grammaire générative (voir l’encadré sur \textit{Fonctions syntaxiques et prédicat} du \chapfuturef{17}). Le diagramme qu’il propose peut néanmoins être considéré comme un premier exemple d’arbre de constituants et même d’arbre de constituants avec tête, puisque les étiquettes indiquent la catégorie de la tête comme en Syntaxe X-barre (voir l’\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}).
+    De la même façon, la relative \textit{who is mild in disposition} ‘qui est doux de caractère’ se comporte comme un adjectif (cf. le symbole \includegraphics[height=1.1ex]{figures/vol1syntaxe2-img021.png} également associé à \textit{mild} ‘doux’ et \textit{many} ‘nombreux’) et sa combinaison avec \textit{the man} ‘l’homme’ se comporte comme un nom (\includegraphics[height=1.7ex]{figures/vol1syntaxe2-img022.png}) ; de même, \textit{to make very many friends} ‘à se faire vraiment beaucoup d’amis’ se comporte comme un adverbe et sa combinaison avec \textit{never fails} ‘n’échoue jamais’ comme un verbe (\includegraphics[height=1.7ex]{figures/vol1syntaxe2-img020.png}). Par contre, Barnard ne considère pas la proposition comme équivalente au verbe et reste avec une structure sujet-prédicat pour la proposition que l’on retrouve de la grammaire de Port-Royal à la grammaire générative (voir l’encadré sur \textit{Fonctions syntaxiques et prédicat} du \chapfuturef{17}). Le diagramme qu’il propose peut néanmoins être considéré comme un premier exemple d’arbre de constituants et même d’arbre de constituants avec tête, puisque les étiquettes indiquent la catégorie de la tête comme en Syntaxe X-barre (voir l’\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}).
     
     Il semble que les contemporains de Barnard n’aient pas vraiment vu la portée de ces diagrammes et il faut attendre plus d’un siècle pour que, en \citeyear{nida1943morphology}, dix ans après la publication de \textit{Langage} de Bloomfield, Eugene Nida propose à nouveau des structures de constituants, dans une thèse intitulée \textit{A Synopsis of English Syntax}. Les structures proposées par Nida sont en fait des polygraphes (voir l’\encadref{sec:3.2.23} sur \textit{Graphe à bulles et polygraphe}) où chaque lien représente une connexion binaire et où les liens peuvent avoir pour sommet d’autres liens. Nida va ensuite enrichir son système, dans la republication de sa thèse en \citeyear{nida1966synopsys}, en ajoutant des symboles sur les liens (voir la figure \ref{fig:nida}) : les liens marquées d’une croix ($\times$) représentent une construction exocentrique, tandis que les liens marqués d’une flèche (~$\langle$~ou~$\rangle$~) représentent une construction endocentrique, la flèche pointant vers la tête. Dans le diagramme ci-dessous, \textit{the} et \textit{men} sont connectés par un lien $\rangle$ indiquant que \textit{the} dépend de \textit{men}, puis \textit{by} est lié à ce lien par un lien $\times$ indiquant que la construction n’a pas de tête. Une telle représentation est équivalente à un arbre de constituants binaire (voir la \sectref{sec:3.4.21} sur \textit{Arbre de constituants binaire et polygraphe}).
 
@@ -837,7 +834,7 @@ L'ordre de saillance que nous avons introduit dans la figure \ref{fig:laponie-sa
     \end{figure}
 
  
-    Dans les représentations de Hockett, chaque module de trois cases (voir figure \ref{fig:hockett3}) est à lire comme une \hi{construction}, comme le remarque \citet[161]{hockett1958course} (dans le chapitre \textit{Form classes and constructions}). Une telle analyse est contemporaine des grammaires de réécriture de Chomsky (voir l’\encadref{sec:3.5.30} sur la \textit{Grammaire de réécriture}) et son objectif est absolument similaire. On notera néanmoins que la représentation de Hockett met autant en avant la combinaison de A et B que la relation partie-tout de A ou de B avec le tout C qu’ils forment.
+    Dans les représentations de Hockett, chaque module de trois cases (voir figure \ref{fig:hockett3}) est à lire comme une \hi{construction}, comme le remarque \citet[161]{hockett1958course}, dans le chapitre \textit{Form classes and constructions}. Une telle analyse est contemporaine des grammaires de réécriture de Chomsky (voir l’\encadref{sec:3.5.30} sur la \textit{Grammaire de réécriture}) et son objectif est absolument similaire. On notera néanmoins que la représentation de Hockett met autant en avant la combinaison de A et B que la relation partie-tout de A ou de B avec le tout C qu’ils forment.
 
     \begin{figure}[H]
     \begin{subfigure}[t]{.5\textwidth}\centering
@@ -865,7 +862,7 @@ L'ordre de saillance que nous avons introduit dans la figure \ref{fig:laponie-sa
     \caption{{Deux représentations de la même construction}\label{fig:hockett3}}
     \end{figure}   
 
-    On attribue généralement l’introduction des arbres de constituants à Noam Chomsky. On en trouve quelques-uns dans son article de \citeyear{chomsky1955three} et un dans \textit{Syntactic Structures} de \citeyear{chomsky1957syntactic}, que nous reproduisons dans la figure \ref{fig:chomsky57}a. De manière assez surprenante, cet arbre a été remplacé, dans la réédition de 2002, par le diagramme de la figure \ref{fig:chomsky57}b. Ce nouveau diagramme n’est pas stricto sensu un arbre. Il apparaît dans le chapitre 4 intitulé \textit{Phrase structure} ‘Structure syntagmatique’, où Chomsky introduit les règles de réécriture, comme \textit{Sentence $\leftarrow$ NP $+$ VP}. Dans ce diagramme, il n’y a pas, comme dans les arbres de constituants ordinaires, de relations partie-tout entre le nœud \textit{Sentence} et les constituants immédiats \textit{NP} et \textit{VP}. Au lieu de cela, il y a un lien entre \textit{NP} et \textit{VP}, correspondant au symbole $+$ de la règle et que l’on peut interpréter comme un lien de connexion, ainsi qu’un lien entre le nœud \textit{Sentence} et le lien de connexion, correspondant à l’opération de réécriture représentée par le symbole $\leftarrow$ dans la règle. Le diagramme est donc un polygraphe.
+    On attribue généralement l’introduction des arbres de constituants à Noam Chomsky. On en trouve quelques-uns dans son article de \citeyear{chomsky1955three} et un dans \textit{Syntactic Structures} de \citeyear{chomsky1957syntactic}, que nous reproduisons dans la figure \ref{fig:chomsky57}a. De manière assez surprenante, cet arbre a été remplacé, dans la réédition de 2002, par le diagramme de la figure \ref{fig:chomsky57}b. Ce nouveau diagramme n’est pas stricto sensu un arbre. Il apparaît dans le chapitre 4 intitulé \textit{Phrase structure} ‘Structure syntagmatique’, où Chomsky introduit les règles de réécriture, comme \textit{Sentence $\rightarrow$ NP $+$ VP}. Dans ce diagramme, il n’y a pas, comme dans les arbres de constituants ordinaires, de relations partie-tout entre le nœud \textit{Sentence} et les constituants immédiats \textit{NP} et \textit{VP}. Au lieu de cela, il y a un lien entre \textit{NP} et \textit{VP}, correspondant au symbole $+$ de la règle et que l’on peut interpréter comme un lien de connexion, ainsi qu’un lien entre le nœud \textit{Sentence} et le lien de connexion, correspondant à l’opération de réécriture représentée par le symbole $\rightarrow$ dans la règle. Le diagramme est donc un polygraphe.
 
 \begin{figure}[H]
     \small
@@ -928,7 +925,7 @@ L'ordre de saillance que nous avons introduit dans la figure \ref{fig:laponie-sa
 				\draw[thick] ($(t1.south)+(0,2pt)$) -- ($(the1.north)$);
 				\draw[thick] ($(n1.south)+(0,2pt)$) -- ($(ball.north)$);
 			\end{forest}
-			\caption{Diagramme polygraphique de l'édition de 2002}
+			\caption{Diagramme polygraphique de 2002}
     \end{subfigure}
     \small\textit{The man hit the ball.} ‘L'homme frappa le ballon.’
     \caption{Deux versions d'une structure de dérivation par Chomsky\label{fig:chomsky57}}
@@ -981,7 +978,7 @@ Alors que la version 2002 de l'arbre de 1957 est fondamentalement binaire, la bi
     \caption{\label{fig:subjectale}Trois représentations de la construction subjectale}
  \end{figure}
 
-    Le premier diagramme de la figure \ref{fig:subjectale} dit qu’il y a une unité dont la tête est un nom (N) qui dépend d’un verbe (V) par une relation \textit{sujet}, le deuxième diagramme \citep{chomsky1957syntactic} dit qu’il y a un groupe nominal (NP, \textit{noun phrase}) et un groupe verbal (VP, \textit{verbal phrase}) qui se connectent pour former ensemble une phrase (S, \textit{sentence}), tandis que le troisième diagramme dit que la phrase S possède deux composantes, un NP et un VP. Même si cela n’apparaît pas au premier regard, il s’agit de trois représentations de la même construction. Qui plus est, ces trois descriptions sont moins éloignées qu’il n’y paraît à première vue : comme on l’a déjà vu dans le \chapref{sec:3.2} sur la \textit{Connexion} et comme on le verra à nouveau dans la \sectref{sec:3.4.21} sur \textit{Arbre de constituants binaire et polygraphes}, on passe de l’une à l’autre en réifiant ou déréifiant les relations partie-tout de la relation \textit{sujet}.
+    Le premier diagramme de la figure \ref{fig:subjectale} dit qu’il y a une unité dont la tête est un nom (N) qui dépend d’un verbe (V) par une relation \textit{sujet}, le deuxième diagramme ( version 2002 de \citealt{chomsky1957syntactic}) dit qu’il y a un groupe nominal (NP, \textit{noun phrase}) et un groupe verbal (VP, \textit{verbal phrase}) qui se connectent pour former ensemble une phrase (S, \textit{sentence}), tandis que le troisième diagramme dit que la phrase S possède deux composantes, un NP et un VP. Même si cela n’apparaît pas au premier regard, il s’agit de trois représentations de la même construction. Qui plus est, ces trois descriptions sont moins éloignées qu’il n’y paraît à première vue : comme on l’a déjà vu dans le \chapref{sec:3.2} sur la \textit{Connexion} et comme on le verra à nouveau dans la \sectref{sec:3.4.21} sur \textit{Arbre de constituants binaire et polygraphes}, on passe de l’une à l’autre en réifiant ou déréifiant les relations partie-tout de la relation \textit{sujet}.
 
     L’exigence de binarité est une propriété partagée par de nombreuses analyses en constituants et par les analyses en dépendance : de la même façon que les constructions sont encodées, dans un arbre de dépendance, par des \hi{dépendances}, c’est-à-dire des \hi{relations liant deux à deux des mots}, les constructions seront encodées, dans un arbre de constituants binaire, par des \hi{décompositions binaires}, c’est-à-dire des \hi{combinaisons deux à deux de constituants}, .
 
@@ -1007,7 +1004,7 @@ Alors que la version 2002 de l'arbre de 1957 est fondamentalement binaire, la bi
 \end{figure}
 }
 \loupe[sec:3.4.19]{Syntaxe X-barre}{%
-    La \textstyleTermesapprof{Syntaxe X-barre} est la version la plus aboutie de l’\hi{analyse en constituants immédiats} (ACI) (voir la \sectref{sec:3.2.25} éponyme). Elle est développée à partir des années 1970 par Noam Chomsky et son étudiant Ray Jackendoff.
+    La \textstyleTermesapprof{Syntaxe X-barre} est la version la plus aboutie de l’\hi{Analyse en Constituants Immédiats} (ACI) (voir la \sectref{sec:3.2.25} éponyme). Elle est développée à partir des années 1970 par Noam Chomsky et son étudiant Ray Jackendoff.
 
     L’innovation majeure de la Syntaxe X-barre est que \hi{tout constituant} est considéré comme étant la \hi{projection d’une} \hi{tête}. Dans les versions précédentes de l’ACI, la phrase était décomposée en un groupe substantival et un groupe verbal (cf. la fameuse règle S \textrm{→} NP VP), ce qui en faisait un constituant exocentrique. Le fait que tout constituant ait une tête rend la Syntaxe X-barre extrêmement proche d’une analyse en dépendance. (Seule la coordination est encore parfois traitée comme une construction symétrique dont les conjoints sont les co-têtes ; voir l'\encadref{sec:3.4.26} sur les \textit{Deux types d’arbres de constituants}.)
 
@@ -1015,7 +1012,7 @@ Alors que la version 2002 de l'arbre de 1957 est fondamentalement binaire, la bi
 
     La troisième caractéristique de la Syntaxe X-barre est que l’arbre de constituants est \hi{ordonné} et aucun constituant n’est discontinu, ce qui, pour les raisons que nous avons exposé dans l’\encadref{sec:3.2.7} \textit{De la non-séparation des ordres au mouvement}, entraîne la présence de nombreuses positions occupées par des traces co-indicés avec d’autres positions.
 
-    La quatrième caractéristique de l’arbre X-barre est qu’il est \hi{binaire}. Ainsi la combinaison de chaque dépendant avec son gouverneur correspond à une décomposition binaire différente, ce qui, d’une certaine façon, rapproche encore plus cet arbre d’un arbre de dépendance (voir l’\encadref{sec:3.4.18}). La conséquence est que si un syntaxème a beaucoup de dépendants, il sera la tête d’autant de projections. Si le syntaxème est de catégorie X, sa \hi{projection maximale} est notée XP (\textit{X Phrase}) et ses \hi{projections intermédiaires} X’ (à l’origine elles étaient notées $\overline{\text{X}}$, avec une ou plusieurs barres au-dessus de X, d’où le nom de Syntaxe X-barre).
+    La quatrième caractéristique de l’arbre X-barre est qu’il est \hi{binaire}. Ainsi la combinaison de chaque dépendant avec son gouverneur correspond à une décomposition binaire différente, ce qui, d’une certaine façon, rapproche encore plus cet arbre d’un arbre de dépendance (voir l’\encadref{sec:3.4.18} qui précède). La conséquence est que si un syntaxème a beaucoup de dépendants, il sera la tête d’autant de projections. Si le syntaxème est de catégorie X, sa \hi{projection maximale} est notée XP (\textit{X Phrase}) et ses \hi{projections intermédiaires} X’ (à l’origine elles étaient notées $\overline{\text{X}}$, avec une ou plusieurs barres au-dessus de X, d’où le nom de Syntaxe X-barre).
 
     La Syntaxe X-barre considère de plus que l’élément sous XP a des propriétés différentes des éléments sous X’ : le premier est un \hi{spécifieur}, alors que les autres sont des \hi{compléments} (figure \ref{fig:Xbarre}). Dans certaines versions de la Syntaxe X-barre \citep{jackendoff1977x}, les ajouts (ou modifieurs) sont structurellement distingués des compléments actanciels par l’ajout d’un niveau de stratification supplémentaire dans la configuration de base (c’est-à-dire que XP porte une «~barre~» supplémentaire).
 
@@ -1052,7 +1049,7 @@ Alors que la version 2002 de l'arbre de 1957 est fondamentalement binaire, la bi
     \end{itemize}
     Les deux notions sont souvent confondues, alors qu’elles renvoient à des constituants différents (voir la figure \ref{fig:VP1VP2}) et à des cadres théoriques différents.
 
-    VP2 est une notion théoriquement valable, mais qui suppose que l’on travaille avec la \hi{granularité des syntaxèmes}. Il y a alors lieu de considérer que le sujet dépend plutôt de la flexion (voir l'\encadref{sec:3.2-granularite} \textit{Structures de connexion, critères et granularité}) et donc la \hi{projection maximale du lexème verbal} est bien VP2, c'est-à-dire un constituant qui ne contient pas le sujet. On notera néanmoins que VP2 n’est pas une unité autonomisable (puisque le lexème verbal n’apparaît jamais sans flexion) et qu’elle n’est donc qu’un objet théorique servant à expliciter, dans le cadre de l’analyse en constituants, que la réalisation du sujet est davantage liée à la nature de la flexion qu’à celle du lexème. Il y a, à notre avis, des moyens plus simples et plus directs d’indiquer le lien entre le sujet et la désinence verbale.
+    VP2 est une notion théoriquement valable, mais qui suppose que l’on travaille avec la \hi{granularité des syntaxèmes}. Il y a alors lieu de considérer que le sujet dépend plutôt de la flexion (voir l'\encadref{sec:3.2-granularite} sur \textit{Structures de connexion, critères et granularité}) et donc la \hi{projection maximale du lexème verbal} est bien VP2, c'est-à-dire un constituant qui ne contient pas le sujet. On notera néanmoins que VP2 n’est pas une unité autonomisable (puisque le lexème verbal n’apparaît jamais sans flexion) et qu’elle n’est donc qu’un objet théorique servant à expliciter, dans le cadre de l’analyse en constituants, que la réalisation du sujet est davantage liée à la nature de la flexion qu’à celle du lexème. Il y a, à notre avis, des moyens plus simples et plus directs d’indiquer le lien entre le sujet et la désinence verbale.
 
     VP1 est une notion sans grand intérêt théorique de notre point de vue. Il s’agit d’un constituant intermédiaire (VP1 est le I’ de l’analyse de droite de la figure \ref{fig:theo-Xbarre}), qui résulte d’une stratification qui nous semble peu justifiée. En effet, rien ne permet de considérer que la forme verbale se combine d’abord avec ses autres dépendants avant de se combiner avec son sujet et donc de donner ainsi un statut spécial au sujet.
 
@@ -1095,11 +1092,11 @@ On peut interpréter chaque branchement binaire comme une connexion entre deux u
  \draw[-{Triangle[]}] (A2) to [bend left] node [midway,above] {U} (B2);
 \end{tikzpicture}
 
-\caption{\label{fig:dereification}Passage d’un branchement binaire à une dépendance par déréification d’un nœud non terminal}
+\caption{\label{fig:dereification}Passage d’un branchement binaire à une dépendance par déréification des relations partie-tout}
 \end{figure}
 
 \begin{sloppypar}
-Si l’on applique la déréfication à tous les nœuds intérieurs de l’arbre de constituants binaire de la figure \ref{fig:laponie-T2}, on obtient la structure de la figure \ref{fig:polygraphe-ordre}. Cette structure est un \textstyleTermes{polygraphe} (voir définition formelle dans l’\encadref{sec:3.2.23} sur \textit{Graphe à bulles et polygraphe}) : ce n’est pas exactement un graphe, puisqu’un arc ne lie pas forcément deux nœuds (les nœuds sont les mots), mais il peut lier d’autres arcs entre eux ou un arc et un nœud. De plus, ce polygraphe est \textstyleTermes{orienté}, puisque chaque arc du graphe lie un gouverneur à un dépendant. Enfin ce polygraphe est implicitement \textstyleTermes{ordonné}, dans le sens où les nœuds du polygraphe sont disposés selon un ordre linéaire (celui des mots dans la phrase). De telles structures ont été proposées par le linguiste américain Eugene Nida dans sa thèse soutenue en \citeyear{nida1943morphology} (voir l’\encadref{sec:3.4.17} sur l’\textit{Historique des représentations syntaxiques par des diagrammes en constituants}.)
+Si l’on applique la déréfication à toutes les relations partie-tout de l’arbre de constituants binaire de la figure \ref{fig:laponie-T2}, on obtient la structure de la figure \ref{fig:polygraphe-ordre}. Cette structure est un \textstyleTermes{polygraphe} (voir définition formelle dans l’\encadref{sec:3.2.23} sur \textit{Graphe à bulles et polygraphe}) : ce n’est pas exactement un graphe, puisqu’un arc ne lie pas forcément deux nœuds (les nœuds sont les mots), mais il peut lier d’autres arcs entre eux ou un arc et un nœud. De plus, ce polygraphe est \textstyleTermes{orienté}, puisque chaque arc du graphe lie un gouverneur à un dépendant. Enfin ce polygraphe est implicitement \textstyleTermes{ordonné}, dans le sens où les nœuds du polygraphe sont disposés selon un ordre linéaire (celui des mots dans la phrase). De telles structures ont été proposées par le linguiste américain Eugene Nida dès \citeyear{nida1943morphology}, comme on l'a vu dans l’\encadref{sec:3.4.17} sur l’\textit{Historique des représentations syntaxiques par des diagrammes en constituants}.
 \end{sloppypar}
 
 \begin{figure}
@@ -1170,7 +1167,7 @@ Si l’on applique la déréfication à tous les nœuds intérieurs de l’arbre
 
     Dans la représentation a, \textit{frappe} est directement modélisé comme une action de Marie sur Pierre : \textit{frappe} (\textit{Marie}, \textit{Pierre}). Dans la représentation b, les relations qui lient \textit{frappe} à \textit{Marie} et \textit{Pierre} sont explicitées et nommées \textit{agent} et \textit{patient}. Dans la représentation c, les relations agent et patient sont vues comme des objets à part entière reliant les mots de la phrase : agent~(\textit{Marie}, \textit{frappe}) + patient~(\textit{Pierre}, \textit{frappe}). On l’aura deviné, les trois représentations sont des réifications successives des relations d’une même structure.
 
-    Si toute structure peut-être réifiée à l’infini, comment choisir le bon niveau de réification ? Faire de la relation entre deux objets un objet n’a d’intérêt que si l’on veut considérer cet objet en tant que tel et lui attribuer des propriétés. Dans le cas de la transitivité, on peut préférer la représentation b qui explicite les relations d’agent et de patient et permet donc d’en parler, par exemple pour décrire la voix passive (voir le \chapref{sec:13}).
+    Si toute structure peut-être réifiée à l’infini, comment choisir le bon niveau de réification ? Faire de la relation entre deux objets un objet en soi n’a d’intérêt que si l’on veut considérer ce nouvel objet en tant que tel et lui attribuer des propriétés. Dans le cas de la transitivité, on peut préférer la représentation b qui explicite les relations d’agent et de patient et permet donc d’en parler, par exemple pour décrire la voix passive (voir la \sectref{sec:13-actant} sur \textit{Argument, actant et modifieur}).
 
     Dans le cas de la relation de connexion, nous pensons qu’il n’est pas nécessaire d’expliciter les relations partie-tout que la connexion entretient avec les unités qu’elle connecte, d'autant que la connexion est pour nous une classe d'équivalence de combinaisons qui mettent en jeu des unités de granularité variée (voir la \sectref{sec:3.2.14} sur \textit{La connexion et ses instances}).}
 
@@ -1183,7 +1180,7 @@ Si l’on s’abstrait complètement de l’ordre linéaire et que l’on garde 
 \includegraphics[scale=0.9]{figures/polygraphs/poly-3.4.23-1.pdf}
 \end{figure}
 
-Bien que cela n’apparaisse pas au premier coup d’œil, cette structure est un extrait de la structure de la figure \ref{fig:polygraphe-ordre} : c’est le même \hi{polygraphe orienté} que précédemment, mais sans l’ordre des mots et avec une autre convention de représentation. Au lieu d’indiquer la hiérarchisation de la connexion par une flèche, celle-ci est indiquée en plaçant le gouverneur au-dessus du dépendant. Or ce polygraphe orienté, qui a donc été extrait automatiquement de l’arbre de constituants binaire en mettant en évidence les connexions, est très proche d’un arbre de dépendance. Pour obtenir l’arbre de dépendance, il suffit de \hi{faire glisser chaque dépendance} le long des dépendances sur lesquelles elle s’appuie, comme montré dans la figure \ref{fig:glissade}. Nous retombons ainsi sur l'arbre de dépendance de départ (voir figure \ref{fig:laponie-dep2}).
+Bien que cela n’apparaisse pas au premier coup d’œil, cette structure est un extrait de la structure de la figure \ref{fig:polygraphe-ordre} : c’est le même \hi{polygraphe orienté} que précédemment, mais sans l’ordre des mots et avec une autre convention de représentation : au lieu d’indiquer la hiérarchisation de la connexion par une flèche, celle-ci est indiquée en plaçant le gouverneur au-dessus du dépendant. Or ce polygraphe orienté, qui a donc été extrait automatiquement de l’arbre de constituants binaire en mettant en évidence les connexions, est très proche d’un arbre de dépendance. Pour obtenir l’arbre de dépendance, il suffit de \hi{faire glisser chaque dépendance} le long des dépendances sur lesquelles elle s’appuie, comme montré dans la figure \ref{fig:glissade}. Nous retombons ainsi sur l'arbre de dépendance de départ (voir figure \ref{fig:laponie-dep2}).
 
 \begin{figure}
 \begin{minipage}{.45\textwidth}\centering
@@ -1263,7 +1260,7 @@ La partie droite de la figure montre le passage d’un arbre de dépendance à \
 \includegraphics[width=\textwidth]{figures/graphs-collection.pdf}
 \end{figure}
 
-Chaque flèche $\Rightarrow$ ou $\Leftrightarrow$ entre deux structures symbolise une opération de conversion élémentaire permettant de passer d’une structure à une autre. Dans la plupart des cas, l’opération ne nécessite l’ajout d’aucune information et les deux structures sont équivalentes (nous ne considérons pas l’ordre linéaire sur les mots qui est des fois présent dans la structure et d’autres fois non). C’est le cas dans toute la partie droite de la figure, où toutes les structures sont équivalentes entre elles. Il s'agit de \hi{structures de constituants plates}. De la même façon, toutes les structures de la partie gauche sont équivalentes entre elles. Il s'agit de \hi{structures de constituants binaires avec têtes}. Elles contiennent une information supplémentaire qui est la stratification. Cette stratification, qui permet de stratifier les branchements non binaires, est indiquée dans la partie basse de la figure par l’ajout de l’ordre de saillance, lequel disparaît dans la partie haute, lorsque les «~glissades~» sont effectuées sur le polygraphe et qu’on revient à l’arbre de dépendance.
+Chaque flèche $\Rightarrow$ ou $\Leftrightarrow$ entre deux structures symbolise une opération de conversion élémentaire permettant de passer d’une structure à une autre, soit dans les deux sens ($\Leftrightarrow$), soit dans un sens uniquement ($\Rightarrow$). Dans la plupart des cas, l’opération ne nécessite l’ajout d’aucune information et les deux structures sont équivalentes (nous ne considérons pas l’ordre linéaire sur les mots qui est des fois présent dans la structure et d’autres fois non). C’est le cas dans toute la partie droite de la figure, où toutes les structures sont équivalentes entre elles. Il s'agit de \hi{structures de constituants plates}. De la même façon, toutes les structures de la partie gauche sont équivalentes entre elles. Il s'agit de \hi{structures de constituants binaires avec têtes}. Elles contiennent une information supplémentaire qui est la stratification. Cette stratification, qui permet d'ordonner les branchements non binaires d'une même tête, est indiquée dans la partie basse de la figure par l’ajout de l’ordre de saillance, lequel disparaît dans la partie haute, lorsque les «~glissades~» sont effectuées sur le polygraphe et qu’on revient à l’arbre de dépendance.
 
 \loupe[sec:3.4.26]{Deux types d’arbres de constituants}{%
     Nous avons présenté dans ce chapitre deux types d’arbres de constituants avec têtes : les arbres de constituants plats et les arbres de constituants binaires comme ceux de la Syntaxe X-barre. On peut penser que tout arbre de constituants plat peut être «~binarisé~» en introduisant des constituants intermédiaires. En fait, la différence est plus profonde et il s’agit à notre avis de deux façons assez différentes d’utiliser le même formalisme. La différence apparaît lorsqu’on regarde les branchements ternaires.
@@ -1308,27 +1305,7 @@ Chaque flèche $\Rightarrow$ ou $\Leftrightarrow$ entre deux structures symbolis
 
     \pagebreak En appliquant la méthode de Lecerf à l’arbre plat à gauche de la figure \ref{fig:laponie-ternaire}, on obtient l’arbre de dépendance à droite. Comme on le voit, le branchement ternaire est interprété comme deux connexions binaires, la connexion entre \textit{passer} et \textit{Noël} et la connexion entre \textit{passer} et \textit{en Laponie}.
 
-    Dans un arbre binaire, il en va tout autrement, puisque, comme nous l’avons montré ci-dessus (\sectref{sec:3.4.21} sur \textit{Arbres de constituants binaire et polygraphe}), \hi{chaque branchement correspond à une unique connexion}. Si un tel arbre contient un branchement ternaire, il doit être interprété comme une \hi{connexion ternaire} (voir l’\encadref{sec:3.2.17} éponyme). La Syntaxe X-barre, qui revendique l’usage des arbres binaires, s’est aventurée à proposer des branchements ternaires pour la coordination (notamment dans l'ouvrage de \citealt{jackendoff1977x}). On trouve déjà les mêmes arbres dans \citealt{hockett1958course} ; cf.\ la figure \ref{fig:hockett-coord} les boîtes de Hockett pour la coordination où le branchement est ternaire et symétrique, avec une position bien différenciée pour la conjonction).
-
-\begin{figure}[H]
-\caption{\label{fig:hockett-coord}Branchement ternaire dans une boîte de Hockett}
-\begin{tikzpicture}
-	\matrix (matrix) [matrix of nodes, nodes in empty cells, ampersand replacement=\&] {Marie \& et \& Pierre \& dorment\\
-	 \&  \& \\
- 	 \& \phantom{bgbgg}\& \& \\
-  	 \& \phantom{bgbgg}\& \& \\};
-   \node [fit=(matrix-3-1) (matrix-3-3), align=center] {Marie et Pierre};
-   \node [fit=(matrix-4-1) (matrix-4-4),align=center, minimum width=5cm] {Marie et Pierre dorment};
-   \draw (matrix.north) -| (matrix-1-2.north west) -- (matrix-1-2.south west) -- (matrix-2-2.south) -- (matrix-1-2.south east) -- (matrix-1-2.north east) |- (matrix.north);
-   \draw (matrix.west) |- (matrix-3-1.south west) -- (matrix-3-4.south east) -| (matrix.east);
-   \draw (matrix.west) |- (matrix-2-1.south west) -- (matrix-2-3.south east) -| (matrix-1-3.north east);
-   \draw (matrix.south east) -| (matrix.north west) -| cycle;
-   \draw (matrix.north) -| (matrix-1-3.north east) |- (matrix-3-3.south east) node [midway,draw,circle,fill=white, inner sep=1pt] {$>$};
-\end{tikzpicture}
-\end{figure}
-
-
-Cette analyse est ce qu’on appelle l’\hi{analyse symétrique de la coordination} (voir le \chapfuturef{18}) : dans \textit{Marie et Pierre dorment}, les conjoints (c’est le nom que l’on donne aux éléments coordonnés, \textit{Marie} et \textit{Pierre}) sont considérés comme des co-têtes, qui contribuent à égalité à la distribution du syntagme (lequel déclenche un accord pluriel du verbe). Il s’agit alors d’une construction ternaire, que nous pouvons représenter par une connexion ternaire en suivant les conventions de représentation utilisées par Tesnière dans son article de \citeyear{tesniere1934comment} \textit{Comment construire une syntaxe ?} : les deux conjoints \textit{Marie} et \textit{Pierre} sont au même niveau, reliés par une connexion horizontale, et la conjonction, qui est le troisième «~sommet~» de cette connexion, est placé en dessous.
+    Dans un arbre binaire, il en va tout autrement, puisque, comme nous l’avons montré ci-dessus (\sectref{sec:3.4.21} sur \textit{Arbres de constituants binaire et polygraphe}), \hi{chaque branchement correspond à une unique connexion}. Si un tel arbre contient un branchement ternaire, il doit être interprété comme une \hi{connexion ternaire} (voir l’\encadref{sec:3.2.17} éponyme). La Syntaxe X-barre, qui revendique l’usage des arbres binaires, s’est aventurée à proposer des branchements ternaires pour la coordination (notamment dans l'ouvrage de \citealt{jackendoff1977x}). Cette analyse est ce qu’on appelle l’\hi{analyse symétrique de la coordination} (voir le \chapfuturef{18}) : dans \textit{Marie et Pierre dorment}, les conjoints (c’est le nom que l’on donne aux éléments coordonnés, \textit{Marie} et \textit{Pierre}) sont considérés comme des co-têtes, qui contribuent à égalité à la distribution du syntagme (lequel déclenche un accord pluriel du verbe). Une représentation à la \citet{jackendoff1977x} est proposée dans la partie gauche de la figure \ref{fig:polygraphe-coord}. La structure de dépendance de droite peut être obtenue en appliquant la méthode de conversion par déréification à l’arbre de constituants à gauche. Le branchement ternaire de gauche donne une connexion ternaire, où \textit{Marie} et \textit{Pierre} occupent des positions symétriques (puisqu’ils sont co-têtes), tandis que la conjonction \textit{et} occupe une troisième position, comme «~dépendant~» des co-têtes. Nous pouvons représenter cette connexion ternaire en suivant la convention de représentation utilisée par Tesnière dans son article de \citeyear{tesniere1934comment} \textit{Comment construire une syntaxe ?} : les deux conjoints \textit{Marie} et \textit{Pierre} sont au même niveau, reliés par une connexion horizontale, et la conjonction, qui est le troisième «~sommet~» de cette connexion, est placé en dessous.
 
 \begin{figure}[H]
     \begin{minipage}[c]{.55\linewidth}\centering
@@ -1366,7 +1343,25 @@ Cette analyse est ce qu’on appelle l’\hi{analyse symétrique de la coordinat
     \caption{\label{fig:polygraphe-coord}Branchement ternaire et correspondance par la méthode de déréification}
 \end{figure}
 
-    La structure de dépendance de droite peut être obtenue en appliquant la méthode de conversion par déréification à l’arbre de constituants à gauche. Le branchement ternaire donne une connexion ternaire, où \textit{Marie} et \textit{Pierre} occupent des positions symétriques (puisqu’ils sont co-têtes), tandis que la conjonction \textit{et} occupe une troisième position, comme «~dépendant~» des co-têtes. La convention de Tesnière rend bien compte de cela.
+    On trouve aussi une représentation de l'analyse symétrique de la coordination chez \citealt{hockett1958course}. Nous adoptons les conventions de Hockett à notre exemple dans la figure \ref{fig:hockett-coord}. Dans le branchement ternaire pour la coordination, la conjonction occupe une position particulière, marquée par la forme particulière de la case, et les conjoints sont traités de façon symétrique. (Nous avons ajouté une marque de dépendance entre le sujet et le verbe, pour que notre analyse soit absolument équivalente aux deux précédentes, mais nous rappelons que Hockett  traite  la connexion sujet comme exocentrique.)
+
+\begin{figure}[H]
+\caption{\label{fig:hockett-coord}Analyse de la coordination à la \citet{hockett1958course}}
+\begin{tikzpicture}
+	\matrix (matrix) [matrix of nodes, nodes in empty cells, ampersand replacement=\&] {Marie \& et \& Pierre \& dorment\\
+	 \&  \& \\
+ 	 \& \phantom{bgbgg}\& \& \\
+  	 \& \phantom{bgbgg}\& \& \\};
+   \node [fit=(matrix-3-1) (matrix-3-3), align=center] {Marie et Pierre};
+   \node [fit=(matrix-4-1) (matrix-4-4),align=center, minimum width=5cm] {Marie et Pierre dorment};
+   \draw (matrix.north) -| (matrix-1-2.north west) -- (matrix-1-2.south west) -- (matrix-2-2.south) -- (matrix-1-2.south east) -- (matrix-1-2.north east) |- (matrix.north);
+   \draw (matrix.west) |- (matrix-3-1.south west) -- (matrix-3-4.south east) -| (matrix.east);
+   \draw (matrix.west) |- (matrix-2-1.south west) -- (matrix-2-3.south east) -| (matrix-1-3.north east);
+   \draw (matrix.south east) -| (matrix.north west) -| cycle;
+   \draw (matrix.north) -| (matrix-1-3.north east) |- (matrix-3-3.south east) node [midway,draw,circle, inner sep=1pt] {$>$};
+\end{tikzpicture}
+\end{figure}
+
 
     En conclusion, on note que \hi{le formalisme des arbres de constituants est ambigu~}: il ne permet pas de distinguer une analyse plate (on ne souhaite pas considérer de constituants intermédiaires) et une connexion ternaire (on souhaite indiquer que les éléments ne se combinent pas toujours par deux, mais parfois par trois). Celui des structures de dépendance le permet, à condition de considérer des structures qui ne sont plus entièrement hiérarchisées et qui contiennent des connexions ternaires.
 }
@@ -1443,7 +1438,7 @@ Pour d’autres unités, sans être forcément triviale, la question peut être 
 \ea{}
 [ \textit{c’\uline{est} là que j’ai vécu dans les voluptés calmes} ]
 
-–[ [ \textit{à le milieu de l’azur} ]–[ \textit{\uline{de} les vagues} ]–[ \textit{\uline{de} les splendeurs} ] ]
+–[ [ \textit{\uline{à} le milieu de l’azur} ]–[ \textit{\uline{de} les vagues} ]–[ \textit{\uline{de} les splendeurs} ] ]
 
 –[ [ \textit{et de les esclaves nus} ]–[ \textit{tout \uline{imprégnés} d’odeurs} ] ]
 \z
@@ -1454,7 +1449,7 @@ On aura noté que certaines formes qui étaient des amalgames ont été décompo
 \noindent Pour toute connexion, nous pouvons repérer sa tête et la hiérarchiser pour en faire une \hi{dépendance}.
 \end{tblsframed}
 
-La première unité contient le verbe principal de la phrase et est donc la racine de la structure, ce qui nous hiérarchise un certain nombre de connexions. Pour les autres, le critère d’effacement suffit.
+La première unité contient le verbe principal de la phrase et est donc la racine de la structure, ce qui nous hiérarchise un certain nombre de connexions. Pour les autres, le Critère d’effacement simple suffit.
 
 \ea{}
 [ \textit{c’\uline{est} là que j’ai vécu dans les voluptés calmes} ]
@@ -1516,7 +1511,7 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
      \tcbsubtitle{Connexions}
     Les connexions sont présentes dans les deux structures, mais les arbres de dépendance combinent des mots ou des syntaxèmes, tandis que les arbres de constituants combinent des constituants. Autrement dit, les instances des connexions sont plus fines dans un arbre de dépendance que dans un arbre de constituants. Ceci est pour nous un avantage majeur des arbres de dépendance.
 
-    Notons par ailleurs que si le dépendant d’une connexion peut en général être interprété comme la projection maximale, c’est-à-dire un constituant majeur, il y a des cas pù cela est plus discutable. Comparons :
+    Notons par ailleurs que si le dépendant d’une connexion peut en général être interprété comme la projection maximale, c’est-à-dire un constituant majeur, il y a des cas où cela est plus discutable. Comparons :
 
     \ea
     \ea \itshape Les linguistes qui étaient fatigués ont quitté la conférence.
@@ -1525,13 +1520,13 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     \z
 
     Si dans le premier exemple, le sujet du verbe doit être compris comme le constituant \textit{les linguistes qui étaient fatigués}, dans le deuxième exemple, \textit{qui étaient fatigués,} bien qu’étant toujours dépendant de \textit{les linguistes} ne fait plus vraiment partie du sujet du verbe \textit{ont quitté}. Il y a deux prédications indépendantes sur \textit{les linguistes~}: d’une part, \textit{les linguistes ont quitté la conférence}, et d’autre part, \textit{les linguistes étaient fatigués}, qui est au second plan et sert de justification à la prédication principale.
-    Il n'en reste pas moins que, dans les deux cas, la proposition relative \textit{qui étaient fatigués} dépend de \textit{les linguistes} et forme un constituant majeur son gouverneur.
+    Il n'en reste pas moins que, dans les deux cas, la proposition relative \textit{qui étaient fatigués} dépend de \textit{les linguistes} et forme un constituant majeur avec son gouverneur.
 
      \tcbsubtitle{Ordre des mots}
-    L’ordre des mots est plus facilement lisible dans un arbre de constituants, à tel point qu’il est même difficile d’envisager l’arbre de constituants indépendamment de l’ordre linéaire. Nous adoptons nous-mêmes un arbre de constituants pour représenter la structure topologique (voir chapitre suivant). Nous pensons par contre que les combinaisons syntaxiques doivent être clairement distinguées des relations de contiguïtés (voir la \sectref{sec:3.2.6} sur \textit{Structures syntaxiques et structures topologiques}) et que ne pas le faire conduit immanquablement à introduire la notion de mouvement (voir l'\encadref{sec:3.2.7} \textit{De la non-séparation des ordres au mouvement}). En d’autres termes, les arbres de constituants peinent à rendre compte simplement des \hi{structures non projectives}, sauf à introduire la notion de \hi{constituant discontinu}, qui fait alors perdre tous les avantages de l’arbre de constituants du point de vue de l’ordre des mots. Le \chapref{sec:3.5} sera entièrement consacré à ces questions et à la définition d’une structure de constituants topologique distincte de la structure syntaxique.
+    L’ordre des mots est plus facilement lisible dans un arbre de constituants, à tel point qu’il est même difficile d’envisager l’arbre de constituants indépendamment de l’ordre linéaire. Nous adoptons nous-mêmes un arbre de constituants pour représenter la structure topologique (voir le chapitre suivant). Nous pensons par contre que les combinaisons syntaxiques doivent être clairement distinguées des relations de contiguïtés (voir la \sectref{sec:3.2.6} sur \textit{Structures syntaxiques et structures topologiques}) et que ne pas le faire conduit immanquablement à introduire la notion de mouvement (voir l'\encadref{sec:3.2.7} \textit{De la non-séparation des ordres au mouvement}). En d’autres termes, les arbres de constituants peinent à rendre compte simplement des \hi{structures non projectives}, sauf à introduire la notion de \hi{constituant discontinu}, qui fait alors perdre tous les avantages de l’arbre de constituants du point de vue de l’ordre des mots. Le \chapref{sec:3.5} sera entièrement consacré à ces questions et à la définition d’une structure de constituants topologique distincte de la structure syntaxique.
 
     \tcbsubtitle{Interface sémantique-syntaxe}
-    Nous avons vu aux chapitres \ref{sec:1.2} et \ref{sec:2.3} qu’une partie de la sémantique des énoncés pouvait être saisie par un graphe de relations prédicat-argument, lequel graphe s’apparente à une structure de connexion, c’est-à-dire à un arbre de dépendance dont on aurait retiré la hiérarchie. Ceci est très net quand on regarde des paraphrases comme \textit{Pierre a été malade pendant deux semaines} vs \textit{La maladie de Pierre a duré deux semaines} (\chapref{sec:1.2}). De ce point de vue, la structure sémantique est beaucoup plus proche d’un arbre de dépendance que d’un arbre de constituant. L'interface sémantique-syntaxe sera évoquée plus en détail dans le \chapref{sec:13} sur la \textit{Syntaxe profonde}.
+    Nous avons vu aux chapitres \ref{sec:1.2} et \ref{sec:2.3} qu’une partie de la sémantique des énoncés pouvait être saisie par un graphe de relations prédicat-argument, lequel graphe s’apparente à une structure de connexion, c’est-à-dire à un arbre de dépendance dont on aurait retiré la hiérarchie. Ceci est très net quand on regarde des paraphrases comme \textit{Pierre a été malade pendant deux semaines} vs \textit{La maladie de Pierre a duré deux semaines} (étudéies au \chapref{sec:1.2}). De ce point de vue, la structure sémantique est beaucoup plus proche d’un arbre de dépendance que d’un arbre de constituant. L'interface sémantique-syntaxe sera évoquée plus en détail dans le \chapref{sec:13} sur la \textit{Syntaxe profonde}.
 
     \tcbsubtitle{Portée}
     Lorsqu’on considère un exemple tel que \textit{la première voiture rouge que j’ai vue}, on remarque que l’adjectif \textit{première} qui modifie \textit{voiture} \textbf{porte} sur \textit{voiture rouge que j’ai vue} et pas seulement sur \textit{voiture}, dans le sens que la voiture dont on parle n’est pas première parmi toutes les voitures, mais seulement parmi les voitures rouges que j’ai vues. De tels phénomènes sont appelés des \textstyleTermesapprof{phénomènes de portée}. Les phénomènes de portée montrent que certaines combinaisons se font avec des groupes. On peut représenter cela par le parenthésage suivant :
@@ -1546,7 +1541,7 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     \ex \itshape les voitures chères coréennes
     \z
     \z
-    on voit que l’interprétation est différente selon que \textit{coréennes} est dans la portée de \textit{chères} ou l’inverse (les voitures coréennes chères ne sont pas nécessairement des voitures chères dans l'absolu). Ces phénomènes de portée peuvent tout de même être encodés dans un arbre de dépendance, à condition d’ajouter un ordre de combinaison avec la tête (voir l'encodage d'un ordre de saillance dans la \sectref{sec:3.4.15} sur les \textit{Projections partielles et ordre de saillance}), ou par un polygraphe, en indiquant que le second adjectif se combine avec le résultat de la combinaison du premier adjectif avec le nom :
+    on voit que l’interprétation est différente selon que \textit{coréennes} est dans la portée de \textit{chères} ou l’inverse (les voitures coréennes chères ne sont pas nécessairement des voitures chères dans l'absolu). Ces phénomènes de portée peuvent tout de même être encodés dans un arbre de dépendance, à condition d’ajouter un ordre de combinaison avec la tête (voir la partie haute de la figure \ref{fig:coreennel}, qui reprend les conventions de l'encodage d'un ordre de saillance vu à la \sectref{sec:3.4.15}), ou par un polygraphe, en indiquant que le second adjectif se combine avec le résultat de la combinaison du premier adjectif avec le nom (voir la partie basse de la figure \ref{fig:coreennel}).
     
 \begin{figure}[H]
    \begin{minipage}[c]{.45\linewidth}\centering
@@ -1601,21 +1596,18 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     \ea
     \textit{{J’ai rencontré un américain qui habite en Chine depuis deux ans.}}
     \z
-
     Une telle phrase peut être découpée prosodiquement de la façon suivante :
 
     \ea
     \textit{{j’ai rencontré un américain}} {\textbar} \textit{qui habite en Chine} {\textbar} \textit{depuis deux ans}
     \z
-
     Les connections entre ces groupes seront créées incrémentalement au fur et à mesure de l’écoute (ou de la lecture) :
     
     \ea
     (\textit{j’ai rencontré un américain}) \textrm{→} (\textit{qui habite en Chine}) \textrm{→} (\textit{depuis deux ans})
     \z
-
     Ceci est tout à fait compatible avec une analyse en dépendance, dès que l'on considère, comme nous le faisons, que les dépendances peuvent être instanciées à différents niveaux de granularité. Une analyse en constituants immédiats suggère au contraire une analyse totalement inversée : la relative est d’abord analysée, puis rattachée à son antécédent pour former le groupe substantival [~\textit{un américain qui habite en Chine depuis deux ans}~], lequel est ensuite rattaché au noyau verbal pour former une proposition (sans même parler du fait que dans les analyses traditionnelles avec des arbres de constituants binaires, le sujet est censé être rattaché au verbe après le complément d’objet direct).
-    Il est possible même avec une grammaire basée sur une analyse en constituants immédiats de faire une analyse incrémentale. Un tel algorithme a été proposé par Jay Earley en \citeyear{earley1970efficient} : il consiste à anticiper les constituants qui peuvent suivre un mot donné et à ouvrir de tels constituants pour les remplir ensuite par les mots qui sont analysés. Mais on voit bien qu’une telle analyse est moins naturelle qu’une analyse en dépendance.
+    Il est tout de même possible de faire une analyse incrémentale avec une grammaire basée sur une analyse en constituants immédiats. Un tel algorithme a été proposé par Jay Earley en \citeyear{earley1970efficient} : il consiste à anticiper les constituants qui peuvent suivre un mot donné et à ouvrir de tels constituants pour les remplir ensuite par les mots qui sont analysés. Mais on voit bien qu’une telle analyse est moins naturelle qu’une analyse en dépendance.
 }
 \exercices{%\label{sec:3.4.30}
     \exercice{1} Nous proposons le parenthésage en constituants majeurs suivant :
@@ -1641,7 +1633,7 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     \end{exe}
     En déduire une structure de dépendance et un arbre de constituants binaire.
     
-     \exercice{5} On s’intéresse à la construction \textit{de X à Y}, illustrée par des exemples comme \textit{le train de Paris à Marseille} ou \textit{il travaille du lundi au vendredi}. À quelle hypothèse nous conduit l’application du test de déplacement (voir la \sectref{sec:3.2.16} \textit{Tests pour la connexion}) ? 
+     \exercice{5} On s’intéresse à la construction \textit{de X à Y}, illustrée par des exemples comme \textit{le train de Paris à Marseille} ou \textit{il travaille du lundi au vendredi}. À quelle hypothèse nous conduit l’application du Test de déplacement (voir la \sectref{sec:3.2.16} \textit{Tests pour la connexion}) ? 
      Cette hypothèse est-elle confirmée par d’autres tests ? Comment analyser alors la construction ?
 }
 \lecturesadditionnelles{%\label{sec:3.4.31}
@@ -1686,7 +1678,7 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     \caption{Structure de dépendance polygraphique\label{fig:proust}}
     \end{figure}
     
-    Pour construire un arbre de constituants binaire, il faut décider dans quel ordre combiner chaque mot avec ses dépendants. Notons que lorsqu’une connexion n’est pas hiérarchisée, cette combinaison a lieu après les autres. Par exemple, si nous prenons la portion \textit{à l’instant même où la gorgée mêlée des miettes du gâteau toucha mon palais}, on obtient~la structure (ii), où le déterminant est le dernier élément à se combiner avec le nom :
+    Pour construire un arbre de constituants binaire, il faut décider dans quel ordre combiner chaque mot avec ses dépendants. La combinaison avec une co-tête a nécessairement lieu après les combinaisons avec les dépendants. Par exemple, si nous prenons la portion \textit{à l’instant même où la gorgée mêlée des miettes du gâteau toucha mon palais}, on obtient~la structure (ii), où le déterminant est le dernier élément à se combiner avec le nom :
     
     \begin{exe}
     \exi{(ii)}\relax
@@ -1694,5 +1686,5 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     \end{exe}
     Nous devons également décider dans quel ordre regrouper les trois dépendants de la tête de la phrase, \textit{tressaillis}. Dans ce cas, l’analyse standard regroupera probablement le sujet \textit{je} en premier, car les deux autres dépendants sont des éléments détachés prosodiquement. Concluons en rappelant que la stratification de la structure de constituants ne nous semble pas une question très pertinente. Nous pensons que le regroupement en constituants doit être fait à un autre niveau d’analyse en utilisant des critères de cohésion syntaxique. Ce sera l’objet du chapitre suivant.
  
- \corrigé{5} Le test de déplacement montre l’impossibilité de permuter les syntagmes en \textsc{à} et en \textsc{de} : *\textit{le train à Marseille de Paris}, *\textit{il travaille au vendredi du lundi}. Il semble donc qu’il ne s’agisse pas de deux groupes prépositionnels indépendants, lesquels peuvent généralement commuter (\textit{Elle parle de Marie à Zoé}, \textit{un timbre de ma collection à 10 euros}). Le test de clivage (voir la \sectref{sec:3.4.10} sur \textit{Les tests de constituance}) confirme cela : *\textit{c’est au vendredi qu’il travaille du lundi} vs *\textit{c’est du lundi qu’il travaille au vendredi} vs \textit{c’est du lundi au vendredi qu’il travaille}. Nous verrons dans le \chapfuturef{18} qu’on peut traiter cette construction comme une coordination.
+ \corrigé{5} L'application du Test de déplacement montre l’impossibilité de permuter les syntagmes en \textsc{à} et en \textsc{de} : *\textit{le train à Marseille de Paris}, *\textit{il travaille au vendredi du lundi}. Il semble donc qu’il ne s’agisse pas de deux groupes prépositionnels indépendants, lesquels peuvent généralement commuter (\textit{Elle parle de Marie à Zoé} vs \textit{Elle parle à Zoé de Marie}, \textit{un timbre de ma collection à 10 euros} vs \textit{un timbre à 10 euros de ma collection}). Le Test de clivage (voir la \sectref{sec:3.4.10} sur \textit{Les tests de constituance}) confirme cela : *\textit{c’est au vendredi qu’il travaille du lundi} vs *\textit{c’est du lundi qu’il travaille au vendredi} vs \textit{c’est du lundi au vendredi qu’il travaille}. Nous verrons dans le \chapfuturef{18} qu’on peut traiter cette construction comme une coordination.
 }
