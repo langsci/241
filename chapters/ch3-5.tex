@@ -1453,13 +1453,15 @@ l'\hi{ordre} est \hi{implicite}, c’est-à-dire qu’il est représenté par la
       {\node [font={\itshape\strut}, below=1pt of \pos] {\text};}
 \end{tikzpicture}
  \end{figure}
+ 
 \begin{figure}[H]
     \caption{Variante simplifiée de la représentation en cellules d'un arbre de constituants ordonné\label{fig:arbre-cel2}}
     \todo[online]{Please add the figure sent to you}
 \end{figure}
+
 Dans la deuxième représentation, donnée dans la figure \ref{fig:arbre-cellule},  l’\hi{ordre} est \hi{explicite} et la \hi{structure d'arbre} est \hi{implicite} et peut se déduire de la \hi{position relative des constituants sur l’axe vertical}. Les nœuds du graphe représentent les \hi{positions inter-mot} et les constituants sont représentés par des arcs qui relient leur début à leur fin.  Bien que cette représentation soit  moins usuelle, elle est tout aussi simple et légitime que la représentation traditionnelle.  Cette représentation, où chaque décomposition d'un constituant (chaque connexion vue du point de vue dépendentiel) forme une «~cellule~», sera nommée la \hi{représentation en cellules} d'un arbre de constituants ordonné ou plus simplement un \textstyleTermes{arbre de constituants en cellules}. On la trouve plus souvent dans une version simplifiée, où les positions inter-mot restent implicites, comme dans la figure \ref{fig:arbre-cel2}.
 
-Notons qu'il est possible de combiner les deux représentations et d'expliciter à la fois la structure hiérarchique d'arbre et l'ordre linéaire. 
+Notons qu'il est possible de combiner la représentation traditionnelle avec la représentation en cellules et d'expliciter à la fois la structure hiérarchique d'arbre et l'ordre linéaire dans une même représentation. 
 }
 \maths[sec:3.5.29]{Grammaires de réécriture}{%
     L’une des premières modélisations mathématiques de la grammaire est la \textstyleTermesapprof{grammaire de réécriture} proposée par Noam \citet{chomsky1957syntactic} (voir l’\encadref{sec:1.3.7} sur \textit{Calcul symbolique et grammaires catégorielles} pour les toutes premières grammaires formelles). Notre modèle topologique, au travers de ses gabarits, prolonge ce formalisme. Nous commençons par présenter ce formalisme avant d'en expliquer les limites et de montrer l'intérêt d'introduire un modèle plus riche comme le modèle topologique.
@@ -1865,7 +1867,7 @@ Les avantages potentiels de ce découpage du domaine verbal sont multiples. Prem
 Le deuxième avantage concerne le calcul de la prosodie. Les constituants intermédiaires marquent différents niveaux de cohésion et donc les frontières de ces constituants correspondent généralement à des coupures prosodiques de profondeurs différentes, la frontière du domaine microsyntaxique étant toujours clairement marquée prosodiquement (voir l'encadré suivant).
 
 \loupe[sec:3.5.35]{Topologie et prosodie}{%
-    Nous avons déjà évoqué la prosodie et discuté des contraintes entre la structure syntaxique et la structure prosodique dans la \sectref{sec:3.2.11} sur l'\textit{Unité syntaxique autonomisable}. Nous y avons postulé que, à l’exception du cas des clitiques, les unités prosodiques sont des portions connexes de la structure syntaxique (c’est-à-dire des catenae pour reprendre le terme introduit dans l’\encadref{sec:3.2.20} sur \textit{Les limites de la dualité}), ce qui nous a permis de postuler le \textit{Test d'autonomisabilité prosodique}.
+    Nous avons déjà évoqué la prosodie et discuté des contraintes entre la structure syntaxique et la structure prosodique dans la \sectref{sec:3.2.11} sur l'\textit{Unité syntaxique autonomisable}. Nous y avons postulé que, à l’exception du cas des clitiques, les unités prosodiques sont des portions connexes de la structure syntaxique (c’est-à-dire des catenas pour reprendre le terme introduit dans l’\encadref{sec:3.2.20} sur \textit{Les limites de la dualité}), ce qui nous a permis de postuler le \textit{Test d'autonomisabilité prosodique}.
 
     À ces contraintes s’ajoutent des contraintes plus topologiques qui concernent la cohésion des unités et que nous avons présentées dans la section précédente. Certains constituants topologiques comme les amas sont très cohésifs et acceptent difficilement d’être rompus par une frontière prosodique. À l’inverse, les différentes unités du domaine macrosyntaxique forment normalement des unités prosodiques distinctes. À l’intérieur du domaine microsyntaxique, les choses sont plus complexes et dépendent beaucoup de la structure communicative. Par ailleurs, il existe des contraintes propres à chaque langue : en français, par exemple, les groupes accentuels tendent à être particulièrement équilibrés et font autour de 6 ou 7 syllabes (cette longueur est aussi dépendante du débit de parole).
 
