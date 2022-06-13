@@ -164,8 +164,9 @@ En l’absence de figement sémantique, une unité syntaxique prise isolément o
 Dans la délimitation des unités syntaxiques, il est essentiel de savoir détecter quand une unité syntaxique garde le même sens après effacement ou insertion d’une autre unité. Nous verrons que c’est ni toujours facile, ni bien formalisable et des différences dans l’analyse d’un énoncé peuvent venir d’un simple désaccord sur le statut d’un segment comme unité syntaxique. Les exemples suivants illustrent cette difficulté.
 
 \ea\label{ex:coca}
-    \ea\itshape     {Jean-Claude}  {déteste}  {le}  {coca}  {éventé.}\z
-\ex\itshape     {Jean-Claude}  {n’aime}  {pas}  {le}  {café.}\z
+\ea\itshape     {Jean-Claude}  {déteste}  {le}  {coca}  {éventé.}
+\ex\itshape     {Jean-Claude}  {n’aime}  {pas}  {le}  {café.}
+\z
 \z
 
 Nous considérons que le segment \textit{Jean-Claude déteste le coca} est bien une unité syntaxique de l’énoncé \REF{ex:coca}a, car il possède la même interprétation sans ou avec le mot \textit{éventé}, bien qu’il soit possible que Jean-Claude aime le coca avec bulles. Le problème vient du fait que \textit{le coca éventé} dénote une partie seulement de ce que dénote \textit{le coca}. Pareillement, on considère que la négation intervient dans l’énoncé \REF{ex:coca}b sans que le reste de l’énoncé ne change d’interprétation. On veut dire par là que le sens de \textit{Jean-Claude aime le café} reste inchangé quand cette proposition est niée : la phrase \textit{Jean-Claude n’aime pas le café} est synonyme de \textit{il est faux que Jean-Claude aime le café} et le sens de l’énoncé \REF{ex:coca}b ou de sa paraphrase est bien obtenu par la composition du sens de \textit{Jean-Claude aime le café} et de la négation (\textit{ne…pas} ou \textit{il est faux que}).
@@ -234,7 +235,7 @@ Ce test repose sur la définition préalable des unités prosodiques, ce qui n�
 Le Critère d’autonomisabilité prosodique ne demande pas que le segment considéré forme une unité prosodique effective de l’énoncé, mais que l’énoncé ou une partie puisse être prononcé avec une prosodie telle que le segment forme un groupe prosodique (sans changer le contenu informationnel ; voir la \sectref{sec:1.2.2} \textit{Partir d’un sens}). On peut donc se baser sur une prosodie suffisamment «~propre~» pour que les groupes prosodiques soient clairement marqués par des coupures appuyées et que leur définition ne pose pas de problèmes. On voit que ce critère résout le problème des formes verbales finies et des différentes unités qui commencent par une forme verbale finie. En effet, on peut facilement marquer une frontière prosodique entre \textit{cet étudiant} et \textit{veut} et grouper \textit{veut} avec \textit{acheter} ou \textit{acheter un livre~}. Voir l'exemple \REF{ex:3.2-prosodie}a, où les symboles {\textbar} marque les frontières prosodiques et les segments entre les {\textbar} forment des unités prosodiques. À l'inverse, \REF{ex:3.2-prosodie}b illustre un cas de prosodie agrammaticale, car \textit{de syntaxe est} ne peut pas former une unité prosodique dans cet énoncé.
 
 \ea\label{ex:3.2-prosodie}
-    \ea[]{\textit{Cet étudiant}} {\textbar} {\textit{veut acheter}} {\textbar} {\textit{un livre de syntaxe}}.\z
+    \ea[]{\textit{Cet étudiant}} {\textbar} {\textit{veut acheter}} {\textbar} {\textit{un livre de syntaxe}}.
     \ex[*]{\textit{Le livre}} {\textbar} \textit{de syntaxe est} {\textbar} \textit{sur la table.}\z
 \z
 
@@ -582,12 +583,11 @@ Nous proposons pour la phrase \REF{ex:livredesyntaxe} la structure de connexion 
 
 Deux remarques s'imposent concernant notre structure de connexion.
 
-Premièrement, \textit{la structure de connexion permet de récupérer toutes les unités syntaxiques de la phrase}. Les unités sont les \textit{portions connexes} de la structure, c'est-à-dire les morceaux de la structure formés de bouts reliés entre eux (voir l'\encadref{sec:1.2.3} sur \textit{Graphe et arbre} pour une définition de la \textit{connexité}). On peut induire toutes les unités de la structure de connexion en imaginant 
- qu’on a des ciseaux et qu’on coupe des connexions pour ne garder que des bouts connexes de la structure. Il est ainsi possible de récupérer l'unité \textit{cet étudiant veut} en coupant le lien entre \textit{veut} et le reste de la structure. Mais on ne peut pas récupérer d'unité \textit{étudiant veut}, car si on coupe le lien entre \textit{cet} et \textit{étudiant}, on perd aussi la bulle qu'ils forment ensemble et donc le lien avec \textit{veut}.
+Premièrement, \textit{la structure de connexion permet de récupérer toutes les unités syntaxiques de la phrase}. Les unités sont les \textit{portions connexes} de la structure, c'est-à-dire les morceaux de la structure formés de bouts reliés entre eux (voir l'\encadref{sec:1.2.3} sur \textit{Graphe et arbre} pour une définition de la \textit{connexité}). On peut induire toutes les unités de la structure de connexion en imaginant  qu’on a des ciseaux et qu’on coupe des connexions pour ne garder que des bouts connexes de la structure. Il est ainsi possible de récupérer l'unité \textit{cet étudiant veut} en coupant le lien entre \textit{veut} et le reste de la structure. Mais on ne peut pas récupérer d'unité \textit{étudiant veut}, car si on coupe le lien entre \textit{cet} et \textit{étudiant}, on perd aussi la bulle qu'ils forment ensemble et donc le lien avec \textit{veut}.
  
- La conséquence de cette première remarque et qu'on a une parfaite dualité entre la structure de connexion et l'ensemble des unités syntaxiques d'une phrase (la notion de \textit{dualité} a été formellement définie dans l’\encadref{sec:2.2.8} éponyme). Nous venons de montrer qu'on peut récupérer toutes les unités à partir de la structure de connexion. Mais à l'inverse, nous n'avons besoin que de l'ensemble des unités pour définir l'ensemble des combinaisons et donc la structure de connexion. Ceci n'est vrai que tant qu'on ne considère comme combinaison que les combinaisons A ${\oplus}$ B où A, B et AB sont des unités syntaxiques.
+La conséquence de cette première remarque et qu'on a une parfaite dualité entre la structure de connexion et l'ensemble des unités syntaxiques d'une phrase (la notion de \textit{dualité} a été formellement définie dans l’\encadref{sec:2.2.8} éponyme). Nous venons de montrer qu'on peut récupérer toutes les unités à partir de la structure de connexion. Mais à l'inverse, nous n'avons besoin que de l'ensemble des unités pour définir l'ensemble des combinaisons et donc la structure de connexion. Ceci n'est vrai que tant qu'on ne considère comme combinaison que les combinaisons A ${\oplus}$ B où A, B et AB sont des unités syntaxiques.
  
- Deuxièmement, la structure de connexion permet de récupérer toutes les combinaisons. C'est une conséquence immédiate de la première remarque, puisque les combinaisons sont définies à partir des unités. Il résulte de cette deuxième remarque que \textit{tout lien de connexion doit être vu comme représentant un ensemble de combinaisons}. Il s'agit de toutes les combinaisons A ${\oplus}$ B avec des unités A et B qui se trouvent de part et d'autre du lien de connexion et qui sont liées par ce lien de connexion. Par exemple, si on prend le lien entre \textit{acheter} et \textit{un livre} dans la figure \ref{fig:livredesyntaxe}, ce lien lie en fait, d'un coté, les unités \textit{acheter}, \textit{veut acheter} et \textit{cet étudiant veut acheter} et, de l'autre, les unités \textit{un livre} et \textit{un livre de syntaxe}. Le lien correspond donc bien à un ensemble de combinaisons, dont nous avons déjà donné une représentation dans la figure \ref{fig:combiequiv}.
+Deuxièmement, la structure de connexion permet de récupérer toutes les combinaisons. C'est une conséquence immédiate de la première remarque, puisque les combinaisons sont définies à partir des unités. Il résulte de cette deuxième remarque que \textit{tout lien de connexion doit être vu comme représentant un ensemble de combinaisons}. Il s'agit de toutes les combinaisons A ${\oplus}$ B avec des unités A et B qui se trouvent de part et d'autre du lien de connexion et qui sont liées par ce lien de connexion. Par exemple, si on prend le lien entre \textit{acheter} et \textit{un livre} dans la figure \ref{fig:livredesyntaxe}, ce lien lie en fait, d'un coté, les unités \textit{acheter}, \textit{veut acheter} et \textit{cet étudiant veut acheter} et, de l'autre, les unités \textit{un livre} et \textit{un livre de syntaxe}. Le lien correspond donc bien à un ensemble de combinaisons, dont nous avons déjà donné une représentation dans la figure \ref{fig:combiequiv}.
 
 
 \loupe[sec:3.2-granularite]{Structures de connexion, critères et granularité}%\label{sec:3.2.18}
@@ -604,12 +604,13 @@ Dans les deux cas, nous considérons la même granularité pour les unités synt
 Dans la structure de la première figure, nous utilisons les unités syntaxiques comme seul élément pour déterminer les combinaisons. Dans la structure de la deuxième figure, nous ajoutons le Critère distributionnel sans effacement. La deuxième structure affine les connexions de la première structure en proposant des instances plus fines des connexions.
 \end{sloppypar}
 
-\begin{figure}
+\begin{figure}[H]
 \begin{tikzpicture}
-  \matrix [matrix of nodes, nodes={ConcSet},row sep=1em,column sep=1em] (matrix)
+  \matrix [matrix of nodes, nodes={ConcSet},row sep=1em,column sep=1em,
+           ampersand replacement=\&] (matrix)
     {
-      Marie & & & Pierre \\
-       & regard- & -ait & \\     
+      Marie \& \& \& Pierre \\
+       \& regard- \& -ait \& \\     
     };
   \node [draw,ellipse,fit=(matrix-2-2) (matrix-2-3),inner sep=0pt] (row2) {};
   \draw (matrix-2-2) -- (matrix-2-3);
@@ -620,12 +621,13 @@ Dans la structure de la première figure, nous utilisons les unités syntaxiques
 \label{fig:regardait1}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
 \begin{tikzpicture}
-  \matrix [matrix of nodes, nodes={ConcSet},row sep=1em,column sep=1em] (matrix)
+  \matrix [matrix of nodes, nodes={ConcSet},row sep=1em,column sep=1em,
+           ampersand replacement=\&] (matrix)
     {
-      & -ait & & Pierre\\
-      Marie & & regard- & \\
+      \& -ait \& \& Pierre\\
+      Marie \& \& regard- \& \\
     };
   \draw (matrix-2-1) -- (matrix-1-2)
                      -- (matrix-2-3)
@@ -880,7 +882,7 @@ Les constituants sont des unités syntaxiques particulières, plus difficiles à
 
     L’autonomisabilité prosodique~et plus généralement la relation entre une structure de dépendances syntaxique et la structure prosodique a été étudiée par Piet Mertens dans sa thèse en \citeyear{mertens1987lintonation}. Pour un travail plus récent, on pourra consulter son article de \citeyear{mertens2008syntaxe}. Pour un travail précurseur sur les liens entre prosodie et syntaxe de dépendance, citons le travail d’Henri \citet{weil1844de} sur lequel nous reviendrons. \citet{lacheret1999prosodie} propose une présentation de la \textit{Prosodie du français}.
 
-    Lucien Tesnière utilise des bulles dans ses représentations syntaxiques. Une formalisation des arbres à bulles est proposée par \citet{kahane1997bubble}. La définition de la structure de connexion par raffinement d’une fragmentation est proposée par \citet{gerdes2011defining}. La définition de la connexion comme une classe d’équivalence de combinaisons est développée dans \citet{kahane2018une}. Le lien historique entre connexion et analyse en constituants immédiats, chez Henry A. Gleason comme chez ses prédécesseurs, est étudié par \citet{mazziotta2017what}. Timothy Osborne a consacré plusieurs articles aux catenas ;  voir par exemple l'article de \citeyear{osborne2012catenas:} et son ouvrage de \citeyear{osborne2019dependency}.
+    Lucien Tesnière utilise des bulles dans ses représentations syntaxiques. Une formalisation des arbres à bulles est proposée par \citet{kahane1997bubble}. La définition de la structure de connexion par raffinement d’une fragmentation est proposée par \citet{gerdes2011defining}. La définition de la connexion comme une classe d’équivalence de combinaisons est développée dans \citet{kahane2018une}. Le lien historique entre connexion et analyse en constituants immédiats, chez Henry A. Gleason comme chez ses prédécesseurs, est étudié par \citet{mazziotta2017what}. Timothy Osborne a consacré plusieurs articles aux catenas ;  voir par exemple l'article de \citeyear{osborne2012catenae} et son ouvrage de \citeyear{osborne2019dependency}.
 
     Sur le traitement cognitif de la syntaxe, on consultera les travaux précurseurs de Janet D. Fodor et de son étudiante Lyn Frazier. Dans leur article de \citeyear{frazier1978sausage}, elles défendent l’idée que les énoncés sont traités par petits paquets d’environ six mots qui sont ensuite connectés entre eux. Cette étude est suivie en \citeyear{frazier1982making} et \citeyear{fodor1994diagnosis} d’une analyse du traitement des phrases avec garden-path par l’analyse des mouvements oculaires, où il est défendu que l’énoncé n’est pas réanalysé, mais que le destinataire répare sa première analyse après avoir identifié la source de l’erreur.
     
