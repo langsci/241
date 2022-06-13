@@ -729,7 +729,8 @@ On regardera ainsi laquelle des deux commutations, celle sur A ou celle sur B, a
 \begin{figure}
 \caption{Application du Critère distributionnel sans effacement}
 \begin{minipage}{.33\textwidth}\centering
-  \begin{tikzpicture}[every node/.style={draw,ellipse,inner xsep=6pt}]
+  \begin{tikzpicture}[every node/.style={draw,ellipse,inner xsep=6pt},
+                      pin distance=2ex]
     \node at (0,0) (X) {X};
     \node[minimum width=3em, align=center] at (-.75,-2) (A) {A'};
     \node[minimum width=3em, align=center] at (.75,-2) (B) {B};
@@ -737,7 +738,8 @@ On regardera ainsi laquelle des deux commutations, celle sur A ou celle sur B, a
     \draw (X) -- (U) node[midway,right,reset shape] {?};
   \end{tikzpicture}
 \end{minipage}\begin{minipage}{.33\textwidth}\centering
-  \begin{tikzpicture}[every node/.style={draw,ellipse,inner xsep=6pt}]
+  \begin{tikzpicture}[every node/.style={draw,ellipse,inner xsep=6pt},
+                      pin distance=2ex]
     \node at (0,0) (X) {X};
     \node[minimum width=3em, align=center] at (-.75,-2) (A) {A};
     \node[minimum width=3em, align=center] at (.75,-2) (B) {B};
@@ -745,7 +747,8 @@ On regardera ainsi laquelle des deux commutations, celle sur A ou celle sur B, a
     \draw (X) -- (U);
   \end{tikzpicture}
 \end{minipage}\begin{minipage}{.33\textwidth}\centering
-  \begin{tikzpicture}[every node/.style={draw,ellipse,inner xsep=6pt}]
+  \begin{tikzpicture}[every node/.style={draw,ellipse,inner xsep=6pt},
+                      pin distance=2ex]
     \node at (0,0) (X) {X};
     \node[minimum width=3em, align=center] at (-.75,-2) (A) {A};
     \node[minimum width=3em, align=center] at (.75,-2) (B) {B'};
@@ -754,7 +757,6 @@ On regardera ainsi laquelle des deux commutations, celle sur A ou celle sur B, a
   \end{tikzpicture}%
 \end{minipage}
 \end{figure}
-\todo[inline]{the figures are too large. You can bring closer to the buble the label U, U' and U''. You can also keep the figure in the center on top and slightly slid down the two figures from the sides}
 
 Montrons par un exemple comment s’applique le critère. Considérons U = \textit{(nous) chantons} qui est la combinaison du lexème A = \textsc{chanter} de signifiant \textit{chant-} et de la désinence verbale B = \textit{{}-ons}. (Nous laissons de côté le sujet \textit{nous}, qui est clairement dépendant de la forme verbale, pour nous concentrer sur la forme verbale elle-même.)
 On peut faire commuter A avec les autres lexèmes verbaux et B avec les autres désinences verbales. Quel que soit le lexème verbal A’ considéré, l’unité U’ =  A’ ${\oplus}$ B garde la même valence supérieure que U, celle d’une proposition à l’indicatif, qui peut être aussi bien une phrase complète qu’une proposition subordonnée à un verbe qui impose l’indicatif (\textit{Je sais que nous chantons}). Par contre, ni U, ni U’ ne pourra être subordonné à un verbe qui demande le subjonctif (\textit{*Je veux que nous chantons} vs \textit{Je veux que nous chantions}). Par contre, la commutation de B avec un subjonctif B' donnera à U“ une valence supérieure différente de U. Même le changement du présent en futur change la valence supérieure, puisqu’il existe des contextes où le futur est impossible (\textit{Si nous chantons, les gens vont partir} vs *\textit{Si nous chanterons, les gens vont partir}). La commutation de B avec un infinitif (\textit{chanter}) ou avec un participe (\textit{chanté} ou \textit{chantant}) modifie encore davantage la valence supérieure de la forme verbale. Nous en concluons que, sans aucun doute possible, c’est la désinence du verbe et non le verbe lui-même qui contrôle la valence supérieure d’une forme verbale.

@@ -461,7 +461,6 @@ Une représentation de la structure produit que forment ensemble l’ordre liné
     
     Le français est une langue intermédiaire. L’arbre de dépendance linéarisé de la phrase \REF{ex:motives}a possède des dépendances dans les deux directions, comme le montre la  figure \ref{fig:motives-francais}.
 
-\todo[inline]{the vspace on top of the 3 figures can be reduced}
    
 \begin{figure}[H]
     \caption{Arbre de dépendance de la phrase (\ref{ex:motives})b en coréen\label{fig:motives-coreen}}
@@ -723,10 +722,10 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
        }
        \path (2) edge [bend left=45] (4);
        \path (3) edge [bend left=45] (5);
-       \node at (2) [CircleNode] {};
-       \node at (3) [CircleNode] {};
-       \node at (4) [CircleNode] {};
-       \node at (5) [CircleNode] {};
+       \node at (2) [fill=black!12,CircleNode] {};
+       \node at (3) [fill=black!12,CircleNode] {};
+       \node at (4) [fill=black!12,CircleNode] {};
+       \node at (5) [fill=black!12,CircleNode] {};
     \end{tikzpicture}
     \caption{Croisement des dépendances}
     \end{subfigure}%
@@ -740,25 +739,25 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
        } 
        \draw (1) -- (4);
        \path (3.base) edge [bend left=45] (5.base);
-       \node at (1) [CircleNode,label=above:$\infty$] {};
-       \node at (3) [CircleNode] {};
-       \node at (4) [CircleNode] {};
-       \node at (5) [CircleNode] {};
+       \node at (1) [fill=black!12,CircleNode,label=above:$\infty$] {};
+       \node at (3) [fill=black!12,CircleNode] {};
+       \node at (4) [fill=black!12,CircleNode] {};
+       \node at (5) [fill=black!12,CircleNode] {};
     \end{tikzpicture}
     \caption{Recouvrement de la racine}
     \end{subfigure}%
     \begin{subfigure}[t]{.333\linewidth}\centering
     \begin{tikzpicture} 
     \begin{scope}[local bounding box=graph]
-      \graph [nodes={CircleNode},clockwise=4] { subgraph K_n [n=4] };
+      \graph [nodes={fill=black!12,CircleNode},clockwise=4,empty nodes] { subgraph K_n [n=4] };
     \end{scope}
     \end{tikzpicture}
     \caption{K\textsubscript{4}}
     \end{subfigure}
   \caption{Équivalence entre K\textsubscript{4} et les configurations non projectives\label{fig:nonproj-K4}}
 \end{figure}
-\todo[inline]{use the same style for K4 than for the two other graphs. Same size of the nodes, no numbers.}
-}\largerpage[3]
+}
+
 \loupe[sec:3.5.16]{Équivalence des définitions de la projectivité}{%
     On peut donner encore une autre caractérisation de la non-projectivité :
      {un arbre de dépendance ordonné est \textstyleTermesapprof{non projectif} si et seulement s’il contient une dépendance non projective.} {Une \hi{dépendance ordonnée} est \textstyleTermesapprof{non projective} si elle couvre un élément qui n’appartient pas à la projection de la tête de cette dépendance.}
