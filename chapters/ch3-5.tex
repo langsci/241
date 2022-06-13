@@ -1454,8 +1454,46 @@ l'\hi{ordre} est \hi{implicite}, c’est-à-dire qu’il est représenté par la
  \end{figure}
  
 \begin{figure}[H]
-    \caption{Variante simplifiée de la représentation en cellules d'un arbre de constituants ordonné\label{fig:arbre-cel2}}
-    \todo[inline]{Please add the figure sent to you}
+\caption{Variante simplifiée de la représentation en cellules d'un arbre de constituants ordonné\label{fig:arbre-cel2}}
+\begin{tikzpicture}[decoration={brace, 
+                                mirror, 
+                                raise=-.25\baselineskip}]
+    \matrix (matrix) [matrix of nodes,
+                      nodes in empty cells, 
+                      ampersand replacement=\&, 
+                      nodes = {font=\strut},
+                      column sep=1em]
+      {
+        le \& chat \& poursuit \& un \& chien\\
+        D \& N \& V \& D \& N\\
+          \&   \&   \&   \& \\
+          \&   \&   \&   \& \\
+          \&   \&   \&   \& \\		      		      
+      };
+  
+    \node at ($(matrix-3-1) !.5! (matrix-3-2)$) {GN};
+    \node at ($(matrix-3-4) !.5! (matrix-3-5)$) {GN};  
+    \node at ($(matrix-4-3) !.5! (matrix-4-5)$) {GV};              
+    \node at ($(matrix-5-1) !.5! (matrix-5-5)$) {P};   
+    
+    \draw[decorate] 
+      (matrix-2-1.south west) -- (matrix-2-2.south east);
+    
+    \draw[decorate] 
+      (matrix-2-4.south west) -- (matrix-2-5.south east);
+      
+    \draw[decorate] 
+      (matrix-3-3.south west) -- (matrix-3-5.south east);
+      
+    \draw[decorate] 
+      (matrix-4-1.south west) -- (matrix-4-5.south east);
+         
+  
+    \foreach \i in {1,...,5} 
+      {
+        \draw (matrix-1-\i.south west) -- (matrix-1-\i.south east);
+      }
+\end{tikzpicture}
 \end{figure}
 
 Dans la deuxième représentation, donnée dans la figure \ref{fig:arbre-cellule},  l’\hi{ordre} est \hi{explicite} et la \hi{structure d'arbre} est \hi{implicite} et peut se déduire de la \hi{position relative des constituants sur l’axe vertical}. Les nœuds du graphe représentent les \hi{positions inter-mot} et les constituants sont représentés par des arcs qui relient leur début à leur fin.  Bien que cette représentation soit  moins usuelle, elle est tout aussi simple et légitime que la représentation traditionnelle.  Cette représentation, où chaque décomposition d'un constituant (chaque connexion vue du point de vue dépendentiel) forme une «~cellule~», sera nommée la \hi{représentation en cellules} d'un arbre de constituants ordonné ou plus simplement un \textstyleTermes{arbre de constituants en cellules}. On la trouve plus souvent dans une version simplifiée, où les positions inter-mot restent implicites, comme dans la figure \ref{fig:arbre-cel2}.
