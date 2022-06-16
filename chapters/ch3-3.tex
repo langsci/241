@@ -63,7 +63,7 @@ Notre définition de la tête reste vague sur la nature exacte de l’unité tê
 Les grammaires de dépendance traditionnelles font l’hypothèse que toute unité possède un unique mot tête. Nous considérons pour notre part que la nature de la tête dépend de la granularité de l’analyse et qu’on peut considérer, selon les finalités de l’analyse, une unité plus fine que le mot (un syntaxème) comme une unité plus large. Par ailleurs, il peut arriver que plusieurs éléments possèdent des propriétés de tête : on parle alors de \textstyleTermes{co-têtes} (voir la \sectref{sec:3.3.27} sur \textit{Nom et déterminant comme co-têtes}).
 
 Les notions de tête et de gouverneur renvoient au même concept, mais adoptent des points de vue différents.
-Si A et B forment à eux deux une unité syntaxique dont A est la \hi{tête}, alors A est le \hi{gouverneur} B. Inversement, si A est le \hi{gouverneur} B, alors A et B forment une unité syntaxique ensemble et A en est la \hi{tête}. Autrement dit, hiérarchiser une connexion revient donc à décider de quel côté est sa tête.\largerpage[2]
+Si A et B forment à eux deux une unité syntaxique dont A est la \hi{tête}, alors A est le \hi{gouverneur} B. Inversement, si A est le \hi{gouverneur} B, alors A et B forment une unité syntaxique ensemble et A en est la \hi{tête}. Autrement dit, hiérarchiser une connexion revient donc à décider de quel côté est sa tête.%\largerpage[2]
 
 On aura noté que pour une unité syntaxique U donnée, \hi{la tête de} U \hi{est un élément de} U, en quelque sorte l’élément le plus important de U du point de vue de la syntaxe, tandis que \hi{le gouverneur de} U \hi{est un élément extérieur à} U. (On peut se souvenir, pour ne pas confondre les deux termes, que la tête d’une personne fait toujours partie de cette personne.) Illustrons ces notions avec \textit{une très jolie valise} et U = \textit{très jolie}. La tête de U est \textit{jolie}, tandis que le gouverneur de U est \textit{valise} (voir la figure \ref{fig:3.3-tete}).
 
@@ -269,7 +269,7 @@ L’acyclicité n’exclut pas les cycles non orientés de connexions. Si l'on r
 
 La présence de cycles non orientés dans une structure de dépendance entraîne que certains nœuds ont deux gouverneurs. (On parle alors de \hi{dag}, \textit{directed acyclic graph}). Dans cet ouvrage, nous ne considérerons quasiment que des structures sans cycle et pour lesquelles \hi{tout nœud} \hi{possède au plus un gouverneur}. Plus précisément, lorsque tout nœud a exactement un gouverneur (à l’exception d’un nœud qu’on appelle la racine), la structure est un arbre : l’\textstyleTermes{arbre de dépendance} (voir l'\encadref{sec:0.0.1} sur l'\textit{Arbre de dépendance}).
 
-Notons pour conclure cette section que l’on utilise généralement une terminologie différente lorsqu’on parle de la tête d’une unité syntaxique U et de l'élément qui lui correspond dans la structure S de dépendance de U. Ainsi appelle-t-on \textstyleTermes{racine} de S le nœud de S qui correspond à la \hi{tête} de U.\largerpage
+Notons pour conclure cette section que l’on utilise généralement une terminologie différente lorsqu’on parle de la tête d’une unité syntaxique U et de l'élément qui lui correspond dans la structure S de dépendance de U. Ainsi appelle-t-on \textstyleTermes{racine} de S le nœud de S qui correspond à la \hi{tête} de U.%\largerpage
 
 \chevalier[sec:3.3.5]{Historique des représentations syntaxiques  par des diagrammes en dépendance}{%
     Si les analyses en dépendance sont déjà bien développées au 18\textsuperscript{e} siècle (voir la \sectref{sec:3.3.2} sur l'\textit{Historique des notions de dépendance et de tête}), les représentations des analyses syntaxiques par des diagrammes n'apparaissent qu'au 19\textsuperscript{e} siècle. Le premier auteur à utiliser extensivement des diagrammes pour l'enseignement de la grammaire est l'abbé Louis Gaultier (1746-1818), dont l'\textit{Atlas de grammaire} publié en \citeyear{gaultier1817atlas} contient une grande variété de diagrammes à visée pédagogique et tout particulièrement un diagramme tabulaire encodant  des fragments d'analyse en dépendance \citep[11]{gaultier1817atlas}. Nous présentons dans la figure \ref{fig:Gaultier1829} un diagramme similaire, extrait de l'introduction des \textit{Élémens de grammaire} publié en \citeyear{gaultier1829elemens} par ses élèves et précédé de la description suivante : 
@@ -377,7 +377,7 @@ C'est la cinquième colonne qui nous intéresse tout particulièrement, puisqu'e
     \end{figure}
 }
 
-\section{Arbre et représentation planaire}\label{sec:3.3.6}\largerpage
+\section{Arbre et représentation planaire}\label{sec:3.3.6}%\largerpage
 
 Il est essentiel de rappeler que la \hi{représentation par un arbre} (\hi{de dépendance)} sert uniquement à encoder une \hi{structure hiérarchique} liant des nœuds entre eux par des relations père-fils. Dès qu’un arbre est représenté sur une feuille plane, les nœuds frères (c’est-à-dire ayant le même père) doivent être placés les uns à côté des autres et apparaissent donc comme ordonnés. Cet ordre sur les nœuds frères, imposé par la \hi{représentation planaire}, est souvent utilisé pour encoder d'autres informations comme la saillance syntaxique (chez Tesnière par exemple) (voir le \chapfuturef{15}) ou la saillance communicative (chez les Pragois) (voir l'\encadref{sec:3.5.24} sur l'\textit{Ordre communicativement dirigé}). Un arbre avec un ordre sur les nœuds frères est une structure plus riche qu’un simple arbre. Les arbres que nous considérons dans ce chapitre sont des \hi{arbres non ordonnés}. Il faut se les imaginer dans l’espace, libérés de la feuille, comme des \hi{mobiles} suspendus dans l’air et dont les nœuds peuvent tourner librement autour de leur gouverneur.
 
@@ -721,10 +721,10 @@ Les critères distributionnels avec effacement ne sont applicables à une unité
 \Definition{\textstyleTermes{Critère distributionnel sans effacement}}
 {\textstyleTermes{Critère distributionnel sans effacement}. Si U = A ${\oplus}$ B et A commute avec des A', on peut comparer la valence supérieure de U avec les U’ = A’ ${\oplus}$ B. Plus les valences supérieures des U' sont différentes de la valence supérieure de U, plus A est susceptible d'être la tête de U.}
 
-\pagebreak\noindent (Voir l’exercice 4 de ce chapitre et sa correction pour la première formulation, à notre connaissance, du Critère distributionnel sans effacement, due à Paul Garde en \citeyear{garde1977ordre}.) 
+\noindent (Voir l’exercice 4 de ce chapitre et sa correction pour la première formulation, à notre connaissance, du Critère distributionnel sans effacement, due à Paul Garde en \citeyear{garde1977ordre}.) 
 
 Si l’on applique ce critère à une unité U = A ${\oplus}$ B dont on veut déterminer la tête, on considèrera le paradigme des éléments A’ qui commutent avec A et le paradigme des éléments B’ qui commutent avec B et on comparera la valence supérieure de U~= A ${\oplus}$ B avec celles des U’ = A’ ${\oplus}$ B et des U” = A ${\oplus}$ B’, ce qui revient à étudier le paradigme des unités X qui peuvent ou pas gouverner ces différentes unités.
-On regardera ainsi laquelle des deux commutations, celle sur A ou celle sur B, a le plus d’impact sur la valence supérieure de U. Si les A ${\oplus}$ B’ ont la même valence supérieure que A ${\oplus}$ B, mais pas les A’ ${\oplus}$ B, on en déduira que A gouverne B, c’est-à-dire que A est la tête de la combinaison U = A ${\oplus}$ B.\largerpage
+On regardera ainsi laquelle des deux commutations, celle sur A ou celle sur B, a le plus d’impact sur la valence supérieure de U. Si les A ${\oplus}$ B’ ont la même valence supérieure que A ${\oplus}$ B, mais pas les A’ ${\oplus}$ B, on en déduira que A gouverne B, c’est-à-dire que A est la tête de la combinaison U = A ${\oplus}$ B.%\largerpage
 
 \begin{figure}
 \caption{Application du Critère distributionnel sans effacement}
@@ -763,7 +763,7 @@ On peut faire commuter A avec les autres lexèmes verbaux et B avec les autres d
 
 Le Critère distributionnel sans effacement peut toujours s’appliquer, à la différence des Critères distributionnels avec effacement s’appliquent. Néanmoins, le Critère distributionnel sans effacement est plus difficile à utiliser que les Critères distributionnels avec effacement, pour lesquels il n'y a que trois unités à tester (A, B et U = A ${\oplus}$ B) et non toutes les unités obtenues en faisant varier A ou B. Mais le Critère distributionnel sans effacement est aussi plus puissant et donc plus fiable. Notons pour finir, le Critère distributionnel avec effacement négatif apparaît comme un cas limite du Critère distributionnel sans effacement, où on effectue une commutation par le vide. 
 
-\section{Tête faible}\label{sec:3.3.14}\largerpage
+\section{Tête faible}\label{sec:3.3.14}%\largerpage
 
 Reprenons l’exemple de U = \textit{à Marie}, avec A = \textit{à} et B = \textit{Marie}. Le Critère distributionnel avec effacement négatif (vu à la \sectref{sec:3.3.11}) nous a permis de déterminer que A = \textit{à} est une tête distributionnelle. Voyons maintenant ce que nous dit le Critère distributionnel sans effacement sur les propriétés de tête de A et B. Le syntagme U peut dépendre de \textsc{téléphoner} (\textit{Pierre téléphone à Marie}), mais si on commute A = \textit{à} avec une autre préposition (\textit{de Marie}, \textit{sur Marie}), le syntagme peut continuer à dépendre d’un verbe (\textit{Pierre rêve de Marie, Pierre compte sur Marie}), mais pas du verbe \textsc{téléphoner}. On en déduit à nouveau que la préposition \textit{à} est une tête distributionnelle et qu’elle ne dépend donc pas du substantif B. (Pour l’utilisation du terme \textit{substantif}, voir la \sectref{sec:3.3.23} «~\textit{Nom ou déterminant comme tête} ?~».) Avant d’en conclure que le substantif B dépend de la préposition A, il faut regarder ce qui se passe quand on commute le substantif B.
 
@@ -829,7 +829,7 @@ La \hi{tête distributionnelle} est aussi appelée la \textstyleTermes{tête ext
 \Definition{\textstyleTermes{tête interne}, \textstyleTermes{régissant}}
 {On appelle \textstyleTermes{tête interne} d’une combinaison l’élément qui semble imposer à l’autre sa forme, sa catégorie ou sa position linéaire. La tête interne est encore appelée le \textstyleTermes{régissant} et l’élément qui dépend de lui est dit \textstyleTermes{régi}.}
 
-Par exemple, le verbe \textsc{téléphoner} impose à son complément d’être combiné avec la proposition \textsc{à} (\textit{Pierre téléphone à Marie}), tandis que le verbe \textsc{regarder} demande un complément nu (\textit{Pierre regarde Marie}).\largerpage[1.5]
+Par exemple, le verbe \textsc{téléphoner} impose à son complément d’être combiné avec la proposition \textsc{à} (\textit{Pierre téléphone à Marie}), tandis que le verbe \textsc{regarder} demande un complément nu (\textit{Pierre regarde Marie}).%\largerpage[1.5]
 
 \Definition{\textstyleTermes{régime}}
 {La contrainte que le régissant impose au régi, ainsi que l'expression de cette contrainte (par un syntaxème de cas, une préposition ou une place linéaire par exemple) est appelée le \textstyleTermes{régime}. 
@@ -914,7 +914,7 @@ dans l'\encadref{sec:3.3.22}.)
 
 La notion de tête sémantique est donc une notion distincte de celle de tête syntaxique (voir la section sur les \textit{Distorsions sémantique-syntaxe} dans le \chapref{sec:13}). Néanmoins lorsque les critères pour déterminer la tête syntaxique sont insuffisants, on peut, si l’on souhaite à tout prix choisir une tête, utiliser les critères sémantiques.
 
-\section{Critère sémantique de non-effacement}\label{sec:3.3.18}\largerpage
+\section{Critère sémantique de non-effacement}\label{sec:3.3.18}%\largerpage
 
 On ne confondra pas la notion de tête sémantique avec celle de \textstyleTermes{gouverneur sémantique} (voir l’\encadref{sec:3.3.3} sur les \textit{Dépendances morphologique, syntaxique et sémantique}). 
 Ainsi dans \textit{livre rouge}, dans la relation sémantique entre ‘livre’ et ‘rouge’, c’est bien ‘rouge’ qui fonctionne comme prédicat et prend ‘livre’ comme argument (‘rouge’ désigne une propriété qui comme toute propriété est la propriété de quelque chose, alors que ‘livre’ désigne un objet dont la couleur n’est pas définitoire). On dira donc que \textit{livre} est la tête sémantique de \textit{livre rouge}, tandis que ‘rouge’ est le gouverneur sémantique de ‘livre’, qui est son argument ou dépendant sémantique.
@@ -931,7 +931,7 @@ Prenons un exemple. On s’intéresse à U = \textit{sur la table} dans l’éno
 
 \ea \textit{Pierre a posé le livre sur la table.}\z
 
-Ici ‘sur’ est un prédicat binaire qui exprime une relation de localisation entre ‘livre’ et ‘table’ et prend donc ‘table’ comme argument. Comme A = \textit{sur} est le gouverneur sémantique de B = \textit{la table} et que A est non effaçable, A est une tête syntaxique de U.\largerpage[2]
+Ici ‘sur’ est un prédicat binaire qui exprime une relation de localisation entre ‘livre’ et ‘table’ et prend donc ‘table’ comme argument. Comme A = \textit{sur} est le gouverneur sémantique de B = \textit{la table} et que A est non effaçable, A est une tête syntaxique de U.%\largerpage[2]
 
 D’après le Critère d’effacement simple, si B est effaçable, alors A est une tête syntaxique, indépendamment de savoir si A gouverne sémantiquement B ou pas. Le critère du gouverneur sémantique est donc vraiment intéressant quand ni A, ni B n’est effaçable dans un contexte donné.
 
@@ -1127,7 +1127,7 @@ Il existe néanmoins un certain nombre de cas problématiques qui sont au centre
     \z
 
 }
-\section{Nom ou déterminant comme tête ?}\label{sec:3.3.23}\largerpage
+\section{Nom ou déterminant comme tête ?}\label{sec:3.3.23}%\largerpage
 
 Le déterminant et le nom forment avec leurs dépendants une unité que nous appelons le \textstyleTermes{groupe substantival}. Le groupe substantival est souvent appelé \textstyleTermes{groupe nominal} ou \textstyleTermes{groupe déterminatif}, selon que l’on considère que sa tête est le nom ou le déterminant. Nous avons choisi à dessein un terme neutre qui ne présuppose aucune des deux analyses. Qui plus est ce terme est conforme au choix terminologique fait en typologie qui distingue généralement \textstyleTermes{substantif} (une unité qui peut référer à une substance) et \textstyleTermes{nom} (une catégorie lexicale). (Pour plus de détails, voir la section sur \textit{Substantifs et noms} du \chapfuturef{16}.)
 
@@ -1471,7 +1471,7 @@ Dans notre terminologie, groupe et syntagme sont deux notions bien distinctes : 
 
 
 
-Si l’on adopte une représentation syntaxique très granulaire où les syntaxèmes flexionnels occupent des positions distinctes des lexèmes, on distinguera les \textstyleTermes{projections flexionnelles} des \textstyleTermes{projections lexicales}. Les projections flexionnelles sont généralement appelées les \textstyleTermes{projections fonctionnelles} dans la littérature en raison de la Syntaxe X-barre qui appelle catégories fonctionnelles les éléments qui ont uniquement une fonction grammaticale (voir l’\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}).\largerpage[2]
+Si l’on adopte une représentation syntaxique très granulaire où les syntaxèmes flexionnels occupent des positions distinctes des lexèmes, on distinguera les \textstyleTermes{projections flexionnelles} des \textstyleTermes{projections lexicales}. Les projections flexionnelles sont généralement appelées les \textstyleTermes{projections fonctionnelles} dans la littérature en raison de la Syntaxe X-barre qui appelle catégories fonctionnelles les éléments qui ont uniquement une fonction grammaticale (voir l’\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}).%\largerpage[2]
 
 
 
@@ -1543,7 +1543,7 @@ La relation de dominance est une relation d’ordre\textstyleTermesapprof{ parti
     En conclusion, la donnée d’une relation de dépendance ou d’une relation de dominance revient au même. Il s’agit de deux façons équivalentes de définir une même hiérarchie. Chacune des deux relations est immédiatement déductible de l’autre.
 }
 
-\section{Critère de recouvrement}\label{sec:3.3.32}\largerpage
+\section{Critère de recouvrement}\label{sec:3.3.32}%\largerpage
 
 Une dernière façon de caractériser une tête repose sur l’organisation linéaire ou \textstyleTermes{topologie} (traditionnellement appelée l’\textstyleTermes{ordre des mots}) (voir le \chapref{sec:3.5} entièrement consacré au sujet). Le Critère de recouvrement est un cas particulier de la propriété de projectivité que nous présenterons à la \sectref{sec:3.5.14} sur \textit{Projectivité et dépendance projective}. L’idée générale est que les dépendants tendent à se placer à côté de leur gouverneur. Cela n’est pas toujours possible si le gouverneur B a beaucoup de dépendants et il est donc possible qu’un autre dépendant de B se place entre B et son dépendant C. Mais par contre, il n’est généralement pas possible que le gouverneur A de B se place entre B et son dépendant C.
 
@@ -1800,7 +1800,7 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
     \end{figure}
 
 
-    \corrigé{2} Du Marsais propose une analyse hybride entre dépendance et constituance immédiate. Il semble hésiter entre les deux approches et utilise notamment le même terme \textit{sujet} pour désigner la relation entre le groupe sujet et le groupe verbal (\textit{Celui} est le sujet de \textit{ne marche point dans les ténèbres}) et pour désigner un constituant de la proposition (\textit{Qui me suit}, ces trois mots font une proposition incidente […] \textit{Qui} est le sujet de cette proposition incidente). Dans la figure \ref{fi:Dumarsais}, nous associons les étiquettes fonctionnelles à des flèches lorsque Du Marsais en fait des relation de de dépendance et à des bulles lorsqu'il les associe à une relation de constituance immédiate.
+    \corrigé{2} Du Marsais propose une analyse hybride entre dépendance et constituance immédiate. Il semble hésiter entre les deux approches et utilise notamment le même terme \textit{sujet} pour désigner la relation entre le groupe sujet et le groupe verbal (\textit{Celui} est le sujet de \textit{ne marche point dans les ténèbres}) et pour désigner un constituant de la proposition (\textit{Qui me suit}, ces trois mots font une proposition incidente […] \textit{Qui} est le sujet de cette proposition incidente). Dans la figure \ref{fig:Dumarsais}, nous associons les étiquettes fonctionnelles à des flèches lorsque Du Marsais en fait des relation de de dépendance et à des bulles lorsqu'il les associe à une relation de constituance immédiate.
 
     \begin{figure}[H]
     \caption{Diagramme d’après \citet{Dumarsais1754}\label{fig:Dumarsais}}
