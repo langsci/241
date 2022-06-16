@@ -18,7 +18,7 @@ Dans l’exemple \REF{ex:jambe}, \phraseme{tenir la jambe} est un phrasème (voi
 
 
 \begin{figure}
-	\begin{subfigure}[h]{0.5\textwidth}
+	\begin{subfigure}[h]{0.66\textwidth}\centering
 		\begin{tikzpicture}[>={Triangle[]},
 			label distance=0pt,
 			node distance=10mm,
@@ -26,7 +26,8 @@ Dans l’exemple \REF{ex:jambe}, \phraseme{tenir la jambe} est un phrasème (voi
 			
 			\begin{scope}[nodes={CircleNode}]
 				\node (zoe) [label=below left:{`Zoé'}] {};
-				\node (tenirlajambe) [above right=of zoe,label=above left:{`tenir la jambe'}] {};
+				\node (tenirlajambe) [above right=of zoe,label=left:{`tenir la jambe'}] {};
+				\node (passe) [above left=of tenirlajambe, label=above left:{passé}] {};
 				\node (durer) [above right=of tenirlajambe,label=above right:{`durer'}] {};
 				\node (heure) [below right=of durer,label=right:{`heure'}] {};
 				\node (singulier0) [above right=of heure,label=right:{singulier}] {};
@@ -39,6 +40,7 @@ Dans l’exemple \REF{ex:jambe}, \phraseme{tenir la jambe} est un phrasème (voi
 			\draw[-{Triangle[]}] (tenirlajambe) -- (zoe) node[font=\footnotesize,midway,anchor=south east, inner sep=1pt] {1};
 			\draw[-{Triangle[]}] (durer) -- (tenirlajambe) node[font=\footnotesize,midway,anchor=base east] {1};
 			\draw[-{Triangle[]}] (durer) -- (heure) node[font=\footnotesize,midway,anchor=base west] {2};
+			\draw[-{Triangle[]}] (passe) -- (tenirlajambe) node[font=\footnotesize,midway,anchor=base west] {1};
 			\draw[-{Triangle[]}] (tenirlajambe) -- (prof) node[font=\footnotesize,midway,anchor=base west] {2};
 			\draw[-{Triangle[]}] (indef) -- (heure) node[font=\footnotesize,midway,anchor=base west] {1};
 			\draw[-{Triangle[]}] (singulier1) -- (prof) node[font=\footnotesize,midway,left] {1};
@@ -46,10 +48,9 @@ Dans l’exemple \REF{ex:jambe}, \phraseme{tenir la jambe} est un phrasème (voi
 			\draw[-{Triangle[]}] (singulier0) -- (heure) node[font=\footnotesize,midway,anchor=base east] {1};
 		\end{tikzpicture}
 		\caption{Structure prédicative sémantique}
-		\todo[inline]{one element is missing in this figure: a node with a label passé (without quotes) and an arrow from this node to the node ’tenir la jambe’ with the value 1} 
 	\end{subfigure}%
 	\bigskip\medskip\\%
-	\begin{subfigure}[b]{0.5\textwidth}
+	\begin{subfigure}[b]{0.5\textwidth}\centering
 		\begin{forest} for tree={font=\normalfont, l sep=6.5mm}
 			[\phraseme{tenir le jambe}\textsubscript{passé},calign=child,calign primary child=2
 				[\textsc{Zoé},edge label={node[midway,above left=-0.5ex,font=\footnotesize]{1}}]
@@ -62,7 +63,7 @@ Dans l’exemple \REF{ex:jambe}, \phraseme{tenir la jambe} est un phrasème (voi
 		\caption{Structure syntaxique profonde}
 	\end{subfigure}%
 	\hfill
-	\begin{subfigure}[b]{0.5\textwidth}
+	\begin{subfigure}[b]{0.5\textwidth}\centering
 		\begin{forest} for tree={font=\normalfont, l sep=6.5mm}
 			[\textsc{avoir}\textsubscript{ind,prés,3,sg}
 				[\textsc{Zoé},edge label={node[midway,above left=-1ex,font=\footnotesize]{sujet}}]
