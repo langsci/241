@@ -176,7 +176,7 @@ L’analyse de la production de ces deux énoncés va nous permettre de mettre e
 
 La première chose qui va déterminer la nature du texte que nous produisons est la façon dont nous réalisons chacun des éléments de sens du message que nous souhaitons communiquer. Pour simplifier, nous considérons que chaque sens va être réalisé par une unité lexicale : par exemple, ‘malade’ peut être réalisé par l’adjectif \textsc{malade} ou le nom \textsc{maladie}; ‘durer’ peut être réalisé par le nom \textsc{durée}, le verbe \textsc{durer} ou les prépositions \textsc{durant} ou \textsc{pendant}.
 
-Comment se font les \textstyleTermes{choix lexicaux~}? Les choix lexicaux dépendent bien sûr du sens que l’on veut exprimer : par exemple, pour parler de l’ingestion d’un aliment, on devra choisir entre \textsc{boire} et \textsc{manger} selon la nature de cet aliment, mais aussi entre \textsc{manger}, \textsc{déguster} ou \textsc{dévorer} selon la façon dont on l’a ingéré ou encore entre \textsc{manger} et \textsc{bouffer} selon la familiarité avec laquelle nous avons l’habitude de nous adresser à notre interlocuteur. Cependant, la subtilité du sens que nous voulons exprimer n’est pas le seul facteur qui contraint les choix lexicaux. Il existe d’autres contraintes qui relèvent de la grammaire et dont nous allons parler maintenant.%\largerpage
+Comment se font les \textstyleTermes{choix lexicaux~}? Les choix lexicaux dépendent bien sûr du sens que l’on veut exprimer : par exemple, pour parler de l’ingestion d’un aliment, on devra choisir entre \textsc{boire} et \textsc{manger} selon la nature de cet aliment, mais aussi entre \textsc{manger}, \textsc{déguster} ou \textsc{dévorer} selon la façon dont on l’a ingéré ou encore entre \textsc{manger} et \textsc{bouffer} selon la familiarité avec laquelle nous avons l’habitude de nous adresser à notre interlocuteur. Cependant, la subtilité du sens que nous voulons exprimer n’est pas le seul facteur qui contraint les choix lexicaux. Il existe d’autres contraintes qui relèvent de la grammaire et dont nous allons parler maintenant.\largerpage
 
 \loupe[sec:1.2.6]{Les quatre moyens d’expression du langage}{%
     Lorsque nous parlons, nous avons quatre moyens à notre disposition pour exprimer du sens.
@@ -292,6 +292,10 @@ La structure que nous obtenons s’appelle un \textstyleTermes{arbre de dépenda
 Chaque dépendance est étiquetée en fonction de son parcours : les relations sémantiques qui ont été parcourues du prédicat vers l’argument (c'est-à-dire dans le sens de la flèche) donnent une \textstyleTermes{dépendance syntaxique actancielle} (que nous numérotons comme la dépendance sémantique correspondante) (figure \ref{fig:dep-actant}), tandis que les relations sémantiques qui ont été parcourues à contre-courant donnent une \textstyleTermes{dépendance syntaxique modificative} (étiquetée \textit{\textsc{mod}}) (figure \ref{fig:dep-mod}).
 
 \begin{figure}
+\begin{floatrow}
+\ffigbox
+  {\caption{Dépendance actancielle} \label{fig:dep-actant}}
+  {%
 \begin{minipage}[c]{.15\textwidth}\centering%
 \begin{tikzpicture}[>={Triangle[]}]
     \begin{scope}[every node/.style={CircleNode},level distance=3\baselineskip]
@@ -315,11 +319,11 @@ Chaque dépendance est étiquetée en fonction de son parcours : les relations s
                 edge from parent
                 node [right,FnEdgeLabel] {1} 
                 };
-\end{tikzpicture}\end{minipage}
-\caption{Dépendance actancielle} \label{fig:dep-actant}
-\end{figure}
+\end{tikzpicture}\end{minipage}}
 
-\begin{figure}
+\ffigbox
+  {\caption{Dépendance modificative}\label{fig:dep-mod}}
+  {%
 \begin{minipage}[c]{.15\textwidth}\centering%
 \begin{tikzpicture}[>={Triangle[]}]
     \begin{scope}[every node/.style={CircleNode},level distance=3\baselineskip]
@@ -344,11 +348,11 @@ Chaque dépendance est étiquetée en fonction de son parcours : les relations s
                 node [right,FnEdgeLabel] {\itshape \textsc{mod}} 
                 };
 \end{tikzpicture}
-\end{minipage}
-\caption{Dépendance modificative}\label{fig:dep-mod}
+\end{minipage}}
+\end{floatrow}
 \end{figure}
 
-Comme nous l’avons expliqué dans la section précédente, chaque unité lexicale se voit imposer sa partie du discours par son gouverneur, la racine étant un verbe conjugué. Ainsi dans la phrase (\ref{ex:maladie}a), \textsc{Ali}, qui dépend du nom \textsc{maladie}, devrait être réalisé par un adjectif, ce que nous indiquons par la notation Adj(\textsc{Ali}). C’est la préposition DE qui assurera cette translation de nom en adjectif (\textit{la maladie} \textbf{\textit{d}}\textit{’Ali}) et permettra à \textsc{Ali} d’être complément du nom. De la même façon, la notation V(\textsc{malade}) indique que \textsc{malade} occupe une position où un verbe est attendu et c’est la copule \textsc{être} qui assurera la translation d’adjectif en verbe.
+Comme nous l’avons expliqué dans la section précédente, chaque unité lexicale se voit imposer sa partie du discours par son gouverneur, la racine étant un verbe conjugué. Ainsi dans la phrase (\ref{ex:maladie}a), \textsc{Ali}, qui dépend du nom \textsc{maladie}, devrait être réalisé par un adjectif, ce que nous indiquons par la notation Adj(\textsc{Ali}). C’est la préposition DE qui assurera cette translation de nom en adjectif (\textit{la maladie} \textbf{\textit{d}}\textit{’Ali}) et permettra à \textsc{Ali} d’être complément du nom. De la même façon, la notation V(\textsc{malade}) indique que \textsc{malade} occupe une position où un verbe est attendu et c’est la copule \textsc{être} qui assurera la translation d’adjectif en verbe.\largerpage
 
 \loupe[sec:1.2.10]{Du sens au texte : de 3D à 1D}{%
 
@@ -382,7 +386,7 @@ En produisant les phrases (\ref{ex:maladie}a) et (\ref{ex:maladie}b) (\sectref{s
 
 De même, en français, on ne peut pas lexicaliser un sens par un nom sans préciser le nombre \textit{(Ali a mangé} \textbf{\textit{une}} \textit{pomme} vs \textit{Ali a mangé} \textbf{\textit{des}} \textit{pommes}) et sans préciser si la chose est déjà connue ou non (\textit{Ali a mangé} \textbf{\textit{la}} \textit{pomme} vs \textit{Ali a mangé} \textbf{\textit{une}} \textit{pomme}) (voir le \chapfuturef{15}). C’est l’une des raisons pour lesquelles nos deux phrases de départ, (\ref{ex:maladie}a--b), ne sont pas parfaitement synonymes, puisque, dans a, ‘malade’ est lexicalisé par un nom et est donc accompagné d’un article défini, lequel présuppose que la maladie d’Ali est connue des interlocuteurs au moment où la phrase est prononcée, ce qui n’est pas le cas en b.
 
-En conclusion, il n’est pas possible en français de communiquer uniquement notre sens de départ ! Nous devons y ajouter des informations et en particulier situer le fait dont nous parlons (la maladie d’Ali) dans le temps.
+En conclusion, il n’est pas possible en français de communiquer uniquement notre sens de départ ! Nous devons y ajouter des informations et en particulier situer le fait dont nous parlons (la maladie d’Ali) dans le temps.\largerpage[-1]
 
 \globe[sec:1.2.12]{Les sens grammaticaux}{%
     Dans un article de \citeyear{jakobson1959linguistic} sur la traduction, le grand linguiste d’origine russe Roman Jakobson remarque que «~Les langues diffèrent essentiellement par ce qu’elles \textit{doivent} communiquer et pas par ce qu’elles \textit{peuvent} communiquer.~» Il explique par exemple que la traduction de la phrase anglaise \textit{I hired a worker} en russe nécessiterait deux informations supplémentaires : le verbe en russe devra indiquer si l’embauche a été complétée ou pas, tandis que le nom en russe devra indiquer le genre et donc s’il s’agit d’un travailleur ou d’une travailleuse. À l’inverse, la phrase russe n’aura pas à choisir entre article défini ou indéfini (\textit{une} ou \textit{la travailleuse}), ni entre les temps verbaux \textit{hired} vs \textit{have hired}. Sur cette nécessité de faire des choix dès qu’il s’agit de catégories grammaticales obligatoires, Jakobson renvoie à Franz \citet[132]{boas1938language} : «~Nous devons choisir parmi ces aspects, et l’un ou l’autre doit être choisi.~»
@@ -434,7 +438,7 @@ L’expression même des contraintes grammaticales repose sur les «~connexions~
 
     Il nous faut quand même dire quelques mots de la \textstyleTermes{grammaire normative}, élaborée par les «~grammairiens~» et dont l’objectif est de prescrire le « bon » usage du français. L’institutionnalisation de la normativité n’est pas universelle, mais plutôt une particularité française. Dans des traditions différentes, en Allemagne ou aux États-Unis par exemple, on considère davantage qu’en France qu’un locuteur natif sait parler sa langue : on n’enseigne que très peu de grammaire à l’école et il n’y a pas d’Académie nationale chargée de protéger la langue.
 
-    
+    \pagebreak
     \tcbsubtitle{Quel est le bon français ?}
     
 
@@ -504,7 +508,7 @@ L’expression même des contraintes grammaticales repose sur les «~connexions~
     \begin{quote}
     We have to choose between these aspects, and one or the other must be chosen.\hfill\hbox{\citep[132]{boas1938language}}
     \end{quote}
-}%\largerpage
+}\pagebreak\largerpage
 \corrections{%\label{sec:1.2.19}
      \corrigé{1} Il existe de nombreux exemples. Nous en proposons deux :
      
