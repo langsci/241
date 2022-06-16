@@ -1462,31 +1462,35 @@ l'\hi{ordre} est \hi{implicite}, c’est-à-dire qu’il est représenté par la
                       nodes in empty cells, 
                       ampersand replacement=\&, 
                       nodes = {font=\strut},
-                      column sep=1em]
+                      column sep=1em,
+                      column 1/.style={nodes={minimum width=1.4em}},
+                      column 2/.style={nodes={minimum width=2.5em}},
+                      column 3/.style={nodes={minimum width=4.125em}},
+                      column 4/.style={nodes={minimum width=1.75em}},
+                      column 5/.style={nodes={minimum width=3em}}]
       {
-        le \& chat \& poursuit \& un \& chien\\
+    le \& chat \& poursuit \& un \& chien\\
         D \& N \& V \& D \& N\\
           \&   \&   \&   \& \\
           \&   \&   \&   \& \\
           \&   \&   \&   \& \\		      		      
-      };
-  
-    \node at ($(matrix-3-1) !.5! (matrix-3-2)$) {GN};
-    \node at ($(matrix-3-4) !.5! (matrix-3-5)$) {GN};  
-    \node at ($(matrix-4-3) !.5! (matrix-4-5)$) {GV};              
-    \node at ($(matrix-5-1) !.5! (matrix-5-5)$) {P};   
+      }; 
     
     \draw[decorate] 
-      (matrix-2-1.south west) -- (matrix-2-2.south east);
+      (matrix-2-1.south west) -- (matrix-2-2.south east) 
+      node [midway, below] {GN};
     
     \draw[decorate] 
-      (matrix-2-4.south west) -- (matrix-2-5.south east);
+      (matrix-2-4.south west) -- (matrix-2-5.south east)
+      node [midway, below] {GN};
       
     \draw[decorate] 
-      (matrix-3-3.south west) -- (matrix-3-5.south east);
+      (matrix-3-3.south west) -- (matrix-3-5.south east)
+      node [midway, below] {GV};
       
     \draw[decorate] 
-      (matrix-4-1.south west) -- (matrix-4-5.south east);
+      (matrix-4-1.south west) -- (matrix-4-5.south east)
+      node [midway, below] {P};
          
   
     \foreach \i in {1,...,5} 
