@@ -228,7 +228,7 @@ Concluons cette section en soulignant une propriété fondamentale que nous expl
 
     On notera que les principes qui définissent les dépendances morphologiques et sémantiques sont également utilisés (de manière secondaire) pour définir les relations syntaxiques (voir la \sectref{sec:3.3.18} sur le \textit{Critère sémantique de non-effacement} et l’\encadref{sec:3.3.22} sur les \textit{«~Déterminants} \textit{complexes~»}), en raison de la forte coïncidence de ces notions.
 }
-\section{Structure de dépendance et arbre de dépendance}\label{sec:3.3.4}
+\section{Structure de dépendance et arbre de dépendance}\label{sec:3.3.4}\largerpage
 
 Au chapitre précédent, nous avons présenté la structure de connexion, qui peut être un \hi{graphe} ou plus généralement un graphe à bulles ou un \hi{polygraphe} (voir l’\encadref{sec:3.2.23} \textit{Graphe à bulles et polygraphe}). Les connexions sont des liens syntaxiques non hiérarchisés : elles lient deux unités syntaxiques sans attribuer de rôle particulier à l’un ou l’autre. (Plus exactement, les connexions représentent des ensembles de connexion et lient en fait des ensembles d'unités d'entre elles. Nous laissons de côté ce point ici, mais nous y reviendrons quand nous comparerons \textit{Constituance et dépendance} au \chapref{sec:3.4}.)
 
@@ -269,7 +269,7 @@ L’acyclicité n’exclut pas les cycles non orientés de connexions. Si l'on r
 
 La présence de cycles non orientés dans une structure de dépendance entraîne que certains nœuds ont deux gouverneurs. (On parle alors de \hi{dag}, \textit{directed acyclic graph}). Dans cet ouvrage, nous ne considérerons quasiment que des structures sans cycle et pour lesquelles \hi{tout nœud} \hi{possède au plus un gouverneur}. Plus précisément, lorsque tout nœud a exactement un gouverneur (à l’exception d’un nœud qu’on appelle la racine), la structure est un arbre : l’\textstyleTermes{arbre de dépendance} (voir l'\encadref{sec:0.0.1} sur l'\textit{Arbre de dépendance}).
 
-Notons pour conclure cette section que l’on utilise généralement une terminologie différente lorsqu’on parle de la tête d’une unité syntaxique U et de l'élément qui lui correspond dans la structure S de dépendance de U. Ainsi appelle-t-on \textstyleTermes{racine} de S le nœud de S qui correspond à la \hi{tête} de U.%\largerpage
+Notons pour conclure cette section que l’on utilise généralement une terminologie différente lorsqu’on parle de la tête d’une unité syntaxique U et de l'élément qui lui correspond dans la structure S de dépendance de U. Ainsi appelle-t-on \textstyleTermes{racine} de S le nœud de S qui correspond à la \hi{tête} de U.\largerpage
 
 \chevalier[sec:3.3.5]{Historique des représentations syntaxiques  par des diagrammes en dépendance}{%
     Si les analyses en dépendance sont déjà bien développées au 18\textsuperscript{e} siècle (voir la \sectref{sec:3.3.2} sur l'\textit{Historique des notions de dépendance et de tête}), les représentations des analyses syntaxiques par des diagrammes n'apparaissent qu'au 19\textsuperscript{e} siècle. Le premier auteur à utiliser extensivement des diagrammes pour l'enseignement de la grammaire est l'abbé Louis Gaultier (1746-1818), dont l'\textit{Atlas de grammaire} publié en \citeyear{gaultier1817atlas} contient une grande variété de diagrammes à visée pédagogique et tout particulièrement un diagramme tabulaire encodant  des fragments d'analyse en dépendance \citep[11]{gaultier1817atlas}. Nous présentons dans la figure~\ref{fig:Gaultier1829} un diagramme similaire, extrait de l'introduction des \textit{Élémens de grammaire} publié en \citeyear{gaultier1829elemens} par ses élèves et précédé de la description suivante : 
@@ -282,15 +282,15 @@ C'est la cinquième colonne qui nous intéresse tout particulièrement, puisqu'e
     \caption{\label{fig:Gaultier1829}Diagramme d'après \citet{gaultier1817atlas}}
     \includegraphics[width=\textwidth]{figures/Gaultier-conll.png}
     \end{figure}
- 
-    La première représentation dépendentielle que nous connaissons est un diagramme, unique (figure~\ref{fig:Billroth1832}), proposé par le philosophe et grammairien allemand Johann Billroth dans sa grammaire du latin (\textit{Lateinische Syntax}) publiée en \citeyear{Billroth1832}, à seulement 24 ans (il décédera à 28 ans).
     
-     \begin{figure}[H]
+    \begin{figure}[H]
     \caption{\label{fig:Billroth1832}Diagramme de \citet[102]{Billroth1832}\label{fig:Billroth1832}}
     \includegraphics[width=.75\textwidth]{figures/Billroth1832.png}\smallskip\\    
     \noindent\parbox{.75\textwidth}{\small\textit{Miltiades, dux Atheniensium, toti Graeciae libertatem paene oppressam in pugna apud Marathonem reddidit.}\\
     ‘Miltiades, le chef des Athéniens, rendit à toute la Grèce la liberté dont elle avait été gravement privée en livrant bataille à Marathon.’}
     \end{figure}
+ 
+    La première représentation dépendentielle que nous connaissons est un diagramme, unique (figure~\ref{fig:Billroth1832}), proposé par le philosophe et grammairien allemand Johann Billroth dans sa grammaire du latin (\textit{Lateinische Syntax}) publiée en \citeyear{Billroth1832}, à seulement 24 ans (il décédera à 28 ans).
     
     Stephen W. Clark est le premier grammairien à réellement exploiter des diagrammes dépendentiels dans sa grammaire de l’anglais de \citeyear{Clark1847} intitulé \textit{The science of the English grammar: A practical grammar in which words, phrases, and sentences are classified to their offices, and their relation to each other, illustrated by a complete system of diagrams} ‘La science de la grammaire anglaise : une grammaire pratique dans laquelle les mots, les syntagmes et les phrases sont classés selon leurs fonctions et leurs relations les uns aux autres par un système complet de diagrammes’. Dans les représentations de Clark, les connexions ne sont pas représentées en tant que telles : un mot qui en «~qualifie~» un autre (pour reprendre les termes de Clark) est placé dans une bulle sous la bulle de son gouverneur. Les prépositions, comme \textit{by} ‘par’ ou \textit{of} ‘de’ dans la figure~\ref{fig:Clark1847}, reçoivent une forme particulière indiquant qu’elles servent à «~connecter~» deux mots. Le sujet, le verbe et l’objet direct sont placés au même niveau, comme ici \textit{ressources} and \textit{are developed}. Les groupes prépositionnels sont entourés par des bulles en pointillés. Les analyses de Clark sont d’une grande cohérence et ses représentations de la coordination ou de l’extraction, sur lesquelles nous reviendrons dans les chapitres 18 et 19 du vol.\ 2, sont remarquables. Il leur manque juste le développement théorique que proposera plus tard Tesnière.%\chapfuturef
    
@@ -302,18 +302,13 @@ C'est la cinquième colonne qui nous intéresse tout particulièrement, puisqu'e
     ‘Nos ressources nationales sont développées grâce à une sérieuse culture des arts de la paix.’}
     \end{figure}
     
-    
-    Ce ne sont pas les diagrammes de Clark qui sont passés à la postérité, mais ceux de ses suiveurs, \hi{Alonzo Reed} et \hi{Brainerd Kellogg}. Leurs diagrammes, proposés pour la première fois en \citeyear{ReedKellogg1877} et toujours utilisés aujourd’hui par certains enseignants d’anglais, sont équivalents à ceux de Clark, mais utilisent des conventions différentes : les mots ne sont plus placés dans des bulles, mais au-dessus de segments de traits. Les verbes et les noms reçoivent des segments horizontaux, comme \textit{pleased} ‘enchanté’ ou \textit{news} ‘nouvelles’ dans le diagramme de la figure~\ref{fig:ReedKellogg}, tandis que les autres mots, comme la préposition \textit{with} ‘avec’ ou l’adjectif \textit{good }‘bon’, reçoivent des segments en diagonal. Comme chez Clark, le sujet le verbe et l’objet sont au même niveau. Les connections apparaissent de manière plus explicite à la jointure de deux segments. La connexion entre le sujet et le verbe (\textit{girls – are pleased}) est symbolisée par un trait vertical et celle entre l’auxiliaire et le participe (\textit{are – pleased}) par un trait oblique. On peut traduire cette structure dans les conventions utilisées ici, en réifiant les connexions et en mettant en évidence le fait que certaines connexions ne sont pas hiérarchisées (voir la figure~\ref{fig:ReedKelloggByMe}).
-    
-     \begin{figure}[H]
+    \begin{figure}[H]
     \includegraphics[width=7cm]{figures/ReedKellog}\smallskip\\    
     \noindent\parbox{7cm}{\small\textit{The girls are pleased with the good news.}\\
     ‘Les filles sont enchantées par la bonne nouvelle.’}
     \caption{Diagramme de \citet{ReedKellogg1877}\label{fig:ReedKellogg}}
     \end{figure}
-
-   
-
+    
     \begin{figure}[H]
     \caption{Interprétation du diagramme de Reed \& Kellogg\label{fig:ReedKelloggByMe}}
 % %     \includegraphics[width=7cm]{figures/ReedKellogTree}    
@@ -334,6 +329,9 @@ C'est la cinquième colonne qui nous intéresse tout particulièrement, puisqu'e
     ]
     \end{forest}
     \end{figure}
+    
+    
+    Ce ne sont pas les diagrammes de Clark qui sont passés à la postérité, mais ceux de ses suiveurs, \hi{Alonzo Reed} et \hi{Brainerd Kellogg}. Leurs diagrammes, proposés pour la première fois en \citeyear{ReedKellogg1877} et toujours utilisés aujourd’hui par certains enseignants d’anglais, sont équivalents à ceux de Clark, mais utilisent des conventions différentes : les mots ne sont plus placés dans des bulles, mais au-dessus de segments de traits. Les verbes et les noms reçoivent des segments horizontaux, comme \textit{pleased} ‘enchanté’ ou \textit{news} ‘nouvelles’ dans le diagramme de la figure~\ref{fig:ReedKellogg}, tandis que les autres mots, comme la préposition \textit{with} ‘avec’ ou l’adjectif \textit{good }‘bon’, reçoivent des segments en diagonal. Comme chez Clark, le sujet le verbe et l’objet sont au même niveau. Les connections apparaissent de manière plus explicite à la jointure de deux segments. La connexion entre le sujet et le verbe (\textit{girls – are pleased}) est symbolisée par un trait vertical et celle entre l’auxiliaire et le participe (\textit{are – pleased}) par un trait oblique. On peut traduire cette structure dans les conventions utilisées ici, en réifiant les connexions et en mettant en évidence le fait que certaines connexions ne sont pas hiérarchisées (voir la figure~\ref{fig:ReedKelloggByMe}).   
 
     En \citeyear{kern1883zur}, dans un livre sur la grammaire allemande (\textit{Zur Methodik des deutschen Unterrichts} ‘Sur la méthodologie de l’enseignement de l’allemand’), \hi{Franz Kern} propose de véritables arbres de dépendance. Voici ce qu’il écrit : «~Le mot déterminant dépend de celui qu’il détermine ou, en d’autres termes, est régi par lui. On désigne (graphiquement, par un schéma) la dépendance d’un mot à un autre par un trait partant vers le bas du mot régissant  et allant vers le mot régi~(ou dépendant) [figure de gauche] ou encore sans mot par de simples relations grammaticales [figure de droite].~» Ce texte est accompagné des deux figures~\ref{fig:Kern1883} pour la phrase \textit{Eine alte Kirche wurde ausgebessert} ‘Une vielle église a été réparée’. Dans la figure de gauche figurent les mots de la phrase, le complexe verbal n’étant pas décomposé. Dans la figure de droite, l’article (appelé \textit{Adj. (Zeiger)} ‘adjectif (pointeur)’) et l’adjectif qualificatif (\textit{Adjektiv}) dépendent du mot sujet (\textit{Subjektswort}) qui dépend du verbe fini (\textit{Finites Verbum}).
 
@@ -347,23 +345,22 @@ C'est la cinquième colonne qui nous intéresse tout particulièrement, puisqu'e
 
     La notion de \textit{valence} a été introduite par le sémioticien anglais Charles S. Peirce dans un article de \citeyear{peirce1897logic}. Peirce compare la possibilité qu’a le verbe \textit{give} ‘donner’ de se combiner avec trois éléments (\textit{John gives John to John}) avec la possibilité qu’à l’atome d’azote N de se combiner avec trois atomes d’hydrogène H pour donner une molécule d’ammoniac NH\textsubscript{3}. Cette métaphore de la connexion entre mots par la connexion entre atomes est accompagnée de la figure~\ref{fig:Peirce1897}. Peirce remarque que contrairement aux connections chimiques les connections entre mots (il s’agit plutôt de connexions sémantiques que syntaxiques) sont asymétriques, ce que semble confirmer son diagramme, où les connexions partent du mot \textit{gives} mais s’arrêtent à la bulle de \textit{John}. (Voir la \sectref{sec:3.3.10} sur \textit{Distribution et valence} pour la suite de la discussion.)
 
-
     \begin{figure}[H]
     \caption{Schéma valenciel de \citet{peirce1897logic}\label{fig:Peirce1897}}
     \includegraphics[width=\textwidth]{figures/vol1syntaxe2-img016.png}
     \end{figure}
-
     
-    C’est à Lucien Tesnière qu’on attribue les bases théoriques de la syntaxe de dépendance, exposées brièvement dans son article de \citeyear{tesniere1934comment}, \textit{Comment construire une syntaxe}, puis en détail dans son ouvrage posthume de \citeyear{tesniere1959elements}, \textit{Éléments de syntaxe structurale}. On notera, dans l’analyse suivante de \citeyear{tesniere1934comment}, que Tesnière considère la préposition comme dépendant du nom qu’elle introduit. (Le diagramme contient par ailleurs une erreur, qui n’est pas dans le manuscrit de Tesnière : le lien entre \textit{apporte} et \textit{vigueur} a été erronément attribué à \textit{elle}.)
-
     \begin{figure}[H]
     \caption{Diagramme (tronqué) de \citet{tesniere1934comment}}
     \includegraphics[width=\textwidth]{figures/Tesniere1934.png}\smallskip\\    
     \noindent\parbox{\textwidth}{\small\textit{Ainsi cette vertu céleste, qui est contenue dans les écrits de saint Paul, même dans cette simplicité de style, conserve toute la vigueur qu’elle apporte du ciel d’où elle descend.} (Bossuet)}
     \end{figure}
 
-    Si cette analyse contient déjà des symboles spéciaux (comme les flèches à double pointe \textrm{$\twoheadrightarrow $} pour les relatives), ce n’est que plus tard que Tesnière introduira les symboles en T pour la translation, comme dans la figure~\ref{fig:TesniereT}a, proposée par Tesnière pour «~\textit{Écrivez dans le livre de votre ami} !~». Les structures de l’ouvrage de \citeyear{tesniere1959elements} ne sont plus totalement hiérarchiques comme le montre notre interprétation polygraphique de la représentation dans la figure~\ref{fig:TesniereT}b.
+    
+    C’est à Lucien Tesnière qu’on attribue les bases théoriques de la syntaxe de dépendance, exposées brièvement dans son article de \citeyear{tesniere1934comment}, \textit{Comment construire une syntaxe}, puis en détail dans son ouvrage posthume de \citeyear{tesniere1959elements}, \textit{Éléments de syntaxe structurale}. On notera, dans l’analyse suivante de \citeyear{tesniere1934comment}, que Tesnière considère la préposition comme dépendant du nom qu’elle introduit. (Le diagramme contient par ailleurs une erreur, qui n’est pas dans le manuscrit de Tesnière : le lien entre \textit{apporte} et \textit{vigueur} a été erronément attribué à \textit{elle}.)
 
+    Si cette analyse contient déjà des symboles spéciaux (comme les flèches à double pointe \textrm{$\twoheadrightarrow $} pour les relatives), ce n’est que plus tard que Tesnière introduira les symboles en T pour la translation, comme dans la figure~\ref{fig:TesniereT}a, proposée par Tesnière pour «~\textit{Écrivez dans le livre de votre ami} !~». Les structures de l’ouvrage de \citeyear{tesniere1959elements} ne sont plus totalement hiérarchiques comme le montre notre interprétation polygraphique de la représentation dans la figure~\ref{fig:TesniereT}b.
+    
     \begin{figure}[H]
     \caption{Interprétation polygraphique d'un stemma\label{fig:TesniereT}}
     \begin{subfigure}[b]{.5\textwidth}\centering
@@ -561,7 +558,7 @@ On peut subordonner le premier énoncé, mais pas le deuxième :
   \ex[*]{\textit{Je crois qu’heureusement que Pierre a dormi.}}
   \z
 \z
-Comme il apparaît par ailleurs que le verbe \textsc{croire} peut subordonner n’importe quelle proposition à l’indicatif, on peut supposer que la phrase \REF{ex:heureusement} introduite par \textit{heureusement que} ne peut pas être subordonnée car le verbe n’en est pas la tête. On en déduit que \textit{heureusement} est la tête de la phrase et subordonne la proposition \textit{Pierre a dormi} (ce que confirme l’emploi de la conjonction de subordination \textit{que}).
+Comme il apparaît par ailleurs que le verbe \textsc{croire} peut subordonner n’importe quelle proposition à l’indicatif, on peut supposer que la phrase \REF{ex:heureusement} introduite par \textit{heureusement que} ne peut pas être subordonnée car le verbe n’en est pas la tête. On en déduit que \textit{heureusement} est la tête de la phrase et subordonne la proposition \textit{Pierre a dormi} (ce que confirme l’emploi de la conjonction de subordination \textit{que}).\largerpage[2]
 
 Le même type de raisonnement permet d’identifier la tête d’une proposition dans n’importe quelle langue a priori (voir l'encadré qui suit).
 
@@ -663,7 +660,7 @@ Nous allons voir deux types de critères distributionnels. Les premiers, les cri
 
 Le Critère distributionnel avec effacement positif généralise le Critère d’effacement simple vu à la \sectref{sec:3.3.7} sur \textit{Critère d’effacement simple et critère prosodique}. Le Critère d’effacement simple s’applique à une unité U à l’intérieur d’un énoncé donné, sans faire varier le gouverneur de U. Ici on considère la distribution de U, c’est-à-dire tous les gouverneurs potentiels de U.
 
-Illustrons le critère par l’exemple de U = \textit{demain matin} avec A = \textit{demain} et B~= \textit{matin}. Ici A et B sont effaçables et on peut donc comparer la valence supérieure de A, B et U = A ${\oplus}$ B. Il est facile de voir que \textit{demain} et \textit{demain matin} ont la même valence supérieure : ils peuvent par exemple tous les deux être modifieurs d'un verbe (\textit{Pierre part demain (matin).}) et tous les deux se comporter comme un groupe substantif ordinaire et être sujet d'un verbe (\textit{Demain (matin) me paraît le moment idéal.}) ou être complément d'un préposition (\textit{la réunion de demain (matin)}). Cette valence supérieure est différente de la valence supérieure de \textit{matin}, qui ne peut apparaître dans aucun de ces contextes sans être combiné avec un déterminant. On en déduit que \textit{demain} est la tête de U.
+Illustrons le critère par l’exemple de U = \textit{demain matin} avec A = \textit{demain} et B~= \textit{matin}. Ici A et B sont effaçables et on peut donc comparer la valence supérieure de A, B et U = A ${\oplus}$ B. Il est facile de voir que \textit{demain} et \textit{demain matin} ont la même valence supérieure : ils peuvent par exemple tous les deux être modifieurs d'un verbe (\textit{Pierre part demain (matin).}) et tous les deux se comporter comme un groupe substantif ordinaire et être sujet d'un verbe (\textit{Demain (matin) me paraît le moment idéal.}) ou être complément d'un préposition (\textit{la réunion de demain (matin)}). Cette valence supérieure est différente de la valence supérieure de \textit{matin}, qui ne peut apparaître dans aucun de ces contextes sans être combiné avec un déterminant. On en déduit que \textit{demain} est la tête de U.\largerpage[-1]
 
 \Definition{\textstyleTermes{critère distributionnel avec effacement négatif}}
 {\textstyleTermes{critère distributionnel avec effacement négatif}. Si U = A ${\oplus}$ B et A est autonomisable (et donc B est effaçable),  plus la \hi{valence supérieure} de A est différente de celle de U, plus B est susceptible d'être la \hi{tête} de U.}
@@ -674,7 +671,7 @@ Le Critère distributionnel avec effacement négatif est particulièrement utile
 
 Le même raisonnement est applicable à \textit{Marie dormait}. Ici encore, \textit{Marie} n’est pas effaçable, mais \textit{dormait} l’est. Comme \textit{Marie} et \textit{Marie dormait} n’ont absolument pas la même valence supérieure, on en déduit que \textit{dormait} est bien la tête de la proposition \textit{Marie dormait}.
 
-Le critère distributionnel avec effacement négatif est équivalent à la propriété suivante: \textit{un dépendant ne modifie pas la valence supérieure de son gouverneur}. En effet, si A gouverne B et que B modifie la valence supérieure de A, alors A et A $\oplus$ B n'ont pas la même valence supérieure, donc A n'est pas la tête de A $\oplus$ B d'après le Critère distributionnel avec effacement négatif, ce qui contredit le fait que A gouverne B.
+Le critère distributionnel avec effacement négatif est équivalent à la propriété suivante: \textit{un dépendant ne modifie pas la valence supérieure de son gouverneur}. En effet, si A gouverne B et que B modifie la valence supérieure de A, alors A et A $\oplus$ B n'ont pas la même valence supérieure, donc A n'est pas la tête de A $\oplus$ B d'après le Critère distributionnel avec effacement négatif, ce qui contredit le fait que A gouverne B.\largerpage[2]
 
 \loupe[sec:3.3.12]{Tête effaçable}{%
     Il arrive quelquefois que le Critère d’effacement simple et le Critère distributionnel avec effacement positif se contredisent. On parle alors de \textstyleTermesapprofondissement{tête effaçable}. L’exemple le plus clair est celui de la conjonction de subordination \textit{that} en anglais. Voyons un exemple :
@@ -716,7 +713,7 @@ Le critère distributionnel avec effacement négatif est équivalent à la propr
 }
 \section{Le Critère distributionnel sans effacement}\label{sec:3.3.13}
 
-Les critères distributionnels avec effacement ne sont applicables à une unité U = A ${\oplus}$ B que si A ou B est effaçable. Ils ne peuvent donc être appliqués pour des unités dont les composantes sont mutuellement indissociables comme le radical et sa désinence dans U = \textit{chant-ons}. On peut utiliser alors un autre critère distributionnel, applicable dans tous les cas.
+Les critères distributionnels avec effacement ne sont applicables à une unité U = A ${\oplus}$ B que si A ou B est effaçable. Ils ne peuvent donc être appliqués pour des unités dont les composantes sont mutuellement indissociables comme le radical et sa désinence dans U = \textit{chant-ons}. On peut utiliser alors un autre critère distributionnel, applicable dans tous les cas.\largerpage
 
 \Definition{\textstyleTermes{critère distributionnel sans effacement}}
 {\textstyleTermes{critère distributionnel sans effacement}. Si U = A ${\oplus}$ B et A commute avec des A', on peut comparer la valence supérieure de U avec les U’ = A’ ${\oplus}$ B. Plus les valences supérieures des U' sont différentes de la valence supérieure de U, plus A est susceptible d'être la tête de U.}
@@ -1048,7 +1045,7 @@ Il existe néanmoins un certain nombre de cas problématiques qui sont au centre
 \end{itemize}
 
 \eiffel[sec:3.3.22]{«~Déterminants complexes~»}{%
-    Le français possède des syntagmes de la forme «~N \textit{de} N~» ou «~Adv \textit{de} N~», comme \textit{un tas de gens} ou \textit{trop de gens}, où le nom qui suit \textit{de} est clairement la \hi{tête sémantique} (\sectref{sec:3.3.17}) : \textit{un tas de gens} désigne des gens, pas un tas. De plus, dans ces constructions, l’accord se fait généralement avec le nom qui suit \textit{de}, ce qui, en vertu du \hi{Critère morphologique}, désigne également ce nom comme tête :
+    Le français possède des syntagmes de la forme «~N \textit{de} N~» ou «~Adv \textit{de} N~», comme \textit{un tas de gens} ou \textit{trop de gens}, où le nom qui suit \textit{de} est clairement la \hi{tête sémantique} (\sectref{sec:3.3.17}) : \textit{un tas de gens} désigne des gens, pas un tas. De plus, dans ces constructions, l’accord se fait généralement avec le nom qui suit \textit{de}, ce qui, en vertu du \hi{Critère morphologique}, désigne également ce nom comme tête :\tcbbreak
 
 \ea
   \ea \textit{Un tas de lettres \textbf{ont} été écrites depuis le front pendant la guerre de 14.}
@@ -1206,7 +1203,7 @@ Le français présente lui aussi des données problématiques pour l’unicité 
   \z
 \z
 
-Doit-on considérer que dans \textit{deux amis}, \textit{deux} est déterminant ? Mais alors, dans \textit{mes deux amis}, y a-t-il deux déterminants ? Ou bien s’agit-il d’un autre \textit{deux} ? Cette dernière solution est la solution la plus souvent proposée (\textit{deux} serait adjectif en (\ref{ex:mesdeux}a) et déterminant en (\ref{ex:mesdeux}c)), mais elle est difficilement défendable étant donné que \textit{deux} a absolument la même position linéaire et la même contribution sémantique que \textit{mes} soit ou non présent et qu’il en va de même de tous les éléments qui peuvent commuter avec lui, comme \textit{quelques} ou \textit{différents} (voir l’exercice 5 du \chapref{sec:3.5}). Une application stricte du Critère distributionnel avec effacement positif nous oblige à conclure que \textit{mes deux amis} et \textit{deux amis} ont la même valence supérieure et que donc \textit{mes} n’est pas la tête distributionnelle. Voir l’\encadref{sec:3.3.29} sur les \textit{Grammèmes comme tête} pour les différentes structures syntaxiques possibles de \textit{mes deux amis}.
+Doit-on considérer que dans \textit{deux amis}, \textit{deux} est déterminant ? Mais alors, dans \textit{mes deux amis}, y a-t-il deux déterminants ? Ou bien s’agit-il d’un autre \textit{deux} ? Cette dernière solution est la solution la plus souvent proposée (\textit{deux} serait adjectif en (\ref{ex:mesdeux}a) et déterminant en (\ref{ex:mesdeux}c)), mais elle est difficilement défendable étant donné que \textit{deux} a absolument la même position linéaire et la même contribution sémantique que \textit{mes} soit ou non présent et qu’il en va de même de tous les éléments qui peuvent commuter avec lui, comme \textit{quelques} ou \textit{différents} (voir l’exercice 5 du \chapref{sec:3.5}). Une application stricte du Critère distributionnel avec effacement positif nous oblige à conclure que \textit{mes deux amis} et \textit{deux amis} ont la même valence supérieure et que donc \textit{mes} n’est pas la tête distributionnelle. Voir l’\encadref{sec:3.3.29} sur les \textit{Grammèmes comme tête} pour les différentes structures syntaxiques possibles de \textit{mes deux amis}.\largerpage
 
 \loupe[sec:3.3.25]{Quand le dépendant contrôle son gouverneur}{%
     Il existe d’autres arguments pour le nom comme tête que nous n’avons pas retenus. Parmi ceux-ci, il est souvent avancé que le nom contrôle son déterminant. On dit A \textstyleTermesapprof{contrôle} B lorsque A réduit le paradigme des B par rapport à ce qui serait attendu.
@@ -1349,6 +1346,7 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
 
     On peut penser que, dans la plupart des langues, certains marqueurs de position syntaxique sont, comme l’article pour le groupe substantival ou la conjonction pour la complétive, les versions grammaticalisées d’éléments qui à l’origine pouvaient occuper seuls la position.
 }
+\largerpage
 \loupe[sec:3.3.29]{Les grammèmes comme tête}{%
     Nous avons discuté du nom ou du déterminant comme tête du groupe substantival. Mais il existe une autre solution encore. Nous avons vu que la flexion du verbe pouvait être considérée comme la tête de la proposition et prendre le sujet comme dépendant (voir la \sectref{sec:3.3.13} sur \textit{Le Critère distributionnel sans effacement}). Une analyse similaire peut être proposée pour le nom. Les deux catégories flexionnelles du nom sont la définitude et le nombre (voir le \chapfuturef{15} sur les \textit{Catégories flexionnelles}). On peut alors proposer, pour \textit{les deux amis}, l'arbre de dépendance de la figure~\ref{fig:mesdeux1}, où les nœuds sont occupés par des syntaxèmes et les grammèmes gouvernent les lexèmes.
 
@@ -1470,9 +1468,7 @@ Dans notre terminologie, groupe et syntagme sont deux notions bien distinctes : 
 
 
 
-Si l’on adopte une représentation syntaxique très granulaire où les syntaxèmes flexionnels occupent des positions distinctes des lexèmes, on distinguera les \textstyleTermes{projections flexionnelles} des \textstyleTermes{projections lexicales}. Les projections flexionnelles sont généralement appelées les \textstyleTermes{projections fonctionnelles} dans la littérature en raison de la Syntaxe X-barre qui appelle catégories fonctionnelles les éléments qui ont uniquement une fonction grammaticale (voir l’\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}).%\largerpage[2]
-
-
+Si l’on adopte une représentation syntaxique très granulaire où les syntaxèmes flexionnels occupent des positions distinctes des lexèmes, on distinguera les \textstyleTermes{projections flexionnelles} des \textstyleTermes{projections lexicales}. Les projections flexionnelles sont généralement appelées les \textstyleTermes{projections fonctionnelles} dans la littérature en raison de la Syntaxe X-barre qui appelle catégories fonctionnelles les éléments qui ont uniquement une fonction grammaticale (voir l’\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}).\largerpage[2]
 
 \maths[sec:3.3.31]{Dépendance, dominance et transitivité}{%
     En termes mathématiques, un arbre de dépendance représente une \textstyleTermesapprof{relation binaire} sur l’ensemble des mots, qu’on appelle la \textstyleTermesapprof{relation de dépendance}. Intuitivement, une relation binaire est un appariement d’éléments deux à deux. (En mathématique, le terme \textit{relation} désigne un ensemble, comme la \textit{relation conjugale}, et pas des éléments de cet ensemble, comme la {relation entre Marie et Pierre Curie}.)
