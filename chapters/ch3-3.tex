@@ -65,7 +65,7 @@ Les grammaires de dépendance traditionnelles font l’hypothèse que toute uni\
 Les notions de tête et de gouverneur renvoient au même concept, mais ado\-ptent des points de vue différents.
 Si A et B forment à eux deux une unité syntaxique dont A est la \hi{tête}, alors A est le \hi{gouverneur} B. Inversement, si A est le \hi{gouverneur} B, alors A et B forment une unité syntaxique ensemble et A en est la \hi{tête}. Autrement dit, hiérarchiser une connexion revient donc à décider de quel côté est sa tête.%\largerpage[2]
 
-On aura noté que pour une unité syntaxique U donnée, \hi{la tête de} U \hi{est un élément de} U, en quelque sorte l’élément le plus important de U du point de vue de la syntaxe, tandis que \hi{le gouverneur de} U \hi{est un élément extérieur à} U. (On peut se souvenir, pour ne pas confondre les deux termes, que la tête d’une personne fait toujours partie de cette personne.) Illustrons ces notions avec \textit{une très jolie valise} et U = \textit{très jolie}. La tête de U est \textit{jolie}, tandis que le gouverneur de U est \textit{valise} (voir la figure \ref{fig:3.3-tete}).
+On aura noté que pour une unité syntaxique U donnée, \hi{la tête de} U \hi{est un élément de} U, en quelque sorte l’élément le plus important de U du point de vue de la syntaxe, tandis que \hi{le gouverneur de} U \hi{est un élément extérieur à} U. (On peut se souvenir, pour ne pas confondre les deux termes, que la tête d’une personne fait toujours partie de cette personne.) Illustrons ces notions avec \textit{une très jolie valise} et U = \textit{très jolie}. La tête de U est \textit{jolie}, tandis que le gouverneur de U est \textit{valise} (voir la figure~\ref{fig:3.3-tete}).
 
 \begin{figure}
 \begin{tikzpicture}[every pin edge/.style={dashed,lsDOIGray}]
@@ -165,7 +165,7 @@ Concluons cette section en soulignant une propriété fondamentale que nous expl
 \loupe[sec:3.3.3]{Dépendances morphologique, syntaxique et sémantique}{%
     Nous nous intéressons dans cet ouvrage à la syntaxe et lorsque nous parlons de dépendance, il s’agit évidemment de \textstyleTermesapprof{dépendance syntaxique}. Igor Mel’čuk a contrasté cette notion avec celles de dépendances morphologique et sémantique.
 
-    Les \textstyleTermesapprof{dépendances sémantiques} sont les \hi{relations prédicat-argument} qui existent entre les signifiés des sémantèmes. Par exemple, un verbe à l’infinitif n’a jamais de sujet, mais il possède toujours un argument sémantique qui peut être restitué par une paraphrase où le verbe est à une forme finie. Par exemple, si on compare \textit{Marie promet à Pierre de venir} et \textit{Marie permet à Pierre de venir}, dans le premier cas ‘Marie’ est l’argument de ‘venir’ (\textit{Marie promet qu’elle viendra}) et dans le deuxième cas ‘Pierre’ est l’argument de ‘venir’ (\textit{Marie permet que Pierre vienne}) (voir figure \ref{fig:promet}). Dans les deux cas, la dépendance sémantique ne correspond pas à une dépendance syntaxique, car ni \textit{Marie de venir,} ni \textit{à Pierre de venir} ne sont des unités syntaxiques. Les dépendances sémantiques sont à nouveau considérées dans le \chapref{sec:13} sur la \textit{Syntaxe profonde}, où nous étudions en particulier les distorsions entre structures syntaxique et sémantique qui entraînent des non-correspondances entre dépendances syntaxiques et sémantiques.
+    Les \textstyleTermesapprof{dépendances sémantiques} sont les \hi{relations prédicat-argument} qui existent entre les signifiés des sémantèmes. Par exemple, un verbe à l’infinitif n’a jamais de sujet, mais il possède toujours un argument sémantique qui peut être restitué par une paraphrase où le verbe est à une forme finie. Par exemple, si on compare \textit{Marie promet à Pierre de venir} et \textit{Marie permet à Pierre de venir}, dans le premier cas ‘Marie’ est l’argument de ‘venir’ (\textit{Marie promet qu’elle viendra}) et dans le deuxième cas ‘Pierre’ est l’argument de ‘venir’ (\textit{Marie permet que Pierre vienne}) (voir figure~\ref{fig:promet}). Dans les deux cas, la dépendance sémantique ne correspond pas à une dépendance syntaxique, car ni \textit{Marie de venir,} ni \textit{à Pierre de venir} ne sont des unités syntaxiques. Les dépendances sémantiques sont à nouveau considérées dans le \chapref{sec:13} sur la \textit{Syntaxe profonde}, où nous étudions en particulier les distorsions entre structures syntaxique et sémantique qui entraînent des non-correspondances entre dépendances syntaxiques et sémantiques.
     
     \begin{figure}[H]
         \begin{subfigure}{.5\textwidth}\centering
@@ -237,7 +237,7 @@ Au chapitre précédent, nous avons présenté la structure de connexion, qui pe
 
 Pour que la structure de dépendance représente une \hi{hiérarchie}, il ne suffit pas que chaque lien soit hiérarchisé. Il faut que la structure possède une autre propriété, l’\hi{acyclicité}, c’est-à-dire qu’elle ne doit pas contenir de cycles orientés (voir l’\encadref{sec:1.2.3} \textit{Graphe et arbre}). Autrement dit, une structure de dépendance ne contient pas de \hi{cycles de dépendances}, c’est-à-dire de boucles que l’on peut parcourir de gouverneur en dépendant pour revenir au même point. (Nous verrons une exception au \chapfuturef{19} lorsque nous étudierons les pronoms interrogatifs et relatifs.)
 
-L’acyclicité n’exclut pas les cycles non orientés de connexions. Si l'on reprend les exemples discutés dans l’\encadref{sec:3.2.24} \textit{Cycle de connexions} et qu'on hiérarchise les connexions, on obtiendra les structures de dépendance de la figure \ref{fig:3.3-cycles}, qui comme on le voit on des cycles de connexion, mais pas de cycles de dépendances
+L’acyclicité n’exclut pas les cycles non orientés de connexions. Si l'on reprend les exemples discutés dans l’\encadref{sec:3.2.24} \textit{Cycle de connexions} et qu'on hiérarchise les connexions, on obtiendra les structures de dépendance de la figure~\ref{fig:3.3-cycles}, qui comme on le voit on des cycles de connexion, mais pas de cycles de dépendances
 
 \begin{figure}
 \begin{subfigure}[b]{.5\textwidth}\centering
@@ -272,7 +272,7 @@ La présence de cycles non orientés dans une structure de dépendance entraîne
 Notons pour conclure cette section que l’on utilise généralement une terminologie différente lorsqu’on parle de la tête d’une unité syntaxique U et de l'élément qui lui correspond dans la structure S de dépendance de U. Ainsi appelle-t-on \textstyleTermes{racine} de S le nœud de S qui correspond à la \hi{tête} de U.%\largerpage
 
 \chevalier[sec:3.3.5]{Historique des représentations syntaxiques  par des diagrammes en dépendance}{%
-    Si les analyses en dépendance sont déjà bien développées au 18\textsuperscript{e} siècle (voir la \sectref{sec:3.3.2} sur l'\textit{Historique des notions de dépendance et de tête}), les représentations des analyses syntaxiques par des diagrammes n'apparaissent qu'au 19\textsuperscript{e} siècle. Le premier auteur à utiliser extensivement des diagrammes pour l'enseignement de la grammaire est l'abbé Louis Gaultier (1746-1818), dont l'\textit{Atlas de grammaire} publié en \citeyear{gaultier1817atlas} contient une grande variété de diagrammes à visée pédagogique et tout particulièrement un diagramme tabulaire encodant  des fragments d'analyse en dépendance \citep[11]{gaultier1817atlas}. Nous présentons dans la figure \ref{fig:Gaultier1829} un diagramme similaire, extrait de l'introduction des \textit{Élémens de grammaire} publié en \citeyear{gaultier1829elemens} par ses élèves et précédé de la description suivante : 
+    Si les analyses en dépendance sont déjà bien développées au 18\textsuperscript{e} siècle (voir la \sectref{sec:3.3.2} sur l'\textit{Historique des notions de dépendance et de tête}), les représentations des analyses syntaxiques par des diagrammes n'apparaissent qu'au 19\textsuperscript{e} siècle. Le premier auteur à utiliser extensivement des diagrammes pour l'enseignement de la grammaire est l'abbé Louis Gaultier (1746-1818), dont l'\textit{Atlas de grammaire} publié en \citeyear{gaultier1817atlas} contient une grande variété de diagrammes à visée pédagogique et tout particulièrement un diagramme tabulaire encodant  des fragments d'analyse en dépendance \citep[11]{gaultier1817atlas}. Nous présentons dans la figure~\ref{fig:Gaultier1829} un diagramme similaire, extrait de l'introduction des \textit{Élémens de grammaire} publié en \citeyear{gaultier1829elemens} par ses élèves et précédé de la description suivante : 
    \begin{quote}
     «~Pour faire l’analyse grammaticale, il faut avoir une feuille de papier, une ardoise ou un tableau noir partagé en dix colonnes. Dans une marge à gauche, on écrira les mots de la phrase à analyser les uns au-dessous des autres. Dans la première colonne, on indiquera à laquelle des trois parties primitives du discours, et dans la seconde à laquelle des dix parties secondaires du discours chaque mot appartient ; dans la troisième, la quatrième et la cinquième, on marquera le genre, le nombre et le cas des noms ; dans la sixième, la septième, la huitième et la neuvième, on indiquera le nombre, la personne, le temps en général et le mode du verbe personnel. Dans la dixième, on indiquera toutes les divisions et les subdivisions des dix parties du discours.~»
     \end{quote}
@@ -283,7 +283,7 @@ C'est la cinquième colonne qui nous intéresse tout particulièrement, puisqu'e
     \includegraphics[width=\textwidth]{figures/Gaultier-conll.png}
     \end{figure}
  
-    La première représentation dépendentielle que nous connaissons est un diagramme, unique (figure \ref{fig:Billroth1832}), proposé par le philosophe et grammairien allemand Johann Billroth dans sa grammaire du latin (\textit{Lateinische Syntax}) publiée en \citeyear{Billroth1832}, à seulement 24 ans (il décédera à 28 ans).
+    La première représentation dépendentielle que nous connaissons est un diagramme, unique (figure~\ref{fig:Billroth1832}), proposé par le philosophe et grammairien allemand Johann Billroth dans sa grammaire du latin (\textit{Lateinische Syntax}) publiée en \citeyear{Billroth1832}, à seulement 24 ans (il décédera à 28 ans).
     
      \begin{figure}[H]
     \caption{\label{fig:Billroth1832}Diagramme de \citet[102]{Billroth1832}\label{fig:Billroth1832}}
@@ -292,7 +292,7 @@ C'est la cinquième colonne qui nous intéresse tout particulièrement, puisqu'e
     ‘Miltiades, le chef des Athéniens, rendit à toute la Grèce la liberté dont elle avait été gravement privée en livrant bataille à Marathon.’}
     \end{figure}
     
-    Stephen W. Clark est le premier grammairien à réellement exploiter des diagrammes dépendentiels dans sa grammaire de l’anglais de \citeyear{Clark1847} intitulé \textit{The science of the English grammar: A practical grammar in which words, phrases, and sentences are classified to their offices, and their relation to each other, illustrated by a complete system of diagrams} ‘La science de la grammaire anglaise : une grammaire pratique dans laquelle les mots, les syntagmes et les phrases sont classés selon leurs fonctions et leurs relations les uns aux autres par un système complet de diagrammes’. Dans les représentations de Clark, les connexions ne sont pas représentées en tant que telles : un mot qui en «~qualifie~» un autre (pour reprendre les termes de Clark) est placé dans une bulle sous la bulle de son gouverneur. Les prépositions, comme \textit{by} ‘par’ ou \textit{of} ‘de’ dans la figure \ref{fig:Clark1847}, reçoivent une forme particulière indiquant qu’elles servent à «~connecter~» deux mots. Le sujet, le verbe et l’objet direct sont placés au même niveau, comme ici \textit{ressources} and \textit{are developed}. Les groupes prépositionnels sont entourés par des bulles en pointillés. Les analyses de Clark sont d’une grande cohérence et ses représentations de la coordination ou de l’extraction, sur lesquelles nous reviendrons dans les chapitres 18 et 19 du vol.\ 2, sont remarquables. Il leur manque juste le développement théorique que proposera plus tard Tesnière.%\chapfuturef
+    Stephen W. Clark est le premier grammairien à réellement exploiter des diagrammes dépendentiels dans sa grammaire de l’anglais de \citeyear{Clark1847} intitulé \textit{The science of the English grammar: A practical grammar in which words, phrases, and sentences are classified to their offices, and their relation to each other, illustrated by a complete system of diagrams} ‘La science de la grammaire anglaise : une grammaire pratique dans laquelle les mots, les syntagmes et les phrases sont classés selon leurs fonctions et leurs relations les uns aux autres par un système complet de diagrammes’. Dans les représentations de Clark, les connexions ne sont pas représentées en tant que telles : un mot qui en «~qualifie~» un autre (pour reprendre les termes de Clark) est placé dans une bulle sous la bulle de son gouverneur. Les prépositions, comme \textit{by} ‘par’ ou \textit{of} ‘de’ dans la figure~\ref{fig:Clark1847}, reçoivent une forme particulière indiquant qu’elles servent à «~connecter~» deux mots. Le sujet, le verbe et l’objet direct sont placés au même niveau, comme ici \textit{ressources} and \textit{are developed}. Les groupes prépositionnels sont entourés par des bulles en pointillés. Les analyses de Clark sont d’une grande cohérence et ses représentations de la coordination ou de l’extraction, sur lesquelles nous reviendrons dans les chapitres 18 et 19 du vol.\ 2, sont remarquables. Il leur manque juste le développement théorique que proposera plus tard Tesnière.%\chapfuturef
    
    
     \begin{figure}[H]
@@ -303,7 +303,7 @@ C'est la cinquième colonne qui nous intéresse tout particulièrement, puisqu'e
     \end{figure}
     
     
-    Ce ne sont pas les diagrammes de Clark qui sont passés à la postérité, mais ceux de ses suiveurs, \hi{Alonzo Reed} et \hi{Brainerd Kellogg}. Leurs diagrammes, proposés pour la première fois en \citeyear{ReedKellogg1877} et toujours utilisés aujourd’hui par certains enseignants d’anglais, sont équivalents à ceux de Clark, mais utilisent des conventions différentes : les mots ne sont plus placés dans des bulles, mais au-dessus de segments de traits. Les verbes et les noms reçoivent des segments horizontaux, comme \textit{pleased} ‘enchanté’ ou \textit{news} ‘nouvelles’ dans le diagramme de la figure \ref{fig:ReedKellogg}, tandis que les autres mots, comme la préposition \textit{with} ‘avec’ ou l’adjectif \textit{good }‘bon’, reçoivent des segments en diagonal. Comme chez Clark, le sujet le verbe et l’objet sont au même niveau. Les connections apparaissent de manière plus explicite à la jointure de deux segments. La connexion entre le sujet et le verbe (\textit{girls – are pleased}) est symbolisée par un trait vertical et celle entre l’auxiliaire et le participe (\textit{are – pleased}) par un trait oblique. On peut traduire cette structure dans les conventions utilisées ici, en réifiant les connexions et en mettant en évidence le fait que certaines connexions ne sont pas hiérarchisées (voir la figure \ref{fig:ReedKelloggByMe}).
+    Ce ne sont pas les diagrammes de Clark qui sont passés à la postérité, mais ceux de ses suiveurs, \hi{Alonzo Reed} et \hi{Brainerd Kellogg}. Leurs diagrammes, proposés pour la première fois en \citeyear{ReedKellogg1877} et toujours utilisés aujourd’hui par certains enseignants d’anglais, sont équivalents à ceux de Clark, mais utilisent des conventions différentes : les mots ne sont plus placés dans des bulles, mais au-dessus de segments de traits. Les verbes et les noms reçoivent des segments horizontaux, comme \textit{pleased} ‘enchanté’ ou \textit{news} ‘nouvelles’ dans le diagramme de la figure~\ref{fig:ReedKellogg}, tandis que les autres mots, comme la préposition \textit{with} ‘avec’ ou l’adjectif \textit{good }‘bon’, reçoivent des segments en diagonal. Comme chez Clark, le sujet le verbe et l’objet sont au même niveau. Les connections apparaissent de manière plus explicite à la jointure de deux segments. La connexion entre le sujet et le verbe (\textit{girls – are pleased}) est symbolisée par un trait vertical et celle entre l’auxiliaire et le participe (\textit{are – pleased}) par un trait oblique. On peut traduire cette structure dans les conventions utilisées ici, en réifiant les connexions et en mettant en évidence le fait que certaines connexions ne sont pas hiérarchisées (voir la figure~\ref{fig:ReedKelloggByMe}).
     
      \begin{figure}[H]
     \includegraphics[width=7cm]{figures/ReedKellog}\smallskip\\    
@@ -335,7 +335,7 @@ C'est la cinquième colonne qui nous intéresse tout particulièrement, puisqu'e
     \end{forest}
     \end{figure}
 
-    En \citeyear{kern1883zur}, dans un livre sur la grammaire allemande (\textit{Zur Methodik des deutschen Unterrichts} ‘Sur la méthodologie de l’enseignement de l’allemand’), \hi{Franz Kern} propose de véritables arbres de dépendance. Voici ce qu’il écrit : «~Le mot déterminant dépend de celui qu’il détermine ou, en d’autres termes, est régi par lui. On désigne (graphiquement, par un schéma) la dépendance d’un mot à un autre par un trait partant vers le bas du mot régissant  et allant vers le mot régi~(ou dépendant) [figure de gauche] ou encore sans mot par de simples relations grammaticales [figure de droite].~» Ce texte est accompagné des deux figures \ref{fig:Kern1883} pour la phrase \textit{Eine alte Kirche wurde ausgebessert} ‘Une vielle église a été réparée’. Dans la figure de gauche figurent les mots de la phrase, le complexe verbal n’étant pas décomposé. Dans la figure de droite, l’article (appelé \textit{Adj. (Zeiger)} ‘adjectif (pointeur)’) et l’adjectif qualificatif (\textit{Adjektiv}) dépendent du mot sujet (\textit{Subjektswort}) qui dépend du verbe fini (\textit{Finites Verbum}).
+    En \citeyear{kern1883zur}, dans un livre sur la grammaire allemande (\textit{Zur Methodik des deutschen Unterrichts} ‘Sur la méthodologie de l’enseignement de l’allemand’), \hi{Franz Kern} propose de véritables arbres de dépendance. Voici ce qu’il écrit : «~Le mot déterminant dépend de celui qu’il détermine ou, en d’autres termes, est régi par lui. On désigne (graphiquement, par un schéma) la dépendance d’un mot à un autre par un trait partant vers le bas du mot régissant  et allant vers le mot régi~(ou dépendant) [figure de gauche] ou encore sans mot par de simples relations grammaticales [figure de droite].~» Ce texte est accompagné des deux figures~\ref{fig:Kern1883} pour la phrase \textit{Eine alte Kirche wurde ausgebessert} ‘Une vielle église a été réparée’. Dans la figure de gauche figurent les mots de la phrase, le complexe verbal n’étant pas décomposé. Dans la figure de droite, l’article (appelé \textit{Adj. (Zeiger)} ‘adjectif (pointeur)’) et l’adjectif qualificatif (\textit{Adjektiv}) dépendent du mot sujet (\textit{Subjektswort}) qui dépend du verbe fini (\textit{Finites Verbum}).
 
     \begin{figure}[H]
       \caption{Arbres de dépendance de \citet[10]{kern1883zur}\label{fig:Kern1883}}
@@ -345,7 +345,7 @@ C'est la cinquième colonne qui nous intéresse tout particulièrement, puisqu'e
     ‘Une ancienne église a été reconstruite.’}
     \end{figure}
 
-    La notion de \textit{valence} a été introduite par le sémioticien anglais Charles S. Peirce dans un article de \citeyear{peirce1897logic}. Peirce compare la possibilité qu’a le verbe \textit{give} ‘donner’ de se combiner avec trois éléments (\textit{John gives John to John}) avec la possibilité qu’à l’atome d’azote N de se combiner avec trois atomes d’hydrogène H pour donner une molécule d’ammoniac NH\textsubscript{3}. Cette métaphore de la connexion entre mots par la connexion entre atomes est accompagnée de la figure \ref{fig:Peirce1897}. Peirce remarque que contrairement aux connections chimiques les connections entre mots (il s’agit plutôt de connexions sémantiques que syntaxiques) sont asymétriques, ce que semble confirmer son diagramme, où les connexions partent du mot \textit{gives} mais s’arrêtent à la bulle de \textit{John}. (Voir la \sectref{sec:3.3.10} sur \textit{Distribution et valence} pour la suite de la discussion.)
+    La notion de \textit{valence} a été introduite par le sémioticien anglais Charles S. Peirce dans un article de \citeyear{peirce1897logic}. Peirce compare la possibilité qu’a le verbe \textit{give} ‘donner’ de se combiner avec trois éléments (\textit{John gives John to John}) avec la possibilité qu’à l’atome d’azote N de se combiner avec trois atomes d’hydrogène H pour donner une molécule d’ammoniac NH\textsubscript{3}. Cette métaphore de la connexion entre mots par la connexion entre atomes est accompagnée de la figure~\ref{fig:Peirce1897}. Peirce remarque que contrairement aux connections chimiques les connections entre mots (il s’agit plutôt de connexions sémantiques que syntaxiques) sont asymétriques, ce que semble confirmer son diagramme, où les connexions partent du mot \textit{gives} mais s’arrêtent à la bulle de \textit{John}. (Voir la \sectref{sec:3.3.10} sur \textit{Distribution et valence} pour la suite de la discussion.)
 
 
     \begin{figure}[H]
@@ -362,7 +362,7 @@ C'est la cinquième colonne qui nous intéresse tout particulièrement, puisqu'e
     \noindent\parbox{\textwidth}{\small\textit{Ainsi cette vertu céleste, qui est contenue dans les écrits de saint Paul, même dans cette simplicité de style, conserve toute la vigueur qu’elle apporte du ciel d’où elle descend.} (Bossuet)}
     \end{figure}
 
-    Si cette analyse contient déjà des symboles spéciaux (comme les flèches à double pointe \textrm{$\twoheadrightarrow $} pour les relatives), ce n’est que plus tard que Tesnière introduira les symboles en T pour la translation, comme dans la figure \ref{fig:TesniereT}a, proposée par Tesnière pour «~\textit{Écrivez dans le livre de votre ami} !~». Les structures de l’ouvrage de \citeyear{tesniere1959elements} ne sont plus totalement hiérarchiques comme le montre notre interprétation polygraphique de la représentation dans la figure \ref{fig:TesniereT}b.
+    Si cette analyse contient déjà des symboles spéciaux (comme les flèches à double pointe \textrm{$\twoheadrightarrow $} pour les relatives), ce n’est que plus tard que Tesnière introduira les symboles en T pour la translation, comme dans la figure~\ref{fig:TesniereT}a, proposée par Tesnière pour «~\textit{Écrivez dans le livre de votre ami} !~». Les structures de l’ouvrage de \citeyear{tesniere1959elements} ne sont plus totalement hiérarchiques comme le montre notre interprétation polygraphique de la représentation dans la figure~\ref{fig:TesniereT}b.
 
     \begin{figure}[H]
     \caption{Interprétation polygraphique d'un stemma\label{fig:TesniereT}}
@@ -393,7 +393,7 @@ Illustrons cela avec la phrase :
 
 \ea \textit{Pierre veut inviter Marie demain.}\z
 
-Si l’on a la structure de connexion de cette phrase  et qu’on peut établir que \textit{veut} est la tête (voir la \sectref{sec:3.3.8} suivante), on obtient immédiatement une structure de dépendance par le procédé que nous venons de décrire, comme le montre la figure \ref{fig:hierarchie}. La flèche blanche
+Si l’on a la structure de connexion de cette phrase  et qu’on peut établir que \textit{veut} est la tête (voir la \sectref{sec:3.3.8} suivante), on obtient immédiatement une structure de dépendance par le procédé que nous venons de décrire, comme le montre la figure~\ref{fig:hierarchie}. La flèche blanche
 indique le nœud par lequel on attrape la structure pour la hiérarchiser. Ce nœud va gouverner les nœuds auxquels il est connecté, lesquels vont gouverner à leur tour les nœuds auxquels ils sont connectés et ainsi de suite.
 
 \begin{figure}
@@ -685,7 +685,7 @@ Le critère distributionnel avec effacement négatif est équivalent à la propr
     \ex
         \textit{{Mary thinks Peter slept.}}    ‘Mary pense que Pierre dormait.’
     \z\z
-    La conjonction \textit{that} est bien effaçable, ce qui pourrait conduire, en vertu du Critère d'effacement simple, à considérer que \textit{thinks} est directement connecté à \textit{slept} et donne la structure de connexion de la figure \ref{fig:that1}. Mais cela contredit le Critère distributionnel avec effacement, car \textit{that Peter slept} n’a pas la même valence supérieure que \textit{Peter slept} : si les deux peuvent dépendre de \textit{Mary thinks}, seul \textit{Peter slept} peut former un énoncé déclaratif ou bien se combiner avec une conjonction comme \textit{if} ‘si’ ou \textit{whether} ‘si (oui ou non)’. Comme un dépendant ne peut modifier la valence supérieure de son gouverneur, il est donc clair que \textit{that} n’est pas un dépendant du verbe \textit{slept}, d'où l'arbre de dépendance de la figure \ref{fig:that2}. (Voir l’\encadref{sec:3.3.28} sur la \textit{Co-occupation} pour une autre analyse de \textit{that}.) De tels cas sont rares et le Critère d’effacement simple reste un critère simple généralement fiable.
+    La conjonction \textit{that} est bien effaçable, ce qui pourrait conduire, en vertu du Critère d'effacement simple, à considérer que \textit{thinks} est directement connecté à \textit{slept} et donne la structure de connexion de la figure~\ref{fig:that1}. Mais cela contredit le Critère distributionnel avec effacement, car \textit{that Peter slept} n’a pas la même valence supérieure que \textit{Peter slept} : si les deux peuvent dépendre de \textit{Mary thinks}, seul \textit{Peter slept} peut former un énoncé déclaratif ou bien se combiner avec une conjonction comme \textit{if} ‘si’ ou \textit{whether} ‘si (oui ou non)’. Comme un dépendant ne peut modifier la valence supérieure de son gouverneur, il est donc clair que \textit{that} n’est pas un dépendant du verbe \textit{slept}, d'où l'arbre de dépendance de la figure~\ref{fig:that2}. (Voir l’\encadref{sec:3.3.28} sur la \textit{Co-occupation} pour une autre analyse de \textit{that}.) De tels cas sont rares et le Critère d’effacement simple reste un critère simple généralement fiable.
 
     \begin{figure}[H]
     \captionsetup{margin=.05\textwidth}%
@@ -702,7 +702,7 @@ Le critère distributionnel avec effacement négatif est équivalent à la propr
             \draw (midpoint.east)-- (that);
             \draw (Peter) -- (slept);
             \end{tikzpicture}}
-            {\caption{Structure de connexion de \REF{ex:that}a\label{fig:that1}}}%
+            {\caption{Structure de connexion de (\ref{ex:that}a)\label{fig:that1}}}%
     \ffigbox[.4\textwidth]
             {\begin{forest} for tree = {font=\itshape}
             [thinks
@@ -710,7 +710,7 @@ Le critère distributionnel avec effacement négatif est équivalent à la propr
               [that [slept [Peter]]]
             ]
             \end{forest}}%
-            {\caption{Arbre de dépendance \REF{ex:that}a\label{fig:that2}}}
+            {\caption{Arbre de dépendance (\ref{ex:that}a)\label{fig:that2}}}
     \end{floatrow}
     \end{figure}
 }
@@ -773,9 +773,9 @@ Le substantif B = \textit{Marie} peut commuter avec beaucoup de groupes substant
 {Lorsqu’un deuxième élément contrôle également la distribution de l’unité U, la tête de U est dite \textstyleTermes{faible}.}
 
 Le groupe prépositionnel est donc une unité à tête faible. 
-Ceci nous permet de postuler la structure de dépendance de la figure \ref{fig:tetefaible}, où la connexion non hiérarchisée entre \textit{à} et \textit{Marie} est représentée par un lien horizontal. La relation de dépendance entre \textit{téléphone} et \textit{à Marie} est associée au lien horizontal, selon les conventions polygraphiques utilisées pour les structures de connexion (voir l’\encadref{sec:3.2.23} \textit{Graphe à bulles et polygraphe}). 
+Ceci nous permet de postuler la structure de dépendance de la figure~\ref{fig:tetefaible}, où la connexion non hiérarchisée entre \textit{à} et \textit{Marie} est représentée par un lien horizontal. La relation de dépendance entre \textit{téléphone} et \textit{à Marie} est associée au lien horizontal, selon les conventions polygraphiques utilisées pour les structures de connexion (voir l’\encadref{sec:3.2.23} \textit{Graphe à bulles et polygraphe}). 
 
-Si on veut obtenir une structure d'arbre, on privilégiera la position de tête de la préposition comme dans la figure \ref{fig:teteprep}.
+Si on veut obtenir une structure d'arbre, on privilégiera la position de tête de la préposition comme dans la figure~\ref{fig:teteprep}.
 
 
 
@@ -862,7 +862,7 @@ Un élément peut toutefois occuper la place habituellement dévolue à un de se
 \z
 
 
-Illustrons l'application du Critère d'indépendance des codépendants par la question de la tête des propositions en wolof, une langue Niger-Congo parlée au Sénégal. Le verbe en wolof est quasiment invariable, mais il peut se combiner avec un certain nombre de particules verbales. La question est alors : ces particules doivent-elles être traitées comme des adverbes modifiant le verbe ou comme des auxiliaires régissant le verbe ? Ces particules verbales modifient la distribution du verbe (par exemple, les particules ne sont pas possibles dans les constructions relatives), ce qui en fait donc des têtes distributionnelles. Mais elles ont une autre propriété qui en fait aussi des têtes internes. En effet, chaque particule promeut un élément différent en première position : la particule \textit{a} maintient le sujet en première position \REF{ex:wolof-particules}a, la particule \textit{la} promeut un complément \REF{ex:wolof-particules}b, la particule \textit{na} promeut le verbe lui-même \REF{ex:wolof-particules}c et enfin la particule \textit{da} occupe la première position \REF{ex:wolof-particules}d. (Dans les gloses qui suivent, le signe = indique la cliticisation de la particule qui suit. La forme \textit{y}, glosée \textsc{impf}, est un syntaxème d'imperfectif, \textit{ñu} est le pronom sujet 3\textsuperscript{e} personne du pluriel, et \textit{am} est un déterminant indéfini.)
+Illustrons l'application du Critère d'indépendance des codépendants par la question de la tête des propositions en wolof, une langue Niger-Congo parlée au Sénégal. Le verbe en wolof est quasiment invariable, mais il peut se combiner avec un certain nombre de particules verbales. La question est alors : ces particules doivent-elles être traitées comme des adverbes modifiant le verbe ou comme des auxiliaires régissant le verbe ? Ces particules verbales modifient la distribution du verbe (par exemple, les particules ne sont pas possibles dans les constructions relatives), ce qui en fait donc des têtes distributionnelles. Mais elles ont une autre propriété qui en fait aussi des têtes internes. En effet, chaque particule promeut un élément différent en première position : la particule \textit{a} maintient le sujet en première position (\ref{ex:wolof-particules}a), la particule \textit{la} promeut un complément (\ref{ex:wolof-particules}b), la particule \textit{na} promeut le verbe lui-même (\ref{ex:wolof-particules}c) et enfin la particule \textit{da} occupe la première position (\ref{ex:wolof-particules}d). (Dans les gloses qui suivent, le signe = indique la cliticisation de la particule qui suit. La forme \textit{y}, glosée \textsc{impf}, est un syntaxème d'imperfectif, \textit{ñu} est le pronom sujet 3\textsuperscript{e} personne du pluriel, et \textit{am} est un déterminant indéfini.)
 
 \ea\label{ex:wolof-particules}
 \ea
@@ -945,10 +945,10 @@ On peut encore appliquer le critère au cas des formes verbales comme \textit{ch
     \z
     \z
 
-    On peut supposer que ces deux exemples ont la même structure syntaxique, que dans les deux cas \textit{un verre} est la tête syntaxique de l’objet de \textit{achète} et que \textit{vin} est complément de la préposition \textit{à} ou \textit{de} et dépend de \textit{un verre} par l’intermédiaire de cette préposition. Par contre, du point de vue sémantique, les situations sont très différentes : si ce que Félix casse est bien un verre, ce qu’il boit est du vin. Dans \textit{un verre de vin}, \textit{un verre} sert uniquement à mesurer la quantité de vin et pas à déterminer la catégorie ontologique de la chose désignée par le syntagme \textit{un verre de vin} (voir la notion de \textit{tête sémantique} dans la \sectref{sec:3.3.17} sur le \textit{Critère de la tête sémantique}). On en déduit donc que la tête sémantique de \textit{verre à vin} est \textit{verre}, tandis que la tête sémantique de \textit{verre de vin} est \textit{vin}. Il y a ainsi une distorsion sémantique-syntaxe dans la phrase \textit{Félix achète/boit un verre de vin}. Nous représentons ci-dessous son arbre de dépendance syntaxique et son graphe sémantique (pour ce dernier on consultera les chapitres \ref{sec:1.2} et \ref{sec:13}) :
+    On peut supposer que ces deux exemples ont la même structure syntaxique, que dans les deux cas \textit{un verre} est la tête syntaxique de l’objet de \textit{achète} et que \textit{vin} est complément de la préposition \textit{à} ou \textit{de} et dépend de \textit{un verre} par l’intermédiaire de cette préposition. Par contre, du point de vue sémantique, les situations sont très différentes : si ce que Félix casse est bien un verre, ce qu’il boit est du vin. Dans \textit{un verre de vin}, \textit{un verre} sert uniquement à mesurer la quantité de vin et pas à déterminer la catégorie ontologique de la chose désignée par le syntagme \textit{un verre de vin} (voir la notion de \textit{tête sémantique} dans la \sectref{sec:3.3.17} sur le \textit{Critère de la tête sémantique}). On en déduit donc que la tête sémantique de \textit{verre à vin} est \textit{verre}, tandis que la tête sémantique de \textit{verre de vin} est \textit{vin}. Il y a ainsi une distorsion sémantique-syntaxe dans la phrase \textit{Félix achète/boit un verre de vin}. Nous représentons ci-dessous son arbre de dépendance syntaxique et son graphe sémantique (pour ce dernier on consultera les chapitres~\ref{sec:1.2} et \ref{sec:13}) :
 
     \begin{figure}[H]
-    \caption{Représentations syntaxique et sémantique de \REF{ex:3-3-24b}b}
+    \caption{Représentations syntaxique et sémantique de (\ref{ex:3-3-24b}b)}
     \begin{minipage}[c]{.5\linewidth}
     \begin{forest} for tree={font=\itshape}
       [achète
@@ -1085,7 +1085,7 @@ Il existe néanmoins un certain nombre de cas problématiques qui sont au centre
       \ex \textit{{Il a envoyé} \textbf{{plus}}  {de lettres} \textbf{{que nécessaire}}.}
       \z
     \z
-    Ceci conduit donc à considérer l’adverbe comme la tête du syntagme et a proposé pour les phrases en \REF{ex:trop} les structures de la figure \ref{fig:trop}.
+    Ceci conduit donc à considérer l’adverbe comme la tête du syntagme et a proposé pour les phrases en \REF{ex:trop} les structures de la figure~\ref{fig:trop}.
 
     \begin{figure}[H]
     \begin{minipage}[t]{.5\linewidth}\centering
@@ -1135,7 +1135,7 @@ La question de savoir qui du nom ou du déterminant est la tête est une questio
 \ea\label{ex:lechien}
 \textit{Le petit chien dort.}
 \z
-Nous proposons dans la figure \ref{fig:lechien} une structure pour chacune des trois options.
+Nous proposons dans la figure~\ref{fig:lechien} une structure pour chacune des trois options.
 
 \begin{figure}
 \begin{minipage}[t]{.3\linewidth}\centering
@@ -1206,7 +1206,7 @@ Le français présente lui aussi des données problématiques pour l’unicité 
   \z
 \z
 
-Doit-on considérer que dans \textit{deux amis}, \textit{deux} est déterminant ? Mais alors, dans \textit{mes deux amis}, y a-t-il deux déterminants ? Ou bien s’agit-il d’un autre \textit{deux} ? Cette dernière solution est la solution la plus souvent proposée (\textit{deux} serait adjectif en \REF{ex:mesdeux}a et déterminant en \REF{ex:mesdeux}c), mais elle est difficilement défendable étant donné que \textit{deux} a absolument la même position linéaire et la même contribution sémantique que \textit{mes} soit ou non présent et qu’il en va de même de tous les éléments qui peuvent commuter avec lui, comme \textit{quelques} ou \textit{différents} (voir l’exercice 5 du \chapref{sec:3.5}). Une application stricte du Critère distributionnel avec effacement positif nous oblige à conclure que \textit{mes deux amis} et \textit{deux amis} ont la même valence supérieure et que donc \textit{mes} n’est pas la tête distributionnelle. Voir l’\encadref{sec:3.3.29} sur les \textit{Grammèmes comme tête} pour les différentes structures syntaxiques possibles de \textit{mes deux amis}.
+Doit-on considérer que dans \textit{deux amis}, \textit{deux} est déterminant ? Mais alors, dans \textit{mes deux amis}, y a-t-il deux déterminants ? Ou bien s’agit-il d’un autre \textit{deux} ? Cette dernière solution est la solution la plus souvent proposée (\textit{deux} serait adjectif en (\ref{ex:mesdeux}a) et déterminant en (\ref{ex:mesdeux}c)), mais elle est difficilement défendable étant donné que \textit{deux} a absolument la même position linéaire et la même contribution sémantique que \textit{mes} soit ou non présent et qu’il en va de même de tous les éléments qui peuvent commuter avec lui, comme \textit{quelques} ou \textit{différents} (voir l’exercice 5 du \chapref{sec:3.5}). Une application stricte du Critère distributionnel avec effacement positif nous oblige à conclure que \textit{mes deux amis} et \textit{deux amis} ont la même valence supérieure et que donc \textit{mes} n’est pas la tête distributionnelle. Voir l’\encadref{sec:3.3.29} sur les \textit{Grammèmes comme tête} pour les différentes structures syntaxiques possibles de \textit{mes deux amis}.
 
 \loupe[sec:3.3.25]{Quand le dépendant contrôle son gouverneur}{%
     Il existe d’autres arguments pour le nom comme tête que nous n’avons pas retenus. Parmi ceux-ci, il est souvent avancé que le nom contrôle son déterminant. On dit A \textstyleTermesapprof{contrôle} B lorsque A réduit le paradigme des B par rapport à ce qui serait attendu.
@@ -1311,7 +1311,7 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
     \ex   \textit{{Je} \textbf{{le}}  {vois.}}
     \z
     \z
-    Le pronom latin \textit{ille} en se grammaticalisant a perdu de sa substance phonique et doit se cliticiser sur un l’élément à sa droite dans le groupe substantival (par \textit{se cliticiser sur}, nous voulons dire ‘former un groupe accentuel avec’ ; voir le \chapfuturef{14}). Si celui-ci est absent, il se place devant le verbe, comme en \REF{ex:le}a, et peut ainsi continuer à se cliticiser sur l’élément qui le suit. Une telle explication amène à considérer que le pronom \textit{le} de \REF{ex:le}c  est le même signe linguistique que l’article \textit{le} du \REF{ex:le}. Si tel est le cas, contrairement à ce qu’on avance habituellement, le groupe substantival \textit{le rouge} en \REF{ex:le}b n’est pas elliptique, mais simplement un cas où le pronom gouverne un adjectif. (Lequel pronom ne pourrait pas d’ailleurs gouverner un complément de nom ou une relative : en effet, \textit{le livre de syntaxe} se pronominalise en \textit{celui de syntaxe} et non *\textit{le de syntaxe}, peut-être encore pour des problèmes de cliticisation, la préposition \textit{de}, non accentuable, n’étant pas un hôte adéquat.)
+    Le pronom latin \textit{ille} en se grammaticalisant a perdu de sa substance phonique et doit se cliticiser sur un l’élément à sa droite dans le groupe substantival (par \textit{se cliticiser sur}, nous voulons dire ‘former un groupe accentuel avec’ ; voir le \chapfuturef{14}). Si celui-ci est absent, il se place devant le verbe, comme en (\ref{ex:le}a), et peut ainsi continuer à se cliticiser sur l’élément qui le suit. Une telle explication amène à considérer que le pronom \textit{le} de (\ref{ex:le}c)  est le même signe linguistique que l’article \textit{le} du \REF{ex:le}. Si tel est le cas, contrairement à ce qu’on avance habituellement, le groupe substantival \textit{le rouge} en (\ref{ex:le}b) n’est pas elliptique, mais simplement un cas où le pronom gouverne un adjectif. (Lequel pronom ne pourrait pas d’ailleurs gouverner un complément de nom ou une relative : en effet, \textit{le livre de syntaxe} se pronominalise en \textit{celui de syntaxe} et non *\textit{le de syntaxe}, peut-être encore pour des problèmes de cliticisation, la préposition \textit{de}, non accentuable, n’étant pas un hôte adéquat.)
 
     On peut donner d’autres exemples de co-occupation potentielle. Le lexème \textit{tout}, dont la syntaxe est si atypique, est un bon candidat :
     
@@ -1350,7 +1350,7 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
     On peut penser que, dans la plupart des langues, certains marqueurs de position syntaxique sont, comme l’article pour le groupe substantival ou la conjonction pour la complétive, les versions grammaticalisées d’éléments qui à l’origine pouvaient occuper seuls la position.
 }
 \loupe[sec:3.3.29]{Les grammèmes comme tête}{%
-    Nous avons discuté du nom ou du déterminant comme tête du groupe substantival. Mais il existe une autre solution encore. Nous avons vu que la flexion du verbe pouvait être considérée comme la tête de la proposition et prendre le sujet comme dépendant (voir la \sectref{sec:3.3.13} sur \textit{Le Critère distributionnel sans effacement}). Une analyse similaire peut être proposée pour le nom. Les deux catégories flexionnelles du nom sont la définitude et le nombre (voir le \chapfuturef{15} sur les \textit{Catégories flexionnelles}). On peut alors proposer, pour \textit{les deux amis}, l'arbre de dépendance de la figure \ref{fig:mesdeux1}, où les nœuds sont occupés par des syntaxèmes et les grammèmes gouvernent les lexèmes.
+    Nous avons discuté du nom ou du déterminant comme tête du groupe substantival. Mais il existe une autre solution encore. Nous avons vu que la flexion du verbe pouvait être considérée comme la tête de la proposition et prendre le sujet comme dépendant (voir la \sectref{sec:3.3.13} sur \textit{Le Critère distributionnel sans effacement}). Une analyse similaire peut être proposée pour le nom. Les deux catégories flexionnelles du nom sont la définitude et le nombre (voir le \chapfuturef{15} sur les \textit{Catégories flexionnelles}). On peut alors proposer, pour \textit{les deux amis}, l'arbre de dépendance de la figure~\ref{fig:mesdeux1}, où les nœuds sont occupés par des syntaxèmes et les grammèmes gouvernent les lexèmes.
 
 \begin{figure}[H]
     \centering
@@ -1367,8 +1367,8 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
 
     Si on ramène maintenant cette structure à une structure de dépendance entre mots, on a deux façons de la réduire :
     \begin{itemize}
-    \item soit on amalgame les grammèmes avec le lexème qui est porteur de la même valeur (\textsc{le} avec le défini, \textsc{deux} avec le pluriel)  (figure \ref{fig:mesdeux2}) ;
-    \item soit on considère que ces grammèmes sont des flexions du nom et on les amalgame avec lui (figure \ref{fig:mesdeux3}).
+    \item soit on amalgame les grammèmes avec le lexème qui est porteur de la même valeur (\textsc{le} avec le défini, \textsc{deux} avec le pluriel)  (figure~\ref{fig:mesdeux2}) ;
+    \item soit on considère que ces grammèmes sont des flexions du nom et on les amalgame avec lui (figure~\ref{fig:mesdeux3}).
 \end{itemize}
 
   \begin{figure}[H]
@@ -1431,7 +1431,7 @@ Prenons un exemple (sur lequel nous reviendrons à de nombreuses reprises).
 Beaucoup de gens aimeraient passer Noël en Laponie.
 }}
 \z
-\noindent L’arbre de dépendance de \REF{ex:laponie} est donné dans la figure \ref{fig:arbredep-laponie}. Les éléments dominés par le nœud \textit{passer} sont  \textit{passer} lui-même, \textit{Noël, en} et \textit{Laponie}. Ce sont les nœuds du sous-arbre de racine \textit{passer}, donné dans la figure \ref{fig:sousarbre}.
+\noindent L’arbre de dépendance de \REF{ex:laponie} est donné dans la figure~\ref{fig:arbredep-laponie}. Les éléments dominés par le nœud \textit{passer} sont  \textit{passer} lui-même, \textit{Noël, en} et \textit{Laponie}. Ce sont les nœuds du sous-arbre de racine \textit{passer}, donné dans la figure~\ref{fig:sousarbre}.
 
 \begin{figure}
 \captionsetup{margin=.05\textwidth}%
@@ -1493,7 +1493,7 @@ Si l’on adopte une représentation syntaxique très granulaire où les syntax�
     \end{tikzpicture}
     \z
 
-    L’arbre de dépendance est ainsi le \hi{graphe de la relation de dépendance}. Ainsi l'arbre de dépendance de la figure \ref{fig:arbredep-laponie} est le graphe de la relation R = \{ (\textit{de, gens}), (\textit{beaucoup, de}), (\textit{aimeraient, beaucoup}), (\textit{aimeraient, passer}), (\textit{passer, Noël}), (\textit{passer, en}), (\textit{en, Laponie}) \}, où chaque couple est de la forme (gouverneur, dépendant). (Plus précisément, un arbre est un graphe pointé, c'est-à-dire un graphe dont un nœud a été pointé comme la racine de l'arbre. Voir l'\encadref{sec:1.2.3} sur \textit{Graphe et arbre}.)
+    L’arbre de dépendance est ainsi le \hi{graphe de la relation de dépendance}. Ainsi l'arbre de dépendance de la figure~\ref{fig:arbredep-laponie} est le graphe de la relation R = \{ (\textit{de, gens}), (\textit{beaucoup, de}), (\textit{aimeraient, beaucoup}), (\textit{aimeraient, passer}), (\textit{passer, Noël}), (\textit{passer, en}), (\textit{en, Laponie}) \}, où chaque couple est de la forme (gouverneur, dépendant). (Plus précisément, un arbre est un graphe pointé, c'est-à-dire un graphe dont un nœud a été pointé comme la racine de l'arbre. Voir l'\encadref{sec:1.2.3} sur \textit{Graphe et arbre}.)
 
     Voyons maintenant comment définir la {relation de dominance}. Avant cela, nous devons présenter quelques propriétés typiques des relations que nous exploiterons.
 
@@ -1531,7 +1531,7 @@ Si l’on adopte une représentation syntaxique très granulaire où les syntax�
 
     De même que nous avons construit la relation de dominance à partir de la relation de dépendance, on peut construire la relation de dépendance à partir de la relation de dominance. Pour montrer cela, nous devons d'abord étudier les propriétés de la relation de dominance. 
     
-    La relation de dominance est non seulement réflexive et transitive, mais elle est aussi antisymétrique, comme l’est la relation de dépendance. L’antisymétrie est un cas particulier de l’acyclicité. Une relation est \textstyleTermesapprof{antisymétrique} si la configuration \REF{ex:symetrie}b correspondant à la symétrie n’apparaît jamais, c’est-à-dire s’il n’existe pas de nœuds \textit{a} et \textit{b} distincts avec \textit{a}~R~\textit{b} et \textit{b}~\textit{a}.
+    La relation de dominance est non seulement réflexive et transitive, mais elle est aussi antisymétrique, comme l’est la relation de dépendance. L’antisymétrie est un cas particulier de l’acyclicité. Une relation est \textstyleTermesapprof{antisymétrique} si la configuration (\ref{ex:symetrie}b) correspondant à la symétrie n’apparaît jamais, c’est-à-dire s’il n’existe pas de nœuds \textit{a} et \textit{b} distincts avec \textit{a}~R~\textit{b} et \textit{b}~\textit{a}.
 
     Une relation réflexive, antisymétrique et transitive est appelée une \textstyleTermesapprof{relation d’ordre}. Il s’agit d’un ordre au sens où on l’entend pour les nombres quand on dit «~ 3 ${\leq}$ 7~» : la relation ${\leq}$ est une relation d’ordre sur les nombres entiers. Toute relation d’ordre ordonne les éléments en déclarant certains éléments comme plus grands que d’autres.
 La relation de dominance est une relation d’ordre. Rappelons qu’elle étend la relation de dépendance dont le graphe est l’arbre de dépendance. La racine de l'arbre de dépendance domine tous les autres nœuds et est donc le plus grand élément de la relation de dominance, tandis que les feuilles sont les plus petits éléments. 
@@ -1549,7 +1549,7 @@ Une dernière façon de caractériser une tête repose sur l’organisation lin�
 \Definition{\textstyleTermes{critère de recouvrement}}
 {\textstyleTermes{critère de recouvrement}. Si A est \hi{entre} B et C et que B et C sont connectés, alors il est peu probable que A gouverne B. Ou dit autrement, si A gouverne B, alors la connexion entre B et un de ses dépendants C ne peut généralement \hi{pas recouvrir} A.}
 
-Le Critère de recouvrement revient à rejeter autant que possible la configuration présentée dans \ref{fig:recouvrement} (ainsi que la configuration symétrique où les positions de B et C sont inversées). Il s'agit d'un critère topologique, prenant en compte l'ordre linéaire, 
+Le Critère de recouvrement revient à rejeter autant que possible la configuration présentée dans~\ref{fig:recouvrement} (ainsi que la configuration symétrique où les positions de B et C sont inversées). Il s'agit d'un critère topologique, prenant en compte l'ordre linéaire, 
 qui est aussi appelée le \hi{Critère topologique pour l'identification de la tête}. Il existe d'autres critères topologiques, utilisés dans l'identification des connexions, comme le \hi{Test de déplacement} (\sectref{sec:3.2.16} \textit{Tests pour la connexion}).
 
 \begin{figure}
@@ -1773,7 +1773,7 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
     \end{quote}
 }
 \corrections{%\label{sec:3.3.37}
-    \corrigé{1} Nous proposons de traduire l’analyse de Buffier par le diagramme de la figure \ref{fig:Buffier}, où les flèches représentent les relations du type «~est déterminé par~» ou est «~est particularisé par~». Notons que, à l’exception du cas de \textit{avec des discours}, les deux termes de la relation sont à chaque fois clairement donnés par Buffier. Nous représentons pour cette raison la relation entre \textit{avec des discours} et son gouverneur par une flèche discontinue.
+    \corrigé{1} Nous proposons de traduire l’analyse de Buffier par le diagramme de la figure~\ref{fig:Buffier}, où les flèches représentent les relations du type «~est déterminé par~» ou est «~est particularisé par~». Notons que, à l’exception du cas de \textit{avec des discours}, les deux termes de la relation sont à chaque fois clairement donnés par Buffier. Nous représentons pour cette raison la relation entre \textit{avec des discours} et son gouverneur par une flèche discontinue.
 
     \begin{figure}[H]
     \caption{Diagramme d’après \citet{buffier1709grammaire}\label{fig:Buffier}}
@@ -1799,7 +1799,7 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
     \end{figure}
 
 
-    \corrigé{2} Du Marsais propose une analyse hybride entre dépendance et constituance immédiate. Il semble hésiter entre les deux approches et utilise notamment le même terme \textit{sujet} pour désigner la relation entre le groupe sujet et le groupe verbal (\textit{Celui} est le sujet de \textit{ne marche point dans les ténèbres}) et pour désigner un constituant de la proposition (\textit{Qui me suit}, ces trois mots font une proposition incidente […] \textit{Qui} est le sujet de cette proposition incidente). Dans la figure \ref{fig:Dumarsais}, nous associons les étiquettes fonctionnelles à des flèches lorsque Du Marsais en fait des relation de de dépendance et à des bulles lorsqu'il les associe à une relation de constituance immédiate.
+    \corrigé{2} Du Marsais propose une analyse hybride entre dépendance et constituance immédiate. Il semble hésiter entre les deux approches et utilise notamment le même terme \textit{sujet} pour désigner la relation entre le groupe sujet et le groupe verbal (\textit{Celui} est le sujet de \textit{ne marche point dans les ténèbres}) et pour désigner un constituant de la proposition (\textit{Qui me suit}, ces trois mots font une proposition incidente […] \textit{Qui} est le sujet de cette proposition incidente). Dans la figure~\ref{fig:Dumarsais}, nous associons les étiquettes fonctionnelles à des flèches lorsque Du Marsais en fait des relation de de dépendance et à des bulles lorsqu'il les associe à une relation de constituance immédiate.
 
     \begin{figure}[H]
     \caption{Diagramme d’après \citet{Dumarsais1754}\label{fig:Dumarsais}}

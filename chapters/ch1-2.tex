@@ -15,7 +15,7 @@ Pour comprendre le fonctionnement de la langue, il est donc nécessaire d’étu
 }
 \section{Partir d’un sens}\label{sec:1.2.2}
 
-Considérons un locuteur du français qui veut exprimer un certain sens que nous allons essayer de décrire sans le verbaliser directement par une phrase. Ce sens concerne une personne \textit{x} appelée Ali et un événement \textit{e} concernant \textit{x}. Cet événement est une maladie et la durée de cette maladie est de deux semaines.  Nous pouvons représenter ce sens par la «~formule~» de la figure \ref{fig:sens-maladie}.
+Considérons un locuteur du français qui veut exprimer un certain sens que nous allons essayer de décrire sans le verbaliser directement par une phrase. Ce sens concerne une personne \textit{x} appelée Ali et un événement \textit{e} concernant \textit{x}. Cet événement est une maladie et la durée de cette maladie est de deux semaines.  Nous pouvons représenter ce sens par la «~formule~» de la figure~\ref{fig:sens-maladie}.
 
 \begin{figure}
      \caption{Description formelle d’un sens}
@@ -37,7 +37,7 @@ Certains sens lexicaux fonctionnent comme des \textstyleTermes{prédicats} et po
 
 Nous nous contenterons de cette définition sommaire de la structure prédicative (voir compléments dans l’\encadref{sec:1.2.4} sur \textit{Les composantes du sens}). Une définition plus précise sera donnée au \chapref{sec:13} sur \textit{La structure syntaxique profonde}.
 
-Nous avons présenté la structure prédicative par une \textstyleTermes{formule}, mais on peut aussi la représenter par un \textstyleTermes{graphe} (voir l’\encadref{sec:1.2.3} qui suit) que nous appelons le \textstyleTermes{graphe sémantique}. Le graphe sémantique correspondant à la formule de la figure \ref{fig:sens-maladie} est donné dans la figure \ref{fig:graphe-maladie}. Les nœuds du graphe sémantique sont les sens lexicaux ‘Ali’, ‘malade’, ‘durer’, ‘semaine’ et ‘deux’ et les arêtes représentent les \textstyleTermes{relations prédicat-argument}. Les arêtes sont matérialisées par des flèches. Les arêtes sont étiquetées par des chiffres permettant de distinguer les différents arguments d’un prédicat : 1 pour le premier argument, 2 pour le deuxième, etc. L’ordre dans lequel les arguments sont numérotés est l’\textstyleTermes{ordre de saillance}, dont nous reparlerons au \chapfuturef{17} sur \textit{Les relations syntaxiques}.
+Nous avons présenté la structure prédicative par une \textstyleTermes{formule}, mais on peut aussi la représenter par un \textstyleTermes{graphe} (voir l’\encadref{sec:1.2.3} qui suit) que nous appelons le \textstyleTermes{graphe sémantique}. Le graphe sémantique correspondant à la formule de la figure~\ref{fig:sens-maladie} est donné dans la figure~\ref{fig:graphe-maladie}. Les nœuds du graphe sémantique sont les sens lexicaux ‘Ali’, ‘malade’, ‘durer’, ‘semaine’ et ‘deux’ et les arêtes représentent les \textstyleTermes{relations prédicat-argument}. Les arêtes sont matérialisées par des flèches. Les arêtes sont étiquetées par des chiffres permettant de distinguer les différents arguments d’un prédicat : 1 pour le premier argument, 2 pour le deuxième, etc. L’ordre dans lequel les arguments sont numérotés est l’\textstyleTermes{ordre de saillance}, dont nous reparlerons au \chapfuturef{17} sur \textit{Les relations syntaxiques}.
 
 \begin{figure}
 \begin{tikzpicture}[>={Triangle[]},label distance=0pt]
@@ -143,7 +143,7 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
     \caption{Graphe sans cycle orienté\label{fig:1.2-dag}}
     \end{figure}
 
-    La \hi{structure prédicative} d’un énoncé peut être formalisée par un \hi{graphe orienté connexe et acyclique} (encore appelé \textstyleTermes{dag}, de l’anglais \textit{directed acyclic graph}) dont les nœuds sont les sens lexicaux et grammaticaux et les arêtes sont les dépendances sémantiques ou relations prédicat-argument entre ces sens. Le graphe de la figure \ref{fig:1.2-dag} est un dag.
+    La \hi{structure prédicative} d’un énoncé peut être formalisée par un \hi{graphe orienté connexe et acyclique} (encore appelé \textstyleTermes{dag}, de l’anglais \textit{directed acyclic graph}) dont les nœuds sont les sens lexicaux et grammaticaux et les arêtes sont les dépendances sémantiques ou relations prédicat-argument entre ces sens. Le graphe de la figure~\ref{fig:1.2-dag} est un dag.
 }
 \loupe[sec:1.2.4]{Les composantes du sens}{%
     Nous avons déjà expliqué, dans la \sectref{sec:1.1.4} sur \textit{Sens et intention communicative}, la distinction que nous faisons entre le \textstyleTermes{sens linguistique} et les \textstyleTermes{intentions communicatives} du locuteur. Reste à savoir, bien que cette question dépasse le cadre de cet ouvrage consacré à la syntaxe, comment modéliser le sens linguistique. Comme nous l'avons dit dans la \sectref{sec:1.2.2} \textit{Partir d’un sens}, nous pensons que la structure prédicative exprime le \terme{contenu informationnel}, qui n'est qu'une partie du sens linguistique : il s’agit de l’\hi{information pure} contenue dans le message – quels sont les \hi{sens de base} que nous souhaitons utiliser et comment ils se \hi{combinent}.
@@ -163,7 +163,7 @@ Nous avons présenté la structure prédicative par une \textstyleTermes{formule
 }
 \section{Choisir des unités lexicales}\label{sec:1.2.5}
 
-Comment peut-on exprimer en français le sens que nous avons considéré (celui des figures \ref{fig:sens-maladie} et \ref{fig:graphe-maladie}) ?  Nous allons nous intéresser à deux formulations possibles de ce sens, suffisamment différentes pour illustrer notre propos.
+Comment peut-on exprimer en français le sens que nous avons considéré (celui des figures~\ref{fig:sens-maladie} et \ref{fig:graphe-maladie}) ?  Nous allons nous intéresser à deux formulations possibles de ce sens, suffisamment différentes pour illustrer notre propos.
 
 \ea\label{ex:maladie}
 \ea
@@ -211,7 +211,7 @@ Le cas de la phrase (\ref{ex:maladie}b) (\textit{Ali a été malade pendant deux
 }
 \section{Structure hiérarchique}\label{sec:1.2.9}
 
-Lors du passage du sens au texte, tout se passe comme si on suspendait le graphe sémantique par l’un de ses nœuds dont on décide de faire le verbe principal de l’énoncé et qu’on parcourait le graphe à partir de ce nœud pour les autres lexicalisations. Nous pouvons illustrer cela par les schémas des figures \ref{fig:hierarchie-durer} et \ref{fig:hierarchie-malade} : à gauche nous représentons le graphe sémantique suspendu par un de ses nœuds (visé ici par une grosse flèche blanche)
+Lors du passage du sens au texte, tout se passe comme si on suspendait le graphe sémantique par l’un de ses nœuds dont on décide de faire le verbe principal de l’énoncé et qu’on parcourait le graphe à partir de ce nœud pour les autres lexicalisations. Nous pouvons illustrer cela par les schémas des figures~\ref{fig:hierarchie-durer} et \ref{fig:hierarchie-malade} : à gauche nous représentons le graphe sémantique suspendu par un de ses nœuds (visé ici par une grosse flèche blanche)
 et à droite nous avons la structure hiérarchique correspondante où les sens lexicaux ont été lexicalisés. La double flèche entre le graphe sémantique et l'arbre syntaxique indique qu'ils se correspondent.
 
 \begin{figure}
@@ -289,7 +289,7 @@ et à droite nous avons la structure hiérarchique correspondante où les sens l
 
 La structure que nous obtenons s’appelle un \textstyleTermes{arbre de dépendance syntaxi\-que profond} (voir le \chapref{sec:13} entièrement consacré à \textit{La syntaxe profonde}). Chaque nœud de l’arbre est occupé par une unité lexicale correspondant à un sens. D’autres sens (non considérés ici) donnent des éléments grammaticaux qui vont se combiner aux unités lexicales : temps pour les verbes (présent, passé, etc.), nombre (singulier, pluriel) et définitude (défini, indéfini) pour les noms. Le nœud au sommet est appelé la \textstyleTermes{racine} de l’arbre (voir l’\encadref{sec:1.2.3} sur \textit{Graphe et arbre}). Tous les nœuds à l’exception de la racine dépendent d’un autre nœud appelé leur \textstyleTermes{gouverneur} (syntaxique profond). À l’inverse, les nœuds qui dépendent d’un autre nœud en sont appelés les \textstyleTermes{dépendants} (syntaxiques profonds). Le lien entre deux nœuds est appelé une \textstyleTermes{dépendance} (syntaxique profonde).
 
-Chaque dépendance est étiquetée en fonction de son parcours : les relations sémantiques qui ont été parcourues du prédicat vers l’argument (c'est-à-dire dans le sens de la flèche) donnent une \textstyleTermes{dépendance syntaxique actancielle} (que nous numérotons comme la dépendance sémantique correspondante) (figure \ref{fig:dep-actant}), tandis que les relations sémantiques qui ont été parcourues à contre-courant donnent une \textstyleTermes{dépendance syntaxique modificative} (étiquetée \textit{\textsc{mod}}) (figure \ref{fig:dep-mod}).
+Chaque dépendance est étiquetée en fonction de son parcours : les relations sémantiques qui ont été parcourues du prédicat vers l’argument (c'est-à-dire dans le sens de la flèche) donnent une \textstyleTermes{dépendance syntaxique actancielle} (que nous numérotons comme la dépendance sémantique correspondante) (figure~\ref{fig:dep-actant}), tandis que les relations sémantiques qui ont été parcourues à contre-courant donnent une \textstyleTermes{dépendance syntaxique modificative} (étiquetée \textit{\textsc{mod}}) (figure~\ref{fig:dep-mod}).
 
 \begin{figure}
 \begin{floatrow}
