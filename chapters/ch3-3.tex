@@ -774,11 +774,9 @@ Ceci nous permet de postuler la structure de dépendance de la figure~\ref{fig:t
 
 Si on veut obtenir une structure d'arbre, on privilégiera la position de tête de la préposition comme dans la figure~\ref{fig:teteprep}.
 
-
-
-
-\begin{figure}[H]
-\caption{Structure de dépendance avec tête faible\label{fig:tetefaible}}
+\begin{figure}
+\hbox{}\hfill
+% % \caption{Structure de dépendance avec tête faible\label{fig:tetefaible}}
   \begin{tikzpicture}[>={Triangle[]},every node/.style={font=\itshape}]
     \node (A) at (0,0) {téléphone};
     \node (B) at (-1,-1.5) {Pierre};
@@ -789,9 +787,9 @@ Si on veut obtenir une structure d'arbre, on privilégiera la position de tête 
     \draw[->] (A) -- (B);
     \draw[->] (A) -- (CCC);
   \end{tikzpicture}
-\end{figure}
-
-\begin{figure}[H]
+% % \end{figure}
+\hfill
+% % \begin{figure}[H]
   \begin{tikzpicture}[
         edge from parent/.style={draw,-{Triangle[]}},
         every node/.style={font=\itshape}        
@@ -803,7 +801,8 @@ Si on veut obtenir une structure d'arbre, on privilégiera la position de tête 
           }
         };    
   \end{tikzpicture}
-\caption{Arbre de dépendance\label{fig:teteprep}}
+  \hfill\hbox{}
+\caption{Deux analyses pour \textit{Pierre téléphone à Marie}\label{fig:teteprep}\label{fig:tetefaible}}
 \end{figure}
 
 Notons qu'on peut objecter que la préposition est une tête faible en considérant qu'il y a en fait  plusieurs prépositions \textsc{à}, certaines dont le complément est un substantif, d'autres dont le complément peut ou doit être un infinitif. Dans ce cas, on considère que les verbes \textsc{teléphoner} (\textit{téléphoner à Marie}) et \textsc{commencer} (\textit{commencer à arriver}) régissent des prépositions \textit{à} différentes et il n’est plus nécessaire de dire que le complément de la préposition contrôle la valence supérieure du groupe prépositionnel.
@@ -910,7 +909,7 @@ dans l'\encadref{sec:3.3.22}.)
 
 La notion de tête sémantique est donc une notion distincte de celle de tête syntaxique (voir la section sur les \textit{Distorsions sémantique-syntaxe} dans le \chapref{sec:13}). Néanmoins lorsque les critères pour déterminer la tête syntaxique sont insuffisants, on peut, si l’on souhaite à tout prix choisir une tête, utiliser les critères sémantiques.
 
-\section{Critère sémantique de non-effacement}\label{sec:3.3.18}%\largerpage
+\section{Critère sémantique de non-effacement}\label{sec:3.3.18}\largerpage
 
 On ne confondra pas la notion de tête sémantique avec celle de \textstyleTermes{gouverneur sémantique} (voir l’\encadref{sec:3.3.3} sur les \textit{Dépendances morphologique, syntaxique et sémantique}). 
 Ainsi dans \textit{livre rouge}, dans la relation sémantique entre ‘livre’ et ‘rouge’, c’est bien ‘rouge’ qui fonctionne comme prédicat et prend ‘livre’ comme argument (‘rouge’ désigne une propriété qui comme toute propriété est la propriété de quelque chose, alors que ‘livre’ désigne un objet dont la couleur n’est pas définitoire). On dira donc que \textit{livre} est la tête sémantique de \textit{livre rouge}, tandis que ‘rouge’ est le gouverneur sémantique de ‘livre’, qui est son argument ou dépendant sémantique.
@@ -927,7 +926,7 @@ Prenons un exemple. On s’intéresse à U = \textit{sur la table} dans l’éno
 
 \ea \textit{Pierre a posé le livre sur la table.}\z
 
-Ici ‘sur’ est un prédicat binaire qui exprime une relation de localisation entre ‘livre’ et ‘table’ et prend donc ‘table’ comme argument. Comme A = \textit{sur} est le gouverneur sémantique de B = \textit{la table} et que A est non effaçable, A est une tête syntaxique de U.%\largerpage[2]
+Ici ‘sur’ est un prédicat binaire qui exprime une relation de localisation entre ‘livre’ et ‘table’ et prend donc ‘table’ comme argument. Comme A = \textit{sur} est le gouverneur sémantique de B = \textit{la table} et que A est non effaçable, A est une tête syntaxique de U.\largerpage[2]
 
 D’après le Critère d’effacement simple, si B est effaçable, alors A est une tête syntaxique, indépendamment de savoir si A gouverne sémantiquement B ou pas. Le critère du gouverneur sémantique est donc vraiment intéressant quand ni A, ni B n’est effaçable dans un contexte donné.
 
@@ -942,11 +941,22 @@ On peut encore appliquer le critère au cas des formes verbales comme \textit{ch
     \z
     \z
 
-    On peut supposer que ces deux exemples ont la même structure syntaxique, que dans les deux cas \textit{un verre} est la tête syntaxique de l’objet de \textit{achète} et que \textit{vin} est complément de la préposition \textit{à} ou \textit{de} et dépend de \textit{un verre} par l’intermédiaire de cette préposition. Par contre, du point de vue sémantique, les situations sont très différentes : si ce que Félix casse est bien un verre, ce qu’il boit est du vin. Dans \textit{un verre de vin}, \textit{un verre} sert uniquement à mesurer la quantité de vin et pas à déterminer la catégorie ontologique de la chose désignée par le syntagme \textit{un verre de vin} (voir la notion de \textit{tête sémantique} dans la \sectref{sec:3.3.17} sur le \textit{Critère de la tête sémantique}). On en déduit donc que la tête sémantique de \textit{verre à vin} est \textit{verre}, tandis que la tête sémantique de \textit{verre de vin} est \textit{vin}. Il y a ainsi une distorsion sémantique-syntaxe dans la phrase \textit{Félix achète/boit un verre de vin}. Nous représentons ci-dessous son arbre de dépendance syntaxique et son graphe sémantique (pour ce dernier on consultera les chapitres~\ref{sec:1.2} et \ref{sec:13}) :
+    On peut supposer que ces deux exemples ont la même structure syntaxique, que dans les deux cas \textit{un verre} est la tête syntaxique de l’objet de \textit{achète} et que \textit{vin} est complément de la préposition \textit{à} ou \textit{de} et dépend de \textit{un verre} par l’intermédiaire de cette préposition. Par contre, du point de vue sémantique, les situations sont très différentes : si ce que Félix casse est bien un verre, ce qu’il boit est du vin. Dans \textit{un verre de vin}, \textit{un verre} sert uniquement à mesurer la quantité de vin et pas à déterminer la catégorie ontologique de la chose désignée par le syntagme \textit{un verre de vin} (voir la notion de \textit{tête sémantique} dans la \sectref{sec:3.3.17} sur le \textit{Critère de la tête sémantique}). On en déduit donc que la tête sémantique de \textit{verre à vin} est \textit{verre}, tandis que la tête sémantique de \textit{verre de vin} est \textit{vin}. Il y a ainsi une distorsion sémantique-syntaxe dans la phrase \textit{Félix achète/boit un verre de vin}. Nous représentons ci-dessous son arbre de dépendance syntaxique et son graphe sémantique (pour ce dernier on consultera les chapitres~\ref{sec:1.2} et \ref{sec:13}) (figure~\ref{fig:10-20}).
 
+    Un autre cas de distorsion est illustré par l’exemple suivant :
+    
+    \ea
+    \textit{{Il paraît que le président était au courant.}}
+    \z
+    Nous savons que la tête syntaxique de cette phrase est la forme verbale \textit{paraît}. Pourtant, à une telle déclaration, un interlocuteur peut répondre «~\textit{Non, je ne crois pas.}~», ce qui en général voudra dire ‘je ne crois pas que le président était au courant’ et non pas ‘je ne crois pas qu’il paraît que le président est au courant’. Autrement dit, tout se passe comme si \textit{il paraît que} était un modifieur de \textit{le président était au courant}. Cet emploi du verbe \textsc{paraître} a déjà été qualifié de \textstyleTermesapprof{recteur faible} pour cette raison par Claire \citet{blanche-benveniste1989constructions}. Ce verbe s’emploie d’ailleurs dans une autre construction, plus orale, où non seulement il n’est pas la tête sémantique, mais il n’est plus non plus la tête syntaxique, la relation de rection n’étant plus exprimée :
+    
+    \ea
+    \textit{{Le président était au courant, il paraît.}}
+    \z
+    
     \begin{figure}[H]
-    \caption{Représentations syntaxique et sémantique de (\ref{ex:3-3-24b}b)}
-    \begin{minipage}[c]{.5\linewidth}
+    \caption{Représentations syntaxique et sémantique de (\ref{ex:3-3-24b}b)\label{fig:10-20}}
+    \begin{minipage}[c]{.5\linewidth}\centering
     \begin{forest} for tree={font=\itshape}
       [achète
         [Félix]
@@ -957,7 +967,7 @@ On peut encore appliquer le critère au cas des formes verbales comme \textit{ch
           ]
         ]
       ]
-    \end{forest}\end{minipage}\begin{minipage}[c]{.5\linewidth}
+    \end{forest}\end{minipage}\begin{minipage}[c]{.5\linewidth}\centering
     \begin{tikzpicture}[>={Triangle[]},baseline=0pt]
         \matrix (matrix) [nodes={anchor=base},
                           ampersand replacement=\&,
@@ -974,18 +984,8 @@ On peut encore appliquer le critère au cas des formes verbales comme \textit{ch
           \draw[-{Triangle[]}] (un) -- (verre)      node[right,midway,font=\small] {1};
     \end{tikzpicture}\end{minipage}
     \end{figure}
-
-    Un autre cas de distorsion est illustré par l’exemple suivant :
     
-    \ea
-    \textit{{Il paraît que le président était au courant.}}
-    \z
-    Nous savons que la tête syntaxique de cette phrase est la forme verbale \textit{paraît}. Pourtant, à une telle déclaration, un interlocuteur peut répondre «~\textit{Non, je ne crois pas.}~», ce qui en général voudra dire ‘je ne crois pas que le président était au courant’ et non pas ‘je ne crois pas qu’il paraît que le président est au courant’. Autrement dit, tout se passe comme si \textit{il paraît que} était un modifieur de \textit{le président était au courant}. Cet emploi du verbe \textsc{paraître} a déjà été qualifié de \textstyleTermesapprof{recteur faible} pour cette raison par Claire \citet{blanche-benveniste1989constructions}. Ce verbe s’emploie d’ailleurs dans une autre construction, plus orale, où non seulement il n’est pas la tête sémantique, mais il n’est plus non plus la tête syntaxique, la relation de rection n’étant plus exprimée :
-    
-    \ea
-    \textit{{Le président était au courant, il paraît.}}
-    \z
-    On notera également que dans d’autres langues, notamment une langue agglutinante comme le japonais, un sens comme ‘il paraît’ est réalisé par un affixe verbal. Ainsi, le verbe {\cjkfont 通じる} \textit{tsūjiru} ‘comprendre’ est suivi d’une série d’affixes modaux terminant sur {\cjkfont そうだ} \textit{sōda} ‘il paraît’.
+    \noindent On notera également que dans d’autres langues, notamment une langue agglutinante comme le japonais, un sens comme ‘il paraît’ est réalisé par un affixe verbal. Ainsi, le verbe {\cjkfont 通じる} \textit{tsūjiru} ‘comprendre’ est suivi d’une série d’affixes modaux terminant sur {\cjkfont そうだ} \textit{sōda} ‘il paraît’.
     
     \ea\relax
     {\cjkfont 議長は事情に通じていた\textbf{そうだ}。}\\
@@ -994,7 +994,7 @@ On peut encore appliquer le critère au cas des formes verbales comme \textit{ch
     \glt ‘Il \textbf{paraît} que le président était au courant.’
     \z
 
-    Donnons un dernier exemple qui montre que le choix de la tête syntaxique dépend parfois davantage de la façon dont le lexique de la langue est organisé que d’un choix conscient du locuteur. Voici un exemple classique de distorsion lors d’une traduction :
+    Donnons un dernier exemple qui montre que le choix de la tête syntaxique dépend parfois davantage de la façon dont le lexique de la langue est organisé que d’un choix conscient du locuteur. Voici un exemple classique de distorsion lors d’une traduction :\tcbbreak
     
     \ea
     \ea\textit{Antoine traversa la rivière à la nage}.
@@ -1005,8 +1005,7 @@ On peut encore appliquer le critère au cas des formes verbales comme \textit{ch
     Cette \textit{réorganisation syntaxique} a été décrite par \citet[chapitre 131]{tesniere1959elements} et nommé par lui \textstyleTermesapprof{métataxe}. Le phénomène a été rendu fameux par les études de Leonard Talmy (voir son article de \citeyear{talmy1983language}, \textit{How language structures space}, ou son ouvrage de \citeyear{talmy2000toward}, \textit{Toward a cognitive semantics}). Talmy montre que certaines langues (dites \textit{path-incorporating}), comme le français, {favorisent} l'expression du \textit{déplacement}  par le verbe (\textit{entrer, sortir, monter, descendre, traverser,} etc.), alors que celui-ci est exprimé par une préposition ou une particule dépendant du verbe en anglais (\textit{in, out, up, down, accross}, etc.). D’autres langues (dites \textit{manner-incorporating}), comme l’anglais, {favorisent à l’inverse} l'expression de la \textit{manière}  dont le mouvement a lieu (\textit{swim} ‘nager’, \textit{run} ‘courir’, \textit{drive} ‘se déplacer en voiture’, \textit{bike} ‘se déplacer en vélo’, etc.), alors que celle-ci est généralement exprimée par un modifieur en français (\textit{à la nage, en courant, en voiture, en vélo,} etc.). Il ne s’agit pas à proprement parler d’un exemple de distorsion syntaxe-sémantique (puisque finalement chaque langue adapte sa hiérarchie sémantique et syntaxique à son lexique dans ce cas), mais plutôt d’une illustration du fait que la hiérarchie syntaxique ne découle pas seulement d’une hiérarchie de l’information à communiquer, mais aussi de propriétés de la langue qui sert à l’exprimer.
 }
 
-
-\section{Synthèse des critères pour la tête syntaxique}\label{sec:3.3.20}
+\section{Synthèse des critères pour la tête syntaxique}\label{sec:3.3.20}\largerpage
 
 Bien qu’il nous reste encore un critère à présenter (le Critère de recouvrement), le moment nous semble venu de faire une synthèse des différents critères pour déterminer la tête d’une unité syntaxique. Nous considérons onze critères, six purement syntaxiques et cinq mettant en jeu d’autres niveaux d’analyse.
 
@@ -1045,7 +1044,7 @@ Il existe néanmoins un certain nombre de cas problématiques qui sont au centre
 \end{itemize}
 
 \eiffel[sec:3.3.22]{«~Déterminants complexes~»}{%
-    Le français possède des syntagmes de la forme «~N \textit{de} N~» ou «~Adv \textit{de} N~», comme \textit{un tas de gens} ou \textit{trop de gens}, où le nom qui suit \textit{de} est clairement la \hi{tête sémantique} (\sectref{sec:3.3.17}) : \textit{un tas de gens} désigne des gens, pas un tas. De plus, dans ces constructions, l’accord se fait généralement avec le nom qui suit \textit{de}, ce qui, en vertu du \hi{Critère morphologique}, désigne également ce nom comme tête :\tcbbreak
+    Le français possède des syntagmes de la forme «~N \textit{de} N~» ou «~Adv \textit{de} N~», comme \textit{un tas de gens} ou \textit{trop de gens}, où le nom qui suit \textit{de} est clairement la \hi{tête sémantique} (\sectref{sec:3.3.17}) : \textit{un tas de gens} désigne des gens, pas un tas. De plus, dans ces constructions, l’accord se fait généralement avec le nom qui suit \textit{de}, ce qui, en vertu du \hi{Critère morphologique}, désigne également ce nom comme tête :
 
 \ea
   \ea \textit{Un tas de lettres \textbf{ont} été écrites depuis le front pendant la guerre de 14.}
@@ -1084,6 +1083,24 @@ Il existe néanmoins un certain nombre de cas problématiques qui sont au centre
     \z
     Ceci conduit donc à considérer l’adverbe comme la tête du syntagme et a proposé pour les phrases en \REF{ex:trop} les structures de la figure~\ref{fig:trop}.
 
+    Il faut néanmoins noter que le syntagme «~Adv \textit{de} N~» n’est pas toujours continu :
+    
+    \ea
+        \textit{{J’ai} \textbf{{trop}}  {mangé} \textbf{{de chocolat}}.}
+    \z
+    Et pour les adverbes négatifs,  il peut même ne pas pouvoir être continu dans certains cas :
+    
+    \ea
+      \ea[]{\textit{{Je n’ai} \textbf{{jamais}}  {mangé} \textbf{{de chocolat}}.}}
+      \ex[*]{\textit{Je n’ai mangé jamais de chocolat}.}
+      \z
+    \z
+    Ceci peut amener à se demander si dans cette dernière construction, \textit{de chocolat} dépend bien de l’adverbe ou s’il ne dépend pas du verbe, ce qui est l’analyse traditionnelle, \textit{de} étant alors déclaré déterminant négatif (voir la discussion sur les différents emplois de \textit{de} dans l'encadré sur \textit{Les articles indéfinis du français} du \chapfuturef{15}). Cet argument n’est plus tenable en l’absence d’un verbe, où le segment «~Adv \textit{de} N~» forme clairement une unité syntaxique :
+    
+    \ea
+        \textit{{Merci,} {\textbf{jamais de chocolat} pour moi la semaine.} {\textbf{Trop de chocolat} le week-end.}}
+    \z
+
     \begin{figure}[H]
     \begin{minipage}[t]{.5\linewidth}\centering
     \begin{forest} for tree={font=\itshape}
@@ -1103,25 +1120,6 @@ Il existe néanmoins un certain nombre de cas problématiques qui sont au centre
     \end{forest}\end{minipage}
     \caption{Arbre de dépendance pour un «~déterminant complexe~»\label{fig:trop}}
     \end{figure}
-
-    Il faut néanmoins noter que le syntagme «~Adv \textit{de} N~» n’est pas toujours continu :
-    
-    \ea
-        \textit{{J’ai} \textbf{{trop}}  {mangé} \textbf{{de chocolat}}.}
-    \z
-    Et pour les adverbes négatifs,  il peut même ne pas pouvoir être continu dans certains cas :
-    
-    \ea
-      \ea[]{\textit{{Je n’ai} \textbf{{jamais}}  {mangé} \textbf{{de chocolat}}.}}
-      \ex[*]{\textit{Je n’ai mangé jamais de chocolat}.}
-      \z
-    \z
-    Ceci peut amener à se demander si dans cette dernière construction, \textit{de chocolat} dépend bien de l’adverbe ou s’il ne dépend pas du verbe, ce qui est l’analyse traditionnelle, \textit{de} étant alors déclaré déterminant négatif (voir la discussion sur les différents emplois de \textit{de} dans l'encadré sur \textit{Les articles indéfinis du français} du \chapfuturef{15}). Cet argument n’est plus tenable en l’absence d’un verbe, où le segment «~Adv \textit{de} N~» forme clairement une unité syntaxique :
-    
-    \ea
-        \textit{{Merci,} {\textbf{jamais de chocolat} pour moi la semaine.} {\textbf{Trop de chocolat} le week-end.}}
-    \z
-
 }
 \section{Nom ou déterminant comme tête ?}\label{sec:3.3.23}%\largerpage
 
@@ -1135,18 +1133,17 @@ La question de savoir qui du nom ou du déterminant est la tête est une questio
 Nous proposons dans la figure~\ref{fig:lechien} une structure pour chacune des trois options.
 
 \begin{figure}
-\begin{minipage}[t]{.3\linewidth}\centering
-a. Nom tête\medskip\\
+\begin{subfigure}[b]{.3\linewidth}\centering
 \begin{forest} for tree={font=\itshape}
 [dort [chien [le] [petit]]]
 \end{forest}
-\end{minipage}\hfill\begin{minipage}[t]{.3\linewidth}\centering
-b. Déterminant tête\medskip\\
+\caption{Nom tête}
+\end{subfigure}\hfill\begin{subfigure}[b]{.3\linewidth}\centering
 \begin{forest} for tree={font=\itshape}
 [dort [le [chien [petit]]]]
 \end{forest}
-\end{minipage}\hfill\begin{minipage}[t]{.3\linewidth}\centering
-c. Co-têtes\medskip\\
+\caption{Déterminant tête}
+\end{subfigure}\hfill\begin{subfigure}[b]{.3\linewidth}\centering
     \begin{forest} for tree={font=\itshape}
     [dort,name=dort, s sep=2em, xshift=-4pt
         [le, no edge, name=le] [chien, no edge, name=chien [petit]]
@@ -1154,7 +1151,8 @@ c. Co-têtes\medskip\\
     \draw (le) -- (chien);
     \draw (dort) -- ++ (0,-2.5em);
     \end{forest}
-\end{minipage}
+\caption{Co-têtes}
+\end{subfigure}
 \caption{\label{fig:lechien}Trois représentations syntaxiques concurrentes pour \REF{ex:lechien}}
 \end{figure}
 
@@ -1203,7 +1201,7 @@ Le français présente lui aussi des données problématiques pour l’unicité 
   \z
 \z
 
-Doit-on considérer que dans \textit{deux amis}, \textit{deux} est déterminant ? Mais alors, dans \textit{mes deux amis}, y a-t-il deux déterminants ? Ou bien s’agit-il d’un autre \textit{deux} ? Cette dernière solution est la solution la plus souvent proposée (\textit{deux} serait adjectif en (\ref{ex:mesdeux}a) et déterminant en (\ref{ex:mesdeux}c)), mais elle est difficilement défendable étant donné que \textit{deux} a absolument la même position linéaire et la même contribution sémantique que \textit{mes} soit ou non présent et qu’il en va de même de tous les éléments qui peuvent commuter avec lui, comme \textit{quelques} ou \textit{différents} (voir l’exercice 5 du \chapref{sec:3.5}). Une application stricte du Critère distributionnel avec effacement positif nous oblige à conclure que \textit{mes deux amis} et \textit{deux amis} ont la même valence supérieure et que donc \textit{mes} n’est pas la tête distributionnelle. Voir l’\encadref{sec:3.3.29} sur les \textit{Grammèmes comme tête} pour les différentes structures syntaxiques possibles de \textit{mes deux amis}.\largerpage
+Doit-on considérer que dans \textit{deux amis}, \textit{deux} est déterminant ? Mais alors, dans \textit{mes deux amis}, y a-t-il deux déterminants ? Ou bien s’agit-il d’un autre \textit{deux} ? Cette dernière solution est la solution la plus souvent proposée (\textit{deux} serait adjectif en (\ref{ex:mesdeux}a) et déterminant en (\ref{ex:mesdeux}c)), mais elle est difficilement défendable étant donné que \textit{deux} a absolument la même position linéaire et la même contribution sémantique que \textit{mes} soit ou non présent et qu’il en va de même de tous les éléments qui peuvent commuter avec lui, comme \textit{quelques} ou \textit{différents} (voir l’exercice 5 du \chapref{sec:3.5}). Une application stricte du Critère distributionnel avec effacement positif nous oblige à conclure que \textit{mes deux amis} et \textit{deux amis} ont la même valence supérieure et que donc \textit{mes} n’est pas la tête distributionnelle. Voir l’\encadref{sec:3.3.29} sur les \textit{Grammèmes comme tête} pour les différentes structures syntaxiques possibles de \textit{mes deux amis}.
 
 \loupe[sec:3.3.25]{Quand le dépendant contrôle son gouverneur}{%
     Il existe d’autres arguments pour le nom comme tête que nous n’avons pas retenus. Parmi ceux-ci, il est souvent avancé que le nom contrôle son déterminant. On dit A \textstyleTermesapprof{contrôle} B lorsque A réduit le paradigme des B par rapport à ce qui serait attendu.
@@ -1212,7 +1210,7 @@ Doit-on considérer que dans \textit{deux amis}, \textit{deux} est déterminant 
 
     Cela ne permet pas d’en déduire que le nom est gouverneur, car il est tout à fait possible qu’un dépendant contrôle son gouverneur. Ceci est assez courant dans les \hi{collocations} (voir la \sectref{sec:2.3.10} \textit{Collocation et choix lié}). Dans les constructions à verbe support (\textbf{\textit{pousser}} \textit{un cri,} \textbf{\textit{mener}} \textit{une lutte,} \textbf{\textit{donner}} \textit{un avis,} \textbf{\textit{poser}} \textit{une question}, etc.), un nom prédicatif \hi{contrôle lexicalement} le choix du verbe, alors qu’il en est le complément d’objet. Dans les constructions locatives (\textit{aller} \textbf{\textit{sur}} \textit{la plage,} \textbf{\textit{dans}} \textit{la montagne,} \textbf{\textit{à}} \textit{la campagne}, \textbf{\textit{en} }\textit{Chine}, \textbf{\textit{chez}} \textit{le docteur,} etc.), le nom sélectionne la préposition locative, alors qu’il en est le complément. Le dépendant peut aussi contrôler son gouverneur dans les \hi{phénomènes d’accord} : ainsi le sujet contrôle l’accord du verbe qui le gouverne.
 }
-\section{Déterminant comme tête ?}\label{sec:3.3.26}
+\section{Déterminant comme tête ?}\label{sec:3.3.26}\largerpage
 
 Le choix du déterminant comme tête du groupe substantival (option b de la \sectref{sec:3.3.23} \textit{Nom ou déterminant comme tête} ?) repose sur différents arguments. D’abord, une analogie entre la proposition et le groupe substantival : si l’on considère que l’auxiliaire, qui porte les grammèmes du verbe, est la tête de la proposition, on peut être amené à considérer que l’article, qui a aussi un rôle essentiellement grammatical, est la tête du groupe substantival (les théories issues du générativisme parlent alors de \textstyleTermes{têtes fonctionnelles} pour désigner ces éléments et les opposent aux têtes lexicales). On notera qu’en français, en plus d’être le porteur de la définitude, c’est phonologiquement l’article qui porte le nombre et non le nom (\textbf{\textit{le}} \textit{chat} /\textbf{lǝ}ʃa/  \textbf{\textit{les}} \textit{chats}~/\textbf{le}ʃa/) (pour plus de détail voir la discussion dans le \chapfuturef{15} sur les \textit{Catégories nanosyntaxiques}). En allemand, l’article porte plus régulièrement le cas que le nom et contrôle ainsi la valence supérieure du groupe substantival (\textbf{\textit{der}} \textit{Mann}, ‘l’homme’ au nominatif, sera sujet, tandis que \textbf{\textit{den}} \textit{Mann}, à l’accusatif, sera objet). En français aussi, l’article est en quelque sorte porteur du cas, si l’on considère les \hi{amalgames} entre les prépositions \textit{à} et \textit{de,} marqueurs de cas, et les articles comme des \hi{formes casuelles} de l’article : \textbf{\textit{le}} \textit{lit} vs (\textit{aller}) \textbf{\textit{au}} \textit{lit} vs (\textit{sortir}) \textbf{\textit{du}} \textit{lit~}; \textbf{\textit{les}} \textit{amis} vs (\textit{parler}) \textbf{\textit{aux}} \textit{amis} vs (\textit{parler}) \textbf{\textit{des}} \textit{amis} ; \textbf{\textit{des}} \textit{jouets} vs (\textit{parler}) \textbf{\textit{de}} \textit{jouets}. En appliquant le Critère distributionnel sans effacement, on en déduit que l’article est la tête, car la commutation de \textit{le} par \textit{au} ou \textit{du} (ou de \textit{der} par \textit{den} en allemand) change la valence supérieure.
 
@@ -1346,7 +1344,7 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
 
     On peut penser que, dans la plupart des langues, certains marqueurs de position syntaxique sont, comme l’article pour le groupe substantival ou la conjonction pour la complétive, les versions grammaticalisées d’éléments qui à l’origine pouvaient occuper seuls la position.
 }
-\largerpage
+\largerpage[2]
 \loupe[sec:3.3.29]{Les grammèmes comme tête}{%
     Nous avons discuté du nom ou du déterminant comme tête du groupe substantival. Mais il existe une autre solution encore. Nous avons vu que la flexion du verbe pouvait être considérée comme la tête de la proposition et prendre le sujet comme dépendant (voir la \sectref{sec:3.3.13} sur \textit{Le Critère distributionnel sans effacement}). Une analyse similaire peut être proposée pour le nom. Les deux catégories flexionnelles du nom sont la définitude et le nombre (voir le \chapfuturef{15} sur les \textit{Catégories flexionnelles}). On peut alors proposer, pour \textit{les deux amis}, l'arbre de dépendance de la figure~\ref{fig:mesdeux1}, où les nœuds sont occupés par des syntaxèmes et les grammèmes gouvernent les lexèmes.
 
@@ -1415,7 +1413,7 @@ Bien que l’analyse comme co-tête nous semble la meilleure, dans la suite, il 
 
 Comme on le voit, on retombe ainsi sur les deux arbres qu’on aurait obtenu en décidant soit que le déterminant est la tête, soit que le nom est la tête. Ceci est encore une façon de dire que le choix du nom ou du déterminant comme tête est finalement secondaire, puisqu’on peut voir ça comme deux réductions différentes d’une même analyse sous-jacente.}
 
-\section{Dominance et projections maximales}\label{sec:3.3.30}
+\section{Dominance et projections maximales}\label{sec:3.3.30}\largerpage
 
 La dépendance induit une autre relation : la \textstyleTermes{dominance} (voir l’\encadref{sec:3.3.31} qui suit sur \textit{Dépendance, dominance et transitivité} pour une définition formelle).
 
@@ -1538,7 +1536,7 @@ La relation de dominance est une relation d’ordre\textstyleTermesapprof{ parti
     En conclusion, la donnée d’une relation de dépendance ou d’une relation de dominance revient au même. Il s’agit de deux façons équivalentes de définir une même hiérarchie. Chacune des deux relations est immédiatement déductible de l’autre.
 }
 
-\section{Critère de recouvrement}\label{sec:3.3.32}%\largerpage
+\section{Critère de recouvrement}\label{sec:3.3.32}\largerpage
 
 Une dernière façon de caractériser une tête repose sur l’organisation linéaire ou \textstyleTermes{topologie} (traditionnellement appelée l’\textstyleTermes{ordre des mots}) (voir le \chapref{sec:3.5} entièrement consacré au sujet). Le Critère de recouvrement est un cas particulier de la propriété de projectivité que nous présenterons à la \sectref{sec:3.5.14} sur \textit{Projectivité et dépendance projective}. L’idée générale est que les dépendants tendent à se placer à côté de leur gouverneur. Cela n’est pas toujours possible si le gouverneur B a beaucoup de dépendants et il est donc possible qu’un autre dépendant de B se place entre B et son dépendant C. Mais par contre, il n’est généralement pas possible que le gouverneur A de B se place entre B et son dépendant C.
 
@@ -1597,7 +1595,7 @@ Dans les chapitres suivants, il nous arrivera de faire varier la représentation
 
 \section{Dépendance, constituance et topologie}\label{sec:3.3.34}
 
-Nous avons maintenant terminé la définition de ce qu’est une structure de dépendance en introduisant d’abord la connexion (dans le \chapref{sec:3.2}), puis en montrant comment hiérarchiser les connexions en dépendances en introduisant la notion de tête (dans ce chapitre). Dans le prochain chapitre, nous montrerons qu’un arbre de dépendance induit naturellement un arbre de constituants et nous étudierons l’équivalence entre les deux types de structure. Ceci nous amènera à présenter d’autres méthodes pour définir la structure de dépendance. À la fin du \chapref{sec:3.4}, nous verrons comment construire la structure syntaxique d’exemples complexes en combinant différentes méthodes. Le \chapref{sec:3.5} sera consacré à la linéarisation de la structure syntaxique et à la structure topologique qui en découle. Le \chapref{sec:13} présentera les liens entre structure syntaxique et structure sémantique au travers de la structure syntaxique profonde. Certaines constructions, comme la coordination ou la relativisation, feront l’objet de chapitres séparés dans la partie V du vol.\ 2 sur la \textit{Microsyntaxe}, qui est le domaine de la rection et donc le domaine d’excellence de la dépendance.
+Nous avons maintenant terminé la définition de ce qu’est une structure de dépendance en introduisant d’abord la connexion (dans le \chapref{sec:3.2}), puis en montrant comment hiérarchiser les connexions en dépendances en introduisant la notion de tête (dans ce chapitre). Dans le prochain chapitre, nous montrerons qu’un arbre de dépendance induit naturellement un arbre de constituants et nous étudierons l’équivalence entre les deux types de structure. Ceci nous amènera à présenter d’autres méthodes pour définir la structure de dépendance. À la fin du \chapref{sec:3.4}, nous verrons comment construire la structure syntaxique d’exemples complexes en combinant différentes méthodes. Le \chapref{sec:3.5} sera consacré à la linéarisation de la structure syntaxique et à la structure topologique qui en découle. Le \chapref{sec:13} présentera les liens entre structure syntaxique et structure sémantique au travers de la structure syntaxique profonde. Certaines constructions, comme la coordination ou la relativisation, feront l’objet de chapitres séparés dans la partie V du vol.\ 2 sur la \textit{Microsyntaxe}, qui est le domaine de la rection et donc le domaine d’excellence de la dépendance.\largerpage
 
 \exercices{%\label{sec:3.3.35}
     \exercice{1} (Structures de Buffier.) Nous donnons ci-après une analyse faite par Claude Buffier au début du 18\textsuperscript{e} siècle. Nous vous proposons de traduire graphiquement cette analyse à l’aide d’un diagramme. Vous représenterez par des flèches les relations entre les unités syntaxiques considérées par Buffier.
@@ -1742,6 +1740,7 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
 
     \FurtherReading{3-3}
 }
+\largerpage
 \citations{%\label{sec:3.3.37}
     \noindent{\sffamily\bfseries Citations de l'\encadref{sec:3.3.2}}
 
@@ -1868,7 +1867,7 @@ Nous avons maintenant terminé la définition de ce qu’est une structure de d�
 
     \corrigé{6} Le nom \textsc{fois} combiné avec un déterminant se comporte comme un groupe adverbial (\textit{Il vient en avril et en mai} vs \textit{Il vient plusieurs fois}) et plus difficilement comme un groupe substantif, même s’il peut être sujet (\textit{Une fois suffit~}; \textit{Cette fois sera la bonne}). Voir la \sectref{sec:3.3.24} sur le «~\textit{Nom comme tête} ?~».
 
-    \corrigé{7}
+    \tcbbreak\corrigé{7}
     \begin{enumerate}[label=\alph*.]
     \item Nous avons vu que dans la \sectref{sec:3.3.13} sur \textit{Le Critère distributionnel sans effacement} que la désinence verbale contrôle la distribution de la forme verbale. Pour cette raison, c'est l’auxiliaire et sa désinence qui contrôle la distribution d'une forme verbale complexe, tandis que la désinence du verbe lexicale est elle imposée par l'auxiliaire (Critère rectionnel, \sectref{sec:3.3.16}). Voir d’autres arguments dans la \sectref{sec:3.3.8} \textit{Tête d’un énoncé}.
 
