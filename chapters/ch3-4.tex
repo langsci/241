@@ -279,13 +279,13 @@ L’arbre de constituants plat est équivalent à l’arbre de Beauzée-Gladkij 
 
 Au final, nous avons montré la parfaite \hi{équivalence entre} un \hi{arbre de dépendance} et un \hi{arbre de constituants plat}. La méthode que nous avons utilisée pour passer de l’un à l’autre, dans un sens comme dans l’autre est due initialement à Lecerf. Nous appellerons cette méthode la \textstyleTermes{méthode de Lecerf} ou \textstyleTermes{méthode par agrégation des projections}.
 
-\section{ Construire un arbre de dépendance par décomposition}\label{sec:3.4.6}
+\section{Construire un arbre de dépendance par décomposition}\label{sec:3.4.6}\largerpage
 
 Dans les chapitres~\ref{sec:3.2} et~\ref{sec:3.3}, nous avons montré comment construire l’arbre de dépendance d’un énoncé en construisant d’abord une structure de connexion, puis en raffinant et hiérarchisant cette structure grâce à différents critères permettant d’identifier les têtes des unités.
 
-Une autre méthode consiste à construire d’abord un arbre de constituants. Cette méthode suppose que l’on ait repéré l’unité maximale que l’on veut analyser (ce qui n'est pas sans difficulté comme nous le verrons dans le \chapfuturef{20}). Appelons cette unité une phrase selon l’usage. Voici la méthode.%\largerpage
+Une autre méthode consiste à construire d’abord un arbre de constituants. Cette méthode suppose que l’on ait repéré l’unité maximale que l’on veut analyser (ce qui n'est pas sans difficulté comme nous le verrons dans le \chapfuturef{20}). Appelons cette unité une phrase selon l’usage. Voici la méthode.
 
-A chaque étape, on a une unité U à décomposer. À la première étape, il s’agit de la phrase que l’on veut analyser. Pour décomposer U, on doit d’abord \hi{repérer la tête} de U (les critères restent les mêmes que ceux que nous avons présentés dans le \chapref{sec:3.3}). On enlève alors cette tête et on regarde ce que sont les morceaux qui restent. Autrement dit, on repère les \hi{sous-unités} \hi{maximales de} U \hi{privé de sa tête~}: ces unités sont les \textstyleTermes{constituants majeurs} de U. On recommence la même procédure avec les unités obtenues. Ainsi de suite, jusqu’à ce qu’on arrive à des unités indécomposables. (Pour plus de détails sur ce type de méthode, voir le principe d’une \textit{Décomposition récursive} dans l’\encadref{sec:3.4.7} qui suit).
+A chaque étape, on a une unité U à décomposer. À la première étape, il s’agit de la phrase que l’on veut analyser. Pour décomposer U, on doit d’abord \hi{repérer la tête} de U (les critères restent les mêmes que ceux que nous avons présentés dans le \chapref{sec:3.3}). On enlève alors cette tête et on regarde ce que sont les morceaux qui restent. Autrement dit, on repère les \hi{sous-unités} \hi{maximales de} U \hi{privé de sa tête~}: ces unités sont les \textstyleTermes{constituants majeurs} de U. On recommence la même procédure avec les unités obtenues. Ainsi de suite, jusqu’à ce qu’on arrive à des unités indécomposables. (Pour plus de détails sur ce type de méthode, voir le principe d’une \textit{Décomposition récursive} dans l’\encadref{sec:3.4.7} qui suit).\largerpage[-1]
 
 Illustrons le procédé avec l’exemple \REF{ex:laponie2} de la \sectref{sec:3.4.1} utilisé tout au long de ce chapitre.
 
@@ -314,7 +314,7 @@ Encore une étape et nous aurons obtenu le parenthésage complet en constituants
 
     Il a été avancé que certaines langues pourraient ne pas avoir de récursivité, comme le pirahã, parlé dans la forêt amazonienne. Cette langue n’aurait pas de subordination et il pourrait ne pas y avoir une structure enchâssée dans une structure identique (voir les \textit{Lectures additionnelles} en fin de chapitre).
 }
-\section{Combinaison \textit{vs} décomposition}\label{sec:3.4.8}
+\section{Combinaison \textit{vs} décomposition}\label{sec:3.4.8}\largerpage[-1]
 
 Nous avons introduit deux grandes familles de méthodes pour construire la structure syntaxique.
 
@@ -415,7 +415,7 @@ Les deux familles de méthodes conduisent à la même analyse structurelle, bien
 
     Cet exemple montre que la méthode de Lecerf aboutit à l’analyse en dépendance souhaitée uniquement si l’on part de certaines fragmentations. Or la deuxième fragmentation que nous avons considérée est également une fragmentation compatible avec notre premier arbre de dépendance, où \textit{a} et \textit{invité} sont également connectés et forment donc un syntagme. Ne pas considérer cette deuxième fragmentation suppose d’avoir des critères pour privilégier la décomposition \textit{a invité Théo} en \textit{a} \textrm{${\oplus}$} \textit{invité Théo} plutôt qu’en \textit{a invité} \textrm{${\oplus}$} \textit{Théo}. Nous ne pensons pas que cela soit possible sans un raisonnement complexe qui passe nécessairement par la prise en compte de la notion de tête. Nous y reviendrons dans l’\encadref{sec:3.4.13} directement consacré à la question «~\textit{Pas de structure de constituants sans la notion de tête} ?~». Rappelons que nous avons une autre méthode par décomposition qui consiste à raffiner l’arbre de fragmentation et qui aboutit au bon arbre de dépendance quelle que soit la fragmentation dont on part (voir la \sectref{sec:3.2.22} \textit{De la fragmentation à la connexion}).
 }
-\section{Les tests de constituance}\label{sec:3.4.10}
+\section{Les tests de constituance}\label{sec:3.4.10}\largerpage[-1]
 
 Nous allons présenter un certain nombre de tests qui permettent de \hi{caractériser les constituants majeurs} et qu’on appelle traditionnellement les \textstyleTermes{tests de constituance}.
 
@@ -784,7 +784,7 @@ Cet \textstyleTermes{arbre de dépendance avec ordre de saillance} permet de reg
 \caption{\label{fig:laponie-proj}Arbre de dépendance avec projections (maximales et partielles) équivalent à un arbre de constituants avec têtes binaire}
 \end{figure}
 
-L'ordre de saillance que nous avons introduit dans la figure~\ref{fig:laponie-saillance} est celui qui permet de récupérer les arbres de constituants standard. Dans le cadre des grammaires de constituants, le sujet est toujours considéré comme le plus oblique des actants du verbe. Nous verrons dans le \chapfuturef{17} un autre ordre de saillance basé sur les propriétés des relations syntaxiques. Le sujet est justement l'actant qui possède le plus de «~bonnes~» propriétés et donc l'actant le plus saillant pour cet ordre. Les deux résultats ne se contredisent pas nécessairement si l'on considère que le sujet se trouve «~aspiré~» par la flexion à la différence des compléments.
+L'ordre de saillance que nous avons introduit dans la figure~\ref{fig:laponie-saillance} est celui qui permet de récupérer les arbres de constituants standard. Dans le cadre des grammaires de constituants, le sujet est toujours considéré comme le plus oblique des actants du verbe. Nous verrons dans le \chapfuturef{17} un autre ordre de saillance basé sur les propriétés des relations syntaxiques. Le sujet est justement l'actant qui possède le plus de «~bonnes~» propriétés et donc l'actant le plus saillant pour cet ordre. Les deux résultats ne se contredisent pas nécessairement si l'on considère que le sujet se trouve «~aspiré~» par la flexion à la différence des compléments.\largerpage
 
 
 \loupe[sec:3.4.16]{Dépendance et constituance se complètent}{%
@@ -794,7 +794,7 @@ L'ordre de saillance que nous avons introduit dans la figure~\ref{fig:laponie-sa
 
     S’il est clair que la notion de tête est fondamentale, il n’est pas certain que l’ordre de saillance soit utile à la modélisation syntaxique et encore moins qu’il doive être encodé structurellement par une stratification de la structure. Nous pensons même que l’ordre de saillance induit par la stratification des arbres de constituants traditionnels n’est pas pertinent et que construire une structure comme celle de la \sectref{sec:3.4.14}, où le sujet se combine obligatoirement en dernier avec le verbe, est difficilement justifiable (voir notre discussion dans l’\encadref{sec:3.2.26} sur le \textit{Traitement cognitif des connexions}). Il existe au contraire de nombreux arguments pour considérer que le sujet est le plus saillant des dépendants du verbe, puisque c’est le dépendant du verbe qui a le plus de «~bonnes~» propriétés (voir le \chapfuturef{17} sur les \textit{Relations syntaxiques}).
 }
-%\largerpage
+\largerpage[2]
 \chevalier[sec:3.4.17]{Historique des représentations syntaxiques par des diagrammes en constituants}{%
 %     \ohead{Historique des représentations syntaxiques en constituants}
     Si l’on excepte l’unique diagramme en dépendance de Billroth de \citeyear{Billroth1832} (voir l'\encadref{sec:3.3.5} sur l'\textit{Historique des représentations syntaxiques par des diagrammes en dépendance}), les premiers diagrammes présentant des analyses syntaxiques apparaissent à notre connaissance dans l’ouvrage de Frederick A. P. Barnard de \citeyear{barnard1836analytic}, \textit{Analytic Grammar with Symbolic Illustrations}. Dans cette grammaire de l’anglais, le savant américain, alors âgé de 27 ans, professeur dans un asile pour sourds et muets et lui-même atteint de problèmes de surdité, propose un certain nombre de signes graphiques pour représenter les parties du discours. Mais ce qui nous intéresse surtout ici est qu’il utilise ces symboles pour décrire la structure complète d’une phrase. Barnard remarque qu’un syntagme peut se comporter de la même façon qu’un mot : par exemple, dans l’exemple qui suit, \textit{in disposition}, litt. ‘en caractère’, se comporte comme un adverbe. Ceci est indiqué dans le diagramme par une accolade horizontale qui regroupe \textit{in} et \textit{disposition} et par le symbole \includegraphics[height=1.25ex]{figures/vol1syntaxe2-img018.png} associé à ce groupe, qui est le même que celui associé aux mots \textit{never} ‘jamais’ et \textit{very} ‘très’ et désigne donc un adverbe.
@@ -826,16 +826,15 @@ L'ordre de saillance que nous avons introduit dans la figure~\ref{fig:laponie-sa
         \caption{Boîtes de \citet[169]{hockett1958course}\label{fig:hockett1}}
         \small\textit{She wants a new hat.} ‘Elle veut un nouveau chapeau.’
     \end{figure}
-        
+    
     \begin{figure}[H]
         \includegraphics[width=9.5cm]{figures/vol1syntaxe2-img025.png}
         \caption{Boîtes de \cites [188]{hockett1958course} avec marquage des dépendances\label{fig:hockett2}}
         \small\textit{all this fresh milk on the table} ‘tout ce lait frais sur la table’
     \end{figure}
-
- 
-    Dans les représentations de Hockett, chaque module de trois cases (voir figure~\ref{fig:hockett3}) est à lire comme une \hi{construction}, comme le remarque \citet[161]{hockett1958course}, dans le chapitre \textit{Form classes and constructions}. Une telle analyse est contemporaine des grammaires de réécriture de Chomsky (voir l’\encadref{sec:3.5.30} sur la \textit{Grammaire de réécriture}) et son objectif est absolument similaire. On notera néanmoins que la représentation de Hockett met autant en avant la combinaison de A et B que la relation partie-tout de A ou de B avec le tout C qu’ils forment.
-
+        
+    Dans les représentations de Hockett, chaque module de trois cases (voir figure~\ref{fig:hockett3}) est à lire comme une \hi{construction}, comme le remarque \citet[161]{hockett1958course}, dans le chapitre \textit{Form classes and constructions}. Une telle analyse est contemporaine des grammaires de réécriture de Chomsky (voir l’\encadref{sec:3.5.30} sur la \textit{Grammaire de réécriture}) et son objectif est absolument similaire. On notera néanmoins que la représentation de Hockett met autant en avant la combinaison de A et B que la relation partie-tout de A ou de B avec le tout C qu’ils forment.    
+    
     \begin{figure}[H]
     \begin{subfigure}[t]{.5\textwidth}\centering
     \begin{tikzpicture}[every node/.style={font=\strut}]
@@ -845,7 +844,7 @@ L'ordre de saillance que nous avons introduit dans la figure~\ref{fig:laponie-sa
     \node [draw,fit =(A) (B) (C)] (box) {};
     \draw (box.east) -| (box.north)
           (box.west) -| (box.north);
-    \node at (box.center) [draw,circle,fill=white,inner sep=-1pt] {<};
+    \node at (box.center) [draw,circle,fill=black!12,inner sep=-1pt] {<};
     \end{tikzpicture}
     \caption{Construction chez Hockett}
     \end{subfigure}\begin{subfigure}[t]{.5\textwidth}\centering
@@ -1260,7 +1259,7 @@ La partie droite de la figure montre le passage d’un arbre de dépendance à \
 \includegraphics[width=\textwidth]{figures/graphs-collection.pdf}
 \end{figure}
 
-Chaque flèche $\Rightarrow$ ou $\Leftrightarrow$ entre deux structures symbolise une opération de conversion élémentaire permettant de passer d’une structure à une autre, soit dans les deux sens ($\Leftrightarrow$), soit dans un sens uniquement ($\Rightarrow$). Dans la plupart des cas, l’opération ne nécessite l’ajout d’aucune information et les deux structures sont équivalentes (nous ne considérons pas l’ordre linéaire sur les mots qui est des fois présent dans la structure et d’autres fois non). C’est le cas dans toute la partie droite de la figure, où toutes les structures sont équivalentes entre elles. Il s'agit de \hi{structures de constituants plates}. De la même façon, toutes les structures de la partie gauche sont équivalentes entre elles. Il s'agit de \hi{structures de constituants binaires avec têtes}. Elles contiennent une information supplémentaire qui est la stratification. Cette stratification, qui permet d'ordonner les branchements non binaires d'une même tête, est indiquée dans la partie basse de la figure par l’ajout de l’ordre de saillance, lequel disparaît dans la partie haute, lorsque les «~glissades~» sont effectuées sur le polygraphe et qu’on revient à l’arbre de dépendance.
+Chaque flèche $\Rightarrow$ ou $\Leftrightarrow$ entre deux structures symbolise une opération de conversion élémentaire permettant de passer d’une structure à une autre, soit dans les deux sens ($\Leftrightarrow$), soit dans un sens uniquement ($\Rightarrow$). Dans la plupart des cas, l’opération ne nécessite l’ajout d’aucune information et les deux structures sont équivalentes (nous ne considérons pas l’ordre linéaire sur les mots qui est des fois présent dans la structure et d’autres fois non). C’est le cas dans toute la partie droite de la figure, où toutes les structures sont équivalentes entre elles. Il s'agit de \hi{structures de constituants plates}. De la même façon, toutes les structures de la partie gauche sont équivalentes entre elles. Il s'agit de \hi{structures de constituants binaires avec têtes}. Elles contiennent une information supplémentaire qui est la stratification. Cette stratification, qui permet d'ordonner les branchements non binaires d'une même tête, est indiquée dans la partie basse de la figure par l’ajout de l’ordre de saillance, lequel disparaît dans la partie haute, lorsque les «~glissades~» sont effectuées sur le polygraphe et qu’on revient à l’arbre de dépendance.\largerpage[2]
 
 \loupe[sec:3.4.26]{Deux types d’arbres de constituants}{%
     Nous avons présenté dans ce chapitre deux types d’arbres de constituants avec têtes : les arbres de constituants plats et les arbres de constituants binaires comme ceux de la Syntaxe X-barre. On peut penser que tout arbre de constituants plat peut être «~binarisé~» en introduisant des constituants intermédiaires. En fait, la différence est plus profonde et il s’agit à notre avis de deux façons assez différentes d’utiliser le même formalisme. La différence apparaît lorsqu’on regarde les branchements ternaires.
@@ -1358,14 +1357,14 @@ Chaque flèche $\Rightarrow$ ou $\Leftrightarrow$ entre deux structures symbolis
    \draw (matrix.west) |- (matrix-3-1.south west) -- (matrix-3-4.south east) -| (matrix.east);
    \draw (matrix.west) |- (matrix-2-1.south west) -- (matrix-2-3.south east) -| (matrix-1-3.north east);
    \draw (matrix.south east) -| (matrix.north west) -| cycle;
-   \draw (matrix.north) -| (matrix-1-3.north east) |- (matrix-3-3.south east) node [midway,draw,circle, inner sep=1pt] {$>$};
+   \draw (matrix.north) -| (matrix-1-3.north east) |- (matrix-3-3.south east) node [midway,draw,circle, inner sep=1pt,fill=black!12] {$>$};
 \end{tikzpicture}
 \end{figure}
 
 
     En conclusion, on note que \hi{le formalisme des arbres de constituants est ambigu~}: il ne permet pas de distinguer une analyse plate (on ne souhaite pas considérer de constituants intermédiaires) et une connexion ternaire (on souhaite indiquer que les éléments ne se combinent pas toujours par deux, mais parfois par trois). Celui des structures de dépendance le permet, à condition de considérer des structures qui ne sont plus entièrement hiérarchisées et qui contiennent des connexions ternaires.
 }
-\section{Combiner les méthodes ascendante et descendante}\label{sec:3.4.27}
+\section{Combiner les méthodes ascendante et descendante}\label{sec:3.4.27}\largerpage
 
 A l’issu de ce chapitre et des deux précédents, nous avons présenté plusieurs méthodes pour construire la structure syntaxique. Nous aimerions conclure ce chapitre en montrant comment combiner les méthodes ascendante (par combinaison) et descendante (par décomposition). Notre présentation visait jusque-là à montrer le bien-fondé d’un certain nombre de représentations syntaxiques et leurs équivalences totales ou partielles. Mais nous n’avons pas suffisamment montré comment les différentes méthodes peuvent interagir et comment, en pratique, on peut procéder pour construire une représentation syntaxique lorsqu’on est confronté à un texte à analyser.
 
@@ -1484,7 +1483,7 @@ Par exemple, une fois repérée la tête de [~\textit{tout \uline{imprégnés} d
 
 Nous arrêtons là l’analyse de notre exemple. Les grands principes de l’analyse ont été donnés et nous terminons avec quelques remarques générales.
 
-\section{Enseigner la syntaxe}\label{sec:3.4.28}
+\section{Enseigner la syntaxe}\label{sec:3.4.28}\largerpage
 
 Les enseignements de syntaxe formelle se limitent en général à une partie des moyens qui précèdent. Lorsqu’on travaille en syntaxe de constituants, on demandera aux étudiants de reconnaître des projections, principalement maximales. Cela signifie que, parmi les quatre outils qui précèdent, on ne s’autorisera que l’usage du premier à savoir repérer des unités, et en plus il faudra se limiter à certaines unités seulement.
 
@@ -1494,7 +1493,7 @@ Nous proposons pour notre part de combiner tous les moyens. \hi{Toute unité syn
 
 Nous pensons que le moyen le plus élégant pour représenter la structure finale est d’utiliser une structure de dépendance (et nous espérons en avoir convaincu le lecteur ; voir aussi l’\encadref{sec:3.4.29}). Il n’y a néanmoins aucune raison de proscrire les méthodes de l’analyse en constituants, bien au contraire. Il est tout à fait possible de combiner les deux méthodes et de gagner ainsi en simplicité. L’arbre de Beauzée-Gladkij est notamment une représentation que les novices en syntaxe formelle comprennent bien et qui est moins abstraite pour eux qu’un pur arbre de constituants ou un pur arbre de dépendance. Cette représentation a en plus l’avantage de présenter simultanément les constituants et les dépendances et d’être ainsi le support idéal pour une discussion sur la distinction entre catégories et relations syntaxiques (voir les chapitres 16 et 17). %\chapfuturef
 
-Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une méthode unique pour découvrir la structure syntaxique d’un énoncé. On peut procéder aussi bien de \hi{manière descendante} (\hi{décomposer une unité}, notamment en repérant sa tête) comme de \hi{manière ascendante} (\hi{connecter deux unités} pour former une unité plus grande).
+Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une méthode unique pour découvrir la structure syntaxique d’un énoncé. On peut procéder aussi bien de \hi{manière descendante} (\hi{décomposer une unité}, notamment en repérant sa tête) comme de \hi{manière ascendante} (\hi{connecter deux unités} pour former une unité plus grande).\largerpage
 
 \loupe[sec:3.4.29]{Constituance ou dépendance ?}{%{\label{sec:3.4.29}
     Nous avons montré dans ce chapitre que les arbres de dépendance et les arbres de constituants avec têtes étaient deux modes de représentation de la structure syntaxique plus ou moins équivalents : les deux types de structures rendent compte de la façon dont les unités se combinent ou se décomposent (les connexions) et du fait que ces combinaisons sont généralement asymétriques et forment une structure hiérarchique (les têtes et les dépendances). Malgré cette équivalence formelle, les deux types de structures ont des implications théoriques différentes. Nous allons discuter ici des conséquences de cette différence en voyant les avantages et inconvénients des deux types de structures.
@@ -1511,7 +1510,7 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
      \tcbsubtitle{Connexions}
     Les connexions sont présentes dans les deux structures, mais les arbres de dépendance combinent des mots ou des syntaxèmes, tandis que les arbres de constituants combinent des constituants. Autrement dit, les instances des connexions sont plus fines dans un arbre de dépendance que dans un arbre de constituants. Ceci est pour nous un avantage majeur des arbres de dépendance.
 
-    Notons par ailleurs que si le dépendant d’une connexion peut en général être interprété comme la projection maximale, c’est-à-dire un constituant majeur, il y a des cas où cela est plus discutable. Comparons :
+    Notons par ailleurs que si le dépendant d’une connexion peut en général être interprété comme la projection maximale, c’est-à-dire un constituant majeur, il y a des cas où cela est plus discutable. Comparons :\tcbbreak
 
     \ea
     \ea \itshape Les linguistes qui étaient fatigués ont quitté la conférence.
@@ -1609,6 +1608,7 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     Ceci est tout à fait compatible avec une analyse en dépendance, dès que l'on considère, comme nous le faisons, que les dépendances peuvent être instanciées à différents niveaux de granularité. Une analyse en constituants immédiats suggère au contraire une analyse totalement inversée : la relative est d’abord analysée, puis rattachée à son antécédent pour former le groupe substantival [~\textit{un américain qui habite en Chine depuis deux ans}~], lequel est ensuite rattaché au noyau verbal pour former une proposition (sans même parler du fait que dans les analyses traditionnelles avec des arbres de constituants binaires, le sujet est censé être rattaché au verbe après le complément d’objet direct).
     Il est tout de même possible de faire une analyse incrémentale avec une grammaire basée sur une analyse en constituants immédiats. Un tel algorithme a été proposé par Jay Earley en \citeyear{earley1970efficient} : il consiste à anticiper les constituants qui peuvent suivre un mot donné et à ouvrir de tels constituants pour les remplir ensuite par les mots qui sont analysés. Mais on voit bien qu’une telle analyse est moins naturelle qu’une analyse en dépendance.
 }
+\largerpage
 \exercices{%\label{sec:3.4.30}
     \exercice{1} Nous proposons le parenthésage en constituants majeurs suivant :
     \begin{exe}
@@ -1636,6 +1636,7 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
      \exercice{5} On s’intéresse à la construction \textit{de X à Y}, illustrée par des exemples comme \textit{le train de Paris à Marseille} ou \textit{il travaille du lundi au vendredi}. À quelle hypothèse nous conduit l’application du Test de déplacement (voir la \sectref{sec:3.2.16} \textit{Tests pour la connexion}) ? 
      Cette hypothèse est-elle confirmée par d’autres tests ? Comment analyser alors la construction ?
 }
+\largerpage[2]
 \lecturesadditionnelles{%\label{sec:3.4.31}
     Concernant l’analyse en constituants immédiats, on consultera les ouvrages de \citet{bloomfield1933language}, \citet{gleason1955introduction} et \citet{hockett1958course}, plusieurs fois cités déjà, ainsi que l’article de \citet{wells1947immediate}. Les ouvrages plus tardifs ont tendance à prendre l’ACI pour acquise et n’en discutent pas les fondements. C’est en particulier le cas des travaux de \citet{chomsky1957syntactic,chomsky1965aspects}. Pour l’origine des diagrammes en constituants, on consultera \citet{barnard1836analytic}, \citet{nida1943morphology} et \citet{chomsky1955three,chomsky1957syntactic}. \citet{nida1966synopsys} est une édition de sa thèse sur l’ACI soutenue en 1936, dans laquelle a été ajouté un chapitre introductif comprenant des dizaines de diagrammes syntaxiques. La Syntaxe X-barre est introduite dans l’article de \citet{chomsky1970remarks} et l’ouvrage de \citet{jackendoff1977x}. Les liens entre l’ACI et la syntaxe de dépendance sont étudiés dans un article de \citet{mazziotta2017what}.
     
@@ -1669,7 +1670,7 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     \exi{(i)}\relax
     [ [\textit{à l'instant même}] – [ [\textit{où}] [ [\textit{la gorgée}] – [\textit{mêlée des miettes du gâteau}] ] – [\textit{toucha}] – [ \textit{mon palais} ] ]\\\relax
     [ [ [\textit{je}] – [\textit{tressaillis}] ] [ [\textit{attentif}] – [ [\textit{à ce qui}] – [\textit{se passait}] – [\textit{d'extraordinaire}] [\textit{en moi}] ]
-    \end{exe}
+    \end{exe}\tcbbreak
 
     Nous proposons finalement la structure de dépendance de la figure~\ref{fig:proust}. Nous laissons sous-spécifiée la tête de la relation déterminant-nom, ainsi que la relation entre le pronom relatif et verbe principal des propositions relatives.
     
@@ -1683,8 +1684,8 @@ Pour conclure, insistons encore une fois sur le fait qu’il n’y a pas une mé
     \begin{exe}
     \exi{(ii)}\relax
         [ \textit{à} ( \textit{l’} [ (\textit{instant même}) ( \textit{où} [ \textit{la} (\textit{gorgée} [\textit{mêlée des miettes du gâteau}] ) ] [ \textit{toucha} (\textit{mon palais}) ] ) ] ) ]
-    \end{exe}
-    Nous devons également décider dans quel ordre regrouper les trois dépendants de la tête de la phrase, \textit{tressaillis}. Dans ce cas, l’analyse standard regroupera probablement le sujet \textit{je} en premier, car les deux autres dépendants sont des éléments détachés prosodiquement. Concluons en rappelant que la stratification de la structure de constituants ne nous semble pas une question très pertinente. Nous pensons que le regroupement en constituants doit être fait à un autre niveau d’analyse en utilisant des critères de cohésion syntaxique. Ce sera l’objet du chapitre suivant.
+    \end{exe}\tcbbreak
+    \noindent Nous devons également décider dans quel ordre regrouper les trois dépendants de la tête de la phrase, \textit{tressaillis}. Dans ce cas, l’analyse standard regroupera probablement le sujet \textit{je} en premier, car les deux autres dépendants sont des éléments détachés prosodiquement. Concluons en rappelant que la stratification de la structure de constituants ne nous semble pas une question très pertinente. Nous pensons que le regroupement en constituants doit être fait à un autre niveau d’analyse en utilisant des critères de cohésion syntaxique. Ce sera l’objet du chapitre suivant.
  
  \corrigé{5} L'application du Test de déplacement montre l’impossibilité de permuter les syntagmes en \textsc{à} et en \textsc{de} : *\textit{le train à Marseille de Paris}, *\textit{il travaille au vendredi du lundi}. Il semble donc qu’il ne s’agisse pas de deux groupes prépositionnels indépendants, lesquels peuvent généralement commuter (\textit{Elle parle de Marie à Zoé} vs \textit{Elle parle à Zoé de Marie}, \textit{un timbre de ma collection à 10 euros} vs \textit{un timbre à 10 euros de ma collection}). Le Test de clivage (voir la \sectref{sec:3.4.10} sur \textit{Les tests de constituance}) confirme cela : *\textit{c’est au vendredi qu’il travaille du lundi} vs *\textit{c’est du lundi qu’il travaille au vendredi} vs \textit{c’est du lundi au vendredi qu’il travaille}. Nous verrons dans le \chapfuturef{18} qu’on peut traiter cette construction comme une coordination.
 }
