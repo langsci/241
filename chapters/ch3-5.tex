@@ -176,6 +176,7 @@ La partie de la grammaire qui assure la correspondance entre la structure syntax
 
     Dire que l’on peut considérer ces deux structures indépendamment l’une de l’autre ne signifie absolument pas qu’elles soient indépendantes l’une de l’autre. Bien au contraire, elles se contraignent l’une l’autre par un ensemble de propriétés qui constituent les règles du modèle topologique. Dans la suite, nous allons donc nous intéresser au «~produit~» de ces deux structures, l’arbre de dépendance ordonné.
 }
+\pagebreak\largerpage
 \loupe[sec:3.5.8]{Mouvement et ordre de base}{%
     Notre conception de l’ordre des syntaxèmes s’oppose à une autre conception, celle de la grammaire générative, développée autour de Noam Chomsky depuis la fin des années 1950. Dans cette conception, une unique structure syntaxique de base \hi{ordonnée} est postulée pour chaque construction de chaque langue. Les différents ordres observés sont obtenus par des \textstyleTermesapprof{mouvements} au sein de la structure syntaxique de base.
 
@@ -286,7 +287,8 @@ On peut représenter la correspondance entre les deux structures, l’arbre de d
 L’ordre linéaire et l’arbre de dépendance sont en fait deux structures sur \hi{un même ensemble} d’éléments.  Une structure combinant ainsi deux structures est appelée une \textstyleTermesapprof{structure produit} en mathématique.
 Une représentation de la structure produit que forment ensemble l’ordre linéaire et l’arbre de dépendance est donnée dans la figure~\ref{fig:noel-Hudson}. Dans cette représentation, introduite par Richard \citet{hudson1984word}, toutes les dépendances sont représentées dans le même demi-plan au-dessus de la ligne formée par la chaîne linéaire. Une dépendance verticale (sans gouverneur) vient en plus marquer la position de la racine de l'arbre de dépendance. L’intérêt de cette dépendance apparaîtra clairement lorsque nous parlerons de projectivité (\sectref{sec:3.5.14} sur \textit{Projectivité et dépendances projectives}). Nous appellerons cette représentation l'\textstyleTermesapprof{arbre de dépendance en ligne} ou la  \textstyleTermesapprof{représentation à la Hudson} d'un arbre de dépendance ordonné.
 
-\begin{figure}
+\vfill
+\begin{figure}[H]
 \begin{tikzpicture}
 \begin{scope}[every node/.style={CircleNode},grow=right]
 \node (root) {} child { node {} child { node{} child { node{} child { node{}  
@@ -308,7 +310,8 @@ Une représentation de la structure produit que forment ensemble l’ordre liné
 \end{tikzpicture}
 \caption{Arbre de dépendance en ligne ou représentation à la Hudson d'un arbre de dépendance ordonné\label{fig:noel-Hudson}}
 \end{figure}
-
+\vfill
+\pagebreak
 
 
 
@@ -376,13 +379,20 @@ Une représentation de la structure produit que forment ensemble l’ordre liné
     Un format tabulaire de ce type a été imaginé par l'abbé Louis Gaultier pour enseigner la grammaire au début du 19\textsuperscript{e} siècle (voir l'\encadref{sec:3.3.5} sur l'\textit{Historique des représentations syntaxiques par des diagrammes en dépendance}). Un format tabulaire appelé \textstyleTermesapprof{format CoNLL} (d’après la conférence éponyme en apprentissage automatique, \textit{Conference in Natural Language Learning}) a été adopté à partir de \citeyear{buchholz2006conll} comme standard pour l'encodage des analyses en dépendance sur des corpus de textes (voir \citealt{buchholz2006conll}). Ce format extrêmement économique, inspiré du format proposé un an plus tôt par \citet{hall2006generic}, est un des éléments qui a contribué à populariser l'analyse en dépendance dans le domaine du traitement automatique des langues et tout particulièrement de l'analyse syntaxique automatique (voir la \sectref{sec:1.3.10} sur \textit{Modélisation des langues et ordinateur}).
     
     Les corpus annotés avec des arbres de dépendance sont appelés des \textstyleTermesapprof{corpus arborés en dépendance} ou \textstyleTermesapprof{banques d’arbres de dépendance} ou encore, en anglais, \textit{\textstyleTermesapprof{dependency treebanks}}. Ils servent pour des études sur les propriétés d’une langue donnée, aussi bien qu’à l’apprentissage automatique d’outils logiciels comme des analyseurs syntaxiques automatiques. Il existe aujourd'hui des treebanks en dépendance pour un grand nombre de langues. La plus importante collection de treebanks actuelle est la collection \textit{Universal Dependencies} (\textit{UD}), entièrement accessible en ligne à l'adresse \url{https://universaldependencies.org}. Cette collection, développée depuis 2014, comprend des corpus annotés en dépendance pour plus d'une centaine de langues et ne cesse de grossir (voir \citealt{nivre2016universal}). De plus, tous ces treebanks sont annotés dans un même schéma d'annotation âprement discuté par l'ensemble de la communauté scientifique UD. Ces treebanks sont également convertis dans un schéma d'annotation plus proche des analyses que nous présentons dans ce livre, nommé \textit{Surface-Syntactic UD} (\textit{SUD}) et disponible sur le site \url{https://surfacesyntacticud.github.io} (voir \citealt{gerdes2018sud}).
-}
+}\largerpage[2]
 \maths[sec:3.5.11]{Notation polonaise inverse}{%
     Nous allons nous intéresser à la structure d’un calcul algébrique élémentaire et voir que le rapport entre une structure arborescente et l’ordre n’est pas qu’une question interne à la linguistique. La question a d’ailleurs intéressé les mathématiciens avant les linguistes.
 
     Considérons la formule algébrique (7 \textrm{${\times}$} 19) + (5 \textrm{${\times}$} 31). Pour effectuer ce calcul, il faut nécessairement effectuer les deux multiplications avant de les sommer, ce que l’on peut représenter, comme dans la figure~\ref{fig:formule-calcul}, par un diagramme où le résultat de chaque calcul intermédiaire est donné sous une barre horizontale.
 
-\begin{figure}[H]
+    On peut alors donner une représentation arborescente de la structure de ce calcul. Les signes + et \textrm{${\times}$} représentent des opérateurs binaires qui combinent deux nombres pour en fournir un troisième. Ces opérateurs ont donc deux arguments à l’image d’un verbe transitif et une représentation similaire, par un arbre de dépendance, peut être adoptée. La figure~\ref{fig:formule-arbre} donne l'arbre de dépendance de notre formule.
+
+    De telles structures de dépendance pour les formules ont été introduites à la suite des travaux du logicien polonais Jan Łukasiewicz, qui a montré en \citeyear{lukasiewicz1921logika} qu’il y avait plusieurs façons d’encoder linéairement une formule. Une première façon est celle que nous utilisons quand nous écrivons la formule sous la forme (7 \textrm{${\times}$} 19) + (5 \textrm{${\times}$} 31), où à chaque fois l’opérateur binaire a été placé entre ses deux dépendants. Cette écriture, dite \textstyleTermesapprof{infixée}, nécessite des parenthèses pour ne pas être ambiguë : en effet, 7 \textrm{${\times}$} 19 + 5 \textrm{${\times}$} 31 peut tout aussi bien correspondre à 7 \textrm{${\times}$} (19 + (5 \textrm{${\times}$} 31)) ou bien (7 \textrm{${\times}$} (19 + 5)) \textrm{${\times}$} 31.
+    
+
+    Une autre écriture, dite \textstyleTermesapprof{écriture polonaise} ou \textstyleTermesapprof{préfixée}, consiste à lire l’arbre de dépendance de la formule en ramassant toujours le gouverneur avant ses dépendants et les dépendants de gauche à droite : + \textrm{${\times}$} 7 19 \textrm{${\times}$} 5 31 . Cette formule n’est pas ambiguë, malgré l’absence de parenthèses : il suffit de connaître l’\textstyleTermesapprof{arité} de chaque symbole, c’est-à-dire le nombre d’arguments et donc de dépendants qu’il a pour reconstruire l'arbre (voir les \textit{Exercices} en fin de chapitre). Les opérateurs + et \textrm{${\times}$} sont \textstyleTermesapprof{binaires}, c’est-à-dire d’arité 2, tandis que les nombres sont d’arité 0.
+    
+    \begin{figure}[H]
       \caption{Calcul du résultat de la formule (7 × 19) + (5 × 31)\label{fig:formule-calcul}}
       \begin{tabular}{@{}c@{ }c@{ }c@{}}
          $(7\times 19)$&\ $+$\ &$(5\times 31)$\\\hhline{-~-}
@@ -390,10 +400,8 @@ Une représentation de la structure produit que forment ensemble l’ordre liné
          \multicolumn{3}{@{}c@{}}{288}
          \end{tabular}
   \end{figure}
-
-    On peut alors donner une représentation arborescente de la structure de ce calcul. Les signes + et \textrm{${\times}$} représentent des opérateurs binaires qui combinent deux nombres pour en fournir un troisième. Ces opérateurs ont donc deux arguments à l’image d’un verbe transitif et une représentation similaire, par un arbre de dépendance, peut être adoptée. La figure~\ref{fig:formule-arbre} donne l'arbre de dépendance de notre formule.
-   
-   \begin{figure}[H]
+  
+     \begin{figure}[H]
     \centering
    \caption{Arbre de dépendance de la formule (7 × 19) + (5 × 31)}
     \label{fig:formule-arbre}
@@ -409,14 +417,11 @@ Une représentation de la structure produit que forment ensemble l’ordre liné
     \end{forest}
  \end{figure}
 
-
-    De telles structures de dépendance pour les formules ont été introduites à la suite des travaux du logicien polonais Jan Łukasiewicz, qui a montré en \citeyear{lukasiewicz1921logika} qu’il y avait plusieurs façons d’encoder linéairement une formule. Une première façon est celle que nous utilisons quand nous écrivons la formule sous la forme (7 \textrm{${\times}$} 19) + (5 \textrm{${\times}$} 31), où à chaque fois l’opérateur binaire a été placé entre ses deux dépendants. Cette écriture, dite \textstyleTermesapprof{infixée}, nécessite des parenthèses pour ne pas être ambiguë : en effet, 7 \textrm{${\times}$} 19 + 5 \textrm{${\times}$} 31 peut tout aussi bien correspondre à 7 \textrm{${\times}$} (19 + (5 \textrm{${\times}$} 31)) ou bien (7 \textrm{${\times}$} (19 + 5)) \textrm{${\times}$} 31.
-
-    Une autre écriture, dite \textstyleTermesapprof{écriture polonaise} ou \textstyleTermesapprof{préfixée}, consiste à lire l’arbre de dépendance de la formule en ramassant toujours le gouverneur avant ses dépendants et les dépendants de gauche à droite : + \textrm{${\times}$} 7 19 \textrm{${\times}$} 5 31 . Cette formule n’est pas ambiguë, malgré l’absence de parenthèses : il suffit de connaître l’\textstyleTermesapprof{arité} de chaque symbole, c’est-à-dire le nombre d’arguments et donc de dépendants qu’il a pour reconstruire l'arbre (voir les \textit{Exercices} en fin de chapitre). Les opérateurs + et \textrm{${\times}$} sont \textstyleTermesapprof{binaires}, c’est-à-dire d’arité 2, tandis que les nombres sont d’arité 0.
-
     La \textstyleTermesapprof{lecture}\textstyleTermes{} \textstyleTermesapprof{postfixée} ou \textstyleTermesapprof{polonaise inverse}, où le gouverneur est ramassé après ses dépendants, est particulièrement appropriée au calcul et utilisée par les calculateurs automatiques, y compris certaines machines à calculer d’usage courant : en effet, pour effectuer le calcul 7 19 \textrm{${\times}$} 5 31 \textrm{${\times}$} +, il suffit d’empiler les nombres au fur et à mesure de la lecture et à la lecture de chaque opérateur binaire d’effectuer l’opération sur les nombres des deux lignes qui précèdent en les supprimant (voir la figure~\ref{fig:formule-calcul2}).
 
-\begin{figure}[H]
+    Ces différentes stratégies pour passer d’une structure hiérarchique à un ordre linéaire se retrouvent dans les langues naturelles (voir l’\encadref{sec:3.5.12} qui suit). Ceci montre la nécessité de distinguer, pour les calculs comme pour les énoncés linguistiques, la structure et son encodage linéaire. Notre calcul, encodé par la formule (7 \textrm{${\times}$} 19) + (5 \textrm{${\times}$} 31), aussi bien que par les formules + \textrm{${\times}$} 7 19 \textrm{${\times}$} 5 31 ou 7 19 \textrm{${\times}$} 5 31 \textrm{${\times}$} +, est toujours le même calcul quelle que soit la convention qui sert à l’encoder linéairement. Autrement dit, la structure du calcul n’est pas ordonnée : seule la structure hiérarchique encodée par l’arbre de dépendance est pertinente. (Avec des opérateurs non commutatifs, comme la soustraction ou la division, l’ordre sur les fils d’un opérateur peut également être pertinent.) L’ordre linéaire résulte uniquement d’une convention d’encodage. Ceci est en grande partie vrai des langues naturelles : l’ordre linéaire des syntaxèmes imposé par la grammaire d'une langue donnée est une convention pour encoder la structure syntaxique de l’énoncé propre à cette langue. La structure syntaxique d’un énoncé, qui indique comment les éléments de cet énoncé se combinent les uns aux autres, est une structure qui est fondamentalement indépendante de l’ordre conventionnellement utilisé pour l’encoder linéairement.
+    
+    \begin{figure}[H]
     \caption{Calcul du résultat de la formule  7 19 \textrm{${\times}$} 5 31 \textrm{${\times}$} +\label{fig:formule-calcul2}}
 %     \attop{%
     \begin{tikzpicture}
@@ -437,9 +442,8 @@ Une représentation de la structure produit que forment ensemble l’ordre liné
     \end{tikzpicture}
 %     }
 \end{figure}
-
-    Ces différentes stratégies pour passer d’une structure hiérarchique à un ordre linéaire se retrouvent dans les langues naturelles (voir l’\encadref{sec:3.5.12} qui suit). Ceci montre la nécessité de distinguer, pour les calculs comme pour les énoncés linguistiques, la structure et son encodage linéaire. Notre calcul, encodé par la formule (7 \textrm{${\times}$} 19) + (5 \textrm{${\times}$} 31), aussi bien que par les formules + \textrm{${\times}$} 7 19 \textrm{${\times}$} 5 31 ou 7 19 \textrm{${\times}$} 5 31 \textrm{${\times}$} +, est toujours le même calcul quelle que soit la convention qui sert à l’encoder linéairement. Autrement dit, la structure du calcul n’est pas ordonnée : seule la structure hiérarchique encodée par l’arbre de dépendance est pertinente. (Avec des opérateurs non commutatifs, comme la soustraction ou la division, l’ordre sur les fils d’un opérateur peut également être pertinent.) L’ordre linéaire résulte uniquement d’une convention d’encodage. Ceci est en grande partie vrai des langues naturelles : l’ordre linéaire des syntaxèmes imposé par la grammaire d'une langue donnée est une convention pour encoder la structure syntaxique de l’énoncé propre à cette langue. La structure syntaxique d’un énoncé, qui indique comment les éléments de cet énoncé se combinent les uns aux autres, est une structure qui est fondamentalement indépendante de l’ordre conventionnellement utilisé pour l’encoder linéairement.
-}
+    
+}\largerpage[2]
 \globe[sec:3.5.12]{Langues à têtes finales et langues à têtes initiales}{%
     Les travaux en typologie, notamment le travail fondateur de Joseph Greenberg (\textit{Universals of Language}, \citeyear{greenberg1963universals}), puis l’étude de Matthew S. \citet{dryer1992greenbergian} sur plus de 500 langues, ont pu montrer une corrélation entre la place du verbe dans la phrase et la place du nom dans le groupe nominal ou de l’adjectif dans le groupe adjectival : ainsi les langues qui placent le verbe en fin de phrase tendent très fortement à placer les noms en fin de groupe nominal et vice versa.
 
@@ -662,7 +666,7 @@ Le troisième vers de cette chanson a une structure non projective, comme le mon
 
 Comme on le voit sur la figure, la dépendance qui relie \textit{une belle} à la relative \textit{qui voulait les acheter} couvre la racine \textit{est entrée} et coupe donc la dépendance verticale. Il s’en suit que le groupe substantival \textit{une belle qui voulait les acheter} est discontinu.
 
-La projectivité est en partie énoncée par Nicolas Beauzée dans l’article «~Régime~» de l’\textit{Encyclopédie} publié en \citeyear{Beauzée1765} (voir la discussion dans l’\encadref{sec:3.3.2} sur l'\textit{Historique des notions de dépendance et de tête}) : «~Il ne faut jamais rompre l’unité d’un complément total, pour jeter entre ses parties un autre complément du même mot.~», ce qui reviendrait effectivement à ce que le premier complément soit discontinu. Beauzée note également que les langues à ordre libre, qu'il appelle les langues transpositives, peuvent violer la projectivité : «~je crois qu’il est bon de remarquer, que les règles que je viens d’assigner sur l’arrangement de divers compléments, ne peuvent concerner que l’ordre analytique qu’il faut suivre quand on fait la construction d’une phrase, ou l’ordre usuel des langues analogues comme la nôtre. Car pour les langues transpositives, où la terminaison des mots sert à caractériser l’espèce de rapport auquel ils sont employés, la nécessité de marquer ce rapport par la place des mots n’existe plus au même degré.~» La notion de \textit{langue analogue} renvoie ici aux langues ayant un ordre fixe similaire au français et supposé analogue à la pensée (voir l’\encadref{sec:3.5.8} sur \textit{Mouvement et ordre de base}).
+La projectivité est en partie énoncée par Nicolas Beauzée dans l’article «~Régime~» de l’\textit{Encyclopédie} publié en \citeyear{Beauzée1765} (voir la discussion dans l’\encadref{sec:3.3.2} sur l'\textit{Historique des notions de dépendance et de tête}) : «~Il ne faut jamais rompre l’unité d’un complément total, pour jeter entre ses parties un autre complément du même mot.~», ce qui reviendrait effectivement à ce que le premier complément soit discontinu. Beauzée note également que les langues à ordre libre, qu'il appelle les langues transpositives, peuvent violer la projectivité : «~je crois qu’il est bon de remarquer, que les règles que je viens d’assigner sur l’arrangement de divers compléments, ne peuvent concerner que l’ordre analytique qu’il faut suivre quand on fait la construction d’une phrase, ou l’ordre usuel des langues analogues comme la nôtre. Car pour les langues transpositives, où la terminaison des mots sert à caractériser l’espèce de rapport auquel ils sont employés, la nécessité de marquer ce rapport par la place des mots n’existe plus au même degré.~» La notion de \textit{langue analogue} renvoie ici aux langues ayant un ordre fixe similaire au français et supposé analogue à la pensée (voir l’\encadref{sec:3.5.8} sur \textit{Mouvement et ordre de base}).\largerpage
 
 
 \maths[sec:3.5.15]{Projectivité et planarité}{%
@@ -671,9 +675,7 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
    
     Dans le cas de la projectivité d’un arbre ordonné, on s’intéresse à une propriété qui concerne la relation entre la structure d’arbre et l’ordre linéaire sur les nœuds de l’arbre. Le graphe qui nous intéresse doit donc contenir ces deux structures. Au graphe que forme l’arbre, nous allons ajouter l’ordre linéaire sous la forme d’arêtes entre deux nœuds successifs, ce qui revient à placer les nœuds du graphe sur une ligne dans l’ordre linéaire. Pour prendre totalement en compte la structure hiérarchique de l’arbre, il faut encoder le fait que l’arbre possède un nœud, la racine, qui domine tous les autres. Pour cela, on attache l’arbre par sa racine à un nœud spécial qu’on appelle le nœud à l’infini (noté \textrm{${\infty}$}). Cela revient à placer les nœuds de l’arbre sur un cercle dans l’ordre linéaire avec le nœud à l’infini entre le premier et le dernier nœud. Nous appelons ce graphe le \textstyleTermesapprof{graphe circulaire} pour un arbre linéairement ordonné (voir la figure~\ref{fig:noel-circulaire}).
     
-    Le graphe circulaire d’un arbre projectif a une propriété un peu plus forte que la planarité : il est planaire extérieur. Un graphe est dit \textstyleTermesapprof{planaire extérieur} s’il peut être dessiné avec tous ses nœuds accessibles de l’extérieur et sans qu’aucunes de ses arêtes ne se coupent. On peut montrer que pour qu’un graphe soit planaire extérieur, il faut et il suffit qu’il ne puisse \textit{pas} être \textit{réduit} à un graphe particulier qu’on appelle K\textsubscript{4}. La \textstyleTermesapprof{réduction} d’un graphe consiste à \hi{agréger ensemble des nœuds qui sont liés}. C’est une opération importante de notre point de vue, car elle consiste à diminuer la granularité de l'analyse en considérant des unités plus grossières. Le graphe K\textsubscript{4} est le graphe complet à 4 nœuds, c’est-à-dire le graphe à 4 nœuds où tous les nœuds sont liés deux à deux. Les deux configurations rejetées par la projectivité sont exactement des sous-graphes K\textsubscript{4} du graphe circulaire, comme le montre la figure~\ref{fig:nonproj-K4}.
-
-\begin{figure}[H]
+  \begin{figure}[H]
     \caption{Graphe circulaire pour un arbre de dépendance ordonné\label{fig:noel-circulaire}}
     \begin{tikzpicture}[label distance=2pt,>={Triangle[]}] % Following an idea by Jerome Tremblay
     \def \radius {2cm}
@@ -709,6 +711,8 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
           (8) edge[->, bend left] (9);
     \end{tikzpicture}
  \end{figure}
+    
+    Le graphe circulaire d’un arbre projectif a une propriété un peu plus forte que la planarité : il est planaire extérieur. Un graphe est dit \textstyleTermesapprof{planaire extérieur} s’il peut être dessiné avec tous ses nœuds accessibles de l’extérieur et sans qu’aucunes de ses arêtes ne se coupent. On peut montrer que pour qu’un graphe soit planaire extérieur, il faut et il suffit qu’il ne puisse \textit{pas} être \textit{réduit} à un graphe particulier qu’on appelle K\textsubscript{4}. La \textstyleTermesapprof{réduction} d’un graphe consiste à \hi{agréger ensemble des nœuds qui sont liés}. C’est une opération importante de notre point de vue, car elle consiste à diminuer la granularité de l'analyse en considérant des unités plus grossières. Le graphe K\textsubscript{4} est le graphe complet à 4 nœuds, c’est-à-dire le graphe à 4 nœuds où tous les nœuds sont liés deux à deux. Les deux configurations rejetées par la projectivité sont exactement des sous-graphes K\textsubscript{4} du graphe circulaire, comme le montre la figure~\ref{fig:nonproj-K4}.
    
 \begin{figure}[H]
     \captionsetup[sub]{width=.95\linewidth,justification=raggedright}
@@ -758,6 +762,7 @@ La projectivité est en partie énoncée par Nicolas Beauzée dans l’article �
 \end{figure}
 }
 
+\largerpage
 \loupe[sec:3.5.16]{Équivalence des définitions de la projectivité}{%
     On peut donner encore une autre caractérisation de la non-projectivité :
      {un arbre de dépendance ordonné est \textstyleTermesapprof{non projectif} si et seulement s’il contient une dépendance non projective.} {Une \hi{dépendance ordonnée} est \textstyleTermesapprof{non projective} si elle couvre un élément qui n’appartient pas à la projection de la tête de cette dépendance.}
@@ -820,7 +825,7 @@ Montrons l’équivalence des trois propriétés.
 
     \begin{figure}[H]
     \caption{Configurations de dépendances à un point du flux}
-    \begin{subfigure}[b]{.5\linewidth}
+    \begin{subfigure}[b]{.5\linewidth}\centering
     \begin{tikzpicture}[>={Triangle[]},every node/.style={CircleNode},grow=right]
         \node at (0,0) (root) {} child { node {} child { node{} } };
         \path (root)   edge [bend left=45,->] (root-1)
@@ -829,7 +834,7 @@ Montrons l’équivalence des trois propriétés.
     \end{tikzpicture}
     \caption{Dépendances en bouquet}
     \end{subfigure}%
-    \begin{subfigure}[b]{.5\linewidth}
+    \begin{subfigure}[b]{.5\linewidth}\centering
     \begin{tikzpicture}[>={Triangle[]},every node/.style={CircleNode},grow=right]
         \node at (0,0) (root) {} child { node {} child { node{} child { node{} } } };
         \path (root)   edge [bend left=60,->] (root-1-1-1)
@@ -966,7 +971,9 @@ Si l’on regarde maintenant, l’ordre des dépendants à gauche du verbe \text
 
 La deuxième méthode pour ordonner les codépendants consiste donc à donner d’un coup l’ensemble des règles d’ordre concernant un nœud et ses dépendants. Cela peut être fait en considérant que chaque nœud de l’arbre de dépendance ouvre une \hi{boîte ordonnée} avec des positions prévues pour les différents dépendants selon leur nature et leur fonction. Nous appellerons une telle boîte un \textstyleTermes{gabarit topologique} et chacune des cases de la boîte un \textstyleTermes{champ topologique}.%\largerpage
 
+\begin{sloppypar}
 Le gabarit qu’ouvre un verbe à l’indicatif en français est donné dans la figure~\ref{fig:domaine-verbal}. Ce gabarit contient 7 champs préverbaux pour des clitiques (les champs ch-cl-X), un champ initial dont nous avons parlé au début de ce chapitre et qui accueille en général le sujet, un champ final qui accueille les compléments du verbe, un champ pour un verbe subordonné (notamment pour le participe des formes verbales complexes comme \textit{a dormi}) précédé d’un champ adverbial (pour la négation \textit{pas} entre autres) et des champs pré-noyau et post-noyau qui accueillent les éléments détachés à gauche et à droite (voir la partie VI sur la \textit{Macrosyntaxe}). Les éléments qui viennent se placer dans le gabarit ouvert par le verbe vont former avec lui un constituant topologique, que nous appelons le \textstyleTermes{domaine verbal}.
+\end{sloppypar}
 
 \begin{figure}\small
 \caption{Gabarit topologique du domaine verbal\label{fig:domaine-verbal}}
@@ -986,7 +993,7 @@ Le gabarit qu’ouvre un verbe à l’indicatif en français est donné dans la 
 
 La méthode avec gabarit a l’avantage que les règles d’ordre restent finalement essentiellement des règles d’ordre d’un nœud par rapport à son gouverneur. Mais au lieu d’indiquer simplement si le dépendant va à gauche ou à droite de son dépendant (< ou >), \hi{une règle d’ordre} \hi{indique dans quel champ du gabarit ouvert par son gouverneur va chaque dépendant}. Par exemple :%\largerpage
 
-\begin{itemize}
+\begin{itemize}\sloppy
 \item Le sujet non clitique peut aller dans le champ initial ; les sujets clitiques ne vont pas dans le champ initial, car à la différence des sujets non-clitiques, ils ne peuvent pas être séparés du verbe par une \hi{insertion} : \textit{Félix, je pense, prêtera son ballon} vs *\textit{Il, je pense, prêtera son ballon}. En plus, les sujets clitiques déclenchent une \hi{liaison obligatoire} (\textit{elles attendent} [ɛl\textbf{z}atɑ̃d], *[ɛlatɑ̃d]), alors qu'un sujet non-clitique n'autorise pas la liaison (\textit{les filles attendent} [lefijatɑ̃d], *[lefijzatɑ̃d]).
 \item Un pronom clitique de 1\textsuperscript{ère} ou 2\textsuperscript{ème} personne va dans le champ clitique ch-cl-se (\textit{il ne} \textbf{\textit{vous}} \textit{le donnera pas}).
 \item Un complément non clitique peut aller dans le champ final.
@@ -1194,7 +1201,7 @@ C'est la sémantique de \textsc{lire} et le caractère animé de \textit{Ali} et
 
     C’est à Henri Weil, dans sa thèse publiée en \citeyear{weil1844de} (déjà mentionnée dans l’\encadref{sec:3.5.12} sur les \textit{Langues à têtes finales et langues à têtes initiales} et dans l’\encadref{sec:3.5.21} sur les \textit{Préférences dans l’ordre : rejet des constituants lourds}), que l’on doit d’avoir introduit les notions de thème et rhème et d’avoir noté que trois facteurs pouvaient influencer l’ordre des mots : la structure de dépendance, la structure communicative et la prosodie. En comparant le français, l’anglais, l’allemand, le turc, le chinois, le latin et le grec ancien, il remarque que certaines langues ont un ordre davantage contrôlé par la syntaxe (les langues dites à ordre rigide) et d’autres davantage contrôlé par la structure communicative (les langues dites à ordre libre).
 }
-
+\largerpage[2]
 \loupe[sec:3.5.25]{Les autres usages de l’ordre linéaire}{%
     Nous venons de voir, dans les deux encadrés qui précèdent, les deux principaux usages de l’ordre linéaire : le marquage de la fonction syntaxique et le marquage de la structure communicative. Il existe trois autres usages de l’ordre linéaire.
 
@@ -1286,7 +1293,7 @@ Chaque mot va ensuite ouvrir dans la position qu’il occupe un constituant topo
 \hline
 \end{tabular}}\z
 
-On notera qu’en plus de l’ordre linéaire, nous avons obtenu une structure avec des constituants emboîtés.
+On notera qu’en plus de l’ordre linéaire, nous avons obtenu une structure avec des constituants emboîtés.\largerpage
 
 \Definition{\textstyleTermes{structure topologique}}{La structure d'\hi{emboîtement} que forme les \hi{constituants topologiques} est appelée la \textstyleTermes{structure topologique}. Dans une structure topologique, chaque constituant occupe un \hi{champ topologique}.}
 
@@ -1295,7 +1302,7 @@ La structure topologique est un \textstyleTermes{arbre de constituants ordonné}
 La structure topologique de l'exemple \REF{ex:ballon} est donnée sous la forme d'un emboîtement de constituants en \REF{ex:topo-ballon} et sous forme d'arbre dans la figure~\ref{fig:topo-ballon}. La deuxième représentation comporte en plus des étiquettes catégorielles sur les constituants topologiques. Il est encore possible d'enrichir la représentation en ajoutant  le nom du champ occupé par chaque constituant sur la relation partie-tout avec le constituant père.
 
 \begin{figure}
-\begin{tikzpicture}
+\resizebox{\textwidth}{!}{\begin{tikzpicture}
     \begin{scope}[every node/.style={CircleNode},level distance=2\baselineskip,
                   level 1/.style={sibling distance=18mm},
                   level 2/.style={sibling distance=9mm},
@@ -1323,11 +1330,11 @@ La structure topologique de l'exemple \REF{ex:ballon} est donnée sous la forme 
     \node [below=1pt of root-6-3] {gros};
     \node [below=1pt of root-6-4] {ballon};
     \end{scope}
-\end{tikzpicture}
+\end{tikzpicture}}
 \caption{\label{fig:topo-ballon}Arbre topologique}
 \end{figure}
 
-
+\largerpage
 \eiffel[sec:3.5.27]{Topologie du groupe substantival en français}{%
     Dans le gabarit pour le nom de la figure~\ref{fig:domaine-nominal} figure un champ ch-deN, juste après le champ qu’occupe le nom. Il existe en effet une contrainte d’ordre qui concerne les compléments en \textit{de} N (préposition \textsc{de} suivi d’un \hi{nom nu}, c’est-à-dire sans déterminant). Prenons l’exemple des dépendants possibles du syntagme \textit{une chemise}. Nous pouvons modifier \textit{une chemise} par \textit{pour homme}, \textit{en coton} ou \textit{pour le sport}. Chacun de ces trois compléments peut aussi être réalisé par un complément en \textit{de} N : \textit{d’homme}, \textit{de coton}, \textit{de sport}. 
     Contrairement à leurs équivalents, les compléments en \textit{de} N supportent très mal d’être séparé du nom : alors qu’on dira
@@ -1392,6 +1399,7 @@ La structure topologique de l'exemple \REF{ex:ballon} est donnée sous la forme 
 
 Quant à l’ordre relatif des adjectifs antéposés, évoqué à la \sectref{sec:3.5.26}, il semble aller des \hi{éléments à valeur référentielle} à des \hi{adjectifs qualificatifs}. Ces derniers qualifient le référent, en précisent la nature, tandis que les premiers précisent la nature de la référence elle-même : l’article indique si le référent est connu ou pas, le numéral donne le nombre de référents, des adjectifs comme \textit{seul} ou \textit{autre} permettent de positionner le référent dans l’ensemble des référents potentiels.
 }
+\largerpage
 \maths[sec:3.5.28]{Arbre de constituants ordonné}{%
 En définissant la structure topologique dans la \sectref{sec:3.5.26} sur le {\textit{Modèle topologique}}, nous avons introduit rapidement la notion d'\terme{arbre de constituants ordonné}. Nous allons préciser la nature de cette structure et les modes de représentation associés.
 
@@ -1405,8 +1413,7 @@ Contrairement au cas des arbres de dépendance ordonnés dont les nœuds sont to
 
 Nous allons maintenant discuter un point important concernant la représentation des arbres de constituants ordonnés.
 On peut voir les «~nœuds~» de l’arbre de constituants ordonné non pas comme de simples nœuds, mais comme des segments ayant un début et une fin. N’oublions pas que les nœuds d’un arbre de constituants sont des constituants d’un énoncé et que les constituants d’un énoncé sont des segments continus de cet énoncé. On peut alors représenter les constituants comme des arcs allant d’un nœud début à un nœud fin.  Lesquels nœuds correspondent en fait aux positions linéaires inter-mot (si les constituants minimaux sont les mots) (voir l'\encadref{sec:3.5.17} sur le \textit{{Flux de dépendances}}, où il a déjà été question des positions inter-mot).
-Nous allons expliciter ce point en proposant deux représentation du même arbre de constituants ordonné de la phrase :
-
+Nous allons expliciter ce point en proposant deux représentation du même arbre de constituants ordonné de la phrase :\smallskip\\
 \ea\textit{Le chat poursuit un chien.}\z
 
 La première représentation, donnée dans la figure~\ref{fig:arbre-tradi},
@@ -1663,7 +1670,7 @@ un élément de la chaîne qui relie celui-ci à la racine de l'arbre de de dép
 Un élément émancipé ne se place pas par rapport à son gouverneur, mais par rapport à son hôte topologique. 
 En conséquence, la dépendance qui unit un élément émancipé à son gouverneur syntaxique est nécessairement \hi{non projective} (voir l’\encadref{sec:3.5.16} sur l’\textit{Équivalence des définitions de la projectivité}).
 
-
+\largerpage
 \eiffel[sec:3.5.32]{Non-projectivité en français}
 {Nous allons présenter les principaux cas de non-projectivité en français et voir comment les modéliser.
 
@@ -1899,11 +1906,11 @@ ch-post-noyau\\\hline
 \caption{Constituants topologiques enchâssés ouverts par un verbe en français\label{fig:topo-intermediaires}}
 \end{figure}
 
-Cette décomposition ne change pas grand-chose au fonctionnement du modèle topologique lui-même, si ce n’est qu’au lieu d’ouvrir un seul constituant, un verbe ouvrira successivement un domaine macrosyntaxique, un domaine micro-syntaxique, puis un amas verbal (et encore un constituant non représenté dans la figure~\ref{fig:topo-intermediaires} pour le placement des syntaxèmes au sein du mot). Par ailleurs, dès qu’un dépendant du verbe ne sera pas placé dans le dernier constituant ouvert, il devra s’émanciper de celui-ci pour atteindre les constituants supérieurs.
+Cette décomposition ne change pas grand-chose au fonctionnement du modèle topologique lui-même, si ce n’est qu’au lieu d’ouvrir un seul constituant, un verbe ouvrira successivement un domaine macrosyntaxique, un domaine micro-syntaxique, puis un amas verbal (et encore un constituant non représenté dans la figure~\ref{fig:topo-intermediaires} pour le placement des syntaxèmes au sein du mot). Par ailleurs, dès qu’un dépendant du verbe ne sera pas placé dans le dernier constituant ouvert, il devra s’émanciper de celui-ci pour atteindre les constituants supérieurs.\largerpage[2]
 
 Les avantages potentiels de ce découpage du domaine verbal sont multiples. Premièrement, en découpant ainsi le domaine verbal, on peut utiliser indépendamment ses différents morceaux. Nous pensons que dans certains cas le verbe n’ouvre qu’une partie des constituants : ainsi, comme nous le verrons au \chapfuturef{19}, un verbe subordonné placé dans l’amas verbal de son gouverneur (dans le champ ch-vb-sub de la figure~\ref{fig:topo-intermediaires}) n’ouvrira lui-même qu’un constituant de type amas verbal. Cette propriété sera également illustrée dans l’\encadref{sec:3.5.36} où nous présentons la \textit{Structure topologique de l’allemand}. Nous verrons également au \chapfuturef{19} que le verbe principal d’une relative n’ouvre probablement pas de domaine macrosyntaxique.
 
-Le deuxième avantage concerne le calcul de la prosodie. Les constituants intermédiaires marquent différents niveaux de cohésion et donc les frontières de ces constituants correspondent généralement à des coupures prosodiques de profondeurs différentes, la frontière du domaine microsyntaxique étant toujours clairement marquée prosodiquement (voir l'encadré suivant).
+Le deuxième avantage concerne le calcul de la prosodie. Les constituants intermédiaires marquent différents niveaux de cohésion et donc les frontières de ces constituants correspondent généralement à des coupures prosodiques de profondeurs différentes, la frontière du domaine microsyntaxique étant toujours clairement marquée prosodiquement (voir l'encadré suivant).\largerpage[1.75]
 
 \loupe[sec:3.5.35]{Topologie et prosodie}{%
     Nous avons déjà évoqué la prosodie et discuté des contraintes entre la structure syntaxique et la structure prosodique dans la \sectref{sec:3.2.11} sur l'\textit{Unité syntaxique autonomisable}. Nous y avons postulé que, à l’exception du cas des clitiques, les unités prosodiques sont des portions connexes de la structure syntaxique (c’est-à-dire des catenas pour reprendre le terme introduit dans l’\encadref{sec:3.2.20} sur \textit{Les limites de la dualité}), ce qui nous a permis de postuler le \textit{Test d'autonomisabilité prosodique}.
@@ -1912,6 +1919,7 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
 
     En prenant en compte ces différentes contraintes, on peut faire d’assez bonnes prédictions sur les prosodies possibles. Cela dit, les locuteurs prennent certaines libertés avec la prosodie et appliquent souvent un principe de complémentarité et de compensation qui veut que la prosodie tendra à compenser une absence de marquage syntaxique (notamment lorsque la structure est syntaxiquement ambiguë), mais pourra être plus relâchée quand la structure syntaxique est claire.
 }
+\pagebreak\largerpage
 \globe[sec:3.5.36]{La structure topologique de l’allemand}{%
     Nous avons déjà esquissé le modèle topologique de l’allemand dans l'\encadref{sec:3.5.5} sur \textit{Le cas des langues V2}. La plupart des règles de l’ordre des mots en allemand se comprennent facilement en considérant qu’une phrase déclarative est constituée de 5 champs consécutifs qui forment le domaine principal.
     
@@ -1938,6 +1946,10 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
     \glt ‘Peter a malheureusement osé à nouveau se crotter le nez devant toute la famille.’
     \z
     
+    La racine de l'arbre de \REF{ex:leider}, l'auxiliare \textit{hat} `a' va dans la parenthèse gauche, tandis que le participe \textit{gewagt} 'osé' va dans la parenthèse droite, où il entraîne avec lui le verbe infinitif \textit{zu popeln} `de creuser', qui se place devant lui. Les verbes de la parenthèse droite ne peuvent pas accueillir leur dépendants substantivaux et adverbiaux, qui vont donc s'émanciper et se placer dans le domaine principal. Un des constituants doit occuper le Vorfeld : ici c'est \textit{leider} qui occupe cette place, mais n'importe quel autre constituant aurait pu prendre la place.
+    Le constituant \textit{vor der ganzen Familie} ‘devant toute la famille’ peut aller dans le Nachfeld, car il est assez lourd (et un placement dans le Mittelfeld séparerait trop les deux parenthèses). Des constituants légers comme \textit{mal wieder} ou le sujet \textit{Peter} préfèrent rester dans le Mittelfeld.
+    
+    
     \begin{figure}[H]
       \caption{Arbre de dépendance de \REF{ex:leider}\label{fig:leider}}
     \begin{forest} for tree={font=\itshape}
@@ -1954,9 +1966,7 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
       ]
     \end{forest}
    \end{figure}
-   
-    La racine de l'arbre de \REF{ex:leider}, l'auxiliare \textit{hat} `a' va dans la parenthèse gauche, tandis que le participe \textit{gewagt} 'osé' va dans la parenthèse droite, où il entraîne avec lui le verbe infinitif \textit{zu popeln} `de creuser', qui se place devant lui. Les verbes de la parenthèse droite ne peuvent pas accueillir leur dépendants substantivaux et adverbiaux, qui vont donc s'émanciper et se placer dans le domaine principal. Un des constituants doit occuper le Vorfeld : ici c'est \textit{leider} qui occupe cette place, mais n'importe quel autre constituant aurait pu prendre la place.
-    Le constituant \textit{vor der ganzen Familie} ‘devant toute la famille’ peut aller dans le Nachfeld, car il est assez lourd (et un placement dans le Mittelfeld séparerait trop les deux parenthèses). Des constituants légers comme \textit{mal wieder} ou le sujet \textit{Peter} préfèrent rester dans le Mittelfeld.
+    
 
     Les propositions subordonnées, complétives et relatives, ont une structure réduite, sans Vorfeld, et l’élément qui introduit la proposition, le complémenteur ou le pronom relatif, occupe la parenthèse gauche. En conséquence, le verbe principal de la subordonnée va dans la parenthèse droite.
 
@@ -2144,6 +2154,7 @@ Le deuxième avantage concerne le calcul de la prosodie. Les constituants interm
 
     \FurtherReading{3-5}
 }
+\pagebreak\largerpage
 \corrections{%\label{sec:3.5.41}
     \corrigé{1}
     \begin{enumerate}[label=\alph*.]
