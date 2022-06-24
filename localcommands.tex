@@ -203,10 +203,10 @@
 \newcommand{\textstylePhono}[1]{#1}
 \newcommand{\textstylePhonoApprofondissement}[1]{#1}
 \newcommand{\textstylest}[1]{#1}
-\newcommand{\textstyleTermes}[1]{\textsc{#1}}
-\newcommand{\textstyleTermesapprof}[1]{\textsc{#1}}
-\newcommand{\textstyleTermesapprofondissement}[1]{\textsc{#1}}
-\newcommand{\terme}[1]{\textsc{#1}}
+\newcommand{\textstyleTermes}[1]{\is{#1}\textsc{#1}}
+\newcommand{\textstyleTermesapprof}[1]{\textstyleTermes{#1}}
+\newcommand{\textstyleTermesapprofondissement}[1]{\textstyleTermes{#1}}
+\newcommand{\terme}[1]{\textstyleTermes{#1}}
 \newcommand\phraseme[1]{$\ulcorner$\textsc{#1}$\urcorner$}
 
 
