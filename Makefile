@@ -35,7 +35,11 @@ main.snd: main.bbl
 	sed -i 's/.*Association.*//' main.adx
 	sed -i 's/.*Commission.*//' main.adx
 	python3 fixindex.py
+	python3 fixindex.py s
+	python3 fixindex.py l
 	mv mainmod.adx main.adx
+	mv mainmod.sdx main.sdx
+	mv mainmod.ldx main.ldx
 	makeindex -o main.and main.adx
 	makeindex -o main.lnd main.ldx
 	makeindex -o main.snd main.sdx
