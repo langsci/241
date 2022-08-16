@@ -1543,8 +1543,8 @@ Notons qu'il est possible de combiner la représentation traditionnelle avec la 
 %        \node [below=1pt of 1] {P};
 %        \node [below left = 2pt of GN] {GN};
 %        \node [below right = 2pt of GV] {GV};
-       \path (GN) edge [out=270,in=180] node [left,midway] {GN} (empty)
-             (empty) edge [out=0,in=270] node [right,midway] {GV} (GV)
+       \path (GN) edge [out=270,in=180] node [left=.5ex,midway] {GN} (empty)
+             (empty) edge [out=0,in=270] node [right=.5ex,midway] {GV} (GV)
              (GN) edge [bend left=66] node [below,midway] {P} (GV);
        \end{tikzpicture}
        \caption{Représentation en cellules}

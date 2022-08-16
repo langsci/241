@@ -621,7 +621,7 @@ Nous obtenons bien au final le parenthésage attendu :
         \foreach \pos/\text in {1/Léa, 2-1/-era, 2-2-1/invit-, 2-2-2/Théo} 
           {\node [below=1pt of root-\pos,font=\itshape] {\text};}
         \node [right=1pt of root-2-2] {VP};
-        \node [right=1pt of root-2] {I'};
+        \node [right=1pt of root-2] {I$'$};
         \node [above=1pt of root] {IP};
       \end{tikzpicture}
 %       \begin{forest}dot tree, fit=band
@@ -788,7 +788,7 @@ L'ordre de saillance que nous avons introduit dans la figure~\ref{fig:laponie-sa
 
 
 \loupe[sec:3.4.16]{Dépendance et constituance se complètent}{%
-    On dit parfois qu’un arbre de dépendance contient moins d’information qu’un arbre de constituants car il ne contient pas de projections partielles. Mais, comme on le voit, on peut facilement ajouter cette information par l'ajout d'un ordre de saillance et un étiquetage des dépendances comme dans la structure de la figure~\ref{fig:laponie-saillance}. À l’inverse, \hi{un arbre de constituants ne contient structurellement pas d’information} \hi{sur la tête} : cette information doit aussi être ajoutée, soit par un étiquetage des relations partie-tout (notre T), soit par un étiquetage des nœuds (les X, X’ et XP de la Syntaxe X-barre, voir l’\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}). Dépendance et constituance se complètent donc.
+    On dit parfois qu’un arbre de dépendance contient moins d’information qu’un arbre de constituants car il ne contient pas de projections partielles. Mais, comme on le voit, on peut facilement ajouter cette information par l'ajout d'un ordre de saillance et un étiquetage des dépendances comme dans la structure de la figure~\ref{fig:laponie-saillance}. À l’inverse, \hi{un arbre de constituants ne contient structurellement pas d’information} \hi{sur la tête} : cette information doit aussi être ajoutée, soit par un étiquetage des relations partie-tout (notre T), soit par un étiquetage des nœuds (les X, X$'$ et XP de la Syntaxe X-barre, voir l’\encadref{sec:3.4.19} sur la \textit{Syntaxe X-barre}). Dépendance et constituance se complètent donc.
 
     Si les arbres de dépendance enrichis d’un ordre de saillance sont équivalents aux arbres de constituants (binaires ou non) enrichis de la notion de tête, il n’en reste pas moins qu’\hi{arbres de dépendance et arbres de constituants ne sont pas équivalents} et que le choix repose donc sur leur différence : de l’ordre de saillance ou de la notion de tête, \hi{quelle notion voulons-nous} \hi{encoder structurellement} ? La réponse ne fait aucun doute pour nous : \hi{la notion de tête}, et c’est ce qui détermine notre forte préférence pour les structures de dépendance.
 
@@ -1011,14 +1011,14 @@ Alors que la version 2002 de l'arbre de \citeyear{chomsky1957syntactic} est fond
 
     La troisième caractéristique de la Syntaxe X-barre est que l’arbre de constituants est \hi{ordonné} et aucun constituant n’est discontinu, ce qui, pour les raisons que nous avons exposé dans l’\encadref{sec:3.2.7} \textit{De la non-séparation des ordres au mouvement}, entraîne la présence de nombreuses positions occupées par des traces co-indicés avec d’autres positions.
 
-    La quatrième caractéristique de l’arbre X-barre est qu’il est \hi{binaire}. Ainsi la combinaison de chaque dépendant avec son gouverneur correspond à une décomposition binaire différente, ce qui, d’une certaine façon, rapproche encore plus cet arbre d’un arbre de dépendance (voir l’\encadref{sec:3.4.18} qui précède). La conséquence est que si un syntaxème a beaucoup de dépendants, il sera la tête d’autant de projections. Si le syntaxème est de catégorie X, sa \hi{projection maximale} est notée XP (\textit{X Phrase}) et ses \hi{projections intermédiaires} X’ (à l’origine elles étaient notées $\overline{\text{X}}$, avec une ou plusieurs barres au-dessus de X, d’où le nom de Syntaxe X-barre).
+    La quatrième caractéristique de l’arbre X-barre est qu’il est \hi{binaire}. Ainsi la combinaison de chaque dépendant avec son gouverneur correspond à une décomposition binaire différente, ce qui, d’une certaine façon, rapproche encore plus cet arbre d’un arbre de dépendance (voir l’\encadref{sec:3.4.18} qui précède). La conséquence est que si un syntaxème a beaucoup de dépendants, il sera la tête d’autant de projections. Si le syntaxème est de catégorie X, sa \hi{projection maximale} est notée XP (\textit{X Phrase}) et ses \hi{projections intermédiaires} X$'$ (à l’origine elles étaient notées $\overline{\text{X}}$, avec une ou plusieurs barres au-dessus de X, d’où le nom de Syntaxe X-barre).
 
-    La Syntaxe X-barre considère de plus que l’élément sous XP a des propriétés différentes des éléments sous X’ : le premier est un \hi{spécifieur}, alors que les autres sont des \hi{compléments} (voir la figure~\ref{fig:Xbarre}). Dans certaines versions de la Syntaxe X-barre \citep{jackendoff1977x}, les ajouts (ou modifieurs) sont structurellement distingués des compléments actanciels par l’ajout d’un niveau de stratification supplémentaire dans la configuration de base (c’est-à-dire que XP porte une «~barre~» supplémentaire).
+    La Syntaxe X-barre considère de plus que l’élément sous XP a des propriétés différentes des éléments sous X$'$ : le premier est un \hi{spécifieur}, alors que les autres sont des \hi{compléments} (voir la figure~\ref{fig:Xbarre}). Dans certaines versions de la Syntaxe X-barre \citep{jackendoff1977x}, les ajouts (ou modifieurs) sont structurellement distingués des compléments actanciels par l’ajout d’un niveau de stratification supplémentaire dans la configuration de base (c’est-à-dire que XP porte une «~barre~» supplémentaire).
 
 \begin{figure}[H]
     \begin{forest} for tree = {font=\normalfont}
     [XP,calign=child, calign primary child=2
-        [spécifieur] [X', calign=child, calign primary child=1
+        [spécifieur] [X$'$, calign=child, calign primary child=1
             [X] [complément]
         ]
     ]
@@ -1059,7 +1059,7 @@ Alors que la version 2002 de l'arbre de \citeyear{chomsky1957syntactic} est fond
     \end{forest}
     \hfill
     \begin{forest}
-     [IP [<\textit{sujet}>] [I' [I [<\textit{flexion}>]] [VP2 [\hspaceThis{VP2},roof]]]]
+     [IP [<\textit{sujet}>] [I$'$ [I [<\textit{flexion}>]] [VP2 [\hspaceThis{VP2},roof]]]]
     \end{forest}
     \end{multicols}\hfill
     \caption{\label{fig:VP1VP2}Configurations syntaxiques caractérisant respectivement VP1 et VP2}
