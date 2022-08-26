@@ -1,7 +1,7 @@
 # Syntaxe théorique et formelle: Volume 1: Modélisation, unités, structures
 ## Publication Info
 - Editors: Sylvain Kahane and Kim Gerdes
-- Publication Date: Forthcoming
+- Publication Date: 2022
 - Series: Textbooks in Language Sciences
 ## Description
 [Book page on langsci-press.org](https://langsci-press.org/catalog/book/241)
